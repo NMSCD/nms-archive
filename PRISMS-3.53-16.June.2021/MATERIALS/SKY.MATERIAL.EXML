@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.53.0)-->
+<Data template="TkMaterialData">
+  <Property name="Name" value="SkyMat" />
+  <Property name="Metamaterial" value="" />
+  <Property name="Class" value="Sky" />
+  <Property name="TransparencyLayerID" value="0" />
+  <Property name="CastShadow" value="False" />
+  <Property name="DisableZTest" value="False" />
+  <Property name="CreateFur" value="False" />
+  <Property name="Link" value="" />
+  <Property name="Shader" value="SHADERS/SKY.SHADER.BIN" />
+  <Property name="Flags" />
+  <Property name="Uniforms" />
+  <Property name="Samplers">
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gNebulaMap" />
+      <Property name="Map" value="TEXTURES/SPACE/SPACESKY/SPACESKY_FULL.DDS" />
+      <Property name="IsCube" value="True" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="False" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Wrap" />
+      <Property name="TextureFilterMode" value="Bilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gNebulaMask" />
+      <Property name="Map" value="TEXTURES/SPACE/SPACESKY/SPACESKY_MASK.DDS" />
+      <Property name="IsCube" value="True" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="False" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Wrap" />
+      <Property name="TextureFilterMode" value="Bilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+  </Property>
+  <Property name="ShaderMillDataHash" value="0" />
+</Data>
