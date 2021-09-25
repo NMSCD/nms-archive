@@ -1,0 +1,1497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.65.0)-->
+<Data template="GcPetBehaviourTable">
+  <Property name="Behaviours">
+    <Property name="None" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="5" />
+      <Property name="MaxPerformTime" value="10" />
+      <Property name="CooldownTime" value="10" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="Idle" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="False" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="0.1" />
+      <Property name="MinPerformTime" value="0.5" />
+      <Property name="MaxPerformTime" value="0.5" />
+      <Property name="CooldownTime" value="0" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="Eat" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="0" />
+      <Property name="MinPerformTime" value="5" />
+      <Property name="MaxPerformTime" value="10" />
+      <Property name="CooldownTime" value="10" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="UI_PET_LABEL_EATING" />
+    </Property>
+    <Property name="Poop" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="False" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="0.2" />
+      <Property name="MinPerformTime" value="10" />
+      <Property name="MaxPerformTime" value="20" />
+      <Property name="CooldownTime" value="3000" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="OnPlanet" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers">
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Hungry" />
+          </Property>
+          <Property name="MoodMin" value="0.5" />
+          <Property name="MoodMax" value="0" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="1" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="LayEgg" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="5" />
+      <Property name="MaxPerformTime" value="10" />
+      <Property name="CooldownTime" value="0" />
+      <Property name="ChatChance" value="0" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="OnPlanet" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0.6" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="UI_CREATURE_LAYING2" />
+    </Property>
+    <Property name="FollowPlayer" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="False" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="20" />
+      <Property name="MaxPerformTime" value="40" />
+      <Property name="CooldownTime" value="0" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="1" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers">
+        <Property value="GcPetBehaviourTraitModifier.xml">
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Independence" />
+          </Property>
+          <Property name="TraitMin" value="1" />
+          <Property name="TraitMax" value="-1" />
+          <Property name="WeightModifierMin" value="2" />
+          <Property name="WeightModifierMax" value="1" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="MoodBehaviourModifiers">
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Lonely" />
+          </Property>
+          <Property name="MoodMin" value="0" />
+          <Property name="MoodMax" value="1" />
+          <Property name="WeightModifierMin" value="0.5" />
+          <Property name="WeightModifierMax" value="1" />
+          <Property name="CooldownModifierMin" value="0.5" />
+          <Property name="CooldownModifierMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="AdoptedFollowPlayer" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="15" />
+      <Property name="MaxPerformTime" value="20" />
+      <Property name="CooldownTime" value="10" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours">
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="ScanForResource" />
+          </Property>
+          <Property name="TraitBased" value="False" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="ScanForResource" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="False" />
+      <Property name="UsefulBehaviour" value="True" />
+      <Property name="Weight" value="1.5" />
+      <Property name="MinPerformTime" value="5" />
+      <Property name="MaxPerformTime" value="5" />
+      <Property name="CooldownTime" value="240" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="OnPlanet" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers">
+        <Property value="GcPetBehaviourTraitModifier.xml">
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightModifierMin" value="0.5" />
+          <Property name="WeightModifierMax" value="2" />
+          <Property name="CooldownModifierMin" value="3" />
+          <Property name="CooldownModifierMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="MoodBehaviourModifiers">
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Hungry" />
+          </Property>
+          <Property name="MoodMin" value="0" />
+          <Property name="MoodMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="0.5" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="3" />
+        </Property>
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Lonely" />
+          </Property>
+          <Property name="MoodMin" value="0" />
+          <Property name="MoodMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="0.5" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="3" />
+        </Property>
+      </Property>
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="UI_PET_LABEL_MINING" />
+    </Property>
+    <Property name="FindResource" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="False" />
+      <Property name="UsefulBehaviour" value="True" />
+      <Property name="Weight" value="1.5" />
+      <Property name="MinPerformTime" value="30" />
+      <Property name="MaxPerformTime" value="30" />
+      <Property name="CooldownTime" value="240" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="OnPlanet" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers">
+        <Property value="GcPetBehaviourTraitModifier.xml">
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightModifierMin" value="0.5" />
+          <Property name="WeightModifierMax" value="2" />
+          <Property name="CooldownModifierMin" value="3" />
+          <Property name="CooldownModifierMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="MoodBehaviourModifiers">
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Hungry" />
+          </Property>
+          <Property name="MoodMin" value="0" />
+          <Property name="MoodMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="0.5" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="3" />
+        </Property>
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Lonely" />
+          </Property>
+          <Property name="MoodMin" value="0" />
+          <Property name="MoodMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="0.5" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="3" />
+        </Property>
+      </Property>
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="UI_PET_LABEL_MINING" />
+    </Property>
+    <Property name="FindHazards" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="False" />
+      <Property name="UsefulBehaviour" value="True" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="20" />
+      <Property name="MaxPerformTime" value="30" />
+      <Property name="CooldownTime" value="360" />
+      <Property name="ChatChance" value="0.5" />
+      <Property name="ApproachPlayerDist" value="3" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="OnPlanet" />
+      <Property name="FollowUpBehaviours">
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="Idle" />
+          </Property>
+          <Property name="TraitBased" value="True" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Aggression" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="1" />
+          <Property name="WeightMax" value="0" />
+        </Property>
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="AttackHazard" />
+          </Property>
+          <Property name="TraitBased" value="True" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Aggression" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="TraitBehaviourModifiers">
+        <Property value="GcPetBehaviourTraitModifier.xml">
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="2" />
+          <Property name="CooldownModifierMin" value="3" />
+          <Property name="CooldownModifierMax" value="0.75" />
+        </Property>
+        <Property value="GcPetBehaviourTraitModifier.xml">
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Aggression" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="2" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="0.75" />
+        </Property>
+      </Property>
+      <Property name="MoodBehaviourModifiers">
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Hungry" />
+          </Property>
+          <Property name="MoodMin" value="0" />
+          <Property name="MoodMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="0.5" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="3" />
+        </Property>
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Lonely" />
+          </Property>
+          <Property name="MoodMin" value="0" />
+          <Property name="MoodMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="0.5" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="3" />
+        </Property>
+      </Property>
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="UI_PET_LABEL_EXPLORE" />
+    </Property>
+    <Property name="AttackHazard" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="30" />
+      <Property name="MaxPerformTime" value="30" />
+      <Property name="CooldownTime" value="10" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="3" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="OnPlanet" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="FindBuilding" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="False" />
+      <Property name="UsefulBehaviour" value="True" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="30" />
+      <Property name="MaxPerformTime" value="50" />
+      <Property name="CooldownTime" value="360" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="250" />
+      <Property name="PetBehaviourValidity" value="OnPlanet" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers">
+        <Property value="GcPetBehaviourTraitModifier.xml">
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightModifierMin" value="0.2" />
+          <Property name="WeightModifierMax" value="2" />
+          <Property name="CooldownModifierMin" value="3" />
+          <Property name="CooldownModifierMax" value="0.75" />
+        </Property>
+      </Property>
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="UI_PET_LABEL_BUILDING" />
+    </Property>
+    <Property name="Fetch" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="0" />
+      <Property name="MinPerformTime" value="5" />
+      <Property name="MaxPerformTime" value="10" />
+      <Property name="CooldownTime" value="10" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="Explore" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="False" />
+      <Property name="UsefulBehaviour" value="True" />
+      <Property name="Weight" value="2" />
+      <Property name="MinPerformTime" value="30" />
+      <Property name="MaxPerformTime" value="60" />
+      <Property name="CooldownTime" value="45" />
+      <Property name="ChatChance" value="0.3" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="OnPlanet" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers">
+        <Property value="GcPetBehaviourTraitModifier.xml">
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Independence" />
+          </Property>
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="2" />
+          <Property name="CooldownModifierMin" value="3" />
+          <Property name="CooldownModifierMax" value="0.75" />
+        </Property>
+      </Property>
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="UI_PET_LABEL_EXPLORE" />
+    </Property>
+    <Property name="Emote" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="False" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="20" />
+      <Property name="MaxPerformTime" value="40" />
+      <Property name="CooldownTime" value="240" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers">
+        <Property value="GcPetBehaviourTraitModifier.xml">
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="1" />
+          <Property name="TraitMax" value="-1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="1" />
+          <Property name="CooldownModifierMin" value="3" />
+          <Property name="CooldownModifierMax" value="1" />
+        </Property>
+        <Property value="GcPetBehaviourTraitModifier.xml">
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Independence" />
+          </Property>
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightModifierMin" value="1.5" />
+          <Property name="WeightModifierMax" value="0.5" />
+          <Property name="CooldownModifierMin" value="0.75" />
+          <Property name="CooldownModifierMax" value="3" />
+        </Property>
+      </Property>
+      <Property name="MoodBehaviourModifiers">
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Hungry" />
+          </Property>
+          <Property name="MoodMin" value="0.75" />
+          <Property name="MoodMax" value="0.9" />
+          <Property name="WeightModifierMin" value="1" />
+          <Property name="WeightModifierMax" value="10" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="0.5" />
+        </Property>
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Lonely" />
+          </Property>
+          <Property name="MoodMin" value="0.75" />
+          <Property name="MoodMax" value="0.9" />
+          <Property name="WeightModifierMin" value="1" />
+          <Property name="WeightModifierMax" value="10" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="0.5" />
+        </Property>
+      </Property>
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="UI_PET_LABEL_EMOTE" />
+    </Property>
+    <Property name="GestureReact" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="0" />
+      <Property name="MinPerformTime" value="0.5" />
+      <Property name="MaxPerformTime" value="0.5" />
+      <Property name="CooldownTime" value="2" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="OrderedToPos" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="0" />
+      <Property name="MinPerformTime" value="30" />
+      <Property name="MaxPerformTime" value="40" />
+      <Property name="CooldownTime" value="10" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours">
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="Poop" />
+          </Property>
+          <Property name="TraitBased" value="True" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="-1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="Emote" />
+          </Property>
+          <Property name="TraitBased" value="True" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="-1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="Mine" />
+          </Property>
+          <Property name="TraitBased" value="True" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="ScanForResource" />
+          </Property>
+          <Property name="TraitBased" value="True" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="Greet" />
+          </Property>
+          <Property name="TraitBased" value="True" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Aggression" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="-1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="Attack" />
+          </Property>
+          <Property name="TraitBased" value="True" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Aggression" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="Explore" />
+          </Property>
+          <Property name="TraitBased" value="True" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Independence" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="FollowPlayer" />
+          </Property>
+          <Property name="TraitBased" value="True" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Independence" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="-1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="UI_PET_LABEL_ORDERS" />
+    </Property>
+    <Property name="ComeHere" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="30" />
+      <Property name="MaxPerformTime" value="40" />
+      <Property name="CooldownTime" value="10" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours">
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="FollowPlayer" />
+          </Property>
+          <Property name="TraitBased" value="False" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="UI_PET_LABEL_ORDERS" />
+    </Property>
+    <Property name="Mine" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="False" />
+      <Property name="UsefulBehaviour" value="True" />
+      <Property name="Weight" value="2" />
+      <Property name="MinPerformTime" value="30" />
+      <Property name="MaxPerformTime" value="30" />
+      <Property name="CooldownTime" value="240" />
+      <Property name="ChatChance" value="0.5" />
+      <Property name="ApproachPlayerDist" value="1" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="OnPlanet" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers">
+        <Property value="GcPetBehaviourTraitModifier.xml">
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="1" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="0.5" />
+        </Property>
+      </Property>
+      <Property name="MoodBehaviourModifiers">
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Hungry" />
+          </Property>
+          <Property name="MoodMin" value="0" />
+          <Property name="MoodMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="0.5" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="3" />
+        </Property>
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Lonely" />
+          </Property>
+          <Property name="MoodMin" value="0" />
+          <Property name="MoodMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="0.5" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="3" />
+        </Property>
+      </Property>
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="UI_PET_LABEL_SEARCHING" />
+    </Property>
+    <Property name="Summoned" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="0" />
+      <Property name="MinPerformTime" value="15" />
+      <Property name="MaxPerformTime" value="15" />
+      <Property name="CooldownTime" value="10" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="1" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours">
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="FollowPlayer" />
+          </Property>
+          <Property name="TraitBased" value="False" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="Adopted" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="15" />
+      <Property name="MaxPerformTime" value="15" />
+      <Property name="CooldownTime" value="10" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours">
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="AdoptedFollowPlayer" />
+          </Property>
+          <Property name="TraitBased" value="False" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="Hatched" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="5" />
+      <Property name="MaxPerformTime" value="15" />
+      <Property name="CooldownTime" value="15" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours">
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="FollowPlayer" />
+          </Property>
+          <Property name="TraitBased" value="False" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="PostInteract" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="4" />
+      <Property name="MaxPerformTime" value="7" />
+      <Property name="CooldownTime" value="10" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours">
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="FollowPlayer" />
+          </Property>
+          <Property name="TraitBased" value="False" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="Rest" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="False" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="20" />
+      <Property name="MaxPerformTime" value="30" />
+      <Property name="CooldownTime" value="1" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="1" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers">
+        <Property value="GcPetBehaviourTraitModifier.xml">
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="0.5" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="2" />
+        </Property>
+      </Property>
+      <Property name="MoodBehaviourModifiers">
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Hungry" />
+          </Property>
+          <Property name="MoodMin" value="0" />
+          <Property name="MoodMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="1" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="Attack" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="False" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="2" />
+      <Property name="MinPerformTime" value="20" />
+      <Property name="MaxPerformTime" value="20" />
+      <Property name="CooldownTime" value="180" />
+      <Property name="ChatChance" value="0.66" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="OnPlanet" />
+      <Property name="FollowUpBehaviours">
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="Poop" />
+          </Property>
+          <Property name="TraitBased" value="False" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="TraitBehaviourModifiers">
+        <Property value="GcPetBehaviourTraitModifier.xml">
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Aggression" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="2" />
+          <Property name="CooldownModifierMin" value="3" />
+          <Property name="CooldownModifierMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="MoodBehaviourModifiers">
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Hungry" />
+          </Property>
+          <Property name="MoodMin" value="0" />
+          <Property name="MoodMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="1" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="-0.5" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="UI_PET_LABEL_HUNT" />
+    </Property>
+    <Property name="Watch" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="0" />
+      <Property name="MaxPerformTime" value="0" />
+      <Property name="CooldownTime" value="0" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="Greet" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="False" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="2" />
+      <Property name="MinPerformTime" value="15" />
+      <Property name="MaxPerformTime" value="20" />
+      <Property name="CooldownTime" value="120" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="3" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours" />
+      <Property name="TraitBehaviourModifiers">
+        <Property value="GcPetBehaviourTraitModifier.xml">
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Aggression" />
+          </Property>
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightModifierMin" value="2" />
+          <Property name="WeightModifierMax" value="0.1" />
+          <Property name="CooldownModifierMin" value="0.5" />
+          <Property name="CooldownModifierMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="MoodBehaviourModifiers">
+        <Property value="GcPetBehaviourMoodModifier.xml">
+          <Property name="Mood" value="GcCreaturePetMood.xml">
+            <Property name="PetMood" value="Lonely" />
+          </Property>
+          <Property name="MoodMin" value="0" />
+          <Property name="MoodMax" value="1" />
+          <Property name="WeightModifierMin" value="0" />
+          <Property name="WeightModifierMax" value="3" />
+          <Property name="CooldownModifierMin" value="1" />
+          <Property name="CooldownModifierMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="-0.1" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+    <Property name="TeleportToPlayer" value="GcPetBehaviourData.xml">
+      <Property name="ReactiveBehaviour" value="True" />
+      <Property name="UsefulBehaviour" value="False" />
+      <Property name="Weight" value="1" />
+      <Property name="MinPerformTime" value="10" />
+      <Property name="MaxPerformTime" value="10" />
+      <Property name="CooldownTime" value="10" />
+      <Property name="ChatChance" value="1" />
+      <Property name="ApproachPlayerDist" value="2" />
+      <Property name="SearchDist" value="30" />
+      <Property name="PetBehaviourValidity" value="Everywhere" />
+      <Property name="FollowUpBehaviours">
+        <Property value="GcPetFollowUpBehaviour.xml">
+          <Property name="Behaviour" value="GcPetBehaviours.xml">
+            <Property name="PetBehaviour" value="FollowPlayer" />
+          </Property>
+          <Property name="TraitBased" value="False" />
+          <Property name="Trait" value="GcCreaturePetTraits.xml">
+            <Property name="PetTraits" value="Helpfulness" />
+          </Property>
+          <Property name="TraitMin" value="0" />
+          <Property name="TraitMax" value="1" />
+          <Property name="WeightMin" value="0" />
+          <Property name="WeightMax" value="1" />
+        </Property>
+      </Property>
+      <Property name="TraitBehaviourModifiers" />
+      <Property name="MoodBehaviourModifiers" />
+      <Property name="MoodModifyOnComplete">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+      <Property name="LabelText" value="" />
+    </Property>
+  </Property>
+  <Property name="GlobalCooldownModifier" value="1" />
+  <Property name="UsefulBehaviourLinkedCooldownAmount" value="0.1" />
+  <Property name="PlayerActivityIncreaseTime" value="10" />
+  <Property name="PlayerActivityDecreaseTime" value="30" />
+  <Property name="MoodIncreaseTime">
+    <Property name="Hungry" value="3400" />
+    <Property name="Lonely" value="1275" />
+  </Property>
+  <Property name="TraitMoodModifiers">
+    <Property name="Helpfulness" value="GcPetTraitMoodModifierList.xml">
+      <Property name="Modifiers">
+        <Property name="Hungry" value="GcPetTraitMoodModifier.xml">
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="MoodIncreaseMultiplierMin" value="1" />
+          <Property name="MoodIncreaseMultiplierMax" value="1" />
+        </Property>
+        <Property name="Lonely" value="GcPetTraitMoodModifier.xml">
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="MoodIncreaseMultiplierMin" value="1" />
+          <Property name="MoodIncreaseMultiplierMax" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Aggression" value="GcPetTraitMoodModifierList.xml">
+      <Property name="Modifiers">
+        <Property name="Hungry" value="GcPetTraitMoodModifier.xml">
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="MoodIncreaseMultiplierMin" value="1" />
+          <Property name="MoodIncreaseMultiplierMax" value="1" />
+        </Property>
+        <Property name="Lonely" value="GcPetTraitMoodModifier.xml">
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="MoodIncreaseMultiplierMin" value="1" />
+          <Property name="MoodIncreaseMultiplierMax" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Independence" value="GcPetTraitMoodModifierList.xml">
+      <Property name="Modifiers">
+        <Property name="Hungry" value="GcPetTraitMoodModifier.xml">
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="MoodIncreaseMultiplierMin" value="1" />
+          <Property name="MoodIncreaseMultiplierMax" value="1" />
+        </Property>
+        <Property name="Lonely" value="GcPetTraitMoodModifier.xml">
+          <Property name="TraitMin" value="-1" />
+          <Property name="TraitMax" value="1" />
+          <Property name="MoodIncreaseMultiplierMin" value="0.6" />
+          <Property name="MoodIncreaseMultiplierMax" value="1.3" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="RewardMoodModifier">
+    <Property name="Tickle" value="GcPetActionMoodModifier.xml">
+      <Property name="MoodModifiers">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="-0.5" />
+      </Property>
+    </Property>
+    <Property name="Treat" value="GcPetActionMoodModifier.xml">
+      <Property name="MoodModifiers">
+        <Property name="Hungry" value="-0.66" />
+        <Property name="Lonely" value="-0.2" />
+      </Property>
+    </Property>
+    <Property name="Ride" value="GcPetActionMoodModifier.xml">
+      <Property name="MoodModifiers">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+    </Property>
+    <Property name="Customise" value="GcPetActionMoodModifier.xml">
+      <Property name="MoodModifiers">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+    </Property>
+    <Property name="Abandon" value="GcPetActionMoodModifier.xml">
+      <Property name="MoodModifiers">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+    </Property>
+    <Property name="LayEgg" value="GcPetActionMoodModifier.xml">
+      <Property name="MoodModifiers">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+    </Property>
+    <Property name="Adopt" value="GcPetActionMoodModifier.xml">
+      <Property name="MoodModifiers">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+    </Property>
+    <Property name="Milk" value="GcPetActionMoodModifier.xml">
+      <Property name="MoodModifiers">
+        <Property name="Hungry" value="0" />
+        <Property name="Lonely" value="0" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="TraitRanges">
+    <Property name="None" value="GcCreaturePetTraitRanges.xml">
+      <Property name="TraitRanges">
+        <Property name="Helpfulness" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Aggression" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Independence" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Predator" value="GcCreaturePetTraitRanges.xml">
+      <Property name="TraitRanges">
+        <Property name="Helpfulness" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Aggression" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="0" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Independence" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="PlayerPredator" value="GcCreaturePetTraitRanges.xml">
+      <Property name="TraitRanges">
+        <Property name="Helpfulness" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Aggression" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="0" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Independence" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Prey" value="GcCreaturePetTraitRanges.xml">
+      <Property name="TraitRanges">
+        <Property name="Helpfulness" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Aggression" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="0" />
+        </Property>
+        <Property name="Independence" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Passive" value="GcCreaturePetTraitRanges.xml">
+      <Property name="TraitRanges">
+        <Property name="Helpfulness" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Aggression" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="0" />
+        </Property>
+        <Property name="Independence" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Bird" value="GcCreaturePetTraitRanges.xml">
+      <Property name="TraitRanges">
+        <Property name="Helpfulness" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Aggression" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Independence" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="FishPrey" value="GcCreaturePetTraitRanges.xml">
+      <Property name="TraitRanges">
+        <Property name="Helpfulness" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Aggression" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Independence" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="FishPredator" value="GcCreaturePetTraitRanges.xml">
+      <Property name="TraitRanges">
+        <Property name="Helpfulness" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Aggression" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Independence" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Butterfly" value="GcCreaturePetTraitRanges.xml">
+      <Property name="TraitRanges">
+        <Property name="Helpfulness" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Aggression" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Independence" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Robot" value="GcCreaturePetTraitRanges.xml">
+      <Property name="TraitRanges">
+        <Property name="Helpfulness" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Aggression" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Independence" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Pet" value="GcCreaturePetTraitRanges.xml">
+      <Property name="TraitRanges">
+        <Property name="Helpfulness" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Aggression" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+        <Property name="Independence" value="GcCreaturePetTraitRange.xml">
+          <Property name="Min" value="-1" />
+          <Property name="Max" value="1" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="MoodValuesOnAdopt">
+    <Property name="Hungry" value="0.2" />
+    <Property name="Lonely" value="0.8" />
+  </Property>
+  <Property name="MoodValuesOnHatch">
+    <Property name="Hungry" value="0.8" />
+    <Property name="Lonely" value="0.2" />
+  </Property>
+  <Property name="TraitStaminaModifiers">
+    <Property value="GcPetTraitStaminaModifier.xml">
+      <Property name="Trait" value="GcCreaturePetTraits.xml">
+        <Property name="PetTraits" value="Independence" />
+      </Property>
+      <Property name="TraitMin" value="0" />
+      <Property name="TraitMax" value="-1" />
+      <Property name="StaminaDrainModifierMin" value="1" />
+      <Property name="StaminaDrainModifierMax" value="0.7" />
+      <Property name="StaminaRechargeModifierMin" value="1" />
+      <Property name="StaminaRechargeModifierMax" value="1.3" />
+    </Property>
+    <Property value="GcPetTraitStaminaModifier.xml">
+      <Property name="Trait" value="GcCreaturePetTraits.xml">
+        <Property name="PetTraits" value="Helpfulness" />
+      </Property>
+      <Property name="TraitMin" value="0" />
+      <Property name="TraitMax" value="1" />
+      <Property name="StaminaDrainModifierMin" value="1" />
+      <Property name="StaminaDrainModifierMax" value="0.8" />
+      <Property name="StaminaRechargeModifierMin" value="1" />
+      <Property name="StaminaRechargeModifierMax" value="1.2" />
+    </Property>
+    <Property value="GcPetTraitStaminaModifier.xml">
+      <Property name="Trait" value="GcCreaturePetTraits.xml">
+        <Property name="PetTraits" value="Helpfulness" />
+      </Property>
+      <Property name="TraitMin" value="0" />
+      <Property name="TraitMax" value="-1" />
+      <Property name="StaminaDrainModifierMin" value="1" />
+      <Property name="StaminaDrainModifierMax" value="0.7" />
+      <Property name="StaminaRechargeModifierMin" value="1" />
+      <Property name="StaminaRechargeModifierMax" value="1.3" />
+    </Property>
+  </Property>
+  <Property name="MoodStaminaModifiers">
+    <Property value="GcPetMoodStaminaModifier.xml">
+      <Property name="Mood" value="GcCreaturePetMood.xml">
+        <Property name="PetMood" value="Hungry" />
+      </Property>
+      <Property name="MoodMin" value="0" />
+      <Property name="MoodMax" value="1" />
+      <Property name="StaminaDrainModifierMin" value="0.7" />
+      <Property name="StaminaDrainModifierMax" value="1" />
+      <Property name="StaminaRechargeModifierMin" value="1.3" />
+      <Property name="StaminaRechargeModifierMax" value="1" />
+    </Property>
+    <Property value="GcPetMoodStaminaModifier.xml">
+      <Property name="Mood" value="GcCreaturePetMood.xml">
+        <Property name="PetMood" value="Lonely" />
+      </Property>
+      <Property name="MoodMin" value="0" />
+      <Property name="MoodMax" value="1" />
+      <Property name="StaminaDrainModifierMin" value="0.7" />
+      <Property name="StaminaDrainModifierMax" value="1" />
+      <Property name="StaminaRechargeModifierMin" value="1.3" />
+      <Property name="StaminaRechargeModifierMax" value="1" />
+    </Property>
+  </Property>
+  <Property name="AccessoryGyroFollowMotionStrength" value="10" />
+  <Property name="AccessoryGyroToNeutralStrength" value="10" />
+  <Property name="AccessoryGyroDamping" value="0.85" />
+  <Property name="AccessoryGyroStrength" value="1" />
+  <Property name="AccessoryGyroActive" value="True" />
+</Data>
