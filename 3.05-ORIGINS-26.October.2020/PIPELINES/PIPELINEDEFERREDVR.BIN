@@ -1,0 +1,1588 @@
+<!-- High Dynamic Range (HDR) utf-8Shading Pipeline -->
+<Pipeline>
+  <Setup>
+    <ScaleInfo resScalingDefault="true" />
+    
+    <RenderTarget id="SHADOWBUF"   depthBuf="true"  numColBufs="0"  format="RGBA8" depthFormat="DEPTH16" scale="1.0" width="5376" height="1792" maxSamples="0" shadow="true" hasMips="false" numUniformBuffers="3" crossPipeShareId="SHADOW_SHARED" />
+
+    <RenderTarget id="GBUFFER"     depthBuf="false" numColBufs="4"  format0="RGBA8" format1="RG8" format2="RGB10A2" format3="RGBA8" scale="1.0" maxSamples="0" pointSampleColBuf1="true" pointSampleColBuf2="true" pointSampleColBuf3="true"  esramPageColBuf2="215" crossPipeShareId="GBUFFER_SHARED" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="TAA_FRONT"    depthBuf="false" numColBufs="3"  format0="R11FG11FB10F" format1="R11FG11FB10F" format2="RGBA8" bilinear="true" scale="1.0" maxSamples="0"  shareTarget0="HDRBUF_1"  shareBuffer0="0" shareTarget1="LENSFINAL_OR_UI_COMBINE_BUF"  shareBuffer1="0" shareBuffer2="-1"  allowDcc="false" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="TAA_BACK"    depthBuf="false" numColBufs="3"  format0="R11FG11FB10F" format1="R11FG11FB10F" format2="RGBA8" bilinear="true" scale="1.0" maxSamples="0"  shareTarget0="HDRBUF_1"  shareBuffer0="0" shareTarget1="BACK_LENSFINAL_OR_UI_COMBINE_BUF" shareBuffer1="0" shareBuffer2="-1"  allowDcc="false" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="SUNOUT_0"         depthBuf="false" numColBufs="2"  format0="R11FG11FB10F" format1="R11FG11FB10F" bilinear="true" scale="1.0" maxSamples="0"   shareTarget0="HDRBUF_0"  shareBuffer0="0"  shareTarget1="HDRBUF_1"       shareBuffer1="0" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="BLENDED_ABOVE"    depthBuf="false" numColBufs="2"  format0="R11FG11FB10F" format1="RED8"         bilinear="true" scale="1.0" maxSamples="0"   shareTarget0="HDRBUF_0"  shareBuffer0="0"  shareTarget1="LUT_MASK"       shareBuffer1="0" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="HDRBUF_0"    depthBuf="false" numColBufs="1"  format="R11FG11FB10F" bilinear="true" scale="1.0" maxSamples="0"   esramPageColBuf0="306" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="HDRBUF_1"    depthBuf="false" numColBufs="1"  format="R11FG11FB10F" bilinear="true" scale="1.0" maxSamples="0"   esramPageColBuf0="397" allowDcc="false" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="LUT_MASK"                        depthBuf="false"  numColBufs="1"  format="RED8" bilinear="true" scale="1.0"  numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="GTAO_FRAME_0"                     depthBuf="false"  numColBufs="1"  format="RED8" pointSampleColBuf0="true" scale="0.5" scale3="1.0" scaleGroup="AmbientOcclusion"  allowDcc="false" numUniformBuffers="3" numSlices="2" />
+    <RenderTarget id="GTAO_FRAME_1"                     depthBuf="false"  numColBufs="1"  format="RED8" pointSampleColBuf0="true" scale="0.5" scale3="1.0" scaleGroup="AmbientOcclusion"  allowDcc="false" numUniformBuffers="3" numSlices="2" />
+    <RenderTarget id="GTAO_HISTORY_0"                   depthBuf="false"  numColBufs="1"  format="RG8"  pointSampleColBuf0="true" scale="0.5" scale3="1.0" scaleGroup="AmbientOcclusion"  allowDcc="false" numUniformBuffers="3" numSlices="2" />
+    <RenderTarget id="GTAO_HISTORY_1"                   depthBuf="false"  numColBufs="1"  format="RG8"  pointSampleColBuf0="true" scale="0.5" scale3="1.0" scaleGroup="AmbientOcclusion"  allowDcc="false" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="HBAOBUF"                         depthBuf="false"  numColBufs="1"  format="RED8" bilinear="true" scale="1.0"  allowDcc="false" numUniformBuffers="3" numSlices="2" />
+    
+    <RenderTarget id="LIGHTSHAFT"                      depthBuf="false"  numColBufs="1"  format="RED16F" scale="0.5" maxSamples="0" pointSampleColBuf0="true" shareTarget0="VOLUME" shareBuffer0="1"  numUniformBuffers="3" numSlices="2" />
+    <RenderTarget id="BLUR1_REDONLY"                   depthBuf="false"  numColBufs="1"  format="RED16F" scale="0.5" maxSamples="0" pointSampleColBuf0="true"  allowDcc="false" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="VOLUME"      depthBuf="false" numColBufs="2"  format0="RGBA16F" format1="RED16F" scale="0.5" maxSamples="0" pointSampleColBuf0="true" pointSampleColBuf1="true"   numUniformBuffers="3" numSlices="2" />
+    <RenderTarget id="BLUR1"       depthBuf="false"  numColBufs="1"  format="RGBA16F" scale="0.5" maxSamples="0" pointSampleColBuf0="true"  esramPageColBuf0="215" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="DEPTHUI"       depthBuf="true" numColBufs="0"  format="RGBA8" scale="1.0" maxSamples="0" stencilBuf="true"   esramPageDepthBuf="0" numUniformBuffers="3" numSlices="2" />
+    <RenderTarget id="DEPTH"       depthBuf="true"   depthBufUsesBB="true" numColBufs="0"  format="RGBA8" scale="1.0" maxSamples="0" stencilBuf="true"   esramPageDepthBuf="0" crossPipeShareId="DEPTH_SHARED" numUniformBuffers="3" numSlices="2" />
+    <RenderTarget id="DEPTH_DOWN"  depthBuf="false"  numColBufs="1"  format="RED32F"   scale="0.5" maxSamples="0" pointSampleColBuf0="true"  allowDcc="false"   esramPageColBuf0="488" crossPipeShareId="DEPTHD_SHARED" numUniformBuffers="3" numSlices="2"  />
+    <RenderTarget id="DEPTH_PART"  depthBuf="false"  numColBufs="1"  format="RED32F"   scale="0.5" maxSamples="0" pointSampleColBuf0="true"  numUniformBuffers="3" numSlices="2"  />
+    <RenderTarget id="DEPTH_LINEAR"  depthBuf="false"  numColBufs="1"  format="RED32F"   scale="1.0" maxSamples="0" pointSampleColBuf0="true"  esramPageColBuf0="124"  crossPipeShareId="DEPTH_LINEAR_SHARED" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="CLOUDSHADOWS"   depthBuf="false" numColBufs="1" format="RED8" bilinear="true" scale="0.5" allowDcc="false" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="CLOUDS_HIGH"    depthBuf="false"  numColBufs="2" format0="RGBA8"  format1="RED32F" bilinear="true" width="442" height="496"  allowDcc="false" numUniformBuffers="3" numSlices="2"  crossPipeShareId="CLOUDS_SHARED"   />
+    <RenderTarget id="CLOUD_BLURBUF1" depthBuf="false" numColBufs="1" format="RGBA8" bilinear="true" width="442" height="496" allowDcc="false" numUniformBuffers="3" numSlices="2" crossPipeShareId="CLOUDSB1_SHARED" />
+    <RenderTarget id="CLOUD_BLURBUF2" depthBuf="false" numColBufs="1" format="RGBA8" bilinear="true" width="442" height="496" allowDcc="false" numUniformBuffers="3" numSlices="2" crossPipeShareId="CLOUDSB2_SHARED" />
+
+    <RenderTarget id="WATER"          depthBuf="false" numColBufs="1" format="RGBA16F" bilinear="true" scale="0.5"   esramPageColBuf0="215" shareTarget0="PARTICLES" numUniformBuffers="3" numSlices="2" />
+    <RenderTarget id="PARTICLES"      depthBuf="false" numColBufs="1" format="RGBA16F" bilinear="true" scale="0.5"   esramPageColBuf0="124" numUniformBuffers="3" numSlices="2" />
+    <RenderTarget id="PARTICLES_DEPTH" depthBuf="true" numColBufs="0" format="RGBA8" scale="0.5" maxSamples="0" pointSampleColBuf0="true"   numUniformBuffers="3" numSlices="2" />
+    
+    <RenderTarget id="BLOOM_BLURBUF_2A"   depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.5"       allowDcc="false" numUniformBuffers="3" numSlices="2"/>
+    <RenderTarget id="BLOOM_BLURBUF_2B"   depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.5"       allowDcc="false" numUniformBuffers="3" numSlices="2"/>
+    <RenderTarget id="BLOOM_BLURBUF_4A"   depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.25"      allowDcc="false" numUniformBuffers="3" numSlices="2"/>
+    <RenderTarget id="BLOOM_BLURBUF_4B"   depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.25"      allowDcc="false" numUniformBuffers="3" numSlices="2"/>
+    <RenderTarget id="BLOOM_BLURBUF_8A"   depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.125"     allowDcc="false" numUniformBuffers="3" numSlices="2"/>
+    <RenderTarget id="BLOOM_BLURBUF_8B"   depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.125"     allowDcc="false" numUniformBuffers="3" numSlices="2"/>
+    <RenderTarget id="BLOOM_BLURBUF_16"   depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.0625"    allowDcc="false" numUniformBuffers="3" numSlices="2"/>
+    <RenderTarget id="BLOOM_BLURBUF_32"   depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.03125"   allowDcc="false" numUniformBuffers="3" numSlices="2"/>
+    <RenderTarget id="BLOOM_BLURBUF_64"   depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.015625"  allowDcc="false" numUniformBuffers="3" numSlices="2"/>
+    <RenderTarget id="BLOOM_FINALBUF"     depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.25"      allowDcc="false" numUniformBuffers="3" numSlices="2"/>
+    
+    <RenderTarget id="BLOOM_EXPBUF_A"     depthBuf="false" numColBufs="1" format="RED8"         bilinear="true" scale="1.0"       allowDcc="false" width="4" height="4" numUniformBuffers="3" numSlices="2" />
+    <RenderTarget id="BLOOM_EXPBUF_B"     depthBuf="false" numColBufs="1" format="RED8"         bilinear="true" scale="1.0"       allowDcc="false" width="4" height="4" numUniformBuffers="3" numSlices="2" />
+    
+    <RenderTarget id="MOTION_MAXBUF_H" depthBuf="false" numColBufs="1" format="RGBA8" bilinear="true" scaleX="0.125" scaleY="1.0"   crossPipeShareId="MOTION_HORZ" numUniformBuffers="3" numSlices="2" />
+    <RenderTarget id="MOTION_MAXBUF" depthBuf="false" numColBufs="1" format="RGBA8" bilinear="true" scale="0.125"   numUniformBuffers="3" numSlices="2" />
+    
+    <RenderTarget id="MOTIONRESOLVE"    depthBuf="false" numColBufs="1" format="R11FG11FB10F" scale="1.0" maxSamples="0"  esramPageColBuf0="215" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="BACK_LENSFINAL_OR_UI_COMBINE_BUF"     depthBuf="false" numColBufs="1" format="R11FG11FB10F"  bilinear="true" scale="1.0"  allowDcc="false" numUniformBuffers="3" numSlices="2" />
+
+    <RenderTarget id="LENSFINAL_OR_UI_COMBINE_BUF"     depthBuf="false" numColBufs="1" format="R11FG11FB10F"  bilinear="true" scale="1.0"  allowDcc="false" numUniformBuffers="3" numSlices="2" />
+    
+    <!--<RenderTarget id="SUNOUT_1"    depthBuf="false" numColBufs="1"  format0="R11FG11FB10F" bilinear="true" scale="1.0" maxSamples="0"  crossPipeShareId="MOTION_SUN_SHARE_ID" />-->
+  
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+
+    <Stage id="CloudsHigh">
+    </Stage>
+
+    <Stage id="CloudsBlur">
+    </Stage>
+  
+    <Stage id="Attributes">
+
+      <StartPrevFrameAsync />
+
+      <BeginTarget target="GBUFFER" depthTarget="DEPTH" />
+
+      <ColourMask channels="RGBA"/>
+      <!-- Clear targets, colbuf1 is cleared separately to max depth -->
+      <ClearTarget colBuf0="false"  colBuf1="false" colBuf2="false"  colBuf3="false" colBuf4="false" depthBuf="true"   stencilBuf="true" />
+      <DiscardTargetContents colBuf0="false"  colBuf1="false" colBuf2="false"  colBuf3="false" colBuf4="false" />
+      <SetContext zwrite="true" colourWrite="false" cullMode="none" blendMode="replace" depthTest="always" stencilMode="maskWrite" stencilRef="128" />
+      <ColourMask channels="RGBA"/>
+      <DrawHiddenAreaMesh />
+                  
+      <BindBuffer sampler="gShadowMap"   sourceRT="SHADOWBUF"  bufIndex="32" />      
+      <BindBuffer sampler="gCloudShadowMap"  sourceRT="CLOUDSHADOWS"    bufIndex="0" addressMode="wrap" />
+
+      <!-- Z Pre-Pass for Cutout (grass etc) -->
+      <SetContext zwrite="true" colourWrite="false" cullMode="none" blendMode="replace" depthTest="less" stencilMode="disabled" />
+      <DrawGeometry type="InstanceMesh" class="DoubleSided"    context="DEPTHONLY_DEFER_INSTANCE"    order="MESH" />
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="less" stencilMode="disabled" />
+      <DrawGeometry type="InstanceMesh" class="Cutout"         context="DEPTHONLY_DEFER_INSTANCE"    order="MESH" />
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="less" stencilMode="maskWrite"  stencilRef="8" />
+      <DrawGeometry type="Terrain"      class="LOD0"           context="DEPTHONLY_DEFER"             order="" />
+      <DrawGeometry type="Terrain"      class="LOD1"           context="DEPTHONLY_DEFER"             order="" />
+      <DrawGeometry type="Terrain"      class="LOD2"           context="DEPTHONLY_DEFER"             order="" />      
+      <!-- Opaques-->
+
+      <ColourMask channels="RGBA"/> <!--Enable all attached RTs, since ClearTarget only (re-)enables RT0 on PS4-->
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="replace" depthTest="less" stencilMode="maskWrite"/>
+      <DrawGeometry type="Mesh"         class="Opaque"            context="LIT_DEFER"             order="STATECHANGES" />      
+      <DrawGeometry type="Mesh"         class="Highlight"         context="LIT_DEFER"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="Cutout"            context="LIT_DEFER"             order="STATECHANGES" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="replace" depthTest="less" stencilMode="maskWrite"  stencilRef="65"/>
+      <DrawGeometry type="Mesh"         class="OpaqueBeforeUI"    context="LIT_DEFER"             order="STATECHANGES" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="replace" depthTest="less" stencilMode="maskWrite"/>
+      <DrawGeometry type="Mesh"         class="DoubleSided"             context="LIT_DEFER"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="HighlightDoubleSided"    context="LIT_DEFER"             order="STATECHANGES" />
+     
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="replace" depthTest="lessEqual" stencilMode="maskWrite"  stencilRef="8" />
+      <DrawGeometry type="Terrain"      class="LOD0"      context="LIT_DF_CACHE_FB"       order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD0"      context="LIT_TESS_FB"           order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD0"      context="LIT_DEFER_CACHE"       order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD0"      context="LIT_DEFER_TESS"        order="FRONT_TO_BACK" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="replace" depthTest="less" stencilMode="maskWrite"/>
+      <DrawGeometry type="InstanceMesh" class="Opaque"            context="LIT_DEFER_INSTANCE"    order="MESH" />      
+      
+      <DrawGeometry type="Mesh"         class="Glow"      context="LIT_DEFER"             order="STATECHANGES" />    
+      <DrawGeometry type="InstanceMesh" class="Glow"      context="LIT_DEFER_INSTANCE"    order="MESH" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="equal" stencilMode="disabled" />
+
+      <SetShaderControl psWaveLimit="0" />
+
+      <DrawGeometry type="Terrain"      class="LOD0"      context="LIT_DEFER_STC_T_SPLIT"    order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD1"      context="LIT_DEFER_STC_T_SPLIT"    order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD2"      context="LIT_DEFER_STC_T_SPLIT"    order="FRONT_TO_BACK" />
+
+      <SetShaderControl psWaveLimit="7" />
+
+      <DrawGeometry type="Terrain"      class="LOD0"      context="LIT_DEFER_N_FACING"    order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD1"      context="LIT_DEFER_N_FACING"    order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD2"      context="LIT_DEFER_N_FACING"    order="FRONT_TO_BACK" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="replace" depthTest="lessEqual" stencilMode="maskWrite" stencilRef="8"/>
+      <SetShaderControl vsLateAllocMax="22" psWaveLimit="0" />
+
+      <DrawGeometry type="Terrain"      class="LOD3"      context="LIT_DEFER_STC_T_SPLIT_FADE"    order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD3"      context="LIT_DEFER"          order="FRONT_TO_BACK" />
+
+      <DrawGeometry type="Terrain"      class="PLANET"    context="LIT_DEFER_LOW"         order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="ASTEROID"  context="LIT_DEFER_ASTEROID"    order="STATECHANGES" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="equal" stencilMode="maskWrite"/>      
+      <DrawGeometry type="InstanceMesh" class="Cutout"      context="LIT_DEFER_ZE_INSTANCE" order="MESH" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="equal" stencilMode="maskWrite" />
+      <DrawGeometry type="InstanceMesh" class="DoubleSided" context="LIT_DEFER_ZE_INSTANCE" order="MESH" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="replace" depthTest="lessEqual" stencilMode="maskReadWriteInvert" stencilRef="0" stencilMaskRead="9" stencilMaskWrite="8"/>
+      <DrawGeometry type="Mesh"         class="AtmosphereNear" context="PLANET_NEAR"      order="STATECHANGES"  />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="replace" depthTest="lessEqual" stencilMode="maskWrite" stencilRef="8"/>
+      <DrawGeometry type="Mesh"         class="Atmosphere"     context="PLANET"           order="STATECHANGES" />
+      
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="replace" depthTest="less" stencilMode="maskWrite" stencilRef="67"/>
+      <DrawGeometry type="Mesh"         class="GunOpaque"    context="LIT_DEFER"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="GunGlow"      context="LIT_DEFER"             order="STATECHANGES" />    
+      <DrawGeometry type="Mesh"         class="GunDecal"     context="LIT_DEFER"             order="STATECHANGES"  />
+     
+      <UnbindBuffers />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" stencilMode="maskRead" depthTest="always" />
+      <DoForwardLightLoop type="Mesh" class="Sky" context="CLEAR" order="BACK_TO_FRONT" />
+      
+      <EndTarget flushCB="true" flushDB="true" />
+    </Stage> 
+        
+    <Stage id="CopyDepth">
+      <!-- wait for clouds -->
+      <SyncComputeToGraphics compute="async" />
+
+      <BeginTarget target="DEPTH_LINEAR" />
+      <ColourMask channels="RGBA"/>
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <BindBuffer sampler="gBufferMap"  sourceRT="DEPTH" bufIndex="32" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="DEPTH_REV2LIN" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="MOTIONRESOLVE">
+      <BeginTarget target="MOTIONRESOLVE" depthTarget="DEPTH" readOnlyDepth="true"  />
+      <!--<DiscardTargetContents colBuf0="true" />   -->
+      <ColourMask channels="RGBA"/>
+
+      <BindBuffer sampler="gBufferMap"  sourceRT="GBUFFER" bufIndex="1" />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="DEPTH_LINEAR" bufIndex="0" />
+      <BindBuffer sampler="gBuffer3Map" sourceRT="GBUFFER" bufIndex="3" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false" stencilMode="maskread" stencilMask="140" stencilRef="0"/>
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="MOTIONRESOLVE" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false" stencilMode="maskread" stencilMask="136" stencilRef="8"/>
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="MOTIONRES_TERR" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false" stencilMode="maskread" stencilMask="132" stencilRef="4"/>
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="MOTIONRES_CLIP" />
+
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>         
+      
+      <Stage id="DepthDown">      
+      <SyncGraphicsToCompute compute="async" />
+      <BeginTarget target="DEPTH_DOWN" />
+      <ColourMask channels="RGBA"/>
+      <BindBuffer sampler="gBufferMap"   sourceRT="DEPTH_LINEAR"    bufIndex="0"   />
+      <SetContext zwrite="false" blendMode="replace" colourWrite="true" stencilMode="disabled" depthTest="always" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="DOWNSAMPLE_GBUFFERDEPTH" compute="async" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />    
+    </Stage>
+    
+    <Stage id="CloudsShadows">
+      <BeginTarget target="CLOUDSHADOWS" />
+      <ColourMask channels="RGBA"/>
+      <BindBuffer sampler="gBuffer1Map"  sourceRT="DEPTH_DOWN"    bufIndex="0"  />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuadMT material="Materials/Cloud.material.mbin" context="RENDER2D" width ="1.0" height="1.0" compute="async" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>    
+    
+    <Stage id="Shadow_All_Clear">
+      <BeginTarget target="SHADOWBUF" />
+      <SetShadowMap index="-1" />
+      <ColourMask channels="RGBA"/>
+      <ClearTarget depthBuf="true" colBuf0="false" excludeX360="false" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+
+    <Stage id="HBAO" enabled="false">
+    </Stage>
+
+    <Stage id="HBAO_LITE" enabled="false">  
+    </Stage>
+
+    <Stage id="GTAOGen_Low" enabled="false">
+      <BeginTarget target="GTAO_FRAME_0" />
+        <ColourMask channels="R"/>
+        <BindBuffer sampler="gBuffer1Map" sourceRT="DEPTH" bufIndex="32" />
+        <BindBuffer sampler="gBuffer2Map" sourceRT="GBUFFER" bufIndex="2" />
+        <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" stencilMode="disabled" depthTest="always" />
+        <DrawQuad material="materials/PostProcess.material.mbin" context="GTAO_GEN_LOW" compute="async" wavesPerSimd="8" />
+        <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="GTAOGen_Medium" enabled="false">
+      <BeginTarget target="GTAO_FRAME_0" />
+        <ColourMask channels="R"/>
+        <BindBuffer sampler="gBuffer1Map" sourceRT="DEPTH" bufIndex="32" />
+        <BindBuffer sampler="gBuffer2Map" sourceRT="GBUFFER" bufIndex="2" />
+        <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" stencilMode="disabled" depthTest="always" />
+        <DrawQuad material="materials/PostProcess.material.mbin" context="GTAO_GEN_MEDIUM" compute="async" wavesPerSimd="8" />
+        <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="GTAOGen_High" enabled="false">  
+      <BeginTarget target="GTAO_FRAME_0" />
+        <ColourMask channels="R"/>
+        <BindBuffer sampler="gBuffer1Map" sourceRT="DEPTH" bufIndex="32" />
+        <BindBuffer sampler="gBuffer2Map" sourceRT="GBUFFER" bufIndex="2" />
+        <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" stencilMode="disabled" depthTest="always" />
+        <DrawQuad material="materials/PostProcess.material.mbin" context="GTAO_GEN_HIGH" compute="async" wavesPerSimd="8" />
+        <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="GTAOFin" enabled="false">
+
+      <BeginTarget target="GTAO_FRAME_1" />
+        <ColourMask channels="R" />
+        <BindBuffer sampler="gBufferMap"  sourceRT="GBUFFER" bufIndex="2" />               
+        <BindBuffer sampler="gBuffer1Map" sourceRT="GTAO_FRAME_0" bufIndex="0" />
+        <BindBuffer sampler="gBuffer2Map" sourceRT="DEPTH_LINEAR" bufIndex="0"  />
+        <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" stencilMode="disabled" depthTest="always" />
+        <DrawQuad material="materials/PostProcess.material.mbin" context="GTAO_SPATIAL_H_DENOISE" compute="async" wavesPerSimd="5" />
+        <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="GTAO_FRAME_0" />
+        <ColourMask channels="R" />
+       <BindBuffer sampler="gBufferMap"  sourceRT="GBUFFER" bufIndex="2" />
+       <BindBuffer sampler="gBuffer1Map" sourceRT="GTAO_FRAME_1" bufIndex="0" />
+        <BindBuffer sampler="gBuffer2Map" sourceRT="DEPTH_LINEAR" bufIndex="0"  />
+        <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" stencilMode="disabled" depthTest="always" />
+        <DrawQuad material="materials/PostProcess.material.mbin" context="GTAO_SPATIAL_V_DENOISE" compute="async" wavesPerSimd="5" />
+        <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+           
+      <BeginTarget target="GTAO_HISTORY_0" />
+        <ColourMask channels="RG" />
+        <BindBuffer sampler="gBufferMap"  sourceRT="GBUFFER" bufIndex="2" /> 
+        <BindBuffer sampler="gBuffer1Map" sourceRT="GTAO_HISTORY_1" bufIndex="0" />
+        <BindBuffer sampler="gBuffer2Map" sourceRT="DEPTH" bufIndex="32" />
+        <BindBuffer sampler="gBuffer3Map" sourceRT="GTAO_FRAME_0" bufIndex="0" />
+        <BindBuffer sampler="gBuffer4Map" sourceRT="MOTIONRESOLVE" bufIndex="0" />
+        <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" stencilMode="disabled" depthTest="always" />
+        <DrawQuad material="materials/PostProcess.material.mbin" context="GTAO_TEMPORAL_FILTER" compute="async" wavesPerSimd="5" />
+        <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />      
+    </Stage>
+    
+    <Stage id="GTAOCopy" enabled="false">
+      <BeginTarget target="HBAOBUF" />
+        <ColourMask channels="R" />
+        <BindBuffer sampler="gBufferMap" sourceRT="GTAO_HISTORY_0" bufIndex="0" />
+        <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" stencilMode="disabled" depthTest="always" />
+        <DrawQuad material="materials/PostProcess.material.mbin" context="BILATERAL_SIMPLE_REDONLY_UPSAMPLE" compute="async" wavesPerSimd="5"/>
+        <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <SwapTargets targetA="GTAO_HISTORY_0" targetB="GTAO_HISTORY_1" />
+    </Stage>  
+    
+    <Stage id="GTAOCopyUltra" enabled="false">
+      <BeginTarget target="HBAOBUF" />
+        <ColourMask channels="R" />
+        <BindBuffer sampler="gBufferMap" sourceRT="GTAO_HISTORY_0" bufIndex="0" />
+        <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" stencilMode="disabled" depthTest="always" />
+        <DrawQuad material="materials/PostProcess.material.mbin" context="COPY" compute="async" wavesPerSimd="5"/>
+        <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <SwapTargets targetA="GTAO_HISTORY_0" targetB="GTAO_HISTORY_1" />
+    </Stage>
+
+    <Stage id="NO_HBAO" enabled="false">
+      <BeginTarget target="HBAOBUF" />
+      
+      <ColourMask channels="R"/>
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" stencilMode="disabled" />
+      <ClearTarget colBuf0="true"   colBuf1="false" colBuf2="false"  colBuf3="false" colBuf4="false" depthBuf="false"   stencilBuf="false" col_R="1.0" />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="Decals">
+
+      <BeginTarget target="GBUFFER" depthTarget="DEPTH" readOnlyDepth="true" />
+      <BindBuffer sampler="gBufferMap"   sourceRT="DEPTH_LINEAR"    bufIndex="0"   />
+
+      <ColourMask channels="RGB" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="less" stencilMode="disabled"/>
+      <DrawGeometry type="InstanceMesh" class="Decal"    context="LIT_DEFER_INSTANCE"    order="MESH" singlePassStereo="false" />
+      <DrawGeometry type="Mesh"         class="Decal"    context="LIT_DEFER"             order="STATECHANGES" singlePassStereo="false" />
+
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+      
+    </Stage>
+
+   <Stage id="Shadow_0_Clear" enabled="false">
+      <BeginTarget target="SHADOWBUF" />
+      <ColourMask channels="RGBA"/>
+      <SetShadowMap index="0" />
+      <ClearTarget depthBuf="true" colBuf0="false" excludeX360="false" depthViewportOnly="true" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+    </Stage>
+
+    <Stage id="Shadow_0">
+      
+      <BeginTarget target="SHADOWBUF" />
+
+      <UpdateShadowMap />
+
+      <ColourMask channels="RGBA"/>
+      <!--PS4: default setting after ClearTarget equals RT0-RGBA, so no need to call ColourMask again-->
+      
+      <!--PS4: we're using HTile but not allowing compression, to save decompressing the very large shadowmap target at the end -->
+      
+
+      <SetShadowMap index="0" />
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="lessEqual" />
+      <DrawShadowGeometry type="Mesh"         class="Glow"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="Opaque"         context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="GunOpaque"      context="SHADOW_FADE"            order="STATECHANGES" />
+      <DrawShadowGeometry type="Mesh"         class="OpaqueBeforeUI" context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="Cutout"         context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="Highlight"      context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="ShadowOnly"     context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="InstanceMesh" class="Opaque"         context="SHADOW_INSTANCE_FADE"   order="MESH"/>
+      <DrawShadowGeometry type="InstanceMesh" class="Cutout"         context="SHADOW_INSTANCE_FADE"   order="MESH"/>
+      <DrawShadowGeometry type="InstanceMesh" class="Glow"           context="SHADOW_INSTANCE_FADE"   order="MESH"/>
+
+      <SetContext zwrite="true" colourWrite="false" cullMode="none" blendMode="replace" depthTest="lessEqual" />
+      <DrawShadowGeometry type="Mesh"         class="DoubleSided"             context="SHADOW_FADE"            order="STATECHANGES" />
+      <DrawShadowGeometry type="InstanceMesh" class="DoubleSided"             context="SHADOW_INSTANCE_FADE"   order="MESH"/>
+      <DrawShadowGeometry type="Mesh"         class="HighlightDoubleSided"    context="SHADOW_FADE"            order="STATECHANGES" />
+
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="lessEqual" />
+      <DrawShadowGeometry type="Terrain"      class="LOD0"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Terrain"      class="LOD1"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Terrain"      class="LOD2"           context="SHADOW_FADE"            order="STATECHANGES"/>
+
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+
+    <Stage id="Shadow_1_Clear" enabled="false">
+      <BeginTarget target="SHADOWBUF" />
+      <ColourMask channels="RGBA"/>
+      <SetShadowMap index="1" />
+      <ClearTarget depthBuf="true" colBuf0="false" excludeX360="false" depthViewportOnly="true" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+    </Stage>
+
+    <Stage id="Shadow_1">
+      
+      <BeginTarget target="SHADOWBUF" />
+
+      <UpdateShadowMap />
+
+      <ColourMask channels="RGBA"/>
+      <!--PS4: default setting after ClearTarget equals RT0-RGBA, so no need to call ColourMask again-->
+      
+      <!--PS4: we're using HTile but not allowing compression, to save decompressing the very large shadowmap target at the end -->
+      
+
+      <SetShadowMap index="1" />
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="lessEqual" UniformBufferIndex="1" />
+      <DrawShadowGeometry type="Mesh"         class="Glow"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="Opaque"         context="SHADOW_FADE"            order="STATECHANGES" />
+      <DrawShadowGeometry type="Mesh"         class="GunOpaque"      context="SHADOW_FADE"            order="STATECHANGES" />
+      <DrawShadowGeometry type="Mesh"         class="Cutout"         context="SHADOW_FADE"            order="STATECHANGES" />
+      <DrawShadowGeometry type="Mesh"         class="Highlight"      context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="ShadowOnly"     context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="InstanceMesh" class="Opaque"         context="SHADOW_INSTANCE_FADE"   order="MESH" />
+      <DrawShadowGeometry type="InstanceMesh" class="Cutout"         context="SHADOW_INSTANCE_FADE"   order="MESH" />
+      <DrawShadowGeometry type="InstanceMesh" class="Glow"           context="SHADOW_INSTANCE_FADE"   order="MESH"/>
+
+      <SetContext zwrite="true" colourWrite="false" cullMode="none" blendMode="replace" depthTest="lessEqual" UniformBufferIndex="1" />
+      <DrawShadowGeometry type="Mesh"         class="DoubleSided"             context="SHADOW_FADE"            order="STATECHANGES" />
+      <DrawShadowGeometry type="InstanceMesh" class="DoubleSided"             context="SHADOW_INSTANCE_FADE"   order="MESH"/>
+      <DrawShadowGeometry type="Mesh"         class="HighlightDoubleSided"    context="SHADOW_FADE"            order="STATECHANGES" />
+
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="lessEqual" UniformBufferIndex="1" />
+      <DrawShadowGeometry type="Terrain"      class="LOD0"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Terrain"      class="LOD1"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Terrain"      class="LOD2"           context="SHADOW_FADE"            order="STATECHANGES"/>
+
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+
+    <Stage id="Shadow_2_Clear" enabled="false">
+      <BeginTarget target="SHADOWBUF" />
+      <ColourMask channels="RGBA"/>
+      <SetShadowMap index="2" />
+      <ClearTarget depthBuf="true" colBuf0="false" excludeX360="false" depthViewportOnly="true" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+    </Stage>
+
+    <Stage id="Shadow_2">
+      
+      <BeginTarget target="SHADOWBUF" />
+
+      <UpdateShadowMap />
+
+      <ColourMask channels="RGBA"/>
+      
+      <SetShadowMap index="2" />
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="lessEqual" UniformBufferIndex="2" />
+      <!-- <DrawShadowGeometry type="Mesh"         class="Glow"           context="SHADOW_FADE"            order="STATECHANGES"/>  -->
+      <!-- <DrawShadowGeometry type="Mesh"         class="Opaque"         context="SHADOW_FADE"            order="STATECHANGES" /> -->
+      <!-- <DrawShadowGeometry type="Mesh"         class="Cutout"         context="SHADOW_FADE"            order="STATECHANGES" /> -->
+      <!-- <DrawShadowGeometry type="Mesh"         class="Highlight"      context="SHADOW_FADE"            order="STATECHANGES"/>  -->
+      <!-- <DrawShadowGeometry type="Mesh"         class="ShadowOnly"     context="SHADOW_FADE"            order="STATECHANGES"/>  -->
+      <DrawShadowGeometry type="InstanceMesh" class="Opaque"         context="SHADOW_INSTANCE_FADE"   order="MESH" />
+      <DrawShadowGeometry type="InstanceMesh" class="Cutout"         context="SHADOW_INSTANCE_FADE"   order="MESH" />
+      <DrawShadowGeometry type="InstanceMesh" class="Glow"           context="SHADOW_INSTANCE_FADE"   order="MESH"/>
+
+      <SetContext zwrite="true" colourWrite="false" cullMode="none" blendMode="replace" depthTest="lessEqual" UniformBufferIndex="2"  />
+      <!-- <DrawShadowGeometry type="Mesh"         class="DoubleSided"             context="SHADOW_FADE"            order="STATECHANGES" />  -->
+      <DrawShadowGeometry type="InstanceMesh" class="DoubleSided"             context="SHADOW_INSTANCE_FADE"   order="MESH"/>
+      <!-- <DrawShadowGeometry type="Mesh"         class="HighlightDoubleSided"    context="SHADOW_FADE"            order="STATECHANGES" />  -->
+
+      <!--<SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="lessEqual" UniformBufferIndex="2" />  -->      
+      <!-- <DrawShadowGeometry type="Terrain"      class="LOD0"           context="SHADOW_FADE"            order="STATECHANGES"/> -->
+      <!-- <DrawShadowGeometry type="Terrain"      class="LOD1"           context="SHADOW_FADE"            order="STATECHANGES"/> -->
+      <!-- <DrawShadowGeometry type="Terrain"      class="LOD2"           context="SHADOW_FADE"            order="STATECHANGES"/> -->
+
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+
+    <Stage id="Shadow_End">
+      <BeginTarget target="SHADOWBUF" />
+      <SetShadowMap index="-1" />
+
+      <SetDepthBufferControl allowCompression="true" />    
+      <EndTarget flushCB="false" flushDB="true" />
+    </Stage>
+         
+    <Stage id="SkyScratchPad" enabled="false" >
+
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH"/>
+      <ColourMask channels="RGB" />      
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" stencilMode="maskRead"/>
+      <BindBuffer sampler="gBufferMap"   sourceRT="GBUFFER"    bufIndex="2"   />
+      <DoForwardLightLoop type="Mesh" class="Sky" context="SCRATCHPAD" order="BACK_TO_FRONT" singlePassStereo="false" />
+
+      <EndTarget flushCB="true" flushDB="false" />
+      
+      <UnbindBuffers />
+
+    </Stage>
+    
+    <Stage id="Sky">
+
+      <SetShadowMap index="-1" />
+      <UpdateShadowMap />
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH"/>
+
+      <ColourMask channels="RGBA" />
+
+      <!-- Space/Night Sky -->      
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" stencilMode="maskRead"/>
+      <BindBuffer sampler="gBufferMap"   sourceRT="GBUFFER"    bufIndex="2"   />
+      <DoForwardLightLoop type="Mesh" class="Sky" context="LIGHTING" order="BACK_TO_FRONT" singlePassStereo="false" />
+      <UnbindBuffers />
+
+      <!-- Starfield -->
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="add" depthTest="always" stencilMode="maskRead" />
+      <DrawGeometry type="PStream" class="Opaque"    context="PSTREAM_SYSTEM"    order="STATECHANGES" />
+
+      <EndTarget flushCB="true" flushDB="false" />
+
+    </Stage>
+
+    <Stage id="Sunlight">
+      <SyncComputeToGraphics compute="async" />
+      <BeginTarget target="SUNOUT_0" depthTarget="DEPTH" />
+
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"   sourceRT="GBUFFER"    bufIndex="0"  />
+      <BindBuffer sampler="gBuffer1Map"  sourceRT="DEPTH_LINEAR"    bufIndex="0"  />
+      <BindBuffer sampler="gBuffer2Map"  sourceRT="GBUFFER"    bufIndex="2"  />
+      <BindBuffer sampler="gBuffer3Map"  sourceRT="GBUFFER"    bufIndex="3"  />
+      <BindBuffer sampler="gShadowMap"   sourceRT="SHADOWBUF"  bufIndex="32" />
+      <BindBuffer sampler="gCloudShadowMap"  sourceRT="CLOUDSHADOWS"    bufIndex="0" addressMode="wrap" />
+      <BindBuffer sampler="gBuffer4Map"  sourceRT="HBAOBUF"    bufIndex="0" addressMode="clamp" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" stencilMode="maskReadInvert" stencilMask="9" stencilRef="0"/>
+      <DrawQuad material="materials/Light.material.mbin" context="SUNLIGHT_SPLIT" />
+      <!-- <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" stencilMode="maskread" stencilMask="8" stencilRef="8"/>
+      <DrawQuadMT material="materials/Light.material.mbin" context="SUNLIGHT_TERRAIN" /> -->
+
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+    </Stage>
+    <Stage id="ShadowApply" >
+
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH" />
+
+      <ColourMask channels="RGB"  colBuf1="false"  colBuf2="false"  />
+      <BindBuffer sampler="gBufferMap"   sourceRT="SUNOUT_0"    bufIndex="1"  />
+      <BindBuffer sampler="gBuffer1Map"  sourceRT="DEPTH_LINEAR"    bufIndex="0"  />
+      <BindBuffer sampler="gShadowMap"   sourceRT="SHADOWBUF"  bufIndex="32" />
+      <BindBuffer sampler="gCloudShadowMap"  sourceRT="CLOUDSHADOWS"    bufIndex="0" addressMode="wrap" />
+      <BindBuffer sampler="gBuffer4Map"  sourceRT="HBAOBUF"    bufIndex="0" addressMode="clamp" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="always" stencilMode="maskReadInvert" stencilMask="9" stencilRef="0"/>
+      <DrawQuadMT material="materials/Light.material.mbin" context="SHADOW_APPLY"/>
+
+      <UnbindBuffers />
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+
+    <Stage id="SpotlightsTiled" enabled="false">
+    </Stage>
+
+
+    <Stage id="Spotlights">
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH" />
+
+      <ColourMask channels="RGB"  colBuf1="false"  colBuf2="false" />
+      <BindBuffer sampler="gBufferMap"   sourceRT="GBUFFER"    bufIndex="0"  />
+      <BindBuffer sampler="gBuffer1Map"  sourceRT="DEPTH_LINEAR"    bufIndex="0"  />
+      <BindBuffer sampler="gBuffer2Map"  sourceRT="GBUFFER"    bufIndex="2"  />
+      <BindBuffer sampler="gBuffer3Map"  sourceRT="GBUFFER"    bufIndex="3"  />
+      <BindBuffer sampler="gBuffer4Map"  sourceRT="HBAOBUF"    bufIndex="0" addressMode="clamp" />
+      
+      <BindBuffer sampler="gShadowMap"   sourceRT="SHADOWBUF"  bufIndex="32" />
+      <BindBuffer sampler="gCloudShadowMap"  sourceRT="CLOUDSHADOWS"    bufIndex="0" addressMode="wrap" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="add"    stencilMode="maskReadInvert" stencilMask="9" stencilRef="0" depthTest="greaterEqual" />
+      <DoDeferredLightLoop context="SPOTLIGHT_INNER" inner="true"/>
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add"    stencilMode="maskReadInvert" stencilMask="9" stencilRef="0" depthTest="less" />
+      <DoDeferredLightLoop context="SPOTLIGHT_OUTER" inner="false"/>
+
+
+      <SetContext stencilMode="disabled" />
+      <UnbindBuffers />
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+
+    <Stage id="TileVisualise" enabled="false">
+    </Stage>
+
+    <!--<Stage id="WaterFromAbove" >
+
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH"/>
+      <ColourMask channels="RGBA"/>
+
+      --><!-- Water --><!--
+      <BindBuffer sampler="gShadowMap"   sourceRT="SHADOWBUF"  bufIndex="32" />
+      <BindBuffer sampler="gBuffer1Map"   sourceRT="DEPTH_LINEAR"    bufIndex="0"  />
+      <BindBuffer sampler="gCloudShadowMap"  sourceRT="CLOUDSHADOWS"    bufIndex="0" addressMode="wrap" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="blend" depthTest="always" stencilMode="maskWrite" stencilRef="4"  stencilMask="4" />
+      <DrawQuadMT material="Models/Planets/Terrain/Water.material.mbin" context="FULLSCREEN"/>
+
+      <UnbindBuffers />
+      <EndTarget flushCB="false" flushDB="false" />
+
+    </Stage>-->
+    
+    <Stage id="WaterFromAbove"  >   
+      <BeginTarget target="WATER" depthTarget="PARTICLES_DEPTH"/>
+      <ColourMask channels="RGBA"/>
+      <ClearTarget depthBuf="true" colBuf0="true" excludeX360="true" col_R="0.0" col_G="0.0" col_B="0.0" />
+      
+      <!-- Water --> 
+      <BindBuffer sampler="gBuffer1Map"   sourceRT="DEPTH_DOWN"    bufIndex="0"  />
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" stencilMode="disabled" />
+      <DrawQuadMT material="Models/Planets/Terrain/Water.material.mbin" context="FULLSCREEN"/>
+
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="true" />
+      
+      <BeginTarget target="DEPTH_LINEAR" depthTarget="DEPTH" />
+      <ColourMask channels="RGBA"/>
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="replace" depthTest="less" alphaToCoverage="false" stencilMode="maskWrite" stencilRef="4"  stencilMask="4" />
+      <BindBuffer sampler="gBufferMap"  sourceRT="PARTICLES_DEPTH" bufIndex="32" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="DEPTH_REV2LIN_LESS" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="true" />
+
+      <BeginTarget target="DEPTH_DOWN" />
+      <ColourMask channels="RGBA"/>
+      <BindBuffer sampler="gBufferMap"   sourceRT="DEPTH_LINEAR"    bufIndex="0"   />
+      <SetContext zwrite="false" blendMode="replace" colourWrite="true" stencilMode="disabled" depthTest="always" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="DOWNSAMPLE_GBUFFERDEPTH" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+      
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH"/>
+      <ColourMask channels="RGB" />
+           
+      <BindBuffer sampler="gBufferMap"  sourceRT="WATER" bufIndex="0" />
+      <SetContext zwrite="false" blendMode="blend" colourWrite="true" depthTest="always" stencilMode="maskread" stencilRef="4"  stencilMask="4" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="COPY_SRGB_TO_P3"  />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+    </Stage>
+
+    <Stage id="Shadow_DS" enabled="false">
+    </Stage>
+
+    <Stage id="Volumetrics">
+
+      <BeginTarget target="VOLUME" />
+      <ColourMask channels="RGBA" colBuf1="false" />
+      <ClearTarget depthBuf="false" colBuf0="true" colBuf1="true" excludeX360="true" col_R="0.0" col_G="0.0" col_B="0.0" />
+
+      <BindBuffer sampler="gBufferMap"   sourceRT="DEPTH_DOWN" bufIndex="0" />
+      <BindBuffer sampler="gBuffer1Map"  sourceRT="GBUFFER"    bufIndex="2"  />
+      <BindBuffer sampler="gShadowMap"   sourceRT="SHADOWBUF"  bufIndex="32" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" stencilMode="disabled" depthTest="always" blendMode="add" />
+      <DoForwardLightLoop type="Mesh" class="AtmosphereNear" context="SCATTER_MASK" order="FRONT_TO_BACK" singlePassStereo="false" />
+      <SetContext cullMode="back"/>
+      <UnbindBuffers />
+      
+      <ColourMask channels="RGBA"/>
+
+      <BindBuffer sampler="gBufferMap"   sourceRT="DEPTH_DOWN" bufIndex="0" />
+      <BindBuffer sampler="gBuffer1Map"  sourceRT="GBUFFER"    bufIndex="2"  />
+      <BindBuffer sampler="gShadowMap"   sourceRT="SHADOWBUF"  bufIndex="32" />
+
+      <SetContext zwrite="false" colourWrite="true" stencilMode="disabled" depthTest="always" blendMode="add" />
+      <DrawQuadMT material="materials/Light.material.mbin" context="SCATTERING"  />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLUR1" />
+      <BindBuffer sampler="gBufferMap"  sourceRT="VOLUME" bufIndex="0"   />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="DEPTH_DOWN"  bufIndex="0"   />
+      <SetContext zwrite="false" blendMode="replace" colourWrite="true" stencilMode="disabled" depthTest="always" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="DEPTH_AWARE_H_GUASS" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="VOLUME" />
+      <ColourMask channels="RGBA" colBuf1="false" />
+      <BindBuffer sampler="gBufferMap"  sourceRT="BLUR1"   bufIndex="0"   />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="DEPTH_DOWN"  bufIndex="0"   />
+      <SetContext zwrite="false" blendMode="replace" colourWrite="true" stencilMode="disabled" depthTest="always" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="DEPTH_AWARE_V_GUASS" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="PlanetCloud">
+      
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH"/>
+      <ColourMask channels="RGBA" />
+      
+       <!--Cloud sphere around planets--> 
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="less" />
+      <DoForwardLightLoop type="Mesh" class="Atmosphere" context="CLOUDSHADOW" order="BACK_TO_FRONT" />
+    
+      <ColourMask channels="RGB" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="less" />
+      <DoForwardLightLoop type="Mesh" class="Atmosphere" context="CLOUD" order="BACK_TO_FRONT" />
+    
+      <EndTarget flushCB="false" flushDB="false" />
+      
+    </Stage>
+          
+    <Stage id="VolumetricsUPS">
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH"/>
+      <ColourMask channels="RGBA" />
+           
+      <BindBuffer sampler="gBufferMap"  sourceRT="VOLUME"        bufIndex="0"  />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="DEPTH_DOWN"    bufIndex="0" />
+      <BindBuffer sampler="gBuffer2Map" sourceRT="DEPTH_LINEAR"  bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.25" /> 
+      <SetContext zwrite="false" blendMode="blend" colourWrite="true" depthTest="always" stencilMode="maskRead" stencilMask="128" stencilRef="0" />
+      <DrawQuad material="materials/PostProcess.material.mbin" context="BILATERAL_BLEND_UPSAMPLE"  />
+      <UnbindBuffers />
+      
+      <ColourMask channels="RGB" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" stencilMode="disabled" depthTest="lessEqual" blendMode="add" />
+      <BindBuffer sampler="gBufferMap"   sourceRT="DEPTH_LINEAR"  bufIndex="0" />
+      <DoForwardLightLoop type="Mesh" class="Atmosphere" context="SCATTERING" order="FRONT_TO_BACK" singlePassStereo="false" />
+      <UnbindBuffers />
+                  
+      <ColourMask channels="RGBA" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="blend" depthTest="always" stencilMode="maskRead" stencilMask="128" stencilRef="0" /> 
+      <BindBuffer sampler="gBufferMap"   sourceRT="DEPTH_LINEAR"  bufIndex="0" />
+      <DoForwardLightLoop type="Mesh"    class="Rings"            context="RINGS" order="BACK_TO_FRONT" singlePassStereo="false" />
+      <UnbindBuffers />
+           
+      <SetContext cullMode="back"/>
+      <EndTarget flushCB="false" flushDB="false" />    
+
+    </Stage>
+
+    <Stage id="BlackHole">
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH"/>
+      <ColourMask channels="RGBA" />
+      <BindBuffer sampler="gShadowMap"       sourceRT="SHADOWBUF"       bufIndex="32" />
+      <BindBuffer sampler="gCloudShadowMap"  sourceRT="CLOUDSHADOWS"    bufIndex="0" addressMode="wrap" />
+      <SetContext zwrite="true" colourWrite="true" cullMode="back"  blendMode="blend" depthTest="less" />
+      <DoForwardLightLoop type="Mesh"     class="BlackHoleBack"       context="LIT_FORWARD"    order="STATECHANGES" />
+      <UnbindBuffers />
+      <EndTarget flushCB="false" flushDB="false" />
+
+    </Stage>
+
+    <Stage id="CloudsCopy">     
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH"/>
+      <ColourMask channels="RGBA" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="blend" depthTest="always" />
+      <BindBuffer sampler="gBufferMap"     sourceRT="CLOUD_BLURBUF1"     bufIndex="0" />
+      <BindBuffer sampler="gCloudDepthMap" sourceRT="CLOUDS_HIGH"     bufIndex="1" />
+      <BindBuffer sampler="gDepthMap"      sourceRT="DEPTH_LINEAR"    bufIndex="0" />
+      <DrawQuadMT material="materials/Cloud.material.mbin" context="COPY" width ="1.0" height="1.0" />
+      <UnbindBuffers />
+      <EndTarget flushCB="false" flushDB="false" /> 
+    </Stage>
+
+    <Stage id="WaterFromBelow">
+
+      <BeginTarget target="WATER" depthTarget="PARTICLES_DEPTH"/>
+      <ColourMask channels="RGBA"/>
+      <ClearTarget depthBuf="true" colBuf0="true" excludeX360="true" col_R="0.0" col_G="0.0" col_B="0.0" />
+
+      <!-- Water -->
+      <BindBuffer sampler="gShadowMap"   sourceRT="SHADOWBUF"  bufIndex="32" />
+      <BindBuffer sampler="gBuffer1Map"   sourceRT="DEPTH_DOWN"    bufIndex="0"  />
+      <BindBuffer sampler="gCloudShadowMap"  sourceRT="CLOUDSHADOWS"    bufIndex="0" addressMode="wrap" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="blend" depthTest="always" />
+      <DrawQuadMT material="Models/Planets/Terrain/Water.material.mbin" context="FULLSCREEN_BELOW"/>
+
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="true" />
+
+      <BeginTarget target="DEPTH_LINEAR" depthTarget="DEPTH" />
+      <ColourMask channels="RGBA"/>
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="replace" depthTest="less" alphaToCoverage="false" stencilMode="maskWrite" stencilRef="4"  stencilMask="4" />
+      <BindBuffer sampler="gBufferMap"  sourceRT="PARTICLES_DEPTH" bufIndex="32" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="DEPTH_REV2LIN_LESS" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="true" />
+
+      <BeginTarget target="DEPTH_DOWN" />
+      <ColourMask channels="RGBA"/>
+      <BindBuffer sampler="gBufferMap"   sourceRT="DEPTH_LINEAR"    bufIndex="0"   />
+      <SetContext zwrite="false" blendMode="replace" colourWrite="true" stencilMode="disabled" depthTest="always" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="DOWNSAMPLE_GBUFFERDEPTH"/>
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH"/>
+      <ColourMask channels="RGBA" />
+
+      <BindBuffer sampler="gBufferMap"  sourceRT="WATER"     bufIndex="0" />
+      <SetContext zwrite="false" blendMode="blend" colourWrite="true" depthTest="always" stencilMode="maskread" stencilRef="4"  stencilMask="4" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="COPY"  />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    
+    </Stage>
+
+    <Stage id="TerrainEdits" enabled="false">
+
+        <BeginTarget target="BLENDED_ABOVE" depthTarget="DEPTH"/>
+
+        <ColourMask channels="RGBA" colBuf1="false" />
+
+        <!-- Terrain Edits -->
+        <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="lessEqual" stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+        <DrawGeometry type="Terrain"      class="LOD0"      context="EDITS"        order="FRONT_TO_BACK" />
+        <DrawGeometry type="Terrain"      class="LOD0"      context="EDITS_CACHE_FB"   order="FRONT_TO_BACK" />
+        <DrawGeometry type="Terrain"      class="LOD0"      context="EDITS_TESS_FB"   order="FRONT_TO_BACK" />
+        <DrawGeometry type="Terrain"      class="LOD0"      context="EDITS_CACHE"   order="FRONT_TO_BACK" />
+        <DrawGeometry type="Terrain"      class="LOD0"      context="EDITS_TESS"   order="FRONT_TO_BACK" />
+        <DrawGeometry type="Terrain"      class="LOD1"      context="EDITS"        order="FRONT_TO_BACK" />
+
+        <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+    
+    <Stage id="BlendedAbove">
+      
+      <BeginTarget target="BLENDED_ABOVE" depthTarget="DEPTH"/>
+
+      <ColourMask channels="RGBA" colBuf1="false" />
+      <BindBuffer sampler="gShadowMap"       sourceRT="SHADOWBUF"       bufIndex="32" />
+      <BindBuffer sampler="gCloudShadowMap"  sourceRT="CLOUDSHADOWS"    bufIndex="0" addressMode="wrap" />
+
+      <!-- Quads -->
+      <SetContext zwrite="true" colourWrite="true" cullMode="front"  blendMode="blend" depthTest="less" stencilMode="maskWrite" stencilRef="4"  stencilMask="4" />
+      <DoForwardLightLoop type="QUAD"     class="Opaque"  context="LIGHTING"  order="STATECHANGES" />
+      <SetContext zwrite="true" colourWrite="true" cullMode="back"  blendMode="blend" depthTest="less" stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="QUAD"     class="Opaque"  context="LIGHTING"  order="STATECHANGES" />
+
+      <!-- Lines -->
+      <ColourMask channels="RGB" colBuf1="false" />
+      <!--a = alpha offset, b = noise threshold, c = is underground, d = alpha noise factor-->
+      <BindBuffer sampler="gBufferMap" sourceRT="DEPTH_LINEAR" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none"  blendMode="add" depthTest="always" stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="LINE"     class="Opaque"  context="SUBSTANCES"  order="STATECHANGES"  singlePassStereo="false" />
+        
+      <SetContext zwrite="false" colourWrite="true" cullMode="none"  blendMode="add" depthTest="greater" stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DrawGeometry       type="Mesh"     class="TeleportTravelMarker" context="LIT_FORWARD"             order="STATECHANGES" />
+
+      <ColourMask channels="RGB" colBuf1="false" />
+      <!-- player gun additive. has to be rendered before the laser so it can lay down the stencil.-->
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="less" stencilMode="maskWrite" stencilRef="71" stencilMask="71" />
+      <DrawGeometry type="Mesh"         class="GunAdditive"    context="LIT_FORWARD"             order="STATECHANGES" />
+
+      <!-- Transparent Objects -->
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="Mesh"     class="Additive"    context="LIT_FORWARD" order="BACK_TO_FRONT" />
+
+      <ColourMask channels="RGBA" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="Mesh"     class="Translucent" context="LIT_FORWARD" order="BACK_TO_FRONT" />
+      <DoForwardLightLoop type="Mesh"     class="WarpInShip"  context="LIT_FORWARD" order="BACK_TO_FRONT" />
+      <DoForwardLightLoop type="Mesh"     class="Rainbow"     context="RAINBOW"     order="BACK_TO_FRONT" />
+
+      <!-- PlaneSpotlight Object -->
+      <ColourMask channels="RGB" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="add" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="Mesh"     class="PlaneSpot"    context="PLANESPOT" order="BACK_TO_FRONT" />
+
+      <!--<ClearTarget colBuf0="false" depthBuf="false" stencilBuf="true" />-->
+      <ColourMask channels="RGB" colBuf1="true" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="lessEqual" stencilMode="maskWrite"  stencilRef="36"  stencilMask="36"/>
+      <DoForwardLightLoop type="Mesh"     class="Highlight"            context="LIT_FORWARD_WITH_MASK" order="BACK_TO_FRONT" />
+      <SetContext stencilMode="disabled" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="blend" depthTest="lessEqual" stencilMode="maskWrite"  stencilRef="36"  stencilMask="36"/>
+      <DoForwardLightLoop type="Mesh"     class="HighlightDoubleSided" context="LIT_FORWARD_WITH_MASK" order="BACK_TO_FRONT" />
+      <SetContext stencilMode="disabled" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="blend" depthTest="lessEqual" stencilMode="maskWrite"   stencilRef="36"  stencilMask="36"/>
+      <DoForwardLightLoop type="Mesh"     class="HighlightTrans"            context="LIT_FORWARD_WITH_MASK" order="BACK_TO_FRONT" />
+      <SetContext stencilMode="disabled" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="blend" depthTest="lessEqual" stencilMode="maskWrite"  stencilRef="36"  stencilMask="36"/>
+      <DoForwardLightLoop type="Mesh"     class="HighlightTransDoubleSided" context="LIT_FORWARD_WITH_MASK" order="BACK_TO_FRONT" />
+      <SetContext stencilMode="disabled" />
+
+      <!-- Trails -->
+      <ColourMask channels="RGB" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="blend" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="Trail" class="Translucent" context="LIGHTING" order="STATECHANGES" />
+
+      <ColourMask channels="RGB" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="add" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4"  />
+      <DoForwardLightLoop type="Trail" class="Additive" context="LIGHTING"    order="STATECHANGES" />
+
+      <!--Single Lines-->
+      <ColourMask channels="RGBA" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none"  blendMode="blend" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4" />
+      <DoForwardLightLoop type="SingleLine" class="Opaque" context="LIGHTING" order="STATECHANGES" />
+
+      <!--Single Lines-->
+      <ColourMask channels="RGB" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="add" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4" />
+      <DoForwardLightLoop type="SingleLine" class="Additive" context="LIGHTING" order="STATECHANGES" />
+      <SetContext stencilMode="disabled" />
+
+      <!-- Markers -->
+      <ColourMask channels="RGBA" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4" />
+      <DoForwardLightLoop type="Mesh" class="Map" context="SCREEN_MAP" order="BACK_TO_FRONT" />
+
+      <!-- Glow Translucent RGB -->
+      <ColourMask channels="RGB" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="Blend_OutputAlpha" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4" />
+      <DoForwardLightLoop type="Mesh"  class="GlowTranslucent" context="LIT_FORWARD" order="BACK_TO_FRONT" />
+
+      <SetContext zwrite="false" colourWrite="false" cullMode="none" blendMode="add" depthTest="always" stencilMode="maskWrite" stencilRef="4"  stencilMask="7" />
+
+      <!-- render the player laser stencil-only, to mask it in the TAA -->
+      <!-- results in some overzealous clipping in AA but should be hard to see, the gun moves a lot -->
+      <DoForwardLightLoop type="SingleLine" class="PlayerGunLaser" context="LIGHTING" order="STATECHANGES" />
+      <DoForwardLightLoop type="SingleLine" class="PlayerGunLaserCore" context="LIGHTING" order="STATECHANGES" />
+
+      <ColourMask channels="RGB" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="add" depthTest="always" stencilMode="maskReadInvert" stencilRef="3" stencilMask="7" />
+
+      <!-- player laser. actual colour rendering masked by the gun -->
+      <DoForwardLightLoop type="SingleLine" class="PlayerGunLaser" context="LIGHTING" order="STATECHANGES" />
+      <DoForwardLightLoop type="SingleLine" class="PlayerGunLaserCore" context="LIGHTING" order="STATECHANGES" />
+
+      <ColourMask channels="RGBA" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="Mesh"     class="WarpOnFoot" context="LIT_FORWARD" order="BACK_TO_FRONT" />
+
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <!-- Glow Translucent Alpha -->
+      <BeginTarget target="GBUFFER" depthTarget="DEPTH" />
+      <ColourMask channels="A" colBuf1="false" colBuf2="false" colBuf3="false" />
+      <BindBuffer sampler="gShadowMap"       sourceRT="SHADOWBUF"       bufIndex="32" />
+      <BindBuffer sampler="gCloudShadowMap"  sourceRT="CLOUDSHADOWS"    bufIndex="0" addressMode="wrap" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="Blend_OutputAlpha" depthTest="less" />
+      <DoForwardLightLoop type="Mesh"  class="GlowTranslucent" context="LIT_FORWARD"   order="BACK_TO_FRONT" />
+      <DoForwardLightLoop type="Trail" class="Translucent"     context="LIGHTING_GLOW" order="STATECHANGES"  />
+      <DoForwardLightLoop type="Trail" class="Additive"        context="LIGHTING_GLOW" order="STATECHANGES"  />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+    </Stage>
+      
+    <Stage id="3dLines">
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH" />
+      <ColourMask channels="RGBA"  />
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="blend" depthTest="less" stencilMode="maskWrite" stencilRef="68" />
+      <DrawGeometry type="LINERENDERER"  class="Opaque"   context="LINE3D"            order="STATECHANGES" />
+      <EndTarget flushCB="true" flushDB="true" />
+    </Stage>
+    
+    <Stage id="LUTMaskClear" enabled="false" >
+      <BeginTarget target="LUT_MASK" depthTarget="DEPTH" onlyStencil="true" />      
+      <ColourMask channels="R" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" stencilMode="maskRead" stencilRef="0" stencilMask="160" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="PARTICLE_CLEAR" />            
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="LightShafts" enabled="false">
+
+      <BeginTarget target="LIGHTSHAFT" />
+      <ColourMask channels="R"/>
+      
+      <BindBuffer sampler="gBufferMap"   sourceRT="DEPTH_DOWN" bufIndex="0" />    
+      <BindBuffer sampler="gShadowMap"   sourceRT="SHADOWBUF"  bufIndex="32" />
+
+      <SetContext zwrite="false" colourWrite="true" stencilMode="disabled" depthTest="always" blendMode="replace" />
+      <DrawQuadMT material="materials/Light.material.mbin" context="RAYMARCH" />
+      
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+    
+    <Stage id="LightShaftsBlur" enabled="false">      
+      <BeginTarget target="BLUR1_REDONLY" />
+      <DiscardTargetContents colBuf0="true" />
+      <ColourMask channels="R"/>
+      <BindBuffer sampler="gBufferMap"  sourceRT="LIGHTSHAFT"      bufIndex="0"   />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="DEPTH_DOWN"  bufIndex="0"   />    
+      <SetContext zwrite="false" blendMode="replace" colourWrite="true" stencilMode="disabled" depthTest="always" />     
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="DEPTH_AWALT_H_REDONLY_GUASS" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+      
+      <BeginTarget target="LIGHTSHAFT" />
+      <DiscardTargetContents colBuf0="true" />
+      <ColourMask channels="R"/>
+      <BindBuffer sampler="gBufferMap"  sourceRT="BLUR1_REDONLY" bufIndex="0"   />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="DEPTH_DOWN"  bufIndex="0"   />
+      <SetContext zwrite="false" blendMode="replace" colourWrite="true" stencilMode="disabled" depthTest="always" />     
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="DEPTH_AWALT_V_REDONLY_GUASS" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+      
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH" readOnlyDepth="true" />
+      <ColourMask channels="RGB" />
+      <BindBuffer sampler="gBufferMap"  sourceRT="LIGHTSHAFT"    bufIndex="0"  />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="DEPTH_DOWN"    bufIndex="0" />
+      <BindBuffer sampler="gBuffer2Map" sourceRT="DEPTH_LINEAR"       bufIndex="0" />
+      <BindBuffer sampler="gBuffer3Map" sourceRT="HDRBUF_0"      bufIndex="0" />  <!-- APPEARS UNUSED -->
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.25" /> 
+      <SetContext zwrite="false" blendMode="add" colourWrite="true" depthTest="always" stencilMode="maskRead" stencilMask="128" stencilRef="0"  />
+      <DrawQuad material="materials/PostProcess.material.mbin" context="SCREEN_BILATERAL_UP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+    </Stage>
+
+    <Stage id="MOTIONDILATE">
+      <BeginTarget target="MOTION_MAXBUF_H" />
+      <DiscardTargetContents colBuf0="true" />
+      <ColourMask channels="RGBA"/>
+      <BindBuffer sampler="gBufferMap"  sourceRT="MOTIONRESOLVE" bufIndex="0" />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="DEPTH_LINEAR"       bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="MOTIONDILATE_HORZ" />
+      <EndTarget flushCB="true" flushDB="false" />   
+
+      <BeginTarget target="MOTION_MAXBUF" />
+      <DiscardTargetContents colBuf0="true" />
+      <ColourMask channels="RGBA"/>
+      <BindBuffer sampler="gBufferMap"  sourceRT="MOTION_MAXBUF_H" bufIndex="0" />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="DEPTH_LINEAR"         bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="MOTIONDILATE_VERT" />
+      <EndTarget flushCB="true" flushDB="false" />   
+    </Stage> 
+
+   <Stage id="TAA_NONE" enabled="false">
+      <SwapTargets targetA="HDRBUF_0" targetB="HDRBUF_1" />
+    </Stage> 
+
+   <Stage id="TAA_APPLY" enabled="false">
+      <BeginTarget target="TAA_FRONT"  depthTarget="DEPTH" readOnlyDepth="true" />
+      <!-- <DiscardTargetContents colBuf0="true" colBuf1="true" colBuf2="true" />     -->
+      <ColourMask channels="RGBA"/>
+      
+      <BindBuffer sampler="gBufferMap"  sourceRT="HDRBUF_0" bufIndex="0" />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="TAA_BACK" bufIndex="1" />
+      <!-- <BindBuffer sampler="gBuffer2Map" sourceRT="GBUFFER" bufIndex="4" /> -->
+      <BindBuffer sampler="gBuffer2Map" sourceRT="MOTIONRESOLVE" bufIndex="0" />
+      <BindBuffer sampler="gBuffer3Map" sourceRT="DEPTH_LINEAR" bufIndex="0" />
+      <BindBuffer sampler="gBuffer4Map" sourceRT="MOTION_MAXBUF" bufIndex="0" />
+      <BindBuffer sampler="gBuffer5Map" sourceRT="TAA_BACK" bufIndex="2" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false" stencilMode="maskRead" stencilMask="128" stencilRef="0" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="STAA_APPLY" />
+
+      <EndTarget flushCB="true" flushDB="false" />   
+
+
+      <SwapTargets targetA="TAA_BACK" targetB="TAA_FRONT" />
+      <SwapTargets targetA="BACK_LENSFINAL_OR_UI_COMBINE_BUF" targetB="LENSFINAL_OR_UI_COMBINE_BUF" />
+    </Stage> 
+
+   <Stage id="TAA_APPLY_CLIP" enabled="false">
+      <BeginTarget target="TAA_FRONT" depthTarget="DEPTH" readOnlyDepth="true" />
+     <!--  <DiscardTargetContents colBuf0="true" colBuf1="true" colBuf2="true" />     -->
+      <ColourMask channels="RGBA"/>
+      <BindBuffer sampler="gBufferMap"  sourceRT="HDRBUF_0" bufIndex="0" />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="TAA_BACK" bufIndex="1" />
+      <!-- <BindBuffer sampler="gBuffer2Map" sourceRT="GBUFFER" bufIndex="4" /> -->
+      <BindBuffer sampler="gBuffer2Map" sourceRT="MOTIONRESOLVE" bufIndex="0" />
+      <BindBuffer sampler="gBuffer3Map" sourceRT="DEPTH_LINEAR" bufIndex="0" />
+      <BindBuffer sampler="gBuffer4Map" sourceRT="MOTION_MAXBUF" bufIndex="0" />
+      <BindBuffer sampler="gBuffer5Map" sourceRT="TAA_BACK" bufIndex="2" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false" stencilMode="maskRead" stencilMask="128" stencilRef="0" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="STAA_LOW" />
+      <EndTarget flushCB="true" flushDB="false" />   
+
+      <SwapTargets targetA="TAA_BACK" targetB="TAA_FRONT" />
+      <SwapTargets targetA="BACK_LENSFINAL_OR_UI_COMBINE_BUF" targetB="LENSFINAL_OR_UI_COMBINE_BUF" />
+    </Stage> 
+
+   <Stage id="TAA_APPLY_TEST" enabled="false">
+      <BeginTarget target="TAA_FRONT" />
+      <ColourMask channels="RGBA"/>
+      <BindBuffer sampler="gBufferMap"  sourceRT="HDRBUF_0" bufIndex="0" />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="TAA_BACK" bufIndex="1" />
+      <!-- <BindBuffer sampler="gBuffer2Map" sourceRT="GBUFFER" bufIndex="4" /> -->
+      <BindBuffer sampler="gBuffer2Map" sourceRT="MOTIONRESOLVE" bufIndex="0" />
+      <BindBuffer sampler="gBuffer3Map" sourceRT="DEPTH_LINEAR" bufIndex="0" />
+      <BindBuffer sampler="gBuffer4Map" sourceRT="MOTION_MAXBUF" bufIndex="0" />
+      <BindBuffer sampler="gBuffer5Map" sourceRT="TAA_BACK" bufIndex="2" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="STAA_APPLY_TEST" />
+      <EndTarget flushCB="true" flushDB="false" />   
+
+
+      <SwapTargets targetA="TAA_BACK" targetB="TAA_FRONT" />
+      <SwapTargets targetA="BACK_LENSFINAL_OR_UI_COMBINE_BUF" targetB="LENSFINAL_OR_UI_COMBINE_BUF" />
+    </Stage> 
+
+    <Stage id="Particles">
+
+      <!-- Depth Downsample for particles - note we can't use the current down-sample, since Water may have written to the real Depth Buffer -->
+
+      <BeginTarget target="DEPTH_PART" depthTarget="PARTICLES_DEPTH" />
+      
+      <ColourMask channels="RGBA"/>
+      <BindBuffer sampler="gBufferMap"   sourceRT="DEPTH"    bufIndex="32"   />
+      <SetContext zwrite="true" blendMode="replace" colourWrite="true" stencilMode="disabled" depthTest="always" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="DOWNSAMPLE_DEPTH" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="true" />
+
+      <BeginTarget target="PARTICLES" depthTarget="PARTICLES_DEPTH" />
+      <ColourMask channels="RGBA"/>
+      <SetContext zwrite="false" blendMode="replace" colourWrite="true" stencilMode="disabled" depthTest="always" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="PARTICLE_CLEAR" />
+
+      <!--PS4: default setting after ClearTarget equals RT0-RGBA, so no need to call ColourMask again-->
+      <BindBuffer sampler="gDepthBuffer" sourceRT="DEPTH_PART" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="Blend_OutputOneMinusAlpha" depthTest="less" />
+
+      <DoForwardLightLoop  type="EMITTER"  class="Translucent" context="TRANSLUCENT_SOFT" order="BACK_TO_FRONT" singlePassStereo="false" />
+      <DoForwardLightLoop  type="HEAVYAIR" class="Translucent" context="HEAVYAIR_SOFT" order="BACK_TO_FRONT" />
+      <UnbindBuffers />
+
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="HDRBUF_1" depthTarget="DEPTH" readOnlyDepth="true" />
+      <ColourMask channels="RGB" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always" stencilMode="maskRead" stencilMask="128" stencilRef="0"  />
+
+      <BindBuffer sampler="gBuffer1Map" sourceRT="PARTICLES"    bufIndex="0" />
+      <BindBuffer sampler="gDepthBuffer" sourceRT="DEPTH_PART"        bufIndex="0" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="PARTICLE_BLEND" />
+      <UnbindBuffers />
+
+      <BindBuffer sampler="gDepthBuffer" sourceRT="DEPTH_PART" bufIndex="0" />
+      <ColourMask channels="RGB" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="less" stencilMode="maskRead" stencilMask="128" stencilRef="0"  />
+      <DoForwardLightLoop  type="EMITTER"  class="Additive" context="TRANSLUCENT_ADDITIVE" order="BACK_TO_FRONT" singlePassStereo="false" />
+      <DoForwardLightLoop  type="HEAVYAIR" class="Additive" context="HEAVYAIR_SOFT" order="BACK_TO_FRONT" />
+
+      <UnbindBuffers />
+      <EndTarget flushCB="false" flushDB="false" />
+
+    </Stage>
+
+    <Stage id="SpeedLines">
+      <BeginTarget target="HDRBUF_1" depthTarget="DEPTH"/>
+      <ColourMask channels="RGBA" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none"  blendMode="Blend_OutputOneMinusAlpha" depthTest="less" />
+      <DoForwardLightLoop type="SPEEDLINE" class="Opaque" context="LIGHTING" order="STATECHANGES" />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="ApplyPostTaa" enabled="true" >
+
+    </Stage>
+
+    <Stage id="MotionblurNormal" enabled="false">
+    </Stage> 
+
+    <Stage id="Motionblur" enabled="false">
+    </Stage> 
+
+    <Stage id="MotionblurUltra" enabled="false">
+    </Stage> 
+
+    <Stage id="DepthOfFieldBokeh">
+    </Stage>
+
+    <Stage id="DepthOfFieldBlur_ToneMap" enabled="false" >
+    </Stage>
+
+    <Stage id="DepthOfFieldBlur_ToneMap_4x"  enabled="false" >
+    </Stage>
+
+    <Stage id="DepthOfFieldBlur_ToneMap_16x"  enabled="false" >
+    </Stage>
+    
+    <Stage id="DepthOfFieldBlur">    
+    </Stage>
+
+    <Stage id="NewBloomBright" enabled="true">
+      <BeginTarget target="BLOOM_BLURBUF_2A" />
+      <ColourMask channels="RGB"/>
+      <BindBuffer sampler="gBufferMap"   sourceRT="HDRBUF_1" bufIndex="0" />
+      <BindBuffer sampler="gBuffer1Map"  sourceRT="GBUFFER"  bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="BRIGHTPASS_NEW" />
+      <UnbindBuffers />
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+
+    <Stage id="SpotlightVolumetric" enabled="true">
+      <BeginTarget target="BLOOM_BLURBUF_2A" />
+      <!--
+      <ColourMask channels="RGB"  colBuf1="false"  colBuf2="false" />
+      <BindBuffer sampler="gBufferMap"   sourceRT="DEPTH_LINEAR"  bufIndex="0"  />
+      <BindBuffer sampler="gBuffer1Map"  sourceRT="GBUFFER"       bufIndex="2"  />
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="add" stencilMode="disabled" depthTest="always" />            
+      <DoDeferredLightLoop context="SPOTLIGHT_VOLUME" volumetric="true" />
+      <UnbindBuffers />
+      -->
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+    
+    <Stage id="NewBloom" enabled="true">
+      <BeginTarget target="BLOOM_BLURBUF_2B" />
+      <BindBuffer sampler="gBufferMap" sourceRT="BLOOM_BLURBUF_2A" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.0" b="1.0" c="5.0" />
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_9_HALF" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLOOM_BLURBUF_2A" />
+      <BindBuffer sampler="gBufferMap" sourceRT="BLOOM_BLURBUF_2B" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="5.0" />
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_9_HALF" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLOOM_BLURBUF_4B" />
+      <ColourMask channels="RGB"/>
+      <BindBuffer sampler="gBufferMap"  sourceRT="BLOOM_BLURBUF_2A" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.0" b="1.0" c="5.0" />
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_9" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+      
+      <BeginTarget target="BLOOM_BLURBUF_4A" />
+      <BindBuffer sampler="gBufferMap" sourceRT="BLOOM_BLURBUF_4B" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="5.0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_9_HALF" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+      
+      <BeginTarget target="BLOOM_BLURBUF_8B" />
+      <ColourMask channels="RGB"/>
+      <BindBuffer sampler="gBufferMap"  sourceRT="BLOOM_BLURBUF_4A" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.0" b="1.0" c="5.0" />
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_9" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLOOM_BLURBUF_8A" />
+      <BindBuffer sampler="gBufferMap" sourceRT="BLOOM_BLURBUF_8B" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="5.0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_9_HALF" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />      
+
+      <BeginTarget target="BLOOM_BLURBUF_16" />
+      <BindBuffer sampler="gBufferMap" sourceRT="BLOOM_BLURBUF_8A" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="3.0" d="1.0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_7_SQR" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />      
+
+      <BeginTarget target="BLOOM_BLURBUF_32" />
+      <BindBuffer sampler="gBufferMap" sourceRT="BLOOM_BLURBUF_16" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="2.0" d="1.0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_SQR" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />           
+
+      <BeginTarget target="BLOOM_BLURBUF_64" />
+      <BindBuffer sampler="gBufferMap" sourceRT="BLOOM_BLURBUF_32" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="2.0" d="1.0"/>
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_SQR" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLOOM_BLURBUF_32" />
+      <BindBuffer sampler="gBufferMap" sourceRT="BLOOM_BLURBUF_64" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="1.0" c="1.5" d="4.0"/>
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="add" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_SQR_ADD" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLOOM_BLURBUF_16" />
+      <BindBuffer sampler="gBufferMap" sourceRT="BLOOM_BLURBUF_32" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="1.0" c="1.5" d="2.0"/>
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="add" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_SQR_ADD" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="NewBloomResolve" enabled="true">
+      <BeginTarget target="BLOOM_FINALBUF" />
+      <BindBuffer sampler="gBufferMap"  sourceRT="BLOOM_BLURBUF_4A" bufIndex="0" />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="BLOOM_BLURBUF_8A" bufIndex="0" />
+      <BindBuffer sampler="gBuffer2Map" sourceRT="BLOOM_BLURBUF_16" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="11.0" b="9.0" c="7.0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="BLOOM_RESOLVE" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    
+      <BeginTarget target="BLOOM_BLURBUF_4B" />
+      <BindBuffer sampler="gBufferMap" sourceRT="BLOOM_FINALBUF" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="1.0" c="2.5" d="1.0"/>
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_HALF" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLOOM_FINALBUF" />
+      <BindBuffer sampler="gBufferMap" sourceRT="BLOOM_BLURBUF_4B" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="1.0" c="2.5" d="1.0"/>
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_HALF" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="NewBloomExposure" enabled="false">
+      <BeginTarget target="BLOOM_EXPBUF_B" />
+      <BindBuffer sampler="gBufferMap"   sourceRT="BLOOM_BLURBUF_64"  bufIndex="0" />
+      <BindBuffer sampler="gBuffer1Map"  sourceRT="BLOOM_EXPBUF_A"    bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="BLOOM_EXPOSURE" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <SwapTargets targetA="BLOOM_EXPBUF_A" targetB="BLOOM_EXPBUF_B" />
+    </Stage>
+
+    <!-- Enable this stage when you disable bloom stages, to clear the bloom buffers -->
+    <Stage id="NoBloom" enabled="false">
+      <BeginTarget target="BLOOM_BLURBUF_2B" />
+      <ClearTarget colBuf0="true"/>
+      <EndTarget flushCB="true" flushDB="false" />
+      
+      <BeginTarget target="BLOOM_BLURBUF_4A" />
+      <ClearTarget colBuf0="true"/>
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLOOM_BLURBUF_8A" />
+      <ClearTarget colBuf0="true"/>
+      <EndTarget flushCB="true" flushDB="false" />
+      
+      <BeginTarget target="BLOOM_BLURBUF_8B" />
+      <ClearTarget colBuf0="true"/>
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLOOM_BLURBUF_16" />
+      <ClearTarget colBuf0="true"/>
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLOOM_BLURBUF_32" />
+      <ClearTarget colBuf0="true"/>
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLOOM_BLURBUF_64" />
+      <ClearTarget colBuf0="true"/>
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLOOM_FINALBUF" />
+      <ClearTarget colBuf0="true"/>
+      <EndTarget flushCB="true" flushDB="false" />      
+    </Stage>
+
+    <Stage id="LensFlare">
+    </Stage>
+
+    <Stage id="LUTMaskSwap" enabled="false" >      
+    </Stage> 
+      
+    <Stage id="CombineNoAA_Async"  enabled="false">
+    </Stage>
+    
+    <Stage id="CombineHDRNoAA_Async"  enabled="false">
+    </Stage>
+             
+    <Stage id="Combine">
+      <ColourMask channels="RGBA"/>
+      <BeginTarget target="MOTIONRESOLVE" depthTarget="DEPTH" readOnlyDepth="true" />
+      <DiscardTargetContents colBuf0="true" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false" stencilMode="maskRead" stencilMask="128" stencilRef="0" />
+      <BindBuffer sampler="gBufferMap" sourceRT="HDRBUF_1"        bufIndex="0" />
+      <!--<BindBuffer sampler="gBuffer1Map" sourceRT="BLOOM_BLURBUF2DG"  bufIndex="0" />-->
+      <!--<BindBuffer sampler="gBuffer2Map" sourceRT="BLOOM_BLURBUF3"    bufIndex="0" />-->
+      <BindBuffer sampler="gBuffer1Map" sourceRT="BLOOM_FINALBUF" bufIndex="0" />
+      <BindBuffer sampler="gBuffer2Map" sourceRT="BLOOM_EXPBUF_A" bufIndex="0" />
+      <BindBuffer sampler="gBuffer3Map" sourceRT="DEPTH"          bufIndex="32" />
+      <BindBuffer sampler="gBuffer4Map" sourceRT="LUT_MASK"       bufIndex="0" />
+      <DrawQuadMT material="Materials/UI.material.mbin" context="SCREENEFFECT_VR" width="1.0" height="1.0" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+    
+    <Stage id="DepthClear" enabled="true" >
+      <BeginTarget target="" depthTarget="DEPTHUI" />
+      <ColourMask channels="RGBA" />
+      <ClearTarget colBuf0="false"  colBuf1="false" colBuf2="false"  colBuf3="false" colBuf4="false" depthBuf="true" stencilBuf="false" />
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+    
+    <Stage id="StencilClear" enabled="false" >
+      <BeginTarget target="" depthTarget="DEPTHUI" onlyStencil="true"/>
+      <ColourMask channels="RGBA" />
+      <ClearTarget colBuf0="false"  colBuf1="false" colBuf2="false"  colBuf3="false" colBuf4="false" depthBuf="false" stencilBuf="true" />
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+    
+    <Stage id="FlipMask" enabled="false" >
+      <BeginTarget target="" depthTarget="DEPTHUI" />
+      <ColourMask channels="RGBA" />
+      <SetContext zwrite="true" colourWrite="false" cullMode="none" blendMode="replace" depthTest="always" stencilMode="maskWrite" stencilRef="128" />
+      <DrawHiddenAreaMesh flipped="false"/>
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+
+    <Stage id="CombineNoAA"  enabled="false">
+      <ColourMask channels="RGBA"/>
+      <BeginTarget target="" depthTarget="DEPTH" readOnlyDepth="true" />
+      <DiscardTargetContents colBuf0="true" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false" stencilMode="maskRead" stencilMask="128" stencilRef="0" />
+      <BindBuffer sampler="gBufferMap" sourceRT="HDRBUF_1"        bufIndex="0" />
+      <!--<BindBuffer sampler="gBuffer1Map" sourceRT="BLOOM_BLURBUF2DG"  bufIndex="0" />-->
+      <!--<BindBuffer sampler="gBuffer2Map" sourceRT="BLOOM_BLURBUF3"    bufIndex="0" />-->
+      <BindBuffer sampler="gBuffer1Map" sourceRT="BLOOM_FINALBUF" bufIndex="0" />
+      <BindBuffer sampler="gBuffer2Map" sourceRT="BLOOM_EXPBUF_A" bufIndex="0" />
+      <BindBuffer sampler="gBuffer3Map" sourceRT="DEPTH"          bufIndex="32" />
+      <BindBuffer sampler="gBuffer4Map" sourceRT="LUT_MASK"       bufIndex="0" />
+      <DrawQuadMT material="Materials/UI.material.mbin" context="SCREENEFFECT_VR" width="1.0" height="1.0" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="FXAA" enabled="false">
+      <BeginTarget target="HBAOBUF" />
+      <DiscardTargetContents colBuf0="true" />
+      <ColourMask channels="RGBA"/>
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <BindBuffer sampler="gBufferMap"  sourceRT="MOTIONRESOLVE" bufIndex="0" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="COPYTOLUM" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <ColourMask channels="RGBA"/>
+      <BeginTarget target=""  depthTarget="DEPTH" readOnlyDepth="true" />
+      <DiscardTargetContents colBuf0="true" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back"  blendMode="replace" depthTest="always" stencilMode="maskRead"      stencilRef="0"  stencilMask="128"  />
+      <BindBuffer sampler="gBufferMap" sourceRT="MOTIONRESOLVE"  bufIndex="0" />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="HBAOBUF"  bufIndex="0" />
+      <BindBuffer sampler="gBuffer2Map" sourceRT="DEPTH" bufIndex="32" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="FXAA" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="BeforeUI"  enabled="true">
+      <BeginTarget target="" depthTarget="DEPTHUI" />
+      <ColourMask channels="RGBA"/>
+      
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="less" stencilMode="maskRead"      stencilRef="0"  stencilMask="128" />
+      <DrawGeometry type="Mesh"         class="GunOpaque"         context="DEPTHONLY_FRWRD"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="GunGlow"           context="DEPTHONLY_FRWRD"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="GunDecal"          context="DEPTHONLY_FRWRD"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="OpaqueBeforeUI"    context="DEPTHONLY_FRWRD"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="DepthMaskUI"       context="DEPTHONLY_FRWRD"             order="STATECHANGES" />
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage> 
+    
+    <Stage id="UI"  enabled="true">
+      <BeginTarget target="" depthTarget="DEPTHUI" readOnlyDepth="true" />
+      <ColourMask channels="RGBA"/>
+      <BindBuffer sampler="gBufferMap"  sourceRT="DEPTH_LINEAR" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none"   blendMode="invSourceAlpha"   depthTest="lessEqual" alphaToCoverage="false" stencilMode="maskRead"      stencilRef="0"  stencilMask="128" />      
+      <DrawGeometry type="Mesh"         class="UISurface"         context="UI_FORWARD"             order="BACK_TO_FRONT" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />    
+    </Stage>
+
+    <Stage id="NonSimulationUI"  enabled="false">
+      <BeginTarget target="" depthTarget="DEPTH" readOnlyDepth="true" />
+      <ColourMask channels="RGBA"/>
+      <SetContext zwrite="false" colourWrite="true" cullMode="none"   blendMode="replace"   depthTest="always" alphaToCoverage="false" stencilMode="maskRead"      stencilRef="0"  stencilMask="128" />
+      <DrawGeometry type="Mesh"         class="UISurface"         context="ICON_FORWARD_NS"            order="BACK_TO_FRONT" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="CombineHDRNoAA"  enabled="false">
+    </Stage>
+
+    <Stage id="LUTMaskSwapBack" enabled="false" >     
+    </Stage> 
+      
+    <Stage id="LUTMaskCopy" enabled="false" >      
+    </Stage>
+
+    <Stage id="UI" >
+    </Stage>
+
+    <Stage id="Sharpen">      
+    </Stage>
+    
+    <Stage id="PostUI_COPY">            
+    </Stage>     
+  
+    <Stage id="Debug" enabled="false">
+      <ColourMask channels="RGBA"/>
+      <BeginTarget target=""/>
+
+      <ClearTarget depthBuf="false" colBuf0="false" col_R="0.0" col_G="0.0" col_B="0.0" col_A="1.0" />
+      <SetContext zwrite="true" colourWrite="true" cullMode="back"  blendMode="replace" depthTest="always" />
+      
+      <SetContext zwrite="true" colourWrite="true" cullMode="back"  blendMode="replace" depthTest="always" stencilMode="disabled" />
+      <BindBuffer sampler="gBufferMap"   sourceRT="CLOUDSHADOWS"        bufIndex="0" sRGBRead="0" />
+
+      <BindBuffer sampler="gBuffer1Map"  sourceRT="HBAOBUF"            bufIndex="0" sRGBRead="0" />
+      <BindBuffer sampler="gBuffer2Map"  sourceRT="HBAOBUF"            bufIndex="0" sRGBRead="0" />
+      <BindBuffer sampler="gBuffer3Map"  sourceRT="HBAOBUF"            bufIndex="0" sRGBRead="0" />
+      <BindBuffer sampler="gBuffer4Map"  sourceRT="HBAOBUF"            bufIndex="0" sRGBRead="0" />
+      <BindBuffer sampler="gBuffer5Map"  sourceRT="HBAOBUF"            bufIndex="0" sRGBRead="0" />
+      <BindBuffer sampler="gBuffer6Map"  sourceRT="HBAOBUF"            bufIndex="0" sRGBRead="0" />
+      <BindBuffer sampler="gBuffer7Map"  sourceRT="HBAOBUF"         bufIndex="0" sRGBRead="0" />
+      <BindBuffer sampler="gBuffer8Map"  sourceRT="HBAOBUF"         bufIndex="0" sRGBRead="0" />
+      <BindBuffer sampler="gBuffer9Map"  sourceRT="CLOUDS_HIGH"        bufIndex="0" sRGBRead="0" />
+      <BindBuffer sampler="gBuffer10Map" sourceRT="CLOUDSHADOWS"       bufIndex="0" sRGBRead="0" />
+      <BindBuffer sampler="gBuffer11Map" sourceRT="LIGHTSHAFT" bufIndex="0" sRGBRead="0" />
+      <BindBuffer sampler="gBuffer12Map" sourceRT="LIGHTSHAFT" bufIndex="0" sRGBRead="0" />
+      <BindBuffer sampler="gBuffer13Map" sourceRT="HBAOBUF"            bufIndex="0" sRGBRead="0" />
+      <BindBuffer sampler="gBuffer14Map" sourceRT="HBAOBUF"             bufIndex="0" sRGBRead="0" />
+
+      <DrawQuadMT material="materials/Debug.material.mbin" context="HEX_SPLIT" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+    
+   <Stage id="TAA_NONE_RESET" enabled="false">
+      <SwapTargets targetA="HDRBUF_0" targetB="HDRBUF_1" />
+    </Stage> 
+
+    <Stage id="Reset States">
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" stencilMode="disabled" />
+      <ColourMask channels="RGBA"/>
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>
