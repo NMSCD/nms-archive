@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (2.61.1)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcNetworkInterpolationComponentData.xml">
+      <Property name="SynchroniseScale" value="Once" />
+      <Property name="SupportTeleportation" value="False" />
+    </Property>
+    <Property value="TkNetReplicatedEntityComponentData.xml">
+      <Property name="ReplicaComponentMask" />
+      <Property name="ReplicationRange" value="PlanetLocal" />
+      <Property name="SpawnType" value="Creature" />
+      <Property name="IgnoreComponents" value="False" />
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="FLAP" />
+        <Property name="Filename" value="MODELS/PLANETS/CREATURES/SMALLBIRD/ANIMS/BIRDFLAP.ANIM.MBIN" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="FrameStart" value="1" />
+        <Property name="FrameEnd" value="100" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="LoopOffsetMin" value="0" />
+        <Property name="LoopOffsetMax" value="0" />
+        <Property name="Delay" value="0" />
+        <Property name="Speed" value="1" />
+        <Property name="ActionFrameStart" value="0" />
+        <Property name="ActionFrame" value="-1" />
+        <Property name="ControlCreatureSize" value="AllSizes" />
+        <Property name="Additive" value="False" />
+        <Property name="Mirrored" value="False" />
+        <Property name="Active" value="True" />
+        <Property name="AdditiveBaseAnim" value="" />
+        <Property name="AdditiveBaseFrame" value="0" />
+        <Property name="GameData" value="TkAnimationGameData.xml">
+          <Property name="RootMotionEnabled" value="False" />
+          <Property name="BlockPlayerMovement" value="False" />
+          <Property name="BlockPlayerWeapon" value="Unblocked" />
+        </Property>
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="BIRDLAND" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SMALLBIRD/ANIMS/BIRDLAND.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="DEATH" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SMALLBIRD/ANIMS/BIRDDIE.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="20" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Trees" />
+      <Property name="NetSyncAnimation" value="True" />
+      <Property name="JointLODOverrides" />
+    </Property>
+    <Property value="GcCreatureComponentData.xml">
+      <Property name="Id" value="BIRD" />
+      <Property name="Axis" value="GcPrimaryAxis.xml">
+        <Property name="PrimaryAxis" value="Z" />
+      </Property>
+      <Property name="Scaler" value="1" />
+      <Property name="DeathEffect" value="" />
+      <Property name="ReplacementImpacts" />
+      <Property name="DiscoveryUIScaler" value="1" />
+      <Property name="DiscoveryUIOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="1" />
+        <Property name="Friction" value="10" />
+        <Property name="RollingFriction" value="10" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="0" />
+      </Property>
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="Floor" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollide" value="False" />
+      <Property name="NoPlayerCollide" value="False" />
+      <Property name="CameraInvisible" value="False" />
+      <Property name="InvisibleForInteraction" value="False" />
+      <Property name="AllowTeleporter" value="False" />
+      <Property name="BlockTeleporter" value="False" />
+      <Property name="DisableGravity" value="False" />
+      <Property name="SpinOnCreate" value="0" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>
