@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (2.15.0)-->
+<Data template="TkMaterialData">
+  <Property name="Name" value="Line" />
+  <Property name="Class" value="Opaque" />
+  <Property name="TransparencyLayerID" value="0" />
+  <Property name="CastShadow" value="False" />
+  <Property name="DisableZTest" value="False" />
+  <Property name="Link" value="" />
+  <Property name="Shader" value="SHADERS/LINE.SHADER.BIN" />
+  <Property name="Flags">
+    <Property value="TkMaterialFlags.xml">
+      <Property name="MaterialFlag" value="_F01_DIFFUSEMAP" />
+    </Property>
+  </Property>
+  <Property name="Uniforms">
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gScanParamsVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="1" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gPlanetValuesVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gPlanetPositionVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+  </Property>
+  <Property name="Samplers">
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gDiffuseMap" />
+      <Property name="Map" value="TEXTURES/UI/SCAN/GLOW.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="True" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Wrap" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+  </Property>
+</Data>
