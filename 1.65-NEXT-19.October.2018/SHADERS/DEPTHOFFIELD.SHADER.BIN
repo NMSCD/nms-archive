@@ -1,0 +1,286 @@
+[[FX]]
+
+// -----------------------------------------------------------------------------------
+// Samplers
+// -----------------------------------------------------------------------------------
+
+sampler gBufferMap = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 0;
+};
+
+sampler gBuffer1Map = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 1;
+};
+
+sampler gBuffer2Map = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 2;
+};
+
+sampler gBuffer3Map = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 3;
+};
+
+sampler gBuffer4Map = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 4;
+};
+
+sampler gBuffer5Map = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 5;
+};
+
+sampler gColourLUTBase = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 6;
+};
+
+sampler gColourLUTFar = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 7;
+};
+
+sampler gColourLUTStorm = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 8;
+};
+
+sampler gColourLUTEffect = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 9;
+};
+
+sampler gBlurMask = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 10;
+};
+
+// -----------------------------------------------------------------------------------
+// Uniforms
+// -----------------------------------------------------------------------------------
+
+
+
+float4 gHDRParamsVec4
+	// a - Exposure (higher values make scene brighter)
+	// b - Brightpass threshold (intensity where blooming begins)
+	// c - BrightPass offset (smaller values produce stronger blooming) 
+= {2, 0.6, 0.06, 1};
+
+float4 gBlurParamsVec4 = {0, 0, 0, 0};
+
+float4 gDoFParamsVec4;
+
+
+// -----------------------------------------------------------------------------------
+// Contexts
+// -----------------------------------------------------------------------------------
+
+
+context TONEMAP_DEPTH
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader = compile GLSL FS_DEPTHOFFIELD_TONEMAP_DEPTH;
+	ComputeShader = compile GLSL FS_DEPTHOFFIELD_TONEMAP_DEPTH;
+}
+
+context TONEMAP_DOWNSAMPLE4_DEPTH
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader = compile GLSL FS_DEPTHOFFIELD_TONEMAP_DOWNSAMPLE4_DEPTH;
+}
+
+context TONEMAP_DOWNSAMPLE16_DEPTH
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader = compile GLSL FS_DEPTHOFFIELD_TONEMAP_DOWNSAMPLE16_DEPTH;
+}
+
+context BLEND
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_DEPTHOFFIELD_BLEND;
+    ComputeShader = compile GLSL FS_DEPTHOFFIELD_BLEND;
+}
+
+context BLEND_POISSON
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader = compile GLSL FS_DEPTHOFFIELD_BLEND_POISSON;
+}
+
+context BLEND_INVSRCA
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_DEPTHOFFIELD_BLEND;
+    ComputeShader = compile GLSL FS_DEPTHOFFIELD_BLEND_INVSRCA;
+}
+
+context GUASS_DEPTH_9
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader = compile GLSL FS_DEPTHOFFIELD_GUASS_DEPTH_9TAP;
+	ComputeShader = compile GLSL FS_DEPTHOFFIELD_GUASS_DEPTH_9TAP;
+}
+
+context GUASS_DEPTH_9_DISCARD
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader = compile GLSL FS_DEPTHOFFIELD_GUASS_DEPTH_9TAP_DISCARD;
+    ComputeShader = compile GLSL FS_DEPTHOFFIELD_GUASS_DEPTH_9TAP_DISCARD;
+}
+
+context GUASS_DEPTH_7
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader = compile GLSL FS_DEPTHOFFIELD_GUASS_DEPTH_7TAP;
+}
+
+context GUASS_DEPTH_5
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader = compile GLSL FS_DEPTHOFFIELD_GUASS_DEPTH_5TAP;
+}
+
+context POISSON
+{
+	VertexShader  = compile GLSL VS_FSQUAD;
+	PixelShader   = compile GLSL FS_DEPTHOFFIELD_POISSON;
+	ComputeShader = compile GLSL FS_DEPTHOFFIELD_POISSON;
+}
+
+context DILATE_HOR
+{
+	VertexShader  = compile GLSL VS_FSQUAD;
+	PixelShader   = compile GLSL FS_DEPTHOFFIELD_DILATE_HORZ;
+	ComputeShader = compile GLSL FS_DEPTHOFFIELD_DILATE_HORZ;
+}
+
+context DILATE_VER
+{
+	VertexShader  = compile GLSL VS_FSQUAD;
+	PixelShader   = compile GLSL FS_DEPTHOFFIELD_DILATE_VERT;
+	ComputeShader = compile GLSL FS_DEPTHOFFIELD_DILATE_VERT;
+}
+
+
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_TEX_QUAD
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_DEPTHOFFIELD_TONEMAP_DEPTH]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_DEPTHOFFIELD_TONEMAP_DEPTH
+#include "Fullscreen/DepthOfFieldFragment.shader.h"
+
+[[FS_DEPTHOFFIELD_TONEMAP_DOWNSAMPLE4_DEPTH]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_DEPTHOFFIELD_TONEMAP_DEPTH
+#define D_DOWNSAMPLE_4
+#include "Fullscreen/DepthOfFieldFragment.shader.h"
+
+[[FS_DEPTHOFFIELD_TONEMAP_DOWNSAMPLE16_DEPTH]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_DEPTHOFFIELD_TONEMAP_DEPTH
+#define D_DOWNSAMPLE_16
+#include "Fullscreen/DepthOfFieldFragment.shader.h"
+
+[[FS_DEPTHOFFIELD_BLEND]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_DEPTHOFFIELD_BLEND
+#include "Fullscreen/DepthOfFieldFragment.shader.h"
+
+[[FS_DEPTHOFFIELD_BLEND_POISSON]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_DEPTHOFFIELD_BLEND
+#define D_BLEND_POISSON
+#include "Fullscreen/DepthOfFieldFragment.shader.h"
+
+[[FS_DEPTHOFFIELD_BLEND_INVSRCA]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_DEPTHOFFIELD_BLEND
+#define D_BLEND_INVSRCA
+#include "Fullscreen/DepthOfFieldFragment.shader.h"
+
+[[FS_DEPTHOFFIELD_GUASS_DEPTH_9TAP]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_DEPTHOFFIELD_GUASS_DEPTH
+#define D_GUASS_BLUR_RADIUS_4
+#include "Fullscreen/DepthOfFieldFragment.shader.h"
+
+[[FS_DEPTHOFFIELD_GUASS_DEPTH_9TAP_DISCARD]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_DEPTHOFFIELD_GUASS_DEPTH
+#define D_GUASS_BLUR_RADIUS_4
+#define D_GUASS_BLUR_DISCARD
+#include "Fullscreen/DepthOfFieldFragment.shader.h"
+
+[[FS_DEPTHOFFIELD_GUASS_DEPTH_7TAP]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_DEPTHOFFIELD_GUASS_DEPTH
+#define D_GUASS_BLUR_RADIUS_3
+#include "Fullscreen/DepthOfFieldFragment.shader.h"
+
+[[FS_DEPTHOFFIELD_GUASS_DEPTH_5TAP]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_DEPTHOFFIELD_GUASS_DEPTH
+#define D_GUASS_BLUR_RADIUS_2
+#include "Fullscreen/DepthOfFieldFragment.shader.h"
+
+[[FS_DEPTHOFFIELD_POISSON]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_DEPTHOFFIELD_POISSON
+#include "Fullscreen/DepthOfFieldFragment.shader.h"
+
+[[FS_DEPTHOFFIELD_DILATE_HORZ]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_DEPTH_DILATE_COC
+#define D_DILATE_HORZ
+#include "Fullscreen/DepthOfFieldFragment.shader.h"
+
+[[FS_DEPTHOFFIELD_DILATE_VERT]]
+// =================================================================================================
+#define D_DEPTHOFFIELD
+#define D_DEPTH_DILATE_COC
+#define D_DILATE_VERT
+#include "Fullscreen/DepthOfFieldFragment.shader.h"
+
+
+
+
+
+
+
+
+
+
