@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (2.61.1)-->
+<Data template="GcShipAIAttackDataTable">
+  <Property name="Definitions">
+    <Property value="GcShipAICombatDefinition.xml">
+      <Property name="Id" value="PIRATE_FREIGHT" />
+      <Property name="Behaviour" value="EASY" />
+      <Property name="Engine" value="STANDARD" />
+      <Property name="PlanetBehaviour" value="PLANET" />
+      <Property name="PlanetEngine" value="PLANET" />
+      <Property name="Reward" value="" />
+      <Property name="RewardCount" value="4" />
+      <Property name="Health" value="3600" />
+      <Property name="Gun" value="AISHIPGUN" />
+      <Property name="LaserDamageLevel" value="1" />
+      <Property name="Icon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+    </Property>
+    <Property value="GcShipAICombatDefinition.xml">
+      <Property name="Id" value="AI_EASY" />
+      <Property name="Behaviour" value="EASY" />
+      <Property name="Engine" value="STANDARD" />
+      <Property name="PlanetBehaviour" value="PLANET" />
+      <Property name="PlanetEngine" value="PLANET" />
+      <Property name="Reward" value="PIRAT_LOOT_EASY" />
+      <Property name="RewardCount" value="2" />
+      <Property name="Health" value="6200" />
+      <Property name="Gun" value="AISHIPGUN" />
+      <Property name="LaserDamageLevel" value="1" />
+      <Property name="Icon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+    </Property>
+    <Property value="GcShipAICombatDefinition.xml">
+      <Property name="Id" value="AI_MEDIUM" />
+      <Property name="Behaviour" value="MEDIUM" />
+      <Property name="Engine" value="STANDARD" />
+      <Property name="PlanetBehaviour" value="PLANET" />
+      <Property name="PlanetEngine" value="PLANET" />
+      <Property name="Reward" value="PIRAT_LOOT_MED" />
+      <Property name="RewardCount" value="3" />
+      <Property name="Health" value="8000" />
+      <Property name="Gun" value="AISHIPGUN" />
+      <Property name="LaserDamageLevel" value="1" />
+      <Property name="Icon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/HUD/ICONS/PIRATE.ONESTAR.DDS" />
+      </Property>
+    </Property>
+    <Property value="GcShipAICombatDefinition.xml">
+      <Property name="Id" value="AI_HARD" />
+      <Property name="Behaviour" value="HARD" />
+      <Property name="Engine" value="STANDARD" />
+      <Property name="PlanetBehaviour" value="PLANET" />
+      <Property name="PlanetEngine" value="PLANET" />
+      <Property name="Reward" value="PIRAT_LOOT_HARD" />
+      <Property name="RewardCount" value="4" />
+      <Property name="Health" value="14000" />
+      <Property name="Gun" value="AISHIPGUN" />
+      <Property name="LaserDamageLevel" value="1" />
+      <Property name="Icon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/HUD/ICONS/PIRATE.THREESTAR.DDS" />
+      </Property>
+    </Property>
+    <Property value="GcShipAICombatDefinition.xml">
+      <Property name="Id" value="AI_SOLO" />
+      <Property name="Behaviour" value="SOLO" />
+      <Property name="Engine" value="SOLO" />
+      <Property name="PlanetBehaviour" value="PLANET" />
+      <Property name="PlanetEngine" value="PLANET" />
+      <Property name="Reward" value="PIRAT_LOOT_HARD" />
+      <Property name="RewardCount" value="4" />
+      <Property name="Health" value="30000" />
+      <Property name="Gun" value="AISHIPGUN" />
+      <Property name="LaserDamageLevel" value="1" />
+      <Property name="Icon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/HUD/ICONS/PIRATE.SKULL.DDS" />
+      </Property>
+    </Property>
+    <Property value="GcShipAICombatDefinition.xml">
+      <Property name="Id" value="PIRATE" />
+      <Property name="Behaviour" value="EASY" />
+      <Property name="Engine" value="STANDARD" />
+      <Property name="PlanetBehaviour" value="PLANET" />
+      <Property name="PlanetEngine" value="PLANET" />
+      <Property name="Reward" value="PIRATELOOT" />
+      <Property name="RewardCount" value="4" />
+      <Property name="Health" value="6200" />
+      <Property name="Gun" value="AISHIPGUN" />
+      <Property name="LaserDamageLevel" value="1" />
+      <Property name="Icon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+    </Property>
+    <Property value="GcShipAICombatDefinition.xml">
+      <Property name="Id" value="POLICE" />
+      <Property name="Behaviour" value="HARD" />
+      <Property name="Engine" value="STANDARD" />
+      <Property name="PlanetBehaviour" value="PLANET" />
+      <Property name="PlanetEngine" value="PLANET" />
+      <Property name="Reward" value="" />
+      <Property name="RewardCount" value="1" />
+      <Property name="Health" value="14000" />
+      <Property name="Gun" value="POLICEGUN" />
+      <Property name="LaserDamageLevel" value="1" />
+      <Property name="Icon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/HUD/ICONS/PIRATE.THREESTAR.DDS" />
+      </Property>
+    </Property>
+    <Property value="GcShipAICombatDefinition.xml">
+      <Property name="Id" value="TRADE_EASY" />
+      <Property name="Behaviour" value="EASY" />
+      <Property name="Engine" value="STANDARD" />
+      <Property name="PlanetBehaviour" value="PLANET" />
+      <Property name="PlanetEngine" value="PLANET" />
+      <Property name="Reward" value="TRAD_LOOT_EASY" />
+      <Property name="RewardCount" value="2" />
+      <Property name="Health" value="6000" />
+      <Property name="Gun" value="TRADERGUN" />
+      <Property name="LaserDamageLevel" value="1" />
+      <Property name="Icon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+    </Property>
+    <Property value="GcShipAICombatDefinition.xml">
+      <Property name="Id" value="TRADE_MED" />
+      <Property name="Behaviour" value="MEDIUM" />
+      <Property name="Engine" value="STANDARD" />
+      <Property name="PlanetBehaviour" value="PLANET" />
+      <Property name="PlanetEngine" value="PLANET" />
+      <Property name="Reward" value="TRAD_LOOT_MED" />
+      <Property name="RewardCount" value="3" />
+      <Property name="Health" value="8000" />
+      <Property name="Gun" value="TRADERGUN" />
+      <Property name="LaserDamageLevel" value="1" />
+      <Property name="Icon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/HUD/ICONS/PIRATE.ONESTAR.DDS" />
+      </Property>
+    </Property>
+    <Property value="GcShipAICombatDefinition.xml">
+      <Property name="Id" value="TRADE_HARD" />
+      <Property name="Behaviour" value="HARD" />
+      <Property name="Engine" value="STANDARD" />
+      <Property name="PlanetBehaviour" value="PLANET" />
+      <Property name="PlanetEngine" value="PLANET" />
+      <Property name="Reward" value="TRAD_LOOT_HARD" />
+      <Property name="RewardCount" value="4" />
+      <Property name="Health" value="14000" />
+      <Property name="Gun" value="TRADERGUN" />
+      <Property name="LaserDamageLevel" value="1" />
+      <Property name="Icon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/HUD/ICONS/PIRATE.THREESTAR.DDS" />
+      </Property>
+    </Property>
+    <Property value="GcShipAICombatDefinition.xml">
+      <Property name="Id" value="BOUNTY" />
+      <Property name="Behaviour" value="HARD" />
+      <Property name="Engine" value="STANDARD" />
+      <Property name="PlanetBehaviour" value="PLANET" />
+      <Property name="PlanetEngine" value="PLANET" />
+      <Property name="Reward" value="" />
+      <Property name="RewardCount" value="1" />
+      <Property name="Health" value="20000" />
+      <Property name="Gun" value="BOUNTYGUN1" />
+      <Property name="LaserDamageLevel" value="1" />
+      <Property name="Icon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="BehaviourTable">
+    <Property value="GcShipAIAttackData.xml">
+      <Property name="Id" value="PIRATE" />
+      <Property name="GunDispersionAngle" value="4" />
+      <Property name="GunFireRate" value="0.15" />
+      <Property name="LaserHealthPoint" value="0" />
+      <Property name="AttackWeaponRange" value="700" />
+      <Property name="AttackAngle" value="25" />
+      <Property name="AttackShootWaitTime" value="1" />
+      <Property name="AttackShootTimeMin" value="1" />
+      <Property name="AttackShootTimeMax" value="1" />
+      <Property name="AttackReadyTime" value="2" />
+      <Property name="AttackMaxTime" value="10" />
+      <Property name="AttackApproachOffset" value="400" />
+      <Property name="AttackApproachMinRange" value="400" />
+      <Property name="AttackApproachMaxRange" value="600" />
+      <Property name="AttackTooCloseRange" value="250" />
+      <Property name="AttackFlybyOffset" value="-200" />
+      <Property name="AttackBoostTimeToRange" value="1.5" />
+      <Property name="AttackBoostRange" value="2000" />
+      <Property name="AttackBoostAngle" value="10" />
+      <Property name="AttackTurnMultiplier" value="1.15" />
+      <Property name="AttackFacingAimReducer" value="0.5" />
+      <Property name="AttackMaxPlanetHeight" value="100" />
+      <Property name="AttackTurnMultiplierMax" value="1" />
+      <Property name="AttackTurnMaxMinTime" value="1" />
+      <Property name="AttackTurnMaxTimeRange" value="5" />
+      <Property name="NumHitsBeforeBail" value="600" />
+      <Property name="NumHitsBeforeReposition" value="1000" />
+      <Property name="FleeBrake" value="1" />
+      <Property name="FleeBoost" value="8" />
+      <Property name="FleeBrakeTime" value="15" />
+      <Property name="FleeRepositionTime" value="10" />
+      <Property name="FleeRepositionAngleMin" value="90" />
+      <Property name="FleeRepositionAngleMax" value="180" />
+      <Property name="FleeUrgentBrake" value="1.5" />
+      <Property name="FleeUrgentBoost" value="1.5" />
+      <Property name="FleeUrgentBrakeTime" value="3" />
+      <Property name="FleeRepositionUrgentTime" value="3" />
+      <Property name="FleeRepositionUrgentAngleMin" value="180" />
+      <Property name="FleeRepositionUrgentAngleMax" value="180" />
+      <Property name="FleeRange" value="600" />
+      <Property name="FleeMinTime" value="0.5" />
+      <Property name="FleeMaxTime" value="10" />
+      <Property name="FleeUrgentRange" value="100" />
+      <Property name="AttackTargetMinRange" value="300" />
+      <Property name="AttackTargetMaxRange" value="600" />
+      <Property name="AttackTargetOffsetMin" value="100" />
+      <Property name="AttackTargetOffsetMax" value="500" />
+      <Property name="AttackTargetSwitchTargetTime" value="10" />
+    </Property>
+    <Property value="GcShipAIAttackData.xml">
+      <Property name="Id" value="EASY" />
+      <Property name="GunDispersionAngle" value="5" />
+      <Property name="GunFireRate" value="0.15" />
+      <Property name="LaserHealthPoint" value="0" />
+      <Property name="AttackWeaponRange" value="700" />
+      <Property name="AttackAngle" value="25" />
+      <Property name="AttackShootWaitTime" value="1" />
+      <Property name="AttackShootTimeMin" value="1" />
+      <Property name="AttackShootTimeMax" value="1" />
+      <Property name="AttackReadyTime" value="2" />
+      <Property name="AttackMaxTime" value="10" />
+      <Property name="AttackApproachOffset" value="400" />
+      <Property name="AttackApproachMinRange" value="400" />
+      <Property name="AttackApproachMaxRange" value="600" />
+      <Property name="AttackTooCloseRange" value="250" />
+      <Property name="AttackFlybyOffset" value="-200" />
+      <Property name="AttackBoostTimeToRange" value="1.5" />
+      <Property name="AttackBoostRange" value="2000" />
+      <Property name="AttackBoostAngle" value="10" />
+      <Property name="AttackTurnMultiplier" value="1.15" />
+      <Property name="AttackFacingAimReducer" value="0.5" />
+      <Property name="AttackMaxPlanetHeight" value="100" />
+      <Property name="AttackTurnMultiplierMax" value="1" />
+      <Property name="AttackTurnMaxMinTime" value="1" />
+      <Property name="AttackTurnMaxTimeRange" value="5" />
+      <Property name="NumHitsBeforeBail" value="600" />
+      <Property name="NumHitsBeforeReposition" value="1000" />
+      <Property name="FleeBrake" value="1" />
+      <Property name="FleeBoost" value="3" />
+      <Property name="FleeBrakeTime" value="15" />
+      <Property name="FleeRepositionTime" value="10" />
+      <Property name="FleeRepositionAngleMin" value="90" />
+      <Property name="FleeRepositionAngleMax" value="180" />
+      <Property name="FleeUrgentBrake" value="1.5" />
+      <Property name="FleeUrgentBoost" value="1.5" />
+      <Property name="FleeUrgentBrakeTime" value="3" />
+      <Property name="FleeRepositionUrgentTime" value="3" />
+      <Property name="FleeRepositionUrgentAngleMin" value="180" />
+      <Property name="FleeRepositionUrgentAngleMax" value="180" />
+      <Property name="FleeRange" value="600" />
+      <Property name="FleeMinTime" value="0.5" />
+      <Property name="FleeMaxTime" value="10" />
+      <Property name="FleeUrgentRange" value="100" />
+      <Property name="AttackTargetMinRange" value="300" />
+      <Property name="AttackTargetMaxRange" value="600" />
+      <Property name="AttackTargetOffsetMin" value="100" />
+      <Property name="AttackTargetOffsetMax" value="500" />
+      <Property name="AttackTargetSwitchTargetTime" value="10" />
+    </Property>
+    <Property value="GcShipAIAttackData.xml">
+      <Property name="Id" value="MEDIUM" />
+      <Property name="GunDispersionAngle" value="5" />
+      <Property name="GunFireRate" value="0.15" />
+      <Property name="LaserHealthPoint" value="25" />
+      <Property name="AttackWeaponRange" value="700" />
+      <Property name="AttackAngle" value="25" />
+      <Property name="AttackShootWaitTime" value="1" />
+      <Property name="AttackShootTimeMin" value="1" />
+      <Property name="AttackShootTimeMax" value="1" />
+      <Property name="AttackReadyTime" value="2" />
+      <Property name="AttackMaxTime" value="10" />
+      <Property name="AttackApproachOffset" value="400" />
+      <Property name="AttackApproachMinRange" value="400" />
+      <Property name="AttackApproachMaxRange" value="600" />
+      <Property name="AttackTooCloseRange" value="250" />
+      <Property name="AttackFlybyOffset" value="-200" />
+      <Property name="AttackBoostTimeToRange" value="1.5" />
+      <Property name="AttackBoostRange" value="2000" />
+      <Property name="AttackBoostAngle" value="10" />
+      <Property name="AttackTurnMultiplier" value="0.8" />
+      <Property name="AttackFacingAimReducer" value="0.5" />
+      <Property name="AttackMaxPlanetHeight" value="100" />
+      <Property name="AttackTurnMultiplierMax" value="1" />
+      <Property name="AttackTurnMaxMinTime" value="1" />
+      <Property name="AttackTurnMaxTimeRange" value="5" />
+      <Property name="NumHitsBeforeBail" value="1000" />
+      <Property name="NumHitsBeforeReposition" value="1000" />
+      <Property name="FleeBrake" value="1" />
+      <Property name="FleeBoost" value="8" />
+      <Property name="FleeBrakeTime" value="5" />
+      <Property name="FleeRepositionTime" value="10" />
+      <Property name="FleeRepositionAngleMin" value="90" />
+      <Property name="FleeRepositionAngleMax" value="180" />
+      <Property name="FleeUrgentBrake" value="1.5" />
+      <Property name="FleeUrgentBoost" value="1.5" />
+      <Property name="FleeUrgentBrakeTime" value="3" />
+      <Property name="FleeRepositionUrgentTime" value="3" />
+      <Property name="FleeRepositionUrgentAngleMin" value="180" />
+      <Property name="FleeRepositionUrgentAngleMax" value="180" />
+      <Property name="FleeRange" value="600" />
+      <Property name="FleeMinTime" value="0.5" />
+      <Property name="FleeMaxTime" value="10" />
+      <Property name="FleeUrgentRange" value="100" />
+      <Property name="AttackTargetMinRange" value="300" />
+      <Property name="AttackTargetMaxRange" value="600" />
+      <Property name="AttackTargetOffsetMin" value="100" />
+      <Property name="AttackTargetOffsetMax" value="500" />
+      <Property name="AttackTargetSwitchTargetTime" value="10" />
+    </Property>
+    <Property value="GcShipAIAttackData.xml">
+      <Property name="Id" value="HARD" />
+      <Property name="GunDispersionAngle" value="4" />
+      <Property name="GunFireRate" value="0.15" />
+      <Property name="LaserHealthPoint" value="75" />
+      <Property name="AttackWeaponRange" value="700" />
+      <Property name="AttackAngle" value="25" />
+      <Property name="AttackShootWaitTime" value="1" />
+      <Property name="AttackShootTimeMin" value="2" />
+      <Property name="AttackShootTimeMax" value="2" />
+      <Property name="AttackReadyTime" value="0.5" />
+      <Property name="AttackMaxTime" value="10" />
+      <Property name="AttackApproachOffset" value="200" />
+      <Property name="AttackApproachMinRange" value="300" />
+      <Property name="AttackApproachMaxRange" value="800" />
+      <Property name="AttackTooCloseRange" value="150" />
+      <Property name="AttackFlybyOffset" value="50" />
+      <Property name="AttackBoostTimeToRange" value="1.5" />
+      <Property name="AttackBoostRange" value="2000" />
+      <Property name="AttackBoostAngle" value="10" />
+      <Property name="AttackTurnMultiplier" value="1.15" />
+      <Property name="AttackFacingAimReducer" value="0.5" />
+      <Property name="AttackMaxPlanetHeight" value="100" />
+      <Property name="AttackTurnMultiplierMax" value="1" />
+      <Property name="AttackTurnMaxMinTime" value="1" />
+      <Property name="AttackTurnMaxTimeRange" value="5" />
+      <Property name="NumHitsBeforeBail" value="1000" />
+      <Property name="NumHitsBeforeReposition" value="1000" />
+      <Property name="FleeBrake" value="1" />
+      <Property name="FleeBoost" value="8" />
+      <Property name="FleeBrakeTime" value="3" />
+      <Property name="FleeRepositionTime" value="10" />
+      <Property name="FleeRepositionAngleMin" value="90" />
+      <Property name="FleeRepositionAngleMax" value="180" />
+      <Property name="FleeUrgentBrake" value="2" />
+      <Property name="FleeUrgentBoost" value="2" />
+      <Property name="FleeUrgentBrakeTime" value="3" />
+      <Property name="FleeRepositionUrgentTime" value="3" />
+      <Property name="FleeRepositionUrgentAngleMin" value="180" />
+      <Property name="FleeRepositionUrgentAngleMax" value="180" />
+      <Property name="FleeRange" value="600" />
+      <Property name="FleeMinTime" value="0.5" />
+      <Property name="FleeMaxTime" value="10" />
+      <Property name="FleeUrgentRange" value="100" />
+      <Property name="AttackTargetMinRange" value="300" />
+      <Property name="AttackTargetMaxRange" value="600" />
+      <Property name="AttackTargetOffsetMin" value="100" />
+      <Property name="AttackTargetOffsetMax" value="500" />
+      <Property name="AttackTargetSwitchTargetTime" value="10" />
+    </Property>
+    <Property value="GcShipAIAttackData.xml">
+      <Property name="Id" value="SOLO" />
+      <Property name="GunDispersionAngle" value="3" />
+      <Property name="GunFireRate" value="0.075" />
+      <Property name="LaserHealthPoint" value="0" />
+      <Property name="AttackWeaponRange" value="700" />
+      <Property name="AttackAngle" value="25" />
+      <Property name="AttackShootWaitTime" value="0" />
+      <Property name="AttackShootTimeMin" value="3" />
+      <Property name="AttackShootTimeMax" value="3" />
+      <Property name="AttackReadyTime" value="0.25" />
+      <Property name="AttackMaxTime" value="10" />
+      <Property name="AttackApproachOffset" value="200" />
+      <Property name="AttackApproachMinRange" value="300" />
+      <Property name="AttackApproachMaxRange" value="800" />
+      <Property name="AttackTooCloseRange" value="50" />
+      <Property name="AttackFlybyOffset" value="0" />
+      <Property name="AttackBoostTimeToRange" value="1.5" />
+      <Property name="AttackBoostRange" value="800" />
+      <Property name="AttackBoostAngle" value="0" />
+      <Property name="AttackTurnMultiplier" value="1.15" />
+      <Property name="AttackFacingAimReducer" value="0.5" />
+      <Property name="AttackMaxPlanetHeight" value="100" />
+      <Property name="AttackTurnMultiplierMax" value="1" />
+      <Property name="AttackTurnMaxMinTime" value="1" />
+      <Property name="AttackTurnMaxTimeRange" value="5" />
+      <Property name="NumHitsBeforeBail" value="2000" />
+      <Property name="NumHitsBeforeReposition" value="2000" />
+      <Property name="FleeBrake" value="1" />
+      <Property name="FleeBoost" value="8" />
+      <Property name="FleeBrakeTime" value="5" />
+      <Property name="FleeRepositionTime" value="5" />
+      <Property name="FleeRepositionAngleMin" value="90" />
+      <Property name="FleeRepositionAngleMax" value="180" />
+      <Property name="FleeUrgentBrake" value="1.5" />
+      <Property name="FleeUrgentBoost" value="1.5" />
+      <Property name="FleeUrgentBrakeTime" value="5" />
+      <Property name="FleeRepositionUrgentTime" value="3" />
+      <Property name="FleeRepositionUrgentAngleMin" value="180" />
+      <Property name="FleeRepositionUrgentAngleMax" value="180" />
+      <Property name="FleeRange" value="600" />
+      <Property name="FleeMinTime" value="0.5" />
+      <Property name="FleeMaxTime" value="10" />
+      <Property name="FleeUrgentRange" value="100" />
+      <Property name="AttackTargetMinRange" value="300" />
+      <Property name="AttackTargetMaxRange" value="600" />
+      <Property name="AttackTargetOffsetMin" value="100" />
+      <Property name="AttackTargetOffsetMax" value="500" />
+      <Property name="AttackTargetSwitchTargetTime" value="10" />
+    </Property>
+    <Property value="GcShipAIAttackData.xml">
+      <Property name="Id" value="POLICE" />
+      <Property name="GunDispersionAngle" value="4" />
+      <Property name="GunFireRate" value="0.15" />
+      <Property name="LaserHealthPoint" value="0" />
+      <Property name="AttackWeaponRange" value="700" />
+      <Property name="AttackAngle" value="25" />
+      <Property name="AttackShootWaitTime" value="1" />
+      <Property name="AttackShootTimeMin" value="1" />
+      <Property name="AttackShootTimeMax" value="1" />
+      <Property name="AttackReadyTime" value="2" />
+      <Property name="AttackMaxTime" value="10" />
+      <Property name="AttackApproachOffset" value="200" />
+      <Property name="AttackApproachMinRange" value="300" />
+      <Property name="AttackApproachMaxRange" value="800" />
+      <Property name="AttackTooCloseRange" value="150" />
+      <Property name="AttackFlybyOffset" value="50" />
+      <Property name="AttackBoostTimeToRange" value="1.5" />
+      <Property name="AttackBoostRange" value="2000" />
+      <Property name="AttackBoostAngle" value="10" />
+      <Property name="AttackTurnMultiplier" value="1.15" />
+      <Property name="AttackFacingAimReducer" value="0.5" />
+      <Property name="AttackMaxPlanetHeight" value="100" />
+      <Property name="AttackTurnMultiplierMax" value="1" />
+      <Property name="AttackTurnMaxMinTime" value="1" />
+      <Property name="AttackTurnMaxTimeRange" value="5" />
+      <Property name="NumHitsBeforeBail" value="600" />
+      <Property name="NumHitsBeforeReposition" value="1000" />
+      <Property name="FleeBrake" value="1" />
+      <Property name="FleeBoost" value="8" />
+      <Property name="FleeBrakeTime" value="15" />
+      <Property name="FleeRepositionTime" value="10" />
+      <Property name="FleeRepositionAngleMin" value="90" />
+      <Property name="FleeRepositionAngleMax" value="180" />
+      <Property name="FleeUrgentBrake" value="1.5" />
+      <Property name="FleeUrgentBoost" value="1.5" />
+      <Property name="FleeUrgentBrakeTime" value="3" />
+      <Property name="FleeRepositionUrgentTime" value="3" />
+      <Property name="FleeRepositionUrgentAngleMin" value="180" />
+      <Property name="FleeRepositionUrgentAngleMax" value="180" />
+      <Property name="FleeRange" value="600" />
+      <Property name="FleeMinTime" value="0.5" />
+      <Property name="FleeMaxTime" value="10" />
+      <Property name="FleeUrgentRange" value="100" />
+      <Property name="AttackTargetMinRange" value="300" />
+      <Property name="AttackTargetMaxRange" value="600" />
+      <Property name="AttackTargetOffsetMin" value="100" />
+      <Property name="AttackTargetOffsetMax" value="500" />
+      <Property name="AttackTargetSwitchTargetTime" value="10" />
+    </Property>
+    <Property value="GcShipAIAttackData.xml">
+      <Property name="Id" value="TRADER" />
+      <Property name="GunDispersionAngle" value="4" />
+      <Property name="GunFireRate" value="0.15" />
+      <Property name="LaserHealthPoint" value="0" />
+      <Property name="AttackWeaponRange" value="700" />
+      <Property name="AttackAngle" value="25" />
+      <Property name="AttackShootWaitTime" value="1" />
+      <Property name="AttackShootTimeMin" value="1" />
+      <Property name="AttackShootTimeMax" value="1" />
+      <Property name="AttackReadyTime" value="2" />
+      <Property name="AttackMaxTime" value="10" />
+      <Property name="AttackApproachOffset" value="200" />
+      <Property name="AttackApproachMinRange" value="300" />
+      <Property name="AttackApproachMaxRange" value="800" />
+      <Property name="AttackTooCloseRange" value="150" />
+      <Property name="AttackFlybyOffset" value="50" />
+      <Property name="AttackBoostTimeToRange" value="1.5" />
+      <Property name="AttackBoostRange" value="2000" />
+      <Property name="AttackBoostAngle" value="10" />
+      <Property name="AttackTurnMultiplier" value="1.15" />
+      <Property name="AttackFacingAimReducer" value="0.5" />
+      <Property name="AttackMaxPlanetHeight" value="100" />
+      <Property name="AttackTurnMultiplierMax" value="1" />
+      <Property name="AttackTurnMaxMinTime" value="1" />
+      <Property name="AttackTurnMaxTimeRange" value="5" />
+      <Property name="NumHitsBeforeBail" value="600" />
+      <Property name="NumHitsBeforeReposition" value="1000" />
+      <Property name="FleeBrake" value="1" />
+      <Property name="FleeBoost" value="8" />
+      <Property name="FleeBrakeTime" value="15" />
+      <Property name="FleeRepositionTime" value="10" />
+      <Property name="FleeRepositionAngleMin" value="90" />
+      <Property name="FleeRepositionAngleMax" value="180" />
+      <Property name="FleeUrgentBrake" value="1.5" />
+      <Property name="FleeUrgentBoost" value="1.5" />
+      <Property name="FleeUrgentBrakeTime" value="3" />
+      <Property name="FleeRepositionUrgentTime" value="3" />
+      <Property name="FleeRepositionUrgentAngleMin" value="180" />
+      <Property name="FleeRepositionUrgentAngleMax" value="180" />
+      <Property name="FleeRange" value="600" />
+      <Property name="FleeMinTime" value="0.5" />
+      <Property name="FleeMaxTime" value="10" />
+      <Property name="FleeUrgentRange" value="100" />
+      <Property name="AttackTargetMinRange" value="300" />
+      <Property name="AttackTargetMaxRange" value="600" />
+      <Property name="AttackTargetOffsetMin" value="100" />
+      <Property name="AttackTargetOffsetMax" value="500" />
+      <Property name="AttackTargetSwitchTargetTime" value="10" />
+    </Property>
+    <Property value="GcShipAIAttackData.xml">
+      <Property name="Id" value="BOUNTY" />
+      <Property name="GunDispersionAngle" value="4" />
+      <Property name="GunFireRate" value="0.15" />
+      <Property name="LaserHealthPoint" value="0" />
+      <Property name="AttackWeaponRange" value="700" />
+      <Property name="AttackAngle" value="25" />
+      <Property name="AttackShootWaitTime" value="1" />
+      <Property name="AttackShootTimeMin" value="1" />
+      <Property name="AttackShootTimeMax" value="1" />
+      <Property name="AttackReadyTime" value="2" />
+      <Property name="AttackMaxTime" value="10" />
+      <Property name="AttackApproachOffset" value="200" />
+      <Property name="AttackApproachMinRange" value="300" />
+      <Property name="AttackApproachMaxRange" value="800" />
+      <Property name="AttackTooCloseRange" value="150" />
+      <Property name="AttackFlybyOffset" value="50" />
+      <Property name="AttackBoostTimeToRange" value="1.5" />
+      <Property name="AttackBoostRange" value="2000" />
+      <Property name="AttackBoostAngle" value="10" />
+      <Property name="AttackTurnMultiplier" value="1.15" />
+      <Property name="AttackFacingAimReducer" value="0.5" />
+      <Property name="AttackMaxPlanetHeight" value="100" />
+      <Property name="AttackTurnMultiplierMax" value="1" />
+      <Property name="AttackTurnMaxMinTime" value="1" />
+      <Property name="AttackTurnMaxTimeRange" value="5" />
+      <Property name="NumHitsBeforeBail" value="600" />
+      <Property name="NumHitsBeforeReposition" value="1000" />
+      <Property name="FleeBrake" value="1" />
+      <Property name="FleeBoost" value="8" />
+      <Property name="FleeBrakeTime" value="15" />
+      <Property name="FleeRepositionTime" value="10" />
+      <Property name="FleeRepositionAngleMin" value="90" />
+      <Property name="FleeRepositionAngleMax" value="180" />
+      <Property name="FleeUrgentBrake" value="1.5" />
+      <Property name="FleeUrgentBoost" value="1.5" />
+      <Property name="FleeUrgentBrakeTime" value="3" />
+      <Property name="FleeRepositionUrgentTime" value="3" />
+      <Property name="FleeRepositionUrgentAngleMin" value="180" />
+      <Property name="FleeRepositionUrgentAngleMax" value="180" />
+      <Property name="FleeRange" value="600" />
+      <Property name="FleeMinTime" value="0.5" />
+      <Property name="FleeMaxTime" value="10" />
+      <Property name="FleeUrgentRange" value="100" />
+      <Property name="AttackTargetMinRange" value="300" />
+      <Property name="AttackTargetMaxRange" value="600" />
+      <Property name="AttackTargetOffsetMin" value="100" />
+      <Property name="AttackTargetOffsetMax" value="500" />
+      <Property name="AttackTargetSwitchTargetTime" value="10" />
+    </Property>
+    <Property value="GcShipAIAttackData.xml">
+      <Property name="Id" value="PLANET" />
+      <Property name="GunDispersionAngle" value="0" />
+      <Property name="GunFireRate" value="0.15" />
+      <Property name="LaserHealthPoint" value="50" />
+      <Property name="AttackWeaponRange" value="300" />
+      <Property name="AttackAngle" value="30" />
+      <Property name="AttackShootWaitTime" value="0.1" />
+      <Property name="AttackShootTimeMin" value="2.5" />
+      <Property name="AttackShootTimeMax" value="5" />
+      <Property name="AttackReadyTime" value="0.3" />
+      <Property name="AttackMaxTime" value="6" />
+      <Property name="AttackApproachOffset" value="80" />
+      <Property name="AttackApproachMinRange" value="50" />
+      <Property name="AttackApproachMaxRange" value="250" />
+      <Property name="AttackTooCloseRange" value="100" />
+      <Property name="AttackFlybyOffset" value="40" />
+      <Property name="AttackBoostTimeToRange" value="1.5" />
+      <Property name="AttackBoostRange" value="150" />
+      <Property name="AttackBoostAngle" value="40" />
+      <Property name="AttackTurnMultiplier" value="2" />
+      <Property name="AttackFacingAimReducer" value="0.5" />
+      <Property name="AttackMaxPlanetHeight" value="50" />
+      <Property name="AttackTurnMultiplierMax" value="2" />
+      <Property name="AttackTurnMaxMinTime" value="4" />
+      <Property name="AttackTurnMaxTimeRange" value="10" />
+      <Property name="NumHitsBeforeBail" value="4" />
+      <Property name="NumHitsBeforeReposition" value="10" />
+      <Property name="FleeBrake" value="0.8" />
+      <Property name="FleeBoost" value="1.5" />
+      <Property name="FleeBrakeTime" value="2" />
+      <Property name="FleeRepositionTime" value="10" />
+      <Property name="FleeRepositionAngleMin" value="30" />
+      <Property name="FleeRepositionAngleMax" value="110" />
+      <Property name="FleeUrgentBrake" value="0.8" />
+      <Property name="FleeUrgentBoost" value="1.8" />
+      <Property name="FleeUrgentBrakeTime" value="2" />
+      <Property name="FleeRepositionUrgentTime" value="2" />
+      <Property name="FleeRepositionUrgentAngleMin" value="130" />
+      <Property name="FleeRepositionUrgentAngleMax" value="175" />
+      <Property name="FleeRange" value="800" />
+      <Property name="FleeMinTime" value="3" />
+      <Property name="FleeMaxTime" value="8" />
+      <Property name="FleeUrgentRange" value="0" />
+      <Property name="AttackTargetMinRange" value="200" />
+      <Property name="AttackTargetMaxRange" value="1000" />
+      <Property name="AttackTargetOffsetMin" value="-200" />
+      <Property name="AttackTargetOffsetMax" value="500" />
+      <Property name="AttackTargetSwitchTargetTime" value="10" />
+    </Property>
+    <Property value="GcShipAIAttackData.xml">
+      <Property name="Id" value="PIRATE_FREIGHT" />
+      <Property name="GunDispersionAngle" value="4" />
+      <Property name="GunFireRate" value="0.15" />
+      <Property name="LaserHealthPoint" value="0" />
+      <Property name="AttackWeaponRange" value="700" />
+      <Property name="AttackAngle" value="25" />
+      <Property name="AttackShootWaitTime" value="1" />
+      <Property name="AttackShootTimeMin" value="1" />
+      <Property name="AttackShootTimeMax" value="1" />
+      <Property name="AttackReadyTime" value="2" />
+      <Property name="AttackMaxTime" value="10" />
+      <Property name="AttackApproachOffset" value="200" />
+      <Property name="AttackApproachMinRange" value="300" />
+      <Property name="AttackApproachMaxRange" value="800" />
+      <Property name="AttackTooCloseRange" value="150" />
+      <Property name="AttackFlybyOffset" value="50" />
+      <Property name="AttackBoostTimeToRange" value="1.5" />
+      <Property name="AttackBoostRange" value="2000" />
+      <Property name="AttackBoostAngle" value="10" />
+      <Property name="AttackTurnMultiplier" value="1.15" />
+      <Property name="AttackFacingAimReducer" value="0.5" />
+      <Property name="AttackMaxPlanetHeight" value="100" />
+      <Property name="AttackTurnMultiplierMax" value="1" />
+      <Property name="AttackTurnMaxMinTime" value="1" />
+      <Property name="AttackTurnMaxTimeRange" value="5" />
+      <Property name="NumHitsBeforeBail" value="600" />
+      <Property name="NumHitsBeforeReposition" value="1000" />
+      <Property name="FleeBrake" value="1" />
+      <Property name="FleeBoost" value="8" />
+      <Property name="FleeBrakeTime" value="15" />
+      <Property name="FleeRepositionTime" value="10" />
+      <Property name="FleeRepositionAngleMin" value="90" />
+      <Property name="FleeRepositionAngleMax" value="180" />
+      <Property name="FleeUrgentBrake" value="1.5" />
+      <Property name="FleeUrgentBoost" value="1.5" />
+      <Property name="FleeUrgentBrakeTime" value="3" />
+      <Property name="FleeRepositionUrgentTime" value="3" />
+      <Property name="FleeRepositionUrgentAngleMin" value="180" />
+      <Property name="FleeRepositionUrgentAngleMax" value="180" />
+      <Property name="FleeRange" value="600" />
+      <Property name="FleeMinTime" value="0.5" />
+      <Property name="FleeMaxTime" value="10" />
+      <Property name="FleeUrgentRange" value="100" />
+      <Property name="AttackTargetMinRange" value="300" />
+      <Property name="AttackTargetMaxRange" value="600" />
+      <Property name="AttackTargetOffsetMin" value="100" />
+      <Property name="AttackTargetOffsetMax" value="500" />
+      <Property name="AttackTargetSwitchTargetTime" value="10" />
+    </Property>
+  </Property>
+  <Property name="EngineTable">
+    <Property value="GcSpaceshipTravelData.xml">
+      <Property name="Id" value="STANDARD" />
+      <Property name="MinSpeed" value="0" />
+      <Property name="MaxSpeed" value="50" />
+      <Property name="BoostSpeed" value="900" />
+      <Property name="Force" value="100" />
+      <Property name="MinSpeedForce" value="5" />
+      <Property name="TurnMin" value="0.6" />
+      <Property name="TurnMax" value="0.9" />
+      <Property name="DirectionBrake" value="8" />
+      <Property name="PlanetMinSpeed" value="30" />
+      <Property name="PlanetMaxSpeed" value="60" />
+      <Property name="PlanetBoostSpeed" value="200" />
+      <Property name="PlanetForce" value="40" />
+      <Property name="PlanetTurnMin" value="0.5" />
+      <Property name="PlanetTurnMax" value="3" />
+      <Property name="PlanetDirectionBrake" value="1.2" />
+      <Property name="Falloff" value="0.8" />
+      <Property name="Roll" value="1" />
+      <Property name="MinHeight" value="30" />
+      <Property name="AvoidTime" value="0" />
+      <Property name="Hovering" value="False" />
+    </Property>
+    <Property value="GcSpaceshipTravelData.xml">
+      <Property name="Id" value="SOLO" />
+      <Property name="MinSpeed" value="0" />
+      <Property name="MaxSpeed" value="70" />
+      <Property name="BoostSpeed" value="1200" />
+      <Property name="Force" value="100" />
+      <Property name="MinSpeedForce" value="5" />
+      <Property name="TurnMin" value="0.8" />
+      <Property name="TurnMax" value="1.2" />
+      <Property name="DirectionBrake" value="5" />
+      <Property name="PlanetMinSpeed" value="30" />
+      <Property name="PlanetMaxSpeed" value="60" />
+      <Property name="PlanetBoostSpeed" value="200" />
+      <Property name="PlanetForce" value="40" />
+      <Property name="PlanetTurnMin" value="0.5" />
+      <Property name="PlanetTurnMax" value="3" />
+      <Property name="PlanetDirectionBrake" value="1.2" />
+      <Property name="Falloff" value="0.8" />
+      <Property name="Roll" value="1" />
+      <Property name="MinHeight" value="30" />
+      <Property name="AvoidTime" value="0" />
+      <Property name="Hovering" value="False" />
+    </Property>
+    <Property value="GcSpaceshipTravelData.xml">
+      <Property name="Id" value="PIRATE" />
+      <Property name="MinSpeed" value="0" />
+      <Property name="MaxSpeed" value="50" />
+      <Property name="BoostSpeed" value="900" />
+      <Property name="Force" value="100" />
+      <Property name="MinSpeedForce" value="5" />
+      <Property name="TurnMin" value="0.6" />
+      <Property name="TurnMax" value="1" />
+      <Property name="DirectionBrake" value="8" />
+      <Property name="PlanetMinSpeed" value="30" />
+      <Property name="PlanetMaxSpeed" value="60" />
+      <Property name="PlanetBoostSpeed" value="200" />
+      <Property name="PlanetForce" value="40" />
+      <Property name="PlanetTurnMin" value="0.5" />
+      <Property name="PlanetTurnMax" value="3" />
+      <Property name="PlanetDirectionBrake" value="1.2" />
+      <Property name="Falloff" value="0.8" />
+      <Property name="Roll" value="1" />
+      <Property name="MinHeight" value="30" />
+      <Property name="AvoidTime" value="0" />
+      <Property name="Hovering" value="False" />
+    </Property>
+    <Property value="GcSpaceshipTravelData.xml">
+      <Property name="Id" value="POLICE" />
+      <Property name="MinSpeed" value="0" />
+      <Property name="MaxSpeed" value="60" />
+      <Property name="BoostSpeed" value="1200" />
+      <Property name="Force" value="100" />
+      <Property name="MinSpeedForce" value="5" />
+      <Property name="TurnMin" value="0.8" />
+      <Property name="TurnMax" value="2" />
+      <Property name="DirectionBrake" value="8" />
+      <Property name="PlanetMinSpeed" value="30" />
+      <Property name="PlanetMaxSpeed" value="60" />
+      <Property name="PlanetBoostSpeed" value="200" />
+      <Property name="PlanetForce" value="40" />
+      <Property name="PlanetTurnMin" value="0.5" />
+      <Property name="PlanetTurnMax" value="3" />
+      <Property name="PlanetDirectionBrake" value="1.2" />
+      <Property name="Falloff" value="0.8" />
+      <Property name="Roll" value="1" />
+      <Property name="MinHeight" value="30" />
+      <Property name="AvoidTime" value="0" />
+      <Property name="Hovering" value="False" />
+    </Property>
+    <Property value="GcSpaceshipTravelData.xml">
+      <Property name="Id" value="TRADER" />
+      <Property name="MinSpeed" value="0" />
+      <Property name="MaxSpeed" value="60" />
+      <Property name="BoostSpeed" value="1200" />
+      <Property name="Force" value="100" />
+      <Property name="MinSpeedForce" value="5" />
+      <Property name="TurnMin" value="0.8" />
+      <Property name="TurnMax" value="2" />
+      <Property name="DirectionBrake" value="8" />
+      <Property name="PlanetMinSpeed" value="30" />
+      <Property name="PlanetMaxSpeed" value="60" />
+      <Property name="PlanetBoostSpeed" value="200" />
+      <Property name="PlanetForce" value="40" />
+      <Property name="PlanetTurnMin" value="0.5" />
+      <Property name="PlanetTurnMax" value="3" />
+      <Property name="PlanetDirectionBrake" value="1.2" />
+      <Property name="Falloff" value="0.8" />
+      <Property name="Roll" value="1" />
+      <Property name="MinHeight" value="30" />
+      <Property name="AvoidTime" value="0" />
+      <Property name="Hovering" value="False" />
+    </Property>
+    <Property value="GcSpaceshipTravelData.xml">
+      <Property name="Id" value="BOUNTY" />
+      <Property name="MinSpeed" value="0" />
+      <Property name="MaxSpeed" value="60" />
+      <Property name="BoostSpeed" value="1200" />
+      <Property name="Force" value="100" />
+      <Property name="MinSpeedForce" value="5" />
+      <Property name="TurnMin" value="0.8" />
+      <Property name="TurnMax" value="2" />
+      <Property name="DirectionBrake" value="8" />
+      <Property name="PlanetMinSpeed" value="30" />
+      <Property name="PlanetMaxSpeed" value="60" />
+      <Property name="PlanetBoostSpeed" value="200" />
+      <Property name="PlanetForce" value="40" />
+      <Property name="PlanetTurnMin" value="0.5" />
+      <Property name="PlanetTurnMax" value="3" />
+      <Property name="PlanetDirectionBrake" value="1.2" />
+      <Property name="Falloff" value="0.8" />
+      <Property name="Roll" value="1" />
+      <Property name="MinHeight" value="30" />
+      <Property name="AvoidTime" value="0" />
+      <Property name="Hovering" value="False" />
+    </Property>
+    <Property value="GcSpaceshipTravelData.xml">
+      <Property name="Id" value="PLANET" />
+      <Property name="MinSpeed" value="60" />
+      <Property name="MaxSpeed" value="110" />
+      <Property name="BoostSpeed" value="180" />
+      <Property name="Force" value="50" />
+      <Property name="MinSpeedForce" value="5" />
+      <Property name="TurnMin" value="0.5" />
+      <Property name="TurnMax" value="1" />
+      <Property name="DirectionBrake" value="1.5" />
+      <Property name="PlanetMinSpeed" value="30" />
+      <Property name="PlanetMaxSpeed" value="60" />
+      <Property name="PlanetBoostSpeed" value="200" />
+      <Property name="PlanetForce" value="40" />
+      <Property name="PlanetTurnMin" value="1" />
+      <Property name="PlanetTurnMax" value="3" />
+      <Property name="PlanetDirectionBrake" value="2" />
+      <Property name="Falloff" value="0.8" />
+      <Property name="Roll" value="1" />
+      <Property name="MinHeight" value="30" />
+      <Property name="AvoidTime" value="0" />
+      <Property name="Hovering" value="False" />
+    </Property>
+    <Property value="GcSpaceshipTravelData.xml">
+      <Property name="Id" value="PLANET_TRADE" />
+      <Property name="MinSpeed" value="20" />
+      <Property name="MaxSpeed" value="60" />
+      <Property name="BoostSpeed" value="130" />
+      <Property name="Force" value="50" />
+      <Property name="MinSpeedForce" value="5" />
+      <Property name="TurnMin" value="0.5" />
+      <Property name="TurnMax" value="1" />
+      <Property name="DirectionBrake" value="1.5" />
+      <Property name="PlanetMinSpeed" value="10" />
+      <Property name="PlanetMaxSpeed" value="40" />
+      <Property name="PlanetBoostSpeed" value="80" />
+      <Property name="PlanetForce" value="30" />
+      <Property name="PlanetTurnMin" value="1" />
+      <Property name="PlanetTurnMax" value="2" />
+      <Property name="PlanetDirectionBrake" value="2" />
+      <Property name="Falloff" value="0.8" />
+      <Property name="Roll" value="1" />
+      <Property name="MinHeight" value="40" />
+      <Property name="AvoidTime" value="0" />
+      <Property name="Hovering" value="False" />
+    </Property>
+  </Property>
+  <Property name="TraderAttackLookup">
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="TRADE_EASY" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="TRADE_MED" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="TRADE_HARD" />
+    </Property>
+  </Property>
+</Data>

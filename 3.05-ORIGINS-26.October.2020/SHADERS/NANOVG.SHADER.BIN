@@ -1,0 +1,124 @@
+[[FX]]
+
+sampler gDiffuseMap = sampler_state
+{
+	Filter = Bilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 0;
+};
+
+
+// Contexts
+
+context [ ORBIS ] NANOVGORBIS
+{
+	VertexShader = compile GLSL VS_NANOVG_ORBIS;
+	PixelShader  = compile  GLSL FS_NANOVG_ORBIS;
+	
+	ZWriteEnable = false;
+}
+
+context [ PROSPERO ] NANOVGPROSPERO
+{
+	VertexShader = compile GLSL VS_NANOVG_PROSPERO;
+	PixelShader  = compile  GLSL FS_NANOVG_PROSPERO;
+	
+	ZWriteEnable = false;
+}
+
+context [ XBOXONE ] NANOVGXBOXONE
+{
+    VertexShader = compile GLSL VS_NANOVG_XBOXONE;
+    PixelShader  = compile GLSL FS_NANOVG_XBOXONE;
+
+    ZWriteEnable = false;
+}
+
+context [ XBOXGDK ] NANOVGXBOXGDK
+{
+    VertexShader = compile GLSL VS_NANOVG_XBOXGDK;
+    PixelShader  = compile GLSL FS_NANOVG_XBOXGDK;
+
+    ZWriteEnable = false;
+}
+
+context [ SCARLETT ] NANOVGSCARLETT
+{
+    VertexShader = compile GLSL VS_NANOVG_SCARLETT;
+    PixelShader  = compile GLSL FS_NANOVG_SCARLETT;
+
+    ZWriteEnable = false;
+}
+
+context [ DX12 ] NANOVGDX12
+{
+    VertexShader = compile GLSL VS_NANOVG_DX12;
+    PixelShader = compile  GLSL FS_NANOVG_DX12;
+
+    ZWriteEnable = false;
+}
+
+context [ PC ] NANOVGVK
+{
+	VertexShader = compile GLSL VS_NANOVG_VULKAN;
+	PixelShader  = compile  GLSL FS_NANOVG_VULKAN;	
+	ZWriteEnable = false;
+}
+
+
+[[VS_NANOVG_VULKAN]]
+// =================================================================================================
+#include "VULKAN/NanoVgVertex.shader.h"
+
+[[FS_NANOVG_VULKAN]]
+// =================================================================================================
+#include "VULKAN/NanoVgFragment.shader.h"
+
+[[VS_NANOVG_ORBIS]]
+// =================================================================================================
+#include "ORBIS/NanoVgVertex.shader.h"
+
+[[FS_NANOVG_ORBIS]]
+// =================================================================================================
+#include "ORBIS/NanoVgFragment.shader.h"
+
+[[VS_NANOVG_PROSPERO]]
+// =================================================================================================
+#include "PROSPERO/NanoVgVertex.shader.h"
+
+[[FS_NANOVG_PROSPERO]]
+// =================================================================================================
+#include "PROSPERO/NanoVgFragment.shader.h"
+
+[[VS_NANOVG_XBOXONE]]
+// =================================================================================================
+#include "XboxOne/NanoVgVertex.shader.h"
+
+[[FS_NANOVG_XBOXONE]]
+// =================================================================================================
+#include "XboxOne/NanoVgFragment.shader.h"
+
+[[VS_NANOVG_XBOXGDK]]
+// =================================================================================================
+#include "XboxGDK/NanoVgVertex.shader.h"
+
+[[FS_NANOVG_XBOXGDK]]
+// =================================================================================================
+#include "XboxGDK/NanoVgFragment.shader.h"
+
+[[VS_NANOVG_SCARLETT]]
+// =================================================================================================
+#include "Scarlett/NanoVgVertex.shader.h"
+
+[[FS_NANOVG_SCARLETT]]
+// =================================================================================================
+#include "Scarlett/NanoVgFragment.shader.h"
+
+[[VS_NANOVG_DX12]]
+// =================================================================================================
+#include "XboxOne/NanoVgVertex.shader.h"
+
+[[FS_NANOVG_DX12]]
+// =================================================================================================
+#include "XboxOne/NanoVgFragment.shader.h"
+

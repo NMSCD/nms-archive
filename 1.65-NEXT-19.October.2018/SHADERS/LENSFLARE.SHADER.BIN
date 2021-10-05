@@ -1,0 +1,142 @@
+[[FX]]
+
+// Samplers
+
+sampler gBufferMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 0;
+};
+
+sampler gBuffer1Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 1;
+};
+
+sampler gBuffer2Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 2;
+};
+
+sampler gBuffer3Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 3;
+};
+
+sampler gBuffer4Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 4;
+};
+
+sampler gBuffer5Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 5;
+};
+
+sampler gColourLUTBase = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 6;
+};
+
+sampler gColourLUTFar = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 7;
+};
+
+sampler gColourLUTStorm = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 8;
+};
+
+sampler gColourLUTEffect = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 9;
+};
+
+sampler gBlurMask = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 10;
+};
+
+sampler gLensDirt = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 11;
+};
+
+
+// Uniforms
+float4 gThresholdParamsVec4 = {1.0, 1.0, 1.0, 1.0};
+float4 gLensParamsVec4      = {1.0, 1.0, 1.0, 1.0};
+
+// Contexts
+context BRIGHT
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader = compile GLSL FS_LENSFLARE_BRIGHT;
+    ComputeShader = compile GLSL FS_LENSFLARE_BRIGHT;
+}
+
+context FEATURE
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader = compile GLSL FS_LENSFLARE_FEATURE;
+    ComputeShader = compile GLSL FS_LENSFLARE_FEATURE;
+}
+
+context COMBINE
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader = compile GLSL FS_LENSFLARE_COMBINE;
+    ComputeShader = compile GLSL FS_LENSFLARE_COMBINE;
+}
+
+context COMBINE_TO_ALPHA
+{
+	VertexShader	= compile GLSL VS_FSQUAD;
+	PixelShader		= compile GLSL FS_LENSFLARE_COMBINE_TO_ALPHA;
+    ComputeShader	= compile GLSL FS_LENSFLARE_COMBINE_TO_ALPHA;
+}
+
+
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#define D_LENSFLARE
+#define D_TEX_QUAD
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_LENSFLARE_BRIGHT]]
+// =================================================================================================
+#define D_LENSFLARE
+#define D_LENSFLARE_BRIGHT
+#include "Fullscreen/LensFlareFragment.shader.h"
+
+[[FS_LENSFLARE_FEATURE]]
+// =================================================================================================
+#define D_LENSFLARE
+#define D_LENSFLARE_FEATURE
+#include "Fullscreen/LensFlareFragment.shader.h"
+
+[[FS_LENSFLARE_COMBINE]]
+// =================================================================================================
+#define D_LENSFLARE
+#define D_LENSFLARE_COMBINE
+#include "Fullscreen/LensFlareFragment.shader.h"
+
+[[FS_LENSFLARE_COMBINE_TO_ALPHA]]
+// =================================================================================================
+#define D_LENSFLARE
+#define D_LENSFLARE_COMBINE
+#define D_LENSFLARE_COMBINE_TO_ALPHA
+#include "Fullscreen/LensFlareFragment.shader.h"
