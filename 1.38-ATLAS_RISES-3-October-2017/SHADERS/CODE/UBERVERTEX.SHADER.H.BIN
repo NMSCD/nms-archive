@@ -1,0 +1,829 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       UberVertexShader.h
+///     @author     User
+///     @date       
+///
+///     @brief      UberVertexShader
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+#if defined( _F03_NORMALMAP ) || defined( _F42_DETAIL_NORMAL ) || defined( _F20_PARALLAXMAP )
+    #define D_NORMALMAPPED
+#endif
+
+#if defined( D_NORMALMAPPED ) || defined( _F27_VBTANGENT ) || defined( _F31_DISPLACEMENT )
+    #define D_DECLARE_TANGENT
+#endif
+
+#ifdef _F31_DISPLACEMENT
+    #define D_DECLARE_TIME
+
+    #ifndef D_DEPTHONLY
+        #define D_OUTPUT_MOTION_VECTORS
+    #endif
+#endif
+
+#if ( defined( _F15_WIND ) || defined( _F19_BILLBOARD ) ) && !defined( D_DEPTHONLY ) && !defined( D_DEPTH_CLEAR ) && !defined( _F12_BATCHED_BILLBOARD ) && !defined( _F44_IMPOSTER )
+#define D_OUTPUT_MOTION_VECTORS
+#endif
+
+#if defined( _F01_DIFFUSEMAP ) || defined( _F03_NORMALMAP ) || defined( _F42_DETAIL_NORMAL ) || defined( _F41_DETAIL_DIFFUSE )
+    #define D_TEXCOORDS
+#endif
+
+#define D_USES_WORLD_POSITION
+
+#ifndef _F03_NORMALMAP
+    #if defined( _F04_ENVMAP ) || !defined( _F07_UNLIT )
+        #define D_USES_VERTEX_NORMAL
+    #endif
+#endif
+
+#if (defined( _F58_USE_CENTRAL_NORMAL ) && !defined( D_DEPTHONLY )) || defined( _F60_ACUTE_ANGLE_FADE ) || defined( _F36_DOUBLESIDED )
+#define D_USES_VERTEX_NORMAL
+#endif
+
+#if defined( _F02_SKINNED )
+    #define D_SKINNING_UNIFORMS
+#endif
+
+#if !defined( D_DEFER ) || defined( D_DEFERRED_DECAL ) || defined( D_OUTPUT_MOTION_VECTORS )  || defined( D_DEPTHONLY )
+    #define D_USE_SCREEN_POSITION
+#endif
+
+
+#if !defined( D_IMPOSTER_VERTEX )
+#define D_FADE
+#endif
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/Defines.shader.h"
+#include "Common/CommonUniforms.shader.h"
+//
+// In UberCommon we have our uniforms specific to ubervertex declared. PLUS, IMPORTANTLY we have the SRT buffer declared. 
+// This MUST be included after CommonUniforms, but before all the other stuff that references it.
+//
+#include "UberCommon.h"
+
+//
+// Have to include things that reference the global under here. Things defined above may be parameters to functions in the following includes.
+//
+#include "Common/CommonVertex.shader.h"
+#include "Common/Common.shader.h"
+#include "Common/CommonDynamicVertex.shader.h"
+#include "Common/CommonDepth.shader.h"
+#include "Common/CommonPlanet.shader.h"
+#include "Imposter.shader.h"
+
+#ifdef D_SKINNING_UNIFORMS
+    #include "Common/CommonSkinning.shader.h"
+#endif
+
+#ifdef _F31_DISPLACEMENT
+    #include "Common/CommonDisplacement.shader.h"
+#endif
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+#ifdef _F30_REFRACTION_MAP
+
+    #if defined( D_PLATFORM_ORBIS )
+		// [peter] this is potentially more correct on the PS4 ...
+        STATIC_CONST mat4 kRemapMat4 = mat4
+            (  
+                0.5, 0.0, 0.0, 0.5,
+                0.0, 0.5, 0.0, 0.5,
+                0.0, 0.0, 0.5, 0.5,
+                0.0, 0.0, 0.0, 1.0
+            );
+    #else
+        STATIC_CONST mat4 kRemapMat4 = mat4
+        (  
+            0.5, 0.0, 0.0, 0.0,
+            0.0, 0.5, 0.0, 0.0,
+            0.0, 0.0, 0.5, 0.0,
+            0.5, 0.5, 0.5, 1.0
+        );
+#endif
+
+#endif
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+    
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+ 
+DECLARE_INPUT
+
+    INPUT( vec4,        mkLocalPositionVec4,  POSITION0     )
+    INPUT( vec4,        mkTexCoordsVec4,      TEXCOORD0     )
+    INPUT( vec4,        mkLocalNormalVec4,    TEXCOORD1     )
+
+#ifdef D_DECLARE_TANGENT
+    INPUT( vec4,        mkTangentVec4,        TANGENT0      )
+#endif
+
+#if defined( _F21_VERTEXCOLOUR ) || defined( _F29_VBCOLOUR )
+    INPUT( vec4,        mkColourVec4,         TEXCOORD2     )
+#endif
+
+#ifdef D_SKINNING_UNIFORMS
+    INPUT( JOINT_TYPE,  mkJointsVec4,         BLENDINDICES  )
+    INPUT( vec4,        mkWeightsVec4,        BLENDWEIGHT   )
+#endif
+
+#ifdef D_INSTANCE
+    INPUT( vec4,        mkTransformMat4R0,    TEXCOORD3     )
+    INPUT( vec4,        mkTransformMat4R1,    TEXCOORD4     )
+    INPUT( vec4,        mkTransformMat4R2,    TEXCOORD5     )
+    INPUT( vec4,        mkTransformMat4R3,    TEXCOORD6     )
+    INPUT( vec4,        mkTransformMat4R4,    TEXCOORD7     )
+    INPUT( vec4,        mkTransformMat4R5,    TEXCOORD8     )
+#endif
+
+DECLARE_END
+
+
+
+//-----------------------------------------------------------------------------
+///
+///     Output
+///
+///     @brief  Output
+///
+//-----------------------------------------------------------------------------
+DECLARE_OUTPUT
+
+    OUT_VERTEX_SCREEN_POSITION
+
+    OUTPUT( vec4,  mTexCoordsVec4,            TEXCOORD0 )
+
+#ifdef _F21_VERTEXCOLOUR
+    OUTPUT( vec4,  mColourVec4,               TEXCOORD1 )
+#endif
+
+#ifdef _F30_REFRACTION_MAP
+    OUTPUT( vec4,  mProjectedTexCoordsVec4,   TEXCOORD2 )
+#endif
+
+#if defined( D_DEPTHONLY )
+    OUTPUT_NOINTERP( vec4,  mWorldPositionVec3_mfSpare,        TEXCOORD3 )
+#else
+    OUTPUT( vec4,  mWorldPositionVec3_mfSpare,        TEXCOORD3 )
+#endif
+
+#if !defined( _F01_DIFFUSEMAP ) || defined( _F22_TRANSPARENT_SCALAR )
+    OUTPUT( vec4,  mMaterialVec4,             TEXCOORD4 ) 
+#endif
+
+#if defined( _F47_WRITE_LOG_Z ) && defined( D_USING_LOGDEPTH )
+    OUTPUT( float, mfLogZ,                    TEXCOORD5 )
+#endif
+
+#ifdef D_USES_VERTEX_NORMAL
+    OUTPUT( vec3, mTangentSpaceNormalVec3, TEXCOORD6 )
+#endif
+
+#if !defined( D_DEPTHONLY ) && !defined( D_DEPTH_CLEAR )
+
+
+#ifdef _F20_PARALLAXMAP
+    OUTPUT( vec3,  mTangentSpaceEyeVec3,      TEXCOORD7 )
+#endif
+
+#if 0 //defined( D_OUTPUT_MOTION_VECTORS )  && defined( _F14_UVSCROLL )
+    OUTPUT( vec4, mPrevTexCoordsVec4,         TEXCOORD8 )
+#endif
+
+#if defined( D_OUTPUT_MOTION_VECTORS ) && defined( D_INSTANCE ) 
+    OUTPUT_NOINTERP( float, mfShearMotionLength,   TEXCOORD9 )
+#endif
+
+#if !defined( D_DEFER ) && !defined( _F07_UNLIT )
+    OUTPUT_NOINTERP( mat3, mUpMatrixMat3,     TEXCOORD10)
+#endif
+
+//#if defined( _F44_IMPOSTER )
+//    OUTPUT( vec3, mShadowWorldPositionVec3,   TEXCOORD8 )
+//#endif
+
+#if defined( _F03_NORMALMAP )  || defined( _F42_DETAIL_NORMAL )
+    OUTPUT( vec3,  mTangentMatRow1Vec3,       TEXCOORD18 )
+    OUTPUT( vec3,  mTangentMatRow2Vec3,       TEXCOORD19 )
+    OUTPUT( vec3,  mTangentMatRow3Vec3,       TEXCOORD20 )
+#endif
+    
+
+#if defined( _F58_USE_CENTRAL_NORMAL ) || defined( _F56_MATCH_GROUND )
+    OUTPUT( vec3,  mCenteralNormalVec3,	      TEXCOORD14 )
+    //OUTPUT( vec3,  mCenterPositionVec3,       TEXCOORD16 )
+#endif
+    
+#endif
+
+#ifdef D_USE_SCREEN_POSITION
+    OUTPUT( vec4,  mScreenSpacePositionVec4,  TEXCOORD15 )
+#endif
+    
+#if defined( D_OUTPUT_MOTION_VECTORS ) && !defined( D_DEPTHONLY ) && !defined( D_DEPTH_CLEAR )
+    // it appears that the order of TEXCOORD15 and TEXCOORD21 must be SWAPPED relative to the frag shader
+    // or else strange things happen.
+    // why this should be the case is deeply mysterious to me.... 
+    OUTPUT( vec4, mPrevScreenPosition,        TEXCOORD21 )
+#endif
+
+#ifdef _F37_RECOLOUR
+    OUTPUT( vec4,  mPaletteColour1Vec4,       TEXCOORD16 )
+    OUTPUT( vec4,  mPaletteColour2Vec4,       TEXCOORD17 )
+#endif
+
+    OUTPUT_NOINTERP( float, mfFadeValueForInstance, TEXCOORD22 )
+
+#ifdef D_INSTANCE
+    // TODO, merge this into one attribute.
+    OUTPUT_NOINTERP( vec4, mLodIndexVec4,           TEXCOORD23 )
+#endif
+
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+//-----------------------------------------------------------------------------
+///
+///     Vertex Main
+///
+///     @brief      Vertex Main
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+VERTEX_MAIN_SRT
+{
+    mat4 lWorldMat4;
+    mat4 lPrevWorldMat4;
+    vec4 lLocalPositionVec4;
+    vec4 lPrevLocalPositionVec4;
+    vec4 lWorldPositionVec4 = vec4( 0.0 );
+    vec4 lPrevWorldPositionVec4 = vec4( 0.0 );
+    vec4 lScreenSpacePositionVec4;
+    vec3 lLocalNormalVec3;
+    vec3 lWorldNormalVec3;
+    vec3 lLocalTangentVec3;
+    vec4 lTexCoordsVec4;
+    vec4 lPrevTexCoordsVec4;
+    vec4 lShearParamsVec4 = vec4( 0.0 );
+    float lShearMotionLength = 0.0;
+
+    lLocalPositionVec4   = IN( mkLocalPositionVec4 );
+    lPrevLocalPositionVec4 = lLocalPositionVec4;
+    lLocalNormalVec3     = normalize( IN( mkLocalNormalVec4 ).xyz );
+    
+    #ifdef D_DECLARE_TANGENT
+    {
+        lLocalTangentVec3 = normalize( IN( mkTangentVec4 ).xyz );
+    }
+    #endif
+
+    #ifdef D_INSTANCE
+        lWorldMat4[ 0 ]        = IN( mkTransformMat4R0 );
+        lWorldMat4[ 1 ]        = IN( mkTransformMat4R1 );
+        lWorldMat4[ 2 ]        = IN( mkTransformMat4R2 );
+        lWorldMat4[ 3 ]        = IN( mkTransformMat4R3 );
+
+        OUT( mfFadeValueForInstance ) = lWorldMat4[ 0 ].w;  // + lUniforms.mpCommonPerMesh->gfFadeValue
+
+    #ifdef D_SKINNING_UNIFORMS
+        vec4 lExtraParams = IN( mkTransformMat4R4 );
+
+        vec3 lWindEigens0 = vec3(lWorldMat4[ 1 ].w, lWorldMat4[ 2 ].w, lWorldMat4[ 3 ].w );
+        vec3 lWindEigens1 = lExtraParams.xyz;
+    #endif
+
+        lShearParamsVec4 = IN( mkTransformMat4R5 );
+
+        lWorldMat4[ 0 ].w      = 0.0; // this matrix element is the instance fade value (PS4: may need to assign after the transpose-line)
+        lWorldMat4[ 1 ].w      = 0.0; // this matrix element is one of the wind eigenvalue cosines
+        lWorldMat4[ 2 ].w      = 0.0; // this matrix element is one of the wind eigenvalue cosines
+        lWorldMat4[ 3 ].w      = 1.0; // this matrix element is one of the wind eigenvalue cosines
+        
+        lWorldMat4 = PLATFORM_TRANSPOSE( lWorldMat4 );
+        lPrevWorldMat4 = lWorldMat4;
+
+        #ifdef D_OUTPUT_MOTION_VECTORS
+            vec2 lShearDiff = lShearParamsVec4.xy - lShearParamsVec4.zw;
+            lShearMotionLength = dot( lShearDiff, lShearDiff );
+        #endif
+
+    //#ifdef D_INSTANCE
+        vec4 lLodParams = IN( mkTransformMat4R4 );
+        OUT( mLodIndexVec4 ).x = lLodParams.w;
+    //#endif
+
+    #else
+
+	#ifdef D_FADE
+        OUT( mfFadeValueForInstance ) = lUniforms.mpCommonPerMesh->gfFadeValue;
+	#else
+		OUT( mfFadeValueForInstance ) = 1.0;
+	#endif
+
+        lWorldMat4 = lUniforms.mpCommonPerMesh->gWorldMat4;
+        lPrevWorldMat4 = lUniforms.mpCommonPerMesh->gWorldMotionMat4;
+    #endif    
+  
+    
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Skinning
+    ///
+    //-----------------------------------------------------------------------------
+
+    #ifdef D_SKINNING_UNIFORMS
+    #ifdef D_INSTANCE
+    {
+        vec4 lShearValues = IN( mkTransformMat4R5 );
+
+        lLocalPositionVec4.xyz = GetLdsWindPosition( DEREF_PTR( lUniforms.mpCommonPerMesh ), lLocalPositionVec4.xyz, IN( mkWeightsVec4 ), IN( mkJointsVec4 ), lWindEigens0, lWindEigens1, lShearValues );
+    }
+    #else
+    {
+        mat4 lSkinningMat4;
+        mat4 lPrevSkinningMat4;
+        mat3 lSkinningMat3;
+        vec4 lSkinnedPosition;
+ 
+        lSkinningMat4 = CalcSkinningMat( DEREF_PTR( lUniforms.mpCommonPerMesh ), IN( mkWeightsVec4 ), IN( mkJointsVec4 ) );
+        lSkinningMat3 = GetSkinningMatVec( lSkinningMat4 );
+ 
+        lSkinnedPosition   = GetSkinPosition( lLocalPositionVec4, lSkinningMat4 );
+        lLocalNormalVec3   = GetSkinVector( lLocalNormalVec3,   lSkinningMat3 );
+        
+        #ifdef D_OUTPUT_MOTION_VECTORS
+        lPrevSkinningMat4 = CalcPrevSkinningMat( DEREF_PTR( lUniforms.mpCommonPerMesh ), IN( mkWeightsVec4 ), IN( mkJointsVec4 ) );
+        lPrevLocalPositionVec4 = GetSkinPosition( lLocalPositionVec4, lPrevSkinningMat4 );
+        #else
+        lPrevLocalPositionVec4 = lSkinnedPosition;
+        #endif
+
+        lLocalPositionVec4 = lSkinnedPosition;
+
+        #ifdef D_DECLARE_TANGENT
+        {
+            lLocalTangentVec3 = GetSkinVector( lLocalTangentVec3, lSkinningMat3 );
+        }
+        #endif
+    }
+    #endif
+    #endif
+
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Vertex Displacement
+    ///
+    //-----------------------------------------------------------------------------
+    #ifdef _F31_DISPLACEMENT
+    {
+        //vec3 lDisplaceBasePositionVec3 = lUniforms.mpCommonPerMesh->gWorldMat4[3].xyz - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz;
+        vec3 lDisplaceBasePositionVec3 = lWorldMat4[3].xyz - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz;
+
+        DisplaceVertexAndNormal(	
+            lLocalPositionVec4,
+            lLocalNormalVec3,
+            lLocalTangentVec3, 
+            lUniforms.mpPerFrame->gfTime + lDisplaceBasePositionVec3.x + lDisplaceBasePositionVec3.y + lDisplaceBasePositionVec3.z,
+            DEREF_PTR( lUniforms.mpCustomPerMaterial ) );
+
+        #ifdef D_OUTPUT_MOTION_VECTORS
+        {
+            mat3   laJacobianMat3[2];
+            vec3   laNewVertexVec3[2];
+            vec3   laFallOffRecipVec3[2];
+            float lafFallOffScale[2];
+            
+            DisplaceVertex( lPrevLocalPositionVec4,
+                            laNewVertexVec3,
+                            laFallOffRecipVec3,
+                            lafFallOffScale,
+                            lUniforms.mpPerFrame->gfPrevTime + lDisplaceBasePositionVec3.x + lDisplaceBasePositionVec3.y + lDisplaceBasePositionVec3.z,
+                            DEREF_PTR( lUniforms.mpCustomPerMaterial ) );
+        }
+        #endif
+    }
+    #endif
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Billboarding
+    ///
+    //-----------------------------------------------------------------------------
+    #ifdef _F19_BILLBOARD   
+    {
+        #if 0 // defined(  _F44_IMPOSTER ) && !defined( D_DEPTHONLY ) && !defined( D_DEPTH_CLEAR )
+        {
+            //  Imposters only require a direction(Camera AT)
+            mat4 lCameraMat4 = lUniforms.mpPerFrame->gViewMat4;
+            lCameraMat4[2].xyz = -lUniforms.mpPerFrame->gLightDirectionVec4.xyz;
+            vec4 lImpLocalPositionVec4;
+            vec4 lImpWorldPositionVec4;
+            vec3 lImpLocalNormalVec3;
+            vec3 lImpWorldNormalVec3;
+            CalcBillboardValues(
+                lCameraMat4,
+                lUniforms.mpCommonPerMesh->gWorldMat4,
+                lLocalPositionVec4,
+                lUniforms.mpCustomPerMesh->gCustomParams01Vec4,
+                lWorldMat4,
+                IN(mkTexCoordsVec4),
+                lShearParamsVec4,
+                lImpLocalPositionVec4,
+                lImpWorldPositionVec4,
+                lImpLocalNormalVec3,
+                lImpWorldNormalVec3);
+
+            OUT(mShadowWorldPositionVec3).xyz = lImpWorldPositionVec4.xyz;
+        }
+        #endif
+
+        CalcBillboardValues( 
+            lUniforms.mpPerFrame->gCameraMat4,
+            lUniforms.mpCommonPerMesh->gWorldMat4,
+            lLocalPositionVec4, 
+            lUniforms.mpCustomPerMesh->gCustomParams01Vec4,
+            lWorldMat4, 
+            IN( mkTexCoordsVec4 ),
+            lShearParamsVec4,
+            lLocalPositionVec4, 
+            lWorldPositionVec4, 
+            lLocalNormalVec3, 
+            lWorldNormalVec3 );
+
+        #ifdef D_OUTPUT_MOTION_VECTORS
+            vec3 lDummyNormal1;
+            vec3 lDummyNormal2;
+
+            if( lShearMotionLength > 0.0 )
+            {
+                CalcBillboardValues( 
+                    lUniforms.mpPerFrame->gCameraMat4,
+                    lUniforms.mpCommonPerMesh->gWorldMotionMat4,
+                    lPrevLocalPositionVec4, 
+                    lUniforms.mpCustomPerMesh->gCustomParams01Vec4,
+                    lPrevWorldMat4, 
+                    IN( mkTexCoordsVec4 ),
+                    lShearParamsVec4.zwxy,
+                    lPrevLocalPositionVec4, 
+                    lPrevWorldPositionVec4, 
+                    lDummyNormal1, 
+                    lDummyNormal2 );
+            }
+            else
+            {
+                lPrevLocalPositionVec4 = lLocalPositionVec4;
+                lPrevWorldPositionVec4 = lWorldPositionVec4;
+            }
+        #endif
+    }
+    #endif
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     World Transform
+    ///
+    //-----------------------------------------------------------------------------
+    #ifndef _F19_BILLBOARD
+    {
+    #ifdef D_INSTANCE
+        lWorldPositionVec4 = CalcWorldPosInstanced( lUniforms.mpCommonPerMesh->gWorldMat4, lWorldMat4, lLocalPositionVec4 );
+        lWorldNormalVec3   = normalize( CalcWorldVecInstanced( lUniforms.mpCommonPerMesh->gWorldNormalMat4, lWorldMat4, lLocalNormalVec3 ) );      
+
+        #if defined( D_OUTPUT_MOTION_VECTORS ) && ( defined( D_SKINNING_UNIFORMS ) || defined( _F31_DISPLACEMENT ) )
+        lPrevWorldPositionVec4 = CalcWorldPosInstanced( lUniforms.mpCommonPerMesh->gWorldMat4, lPrevWorldMat4, lPrevLocalPositionVec4 );
+        #else
+        lPrevWorldPositionVec4 = lWorldPositionVec4;
+        #endif
+    #else          
+        lWorldPositionVec4 = CalcWorldPos( lUniforms.mpCommonPerMesh->gWorldMat4, lLocalPositionVec4 );
+        lWorldNormalVec3   = normalize( CalcWorldVec( lUniforms.mpCommonPerMesh->gWorldNormalMat4, lLocalNormalVec3 ) );
+
+        #if defined( D_OUTPUT_MOTION_VECTORS )
+        lPrevWorldPositionVec4 = CalcWorldPos( lUniforms.mpCommonPerMesh->gWorldMotionMat4, lPrevLocalPositionVec4 );
+        #else
+        lPrevWorldPositionVec4 = lWorldPositionVec4;
+        #endif
+    #endif        
+        
+
+        #if defined( _F36_DOUBLESIDED ) && !defined( D_IMPOSTER_NORMAL)
+        {
+            #ifdef D_NORMALMAPPED
+                OUT( mWorldPositionVec3_mfSpare ).w = IN( mkTangentVec4 ).w > 0.01 ? 1.0 : -1.0;
+            #endif
+        }
+        #endif
+    }
+    #endif
+
+    #ifdef D_USES_WORLD_POSITION
+    {
+        OUT( mWorldPositionVec3_mfSpare ).xyz = lWorldPositionVec4.xyz;
+    }
+    #endif
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Wind
+    ///
+    //-----------------------------------------------------------------------------
+#ifdef _F15_WIND
+    {
+        mat3 lWorldUpMatrix = GetWorldUpTransform( lWorldPositionVec4.xyz, lUniforms.mpCommonPerMesh->gPlanetPositionVec4 );
+        vec4 lPlanetRelPositionVec4 = lWorldPositionVec4 - vec4( lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz, 0.0 );
+        lWorldPositionVec4 += CalcWindVec4( lPlanetRelPositionVec4, lWorldMat4, lWorldUpMatrix, lUniforms.mpPerFrame->gfTime );
+    }
+#endif
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Planet Curvature
+    ///
+    //-----------------------------------------------------------------------------
+    #if !defined( _F38_NO_DEFORM )
+    {
+        OUT( mWorldPositionVec3_mfSpare ).xyz = lWorldPositionVec4.xyz;
+    }
+    #endif
+
+    #ifdef D_USES_VERTEX_NORMAL
+    {
+        OUT( mTangentSpaceNormalVec3 ) = lWorldNormalVec3;
+    }
+    #endif
+      
+#if !defined( D_DEPTHONLY ) && !defined( D_DEPTH_CLEAR )
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Foliage
+    ///
+    //-----------------------------------------------------------------------------
+    #if defined( _F58_USE_CENTRAL_NORMAL ) || defined( _F56_MATCH_GROUND )
+        //OUT( mCenteralNormalVec3 ) = CalcWorldVec( vec3( 0.0, 1.0, 0.0 ) );
+        //OUT( mCenterPositionVec3 ) = MAT4_GET_COLUMN( lWorldMat4, 3 ).xyz;
+        OUT( mCenteralNormalVec3 ) = normalize( MAT4_GET_COLUMN( lWorldMat4, 1 ).xyz );
+    #endif
+   
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Normal Mapping
+    ///
+    //-----------------------------------------------------------------------------
+
+    #ifdef D_NORMALMAPPED
+    {
+        vec3 lWorldTangentVec3;
+        vec3 lWorldBitangentVec3;
+        vec3 lWorldTangentNormalVec3;
+
+        #if defined( _F19_BILLBOARD )
+        {
+            lWorldTangentVec3       =  MAT4_GET_COLUMN( lUniforms.mpPerFrame->gCameraMat4, 0 );
+            lWorldBitangentVec3     = -MAT4_GET_COLUMN( lUniforms.mpPerFrame->gCameraMat4, 1 );        
+            lWorldTangentNormalVec3 =  MAT4_GET_COLUMN( lUniforms.mpPerFrame->gCameraMat4, 2 );
+        }
+        #else
+        {
+        #ifdef D_INSTANCE
+            lWorldTangentVec3   = CalcWorldVecInstanced( lUniforms.mpCommonPerMesh->gWorldNormalMat4, lWorldMat4, lLocalTangentVec3 );
+        #else
+            lWorldTangentVec3   = CalcWorldVec( lUniforms.mpCommonPerMesh->gWorldNormalMat4, lLocalTangentVec3 );
+        #endif            
+            // This is a bit of a hack. Can't figure out why W comes through as unorm on ps4 (so 1 comes out as 0.333). This gets around it :S
+            float lfHandedness = IN( mkTangentVec4 ).w > 0.01 ? 1.0 : -1.0;
+            lWorldBitangentVec3 = cross( lWorldNormalVec3, lWorldTangentVec3 ) * lfHandedness;
+
+            // normalize tangent frame to achieve scale-independent results of normal mapping
+            lWorldTangentNormalVec3 = lWorldNormalVec3;
+            lWorldTangentVec3       = lWorldTangentVec3;
+            lWorldBitangentVec3     = lWorldBitangentVec3;
+        }
+        #endif
+                              
+            OUT( mTangentMatRow1Vec3 ) = normalize(lWorldTangentVec3);
+            OUT( mTangentMatRow2Vec3 ) = normalize(lWorldBitangentVec3);
+            OUT( mTangentMatRow3Vec3 ) = normalize(lWorldTangentNormalVec3);
+            
+            #ifdef _F20_PARALLAXMAP
+            {
+                OUT( mTangentSpaceEyeVec3 ) = CalcTanVec( 
+                    lUniforms.mpPerFrame->gViewPositionVec3,
+                    lWorldPositionVec4, 
+                    lWorldTangentVec3,  
+                    lWorldBitangentVec3, 
+                lWorldTangentNormalVec3 );
+        }
+        #endif
+        
+    }
+    #endif
+       
+    #if !defined( D_DEFER ) && !defined( _F07_UNLIT )
+    OUT( mUpMatrixMat3 )  = mat3(lUniforms.mpCommonPerMesh->gInverseWorldUpMat4);
+    #endif
+
+
+#endif
+            
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Texturing
+    ///
+    //-----------------------------------------------------------------------------
+    {
+        lTexCoordsVec4.xy = IN(mkTexCoordsVec4).xy;
+
+        #ifdef _F16_DIFFUSE2MAP
+            lTexCoordsVec4.zw = IN(mkTexCoordsVec4).zw;
+        #else
+            lTexCoordsVec4.zw = lTexCoordsVec4.xy;
+        #endif
+
+        vec4 lFlippedScrollingUVVec4;
+
+        #ifdef _F13_UVANIMATION
+        {
+            lFlippedScrollingUVVec4 = lUniforms.mpCustomPerMesh->gUVScrollStepVec4;
+
+            float lfFrameNumber = floor( lUniforms.mpPerFrame->gfTime * lFlippedScrollingUVVec4.z );
+
+            lTexCoordsVec4.x += fract( lfFrameNumber * lFlippedScrollingUVVec4.x );
+            lTexCoordsVec4.y += fract( lfFrameNumber * lFlippedScrollingUVVec4.y );
+
+            lTexCoordsVec4.zw = lTexCoordsVec4.xy;
+        }
+        #elif defined( _F14_UVSCROLL )
+        {
+            lFlippedScrollingUVVec4 = lUniforms.mpCustomPerMesh->gUVScrollStepVec4;
+
+            #if defined( D_OUTPUT_MOTION_VECTORS )
+                lPrevTexCoordsVec4 = lTexCoordsVec4 + lFlippedScrollingUVVec4 * lUniforms.mpPerFrame->gfPrevTime;
+            #endif
+
+            lTexCoordsVec4 += lFlippedScrollingUVVec4 * lUniforms.mpPerFrame->gfTime;
+        }
+        #elif defined( _F18_UVTILES )
+        {
+            //bodge to make tiling based on position work for objects that are scaled differently without relying on world position
+            vec2 lWorldPosVec2 = lWorldMat4[3].xz - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xz;
+
+            
+            #ifdef _F12_BATCHED_BILLBOARD
+                lWorldPosVec2 += IN( mkLocalPositionVec4 ).xz -  vec2( lTexCoordsVec4.x - 0.5,  0.0 );
+            #endif
+
+            // Divide the x pos down because in batched billboards this has some slight inaccuracies
+            float lfPos = lWorldPosVec2.x / 8.0 + lWorldPosVec2.y * 10.0;
+
+            lTexCoordsVec4.x /= lUniforms.mpCustomPerMesh->gUVScrollStepVec4.z;
+            lTexCoordsVec4.y /= lUniforms.mpCustomPerMesh->gUVScrollStepVec4.w;
+            lTexCoordsVec4.x += floor( mod( lfPos, lUniforms.mpCustomPerMesh->gUVScrollStepVec4.z ) ) / lUniforms.mpCustomPerMesh->gUVScrollStepVec4.z;
+
+            lTexCoordsVec4.y += floor( mod( lfPos, lUniforms.mpCustomPerMesh->gUVScrollStepVec4.w ) ) / lUniforms.mpCustomPerMesh->gUVScrollStepVec4.w;
+            
+
+        }        
+        #endif
+
+        #if defined( _F44_IMPOSTER )
+        {
+            vec3 lImposterAt    = MAT4_GET_COLUMN( lWorldMat4, 2 );
+            //vec3 lWindingAxis   = GetWorldUp( lWorldPositionVec4.xyz, lUniforms.mpCommonPerMesh->gPlanetPositionVec4 );
+            float lfHeight;
+            vec3 lWindingAxis = GetWorldUp(lWorldPositionVec4.xyz, lUniforms.mpCommonPerMesh->gPlanetPositionVec4, lfHeight);
+
+
+            lTexCoordsVec4.x = CalculateImposterTexCoordsU( MAT4_GET_COLUMN( lWorldMat4, 3 ), MAT4_GET_COLUMN( lUniforms.mpPerFrame->gCameraMat4, 3 ), lImposterAt, lWindingAxis, lTexCoordsVec4.xy, lUniforms.mpCustomPerMaterial->gImposterDataVec4 );
+
+#ifdef D_PLATFORM_ORBIS
+            lTexCoordsVec4.y = 1.0 - lTexCoordsVec4.y;
+#endif            
+        }
+        #endif
+        
+        //#ifdef D_TEXCOORDS
+            OUT( mTexCoordsVec4 ) = lTexCoordsVec4;
+            #if 0 //defined( D_OUTPUT_MOTION_VECTORS ) && defined( _F14_UVSCROLL )
+                OUT( mPrevTexCoordsVec4 ) = lPrevTexCoordsVec4;
+            #endif
+        //#endif
+    }
+    
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Vertex Colour
+    ///
+    //-----------------------------------------------------------------------------
+    #ifdef _F21_VERTEXCOLOUR
+    {
+        OUT( mColourVec4 ) = IN( mkColourVec4 );
+    }
+    #endif
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Material Colour
+    ///
+    ////-----------------------------------------------------------------------------
+
+#if !defined( _F01_DIFFUSEMAP ) || defined( _F22_TRANSPARENT_SCALAR )
+    {
+        OUT( mMaterialVec4 )  = vec4( GammaCorrectInput( lUniforms.mpCustomPerMaterial->gMaterialColourVec4.xyz ), lUniforms.mpCustomPerMaterial->gMaterialColourVec4.a );
+    }
+#endif
+
+    #ifdef _F37_RECOLOUR
+        OUT( mPaletteColour1Vec4 ).rgb = RGBToHSV( lUniforms.mpCustomPerMaterial->gRecolour1Vec4.rgb );
+        OUT( mPaletteColour2Vec4 ).rgb = RGBToHSV( lUniforms.mpCustomPerMaterial->gRecolour2Vec4.rgb );
+        OUT( mPaletteColour1Vec4 ).a   = lUniforms.mpCustomPerMaterial->gRecolour1Vec4.a;
+        OUT( mPaletteColour2Vec4 ).a   = lUniforms.mpCustomPerMaterial->gRecolour2Vec4.a;
+
+    #endif
+
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Screen Space Transform
+    ///
+    //-----------------------------------------------------------------------------
+    {
+        lScreenSpacePositionVec4 = CalcScreenPosFromWorld( lUniforms.mpCommonPerMesh->gViewProjectionMat4, lWorldPositionVec4 );
+        
+#ifdef D_REMOVE_TAA_JITTER
+        lScreenSpacePositionVec4.xy += lUniforms.mpPerFrame->gDeJitterVec4.xy * lScreenSpacePositionVec4.w;
+#endif
+
+#ifdef D_USE_SCREEN_POSITION
+        OUT( mScreenSpacePositionVec4 ) = lScreenSpacePositionVec4;
+#endif      
+#ifdef D_OUTPUT_MOTION_VECTORS
+        OUT( mPrevScreenPosition ) =  CalcScreenPosFromWorld( lUniforms.mpPerFrame->gPrevViewProjectionMat4, lPrevWorldPositionVec4 );
+#endif
+
+#if defined( D_OUTPUT_MOTION_VECTORS ) && defined( D_INSTANCE )
+        OUT( mfShearMotionLength ) = lShearMotionLength;
+#endif
+
+        #ifdef _F30_REFRACTION_MAP
+        {
+            OUT( mProjectedTexCoordsVec4 ) = lScreenSpacePositionVec4;
+        }
+        #endif
+        
+#if defined( D_IMPOSTER_VERTEX )
+        lScreenSpacePositionVec4.z = max(lScreenSpacePositionVec4.z, -1.0);
+#ifdef D_ENABLE_REVERSEZ_PROJECTION
+        lScreenSpacePositionVec4.z = 0.5 - (lScreenSpacePositionVec4.z * 0.5);
+#endif
+        lScreenSpacePositionVec4.w = 1.0;
+        VERTEX_SCREEN_POSITION = lScreenSpacePositionVec4;
+        //OUT( mfLogZ ) = abs( lScreenSpacePositionVec4.z );
+
+#else
+    #if defined( _F47_WRITE_LOG_Z ) && defined( D_USING_LOGDEPTH )
+        // For large polys we need to write z per pixel instead of letting it interpolate as it becomes slightly inaccurate and we get depth artefacts. (logZ is used in a calculation in the pixel shader).
+        OUT( mfLogZ ) = lScreenSpacePositionVec4.w + 1.0;
+    #endif
+
+    #if defined( _F34_GLOW ) && !defined( D_USING_LOGDEPTH )
+        lScreenSpacePositionVec4.z = lScreenSpacePositionVec4.z + 0.000001;
+    #endif
+
+    //    OUT( mfLogZ ) = lScreenSpacePositionVec4.z;
+
+        VERTEX_SCREEN_POSITION = LinearToLogDepth_Vertex(lUniforms.mpPerFrame->gClipPlanesVec4, lScreenSpacePositionVec4);
+#endif
+    }
+
+}
+

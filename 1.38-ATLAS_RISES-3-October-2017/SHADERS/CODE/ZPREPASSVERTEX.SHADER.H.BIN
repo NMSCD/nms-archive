@@ -1,0 +1,214 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       ZPrepassVertex.h
+///     @author     User
+///     @date       
+///
+///     @brief      ZPrepassVertexShader
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+#ifdef _F02_SKINNED
+    #define D_SKINNING_UNIFORMS
+#endif
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/Defines.shader.h"
+#include "Common/CommonUniforms.shader.h"
+#include "Common/CommonVertex.shader.h"
+#include "Common/CommonDepth.shader.h"
+
+#ifdef _F02_SKINNED
+    #include "Common/CommonSkinning.shader.h"
+#endif
+
+#ifdef _F31_DISPLACEMENT
+    #include "Common/CommonDisplacement.shader.h"
+#endif
+
+#include "Custom/TerrainCommon.h"
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+DECLARE_INPUT
+
+    INPUT(  vec4, mkLocalPositionVec4, POSITION0 )
+
+    INPUT( vec4, mkTexCoordsVec4,  TEXCOORD0    )
+
+#ifdef _F02_SKINNED
+    INPUT( vec4, mkJointsVec4,     BLENDINDICES )
+    INPUT( vec4, mkWeightsVec4,    BLENDWEIGHT  )
+#endif
+
+#ifdef D_INSTANCE
+    INPUT( vec4, mkTransformMat4R0,    TEXCOORD1 )
+    INPUT( vec4, mkTransformMat4R1,    TEXCOORD2 )
+    INPUT( vec4, mkTransformMat4R2,    TEXCOORD3 )
+    INPUT( vec4, mkTransformMat4R3,    TEXCOORD4 )
+#endif
+    
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+///
+///     Output
+///
+///     @brief  Output
+///
+//-----------------------------------------------------------------------------
+DECLARE_OUTPUT
+
+    OUT_VERTEX_SCREEN_POSITION
+    OUTPUT( float, mfLogZ, BLENDWEIGHT )
+    OUTPUT( vec4, mScreenSpacePositionVec4, TEXCOORD15 )
+
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+//-----------------------------------------------------------------------------
+///
+///     Vertex Main
+///
+///     @brief      Vertex Main
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+VERTEX_MAIN_SRT
+{
+#ifdef D_PLATFORM_ORBIS_FIX
+    vec4 lLocalPositionVec4;
+    VERTEX_SCREEN_POSITION   = lLocalPositionVec4;
+    return;
+#else
+    
+    vec4 lLocalPositionVec4;
+    vec3 lLocalNormalVec3;
+    vec3 lWorldNormalVec3;
+    vec4 lWorldPositionVec4;
+    vec3 lLocalTangentVec3;
+    vec4 lTexCoordsVec4;
+    vec4 lScreenSpacePositionVec4;
+	mat4 lWorldMat4;
+
+#ifdef D_INSTANCE
+    lWorldMat4[ 0 ]   = IN( mkTransformMat4R0 );
+    lWorldMat4[ 1 ]   = IN( mkTransformMat4R1 );
+    lWorldMat4[ 2 ]   = IN( mkTransformMat4R2 );
+    lWorldMat4[ 3 ]   = IN( mkTransformMat4R3 );
+    lWorldMat4[ 0 ].w = 0.0; // this matrix element is the instance fade value (PS4: may need to assign after the transpose-line)
+    lWorldMat4 = PLATFORM_TRANSPOSE( lWorldMat4 );
+#else
+    lWorldMat4 = lUniforms.mpCommonPerMesh->gWorldMat4;
+#endif
+
+    lLocalPositionVec4 = vec4( IN( mkLocalPositionVec4 ).rgb, 1.0 );
+
+
+    
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Skinning
+    ///
+    //-----------------------------------------------------------------------------
+    #ifdef _F02_SKINNED
+    {
+        mat4 lSkinningMat4;
+        mat3 lSkinningMat3;
+
+        lSkinningMat4       = CalcSkinningMat( DEREF_PTR( lUniforms.mpCommonPerMesh ), IN( mkWeightsVec4 ), IN( mkJointsVec4 ) );
+        lSkinningMat3       = GetSkinningMatVec( lSkinningMat4 );
+        lLocalPositionVec4  = GetSkinPosition( lLocalPositionVec4, lSkinningMat4 );
+    }
+    #endif
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Rotation
+    ///
+    //-----------------------------------------------------------------------------
+    #ifdef _F17_VERTEX_ROTATION
+
+        lLocalPositionVec4.xyz = ApplyRotation( lUniforms.mpCommonPerMaterial->gfTime, lLocalPositionVec4.xyz );
+
+    #endif
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Vertex Displacement
+    ///
+    //-----------------------------------------------------------------------------
+    #ifdef _F31_DISPLACEMENT
+    {
+        DisplaceVertexAndNormal(	
+            lLocalPositionVec4,
+            lLocalNormalVec3,
+            lLocalTangentVec3, 
+            lUniforms.mpCommonPerMaterial->gfTime,
+            DEREF_PTR( lUniforms.mpCustomPerMaterial ) );
+    }
+    #endif
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Billboard
+    ///
+    //-----------------------------------------------------------------------------
+    #ifdef _F19_BILLBOARD   
+    {
+        lLocalPositionVec4 = CalcBillboardPos( lUniforms.mpPerFrame->gViewMat4, lLocalPositionVec4, 1.0, lWorldMat4 );
+    }
+    #endif
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     World Position
+    ///
+    //-----------------------------------------------------------------------------
+    lWorldPositionVec4 = CalcWorldPos( lWorldMat4, lLocalPositionVec4 );
+       
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Screen space position
+    ///
+    //-----------------------------------------------------------------------------
+    lScreenSpacePositionVec4 = CalcScreenPosFromWorld( lUniforms.mpCommonPerMesh->gViewProjectionMat4, lWorldPositionVec4 );
+
+    #ifdef _F17_FADE
+        OUT( mScreenSpacePositionVec4 ) = lScreenSpacePositionVec4;
+    #endif
+
+    lScreenSpacePositionVec4        = LinearToLogDepth_Vertex( lUniforms.mpPerFrame->gClipPlanesVec4, lScreenSpacePositionVec4 );
+    OUT( mScreenSpacePositionVec4 ) = lScreenSpacePositionVec4;
+
+    VERTEX_SCREEN_POSITION = lScreenSpacePositionVec4;
+
+#endif
+
+}

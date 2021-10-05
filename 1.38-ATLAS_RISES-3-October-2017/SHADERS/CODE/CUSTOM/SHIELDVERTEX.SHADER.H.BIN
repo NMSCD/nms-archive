@@ -1,0 +1,115 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       ShieldVertex.shader.h
+///     @author     User
+///     @date       
+///
+///     @brief      ShieldVertex
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/Defines.shader.h"
+#include "Common/CommonUniforms.shader.h"
+
+#include "UberCommon.h"
+
+#include "Common/CommonVertex.shader.h"
+#include "Common/CommonDepth.shader.h"
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+DECLARE_INPUT
+
+    INPUT( vec4, mkLocalPositionVec4,  POSITION0 )
+    INPUT( vec4, mkTexCoordsVec4,      TEXCOORD0 )
+    INPUT( vec4, mkLocalNormalVec4,    TEXCOORD1 )
+
+#if defined( _F21_VERTEXCOLOUR )
+    INPUT( vec4, mkColourVec4,         TEXCOORD2 )
+#endif
+
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+///
+///     Output
+///
+///     @brief  Output
+///
+//-----------------------------------------------------------------------------
+DECLARE_OUTPUT
+    
+    OUT_VERTEX_SCREEN_POSITION
+
+    OUTPUT( vec4, mTexCoordsVec4,            TEXCOORD0 )
+    OUTPUT( vec4, mScreenSpacePositionVec4,  TEXCOORD1 )
+
+#if defined( _F21_VERTEXCOLOUR )
+    OUTPUT( vec4, mColourVec4,               TEXCOORD2 )
+#endif
+
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+//-----------------------------------------------------------------------------
+///
+///     Vertex Main
+///
+///     @brief      Vertex Main
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+VERTEX_MAIN_SRT
+{
+    vec4 lLocalPositionVec4;
+    vec4 lWorldPositionVec4;    
+    vec4 lScreenSpacePositionVec4;
+
+    lLocalPositionVec4 = IN( mkLocalPositionVec4 );
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     World Position
+    ///
+    //-----------------------------------------------------------------------------
+    lWorldPositionVec4 = CalcWorldPos( lUniforms.mpCommonPerMesh->gWorldMat4, lLocalPositionVec4 );
+    
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Screen space position
+    ///
+    //-----------------------------------------------------------------------------
+    lScreenSpacePositionVec4 = CalcScreenPosFromWorld( lUniforms.mpPerFrame->gViewMat4, lUniforms.mpCommonPerMesh->gProjectionMat4, lWorldPositionVec4 );
+    lScreenSpacePositionVec4 = LinearToLogDepth_Vertex( lUniforms.mpPerFrame->gClipPlanesVec4, lScreenSpacePositionVec4 );
+    
+    OUT( mScreenSpacePositionVec4 ) = lScreenSpacePositionVec4;
+    
+    VERTEX_SCREEN_POSITION   = lScreenSpacePositionVec4;
+}
