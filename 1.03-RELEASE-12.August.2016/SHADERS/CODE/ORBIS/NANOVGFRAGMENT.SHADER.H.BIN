@@ -1,0 +1,199 @@
+
+#include "Common/Defines.shader.h"
+// #include "Common/CommonUniforms.shader.h"
+#include "Common/CommonNanoVg.shader.h"
+
+// varying vec2 mTexCoordsVec2;
+// varying vec2 mPosVec2;
+// DECLARE_INPUT
+//     INPUT( vec2,   mTexCoordsVec2,     TEXCOORD0 )
+//     INPUT( vec2,   mPosVec2,            TEXCOORD1 )
+// DECLARE_END
+
+struct PS_IN
+{
+    float4 ScreenPos            : S_POSITION;           // Projected space position
+    float2 mTexCoordsVec2       : TEXCOORD0;            // UVs
+    float2 mPosVec2             : TEXCOORD1;
+};
+
+
+
+
+struct CommonPerMeshUniforms
+{
+    // mat4 gWorldViewProjectionMat4;
+    float2 viewSize;
+    float4 frag[ UNIFORMARRAY_SIZE ];
+
+    SAMPLER2D( gDiffuseMap );
+    //Texture2D NAME; SamplerState NAME##SS
+    //Texture2D gColourMap; SamplerState gColourMapSS
+
+};
+
+struct UniformBuffer
+{
+     CommonPerMeshUniforms* mpCommonPerMesh;       /*: PER_MESH*/
+};
+
+//
+// NOTE: matrices are assumed to access columns with operator[], however on PS4 that operator accesses rows
+//       we swap the matrix order when multiplying, effectively achieving that transposition "for free"
+//
+#define UniformScissorMat          mat3( lUniforms.mpCommonPerMesh->frag[ 0 ].xyz, lUniforms.mpCommonPerMesh->frag[ 1 ].xyz, lUniforms.mpCommonPerMesh->frag[ 2 ].xyz )
+#define UniformPaintMat            mat3( lUniforms.mpCommonPerMesh->frag[ 3 ].xyz, lUniforms.mpCommonPerMesh->frag[ 4 ].xyz, lUniforms.mpCommonPerMesh->frag[ 5 ].xyz )
+#define UniformInnerCol            lUniforms.mpCommonPerMesh->frag[ 6 ]
+#define UniformOuterCol            lUniforms.mpCommonPerMesh->frag[ 7 ]
+#define UniformScissorExt          lUniforms.mpCommonPerMesh->frag[ 8 ].xy
+#define UniformScissorScale        lUniforms.mpCommonPerMesh->frag[ 8 ].zw
+#define UniformExtent              lUniforms.mpCommonPerMesh->frag[ 9 ].xy
+#define UniformRadius              lUniforms.mpCommonPerMesh->frag[ 9 ].z
+#define UniformFeather             lUniforms.mpCommonPerMesh->frag[ 9 ].w
+#define UniformStrokeMult          lUniforms.mpCommonPerMesh->frag[ 10 ].x
+#define UniformStrokeThr           lUniforms.mpCommonPerMesh->frag[ 10 ].y
+#define UniformTexType             int( lUniforms.mpCommonPerMesh->frag[ 10 ].z )
+#define UniformDrawType            int( lUniforms.mpCommonPerMesh->frag[ 10 ].w )
+#define UniformFlip                lUniforms.mpCommonPerMesh->frag[ 11 ].x
+
+float 
+sdroundrect(
+    float2 pt, 
+    float2 ext, 
+    float rad ) 
+{
+    float2 ext2 = ext - float2(rad,rad);
+    float2 d = abs(pt) - ext2;
+    return min( max( d.x, d.y ), 0.0 ) + length( max( d, 0.0 ) ) - rad;
+}
+
+// Scissoring
+float 
+scissorMask( 
+    mat3   inScissorMat,
+    float2 inScissorExt,
+    float2 inScissorScale,
+    float2 p ) 
+{
+    //float2 sc   = ( abs( ( inScissorMat * vec3( p, 1.0 ) ).xy ) - inScissorExt );
+    //float2 sc   = ( abs( ( mul( inScissorMat, float3( p, 1.0 ) ) ).xy ) - inScissorExt );
+
+    // NOTE: in GL mat is column-major, here it is row-major ==> effectively we are dealing with
+    //       a transposed matrix ==> invert order for same effect
+    float2 sc   = ( abs( ( mul( float3( p, 1.0 ), inScissorMat ) ).xy ) - inScissorExt );
+    
+    sc          = float2( 0.5,0.5 ) - sc * inScissorScale;
+    return clamp( sc.x, 0.0, 1.0 ) * clamp( sc.y, 0.0, 1.0 );
+}
+
+#ifdef EDGE_AA
+    // Stroke - from [0..1] to clipped pyramid, where the slope is 1px.
+    float 
+    strokeMask(
+        float2 lTexCoordsVec2,
+        float  strokeFactor ) 
+    {
+        return min( 1.0, ( 1.0 - abs( lTexCoordsVec2.x * 2.0 - 1.0 ) ) * strokeFactor ) * 
+               min( 1.0, lTexCoordsVec2.y );
+    }
+#endif
+
+
+//FRAGMENT_MAIN_COLOUR_SRT
+float4 main( PS_IN In, UniformBuffer lUniforms : S_SRT_DATA  ) : S_TARGET_OUTPUT
+{
+    float4 result = float4( 0.5 );
+
+    float scissor = scissorMask(
+                        UniformScissorMat,
+                        UniformScissorExt,
+                        UniformScissorScale,
+                        In.mPosVec2 );
+
+
+#ifdef EDGE_AA
+    float strokeAlpha = strokeMask( 
+                            In.mTexCoordsVec2.xy,
+                            UniformStrokeMult );
+#else
+    float strokeAlpha = 1.0;
+#endif
+    if ( UniformDrawType == 4 ) // Flat Fill
+    {
+        // Combine alpha
+        float4 color = UniformInnerCol;
+        color *= strokeAlpha * scissor;
+        result = color;
+    } 
+    else if ( UniformDrawType == 1 ) // Image
+    {
+        // Calculate color from texture
+        //float2 pt = (UniformPaintMat * vec3( In.mPosVec2,1.0)).xy / UniformExtent;
+        // NOTE: in GL mat is column-major, here it is row-major ==> effectively we are dealing with
+        //       a transposed matrix ==> invert order for same effect
+        float2 pt = ( mul( float3( In.mPosVec2, 1.0), UniformPaintMat ) ).xy / UniformExtent;
+        //pt.y  = mix( pt.y, 1.0 - pt.y, UniformFlip );
+
+        float4 color = texture2D( lUniforms.mpCommonPerMesh->gDiffuseMap, pt );
+
+        if ( UniformTexType == 1 )
+        { 
+            color = float4( color.xyz * color.w, color.w );
+        }
+        if ( UniformTexType == 2 )
+        {
+            color = float4( color.x );        // Apply color tint and alpha.
+        }
+
+        color *= UniformInnerCol;
+
+        // Combine alpha
+        color *= strokeAlpha * scissor;
+        result = color;
+    } 
+    else if ( UniformDrawType == 3 ) // Textured tris
+    {
+        float4 color = texture2D( lUniforms.mpCommonPerMesh->gDiffuseMap, In.mTexCoordsVec2 );
+
+        if ( UniformTexType == 1 ) 
+        {
+            color = float4( color.xyz * color.w,color.w );
+        }
+        if ( UniformTexType == 2 ) 
+        {
+            color = float4( color.x );
+        }
+
+        color *= scissor;
+        result = color * UniformInnerCol;
+    } 
+    else if ( UniformDrawType == 0 ) // Gradient
+    {
+        // Calculate gradient color using box gradient
+        //float2 pt = (UniformPaintMat * vec3( In.mPosVec2,1.0)).xy;
+
+        // NOTE: in GL mat is column-major, here it is row-major ==> effectively we are dealing with
+        //       a transposed matrix ==> invert order for same effect
+        float2 pt    = ( mul( float3( In.mPosVec2, 1.0 ), UniformPaintMat ) ).xy;
+
+        float d      = clamp( ( sdroundrect( pt, UniformExtent, UniformRadius ) + UniformFeather * 0.5 ) / UniformFeather, 0.0, 1.0 );
+        float4 color = mix( UniformInnerCol, UniformOuterCol, d );
+
+        // Combine alpha
+        color *= strokeAlpha * scissor;
+        result = color;
+    } 
+    else if ( UniformDrawType == 2 ) // Stencil fill
+    {
+        result = float4( 1.0 );
+    } 
+
+#ifdef EDGE_AA
+    if ( strokeAlpha < UniformStrokeThr ) 
+    {
+        discard;
+    }
+#endif
+
+    return result;
+}

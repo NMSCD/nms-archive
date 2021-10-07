@@ -1,0 +1,150 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       UberFragmentShader.h
+///     @author     User
+///     @date       
+///
+///     @brief      UberFragmentShader
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+
+
+//-----------------------------------------------------------------------------
+///
+///     WriteOutput
+///
+///     @brief      WriteOutput
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+void
+WriteOutput(
+    out vec4                      lOutColours0Vec4,
+    out vec4                      lOutColours1Vec4,
+    out vec4                      lOutColours2Vec4,
+    out vec4                      lOutColours3Vec4,
+    out vec4                      lOutColours4Vec4,
+    in  PerFrameUniforms          lPerFrameUniforms,
+    in  CommonPerMeshUniforms     lMeshUniforms,
+    in  CustomPerMaterialUniforms lCustomUniforms,
+    in  vec4                      lColourVec4,
+    in  vec3                      lPositionVec3,
+    in  vec3                      lNormalVec3,
+    in  int                       liMaterialID,
+    in  float                     lfMetallic,
+    in  float                     lfRoughness,
+    in  float                     lfSubsurface,
+    in  float                     lfGlow,
+    in  vec4                      lScreenSpacePositionVec4,
+    in  vec4                      lPrevScreenPositionVec4,
+    in  float                     lfPixelDepth,
+    in  bool                      lbFrontFacing)
+{
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Output
+    ///
+    //-----------------------------------------------------------------------------	
+    #if defined( D_IMPOSTER_COLOUR ) 
+    {
+        lOutColours0Vec4 = vec4(lColourVec4.x, lColourVec4.y, lColourVec4.z ,1.0);
+    }
+    #elif defined( D_IMPOSTER_NORMAL ) 
+    {
+        vec3 lEncodedNormal;
+
+        // [peter] the engine expects the normal maps to be in a coordinate space that 
+        //         has a flipped y axis with regard to the one we are currently using
+
+        lEncodedNormal = vec3(-lNormalVec3.x, -lNormalVec3.y, -lNormalVec3.z);
+        #ifdef _F11_ALPHACUTOUT
+        // [Griff] why is this needed?! we will NEVER NEVER know.
+        #ifdef _F12_BATCHED_BILLBOARD
+        if (true)
+        #else
+        if ( !lbFrontFacing )
+        #endif
+        {
+            lEncodedNormal.x = -lEncodedNormal.x;
+            lEncodedNormal.z = -lEncodedNormal.z;
+        }
+        else
+        {
+            lEncodedNormal.y = -lEncodedNormal.y;
+        }
+        #endif
+        lEncodedNormal    = ( lEncodedNormal + 1.0 ) * 0.5;
+        lOutColours0Vec4 = vec4( lEncodedNormal.x, lEncodedNormal.y, lEncodedNormal.z, 1.0 );
+    }
+    #elif defined( D_IMPOSTER_MASK )
+    {
+        lOutColours0Vec4 = vec4( lfSubsurface, 1.0, 1.0, 1.0 );
+    }
+    #else
+    {
+        #if !defined( D_ATTRIBUTES )
+            lOutColours0Vec4     = vec4( lColourVec4.xyz, lfGlow );
+        #else
+
+        #if defined( D_OUTPUT_MOTION_VECTORS )
+            vec2  lScreenSpaceMotionVec2 = lScreenSpacePositionVec4.xy / lScreenSpacePositionVec4.w - lPrevScreenPositionVec4.xy / lPrevScreenPositionVec4.w;
+
+            #ifdef D_PLATFORM_PC
+            lScreenSpaceMotionVec2 = -lScreenSpaceMotionVec2;
+            #endif
+
+        #else   
+            vec2  lScreenSpaceMotionVec2 = vec2( 1.0, 0.0 );
+        #endif
+
+            vec4  lBuffer0_Vec4;
+            vec4  lBuffer1_Vec4;
+            vec4  lBuffer2_Vec4;
+            vec4  lBuffer3_Vec4;
+            vec4  lBuffer4_Vec4;
+
+            EncodeGBuffer(
+                lPerFrameUniforms.gClipPlanesVec4,
+                lPerFrameUniforms.gClipPlanesRVec4,
+                lPerFrameUniforms.gViewPositionVec3,
+                lPerFrameUniforms.gViewMat4,
+                lBuffer0_Vec4,
+                lBuffer1_Vec4,
+                lBuffer2_Vec4,
+                lBuffer3_Vec4,
+                lBuffer4_Vec4,
+                lColourVec4.xyz,
+                lPositionVec3,
+                lNormalVec3,
+                liMaterialID,
+                lfRoughness,
+                lfMetallic,
+                lfSubsurface,
+                lfGlow,
+                lScreenSpaceMotionVec2 );
+
+            lOutColours0Vec4 = lBuffer0_Vec4;
+            lOutColours1Vec4 = lBuffer1_Vec4;
+            lOutColours2Vec4 = lBuffer2_Vec4;
+            lOutColours3Vec4 = lBuffer3_Vec4;
+            lOutColours4Vec4 = lBuffer4_Vec4;
+
+        #endif
+    }
+    #endif
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcShootableComponentData.xml">
+      <Property name="Health" value="2" />
+      <Property name="AutoAimTarget" value="False" />
+      <Property name="PlayerOnly" value="False" />
+      <Property name="ImpactShake" value="False" />
+      <Property name="ImpactShakeEffect" value="SMALLPAINSHAKE" />
+      <Property name="ImpactType" value="GcProjectileImpactType.xml">
+        <Property name="Impact" value="Default" />
+      </Property>
+      <Property name="IncreaseWanted" value="0" />
+      <Property name="IncreaseWantedThresholdTime" value="0.5" />
+      <Property name="UseMiningDamage" value="True" />
+      <Property name="MinDamage" value="0" />
+      <Property name="StaticUntilShot" value="False" />
+    </Property>
+    <Property value="GcAISpaceshipComponentData.xml">
+      <Property name="Type" value="GcAISpaceshipTypes.xml">
+        <Property name="ShipType" value="Pirate" />
+      </Property>
+      <Property name="Class" value="GcSpaceshipClasses.xml">
+        <Property name="ShipClass" value="Freighter" />
+      </Property>
+      <Property name="Axis" value="GcPrimaryAxis.xml">
+        <Property name="PrimaryAxis" value="Z" />
+      </Property>
+      <Property name="Weapon" value="" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="1" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="0" />
+      </Property>
+    </Property>
+  </Property>
+</Data>

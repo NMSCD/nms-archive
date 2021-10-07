@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkAudioComponentData.xml">
+      <Property name="Ambient" value="" />
+      <Property name="MaxDistance" value="90" />
+      <Property name="AnimTriggers">
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="Wpn_Pl_HandLaser_Overheat" />
+          <Property name="Anim" value="OVERHEAT" />
+          <Property name="FrameStart" value="2" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="Wpn_Pl_Pistol_Reload" />
+          <Property name="Anim" value="RELOAD" />
+          <Property name="FrameStart" value="2" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="" />
+        <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/MULTITOOL.ANIM.MBIN" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="1" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="LoopOffsetMin" value="0" />
+        <Property name="LoopOffsetMax" value="0" />
+        <Property name="ControlDelay" value="0" />
+        <Property name="ControlSpeed" value="1" />
+        <Property name="ControlActionFrame" value="-1" />
+        <Property name="ControlCreatureSize" value="AllSizes" />
+        <Property name="FlagsAdditive" value="False" />
+        <Property name="FlagsMirrored" value="False" />
+        <Property name="FlagsActive" value="False" />
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="EXAMINE" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLINSPECT.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="400" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="MELEE3" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLMELEE_3.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="80" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="MELEEHIT" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLMELEE_2.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="80" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="MELEECHARGE" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLMELEE.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="80" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="LASERMODE" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLLAZERMODE.ANIM.MBIN" />
+          <Property name="AnimType" value="Control" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="60" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="1" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="True" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="LASERRECOIL" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLLAZERRECOIL.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="20" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="True" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="FIRELASER" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLLAZERFIRE.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="30" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="HOLSTER" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLHOLSTER.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="35" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="DRAW" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLDRAW.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="35" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="RUN" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLRUN.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="40" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="0.9" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="WALK" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLWALK.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="40" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1.2" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="WALKAIM" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLAIMWALK.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="40" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1.2" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="FIREBULLET" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLFIRE.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="45" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1.2" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="COCK" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLCOCKANIM.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="30" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="OVERHEAT" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLLAZOVERHEAT.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="160" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="RELOAD" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLRELOAD.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="120" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="FIREGRENADE" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/MULTITOOLGRENADE.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="75" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="SCANFIRE" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/SCANFIRE.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="30" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="KNOCKBACK" />
+          <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/ANIMS/KNOCKBACK_2.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="80" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="BOOT" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Activate" />
+                  <Property name="Name" value="LaserON_" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="BoltON_" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="Steam_" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="LASERMODE" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Toggle" />
+                  <Property name="Name" value="LaserON_" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Toggle" />
+                  <Property name="Name" value="BoltON_" />
+                </Property>
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="IDLE" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="Scene" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="IDLE" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="2" />
+              </Property>
+              <Property name="Action" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="OVERHEAT" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Activate" />
+                  <Property name="Name" value="Steam_" />
+                </Property>
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="IDLE" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="Scene" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+    </Property>
+  </Property>
+</Data>

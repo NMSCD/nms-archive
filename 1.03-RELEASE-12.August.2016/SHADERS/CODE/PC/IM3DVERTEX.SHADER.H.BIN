@@ -1,0 +1,33 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       Im3dVertex.shader.h
+///     @author     
+///     @date       
+///
+///     @brief      Immediate Mode Vertex Shader
+///
+///     Copyright (c) 2009 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+varying vec4 color;    
+varying vec2 texCoord;                                                                           
+varying vec2 depthVals;
+
+uniform float gfUserZ;
+
+void main()                                             
+{   
+    float lfFarClipPlane = 5000000.0;
+        
+    vec4 lScreenSpacePositionVec4 = gl_ModelViewProjectionMatrix * gl_Vertex;
+
+    depthVals.x = lScreenSpacePositionVec4.z + gfUserZ; 
+    depthVals.y = 1.0 / log2( lfFarClipPlane + 1.0 );
+
+    texCoord = gl_MultiTexCoord0.xy;
+    color    = gl_Color;
+                       
+    gl_Position = lScreenSpacePositionVec4;
+
+}

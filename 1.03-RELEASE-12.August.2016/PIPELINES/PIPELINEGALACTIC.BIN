@@ -1,0 +1,86 @@
+<!--  -->
+<Pipeline>
+  <Setup>
+
+    <!-- raymarched gas clouds -->
+    <RenderTarget id="NEBULAE"          depthBuf="false"  numColBufs="1"  format="RGBA16F"  scale="0.25" maxSamples="0" hasMips="false" />
+
+    <!-- dense particle stream for gas clouds -->
+    <RenderTarget id="STAR_ATMOS"       depthBuf="false"  numColBufs="1"  format="RGBA16F"  scale="0.25" maxSamples="0" hasMips="false" />
+
+    <RenderTarget id="BLUR_1"           depthBuf="false"  numColBufs="1"  format="RGBA16F"  scale="0.25" maxSamples="0" hasMips="false" />
+    <RenderTarget id="BLUR_2"           depthBuf="false"  numColBufs="1"  format="RGBA16F"  scale="0.25" maxSamples="0" hasMips="false" />
+
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="Default States">
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+
+    <Stage id="GalaxyMap">
+ 
+      <BeginTarget target="NEBULAE"/>
+        <DrawQuad material="materials/GalacticFsFx.material.mbin" context="FOREGROUND" width="1.0" height="1.0" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="STAR_ATMOS"/>
+        <ClearTarget depthBuf="false" colBuf0="true" excludeX360="false" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+        <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="add" depthTest="always" alphaToCoverage="false"/>
+        <DrawGeometry type="PStream" class="Opaque"    context="PSTREAM_FIELD"    order="STATECHANGES" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+
+
+      <BeginTarget target="BLUR_1" />
+        <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+        <BindBuffer sampler="gBufferMap" sourceRT="NEBULAE" bufIndex="0" />
+        <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.666" />
+        <DrawQuad material="materials/PostProcess.material.mbin" context="BLUR_KAWASE_PRESERVE_ALPHA" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLUR_2" />
+        <BindBuffer sampler="gBufferMap" sourceRT="BLUR_1" bufIndex="0" />
+        <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.333" />
+        <DrawQuad material="materials/PostProcess.material.mbin" context="BLUR_KAWASE_PRESERVE_ALPHA" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="BLUR_1" />
+        <BindBuffer sampler="gBufferMap" sourceRT="BLUR_2" bufIndex="0" />
+        <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.111" />
+        <DrawQuad material="materials/PostProcess.material.mbin" context="BLUR_KAWASE_PRESERVE_ALPHA" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+
+
+      <BeginTarget target=""/>
+        <ClearTarget depthBuf="false" colBuf0="true" excludeX360="false" col_R="0.0" col_G="0.0" col_B="0.0" col_A="1.0" />
+
+        <BindBuffer sampler="gNebulaeMap"  sourceRT="BLUR_1"        bufIndex="0"   addressMode="wrap" />
+        <BindBuffer sampler="gAtmosMap"    sourceRT="STAR_ATMOS"    bufIndex="0"   addressMode="wrap" />
+        <DrawQuad material="materials/GalacticFsFx.material.mbin" context="BACKGROUND" width="1.0" height="1.0" />
+        <UnbindBuffers />
+
+        <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="sub" depthTest="always" alphaToCoverage="false"/>
+        <DrawGeometry type="PStream" class="Opaque"    context="PSTREAM_CARDS"    order="STATECHANGES" />
+
+        <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="add" depthTest="always" alphaToCoverage="false"/>
+        <DrawGeometry type="PStream" class="Opaque"    context="PSTREAM_STARS"    order="STATECHANGES" />
+
+        <DrawGeometry type="LINERENDERER"  class="Opaque"   context="LINE3D"            order="STATECHANGES" />
+
+      <EndTarget flushCB="true" flushDB="false" />
+
+    </Stage>
+
+    <Stage id="Reset States">
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+    
+  </CommandQueue>
+
+</Pipeline>

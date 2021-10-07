@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.13.2)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="1" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="0" />
+      </Property>
+      <Property name="TriggerVolume" value="False" />
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="Climbable" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+    </Property>
+    <Property value="GcDestructableComponentData.xml">
+      <Property name="Explosion" value="CARGOEXPL_FINAL" />
+      <Property name="ExplosionScale" value="1.25" />
+      <Property name="TriggerAction" value="" />
+      <Property name="IncreaseWanted" value="1" />
+      <Property name="LootReward" value="FREIGHTERLOOT" />
+      <Property name="LootRewardAmountMin" value="1" />
+      <Property name="LootRewardAmountMax" value="1" />
+      <Property name="GivesSubstances" />
+      <Property name="GivesReward" value="" />
+      <Property name="HardModeSubstanceMultiplier" value="1" />
+      <Property name="RemoveModel" value="True" />
+      <Property name="DestroyedModel" value="" />
+      <Property name="DestroyedModelUsesScale" value="True" />
+      <Property name="DestroyForce" value="5" />
+      <Property name="DestroyForceRadius" value="3" />
+      <Property name="DestroyEffect" value="CARGOEXPLOSION" />
+      <Property name="DestroyEffectPoint" value="SFX" />
+      <Property name="DestroyEffectTime" value="3" />
+      <Property name="ShowInteract" value="True" />
+      <Property name="ShowInteractRange" value="2000" />
+      <Property name="GrenadeSingleHit" value="True" />
+    </Property>
+    <Property value="GcShootableComponentData.xml">
+      <Property name="Health" value="20" />
+      <Property name="AutoAimTarget" value="False" />
+      <Property name="PlayerOnly" value="False" />
+      <Property name="ImpactShake" value="True" />
+      <Property name="ImpactShakeEffect" value="SMALLPAINSHAKE" />
+      <Property name="ImpactType" value="GcProjectileImpactType.xml">
+        <Property name="Impact" value="Default" />
+      </Property>
+      <Property name="IncreaseWanted" value="0" />
+      <Property name="IncreaseWantedThresholdTime" value="0.5" />
+      <Property name="UseMiningDamage" value="True" />
+      <Property name="MinDamage" value="0" />
+      <Property name="StaticUntilShot" value="False" />
+      <Property name="RequiredTech" value="" />
+    </Property>
+  </Property>
+</Data>

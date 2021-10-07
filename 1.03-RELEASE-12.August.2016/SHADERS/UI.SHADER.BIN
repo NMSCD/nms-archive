@@ -1,0 +1,108 @@
+[[FX]]
+
+// -----------------------------------------------------------------------------------
+// Samplers
+// -----------------------------------------------------------------------------------
+
+sampler gBufferMap = sampler_state
+{
+    Address = Wrap;
+	TexUnit = 0;
+};
+
+sampler gUIMap = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 1;
+};
+
+sampler gUIMask = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 2;
+};
+
+sampler gUIFullscreenEffect = sampler_state
+{
+    Address = Wrap;
+	TexUnit = 3;
+};
+
+sampler gUIZoomEffect = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 4;
+};
+
+sampler gUINoiseEffect = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 5;
+};
+
+sampler gUINoShieldOverlay = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 6;
+};
+
+sampler gUIFullScreenRefraction = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 7;
+};
+
+sampler gBuffer1Map = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 8;
+};
+
+sampler gUIFullscreenNormal = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 9;
+};
+
+// -----------------------------------------------------------------------------------
+// Uniforms
+// -----------------------------------------------------------------------------------
+
+float4 gUIParamsVec4 = { 0.2, 0.3, 0.9, 0.01 };
+float4 gUIDeformVec4 = { 0.0, 0.0, 0.0, 0.0 };
+float4 gUIColourVec4 = { 0.0, 0.0, 0.0, 0.0  };
+float4 gVignetteVec4 = { 0.2, 1.0, 0.0, 0.0  };
+float4 gUILowHealthVignetteVec4 = { 0.2, 1.0, 0.0, 0.0 };
+float4 gWashParamsVec4 = { 0.0, 0.0, 0.0, 0.0  };
+float4 gCriticalHitPointsVec4 = { 0.0, 0.0, 0.0, 0.0 };
+
+// -----------------------------------------------------------------------------------
+// Contexts
+// -----------------------------------------------------------------------------------
+
+context UI
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_UI;
+}
+
+context UI_MASK
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_UI_MASK;
+}
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#define D_TEX_QUAD
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_UI]]
+// =================================================================================================
+#include "Fullscreen/UIFragment.shader.h"
+
+[[FS_UI_MASK]]
+// =================================================================================================
+#define D_UI_MASK
+#include "Fullscreen/UIFragment.shader.h"
+ 

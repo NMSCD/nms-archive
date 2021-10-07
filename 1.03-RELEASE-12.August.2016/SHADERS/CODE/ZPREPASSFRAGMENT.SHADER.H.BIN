@@ -1,0 +1,74 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       ZPrepassVertex.h
+///     @author     User
+///     @date       
+///
+///     @brief      ZPrepassVertexShader
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+#if defined( D_INSTANCED ) || defined( D_TERRAIN )
+    #define D_FADE
+#endif
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/Defines.shader.h"
+#include "Common/CommonFade.shader.h"
+
+#include "Common/CommonUniforms.shader.h"
+#include "Custom/TerrainCommon.h"
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( float, mfLogZ, BLENDWEIGHT )
+    INPUT( vec4, mScreenSpacePositionVec4, TEXCOORD15 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+///
+///     Fragment Main
+///
+///     @brief      Fragment Main
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+FRAGMENT_MAIN_COLOUR_SRT
+{	
+#ifdef D_FADE
+    CheckFade(
+        SAMPLER2DPARAM( lUniforms.mpCustomPerMaterial->gFadeNoiseMap ),
+        IN( mScreenSpacePositionVec4 ),
+        lUniforms.mpCommonPerMesh->gfFadeValue );
+#endif
+
+	//ALEXCHECK 
+	FRAGMENT_COLOUR = vec4( 0.0, 0.0, 0.0, 1.0 );
+	//FRAGMENT_DEPTH =  IN( mfLogZ );
+}

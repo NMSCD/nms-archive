@@ -1,0 +1,63 @@
+[[FX]]
+
+sampler gDiffuseMap = sampler_state
+{
+	Filter = Bilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 0;
+};
+
+// Contexts
+context IMORBIS
+{
+	VertexShader = compile GLSL VS_IMMEDIATE3D_ORBIS;
+	PixelShader = compile GLSL FS_IMMEDIATE3D_ORBIS;
+	
+	ZWriteEnable = false;
+}
+
+context IMTEXORBIS
+{
+	VertexShader = compile GLSL VS_IMMEDIATE3D_ORBIS;
+	PixelShader = compile  GLSL FS_IMMEDIATE3DTEX_ORBIS;
+	
+	ZWriteEnable = false;
+}
+
+float gfUserZ = 0.0;
+
+[[VS_IMMEDIATE3D_360]]
+// =================================================================================================
+#include "Xbox360/Im3dVertex.shader.h"
+
+[[FS_IMMEDIATE3D_360]]
+// =================================================================================================
+#include "Xbox360/Im3dFragment.shader.h"
+
+[[FS_IMMEDIATE3DTEX_360]]
+// =================================================================================================
+#include "Xbox360/Im3dTexFragment.shader.h"
+
+[[VS_IMMEDIATE3D_PS3]]
+// =================================================================================================
+#include "PS3/Im3dVertex.shader.h"
+
+[[FS_IMMEDIATE3D_PS3]]
+// =================================================================================================
+#include "PS3/Im3dFragment.shader.h"
+
+[[FS_IMMEDIATE3DTEX_PS3]]
+// =================================================================================================
+#include "PS3/Im3dTexFragment.shader.h"
+
+[[VS_IMMEDIATE3D_ORBIS]]
+// =================================================================================================
+#include "ORBIS/Im3dVertex.shader.h"
+
+[[FS_IMMEDIATE3D_ORBIS]]
+// =================================================================================================
+#include "ORBIS/Im3dFragment.shader.h"
+
+[[FS_IMMEDIATE3DTEX_ORBIS]]
+// =================================================================================================
+#include "ORBIS/Im3dTexFragment.shader.h"

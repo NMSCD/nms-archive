@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+    </Property>
+    <Property value="GcSimpleInteractionComponentData.xml">
+      <Property name="SimpleInteractionType" value="GenericReward" />
+      <Property name="InteractDistance" value="0" />
+      <Property name="Id" value="INTERIORPLANTS" />
+      <Property name="Rarity" value="GcRarity.xml">
+        <Property name="Rarity" value="Common" />
+      </Property>
+      <Property name="SizeIndicator" value="GcSizeIndicator.xml">
+        <Property name="SizeIndicator" value="Medium" />
+      </Property>
+      <Property name="TriggerAction" value="INACTIVE" />
+      <Property name="BroadcastTriggerAction" value="False" />
+      <Property name="Delay" value="0" />
+      <Property name="InteractIsCrime" value="False" />
+      <Property name="InteractCrimeLevel" value="0" />
+      <Property name="ActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="0" />
+        <Property name="Repeat" value="False" />
+      </Property>
+      <Property name="Name" value="" />
+    </Property>
+  </Property>
+</Data>

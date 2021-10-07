@@ -1,0 +1,98 @@
+[[FX]]
+
+// Samplers
+sampler gBufferMap = sampler_state
+{
+	TexUnit = 0;
+};
+
+sampler gDepthMap = sampler_state
+{
+	TexUnit = 7;
+};
+
+sampler gNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/CLOUDNOISE.DDS;
+    TexUnit = 13;
+    Address = Wrap;
+};
+
+sampler gCloudDepthMap = sampler_state
+{
+	TexUnit = 8;
+};
+
+// Uniforms
+
+// Planet
+float4 gPlanetPositionVec4					= {0.0, 0.0, 0.0, 0.0}; 
+
+
+// Clouds
+float4 gCloudColourInternalVec4       = {0, 0, 0, 0};
+float4 gCloudColourExternalVec4       = {0, 0, 0, 0};
+float4 gCloudRatioVec4                = {0, 0, 0, 0};
+
+float4 gCloudParamsVec4               = {1.0, 1.0, 1.0, 1.0};
+float4 gHueOverlayParamsVec4          = {1.0, 1.0, 1.0, 1.0};
+float4 gSaturationOverlayParamsVec4   = {1.0, 1.0, 1.0, 1.0};
+float4 gValueOverlayParamsVec4        = {1.0, 1.0, 1.0, 1.0};
+
+// Contexts
+
+context RENDER
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_CLOUD_RENDER; 
+}
+
+context RENDER_REFLECTIONS
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_CLOUD_RENDER_REFLECTIONS; 
+}
+
+context RENDER2D
+{
+	VertexShader = compile GLSL VS_CLOUD_RENDER2D;
+	PixelShader  = compile GLSL FS_CLOUD_RENDER2D;
+}
+
+context COPY
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_CLOUD_COPY;
+}
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#define D_CLOUD_RENDER
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_CLOUD_RENDER]]
+// =================================================================================================
+#define D_CLOUD_RENDER
+#include "Custom/CloudFragment.shader.h"
+
+[[FS_CLOUD_COPY]]
+// =================================================================================================
+#define D_CLOUD_COPY
+#include "Custom/CloudFragment.shader.h"
+
+[[FS_CLOUD_RENDER2D]]
+// =================================================================================================
+#define D_CLOUD_RENDER2D
+#include "Custom/CloudFragment.shader.h"
+
+[[VS_CLOUD_RENDER2D]]
+// =================================================================================================
+#define D_CLOUD_RENDER2D_VS
+#include "Custom/CloudFragment.shader.h"
+
+[[FS_CLOUD_RENDER_REFLECTIONS]]
+// =================================================================================================
+#define D_CLOUD_RENDER
+#define D_CLOUD_RENDER_REFLECTIONS
+#include "Custom/CloudFragment.shader.h"
+

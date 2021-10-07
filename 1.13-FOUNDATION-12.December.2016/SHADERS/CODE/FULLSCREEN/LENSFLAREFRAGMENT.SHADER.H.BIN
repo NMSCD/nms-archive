@@ -1,0 +1,237 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       LensFlareFragment.h
+///     @author     User
+///     @date       
+///
+///     @brief      LensFlareFragment
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/Defines.shader.h"
+#include "Common/CommonUniforms.shader.h"
+#include "Common/Common.shader.h"
+
+#include "Fullscreen/PostCommon.h"
+
+// =================================================================================================
+//
+// D_LENSFLARE_BRIGHT
+//
+// =================================================================================================
+
+#ifdef D_LENSFLARE_BRIGHT
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+STATIC_CONST vec3 kLumcoeff = vec3(0.299,0.587,0.114);
+
+vec3 
+Threshold(
+    in vec3  lColour,
+    in float lfThreshold,
+    in float lfGain )
+{
+    float lum = dot(lColour.rgb, kLumcoeff);
+    float thresh = max((lum-lfThreshold)*lfGain, 0.0);
+    return mix( vec3(0.0), lColour, thresh );
+}
+
+
+
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    vec4 lTexVec4;
+
+    lTexVec4 = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, IN( mTexCoordsVec2 ).xy );
+
+    lTexVec4.rgb = Threshold(   lTexVec4.rgb, 
+                                 lUniforms.mpCustomPerMesh->gThresholdParamsVec4.x,  // Threshold
+                                 lUniforms.mpCustomPerMesh->gThresholdParamsVec4.y );// Offset
+
+    FRAGMENT_COLOUR = vec4( lTexVec4.xyz, 1.0);
+}
+
+#endif // D_LENSFLARE_BRIGHT
+
+// =================================================================================================
+//
+// D_LENSFLARE_FEATURE
+//
+// =================================================================================================
+
+#ifdef D_LENSFLARE_FEATURE
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+//UNIFORM( vec4, gLensParamsVec4 );
+
+
+//------------------------------------------
+//user variables
+/*
+int NSAMPLES = 5;
+float FLARE_DISPERSAL = 0.3;
+float FLARE_HALO_WIDTH = 0.45;
+vec3 FLARE_CHROMA_DISTORTION = vec3(0.01, 0.03, 0.05);
+
+float threshold = 0.65; //highlight threshold;
+float gain = 1.3; //highlight gain;
+*/
+//------------------------------------------
+
+vec2 
+flipTexcoords(
+    in vec2 texcoords ) 
+{
+    return -texcoords + 1.0;
+}
+
+float 
+vignette(
+    in vec2 coords )
+{
+    float dist = distance(coords, vec2(0.5,0.5));
+    dist = smoothstep(0.25, 0.45, dist);
+    return clamp(dist,0.0,1.0);
+}
+
+
+vec3 
+textureDistorted(
+    SAMPLER2DARG( tex ),
+    in vec2       sample_center,
+    in vec2       sample_vector,
+    in vec3       distortion )
+{
+    vec3 col = vec3(0.0);
+
+    col.r = texture2D( tex, sample_center + sample_vector * distortion.r).r;
+    col.g = texture2D( tex, sample_center + sample_vector * distortion.g).g;
+    col.b = texture2D( tex, sample_center + sample_vector * distortion.b).b;
+
+    return col;
+}
+
+#ifdef D_PLATFORM_ORBIS
+#pragma argument(unrollallloops)
+#endif
+
+
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    
+    vec2 lTexCoord = IN( mTexCoordsVec2 ).xy;
+    lTexCoord = clamp(lTexCoord,0.002,0.998);
+
+    vec2 image_center = vec2(0.5);
+    vec2 sample_vector = (image_center - lTexCoord) * 0.3;
+    vec2 halo_vector = normalize(sample_vector) * 0.45;
+
+    vec3 result = textureDistorted( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), lTexCoord + halo_vector, halo_vector, vec3(0.01, 0.03, 0.05)).rgb;
+    result *= vignette(lTexCoord);
+
+    for (int i = 0; i < 5; ++i) 
+    {
+        vec2 offset = sample_vector * float(i);
+        result += textureDistorted( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), lTexCoord + offset, offset, vec3(0.01, 0.03, 0.05)).rgb;
+    }
+
+    vec3 anamorph = vec3(0.0);
+    float s;
+    for (int i = -32; i < 32; ++i) 
+    {
+        s = clamp(1.0/abs(float(i)),0.0,1.0);
+        anamorph += texture2D( lUniforms.mpCustomPerMesh->gBufferMap, vec2(lTexCoord.x + float(i)*(1.0/64.0),lTexCoord.y)).rgb*s;
+
+    }
+
+    FRAGMENT_COLOUR = vec4( result+(anamorph*vec3(0.1,0.0,1.0)*  lUniforms.mpCustomPerMesh->gThresholdParamsVec4.z), 1.0 );
+
+}
+
+
+#endif // D_LENSFLARE_FEATURE
+
+
+// =================================================================================================
+//
+// D_LENSFLARE_COMBINE
+//
+// =================================================================================================
+
+#ifdef D_LENSFLARE_COMBINE
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+ 
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+
+//----------------------------------------------------------------------------
+FRAGMENT_MAIN_COLOUR_SRT
+{
+
+    vec4 lFragCol;
+    vec4 lLensDirt = texture2D( lUniforms.mpCustomPerMesh->gLensDirt, IN( mTexCoordsVec2 ).xy );
+
+    lFragCol = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, IN( mTexCoordsVec2 ).xy);
+    lFragCol *= (lLensDirt* (lUniforms.mpCustomPerMesh->gThresholdParamsVec4.w + 0.2 ) ) + ( 1.0 - lUniforms.mpCustomPerMesh->gThresholdParamsVec4.w );
+
+    FRAGMENT_COLOUR = vec4(lFragCol.rgb, 1.0);
+}
+
+#endif // D_LENSFLARE_COMBINE
+
+

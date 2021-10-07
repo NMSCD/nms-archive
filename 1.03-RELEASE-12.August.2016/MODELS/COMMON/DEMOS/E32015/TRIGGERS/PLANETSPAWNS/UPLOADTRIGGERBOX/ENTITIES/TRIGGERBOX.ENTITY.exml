@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="True" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="ACTIVE" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcPlayerNearbyEvent.xml">
+                <Property name="RequirePlayerAction" value="Upload" />
+                <Property name="Distance" value="10" />
+                <Property name="Angle" value="360" />
+                <Property name="AnglePlayerRelative" value="False" />
+                <Property name="AngleOffset" value="0" />
+                <Property name="AngleReflected" value="False" />
+                <Property name="AngleMinDistance" value="1" />
+                <Property name="DistanceCheckType" value="Radius" />
+                <Property name="Inverse" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="INACTIVE" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="Scene" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcPlayerNearbyEvent.xml">
+                <Property name="RequirePlayerAction" value="OnFoot" />
+                <Property name="Distance" value="10" />
+                <Property name="Angle" value="360" />
+                <Property name="AnglePlayerRelative" value="False" />
+                <Property name="AngleOffset" value="0" />
+                <Property name="AngleReflected" value="False" />
+                <Property name="AngleMinDistance" value="1" />
+                <Property name="DistanceCheckType" value="Radius" />
+                <Property name="Inverse" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcDisplayText.xml">
+                  <Property name="HUDTextDisplayType" value="Prompt" />
+                  <Property name="Title" value="&lt;TRIANGLE&gt; TO UPLOAD DATA" />
+                  <Property name="Subtitle1" value="" />
+                  <Property name="Subtitle2" value="" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="INACTIVE" />
+          <Property name="Triggers" />
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+    </Property>
+  </Property>
+</Data>

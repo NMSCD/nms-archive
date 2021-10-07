@@ -1,0 +1,95 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       QuadFragment.h
+///     @author     User
+///     @date       
+///
+///     @brief      QuadFragment
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/Defines.shader.h"
+#include "Common/Common.shader.h"
+#include "Common/CommonUniforms.shader.h"
+
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+//
+// This is the SRT buffer that everything gets uploaded to (on PS4). PC just functions as normal.
+//
+struct UniformBuffer
+{
+    DECLARE_PTR( PerFrameUniforms,      mpPerFrame )       /*: PER_MATERIAL*/
+    DECLARE_PTR( CommonPerMeshUniforms, mpCommonPerMesh)           /*: PER_MESH*/
+};
+
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec4,  mWorldPositionVec4,         TEXCOORD1 )
+    INPUT( vec3,  mWorldNormalVec3,           TEXCOORD2 )
+    INPUT( vec2,  mTexCoordsVec2,             TEXCOORD3 )
+    INPUT( float, mfLogZ,                     TEXCOORD4 )
+
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+float
+ComputeEdgeFactor( vec2 uvIN )
+{
+    // fwidth - returns sum of approximate window-space partial derivatives magnitudes
+    vec2 lUVDxDyMag = fwidth( uvIN );
+    vec2 lEdgeP = smoothstep( vec2( 0.0, 0.0 ), lUVDxDyMag * 5.0, uvIN );
+
+    return saturate( min( lEdgeP.x, lEdgeP.y ) );
+}
+
+//-----------------------------------------------------------------------------
+///
+///     Main
+///
+///     @brief      Main Fragment
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+FRAGMENT_MAIN_COLOUR_DEPTH_SRT
+{
+    vec4 lFragmentColourVec4;
+
+    float lfScanProgress                = lUniforms.mpCommonPerMesh->gScanParamsCfg1Vec4.y - lUniforms.mpCommonPerMesh->gScanParamsCfg3Vec4.z;
+    
+    vec3  lPulseToScanPoint             = IN( mWorldPositionVec4 ).xyz - lUniforms.mpCommonPerMesh->gScanParamsPosVec4.xyz;
+    float lfDistanceFromPulseToPoint    = length( lPulseToScanPoint );
+    float lfCurrent01                   = lfDistanceFromPulseToPoint * lUniforms.mpCommonPerMesh->gScanParamsPosVec4.w; 
+    float lfAlpha                       = clamp( 1.0 - ( abs( lfScanProgress - lfCurrent01 ) * lUniforms.mpCommonPerMesh->gScanParamsCfg2Vec4.x ), 0.0, 1.0 );
+    //lfAlpha                             *= 1.0 - smoothstep( 0.8 - lUniforms.mpCommonPerMesh->gScanParamsCfg3Vec4.x, 1.0 - lUniforms.mpCommonPerMesh->gScanParamsCfg3Vec4.x, lfCurrent01 );
+    lfAlpha                             *= 1.0 - smoothstep( lUniforms.mpCommonPerMesh->gScanParamsCfg3Vec4.x - lUniforms.mpCommonPerMesh->gScanParamsCfg3Vec4.y, 1.0 - lUniforms.mpCommonPerMesh->gScanParamsCfg3Vec4.y , lfScanProgress );
+
+    lFragmentColourVec4 = vec4( 0.0, 0.0, 0.1, lfAlpha * 0.4  );
+
+    FRAGMENT_COLOUR = lFragmentColourVec4;
+
+#ifdef _F47_WRITE_LOG_Z
+    FRAGMENT_DEPTH = LinearToLogDepth_Pixel(IN(mfLogZ), lUniforms.mpPerFrame->gClipPlanesVec4);
+#endif
+}

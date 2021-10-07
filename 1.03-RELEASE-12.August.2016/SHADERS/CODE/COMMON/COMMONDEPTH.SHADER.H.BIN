@@ -1,0 +1,379 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       CommonDepth.h
+///     @author     User
+///     @date       
+///
+///     @brief      CommonDepth
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+#ifndef D_COMMONDEPTH_H
+#define D_COMMONDEPTH_H
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+//#include "Common/CommonUniforms.shader.h"
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Functions
+
+
+//-----------------------------------------------------------------------------
+///
+///     LinearToLogDepth
+///
+///     @brief      LinearToLogDepth
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+vec4 
+LinearToLogDepth_Vertex(
+    in vec4 lClipPlanes, 
+    in vec4 lScreenPos )
+{        
+    vec4 lLogScreenPos = lScreenPos;
+
+    float kfFarPlane = lClipPlanes.y;
+
+    float FC = lClipPlanes.z; // 2.0 / log2(farplane + 1.0)
+
+    float lfLogz = log2( max( 1e-6, lScreenPos.w + 1 ) ) * FC - 1.0;
+    lLogScreenPos.z = ( lfLogz ) * lScreenPos.w;
+
+    return lLogScreenPos;    
+}
+
+//-----------------------------------------------------------------------------
+///
+///     LinearToLogDepth_Pixel
+///
+///     @brief      LinearToLogDepth_Pixel
+///
+///     @param      in float lfLogZ
+///     @param      in vec4  lClipPlanes
+///     @return     float
+///
+//-----------------------------------------------------------------------------
+float
+LinearToLogDepth_Pixel(
+    in float lfLogZ,
+    in vec4  lClipPlanes )
+{
+    return log2( lfLogZ ) * lClipPlanes.w; // 1.0 / log2(farplane + 1.0)
+}
+
+//-----------------------------------------------------------------------------
+///
+///     LogToLinearDepth
+///
+///     @brief      LogToLinearDepth
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+float
+LogToLinearDepth2(
+    in vec4  lClipPlanes, 
+	float    lfLogDepth )
+{
+    return exp2( lfLogDepth / lClipPlanes.w ); // 1.0 / log2(farplane + 1.0)
+}
+
+//-----------------------------------------------------------------------------
+///
+///     LogToLinearDepth
+///
+///     @brief      LogToLinearDepth
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+#if 0
+float
+LogToLinearDepth(
+in vec4  lClipPlanes,
+float    lfLogDepth )
+{
+    float kfNearClip = lClipPlanes.x;
+    float kfFar      = lClipPlanes.y;
+    float kfFarClip  = 1.0 / log( kfFar*kfNearClip + 1.0 );
+    float lfLinearDepth = ( exp( lfLogDepth/kfFarClip ) - 1.0 ) / kfNearClip;
+    return lfLinearDepth;
+}
+#else
+float
+LogToLinearDepth(
+in vec4  lClipPlanesR,
+float    lfLogDepth )
+{
+    float lfLinearDepth = ( exp2( lfLogDepth*lClipPlanesR.z ) - 1.0 ) * lClipPlanesR.x;
+    return lfLinearDepth;
+}
+#endif
+
+//-----------------------------------------------------------------------------
+///
+///     NormaliseDepth
+///
+///     @brief      LogToLinearDepth
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+float
+NormaliseDepth(
+    in vec4  lClipPlanes,
+	float    lfDepth )
+{
+    float kfNearClip = lClipPlanes.x;
+	float kfFar      = lClipPlanes.y;
+
+	return (lfDepth - kfNearClip) / (kfFar-kfNearClip);
+}
+
+
+//-----------------------------------------------------------------------------
+///
+///     NormaliseDepth
+///
+///     @brief      LogToLinearDepth
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+float
+DenormaliseDepth(
+in vec4  lClipPlanes,
+float    lfDepth )
+{
+    float kfNearClip = lClipPlanes.x;
+    float kfFar      = lClipPlanes.y;
+
+    return lfDepth * ( kfFar-kfNearClip ) + kfNearClip;
+}
+
+//-----------------------------------------------------------------------------
+///
+///     FastNormaliseDepth
+///
+///     @brief      FastNormaliseDepth
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+float
+FastNormaliseDepth(
+    in vec4  lClipPlanesR,
+	float    lfDepth )
+{
+	float kfRecip_Far = lClipPlanesR.y;
+	return (lfDepth * kfRecip_Far);
+}
+
+
+//-----------------------------------------------------------------------------
+///
+///     FastDenormaliseDepth
+///
+///     @brief      FastDenormaliseDepth
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+float
+FastDenormaliseDepth(
+in vec4  lClipPlanes,
+float    lfDepth )
+{
+    float kfFar      = lClipPlanes.y;
+    return lfDepth * kfFar;
+}
+
+
+//-----------------------------------------------------------------------------
+///
+///     EncodeDepthToColour
+///
+///     @brief      EncodeDepthToColour
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+
+vec4
+EncodeDepthToColour( 
+    float lDepth )
+{
+#if 0
+	vec4 enc = vec4( 1.0, 255.0, 65025.0, 16581375.0 ) * vec4(lDepth);
+	enc = fract(enc);
+	enc.xyz -= enc.yzw * vec3( 1.0f/255.0, 1.0f/255.0, 1.0f/255.0 );
+
+	return enc;
+#else
+	return vec4(lDepth,0.0,0.0,0.0);
+#endif
+}
+
+
+//-----------------------------------------------------------------------------
+///
+///     DecodeDepthFromColour
+///
+///     @brief      DecodeDepthFromColour
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+
+float 
+DecodeDepthFromColour( 
+    vec4 lColour )
+{
+#if 0
+    return dot( lColour, vec4( 1.0, 1.0f/255.0, 1.0f/65025.0, 1.0 / 16581375.0 ) );
+#else
+	return lColour.x;
+#endif
+}
+
+
+//vec3 DecodePositionFromDepth(
+//    in  vec2  lScreenPosVec2,
+//    in  vec4  lClipPlanes,
+//    in vec3   lViewPosition,
+//    in  mat4  lInverseViewProjectionMat4,
+//    in  vec3  lBuffer_Vec3 )
+//{
+//    vec4 lPositionVec4;
+//    lPositionVec4.x = lScreenPosVec2.x * 2.0 - 1.0;
+//#ifdef D_PLATFORM_ORBIS    
+//    lPositionVec4.y = ( 1.0f-lScreenPosVec2.y ) * 2.0 - 1.0;
+//#else
+//    lPositionVec4.y = lScreenPosVec2.y * 2.0 - 1.0;
+//#endif
+//    lPositionVec4.z = DecodeDepthFromColour( lBuffer_Vec3 ) * 2.0 - 1.0;
+//    lPositionVec4.w = 1.0;
+//    vec4 lWorldPosVec4 = MUL( lInverseViewProjectionMat4, lPositionVec4 );
+//    lWorldPosVec4.xyz =	lWorldPosVec4.xyz / lWorldPosVec4.w;
+//    lWorldPosVec4.xyz -= lViewPosition;
+//    lWorldPosVec4.xyz = normalize( lWorldPosVec4.xyz );
+//
+//    return (lWorldPosVec4.xyz * DecodeDepthFromColour( lBuffer_Vec3 )) + lViewPosition;
+//
+//}
+
+
+vec3
+RecreatePositionFromDepth(
+    in float lfDepth,
+    in vec2  lFragCoordsVec2,
+    in vec3  lViewPosition,
+    in mat4  lInverseProjectionMatrix,
+    in mat4  lInverseViewMatrix )
+{
+    vec4 lPositionVec4;
+    lPositionVec4.x = lFragCoordsVec2.x * 2.0 - 1.0;
+
+#ifdef D_PLATFORM_ORBIS    
+    lPositionVec4.y = ( 1.0f-lFragCoordsVec2.y ) * 2.0 - 1.0;
+#else
+    lPositionVec4.y = lFragCoordsVec2.y * 2.0 - 1.0;
+#endif
+
+    lPositionVec4.z = 0.0;
+    lPositionVec4.w = 1.0;
+
+    // Inverse projection
+    lPositionVec4        = MUL( lInverseProjectionMatrix, lPositionVec4 );
+    lPositionVec4        = lPositionVec4 / lPositionVec4.w;
+
+    // Inverse view
+    mat4 lViewMat   = lInverseViewMatrix;
+    MAT4_SET_POS( lViewMat, vec4( 0.0, 0.0, 0.0, 1.0 ) );
+    lPositionVec4   = MUL( lViewMat, lPositionVec4 );
+    //lPositionVec4   = lPositionVec4 / lPositionVec4.w;
+
+    //lPositionVec4.xyz   -= lViewPosition;
+
+    vec3 lViewVectorVec3 = normalize( lPositionVec4.xyz );
+    lPositionVec4.xyz    = lViewVectorVec3 * lfDepth + lViewPosition;
+
+    return lPositionVec4.xyz;
+}
+
+
+vec4 
+GetDepthColour(
+    in float lfDepth )
+{
+    vec4 lColourVec4;
+    if( lfDepth < 1.0 )
+    {
+        lColourVec4 = vec4( 0.0, 0.0, 1.0, 1.0 );
+    }
+    else if( lfDepth < 10.0 )
+    {
+        lColourVec4 = vec4( 1.0, 0.0, 0.0, 1.0 );
+    }
+    else if( lfDepth < 20.0 )
+    {
+        lColourVec4 = vec4( 1.0, 1.0, 0.0, 1.0 );
+    }
+    else if( lfDepth < 40.0 )
+    {
+        lColourVec4 = vec4( 0.0, 1.0, 0.0, 1.0 );
+    }
+    else if( lfDepth < 80.0 )
+    {
+        lColourVec4 = vec4( 0.0, 1.0, 1.0, 1.0 );
+    }
+    else if( lfDepth < 160.0 )
+    {
+        lColourVec4 = vec4( 1.0, 0.0, 1.0, 1.0 );
+    }
+    else if( lfDepth < 320.0 )
+    {
+        lColourVec4 = vec4( 1.0, 0.5, 0.0, 1.0 );
+    }
+    else if( lfDepth < 640.0 )
+    {
+        lColourVec4 = vec4( 0.5, 1.0, 0.0, 1.0 );
+    }
+    else if( lfDepth < 1280.0 )
+    {
+        lColourVec4 = vec4( 0.0, 1.0, 0.5, 1.0 );
+    }
+    else if( lfDepth < 2560.0 )
+    {
+        lColourVec4 = vec4( 0.5, 0.0, 1.0, 1.0 );
+    }
+    else
+    {
+        lColourVec4 = vec4( 1.0, 0.0, 0.5, 1.0 );
+    }
+    return lColourVec4;
+}
+
+#endif

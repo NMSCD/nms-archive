@@ -1,0 +1,41 @@
+[[FX]]
+
+// Samplers
+sampler gDualPMapFront = sampler_state
+{
+	TexUnit = 8;
+};
+
+sampler gDualPMapBack = sampler_state
+{
+	TexUnit = 9;
+};
+
+
+// Uniforms
+float4 gGenericParam0Vec4 = {1.0, 0.0, 0.0, 0.0};
+
+
+
+
+// Contexts
+
+context INTEGRATE
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_INTEGRATE;
+}
+
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_INTEGRATE]]
+// =================================================================================================
+#define D_INTEGRATE
+#include "Fullscreen/ImageBasedLightingFragment.shader.h"
+ 
+
+
+

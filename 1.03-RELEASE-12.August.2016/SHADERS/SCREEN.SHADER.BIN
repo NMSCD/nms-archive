@@ -1,0 +1,154 @@
+[[FX]]
+
+sampler gDiffuseMap = sampler_state
+{
+	TexUnit = 0;
+};
+
+sampler gCubeMap = sampler_state
+{
+	TexUnit = 1;
+};
+
+sampler gAmbientMap = sampler_state
+{
+	TexUnit = 1;
+};
+
+sampler gNormalMap = sampler_state
+{
+	TexUnit = 2;
+};
+
+sampler gDiffuse2Map = sampler_state
+{
+	TexUnit = 3;
+};
+
+sampler gRefractionMap = sampler_state
+{
+	TexUnit = 4;
+};
+
+sampler gDetailNormalMap = sampler_state
+{
+	TexUnit = 5;
+};
+
+sampler gDetailDiffuseMap = sampler_state
+{
+	TexUnit = 6;
+};
+
+sampler gMasksMap = sampler_state
+{
+	TexUnit = 7;
+};
+
+sampler gDualPMapFront = sampler_state
+{
+	TexUnit = 8;
+};
+
+sampler gDualPMapBack = sampler_state
+{
+	TexUnit = 9;
+};
+
+sampler gCloudShadowMap = sampler_state
+{
+    TexUnit = 10;
+};
+
+sampler gShadowMap = sampler_state
+{
+    TexUnit = 11;
+};
+
+context LIT_FORWARD
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader  = compile GLSL FS_LIGHTING;
+}
+
+context ICON_FORWARD
+{
+	VertexShader = compile GLSL VS_GENERAL;
+    PixelShader  = compile GLSL FS_ICON_FORWARD;
+}
+
+context LIT_DEFER
+{
+	VertexShader = compile GLSL VS_DEFER;
+	PixelShader  = compile GLSL FS_LIT_DEFER;
+}
+
+context DEPTH_CLEAR
+{
+	VertexShader = compile GLSL VS_DEFER;
+	PixelShader  = compile GLSL FS_DEPTH_CLEAR;
+}
+
+float4 gEffectAmountVec4                = {1.0, 0, 0, 0};
+float4 gUIDeformVec4                    = {1.0, 1.0, 400.0, 1.0};
+
+// Scan
+float4 gScanParamsPosVec4               = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg1Vec4              = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg2Vec4              = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg3Vec4              = {0.0, 0.0, 0.0, 0.0};
+
+// Planet
+float4 gPlanetPositionVec4		= {0.0, -1204.0, 0.0, 1204.0};
+
+// Lighting
+float4 gMaterialParamsVec4              = {0.9, 0.5, 0.0, 0.5};
+
+// Texturing
+float4 gMaterialColourVec4              = {1.0, 0.0, 0.0, 1.0};
+float4 gUVScrollStepVec4                = {0.0, 0.0, 0.0, 0.0};
+float4 gCustomParams02Vec4              = {0.0, 1.0, 1.0, 0.0};
+float4 gCustomParams01Vec4              = {0.0, 0.0, 0.0, 0.0};
+                                       
+// Vertex Displacement                 
+float4 gWaveOneAmplitudeVec4            = {0.0, 0.0, 0.0, 0.0};
+float4 gWaveOneFrequencyVec4            = {0.0, 0.0, 0.0, 0.0};
+float4 gWaveOneFallOffAndSpeedVec4      = {0.0, 0.0, 0.0, 0.0};
+float4 gWaveTwoAmplitudeVec4            = {0.0, 0.0, 0.0, 0.0};
+float4 gWaveTwoFrequencyVec4            = {0.0, 0.0, 0.0, 0.0};
+float4 gWaveTwoFallOffAndSpeedVec4      = {0.0, 0.0, 0.0, 0.0};
+
+
+[[FS_LIGHTING]]
+// =================================================================================================
+// #define D_NO_POSTPROCESS // define this to make the gun screen appear in the fwd pipeline
+#include "Custom/ScreenFragment.shader.h"
+
+[[FS_ICON_FORWARD]]
+// =================================================================================================
+#define D_NO_POSTPROCESS
+#include "Custom/ScreenFragment.shader.h"
+
+
+
+
+[[VS_GENERAL]]
+// =================================================================================================
+#include "UberVertex.shader.h"
+
+[[VS_DEFER]]
+// =================================================================================================
+#define D_DEFER
+#include "UberVertex.shader.h"
+
+[[FS_LIT_DEFER]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#include "Custom/ScreenFragment.shader.h"
+
+[[FS_DEPTH_CLEAR]]
+// =================================================================================================
+#define D_DEFER
+#define D_DEPTH_CLEAR
+#include "Custom/ScreenFragment.shader.h"

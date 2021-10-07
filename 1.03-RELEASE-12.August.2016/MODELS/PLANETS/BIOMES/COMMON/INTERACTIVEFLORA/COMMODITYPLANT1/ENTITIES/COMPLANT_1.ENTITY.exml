@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="" />
+        <Property name="Filename" value="" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="LoopOffsetMin" value="0" />
+        <Property name="LoopOffsetMax" value="0" />
+        <Property name="ControlDelay" value="0" />
+        <Property name="ControlSpeed" value="1" />
+        <Property name="ControlActionFrame" value="-1" />
+        <Property name="ControlCreatureSize" value="AllSizes" />
+        <Property name="FlagsAdditive" value="False" />
+        <Property name="FlagsMirrored" value="False" />
+        <Property name="FlagsActive" value="True" />
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="POP" />
+          <Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/INTERACTIVEFLORA/ANIMS/COMMODITYPLANT1_OPEN.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="BOOT" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Activate" />
+                  <Property name="Name" value="_Commodity_" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="INACTIVE" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="UI_Vegetable_Collect" />
+                </Property>
+                <Property value="GcPlayAnimAction.xml">
+                  <Property name="Anim" value="POP" />
+                </Property>
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="PLANTPOP" />
+                  <Property name="Joint" value="joint3" />
+                  <Property name="Exact" value="True" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="_Commodity_" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+    </Property>
+  </Property>
+</Data>

@@ -1,0 +1,38 @@
+<Pipeline>
+  
+  <Setup>
+    <RenderTarget id="RGBA32UIQuarterSizedTmp"   hasMips="true" autoGenMips="false" delayCreation="true" depthBuf="false"  numColBufs="1"  format="RGBA32UI" scale="0.25" maxSamples="0" />
+  </Setup>
+  
+    <!-- Scene rendering -->
+    <CommandQueue>
+
+        <Stage id="GenMips">
+            <BeginTarget target="" />
+            <ColourMask channels="RGBA"/>
+            <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+            <DrawQuad material="Materials/GenMipmap.material.mbin" context="GENMIPMAP" width ="1.0" height="1.0" />
+            <EndTarget flushCB="true" flushDB="false" />
+        </Stage>
+
+        <Stage id="Dxt5CompressAllMips">
+            <!-- While in the app it looks like the pipeline is rendering to the DXT5 texture,
+                 here we actually replace the render target with the temporary texture that
+                 is created on-demand (delayCreation = true) -->
+            <BeginTarget target="RGBA32UIQuarterSizedTmp" />
+            <ColourMask channels="RGBA"/>
+            <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+            <DrawQuad material="Materials/GenMipmap.material.mbin" context="COMPRESSMIP" />
+            <EndTarget flushCB="true" flushDB="false" />
+
+          <!-- Now that the compressed content is available, copy it over to the DXT5 texture
+                 that is the actual target of this operation -->
+            <BeginTarget target="" />
+            <CopyTextureToTarget srcTex="RGBA32UIQuarterSizedTmp" />
+            <EndTarget flushCB="true" flushDB="false" />
+
+        </Stage>
+        
+    </CommandQueue>
+
+</Pipeline>

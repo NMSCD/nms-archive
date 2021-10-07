@@ -1,0 +1,52 @@
+[[FX]]
+
+// Samplers
+sampler gNormalMap = sampler_state
+{
+    Filter  = Bilinear;
+    Address = Wrap;
+    TexUnit = 3;
+};
+
+
+// Uniforms
+
+// Planet
+float4 gPlanetPositionVec4		   = {0.0, -1204.0, 0.0, 1204.0};
+
+// Lighting
+float4 gMaterialParamsVec4              = {0.9, 0.5, 0.0, 0.5};
+
+float4 gSkyColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gHorizonColourVec4               = {1.0, 0.0, 1.0, 0.0};
+float4 gSunColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterColourNearVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterColourFarVec4                 = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogVec4                    = {1.0, 0.0, 1.0, 0.0};
+float4 gFogColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceHorizonColourVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogColourVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogParamsVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gFogParamsVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gScatteringParamsVec4            = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceFogParamsVec4              = {1.0, 0.0, 1.0, 0.0};
+
+// Contexts
+
+context LIGHTING
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader  = compile GLSL FS_LIGHTING;
+}
+
+[[VS_GENERAL]]
+// =================================================================================================
+#define D_WATER
+#define D_PLANET
+#include "Custom/TerrainVertex.shader.h"
+
+[[FS_LIGHTING]]
+// =================================================================================================
+#define D_PLANET
+#define D_FOG
+#include "Custom/WaterFragment.shader.h"

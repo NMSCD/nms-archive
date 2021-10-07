@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.13.2)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcScannableComponentData.xml">
+      <Property name="ScanRange" value="50" />
+      <Property name="ScanName" value="" />
+      <Property name="ScanTime" value="5" />
+      <Property name="IconType" value="GcScannerIconTypes.xml">
+        <Property name="ScanIconType" value="Tech" />
+      </Property>
+      <Property name="PermanentIcon" value="False" />
+      <Property name="PermanentIconRadius" value="0" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="TriggerVolume" value="False" />
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="Climbable" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+    </Property>
+    <Property value="GcCreatureBaitComponentData.xml">
+      <Property name="AttractList">
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="DRONE" />
+        </Property>
+      </Property>
+      <Property name="BaitStrength" value="0.2" />
+      <Property name="BaitRadius" value="100000" />
+      <Property name="Debug" value="False" />
+      <Property name="InducesRage" value="False" />
+    </Property>
+  </Property>
+</Data>

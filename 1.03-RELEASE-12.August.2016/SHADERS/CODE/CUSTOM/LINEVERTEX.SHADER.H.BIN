@@ -1,0 +1,127 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       LineVertex.h
+///     @author     User
+///     @date       
+///
+///     @brief      LineVertex
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+#include "Common/Defines.shader.h"
+#include "Common/CommonUniforms.shader.h"
+#include "Common/CommonDepth.shader.h"
+#include "Common/CommonVertex.shader.h"
+
+// just here to make the SRT structure match he fragments shdaer version. TODO - move this into a shared file.
+//-----------------------------------------------------------------------------
+///
+///     CustomPerMeshUniforms
+///
+///     @brief      CustomPerMeshUniforms
+///
+///     Stuff that is only used for these types of meshes.
+//-----------------------------------------------------------------------------
+struct CustomPerMaterialUniforms
+{
+    SAMPLER2D( gDiffuseMap );
+    SAMPLER2D( gNormalMap );
+};
+
+//
+// This is the SRT buffer that everything gets uploaded to (on PS4). PC just functions as normal.
+//
+struct UniformBuffer
+{
+     DECLARE_PTR( PerFrameUniforms,             mpPerFrame )   /*: PER_MATERIAL*/ // sematics currently crash the compiler so the parser is hardcoded to look for names.
+     DECLARE_PTR( CustomPerMaterialUniforms,    mpCustomPerMaterial )       /*: PER_MESH*/
+     DECLARE_PTR( CommonPerMeshUniforms,        mpCommonPerMesh )       /*: PER_MESH*/
+};
+
+
+STATIC_CONST float radius      = 0.2;
+STATIC_CONST float invScrRatio = 1280.0 / 720.0;
+
+DECLARE_INPUT
+
+	INPUT( vec4, mkLocalPositionVec4, POSITION0 )
+    INPUT( vec4, mkLocalNormalVec4,   TEXCOORD0 )
+	INPUT( vec4, mkCustom1Vec4,       TEXCOORD1 )
+    INPUT( vec4, mkCustom2Vec4,       TEXCOORD2 )
+
+DECLARE_END
+
+DECLARE_OUTPUT
+
+    OUT_VERTEX_SCREEN_POSITION
+    OUTPUT( vec2,   mTexCoordsVec2,     TEXCOORD0 )
+    OUTPUT( vec4,   mWorldPositionVec4, TEXCOORD1 )
+    OUTPUT( float,  mfLogZ,             TEXCOORD2 )
+    OUTPUT( float,  mfVertAlpha,        TEXCOORD3 )
+    OUTPUT( vec4,   mColourVec4,        TEXCOORD4 )
+    
+DECLARE_END
+
+vec4
+GetLinePosition(
+    vec4 lScreenPositionA,
+    vec4 lScreenPositionB,
+    vec2 lOffset )
+{
+    vec2 lineDirProj;
+
+    //  line direction in screen space (perspective division required)
+    lineDirProj = radius * normalize( lScreenPositionA.xy/lScreenPositionA.ww - lScreenPositionB.xy/lScreenPositionB.ww );
+
+    // small trick to avoid inversed line condition when points are not on the same side of Z plane
+    if( sign(lScreenPositionA.w) != sign(lScreenPositionB.w) )
+        lineDirProj = -lineDirProj;
+        
+    vec4 vMVP = lScreenPositionA;
+    vMVP.z -= 0.2;
+    vMVP.w -= 0.2;
+
+    // offset position in screen space along line direction and orthogonal direction
+    vMVP.xy += lineDirProj.xy						* lOffset.xx * vec2( 1.0, invScrRatio );
+    vMVP.xy += lineDirProj.yx * vec2( 1.0, -1.0 )	* lOffset.yy * vec2( 1.0, invScrRatio );
+
+    return vMVP;
+}
+
+VERTEX_MAIN_SRT
+{    
+    vec2 lUVs;
+    vec2 lOffsets;
+    
+    vec4 laPosition      [2];
+    vec4 laScreenPosition[2];
+	vec3 lNormalVec3;
+
+    laPosition[0] = MUL( lUniforms.mpCommonPerMesh->gWorldMat4, vec4( IN( mkLocalPositionVec4 ).xyz, 1.0 ) );
+    laPosition[1] = MUL( lUniforms.mpCommonPerMesh->gWorldMat4, vec4( IN( mkLocalNormalVec4 ).xyz,   1.0 ) );
+
+	mat4 lViewProj = MUL( lUniforms.mpCommonPerMesh->gProjectionMat4, lUniforms.mpPerFrame->gViewMat4 );
+
+    laScreenPosition[0] = MUL( lViewProj, laPosition[0] );
+    laScreenPosition[1] = MUL( lViewProj, laPosition[1] );
+
+    lUVs     = IN( mkCustom1Vec4 ).zw;
+    lOffsets = IN( mkCustom1Vec4 ).xy;//vec2( IN( mkLocalPositionVec4 ).w, IN( mkLocalNormalVec4 ).w );
+    
+    vec4 vMVP  = GetLinePosition( laScreenPosition[0], laScreenPosition[1], lOffsets );
+
+    OUT( mfVertAlpha )          = IN( mkLocalPositionVec4 ).w;
+    OUT( mTexCoordsVec2 )       = lUVs;
+    OUT( mWorldPositionVec4 )   = MUL( lUniforms.mpCommonPerMesh->gWorldMat4, vec4( IN( mkLocalPositionVec4 ).xyz, 1.0) );
+
+    OUT( mColourVec4 )          = IN( mkCustom2Vec4 ).xyzw;
+    
+#if defined( _F47_WRITE_LOG_Z )    
+    OUT( mfLogZ ) = vMVP.w + 1.0;
+#endif
+    vMVP = LinearToLogDepth_Vertex( lUniforms.mpPerFrame->gClipPlanesVec4, vMVP );    
+
+    VERTEX_SCREEN_POSITION = vMVP;
+}

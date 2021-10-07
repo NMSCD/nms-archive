@@ -1,0 +1,100 @@
+[[FX]]
+
+// Samplers
+sampler gNebulaeMap = sampler_state
+{
+  Address = Wrap;
+  Filter = Bilinear;
+};
+
+sampler gAtmosMap = sampler_state
+{
+  Address = Wrap;
+  Filter = Bilinear;
+};
+
+sampler gNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/CLOUDNOISE.DDS;
+    TexUnit = 13;
+    Address = Wrap;
+};
+
+
+
+// Uniforms
+
+float4 gTraceOrigin                      = {0.0, 0.0, 0.0, 0.0};
+float4 gTraceDir                         = {0.0, 0.0, 0.0, 0.0};
+
+float4 gTracePDX                         = {0.0, 0.0, 0.0, 0.0};
+float4 gTracePDY                         = {0.0, 0.0, 0.0, 0.0};
+float4 gTraceScreenCenter                = {0.0, 0.0, 0.0, 0.0};
+
+float4 gGoalCenterDir                    = {0.0, 0.0, 0.0, 0.0};
+float4 gGoalCenterPerpU                  = {0.0, 0.0, 0.0, 0.0};
+float4 gGoalCenterPerpV                  = {0.0, 0.0, 0.0, 0.0};
+
+float4 gGalacticScale                    = {0.0, 0.0, 0.0, 0.0};
+float4 gInterest                         = {0.0, 0.0, 0.0, 0.0};
+float4 gTiming                           = {0.0, 0.0, 0.0, 0.0};
+
+float4 gScreen                           = {0.0, 0.0, 0.0, 0.0};
+float4 gOriginSS                         = {0.0, 0.0, 0.0, 0.0};
+
+
+float4 gSunCoreConfig                    = {0.0, 0.0, 0.0, 0.0};
+float4 gSunCoreColour                    = {0.0, 0.0, 0.0, 0.0};
+
+float4 gAnoStreakConfig1                 = {0.0, 0.0, 0.0, 0.0};
+float4 gAnoStreakConfig2                 = {0.0, 0.0, 0.0, 0.0};
+float4 gAnoStreakConfig3                 = {0.0, 0.0, 0.0, 0.0};
+
+
+float4 gBGCellConfig                     = {0.0, 0.0, 0.0, 0.0};
+float4 gBGColourScales                   = {0.0, 0.0, 0.0, 0.0};
+float4 gBGColourConfig                   = {0.0, 0.0, 0.0, 0.0};
+float4 gBGLensFlareColour                = {0.0, 0.0, 0.0, 0.0};
+float4 gBGLensFlareSpread                = {0.0, 0.0, 0.0, 0.0};
+
+
+float4 gNebulaeStepRange_AlphaPow        = {0.0, 0.0, 0.0, 0.0};
+float4 gCompositeControlBVCG             = {0.0, 0.0, 0.0, 0.0};
+float4 gNebulaeTraceConfig               = {0.0, 0.0, 0.0, 0.0};
+float4 gVignetteLensFlareConfig          = {0.0, 0.0, 0.0, 0.0};
+
+// these are arrays
+float4 gLargeAreaPrimaryLUT;
+float4 gLargeAreaSecondaryLUT;
+
+
+
+// Contexts
+
+context BACKGROUND
+{
+    VertexShader = compile GLSL VS_GENERAL;
+    PixelShader  = compile GLSL FS_BACKGROUND;
+}
+
+context FOREGROUND
+{
+    VertexShader = compile GLSL VS_GENERAL;
+    PixelShader  = compile GLSL FS_FOREGROUND;
+}
+
+
+[[VS_GENERAL]]
+// =================================================================================================
+#define D_GALAXY
+#include "Custom/GalacticVertex.shader.h"
+
+[[FS_BACKGROUND]]
+// =================================================================================================
+#define D_GALACTIC_BACKGROUND
+#include "Custom/GalacticFSFragment.shader.h"
+
+[[FS_FOREGROUND]]
+// =================================================================================================
+#define D_GALACTIC_FOREGROUND
+#include "Custom/GalacticFSFragment.shader.h"

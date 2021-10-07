@@ -1,0 +1,38 @@
+#define D_PARTICLE_UNIFORMS
+
+#include "Common/Defines.shader.h"
+#include "Common/CommonUniforms.shader.h"
+
+#include "Custom/TrailCommon.h"
+
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2,  mfTexCoord, TEXCOORD1 )
+    INPUT( float, mfFade,     TEXCOORD2 )
+    INPUT( float, mfLogZ,	  TEXCOORD3 )
+
+DECLARE_END
+
+
+FRAGMENT_MAIN_COLOUR_DEPTH_SRT
+{
+    vec4 lCol;
+    lCol = texture2D( lUniforms.mpCustomPerMaterial->gDiffuseMap, IN( mfTexCoord ) );
+    lCol.w *= IN( mfFade );
+
+#ifdef D_ADDITIVE
+    lCol.w *= 0.7;
+#endif
+
+    FRAGMENT_COLOUR = lCol;
+    FRAGMENT_DEPTH  = log2( IN( mfLogZ ) ) * lUniforms.mpPerFrame->gClipPlanesVec4.w;
+}

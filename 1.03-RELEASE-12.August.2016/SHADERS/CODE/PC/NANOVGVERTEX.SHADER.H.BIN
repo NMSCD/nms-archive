@@ -1,0 +1,38 @@
+attribute vec2 mkLocalPositionVec4; // must be called Vec4 due to app strcmp
+attribute vec2 mkTexCoordsVec4; // must be called Vec4 due to app strcmp
+// DECLARE_INPUT
+//     INPUT( vec2, mkLocalPositionVec4, POSITION0 ) // must be called Vec4 due to app strcmp
+//     INPUT( vec2, mkTexCoordsVec4,     TEXCOORD0 ) // must be called Vec4 due to app strcmp
+// DECLARE_END
+
+
+
+varying vec2 mTexCoordsVec2;
+varying vec2 mPosVec2;
+// DECLARE_OUTPUT
+//     OUT_VERTEX_SCREEN_POSITION
+//     OUTPUT( vec2,   mTexCoordsVec2,     TEXCOORD0 )
+//     OUTPUT( vec2,   mPosVec2,           TEXCOORD1 )
+// DECLARE_END
+
+
+uniform vec2 viewSize;
+
+void main()
+//VERTEX_MAIN_SRT
+{
+
+    mTexCoordsVec2         = mkTexCoordsVec4;
+    mPosVec2               = mkLocalPositionVec4;
+
+    gl_Position            =
+    // VERTEX_SCREEN_POSITION = 
+                             vec4( 2.0 * mkLocalPositionVec4.x / viewSize.x - 1.0, 
+                                   1.0 - 2.0 * mkLocalPositionVec4.y / viewSize.y, 
+                                   0, 
+                                   1 );
+
+}
+
+
+

@@ -1,0 +1,172 @@
+[[FX]]
+
+// Samplers
+
+sampler gReflectionMap = sampler_state
+{
+    TexUnit = 7;
+};
+
+sampler gDisplacementMap = sampler_state
+{
+    Filter  = Bilinear;
+    Address = Clamp;
+    TexUnit = 9;
+};
+
+sampler gNormalMap = sampler_state
+{
+	Filter = Trilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 2;
+};
+
+sampler gLargeNormalMap = sampler_state
+{
+	Filter = Trilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 3;
+};
+
+sampler gFoamNormalMap = sampler_state
+{
+	Filter = Trilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 8;
+};
+
+sampler gFresnelMap = sampler_state
+{
+	Filter = Bilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 10;
+};
+
+sampler gFoamMap = sampler_state
+{
+	Filter = Trilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 1;
+};
+
+sampler gShadowMap = sampler_state
+{
+	TexUnit = 15;
+};
+
+sampler gCloudShadowMap = sampler_state
+{
+	TexUnit = 14;
+};
+
+sampler gFadeNoiseMap = sampler_state
+{
+	DefaultTexture = SHADER/FADENOISE.DDS;
+	TexUnit = 13;
+};
+
+sampler gBuffer1Map = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 4;
+};
+
+sampler gBuffer2Map = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 5;
+};
+
+sampler gBufferMap = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 6;
+};
+
+
+
+
+// Uniforms
+
+// Water
+float4 gWaveScaleVec4                    = {0.0, 0.0, 0.0, 0.0};
+float4 gWaveSpeedVec4                    = {0.0, 0.0, 0.0, 0.0};
+float4 gWindDirectionVec4                = {0.0, 0.0, 0.0, 0.0};
+float4 gWaterSurfaceParamsVec4           = {0.0, 0.0, 0.0, 0.0};
+float4 gFresnelParamsVec4                = {0.0, 0.0, 0.0, 0.0};
+float4 gFoamParamsVec4                   = {0.0, 0.0, 0.0, 0.0};
+float4 gFoamColourVec4                   = {0.0, 0.0, 0.0, 0.0};
+
+// Planet
+float4 gPlanetPositionVec4				= {0.0,  0.0, 0.0, 0.0};
+
+// Lighting
+float4 gMaterialParamsVec4              = {0.0, 1.0, 1.0, 0.0};
+
+// Fog
+float4 gSkyColourVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gHorizonColourVec4               = {1.0, 0.0, 1.0, 0.0};
+float4 gSunColourVec4               = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterColourNearVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterColourFarVec4                 = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogVec4                    = {1.0, 0.0, 1.0, 0.0};
+float4 gFogColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceHorizonColourVec4               = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogColourVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogParamsVec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gFogParamsVec4                         = {1.0, 0.0, 1.0, 0.0};
+float4 gScatteringParamsVec4           = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceFogParamsVec4                    = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColourVec4            = {1.0, 0.0, 1.0, 0.0};
+float4 gSunPositionVec4                 = {1.0, 0.0, 1.0, 0.0};
+
+
+// Contexts
+
+context LIGHTING
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader  = compile GLSL FS_LIGHTING;
+}
+
+
+context LOD1
+{
+	VertexShader = compile GLSL VS_LOD1;
+	PixelShader  = compile GLSL FS_LIGHTING;
+}
+
+context SCATTERING
+{
+	VertexShader = compile GLSL VS_SCATTERING;
+	PixelShader  = compile GLSL FS_SCATTERING;
+}
+
+[[VS_GENERAL]]
+// =================================================================================================
+#define D_WATER
+#define D_FOG
+#include "Custom/TerrainVertex.shader.h"
+
+[[FS_LIGHTING]]
+// =================================================================================================
+#define D_FOG
+#include "Custom/WaterFragment.shader.h"
+
+[[VS_LOD1]]
+// =================================================================================================
+#define D_WATER
+#define D_FOG
+#define D_LOD1
+#include "Custom/TerrainVertex.shader.h"
+
+[[VS_SCATTERING]]
+// =================================================================================================
+#define D_TEX_QUAD
+#define D_LIGHT
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_SCATTERING]]
+// =================================================================================================
+#define D_SCATTERING
+#include "Custom/WaterFragment.shader.h"

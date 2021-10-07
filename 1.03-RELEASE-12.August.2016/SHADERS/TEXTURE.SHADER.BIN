@@ -1,0 +1,162 @@
+[[FX]]
+
+// Samplers
+sampler gSource1Map = sampler_state
+{
+	TexUnit = 0;
+};
+
+sampler gSource2Map = sampler_state
+{
+	TexUnit = 1;
+};
+
+sampler gSource3Map = sampler_state
+{
+	TexUnit = 2;
+};
+
+sampler gSource4Map = sampler_state
+{
+	TexUnit = 3;
+};
+
+sampler gSource5Map = sampler_state
+{
+	TexUnit = 4;
+};
+
+sampler gSource6Map = sampler_state
+{
+	TexUnit = 5;
+};
+
+sampler gSource7Map = sampler_state
+{
+	TexUnit = 6;
+};
+
+sampler gSource8Map = sampler_state
+{
+	TexUnit = 7;
+};
+
+sampler gAlpha1Map = sampler_state
+{
+	TexUnit = 8;
+};
+
+sampler gAlpha2Map = sampler_state
+{
+	TexUnit = 9;
+};
+
+sampler gAlpha3Map = sampler_state
+{
+	TexUnit = 10;
+};
+
+sampler gAlpha4Map = sampler_state
+{
+	TexUnit = 11;
+};
+
+sampler gAlpha5Map = sampler_state
+{
+	TexUnit = 12;
+};
+
+sampler gAlpha6Map = sampler_state
+{
+	TexUnit = 13;
+};
+
+sampler gAlpha7Map = sampler_state
+{
+	TexUnit = 14;
+};
+
+sampler gAlpha8Map = sampler_state
+{
+	TexUnit = 15;
+};
+
+float4 gfTextureParams = { 0.0, 0.5, 11.0, 11.0 };
+float4 gLayersUsed1Vec4 = { 0.0, 0.0, 0.0, 0.0 };
+float4 gLayersUsed2Vec4 = { 0.0, 0.0, 0.0, 1.0 };
+float4 gAlphaLayersUsed1Vec4 = { 0.0, 0.0, 0.0, 0.0 };
+float4 gAlphaLayersUsed2Vec4 = { 0.0, 0.0, 0.0, 1.0 };
+float4 gBaseAlphaLayer1Vec4 = { 0.0, 0.0, 0.0, 1.0 };
+float4 gBaseAlphaLayer2Vec4 = { 0.0, 0.0, 0.0, 1.0 };
+
+float4 gAverageColour1Vec4 = { 0.5, 0.5, 0.5, 1.0 };
+float4 gAverageColour2Vec4 = { 0.5, 0.5, 0.5, 1.0 };
+float4 gAverageColour3Vec4 = { 0.5, 0.5, 0.5, 1.0 };
+float4 gAverageColour4Vec4 = { 0.5, 0.5, 0.5, 1.0 };
+float4 gAverageColour5Vec4 = { 0.5, 0.5, 0.5, 1.0 };
+float4 gAverageColour6Vec4 = { 0.5, 0.5, 0.5, 1.0 };
+float4 gAverageColour7Vec4 = { 0.5, 0.5, 0.5, 1.0 };
+float4 gAverageColour8Vec4 = { 0.5, 0.5, 0.5, 1.0 };
+
+float4 gRecolour1Vec4 = { 1.0, 0.0, 0.0, 1.0 };
+float4 gRecolour2Vec4 = { 1.0, 1.0, 0.0, 1.0 };
+float4 gRecolour3Vec4 = { 1.0, 0.0, 0.0, 1.0 };
+float4 gRecolour4Vec4 = { 1.0, 0.0, 0.0, 1.0 };
+float4 gRecolour5Vec4 = { 1.0, 0.0, 0.0, 1.0 };
+float4 gRecolour6Vec4 = { 1.0, 0.0, 0.0, 1.0 };
+float4 gRecolour7Vec4 = { 1.0, 0.0, 0.0, 1.0 };
+float4 gRecolour8Vec4 = { 1.0, 0.0, 0.0, 1.0 };
+
+// Contexts
+context COMBINE_DIFFUSE
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_COLOURCOMBINE;
+}
+
+context COLOUR_DIFFUSE
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_COLOUR;
+}
+
+context COMBINE_MAPS
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_COMBINE;
+}
+
+context COMBINE_MASKS
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_COMBINEMASKS;
+}
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#define D_TEX_QUAD
+#define D_RECOLOUR
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_COLOUR]]
+// =================================================================================================
+#define D_RECOLOUR
+#include "Fullscreen/TextureMultiplyFragment.shader.h"
+
+[[FS_COLOURCOMBINE]]
+// =================================================================================================
+#define D_HASALPHACHANNEL
+#define D_RECOLOUR
+#define D_COMBINE
+#include "Fullscreen/TextureMultiplyFragment.shader.h"
+
+[[FS_COMBINE]]
+// =================================================================================================
+#define D_COMBINE
+#include "Fullscreen/TextureMultiplyFragment.shader.h"
+
+[[FS_COMBINEMASKS]]
+// =================================================================================================
+#define D_COMBINE
+#define D_COMBINE_MASKS
+#include "Fullscreen/TextureMultiplyFragment.shader.h"

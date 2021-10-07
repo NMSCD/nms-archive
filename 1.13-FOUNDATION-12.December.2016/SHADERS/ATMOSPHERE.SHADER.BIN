@@ -1,0 +1,140 @@
+[[FX]]
+
+sampler gDiffuseMap = sampler_state
+{
+	Address = Wrap;
+	Filter = Trilinear;
+	TexUnit = 0;
+};
+
+sampler gBufferMap = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 1;
+};
+
+
+float4 gPlanetPositionVec4	  					= {0.0, -1204.0, 0.0, 1204.0};
+
+// Lighting
+float4 gMaterialColourVec4                 = {1.0, 1.0, 1.0, 1.0};
+
+// Fog
+float4 gSkyColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gSkyUpperColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gSkySolarColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gSkyGradientSpeedVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gSkyUpperParamsVec4                  = {1.0, 0.0, 1.0, 0.0};
+float4 gHorizonColourVec4               = {1.0, 0.0, 1.0, 0.0};
+float4 gSunColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterColourNearVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterColourFarVec4                 = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogVec4                    = {1.0, 0.0, 1.0, 0.0};
+float4 gFogColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceHorizonColourVec4               = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogColourVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogParamsVec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gFogParamsVec4                         = {1.0, 0.0, 1.0, 0.0};
+float4 gScatteringParamsVec4            = {1.0, 0.0, 1.0, 0.0};
+float4 gFogFadeHeightsVec4                    = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour1Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour2Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour3Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColourVec4            = {1.0, 0.0, 1.0, 0.0};
+float4 gSunPositionVec4                 = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceScatteringParamsVec4       = {1.0, 0.0, 1.0, 0.0};
+float4 gaPlanetPositionsVec4;
+
+context SCATTERING
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader = compile GLSL FS_SCATTERING; 
+}
+
+context SCATTER_MASK
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader = compile GLSL FS_SCATTER_MASK; 
+}
+
+context CLOUDSHADOW
+{
+	VertexShader = compile GLSL VS_SHRINKSHADOW;
+	PixelShader = compile GLSL FS_CLOUDSHADOW; 
+}
+
+context CLOUD
+{
+	VertexShader = compile GLSL VS_SHRINK;
+	PixelShader = compile GLSL FS_CLOUD; 
+}
+
+context REFLECT
+{
+	VertexShader = compile GLSL VS_REFLECT;
+	PixelShader = compile GLSL FS_REFLECT; 
+}
+
+context REFLECT_WATER
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader = compile GLSL FS_REFLECT; 
+}
+
+[[VS_REFLECT]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_REFLECT
+#include "Custom/AtmosphereVertex.shader.h"
+
+[[VS_GENERAL]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#include "Custom/AtmosphereVertex.shader.h"
+
+[[VS_SHRINK]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_SMALLER
+#include "Custom/AtmosphereVertex.shader.h"
+
+[[VS_SHRINKSHADOW]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_SMALLER
+#define D_SHADOW
+#include "Custom/AtmosphereVertex.shader.h"
+
+
+[[FS_SCATTERING]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_SCATTERING
+#include "Custom/AtmosphereFragment.shader.h"
+
+[[FS_SCATTER_MASK]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_SCATTERING
+#define D_SCATTER_MASK
+#include "Custom/AtmosphereFragment.shader.h"
+
+[[FS_CLOUD]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_CLOUD
+#include "Custom/AtmosphereFragment.shader.h"
+
+[[FS_CLOUDSHADOW]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_CLOUD
+#define D_SHADOW
+#include "Custom/AtmosphereFragment.shader.h"
+
+[[FS_REFLECT]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_SCATTERING
+#define D_REFLECT
+#include "Custom/AtmosphereFragment.shader.h"

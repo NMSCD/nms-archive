@@ -1,0 +1,65 @@
+[[FX]]
+
+// Samplers
+sampler gDiffuseMap = sampler_state
+{
+	Address = Wrap;
+	Filter = Trilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 0;
+};
+
+sampler gNormalMap = sampler_state
+{
+    Address = Wrap;
+    Filter = Trilinear;
+    MaxAnisotropy = 0;
+    TexUnit = 0;
+};
+
+
+// Uniforms
+
+// Planet
+float4 gPlanetPositionVec4              = {0.0, 0.0, 0.0, 0.0}; 
+float4 gPlanetSubstanceColour           = {0.0, 1.0, 1.0, 0.0}; 
+
+// Lighting
+float4 gMaterialParamsVec4              = {0.9, 0.5, 0.0, 0.5};
+
+// Scan
+float4 gScanParamsPosVec4               = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg1Vec4              = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg2Vec4              = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg3Vec4              = {0.0, 0.0, 0.0, 0.0};
+
+float4 gMiningPosVec4                   = {0.0, 0.0, 0.0, 0.0};
+
+// Contexts
+
+context LIGHTING
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader  = compile GLSL FS_GENERAL;
+}
+
+context SUBSTANCES
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader  = compile GLSL FS_SUBSTANCES;
+}
+
+
+[[VS_GENERAL]]
+// =================================================================================================
+#include "Custom/LineVertex.shader.h"
+
+[[FS_GENERAL]]
+// =================================================================================================
+#include "Custom/LineFragment.shader.h"
+
+[[FS_SUBSTANCES]]
+// =================================================================================================
+#define D_SUBSTANCES
+#include "Custom/LineFragment.shader.h"
+

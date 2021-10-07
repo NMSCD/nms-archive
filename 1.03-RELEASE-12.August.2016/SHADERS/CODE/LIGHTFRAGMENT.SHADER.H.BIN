@@ -1,0 +1,575 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       LightFragment.h
+///     @author     User
+///     @date       
+///
+///     @brief      LightFragmentShader
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/Defines.shader.h"
+#include "Common/CommonUniforms.shader.h"
+#include "LightCommon.shader.h"
+#include "Common/CommonGBuffer.shader.h"
+
+
+
+
+#if defined(D_VERTEX) && !defined(D_VERTEX_SUNLIGHT)
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+
+#include "Common/CommonDepth.shader.h"
+
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+DECLARE_INPUT
+    INPUT(  vec3, mkLocalPositionVec3, POSITION0 )
+DECLARE_END
+
+DECLARE_OUTPUT
+    OUT_VERTEX_SCREEN_POSITION
+
+    OUTPUT( vec4, mScreenSpacePositionVec4, TEXCOORD0 )
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+///
+///     Output
+///
+///     @brief  Output
+///
+//-----------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+//-----------------------------------------------------------------------------
+///
+///     Vertex Main
+///
+///     @brief      Vertex Main
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+
+/*vec4 
+LinearToLogDepth_Vertex(
+    in vec4 lClipPlanes, 
+    in vec4 lScreenPos )
+{        
+    vec4 lLogScreenPos = lScreenPos;
+
+    float kfFarPlane = lClipPlanes.y;
+
+    float FC = lClipPlanes.z; // 2.0 / log2(farplane + 1.0)
+
+    float lfLogz = log2( max( 1e-6, lScreenPos.w + 1 ) ) * FC - 1.0;
+    lLogScreenPos.z = ( lfLogz ) * lScreenPos.w;
+
+    return lLogScreenPos;    
+}*/
+
+
+VERTEX_MAIN_SRT
+{
+    vec4  lScreenSpacePositionVec4;
+
+    lScreenSpacePositionVec4 = MUL( lUniforms.mpCommonPerMesh->gWorldViewProjectionMat4, vec4( IN( mkLocalPositionVec3 ), 1.0 ) );
+
+    OUT(mScreenSpacePositionVec4) = lScreenSpacePositionVec4;
+    OUT(mScreenSpacePositionVec4).z = lScreenSpacePositionVec4.w + 1.0;
+#if defined( D_VERTEX_LOGZ )    
+    lScreenSpacePositionVec4 = LinearToLogDepth_Vertex( lUniforms.mpPerFrame->gClipPlanesVec4, lScreenSpacePositionVec4 );
+#endif
+    VERTEX_SCREEN_POSITION = lScreenSpacePositionVec4;
+}
+
+
+#endif // D_VERTEX
+
+#ifdef D_VERTEX_SUNLIGHT
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/CommonPlanet.shader.h"
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+DECLARE_INPUT
+    INPUT(  vec3, mkLocalPositionVec3, POSITION0 )
+ 	INPUT(  vec2, mkTexCoordsVec4,     TEXCOORD0 )    
+DECLARE_END
+
+DECLARE_OUTPUT
+    OUT_VERTEX_SCREEN_POSITION
+ 	OUTPUT( vec2, mTexCoordsVec2,     TEXCOORD0 )
+    OUTPUT( mat3, mUpMatrix     ,     TEXCOORD1 ) 	
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+///
+///     Output
+///
+///     @brief  Output
+///
+//-----------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+//-----------------------------------------------------------------------------
+///
+///     Vertex Main
+///
+///     @brief      Vertex Main
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+VERTEX_MAIN_SRT
+{   
+    VERTEX_SCREEN_POSITION = MUL( lUniforms.mpCommonPerMesh->gWorldViewProjectionMat4, vec4( IN( mkLocalPositionVec3 ), 1.0 ) );
+
+    OUT( mTexCoordsVec2 ) = IN( mkTexCoordsVec4 );    
+	OUT ( mUpMatrix )     = GetInverseWorldUpTransform( lUniforms.mpPerFrame->gViewPositionVec3, lUniforms.mpCommonPerMesh->gPlanetPositionVec4 );	
+}
+
+
+#endif // D_VERTEX_SUNLIGHT
+
+
+
+#ifdef D_NULL
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+    INPUT( vec2, mTexCoordsVec2,     TEXCOORD0 )
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+
+//-----------------------------------------------------------------------------
+///
+///     Main
+///
+///     @brief      Fragment Main 
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+FRAGMENT_MAIN_COLOUR_SRT
+{
+}
+
+#endif // D_NULL
+
+#ifdef D_LIGHT
+
+//-----------------------------------------------------------------------------
+//      Includes
+
+#ifdef D_WATER
+    #include "Custom/WaterCommon.h"
+#else
+    #include "Common/CommonLighting.shader.h"
+    #include "OutputPostProcess.shader.h"
+#endif
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes  
+DECLARE_INPUT
+#ifdef D_SPOTLIGHT
+    IN_SCREEN_POSITION
+    INPUT( vec4, mScreenSpacePositionVec4, TEXCOORD0 )
+#else
+    IN_SCREEN_POSITION
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+    INPUT_NOINTERP( mat3, mUpMatrix     , TEXCOORD1 )
+#endif
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+
+//-----------------------------------------------------------------------------
+///
+///     Main
+///
+///     @brief      Fragment Main
+///
+///     @param      void
+///     @return     Nothing. 
+///
+//-----------------------------------------------------------------------------
+#if defined( D_SPOTLIGHT_INNER )
+FRAGMENT_MAIN_COLOUR_DEPTH_LE_SRT
+#elif defined( D_SPOTLIGHT_OUTER )
+//FRAGMENT_MAIN_COLOUR_DEPTH_GE_SRT
+FRAGMENT_MAIN_COLOUR_SRT
+#else
+FRAGMENT_MAIN_COLOUR_SRT
+#endif
+{
+#if defined( D_SPOTLIGHT_INNER )    
+    FRAGMENT_DEPTH = LinearToLogDepth_Pixel( IN( mScreenSpacePositionVec4 ).z, lUniforms.mpPerFrame->gClipPlanesVec4 );
+#endif
+
+#ifdef D_SPOTLIGHT   
+    vec2 lFragCoordsVec2 = ( IN( mScreenSpacePositionVec4 ).xy / IN( mScreenSpacePositionVec4 ).w ) * 0.5 + 0.5;
+#ifdef D_PLATFORM_ORBIS
+    lFragCoordsVec2.y = 1.0f - lFragCoordsVec2.y;
+#endif
+#else
+    vec2 lFragCoordsVec2 = IN( mTexCoordsVec2 );
+#endif
+
+    vec3  lFragmentColourVec3;
+    vec3  lColourVec3;
+    vec3  lPositionVec3;
+    vec3  lNormalVec3;
+    float lfMetallic;
+    float lfRoughness;            
+    float lfGlow;            
+    int   liMaterialID;            
+    float lfSubsurface;
+
+    {
+        vec4 lBuffer0_Vec4;
+        vec4 lBuffer1_Vec4;
+        vec4 lBuffer2_Vec4;
+        vec4 lBuffer3_Vec4;
+
+        lBuffer0_Vec4 = texture2D( lUniforms.mpCustomPerMaterial->gBufferMap,  lFragCoordsVec2 );
+        lBuffer1_Vec4 = texture2D( lUniforms.mpCustomPerMaterial->gBuffer1Map, lFragCoordsVec2 );
+        lBuffer2_Vec4 = texture2D( lUniforms.mpCustomPerMaterial->gBuffer2Map, lFragCoordsVec2 );
+        lBuffer3_Vec4 = texture2D( lUniforms.mpCustomPerMaterial->gBuffer3Map, lFragCoordsVec2 );
+
+        DecodeGBuffer(
+        	lFragCoordsVec2,
+        	lUniforms.mpPerFrame->gClipPlanesVec4,
+            lUniforms.mpCommonPerMesh->gInverseProjectionMat4,
+            lUniforms.mpCommonPerMesh->gInverseViewMat4,
+            lUniforms.mpPerFrame->gViewPositionVec3,
+            lBuffer0_Vec4,
+            lBuffer1_Vec4, 
+            lBuffer2_Vec4,
+            lBuffer3_Vec4,
+            lColourVec3,
+            lPositionVec3,
+            lNormalVec3,
+            liMaterialID,
+            lfRoughness,
+            lfMetallic,
+            lfSubsurface,
+            lfGlow );
+
+        #ifdef D_SPOTLIGHT
+        {
+            liMaterialID |= D_NORECEIVESHADOW;
+        }
+        #endif
+    }
+    
+    //vec3  lLightColourVec3;-+
+    vec3  lLightDirectionVec3;
+    float lfAttenuation;
+
+    #ifdef D_SPOTLIGHT
+    {
+        vec3   lLightPositionVec3;
+        vec3   lLightToPosNormal;
+        vec3   lPosToLight;
+        //float  lfLightRadius;
+        float  lfFalloffType;
+        float  lfLightFOV;
+        float  lfConeAttenuation;
+        float  lfConeAngle;
+        
+        float  lfLightIntensity = lUniforms.mpCommonPerMesh->gLightColourVec4.w;
+        //lfLightRadius       = lUniforms.mpCommonPerMesh->gSpotlightPositionVec4.w;
+        lfFalloffType       = lUniforms.mpCommonPerMesh->gSpotlightPositionVec4.w;
+        lLightPositionVec3  = lUniforms.mpCommonPerMesh->gSpotlightPositionVec4.xyz;
+                            
+        lPosToLight         = lLightPositionVec3 - lPositionVec3;
+        lLightToPosNormal   = normalize( lPosToLight );
+        
+        // Quadratic Distance attenuation
+        //lfAttenuation       = 1.0 / max( 1.0, lfDistanceSquared );
+        //lfAttenuation      *= smoothstep( 0.05, 0.1, lfAttenuation );
+
+        if (lfFalloffType == 2.0)
+        {
+            // Quadratic Distance attenuation
+            float lfDistanceSquared = dot(lPosToLight, lPosToLight);
+            lfAttenuation = 1.0 / max(1.0, lfDistanceSquared);
+        }
+        else if (lfFalloffType == 1.0)
+        {
+            // Linear Distance attenuation
+            float lfLightDistance = length(lPosToLight);
+            lfAttenuation = 1.0 / max(1.0, lfLightDistance);
+        }
+        else
+        {
+            // Constant Distance attenuation
+            lfAttenuation = 1.0;
+        }
+
+        lfAttenuation *= lfLightIntensity;
+
+        // Conelight falloff (this can only attenuate down)
+        lfLightFOV          = lUniforms.mpCommonPerMesh->gSpotlightDirectionVec4.w;
+
+        lfConeAngle         = dot( lUniforms.mpCommonPerMesh->gSpotlightDirectionVec4.xyz, -lLightToPosNormal );
+        lfConeAttenuation   = saturate( (lfConeAngle - lfLightFOV) * 5.0 );
+        //lfConeAttenuation  *= lfConeAttenuation;                           
+        lfAttenuation      *= lfConeAttenuation;
+              
+       float lfCutOff = 0.05;              
+              
+        if (lfAttenuation <= (lfCutOff / (1.0 - lfCutOff)) )
+        {
+            discard;
+        }
+        
+        lfAttenuation = (lfAttenuation - lfCutOff) / (1.0 - lfCutOff);
+        lfAttenuation = max(lfAttenuation, 0.0);
+        lLightDirectionVec3 = lLightToPosNormal;       
+        //FRAGMENT_COLOUR = vec4( 0.0, 1.0 * lfAttenuation, 0.0, 1.0 );//lUniforms.mpCommonPerMesh->gSpotlightPositionVec4;
+        //FRAGMENT_COLOUR = lUniforms.mpCommonPerMesh->gSpotlightDirectionVec4;
+        //return;
+    } 
+    #else
+    {
+        lLightDirectionVec3 = -lUniforms.mpPerFrame->gLightDirectionVec4.xyz;
+        lfAttenuation       = 1.0;
+    }
+    #endif
+
+    if ( (liMaterialID & D_UNLIT) != 0 )
+    {
+        lFragmentColourVec3 = lColourVec3;
+    }
+    else
+    {
+    	mat3 lUpMatrix;
+#ifndef D_SPOTLIGHT    	
+    	lUpMatrix = IN( mUpMatrix );   // GetInverseWorldUpTransform( lPerFrameUniforms.gViewPositionVec3, lMeshUniforms.gPlanetPositionVec4 ); 
+#endif
+        lFragmentColourVec3 = ComputeLightColour(
+            DEREF_PTR( lUniforms.mpCustomPerMaterial ),
+            DEREF_PTR( lUniforms.mpPerFrame ),
+            DEREF_PTR( lUniforms.mpCommonPerMesh ),
+            lLightDirectionVec3,
+            lPositionVec3,
+            lFragCoordsVec2,
+            lNormalVec3,
+            lColourVec3,
+            lUpMatrix,
+            liMaterialID,
+            lfMetallic,
+            lfRoughness,
+            lfSubsurface,
+			0.5);
+    }
+
+    lFragmentColourVec3 *= lfAttenuation;
+
+//#ifdef D_SPOTLIGHT
+//    float lfLength       = length( lFragmentColourVec3 );
+//    lfLength             = smoothstep( 0.05, 0.1, lfLength );
+//    lFragmentColourVec3  *= lfLength;
+//#endif
+
+#ifndef D_SPOTLIGHT
+    if ( (liMaterialID & D_DISABLE_POSTPROCESS) == 0 )
+    {
+        vec4 lScreenSpacePos = vec4(lFragCoordsVec2.x, lFragCoordsVec2.y, 1.0, 1.0);
+        lFragmentColourVec3 = PostProcess(
+            DEREF_PTR( lUniforms.mpPerFrame ),
+            DEREF_PTR( lUniforms.mpCommonPerMesh ),
+            DEREF_PTR( lUniforms.mpCustomPerMaterial ),
+            vec4( lFragmentColourVec3, 1.0 ),
+            lPositionVec3,
+            lNormalVec3,
+            liMaterialID,
+            lScreenSpacePos ).rgb;
+    }
+#endif
+
+    FRAGMENT_COLOUR = vec4( lFragmentColourVec3, 1.0 ); 
+    //FRAGMENT_COLOUR = vec4( lfRoughness * ( 1.0 / 16.0 ), saturate(lfMetallic), saturate(lfSubsurface), 1.0); 
+    //FRAGMENT_COLOUR = vec4( 1.0, 0.0, 0.0, 1.0 );
+}
+
+#endif // D_LIGHT
+
+#ifdef D_POSTPROCESS
+
+//-----------------------------------------------------------------------------
+//      Includes
+
+#include "Common/CommonLighting.shader.h"
+#include "OutputPostProcess.shader.h"
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+
+//-----------------------------------------------------------------------------
+///
+///     Main
+///
+///     @brief      Fragment Main
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    
+    vec2 lFragCoordsVec2 = IN( mTexCoordsVec2 );
+
+    //vec3  lFragmentColourVec3;
+    vec3  lFragmentColourVec3;
+    vec3  lColourVec3;
+    vec3  lPositionVec3;
+    vec3  lNormalVec3;
+    float lfMetallic;
+    float lfRoughness;            
+    float lfGlow;            
+    int   liMaterialID;            
+    float lfSubsurface;
+
+    {
+        vec4 lBuffer0_Vec4;
+        vec4 lBuffer1_Vec4;
+        vec4 lBuffer2_Vec4;
+        vec4 lBuffer3_Vec4;
+
+        lBuffer0_Vec4 = texture2D( lUniforms.mpCustomPerMaterial->gBufferMap,  lFragCoordsVec2 );
+        lBuffer1_Vec4 = texture2D( lUniforms.mpCustomPerMaterial->gBuffer1Map, lFragCoordsVec2 );
+        lBuffer2_Vec4 = texture2D( lUniforms.mpCustomPerMaterial->gBuffer2Map, lFragCoordsVec2 );
+        lBuffer3_Vec4 = texture2D( lUniforms.mpCustomPerMaterial->gBuffer3Map, lFragCoordsVec2 );
+
+        DecodeGBuffer(
+        	lFragCoordsVec2,
+        	lUniforms.mpPerFrame->gClipPlanesVec4,
+            lUniforms.mpCommonPerMesh->gInverseProjectionMat4,
+            lUniforms.mpCommonPerMesh->gInverseViewMat4,
+            lUniforms.mpPerFrame->gViewPositionVec3,
+            lBuffer0_Vec4,
+            lBuffer1_Vec4, 
+            lBuffer2_Vec4,
+            lBuffer3_Vec4,
+            lColourVec3,
+            lPositionVec3,
+            lNormalVec3,
+            liMaterialID,
+            lfRoughness,
+            lfMetallic,
+            lfSubsurface,
+            lfGlow );
+    }
+    
+    if ( (liMaterialID & D_DISABLE_POSTPROCESS) == 0 )
+    {
+        vec4 lColourVec4 = vec4( lColourVec3, 1.0 );
+        vec4 lScreenSpacePos = vec4(lFragCoordsVec2.x, lFragCoordsVec2.y, 1.0, 1.0);
+        lColourVec3 = PostProcess(
+            DEREF_PTR( lUniforms.mpPerFrame ),
+            DEREF_PTR( lUniforms.mpCommonPerMesh ),
+            DEREF_PTR( lUniforms.mpCustomPerMaterial ),
+            lColourVec4,
+            lPositionVec3,
+            lNormalVec3,
+            liMaterialID,
+            lScreenSpacePos ).rgb;
+    }
+
+    //if( IN( mTexCoordsVec2 ).x < 0.5 )
+    //{
+    //    lColourVec3 = normalize( lPositionVec3 - lUniforms.mpPerFrame->gViewPositionVec3 ) * 0.5 + vec3( 0.5 );
+    //}
+
+ 
+    FRAGMENT_COLOUR = vec4( lColourVec3, /* lfGlow */ 1.0 );
+}
+
+#endif // D_POSTPROCESS

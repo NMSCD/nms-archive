@@ -1,0 +1,2717 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       PostProcessFragment.h
+///     @author     User
+///     @date       
+///
+///     @brief      DepthOfFieldFragmentShader
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/CommonUniforms.shader.h"
+
+#include "Common/Common.shader.h"
+#include "Common/CommonPostProcess.shader.h"
+#include "Common/CommonDepth.shader.h"
+//#include "Common/CommonFog.shader.h"
+//#include "Common/CommonPlanet.shader.h"
+
+// must include this after CommonUniforms
+#include "Fullscreen/PostCommon.h"
+
+// =================================================================================================
+
+#if defined( D_GUASS_BLUR_RADIUS_4 )
+	#define D_GUASS_BLUR_RADIUS 4
+#elif defined( D_GUASS_BLUR_RADIUS_3 )
+	#define D_GUASS_BLUR_RADIUS 3
+#elif defined( D_GUASS_BLUR_RADIUS_2 )
+	#define D_GUASS_BLUR_RADIUS 2
+#endif
+
+// =================================================================================================
+//
+// PARTICLE_BLEND
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_PARTICLE_BLEND
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+    
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    //vec4 lFragmentTexVec4;
+    vec4 lParticleTexVec4;
+
+    //lFragmentTexVec4 = texture2D( gBufferMap, IN(mTexCoordsVec2)  );	
+    lParticleTexVec4 = texture2D( lUniforms.mpCustomPerMesh->gBuffer1Map, IN( mTexCoordsVec2 ).xy );
+
+    //FRAGMENT_COLOUR = vec4( (lFragmentTexVec4.rgb * lParticleTexVec4.a) + lParticleTexVec4.rgb, lFragmentTexVec4.a );	
+    
+    float lfAlpha =  1.0 - lParticleTexVec4.a;
+    if (lfAlpha != 0.0)
+    {
+        FRAGMENT_COLOUR = vec4( (lParticleTexVec4.rgb / lfAlpha) , lfAlpha );
+    } else
+    {
+        FRAGMENT_COLOUR = vec4( 0.0 );
+    }
+}
+
+#endif
+
+// =================================================================================================
+//
+// COPY
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_COPY
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR_SRT
+{			
+    //FRAGMENT_COLOUR = vec4( texture2D( lUniforms.mpCustomPerMesh->gBufferMap, IN(mTexCoordsVec2) ).xyz, 1.0 );	
+    FRAGMENT_COLOUR = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, IN(mTexCoordsVec2) );	
+}
+
+#endif
+
+// =================================================================================================
+//
+// COPY
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_STAA_COPY
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR_SRT
+{           
+    //FRAGMENT_COLOUR = vec4( texture2D( lUniforms.mpCustomPerMesh->gBufferMap, IN(mTexCoordsVec2) ).xyz, 1.0 );    
+    FRAGMENT_COLOUR0 = texture2D( lUniforms.mpCustomPerMesh->gBufferMap,  IN(mTexCoordsVec2) );   
+    FRAGMENT_COLOUR1 = texture2D( lUniforms.mpCustomPerMesh->gBuffer1Map, IN(mTexCoordsVec2) );   
+}
+
+#endif
+
+// =================================================================================================
+//
+// COPY
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_COPY_YCGCO_TO_RGB
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR_SRT
+{   
+    vec2 tc = IN(mTexCoordsVec2);
+
+#ifdef D_PLATFORM_ORBIS    
+    tc.y = ( 1.0f-tc.y );
+#endif        
+
+    vec3 colIn = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, tc ).rgb;  
+
+    vec4 colOut = vec4(1.0);
+
+    colOut.rgb = YCgCoToRGB( colIn );
+    colOut.rgb = saturate( TonemapKodak( colOut.rgb ) / TonemapKodak( vec3(1.0) ) );
+    colOut.rgb = GammaCorrectOutput( colOut.rgb  );
+    FRAGMENT_COLOUR = colOut;
+}
+
+#endif
+
+// =================================================================================================
+//
+// DEJITTER
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_DEJITTER
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR_SRT
+{           
+    //FRAGMENT_COLOUR = vec4( texture2D( lUniforms.mpCustomPerMesh->gBufferMap, IN(mTexCoordsVec2) ).xyz, 1.0 );    
+    vec2 lDeJitterVec = lUniforms.mpPerFrame->gDeJitterVec4.xy;
+#ifdef D_PLATFORM_ORBIS    
+    lDeJitterVec.y = -lDeJitterVec.y;
+#endif
+
+    vec2 ldejit = IN(mTexCoordsVec2) + lDeJitterVec;
+
+    FRAGMENT_COLOUR = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, ldejit.xy );   
+}
+
+#endif
+
+
+// =================================================================================================
+//
+// COPY_DEPTH
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_COPY_DEPTH
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR_DEPTH_SRT
+{
+    FRAGMENT_DEPTH =  texture2D( lUniforms.mpCustomPerMesh->gBufferMap, IN(mTexCoordsVec2).xy ).x;
+}
+
+#endif
+
+// =================================================================================================
+//
+// DOWNSAMPLE_GBUFFERDEPTH
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_DOWNSAMPLE_GBUFFERDEPTH
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+IN_SCREEN_POSITION
+
+INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+#ifdef D_PLATFORM_ORBIS
+#pragma PSSL_target_output_format(target 0 FMT_32_AR)
+#endif
+
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    vec2 lFlooredTexCoordsVec2 = IN( mTexCoordsVec2 ).xy;
+#if 0
+    vec2 lSmallBufferSize = vec2( 1920, 1080 ) * 0.5;
+    vec2 lLargeBufferSize = vec2( 1920, 1080 );
+
+    int x = int( floor( lFlooredTexCoordsVec2.x * lSmallBufferSize.x ) );
+    int y = int( floor( lFlooredTexCoordsVec2.y * lSmallBufferSize.y ) );
+
+    float lfDepth;
+    
+    // Alternate taking the min and max depth in a crosshatch pattern
+    // This helps improves the chance of having a nearby depth when we upsample
+    if( x % 2 != y % 2 )
+    {
+        lfDepth = 9999999.0;
+    }
+    else
+    {
+        lfDepth = 0.0;
+    }
+    
+    for( int i = 0; i < 2; i++ )
+    {
+        for( int j = 0; j < 2; j++ )
+        {
+            vec2  lTexCoords = lFlooredTexCoordsVec2 + vec2( (float( i )) / lLargeBufferSize.x, (float( j )) / lLargeBufferSize.y );
+            float lfNewDepth = FastDenormaliseDepth( lUniforms.mpPerFrame->gClipPlanesVec4, DecodeDepthFromColour( texture2D( lUniforms.mpCustomPerMesh->gBufferMap, lTexCoords ) ) );
+
+            if( x % 2 != y % 2 )
+            {
+                lfDepth = min( lfDepth, lfNewDepth );
+            }
+            else
+            {
+                lfDepth = max( lfDepth, lfNewDepth );
+            }
+        }
+    }
+#endif    
+    //FRAGMENT_COLOUR = vec4( EncodeDepthToColour( FastNormaliseDepth( lUniforms.mpPerFrame->gClipPlanesVec4, lfDepth ) ) );
+    FRAGMENT_COLOUR = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, lFlooredTexCoordsVec2 );
+}
+
+#endif
+
+
+// =================================================================================================
+//
+// DOWNSAMPLE_DEPTH 
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_DOWNSAMPLE_DEPTH
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+IN_SCREEN_POSITION
+
+INPUT(vec2, mTexCoordsVec2, TEXCOORD0)
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+#ifdef D_PLATFORM_ORBIS
+#pragma PSSL_target_output_format(target 0 FMT_32_AR)
+#endif
+
+FRAGMENT_MAIN_COLOUR_DEPTH_SRT
+{
+    vec2 lTexCoordsVec2 = GetDejitteredTexCoord(IN(mTexCoordsVec2).xy, lUniforms.mpPerFrame->gDeJitterVec4);
+
+    float lfDepth = texture2D(lUniforms.mpCustomPerMesh->gBufferMap, lTexCoordsVec2).x;
+
+    FRAGMENT_COLOUR = vec4(LogToLinearDepth(lUniforms.mpPerFrame->gClipPlanesRVec4, lfDepth), 0.0, 0.0, 0.0);
+    FRAGMENT_DEPTH = lfDepth;
+}
+
+#endif
+
+
+
+
+// =================================================================================================
+//
+// BRIGHTPASS
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_BRIGHTPASS
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+vec3 
+Threshold(
+    in vec3 lColour,
+    in float lfThreshold,      
+    in float lfGain )
+{
+    vec3 lumcoeff = vec3(0.299,0.587,0.114);
+    //vec3 lumcoeff = normalize(vec3(1.0,1.0,1.0));
+
+    float lum = dot(lColour.rgb, lumcoeff);
+
+    float thresh = max((lum-lfThreshold)*lfGain, 0.0);
+    return mix( vec3(0.0), lColour, thresh );
+    //return vec3( lum );
+}
+
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    vec3 lBrightColourVec3;
+    lBrightColourVec3 = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, IN(mTexCoordsVec2) ).xyz;
+    float lfGlowAlpha = 1.0 - texture2D( lUniforms.mpCustomPerMesh->gBuffer1Map, IN(mTexCoordsVec2) ).a;
+
+    lBrightColourVec3.xyz = TonemapKodak(lBrightColourVec3.xyz) / TonemapKodak( vec3(1.0,1.0,1.0) );
+
+    lBrightColourVec3 = GammaCorrectOutput( lBrightColourVec3 );
+
+    lBrightColourVec3 = Threshold(  lBrightColourVec3, 
+                                    min( lUniforms.mpCustomPerMesh->gHDRParamsVec4.y, lfGlowAlpha),  // Threshold
+                                    lUniforms.mpCustomPerMesh->gHDRParamsVec4.z );// Offset
+
+    lBrightColourVec3 = clamp( lBrightColourVec3, 0.0, 1.0 );
+    FRAGMENT_COLOUR = vec4( lBrightColourVec3, 1.0 );
+    //FRAGMENT_COLOUR = vec4( 0.0, 0.0, 1.0, 1.0 );
+}
+
+
+#endif
+
+// =================================================================================================
+//
+// BRIGHTPASS
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_DOWNSAMPLE
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR01_SRT
+{
+    vec2 coord2 = IN(mTexCoordsVec2); // +vec2(2.0, 2.0) * lUniforms.mpPerFrame->gFrameBufferSizeVec4.zw;
+    vec3 lTextureColourVec3;
+
+    lTextureColourVec3.rgb = texture2D(lUniforms.mpCustomPerMesh->gBufferMap, coord2).rgb;
+
+    float lfPower = GetDofPower( coord2,
+        SAMPLER2DPARAM(lUniforms.mpCustomPerMesh->gBuffer1Map),
+        SAMPLER2DPARAM(lUniforms.mpCustomPerMesh->gBlurMask),
+        lUniforms.mpCustomPerMesh->gDoFParamsVec4,
+        lUniforms.mpPerFrame->gClipPlanesRVec4);
+
+    FRAGMENT_COLOUR0 = vec4( lTextureColourVec3, 1.0 );
+    FRAGMENT_COLOUR1 = vec4( lfPower, 0.0, 0.0,  1.0 );
+}
+
+
+#endif
+
+
+// =================================================================================================
+//
+// BLUR
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_GUASS
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+//blur params x = bool x-axis, y = bool y-axis, z = Sigma
+// The sigma value for the gaussian function: higher value means more blur
+// A good value for 9x9 is around 3 to 5
+// A good value for 7x7 is around 2.5 to 4
+// A good value for 5x5 is around 2 to 3.5
+// ... play around with this based on what you need :)
+
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+
+STATIC_CONST float pi = 3.14159265;
+
+
+FRAGMENT_MAIN_COLOUR_SRT
+{    
+    vec3   incrementalGaussian; // Incremental Gaussian Coefficent Calculation (See GPU Gems 3 pp. 877 - 889)
+    vec4   avgValue = vec4(0.0f, 0.0f, 0.0f, 0.0f);
+    vec4   lCenter;
+    float coefficientSum = 0.0f;
+    float sigma;
+
+
+    lCenter = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, IN(mTexCoordsVec2) );    
+
+    // The sigma value for the gaussian function: higher value means more blur
+    // A good value for 9x9 is around 3 to 5
+    // A good value for 7x7 is around 2.5 to 4
+    // A good value for 5x5 is around 2 to 3.5
+    // ... play around with this based on what you need :)
+    sigma = lUniforms.mpCustomPerMesh->gBlurParamsVec4.z;
+
+    incrementalGaussian.x = 1.0f / (sqrt(2.0f * pi) * sigma);
+    incrementalGaussian.y = exp(-0.5f / (sigma * sigma));
+    incrementalGaussian.z = incrementalGaussian.y * incrementalGaussian.y;
+
+    // Take the central sample first...
+    avgValue                = lCenter * incrementalGaussian.x;
+    coefficientSum         += incrementalGaussian.x;
+    incrementalGaussian.xy *= incrementalGaussian.yz;
+
+    // Go through the remaining X directional samples (D_GUASS_BLUR_TAPS on each side of the center)
+    for (float i = 1.0f; i <= D_GUASS_BLUR_RADIUS ; i++) 
+    {
+        vec4 lTexPos;
+        vec4 lTexNeg;
+
+        lTexPos = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, IN(mTexCoordsVec2).xy + i * (lUniforms.mpCustomPerMesh->gBlurParamsVec4.xy * lUniforms.mpPerFrame->gFrameBufferSizeVec4.zw));
+        lTexNeg = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, IN(mTexCoordsVec2).xy - i * (lUniforms.mpCustomPerMesh->gBlurParamsVec4.xy * lUniforms.mpPerFrame->gFrameBufferSizeVec4.zw));
+
+        avgValue += lTexNeg * incrementalGaussian.x;         
+        avgValue += lTexPos * incrementalGaussian.x;
+               
+        coefficientSum         += 2 * incrementalGaussian.x;
+        incrementalGaussian.xy *= incrementalGaussian.yz;
+    }
+
+   FRAGMENT_COLOUR = vec4( avgValue.rgb / coefficientSum, 1.0 );
+   
+}
+#endif
+
+
+// =================================================================================================
+//
+// BLUR_KAWASE
+//
+// =================================================================================================
+
+#if defined(D_POSTPROCESS_BLUR_KAWASE) || defined(D_POSTPROCESS_BLUR_KAWASE_PRESERVE_ALPHA)
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+FRAGMENT_MAIN_COLOUR_SRT
+{
+#ifdef D_POSTPROCESS_BLUR_KAWASE
+    FRAGMENT_COLOUR = vec4( BlurKawase( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), IN(mTexCoordsVec2), lUniforms.mpPerFrame->gFrameBufferSizeVec4.zw, lUniforms.mpCustomPerMesh->gBlurParamsVec4.x ).xyz, 1.0 );
+#else
+    FRAGMENT_COLOUR =       BlurKawase( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), IN(mTexCoordsVec2), lUniforms.mpPerFrame->gFrameBufferSizeVec4.zw, lUniforms.mpCustomPerMesh->gBlurParamsVec4.x );
+#endif 
+    
+}
+
+#endif
+
+
+
+// =================================================================================================
+//
+// DEBUG
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_COMBINE
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR01_SRT
+{                
+    vec3 lFragCol;
+    vec2 newCoords;
+
+    newCoords = IN(mTexCoordsVec2).xy;
+    lFragCol     = clamp( GammaCorrectInput( texture2D( lUniforms.mpCustomPerMesh->gBufferMap, newCoords ).rgb ), 0.0, 1.0 );;
+    
+    lFragCol.xyz = TonemapKodak(lFragCol) / TonemapKodak( vec3(1.0,1.0,1.0) );
+
+    lFragCol     = GammaCorrectOutput( lFragCol );
+
+    lFragCol = texture3DLod( lUniforms.mpCustomPerMesh->gColourLUT, lFragCol, 0.0 ).rgb;
+
+    //float lfDepth = texture2D( lUniforms.mpCustomPerMesh->gBuffer1Map, newCoords ).x;    
+    vec3 lumcoeff = vec3(0.299,0.587,0.114);
+    FRAGMENT_COLOUR0 = vec4( lFragCol, 1.0 );
+    FRAGMENT_COLOUR1 = vec4( dot( lFragCol, lumcoeff), 0.0, 0.0, 1.0 );
+}
+
+#endif
+
+// =================================================================================================
+//
+// COMBINE_AND_COPY_DEPTH
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_COMBINE_AND_COPY_DEPTH
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+IN_SCREEN_POSITION
+
+INPUT(vec2, mTexCoordsVec2, TEXCOORD0)
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR_DEPTH_SRT
+{
+    vec3 lFragCol;
+    vec2 newCoords;
+
+    newCoords = IN(mTexCoordsVec2).xy;
+    lFragCol = clamp( GammaCorrectInput(texture2D(lUniforms.mpCustomPerMesh->gBufferMap, newCoords).rgb), 0.0, 1.0 );
+
+    lFragCol.xyz = TonemapKodak(lFragCol) / TonemapKodak(vec3(1.0, 1.0, 1.0));
+
+    lFragCol = GammaCorrectOutput(lFragCol);
+
+    lFragCol = texture3DLod(lUniforms.mpCustomPerMesh->gColourLUT, lFragCol, 0.0).rgb;
+
+    float lfDepth = texture2D(lUniforms.mpCustomPerMesh->gBuffer1Map, IN(mTexCoordsVec2).xy).x;
+
+    FRAGMENT_COLOUR = vec4(lFragCol, 1.0);
+    FRAGMENT_DEPTH  = lfDepth;
+}
+
+#endif
+
+// =================================================================================================
+//
+// COMBINEHDR_AND_COPY_DEPTH
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_COMBINEHDR_AND_COPY_DEPTH
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+IN_SCREEN_POSITION
+
+INPUT(vec2, mTexCoordsVec2, TEXCOORD0)
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR_DEPTH_SRT
+{
+    vec2 newCoords = IN(mTexCoordsVec2).xy;
+    vec3 lFragCol = GammaCorrectInput(texture2D(lUniforms.mpCustomPerMesh->gBufferMap, newCoords).rgb);
+    lFragCol = mul(BT709_TO_BT2020, lFragCol.xyz);
+    lFragCol = PQ_OETF(vec4(lFragCol, 1.0), 0, 2.2).xyz;
+    float lfDepth = texture2D(lUniforms.mpCustomPerMesh->gBuffer1Map, IN(mTexCoordsVec2).xy).x;
+    FRAGMENT_COLOUR = vec4(lFragCol, 1.0);
+    FRAGMENT_DEPTH = lfDepth;
+}
+
+#endif
+
+
+// =================================================================================================
+//
+// ADDITION
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_ADDITION_4
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+//      Functions 
+vec2 nrand(vec2 n)
+{
+    vec2 result;
+    result.x = fract(sin(dot(n.xy, vec2(12.9898, 78.233)))* 43758.5453);
+    result.y = fract(cos(mod(123456789.0, 1e-7 + 256. * dot(vec2(23.1406926327792690, 2.6651441426902251), n))));
+    return result;
+}
+
+FRAGMENT_MAIN_COLOUR_SRT
+{   
+    vec3 lFragCol;
+    vec2 newCoords = IN(mTexCoordsVec2).xy;
+
+    lFragCol = GammaCorrectInput( texture2D(lUniforms.mpCustomPerMesh->gBuffer1Map, newCoords).xyz );
+
+    // Deband
+
+    // but.. don't deband anything other than the background sky/space
+
+    float lfDepth  = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, newCoords ).x ;    
+
+    if( lfDepth > 0.9999999 )
+    {    
+        vec2 invViewportSize = lUniforms.mpPerFrame->gFrameBufferSizeVec4.zw;    
+        vec2 rand = nrand(newCoords + fract(lUniforms.mpPerFrame->gfTime));
+        vec2 offsetCoords = newCoords + ( ( (rand * vec2(31.0, 31.0)) - 15.0 ) * invViewportSize.xy );
+        lfDepth  = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, offsetCoords ).x ;              
+        if( lfDepth > 0.9999999 )
+        {
+            vec3 lFragColRandomTap = GammaCorrectInput(texture2D(lUniforms.mpCustomPerMesh->gBuffer1Map, offsetCoords ).xyz);
+            vec3 diff = abs(lFragCol - lFragColRandomTap);
+            lFragCol = ((diff.x + diff.y + diff.z) < (10.0 / 255.0)) ? lFragColRandomTap : lFragCol;
+         }
+    }
+
+    // Combine
+
+    lFragCol += GammaCorrectInput( texture2D(lUniforms.mpCustomPerMesh->gBuffer2Map, newCoords).xyz );
+    lFragCol += GammaCorrectInput( texture2D(lUniforms.mpCustomPerMesh->gBuffer3Map, newCoords).xyz );
+    lFragCol += GammaCorrectInput( texture2D(lUniforms.mpCustomPerMesh->gBuffer4Map, newCoords).xyz );
+    lFragCol =  GammaCorrectOutput( lFragCol );
+
+    FRAGMENT_COLOUR = vec4( lFragCol, 1.0 );
+    
+
+}
+
+#endif
+
+// =================================================================================================
+//
+// ADDITION_2
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_ADDITION_2
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR_SRT
+{
+
+    //Debug
+
+    vec3 lFragCol;
+    vec2 newCoords;
+
+    newCoords = IN( mTexCoordsVec2 ).xy;
+
+    lFragCol  = texture2D( lUniforms.mpCustomPerMesh->gBuffer1Map, newCoords ).xyz;
+    lFragCol += texture2D( lUniforms.mpCustomPerMesh->gBuffer2Map, newCoords ).xyz;
+
+    FRAGMENT_COLOUR = vec4( lFragCol, 1.0 );
+
+
+}
+
+#endif
+
+// =================================================================================================
+//
+// MOTIONBLUR
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_MOTIONBLUR
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+#if defined( D_MOTIONBLUR_SAMPLE_COUNT_ULTRA )
+
+#define D_MOTIONBLUR_SAMPLES 24
+
+#elif defined( D_MOTIONBLUR_SAMPLE_COUNT_HIGH ) 
+
+#define D_MOTIONBLUR_SAMPLES 12
+
+#elif defined( D_MOTIONBLUR_SAMPLE_COUNT_MED ) 
+
+#define D_MOTIONBLUR_SAMPLES 8
+
+#else
+
+#define D_MOTIONBLUR_SAMPLES 4
+
+#endif
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT      
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+#ifdef D_PLATFORM_ORBIS
+// doesn't seem to result in any spills if we push to max occupancy
+#pragma argument(targetoccupancy_atallcosts=100)
+#endif
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+
+#define SOFT_Z_EXTENT 0.1
+
+float cone( in float lSampleDist, in float lfRcpSpeed )
+{
+    return saturate( 1.0 - lSampleDist * lfRcpSpeed );
+}
+
+float smoothstep_approx( float inval )
+{
+    // replaces the cylinder approximation
+    // want a function that looks a bit like
+
+    // 1       /----\
+    //        |      |
+    //        |      |
+    //        |      |      
+    // 0 ____/        \______
+
+    // centered around 0
+
+    // first apply an inverse parabola - this parabola is 1 at +/-0.95
+    // and 0 at +/-1.05
+    float x = saturate( 5.5125 - 5 * inval * inval );
+
+    // then apply smoothstep
+    float x2 = x*x;
+    return ( 3.0 * x2 - 2.0 * (x * x2) );
+}
+
+float cylinder( in float lSampleDist, in float lfRcpSpeed )
+{
+    // return 1.0 - smoothstep( 0.95 * lfSpeed, 1.05 * lfSpeed, lSampleDist );
+
+    return smoothstep_approx( lSampleDist * lfRcpSpeed ); 
+}
+
+float softDepthCompare( in float zA, in float zB )
+{
+    return saturate( 1.0 - ( zA - zB ) * (1.0 / SOFT_Z_EXTENT) );
+}
+
+float hardDepthCompare( in float zA, in float zB )
+{
+    return zA < zB? 1.0 : 0.0;
+}
+
+
+vec3 SimpleReinhard( in vec3 col )
+{
+    vec3 lHalfCol = col / ( vec3(1.0) + max( vec3(0.0), col ) );
+    return lHalfCol * 2.0;
+}
+
+vec3 SimpleUnReinhard( in vec3 col )
+{
+    vec3 lHalfCol = col * 0.5;
+    return lHalfCol / ( vec3(1.0) - min( vec3(0.9999), lHalfCol ) );
+}
+
+vec3 SimpleHalfReinhard( in vec3 col )
+{
+    #ifdef D_MBLUR_REINHARD_APPROX
+    vec3 lHalfCol = col / ( vec3(1.0) + col );
+    return lHalfCol / 0.75;
+    #else
+    return col;
+    #endif
+}
+
+vec3 SimpleUnHalfReinhard( in vec3 col )
+{
+    #ifdef D_MBLUR_REINHARD_APPROX
+    vec3 lHalfCol = col * 0.75;
+    return lHalfCol / ( vec3(1.0) - lHalfCol );
+    #else
+    return col;
+    #endif
+}
+
+float Bayer(
+    uvec2 lPos )
+{
+    const mat4 bayer = mat4( 
+        vec4(1, 9, 3, 11),
+        vec4(13, 5, 15, 7),
+        vec4(4, 12, 2, 10),
+        vec4(16, 8, 14, 6)
+    ) / 17.0;
+
+    //vec2 positionMod = vec2( uvec2( tc * lUniforms.mpPerFrame->gFrameBufferSizeVec4.xy ) & 3 );
+
+    uvec2 positionMod = uvec2( lPos & 3 );
+
+    float rndoffset = bayer[positionMod.x][positionMod.y];
+
+    #ifdef D_PASS_2
+    rndoffset = 1.0 - rndoffset;
+    #endif
+
+    return rndoffset;
+}
+
+FRAGMENT_MAIN_COLOUR_SRT
+{           
+    vec2 tc = IN(mTexCoordsVec2);
+
+    float lfBaseSampleWeight = 1.0;
+
+    float wacc = 0.0;
+    vec4  acc  = vec4(0.0);
+
+    vec4 lTileMinMax = texture2D( lUniforms.mpCustomPerMesh->gBuffer1Map, tc );
+    lTileMinMax.xy = DecodeMotion(lTileMinMax.xy) * lUniforms.mpPerFrame->gMBlurSettingsVec4.z;  
+    lTileMinMax.zw = DecodeMotion(lTileMinMax.zw) * lUniforms.mpPerFrame->gMBlurSettingsVec4.z;  
+    
+    vec2  lDelta = lTileMinMax.xy;
+
+    vec2 lDeltaInPixels = lDelta * lUniforms.mpPerFrame->gFrameBufferSizeVec4.xy;
+    float lDistInPixels = length( lDeltaInPixels );
+    float lWantedDistInPixels = max( 0.0, lDistInPixels - abs( lUniforms.mpPerFrame->gTaaSettingsVec4.x ) );
+
+
+    float lNumSamples = min( D_MOTIONBLUR_SAMPLES, ( lWantedDistInPixels * 1.5 ) );
+
+    #ifdef D_MBLUR_DISCARD_IF_DOING_NOTHING
+    if( lNumSamples < 0.1 )
+    {
+        discard;
+    }
+    #endif
+
+    #ifdef D_MBLUR_DOWNRES_MODE
+    vec4 lBaseSample = vec4( 0.0, 0.0, 0.0, 0.0 );    
+    #else
+    vec4 lBaseSample = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, tc );
+    #endif
+    vec4 lOutColor = lBaseSample;
+
+    if( lNumSamples >= 2.0 )
+    {
+        lBaseSample.xyz = SimpleUnHalfReinhard( lBaseSample.xyz );
+
+        #ifndef D_MOTIONBLUR_SAMPLE_COUNT_ULTRA
+        lNumSamples = D_MOTIONBLUR_SAMPLES;
+        #endif
+
+        vec2 lMaxMinDifference = ( lTileMinMax.xy - lTileMinMax.zw ) * lUniforms.mpPerFrame->gFrameBufferSizeVec4.xy;
+
+
+        #ifdef D_MOTIONBLUR_JITTER
+
+        #ifdef D_PLATFORM_ORBIS
+
+            float rndoffset = Bayer( uvec2( tc * lUniforms.mpPerFrame->gFrameBufferSizeVec4.xy ) ) - 0.5;
+
+        #else
+
+            //float rndoffset = 0.0;
+            #ifdef D_PASS_2
+            float rndoffset = fract( sin( dot( tc.xy, vec2( 12.9898, 78.233 ) ) )* 43758.5453 ) - 0.5;
+            #else
+            float rndoffset = fract( sin( dot( tc.yx, vec2( 12.9898, 78.233 ) ) )* 43758.5453 ) - 0.5;
+            #endif
+
+        #endif
+
+        #else
+
+        float rndoffset = 0.0;
+
+        #endif
+
+        rndoffset *= 2.0;
+        
+
+
+
+        #ifndef D_MOTIONBLUR_ALWAYS_MULTIDIR
+
+        bool lNeedsComplexTest = dot( lMaxMinDifference, lMaxMinDifference ) > 25.0f;
+
+        #ifdef D_PLATFORM_ORBIS
+        lNeedsComplexTest = ( ballot(lNeedsComplexTest) != 0 ); 
+        #endif
+
+        if( !lNeedsComplexTest )
+        {
+            // tile velocity is all identical, fall back on simple blur
+            float fRecipSamples = 1.0 / ( lNumSamples - 1 );
+            vec2  cVelocity = lDelta * (lWantedDistInPixels / lDistInPixels);
+            float cSpeed = length( cVelocity );
+            float lfRcpSpeed = 1.0 / ( length( cVelocity ) );
+
+            vec2  lSampleStep   = cVelocity * fRecipSamples;
+            vec2  lSampleCenter = tc - rndoffset * lSampleStep;
+            vec2  lSampleStart  = lSampleCenter - (lNumSamples - 1) * 0.5 * lSampleStep;
+
+            float lSampleStepLength = fRecipSamples * cSpeed;
+            float lSampleStartDist = - ( lNumSamples * 0.5 ) * lSampleStepLength;
+
+            for( float i = 0; i < lNumSamples; i++ )
+            {
+                vec2 lSamplePos = lSampleStart;
+                lSampleStart += lSampleStep;
+
+                float lSampleDist = abs( lSampleStartDist );
+                lSampleStartDist += lSampleStepLength;
+
+                //float weight = cylinder( lSampleDist, lfRcpSpeed );
+                float weight = cylinder( i - ( lNumSamples * 0.5 ), 1.0 / ( lNumSamples ) );
+
+                #ifdef D_PASS_2
+                lSamplePos = tc + (lSamplePos - tc) * fRecipSamples * 2.0;
+                #endif
+
+                vec4 lNewSample = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, lSamplePos );
+                lNewSample.xyz = SimpleUnHalfReinhard( lNewSample.xyz );
+                acc  += lNewSample * weight;  
+                wacc += weight;
+            }
+        }
+        else
+        #endif
+
+        {
+            float lfBaseDepth;
+            float lfBaseDepthNormalised;
+            float lfBaseRcpSpeed;
+            vec2 lBaseDelta;
+            vec2 lEncodedBaseDelta;
+            bool lWantsColorClipAA;
+            vec2 reproj_tc = GetPrevPosition(tc, 
+                                             lUniforms.mpPerFrame->gCameraDeltaMat4, 
+                                             lUniforms.mpPerFrame->gClipPlanesVec4,
+                                             lUniforms.mpPerFrame->gClipPlanesRVec4,
+                                             lUniforms.mpCommonPerMesh->gInverseProjectionMat4,
+                                             lUniforms.mpCommonPerMesh->gInverseViewMat4,
+                                             lUniforms.mpCommonPerMesh->gProjectionMat4,
+                                             lUniforms.mpCommonPerMesh->gViewProjectionMat4,
+                                             lUniforms.mpPerFrame->gPrevViewProjectionMat4,
+                                             lUniforms.mpPerFrame->gViewPositionVec3,
+                                             lUniforms.mpPerFrame->gMBlurSettingsVec4,
+                                             SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer2Map ), 
+                                             SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer3Map ),
+                                             lfBaseDepth,
+                                             lfBaseDepthNormalised,
+                                             lfBaseRcpSpeed,
+                                             lBaseDelta,
+                                             lEncodedBaseDelta,
+                                             lWantsColorClipAA );
+
+            lBaseDelta  *= lUniforms.mpPerFrame->gMBlurSettingsVec4.z;
+            vec2 lBasePerp = lBaseDelta - lDelta * dot( lBaseDelta,lDelta ) / dot( lDelta,lDelta );
+            vec2 lBaseNorm = lBaseDelta * lfBaseRcpSpeed;
+
+            vec2 lDeltaNorm;
+            vec2 lBasePerpInPixels = lBasePerp * lUniforms.mpPerFrame->gFrameBufferSizeVec4.xy;
+            if( Bayer( uvec2( tc * lUniforms.mpPerFrame->gFrameBufferSizeVec4.xy )  ) < length(lBasePerpInPixels) / 30.0 )
+            {
+                lDelta = lBaseDelta;
+                lDeltaNorm = lBaseNorm;
+            }  
+            else
+            {
+                lDeltaNorm = normalize( lDelta );
+            }
+
+            vec2  cVelocity = lDelta * (lWantedDistInPixels / lDistInPixels);
+            float cSpeed = length( cVelocity );
+
+            float fRecipSamples = 1.0 / ( lNumSamples - 1 );
+            vec2  lSampleStep   = cVelocity * fRecipSamples;
+            vec2  lSampleCenter = tc - rndoffset * lSampleStep;
+            vec2  lSampleStart  = lSampleCenter - (lNumSamples - 1) * 0.5 * lSampleStep;
+
+            float lSampleStepLength = fRecipSamples * cSpeed;
+            float lSampleStartDist = - ( lNumSamples * 0.5 ) * lSampleStepLength;
+
+
+            for( float i = 0; i < lNumSamples; i++ )
+            {
+                vec2 lSamplePos =  lSampleStart + lSampleStep * i;
+                float lSampleDist = abs( lSampleStartDist + lSampleStepLength * i );
+                vec2 lSampleOffset = lSamplePos - lSampleCenter;
+
+                float lfSampleDepth;
+                float lfSampleDepthNormalised;
+                float lfSampleRcpSpeed;
+                vec2 lSampleDelta;
+                vec2 lEncodedSampleDelta;
+                vec2 reproj_sample = GetPrevPosition(lSamplePos, 
+                                             lUniforms.mpPerFrame->gCameraDeltaMat4, 
+                                             lUniforms.mpPerFrame->gClipPlanesVec4,
+                                             lUniforms.mpPerFrame->gClipPlanesRVec4,
+                                             lUniforms.mpCommonPerMesh->gInverseProjectionMat4,
+                                             lUniforms.mpCommonPerMesh->gInverseViewMat4,
+                                             lUniforms.mpCommonPerMesh->gProjectionMat4,
+                                             lUniforms.mpCommonPerMesh->gViewProjectionMat4,
+                                             lUniforms.mpPerFrame->gPrevViewProjectionMat4,
+                                             lUniforms.mpPerFrame->gViewPositionVec3,
+                                             lUniforms.mpPerFrame->gMBlurSettingsVec4,
+                                             SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer2Map ), 
+                                             SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer3Map ),
+                                             lfSampleDepth,
+                                             lfSampleDepthNormalised,
+                                             lfSampleRcpSpeed,
+                                             lSampleDelta,
+                                             lEncodedSampleDelta,
+                                             lWantsColorClipAA );
+
+
+                lSampleDelta  *= lUniforms.mpPerFrame->gMBlurSettingsVec4.z;
+                vec2 lSampleDeltaNorm = lSampleDelta * lfSampleRcpSpeed;
+
+                float lfBaseCylWeight   = cylinder( lSampleDist, lfBaseRcpSpeed );
+                float lfSampleCylWeight = cylinder( lSampleDist, lfSampleRcpSpeed );
+
+                /*
+
+                // possible x/y slope version of the cone check, might well be usable
+
+                float ySampleAmt = abs( dot( lDeltaNorm, lEncodedSampleDelta ) );
+                float xSampleAmt = abs( dot( vec2( -lDeltaNorm.y, lDeltaNorm.x ), lEncodedSampleDelta ) );
+
+                float yBaseAmt = abs( dot( lDeltaNorm, lBaseDelta ) );
+                float xBaseAmt = abs( dot( vec2( -lDeltaNorm.y, lDeltaNorm.x ), lBaseDelta ) );
+
+                float lFrontVelWeight = (xSampleAmt < ySampleAmt)? 1.0 : 0.0;
+                float lBackVelWeight  = (xBaseAmt < yBaseAmt)? 1.0 : 0.0;
+
+                */
+
+
+                float lFrontVelWeight = abs( dot( lDeltaNorm, lSampleDeltaNorm ) );
+                float lBackVelWeight  = abs( dot( lDeltaNorm, lBaseNorm ) );
+
+                lFrontVelWeight *= lFrontVelWeight;
+                lBackVelWeight  *= lBackVelWeight;
+                lFrontVelWeight *= lFrontVelWeight;
+                lBackVelWeight  *= lBackVelWeight;
+
+                float lfFrontSampleWeight = lfSampleCylWeight * lFrontVelWeight;
+                float lfBackSampleWeight  = lfBaseCylWeight   * lBackVelWeight;
+
+                float weight = ( lfBaseDepth < lfSampleDepth? lfBackSampleWeight : lfFrontSampleWeight );
+                weight = saturate( weight );
+
+                // need to work out if the base sample *would* be blended into the far sample
+                // (when the far sample does its gather)
+                // which we can compute easily by swapping around some of these numbers
+
+                float weightMirror = ( lfBaseDepth < lfSampleDepth? lfFrontSampleWeight : lfBackSampleWeight );
+                weightMirror = 1.0 - saturate( weightMirror );
+
+                // if the base sample is going to be blended into a far sample,
+                // duck it down by an appropriate amount so we don't gain energy
+                lfBaseSampleWeight += weightMirror;
+
+                float fRecipSamplesMultiplier = (weight > 0.0) ? fRecipSamples : 0.0;
+                #ifdef D_PASS_2
+                lSamplePos = tc + (lSamplePos - tc) * fRecipSamplesMultiplier * 2.0;
+                #endif
+
+                vec4 lNewSample = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, lSamplePos );
+
+                lNewSample.xyz = SimpleUnHalfReinhard( lNewSample.xyz );
+                acc  += lNewSample * weight;  
+                wacc += weight;
+
+            }
+        }
+
+        //FRAGMENT_COLOUR = vec4( reproj_tc, 0.0, 1.0 );    
+        //FRAGMENT_COLOUR = vec4( texture2D( lUniforms.mpCustomPerMesh->gBufferMap, IN(mTexCoordsVec2) ).xyz, 1.0 );    
+        //FRAGMENT_COLOUR = vec4( GammaCorrectOutput( acc.xyz / wacc ), 1.0 );
+        //FRAGMENT_COLOUR = vec4(  (lBaseDelta*100)+0.5, 0.0, 1.0 );    
+
+        lOutColor  = lBaseSample * max( 0.0, lfBaseSampleWeight - wacc ) + acc;
+        lOutColor /= max( lfBaseSampleWeight, wacc );
+
+        lOutColor.xyz = SimpleHalfReinhard( lOutColor.xyz );
+    }
+
+
+    #ifdef D_PASS_2  
+    //FRAGMENT_COLOUR = vec4( lOutColor, 1.0 );
+    FRAGMENT_COLOUR = vec4( SimpleUnReinhard( lOutColor.xyz ), lOutColor.a );
+
+    #else
+    // tonemap in pass 1
+    //FRAGMENT_COLOUR = vec4( GammaCorrectOutput( TonemapKodak( lOutColor ) / TonemapKodak( vec3( 1.0,1.0,1.0 ) ) ), 1.0 );
+    FRAGMENT_COLOUR = vec4( SimpleReinhard( lOutColor.xyz ), lOutColor.a );
+
+    #endif
+
+}
+#endif
+
+// =================================================================================================
+//
+// MOTION VECTOR DILATE
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_MOTIONDILATE_PASS1
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+#define D_NEIGHBORHOOD_SIZE 16.0
+#define D_NEIGHBORHOOD_OVER 0.5
+#define D_BUFFER_SCALING 0.125
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+#ifdef D_PLATFORM_ORBIS
+#pragma argument(targetoccupancy_atallcosts=70)
+#pragma argument(nounrollallloops)
+#endif
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+vec2
+GetPixelEncodedMotion(
+    SAMPLER2DARG( lMotionMap ),
+    in vec2 lTexCoords )
+{
+    vec2 lDelta = Texture2DNoFiltering( SAMPLER2DPARAM( lMotionMap ), lTexCoords ).xy;
+    return lDelta * 0.5;
+}
+
+void
+MinMaxNewSpeed(
+    SAMPLER2DARG( lMotionMap ),
+    in vec2 lTexCoords, 
+    inout float lMinSpeed,
+    inout float lMaxSpeed,
+    inout vec2 lMinMotion,
+    inout vec2 lMaxMotion )
+{
+    vec2 lEncodedMotion = GetPixelEncodedMotion( SAMPLER2DPARAM( lMotionMap ), lTexCoords ) * 2.0;
+  
+    vec2  lCenteredMotion = lEncodedMotion   - vec2( 0.5 );
+    float lSpeedSquared   = dot( lCenteredMotion, lCenteredMotion );
+
+    if( lSpeedSquared > lMaxSpeed )
+    {
+        lMaxSpeed  = lSpeedSquared;
+        lMaxMotion = lEncodedMotion;
+    } 
+
+    if( lSpeedSquared < lMinSpeed )
+    {
+        lMinSpeed  = lSpeedSquared;
+        lMinMotion = lEncodedMotion;
+    } 
+}
+
+FRAGMENT_MAIN_COLOUR_SRT
+{           
+
+    #ifdef D_PLATFORM_ORBIS
+    //#if 0
+
+    #if 1
+
+    vec2 lSample = IN(mTexCoordsVec2);
+
+    // read the texture on the current pixel, but also the quad above and below
+    vec2 lMinMotion   = GetPixelEncodedMotion( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), lSample ) * 2.0;
+    vec2  lCenteredMotion   = lMinMotion   - vec2( 0.5 );
+    float lMinSpeed   = dot( lCenteredMotion,   lCenteredMotion );
+    float lMaxSpeed = lMinSpeed;
+    vec2 lMaxMotion = lMinMotion;
+
+    vec2 lSampleLt = lSample - vec2( lUniforms.mpPerFrame->gFrameBufferSizeVec4.z * 8.0, 0.0 );
+    vec2 lSampleRt = lSample + vec2( lUniforms.mpPerFrame->gFrameBufferSizeVec4.z * 8.0, 0.0 );
+
+    MinMaxNewSpeed( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), lSampleLt, lMinSpeed, lMaxSpeed, lMinMotion, lMaxMotion );
+    MinMaxNewSpeed( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), lSampleRt, lMinSpeed, lMaxSpeed, lMinMotion, lMaxMotion );
+
+        for( float xx = 0.0; xx < 1.0; xx += D_NEIGHBORHOOD_OVER )
+        {
+            vec2 lOffset = vec2( xx, 0.0 ) * lUniforms.mpPerFrame->gFrameBufferSizeVec4.zw;
+            
+            MinMaxNewSpeed( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), lSample   + lOffset, lMinSpeed, lMaxSpeed, lMinMotion, lMaxMotion );
+            MinMaxNewSpeed( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), lSampleLt + lOffset, lMinSpeed, lMaxSpeed, lMinMotion, lMaxMotion );
+            MinMaxNewSpeed( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), lSampleRt + lOffset, lMinSpeed, lMaxSpeed, lMinMotion, lMaxMotion );
+        }
+
+    // swap low bit of X
+    float lAlt0MaxSpeed = LaneSwizzle( lMaxSpeed,   0x1f, 0, 1 );
+
+    float lAlt0MaxMotionX  = LaneSwizzle( lMaxMotion.x, 0x1f, 0, 1 );
+    float lAlt0MaxMotionY  = LaneSwizzle( lMaxMotion.y, 0x1f, 0, 1 );
+
+    float lAlt0MinSpeed = LaneSwizzle( lMinSpeed,   0x1f, 0, 1 );
+
+    float lAlt0MinMotionX  = LaneSwizzle( lMinMotion.x, 0x1f, 0, 1 );
+    float lAlt0MinMotionY  = LaneSwizzle( lMinMotion.y, 0x1f, 0, 1 );
+
+    if( lAlt0MaxSpeed > lMaxSpeed )
+    {
+        lMaxSpeed  = lAlt0MaxSpeed;
+        lMaxMotion.x = lAlt0MaxMotionX;
+        lMaxMotion.y = lAlt0MaxMotionY;
+    }
+
+    if( lAlt0MinSpeed < lMinSpeed )
+    {
+        lMinSpeed  = lAlt0MinSpeed;
+        lMinMotion.x = lAlt0MinMotionX;
+        lMinMotion.y = lAlt0MinMotionY;
+    } 
+
+    // swap bit 1 of X
+    float lAlt1MaxSpeed = LaneSwizzle( lMaxSpeed,   0x1f, 0, 4 );
+
+    float lAlt1MaxMotionX  = LaneSwizzle( lMaxMotion.x, 0x1f, 0, 4 );
+    float lAlt1MaxMotionY  = LaneSwizzle( lMaxMotion.y, 0x1f, 0, 4 );
+
+    float lAlt1MinSpeed = LaneSwizzle( lMinSpeed,   0x1f, 0, 4 );
+
+    float lAlt1MinMotionX  = LaneSwizzle( lMinMotion.x, 0x1f, 0, 4 );
+    float lAlt1MinMotionY  = LaneSwizzle( lMinMotion.y, 0x1f, 0, 4 );
+
+    if( lAlt1MaxSpeed > lMaxSpeed )
+    {
+        lMaxSpeed  = lAlt1MaxSpeed;
+        lMaxMotion.x = lAlt1MaxMotionX;
+        lMaxMotion.y = lAlt1MaxMotionY;
+    }
+
+    if( lAlt1MinSpeed < lMinSpeed )
+    {
+        lMinSpeed  = lAlt1MinSpeed;
+        lMinMotion.x = lAlt1MinMotionX;
+        lMinMotion.y = lAlt1MinMotionY;
+    } 
+
+    // swap bit 2 of X
+    float lAlt2MaxSpeed = LaneSwizzle( lMaxSpeed,   0x1f, 0, 16 );
+
+    float lAlt2MaxMotionX  = LaneSwizzle( lMaxMotion.x, 0x1f, 0, 16 );
+    float lAlt2MaxMotionY  = LaneSwizzle( lMaxMotion.y, 0x1f, 0, 16 );
+
+    float lAlt2MinSpeed = LaneSwizzle( lMinSpeed,   0x1f, 0, 16 );
+
+    float lAlt2MinMotionX  = LaneSwizzle( lMinMotion.x, 0x1f, 0, 16 );
+    float lAlt2MinMotionY  = LaneSwizzle( lMinMotion.y, 0x1f, 0, 16 );
+
+    if( lAlt2MaxSpeed > lMaxSpeed )
+    {
+        lMaxSpeed  = lAlt2MaxSpeed;
+        lMaxMotion.x = lAlt2MaxMotionX;
+        lMaxMotion.y = lAlt2MaxMotionY;
+    }
+
+    if( lAlt2MinSpeed < lMinSpeed )
+    {
+        lMinSpeed  = lAlt2MinSpeed;
+        lMinMotion.x = lAlt2MinMotionX;
+        lMinMotion.y = lAlt2MinMotionY;
+    } 
+
+    #else
+
+    vec2 lSample = IN(mTexCoordsVec2);
+
+    uint liLaneIndex = __v_mbcnt_lo_u32_b32(uint(-1), __v_mbcnt_hi_u32_b32(uint(-1), 0u));
+
+    uint liLaneX = liLaneIndex & 0x55;          
+         liLaneX = (liLaneX ^ (liLaneX >>  1)) & 0x33;
+         liLaneX = (liLaneX ^ (liLaneX >>  2)) & 0x0f;
+    uint liLaneY = (liLaneIndex >> 1) & 0x55;    
+         liLaneY = (liLaneY ^ (liLaneY >>  1)) & 0x33;
+         liLaneY = (liLaneY ^ (liLaneY >>  2)) & 0x0f;
+
+    // read the texture on the current pixel, but also the quad above and below
+    vec2 lEncodedMotion   = GetPixelEncodedMotion( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), lSample ) * 2.0;
+    vec2 lEncodedMotionLt = GetPixelEncodedMotion( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), lSample - vec2( lUniforms.mpPerFrame->gFrameBufferSizeVec4.z * 8.0, 0.0 ) ) * 2.0;
+    vec2 lEncodedMotionRt = GetPixelEncodedMotion( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), lSample + vec2( lUniforms.mpPerFrame->gFrameBufferSizeVec4.z * 8.0, 0.0 ) ) * 2.0;
+
+    vec2  lCenteredMotion   = lEncodedMotion   - vec2( 0.5 );
+    vec2  lCenteredMotionLt = lEncodedMotionLt - vec2( 0.5 );
+    vec2  lCenteredMotionRt = lEncodedMotionRt - vec2( 0.5 );
+
+    float lSpeedSquared   = dot( lCenteredMotion,   lCenteredMotion );
+    float lSpeedSquaredLt = dot( lCenteredMotionLt, lCenteredMotionLt );
+    float lSpeedSquaredRt = dot( lCenteredMotionRt, lCenteredMotionRt );
+
+    for( uint xx=0; xx<8; ++xx )
+    {
+        // re-encode the loop X to morton tiling order
+        uint xCode = (xx    ^ (xx    << 2)) & 0x33;
+             xCode = (xCode ^ (xCode << 1)) & 0x55;
+
+        // here is how we would get the lane with current Y but desired X
+        // uint altLane = ( liLaneIndex & 0xAA ) | xCode;
+
+        // the shuffle instruction allows us to do this though
+        float lCurSpeedSquared   = LaneSwizzle( lSpeedSquared,   0xa, xCode, 0 );
+        float lCurSpeedSquaredLt = LaneSwizzle( lSpeedSquaredLt, 0xa, xCode, 0 );
+        float lCurSpeedSquaredRt = LaneSwizzle( lSpeedSquaredRt, 0xa, xCode, 0 );
+
+        // important: do these swizzles while the execution mask is full
+        // otherwise some threads may unexpectedly get back 0s
+        float lCurMotionX = LaneSwizzle( lEncodedMotion.x, 0xa, xCode, 0 );
+        float lCurMotionY = LaneSwizzle( lEncodedMotion.y, 0xa, xCode, 0 );
+
+        float lCurMotionLtX = LaneSwizzle( lEncodedMotionLt.x, 0xa, xCode, 0 );
+        float lCurMotionLtY = LaneSwizzle( lEncodedMotionLt.y, 0xa, xCode, 0 );
+
+        float lCurMotionRtX = LaneSwizzle( lEncodedMotionRt.x, 0xa, xCode, 0 );
+        float lCurMotionRtY = LaneSwizzle( lEncodedMotionRt.y, 0xa, xCode, 0 );
+
+        if( lCurSpeedSquared > lMaxSpeed )
+        {
+            lMaxSpeed  = lCurSpeedSquared;
+            lMaxMotion.x = lCurMotionX;
+            lMaxMotion.y = lCurMotionY;
+        } 
+
+        if( lCurSpeedSquared < lMinSpeed )
+        {
+            lMinSpeed  = lCurSpeedSquared;
+            lMinMotion.x = lCurMotionX;
+            lMinMotion.y = lCurMotionY;
+        } 
+
+        if( xx >= liLaneX )
+        {
+            if( lCurSpeedSquaredLt > lMaxSpeed )
+            {
+                lMaxSpeed  = lCurSpeedSquaredLt;
+                lMaxMotion.x = lCurMotionLtX;
+                lMaxMotion.y = lCurMotionLtY;
+            } 
+
+            if( lCurSpeedSquaredLt < lMinSpeed )
+            {
+                lMinSpeed  = lCurSpeedSquaredLt;
+                lMinMotion.x = lCurMotionLtX;
+                lMinMotion.y = lCurMotionLtY;
+            } 
+        }
+
+        if( xx <= liLaneX )
+        {
+            if( lCurSpeedSquaredRt > lMaxSpeed )
+            {
+                lMaxSpeed  = lCurSpeedSquaredRt;
+                lMaxMotion.x = lCurMotionRtX;
+                lMaxMotion.y = lCurMotionRtY;
+            } 
+
+            if( lCurSpeedSquaredRt < lMinSpeed )
+            {
+                lMinSpeed  = lCurSpeedSquaredRt;
+                lMinMotion.x = lCurMotionRtX;
+                lMinMotion.y = lCurMotionRtY;
+            } 
+        }
+    }
+
+    #endif
+
+    #else
+
+
+    float lMaxSpeed = 0.0;
+    vec2 lMaxMotion = vec2( 0.5, 0.5 );
+
+    float lMinSpeed = 10000.0;
+    vec2 lMinMotion = vec2( 0.5, 0.5 );
+
+    vec2 lPixelSize = lUniforms.mpPerFrame->gFrameBufferSizeVec4.zw * D_NEIGHBORHOOD_OVER;
+
+    vec2 lStartUpperCorner = vec2( D_NEIGHBORHOOD_SIZE, D_NEIGHBORHOOD_SIZE * D_BUFFER_SCALING );
+
+    // first pixel loc, the upper left 
+    vec2 lStartSample = IN(mTexCoordsVec2) - lStartUpperCorner * lPixelSize * 0.5 + lPixelSize * 0.5;
+    vec2 lSample = lStartSample;
+
+    #ifndef D_DILATE_HORZ
+    for( float y = 0; y < D_NEIGHBORHOOD_SIZE; y++ )
+    #endif
+    {
+
+        #ifndef D_DILATE_VERT
+        for( float x = 0; x < D_NEIGHBORHOOD_SIZE; x++ )
+        #endif
+        {
+            // compute the previous position of this pixel
+            vec2 lEncodedMotion = GetPixelEncodedMotion( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), lSample ) * 2.0;
+
+            vec2  lCenteredMotion = lEncodedMotion - vec2( 0.5 );
+            float lSpeedSquared = dot( lCenteredMotion, lCenteredMotion );
+
+            if( lSpeedSquared > lMaxSpeed )
+            {
+                lMaxSpeed  = lSpeedSquared;
+                lMaxMotion = lEncodedMotion;
+            } 
+
+            if( lSpeedSquared < lMinSpeed )
+            {
+                lMinSpeed  = lSpeedSquared;
+                lMinMotion = lEncodedMotion;
+            } 
+
+            lSample.x += lPixelSize.x;
+        }
+
+        lSample.x = lStartSample.x;
+        lSample.y += lPixelSize.y;
+    }
+
+
+    #endif
+
+
+    FRAGMENT_COLOUR = vec4( lMaxMotion, lMinMotion );    
+}
+
+#endif
+
+// =================================================================================================
+//
+// MOTION VECTOR DILATE
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_MOTIONDILATE_PASS2
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+#define D_NEIGHBORHOOD_SIZE 16.0
+#define D_NEIGHBORHOOD_OVER 0.5
+#define D_BUFFER_SCALING 0.125
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+#ifdef D_PLATFORM_ORBIS
+#pragma argument(targetoccupancy_atallcosts=70)
+#pragma argument(nounrollallloops)
+#endif
+
+vec2 ClipVector(
+    in vec2 lMotion,
+    in vec2 lRcpMaxVectorLength )
+{
+    vec2 lMotionNorm = abs( max( vec2( 1.0 ), lMotion * lRcpMaxVectorLength ) );
+    return lMotion / lMotionNorm;
+}
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR_SRT
+{         
+    vec2 lPixelSize = lUniforms.mpPerFrame->gFrameBufferSizeVec4.zw * D_NEIGHBORHOOD_OVER;
+
+    vec2 lStartUpperCorner = vec2( D_NEIGHBORHOOD_SIZE * D_BUFFER_SCALING, D_NEIGHBORHOOD_SIZE );
+
+    // first pixel loc, the upper left 
+    vec2 lStartSample = IN(mTexCoordsVec2) - lStartUpperCorner * lPixelSize * 0.5 + lPixelSize * 0.5;
+    vec2 lSample = lStartSample;
+
+    float lMaxSpeed = 0.0;
+    vec2 lMaxMotion = vec2( 0.5, 0.5 );
+
+    float lMinSpeed = 10000.0;
+    vec2 lMinMotion = vec2( 0.5, 0.5 );
+
+    #ifndef D_DILATE_HORZ
+    for( float y = 0; y < D_NEIGHBORHOOD_SIZE; y++ )
+    #endif
+    {
+
+        #ifndef D_DILATE_VERT
+        for( float x = 0; x < D_NEIGHBORHOOD_SIZE; x++ )
+        #endif
+        {
+            vec4 lMotionBuffer = Texture2DNoFiltering( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), lSample );
+
+            vec2 lSmpMaxMotion = lMotionBuffer.xy;
+            vec2 lSmpMinMotion = lMotionBuffer.zw;
+
+            float lMaxSpeedSquared = dot( lSmpMaxMotion - vec2( 0.5 ), lSmpMaxMotion - vec2( 0.5 ) );
+            float lMinSpeedSquared = dot( lSmpMinMotion - vec2( 0.5 ), lSmpMinMotion - vec2( 0.5 ) );
+
+            if( lMaxSpeedSquared > lMaxSpeed )
+            {
+                lMaxSpeed  = lMaxSpeedSquared;
+                lMaxMotion = lSmpMaxMotion;
+            } 
+
+            if( lMinSpeedSquared < lMinSpeed )
+            {
+                lMinSpeed  = lMinSpeedSquared;
+                lMinMotion = lSmpMinMotion;
+            } 
+
+            lSample.x += lPixelSize.x;
+        }
+
+        lSample.x = lStartSample.x;
+        lSample.y += lPixelSize.y;
+    }
+
+    // clip the vectors
+
+    vec2 lMaxVectorLength = lUniforms.mpPerFrame->gFrameBufferSizeVec4.xy * (D_NEIGHBORHOOD_SIZE / D_BUFFER_SCALING);
+    vec2 lRcpMaxVectorLength = vec2( 1.0 ) / lMaxVectorLength;
+
+    vec2 lMaxMotionClip = lMaxMotion;// EncodeMotion( ClipVector( DecodeMotion( lMaxMotion ), lRcpMaxVectorLength ) );
+    vec2 lMinMotionClip = lMinMotion;// EncodeMotion( ClipVector( DecodeMotion( lMinMotion ), lRcpMaxVectorLength ) );
+
+    FRAGMENT_COLOUR = vec4( lMaxMotionClip, lMinMotionClip );    
+}
+
+#endif
+
+// =================================================================================================
+//
+// MOTION VECTOR RESOLVE
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_MOTIONRESOLVE
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR_SRT
+{           
+    vec2 lSample = IN(mTexCoordsVec2);
+
+    // compute the previous position of this pixel
+    float lfDepth;
+    float lfDepthNormalised;
+    float lfSpeed;
+    vec2 lMotion;
+    vec2 lEncodedMotion;
+    bool lWantsColorClipAA;
+    vec2 lSampleReproject = GetPrevPosition(lSample, 
+                                     lUniforms.mpPerFrame->gCameraDeltaMat4, 
+                                     lUniforms.mpPerFrame->gClipPlanesVec4,
+                                     lUniforms.mpPerFrame->gClipPlanesRVec4,
+                                     lUniforms.mpCommonPerMesh->gInverseProjectionMat4,
+                                     lUniforms.mpCommonPerMesh->gInverseViewMat4,
+                                     lUniforms.mpCommonPerMesh->gProjectionMat4,
+                                     lUniforms.mpCommonPerMesh->gViewProjectionMat4,
+                                     lUniforms.mpPerFrame->gPrevViewProjectionMat4,
+                                     lUniforms.mpPerFrame->gViewPositionVec3,
+                                     lUniforms.mpPerFrame->gMBlurSettingsVec4,
+                                     SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), 
+                                     SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer1Map ),
+                                     lfDepth,
+                                     lfDepthNormalised,
+                                     lfSpeed,
+                                     lMotion,
+                                     lEncodedMotion,
+                                     lWantsColorClipAA );
+
+    #ifdef D_WRITE_WANTS_CLIP
+    lWantsColorClipAA = true;
+    #endif
+
+    if( !lWantsColorClipAA )
+    {
+        int liMaterialID = int( texture2D( lUniforms.mpCustomPerMesh->gBuffer3Map, lSample ).r * 255.0 );
+        lWantsColorClipAA = ( liMaterialID & D_CLAMP_AA ) != 0;
+    }
+
+    float lfEncodedSpeed = lWantsColorClipAA ? 1.0 : dot( lEncodedMotion * 2.0 - 0.5, lEncodedMotion * 2.0 - 0.5 );
+
+    FRAGMENT_COLOUR = vec4( lEncodedMotion * 2.0, lfEncodedSpeed, 1.0 );    
+}
+
+#endif
+
+
+// =================================================================================================
+//
+// TEMPORAL AA
+//
+// =================================================================================================
+
+
+#ifdef D_POSTPROCESS_STAA_APPLY
+
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2,     TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+#define TAA_BACK_IS_TONEMAP 0
+#define TAA_BACK_IS_TONEMAP_YCGCO 0
+#define TAA_BACK_IS_YCGCO 0
+
+#define D_SPEED_MULTIPLIER 1000.0
+
+#if TAA_BACK_IS_TONEMAP
+
+#define TAA_ACC_BUFFER_INPUT( pos ) texture2D(lUniforms.mpCustomPerMesh->gBuffer1Map, pos).rgb
+#define TAA_MAIN_BUFFER_INPUT( pos ) saturate( TonemapKodak( texture2D(lUniforms.mpCustomPerMesh->gBufferMap, pos).rgb ) / TonemapKodak( vec3( 1.0,1.0,1.0 ) ) )
+
+#define TAA_ACC_BUFFER_OUTPUT( col ) ( col )
+#define TAA_MAIN_BUFFER_OUTPUT( col ) GammaCorrectOutput( col )
+
+#define TAA_GET_LUMINANCE( col ) ( 0.25 * ( col.r + col.b ) + 0.5 * col.g )
+
+#elif TAA_BACK_IS_TONEMAP_YCGCO
+
+#define TAA_ACC_BUFFER_INPUT( pos ) ( RGBToYCgCo( texture2D(lUniforms.mpCustomPerMesh->gBuffer1Map, pos).rgb ) )
+#define TAA_MAIN_BUFFER_INPUT( pos ) ( TonemapKodakYCgCo( RGBToYCgCo( texture2D(lUniforms.mpCustomPerMesh->gBufferMap, pos).rgb ) ) )
+
+#define TAA_ACC_BUFFER_OUTPUT( col ) ( YCgCoToRGB(  col ) )
+#define TAA_MAIN_BUFFER_OUTPUT( col ) GammaCorrectOutput( YCgCoToRGB(  col ) )
+
+#define TAA_GET_LUMINANCE( col ) ( col.x )
+
+#elif TAA_BACK_IS_YCGCO
+
+#define TAA_ACC_BUFFER_INPUT( pos ) texture2D(lUniforms.mpCustomPerMesh->gBuffer1Map, pos).rgb
+#define TAA_MAIN_BUFFER_INPUT( pos ) SimpleReinhardLum( RGBToYCgCo( texture2D(lUniforms.mpCustomPerMesh->gBufferMap, pos).rgb ) )
+
+#define TAA_ACC_BUFFER_OUTPUT( col ) ( col )
+#define TAA_MAIN_BUFFER_OUTPUT( col ) GammaCorrectOutput( TonemapKodak( YCgCoToRGB( SimpleUnReinhardLum( col ) ) ) / TonemapKodak( vec3( 1.0,1.0,1.0 ) ) )
+
+#define TAA_GET_LUMINANCE( col ) ( col.x )
+
+#else
+
+#define TAA_ACC_BUFFER_INPUT( pos ) texture2D(lUniforms.mpCustomPerMesh->gBuffer1Map, pos).rgb
+#define TAA_MAIN_BUFFER_INPUT( pos ) ( SimpleReinhard( clamp( texture2D(lUniforms.mpCustomPerMesh->gBufferMap, pos).rgb, 0.0, 1024.0 )  ) )
+
+
+#define TAA_ACC_BUFFER_OUTPUT( col ) ( col )
+//#define TAA_MAIN_BUFFER_OUTPUT( col ) GammaCorrectOutput( TonemapKodak( SimpleUnReinhard( col ) ) / TonemapKodak( vec3( 1.0,1.0,1.0 ) ) )
+#define TAA_MAIN_BUFFER_OUTPUT( col ) ( SimpleUnReinhard( col ) )
+
+
+#define TAA_GET_LUMINANCE( col ) ( 0.25 * ( col.r + col.b ) + 0.5 * col.g )
+
+#endif
+
+
+
+vec3 SimpleReinhard( in vec3 col )
+{
+    return col / ( 1.0 + TAA_GET_LUMINANCE( col ) );
+}
+
+vec3 SimpleUnReinhard( in vec3 col )
+{
+    return col / ( 1.0 - TAA_GET_LUMINANCE( col ) );
+}
+
+
+vec3 SimpleReinhardLum( in vec3 col )
+{
+    return col * 1.0 / ( 1.0 + col.x );
+}
+
+vec3 SimpleUnReinhardLum( in vec3 col )
+{
+    return ( col ) * 1.0 / ( 1.0 - col.x );
+}
+
+
+#ifdef D_PLATFORM_ORBIS    
+//#pragma argument (O4; fastmath; scheduler=minpressure)
+//#pragma argument(reservelds=28)
+//#pragma warning (disable:7203)
+//#pragma argument(targetoccupancy_atallcosts=90)
+#ifndef D_SPLITSCREEN_TEST
+#pragma argument(maxvgprcount=32)
+#endif
+
+float fastRcpSqrtNR0(float inX)
+{
+    return rsqrt(inX);
+}
+
+float fastRcpNR0(float inX)
+{
+    return rcp(inX);
+}
+
+#else
+
+float fastRcpSqrtNR0( float inX )
+{
+    return 1.0 / sqrt(inX);
+}
+
+float fastRcpNR0( float inX )
+{
+    return 1.0 / inX;
+}
+
+#endif
+
+// returns from 1.0 for no clip, down to 0.0 for "the aabb is size 0"
+float get_clip_factor(
+    vec3 q,
+    vec3 aabb_min,
+    vec3 aabb_max )
+{
+    vec3 p_clip = 0.5 * (aabb_max + aabb_min);
+    vec3 e_clip = 0.5 * (aabb_max - aabb_min);
+
+    vec3 v_clip = q - p_clip;
+    vec3 v_unit = v_clip / e_clip;
+    vec3 a_unit = abs(v_unit);
+
+    float ma_unit = max( a_unit.x, max( a_unit.y, a_unit.z ) );
+
+    if( ma_unit > 1.0 )
+        return 1.0 / ma_unit;
+    else
+        return 1.0;
+}
+
+vec3 clip_aabb(
+    vec3 q,
+    vec3 aabb_min,
+    vec3 aabb_max )
+{
+        // note: only clips towards aabb center (but fast!)
+        vec3 p_clip = 0.5 * (aabb_max + aabb_min);
+        vec3 e_clip = 0.5 * (aabb_max - aabb_min);
+
+        vec3 v_clip = q - p_clip;
+        vec3 v_unit = e_clip / v_clip;
+        vec3 a_unit = abs(v_unit);
+        float ma_unit = saturate( min(a_unit.x, min(a_unit.y, a_unit.z)) );
+
+        return p_clip + v_clip * ma_unit;
+}
+
+vec3 clip_lum(
+    vec3 q,
+    vec3 aabb_min,
+    vec3 aabb_max )
+{
+    vec3  p_clip = 0.5 * (aabb_max + aabb_min);
+    float e_clip = 0.5 * (aabb_max.x - aabb_min.x);
+
+    vec3  v_clip = q - p_clip;
+
+    float v_abs = abs( v_clip.x );
+
+    if( v_abs > e_clip )
+    {
+        float a_unit = v_abs / e_clip;
+        return p_clip + v_clip / a_unit;
+    }
+    else
+    {
+        return q;
+    }
+}
+
+vec3 clip_lum_flat(
+    vec3 q,
+    float aabb_min,
+    float aabb_max )
+{
+    float p_clip = 0.5 * (aabb_max + aabb_min);
+    float e_clip = 0.5 * (aabb_max - aabb_min);
+
+    float v_clip = q.x - p_clip;
+
+    float v_abs = abs( v_clip.x );
+
+    if( v_abs > e_clip )
+    {
+        float a_unit = v_abs / e_clip;
+        return q * ( p_clip + v_clip / a_unit ) / q.x;
+    }
+    else
+    {
+        return q;
+    }
+}
+
+FRAGMENT_MAIN_COLOUR_SRT
+{           
+    #ifdef D_ALWAYS_COLOUR_CLIP
+        bool lbForceColorClip = true;
+    #else
+        bool lbForceColorClip = false;
+    #endif
+
+    vec2 lTexCoords = IN(mTexCoordsVec2);
+
+    // compute the previous position of this pixel
+    vec3 lCenterSmpMotion = Texture2DNoFiltering( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer2Map ), lTexCoords ).xyz;
+
+    vec2 lEncodedDeltaDilated = lCenterSmpMotion.xy;
+    vec2 lEncodedDeltaMinDilated = lCenterSmpMotion.xy;
+
+    vec4 lLowResMotion = texture2D(lUniforms.mpCustomPerMesh->gBuffer4Map, lTexCoords);
+
+    bool lbUsePrevAccum = abs( lLowResMotion.x - 0.5 ) < 0.45;
+    lbUsePrevAccum = lbUsePrevAccum && abs( lLowResMotion.y - 0.5 ) < 0.45;
+
+    if( lUniforms.mpPerFrame->gTaaSettingsVec4.x < 0.0 )
+    {
+        lbForceColorClip = true;
+    }
+
+    #ifndef D_NO_MOTION_DILATE
+    {
+        vec2 lLowResMotionDiff = lLowResMotion.xy - lLowResMotion.zw;
+
+        float lfSpeedDilated = dot( lCenterSmpMotion.xy - 0.5, lCenterSmpMotion.xy - 0.5 );
+        if( lCenterSmpMotion.z >= 1.0 || lfSpeedDilated > 0.235 )
+        {
+            lbForceColorClip = true;
+        }   
+
+        // dilate the motion vectors in a 3x3 max/min pattern so we don't miss nearby moving edges
+        if( dot( lLowResMotionDiff, lLowResMotionDiff ) > 0.0001 )
+        {
+            float lfMinSpeedDilated = lfSpeedDilated;
+
+            for( float dy = -1.0; dy <= 1.0; dy += 1.0 )
+            {
+                for( float dx = -1.0; dx <= 1.0; dx += 1.0 )
+                {
+                    if( dx != 0.0 || dy != 0.0 )
+                    {
+                        vec2 lCoordsOffset = vec2( dx, dy ) * lUniforms.mpPerFrame->gFrameBufferSizeVec4.zw;
+                        vec2 lSubTexCoords = lTexCoords + lCoordsOffset;
+
+                        vec3 lSmpMotion = Texture2DNoFiltering( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer2Map ), lSubTexCoords ).xyz;
+                        float lSpeedSquared = dot( lSmpMotion.xy - 0.5, lSmpMotion.xy - 0.5 );    
+                            
+                        if( lSmpMotion.z >= 1.0 )
+                        {                        
+                            lbForceColorClip = true;
+                        }
+
+                        if( lSpeedSquared >= lfSpeedDilated )
+                        {
+                            lfSpeedDilated      = lSpeedSquared;
+                            lEncodedDeltaDilated = lSmpMotion.xy;
+                        }
+
+                        if( lSpeedSquared  < lfMinSpeedDilated )
+                        {
+                            lfMinSpeedDilated = lSpeedSquared;
+                            lEncodedDeltaMinDilated = lSmpMotion.xy;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #endif
+
+    vec2 ldejit = GetDejitteredTexCoord( lTexCoords.xy, lUniforms.mpPerFrame->gDeJitterVec4 );
+
+    // four points, plus center, from the current screen
+    vec3 cM = TAA_MAIN_BUFFER_INPUT( ldejit.xy  );
+
+    // also the current screen but without dejitter, to blend to backbuffer
+    vec3 cM_jittered = TAA_MAIN_BUFFER_INPUT(lTexCoords.xy);
+
+    vec2 lDeltaDilated = DecodeMotion( lEncodedDeltaDilated );
+
+    vec2 lTexCoordsReproject = lTexCoords + lDeltaDilated;
+
+    float lfSpeed       = length( lDeltaDilated ) * D_SPEED_MULTIPLIER;
+    bool lReadAccBuffer = ( ( saturate( lTexCoordsReproject.x ) == lTexCoordsReproject.x ) && 
+                            ( saturate( lTexCoordsReproject.y ) == lTexCoordsReproject.y ) && 
+                            ( lfSpeed < 128.0 ) );
+
+    vec3 cAcc = cM_jittered;
+    vec3 cAcc_as_read = cAcc;  // (for debug output)
+
+    float largeVelBlend = 0.0;
+    // if reproj is inside the back texture
+    if( lReadAccBuffer )
+    {
+        // accum buffer result for current pixel
+        cAcc = TAA_ACC_BUFFER_INPUT(lTexCoordsReproject);  
+        cAcc_as_read = cAcc;
+
+        // blend out if velocity is a lot of the screen
+        largeVelBlend = saturate( (1.0/64.0) * ( lfSpeed - 64.0 ) );
+        cAcc = mix( cAcc, cM_jittered, largeVelBlend );
+    }
+
+    // if there is no disagreement over the pixel color,
+    // we can skip a LOT of texture reads, logic, etc
+    vec3 cDiff = cM_jittered - cAcc;
+    vec3 cDiff2 = cM - cAcc;
+
+    lbUsePrevAccum = lbUsePrevAccum && dot( cDiff, cDiff ) + dot( cDiff2, cDiff2 ) > 1.0 / 1024.0;
+
+    float lfSpeedBlend      = 1.0;
+
+    if ( lbUsePrevAccum )
+    {
+        vec2 lPrevDeltaEncoded = lEncodedDeltaDilated;
+        vec2 lPrevMinDeltaEncoded = lEncodedDeltaMinDilated;
+
+        //if( !lbForceColorClip )
+        {
+            vec4 lPrevSpeeds = texture2D(lUniforms.mpCustomPerMesh->gBuffer5Map, lTexCoordsReproject);
+
+            lPrevDeltaEncoded  = lPrevSpeeds.xy;
+            vec2 lPrevDelta    = DecodeMotion( lPrevSpeeds.xy );
+
+            largeVelBlend = saturate( (1.0/64.0) * ( length( lPrevDelta ) * D_SPEED_MULTIPLIER - 64.0 ) );
+            cAcc = mix( cAcc, cM_jittered, largeVelBlend );
+
+            if( lPrevSpeeds.z != 1.0 )
+            {
+                lPrevMinDeltaEncoded = lPrevSpeeds.zw;
+
+                vec2 lPrevMinDelta = DecodeMotion( lPrevSpeeds.zw );
+                vec2 lDeltaMinDilated = DecodeMotion( lEncodedDeltaMinDilated );
+
+
+                {
+                    // blending constant to kill the backbuffer when movement changes
+                    // prevZ == 1.0 means we clipped last frame, no motion info, need to clip again this frame
+                    lfSpeedBlend = saturate( max( max( length( lPrevMinDelta - lDeltaDilated ), 
+                                                       length( lPrevDelta    - lDeltaMinDilated ) ),
+                                                  max( length( lPrevMinDelta - lDeltaMinDilated ), 
+                                                       length( lPrevDelta    - lDeltaDilated ) ) ) * D_SPEED_MULTIPLIER );
+
+                }
+            }
+        }
+
+        float rcpFrameOptZ = lUniforms.mpPerFrame->gFrameBufferSizeVec4.z * lUniforms.mpPerFrame->gTaaSettingsVec4.z;
+        float rcpFrameOptW = lUniforms.mpPerFrame->gFrameBufferSizeVec4.w * lUniforms.mpPerFrame->gTaaSettingsVec4.z;
+
+        // X-shaped sample pattern
+
+        float wk = -TAA_GET_LUMINANCE( cM_jittered );
+
+        // four points, plus center, from the current screen
+        vec3 cL_M = TAA_MAIN_BUFFER_INPUT( lTexCoords + vec2( -rcpFrameOptZ, -rcpFrameOptW ) );
+        wk += TAA_GET_LUMINANCE(cL_M) * 0.25;
+        vec3 cMax = cL_M;
+        vec3 cMin = cL_M;
+
+        vec3 cR_M = TAA_MAIN_BUFFER_INPUT( lTexCoords + vec2(  rcpFrameOptZ, -rcpFrameOptW ) );
+        wk += TAA_GET_LUMINANCE(cR_M) * 0.25;
+        cMax = max( cMax, cR_M );
+        cMin = min( cMin, cR_M );
+
+        vec3 cU_M = TAA_MAIN_BUFFER_INPUT( lTexCoords + vec2( -rcpFrameOptZ,  rcpFrameOptW ) );
+        wk += TAA_GET_LUMINANCE(cU_M) * 0.25;
+        cMax = max( cMax, cU_M );
+        cMin = min( cMin, cU_M );
+
+        vec3 cD_M = TAA_MAIN_BUFFER_INPUT( lTexCoords + vec2(  rcpFrameOptZ,  rcpFrameOptW ) );
+        wk += TAA_GET_LUMINANCE(cD_M) * 0.25;
+        cMax = max( cMax, cD_M );
+        cMin = min( cMin, cD_M );
+
+        // edge detection filter, produces blend values for the front and back buffers
+        // bac buffer is more aggressive than the front buffer
+        float kl = ( lUniforms.mpPerFrame->gMBlurSettingsVec4.x );
+        float kh = ( lUniforms.mpPerFrame->gMBlurSettingsVec4.y );
+
+        // this math is from the Crytek SMAA filter
+        float blendAmountAcc  = 1.0 - saturate( fastRcpNR0( mix(kl, kh, abs( wk ) * 10.0) ) );
+        float blendAmountMain = 1.0 - saturate( fastRcpNR0( mix(kl, kh, abs( wk ) * 1.0 ) ) );
+
+        #ifdef D_TERRAIN_MODE
+
+        blendAmountAcc = mix( lUniforms.mpPerFrame->gTaaSettingsVec4.w, lUniforms.mpPerFrame->gTaaSettingsVec4.y, blendAmountAcc);
+
+        #else
+
+        blendAmountAcc = mix( lUniforms.mpPerFrame->gTaaSettingsVec4.w, lUniforms.mpPerFrame->gMBlurSettingsVec4.w, blendAmountAcc);
+
+        #endif
+
+        //blendAmountMain = min( blendAmountMain, get_clip_factor(cM_jittered, cMin, cMax) );
+
+        #ifdef D_NO_BACKBUFFER
+
+        cM = mix( cM, cAcc, blendAmountMain );
+        cM = clip_aabb(cM, cMin, cMax);
+
+        #else
+
+        // clip the new value to the AABB _without_ the pixel center
+        // this tends to kill alias-y razor lines in the front buffer
+        vec3 cM_clip = clip_aabb(cM, cMin, cMax);
+
+        // but for the back buffer value, clip _with_ the pixel center
+        // thus allowing bright razor lines that have been smoothed well
+        // to come forward, where they can edge things nicely
+        vec3 cMin_WithPix = min( cM, cMin );
+        vec3 cMax_WithPix = max( cM, cMax );
+        vec3 cAcc_clip = clip_aabb(cAcc, cMin_WithPix, cMax_WithPix);
+
+        cM = mix( cM_clip, cAcc_clip, blendAmountMain );
+
+        // idea from staring at Uncharted 4 (before the actual presentation came out)
+        // blend _aggressively_ to the backbuffer when change in motion vectors is small 
+        //if( !lbForceColorClip )
+        {
+            cM = mix(cAcc, cM, lbForceColorClip ? 1.0 : lfSpeedBlend);
+        }
+
+
+        cAcc = mix( cAcc, cAcc_clip, saturate( lfSpeedBlend * 2.0 ) );
+        cAcc = mix(cM_jittered, cAcc, blendAmountAcc );
+
+        #endif
+    }
+    else
+    {
+        cAcc = cM;
+    }
+
+    cAcc = max( vec3( 0.0 ), min( vec3( 10000.0 ), cAcc ) );
+
+    #ifdef D_NO_BACKBUFFER
+    cM = max( vec3( 0.0 ), min( vec3( 10000.0 ), cM ) );
+    cAcc = cM;
+    #endif
+
+    // debugging
+    #ifdef D_SPLITSCREEN_TEST
+
+    //FRAGMENT_COLOUR0 = vec4( vec3( lfSpeedBlend ), 1.0 );
+
+    float lTestBoxesY = lTexCoords.y;
+    #ifdef D_PLATFORM_ORBIS
+    lTestBoxesY = 1.0 - lTestBoxesY;
+    #endif   
+
+    if( lTexCoords.x > 0.66 )
+    {
+
+        if( lTestBoxesY > 0.5 )
+        {
+            FRAGMENT_COLOUR0 = vec4( lLowResMotion.xy, 0.0, 1.0 );
+        }
+        else
+        {
+            FRAGMENT_COLOUR0 = vec4( lEncodedDeltaDilated, 0.0, 1.0 );
+        }
+
+    }
+    else if( lTexCoords.x > 0.33 )
+    {
+        if( lTestBoxesY > 0.5 )
+        {
+            FRAGMENT_COLOUR0 = vec4( TAA_MAIN_BUFFER_OUTPUT( cAcc_as_read ), 1.0 );
+        }
+        else
+        {
+            FRAGMENT_COLOUR0 = vec4( vec3( lbForceColorClip? 1.0 : 0.0, 0.0, lfSpeedBlend ), 1.0 );
+        }
+    }
+    else
+    {
+        if( lTestBoxesY > 0.5 )
+        {
+            FRAGMENT_COLOUR0 = vec4( TAA_MAIN_BUFFER_OUTPUT( cM ), 1.0 );
+        }
+        else
+        {
+            FRAGMENT_COLOUR0 = vec4( TAA_MAIN_BUFFER_OUTPUT( cM_jittered ), 1.0 );
+        }
+    }
+
+    /*
+
+    if( lTexCoords.x > 0.5 )
+    {
+        if( lTexCoords.y > 0.5 )
+        {
+        FRAGMENT_COLOUR0 = vec4( TAA_MAIN_BUFFER_OUTPUT( cAcc_NoReproject ), 1.0 );
+        }
+        else
+        {
+
+
+        //FRAGMENT_COLOUR0 = lReadAccBuffer? vec4( vec3( 1.0 ), 1.0 ) : vec4( vec3( 0.0 ), 1.0 );
+         //   FRAGMENT_COLOUR0 =  vec4( vec3( largeVelBlend ), 1.0 );
+          // FRAGMENT_COLOUR0 =  vec4( lEncodedDeltaDilated, 0.0, 1.0 );
+          FRAGMENT_COLOUR0 =  vec4( lDeltaDilated, 0.0, 1.0 );
+
+                
+            if( lTexCoords.y > 0.25 )
+            {
+                if( lTexCoords.x < 0.75 )
+                {
+                    FRAGMENT_COLOUR0 = vec4( abs( DecodeMotion( lEncodedDeltaMinDilated ) ) * 20.0, 0.0, 1.0 );
+                }
+                else
+                {
+                    FRAGMENT_COLOUR0 = vec4( abs( lDeltaDilated ) * 20.0, 0.0, 1.0 );
+                }
+            }
+            else
+            {
+                if( lTexCoords.x < 0.75 )
+                {
+                    FRAGMENT_COLOUR0 = vec4( abs( DecodeMotion( lPrevMinDeltaEncoded ) ) * 20.0, 0.0, 1.0 );
+                }
+                else
+                {
+                    FRAGMENT_COLOUR0 = vec4( abs( DecodeMotion( lPrevDeltaEncoded ) ) * 20.0, 0.0, 1.0 );
+                }
+
+            } 
+        }
+    }
+    else if( lTexCoords.y > 0.5 )
+    {
+        FRAGMENT_COLOUR0 = vec4( TAA_MAIN_BUFFER_OUTPUT( cAcc ), 1.0 );
+    }
+    else
+    {
+        FRAGMENT_COLOUR0 = vec4( TAA_MAIN_BUFFER_OUTPUT( cM ), 1.0 );
+    }
+    */
+
+    #else
+
+    FRAGMENT_COLOUR0 = vec4( TAA_MAIN_BUFFER_OUTPUT( cM ), 1.0 );
+
+    #endif
+
+
+    // output a new value to the accum byffer
+    FRAGMENT_COLOUR1 = vec4( TAA_ACC_BUFFER_OUTPUT( cAcc ), 1.0 );
+
+    if( lbForceColorClip )
+    {
+        FRAGMENT_COLOUR2 = vec4( lEncodedDeltaDilated, 1.0, 1.0 );
+    }
+    else
+    {
+        FRAGMENT_COLOUR2 = vec4( lEncodedDeltaDilated, lEncodedDeltaMinDilated );
+    }
+
+
+}
+
+#endif
+
+
+// =================================================================================================
+//
+// GAMMACORRECT
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_GAMMACORRECT
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    //Debug
+    vec4 lColourVec4 = texture2D( lUniforms.mpCustomPerMesh->gBufferMap, IN(mTexCoordsVec2).xy );
+
+    vec3 lFragCol;
+
+    lFragCol     = lColourVec4.rgb;
+
+    lFragCol.xyz = TonemapKodak(lFragCol) / TonemapKodak( vec3(1.0) );
+
+    lFragCol     = GammaCorrectOutput( lFragCol );
+
+    lFragCol     = texture3DLod( lUniforms.mpCustomPerMesh->gColourLUT, lFragCol, 0.0 ).rgb;
+
+    FRAGMENT_COLOUR = vec4( lFragCol, lColourVec4.a );
+}
+
+#endif
+
+
+// =================================================================================================
+//
+// BILATERAL UPSAMPLE
+//
+// =================================================================================================
+
+#ifdef D_POSTPROCESS_BILATERAL_UPSAMPLE
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+#if defined( D_PLATFORM_ORBIS )
+    vec2
+    BlurUVOffsets( in const uint luIdx )
+    {
+		// this form allows the nearest depth index search to compute the offsets without branching.
+    	return vec2( (luIdx & 1) ? 0.5 : -0.5, (luIdx & 2) ? 0.5 : -0.5 );
+    }
+#else       
+    #define BlurUVOffsets( idx )    ( kaBlurUVOffsets[ ( idx ) ] )
+    const vec2 kaBlurUVOffsets[ 4 ] = vec2[ 4 ]( vec2( -0.5, -0.5 ), vec2( 0.5, -0.5 ), vec2( -0.5, 0.5 ), vec2( 0.5, 0.5 ) );
+#endif    
+
+
+vec4
+BilateralBlur(
+    SAMPLER2DARG( lColourTexture ),
+    SAMPLER2DARG( lLowResDepthTexture ),
+    SAMPLER2DARG( lHighResDepthTexture ),
+    SAMPLER2DARG( lScatteringTexture ),
+    SAMPLER2DARG( lGBuffer ),
+    in vec2 lTexCoordsVec2,
+    in vec2 lTexSizeVec2,
+    in vec4 lClipPlanes )
+{
+    float lafDownsampledDepth[4];
+    float lfFullResDepth;
+    vec4  lColourReadVec4;
+    vec2  lAdjustedTexCoordsVec2;
+
+    lfFullResDepth           = FastDenormaliseDepth( lClipPlanes, DecodeDepthFromColour( texture2D( lHighResDepthTexture, lTexCoordsVec2 ) ) );
+    lafDownsampledDepth[ 0 ] = FastDenormaliseDepth( lClipPlanes, DecodeDepthFromColour( texture2D( lLowResDepthTexture, lTexCoordsVec2 + ( BlurUVOffsets( 0 ) / lTexSizeVec2 ) ) ) );
+    lafDownsampledDepth[ 1 ] = FastDenormaliseDepth( lClipPlanes, DecodeDepthFromColour( texture2D( lLowResDepthTexture, lTexCoordsVec2 + ( BlurUVOffsets( 1 ) / lTexSizeVec2 ) ) ) );
+    lafDownsampledDepth[ 2 ] = FastDenormaliseDepth( lClipPlanes, DecodeDepthFromColour( texture2D( lLowResDepthTexture, lTexCoordsVec2 + ( BlurUVOffsets( 2 ) / lTexSizeVec2 ) ) ) );
+    lafDownsampledDepth[ 3 ] = FastDenormaliseDepth( lClipPlanes, DecodeDepthFromColour( texture2D( lLowResDepthTexture, lTexCoordsVec2 + ( BlurUVOffsets( 3 ) / lTexSizeVec2 ) ) ) );
+
+    const float lfUpsampleDepthThreshold = 10.0; // world space
+
+    uint  luNearestDepthIndex = 0u;
+    float currentDepthDiff    = abs( lafDownsampledDepth[0] - lfFullResDepth );
+    bool  lbRejectSample      = currentDepthDiff < lfUpsampleDepthThreshold;
+    float lfMinDepthDiff      = currentDepthDiff;
+    
+    for ( uint i = 1u; i < 4u; i++ )
+    {
+        currentDepthDiff = abs( lafDownsampledDepth[i] - lfFullResDepth );
+        lbRejectSample   = lbRejectSample && currentDepthDiff < lfUpsampleDepthThreshold;
+
+        if ( currentDepthDiff < lfMinDepthDiff )
+        {
+            lfMinDepthDiff      = currentDepthDiff;
+            luNearestDepthIndex = i;
+        }
+    }
+
+    // Avoid blocky artifacts using edge detection
+    if ( lbRejectSample )
+    {
+        lAdjustedTexCoordsVec2 = lTexCoordsVec2;
+    }
+    else
+    {
+        lAdjustedTexCoordsVec2  = lTexCoordsVec2 + ( BlurUVOffsets( luNearestDepthIndex ) / lTexSizeVec2 );
+    }
+
+    lColourReadVec4 = texture2D( lColourTexture, lAdjustedTexCoordsVec2 );
+
+    //
+    //if( lTexCoordsVec2.x > 0.66 )
+    //{
+    //    //lColourReadVec4.a = 1.0;
+    //}
+    //else //if( lTexCoordsVec2.x > 0.333 )
+    //{
+    //    //lTexCoordsVec2.x += 0.333;
+    //    
+    //}
+    //else
+    //{    
+    //    lTexCoordsVec2.x += 0.666;
+    //    float lfDepth = DecodeDepthFromColour( texture2D( lLowResDepthTexture, lTexCoordsVec2 ).xyz ) * lClipPlanes.y;
+    //    lColourReadVec4 = GetDepthColour( lfDepth );
+
+    //}
+    
+    //lColourReadVec4 = GetDepthColour( lfFullResDepth );
+    lColourReadVec4.a = clamp( lColourReadVec4.a, 0.0, 1.0 );
+
+    return lColourReadVec4;
+}
+ 
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    FRAGMENT_COLOUR = BilateralBlur( SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ),
+                                     SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer1Map ),
+                                     SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer2Map ),
+                                     SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer3Map ),
+                                     SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer4Map ),
+                                     IN( mTexCoordsVec2 ),
+#if defined ( D_PLATFORM_ORBIS )
+                                     vec2( 1920.0, 1080.0 ) * 0.5,
+#else
+                                     lUniforms.mpPerFrame->gFrameBufferSizeVec4.xy * 0.5,
+#endif
+                                     lUniforms.mpPerFrame->gClipPlanesVec4 );
+}
+
+#endif
+
+
+// =================================================================================================
+// 
+// D_POSTPROCESS_DEPTH_AWARE_H_GUASS / D_POSTPROCESS_DEPTH_AWARE_V_GUASS
+//
+// =================================================================================================
+
+#if defined( D_POSTPROCESS_DEPTH_AWARE_H_GUASS ) || defined( D_POSTPROCESS_DEPTH_AWARE_V_GUASS )
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+#define GaussFilterWeights( idx )       gauss_filter_weights[ ( idx ) ]
+
+// http://dev.theomader.com/gaussian-kernel-calculator/
+
+vec4
+GatherGauss(
+    SAMPLER2DARG( lColourTexture ),
+    SAMPLER2DARG( lDepthTexture ),
+    in vec2 lFrameBufferSizeRecipVec2,
+    in vec2 blurDirection,
+    in vec2 uv,
+    in vec4 lClipPlanes )
+{    
+#if defined ( D_PLATFORM_ORBIS )
+#define NUM_SAMPLES_HALF 4
+// sigma 2.4 Kernel Size = 9
+    const float gauss_filter_weights[5] = { 0.175713,	0.161305,	0.124789,	0.081355,	0.044695 };
+#else
+// sigma 2.765 Kernel Size = 15
+#define NUM_SAMPLES_HALF 7
+    const float gauss_filter_weights[8] = { 0.14446445, 0.13543542, 0.11153505, 0.08055309, 0.05087564, 0.02798160, 0.01332457, 0.00545096 };
+#endif
+    float centerDepth;
+    float BLUR_DEPTH_FALLOFF = lClipPlanes.y * 2.0; // weighting fall off to zero over 50cm
+    centerDepth = DecodeDepthFromColour( texture2D( lDepthTexture, uv ) );
+	centerDepth *= BLUR_DEPTH_FALLOFF;
+
+    float accumWeights = GaussFilterWeights( 0 );
+    vec4  accumResult = texture2D(lColourTexture, uv) * accumWeights;
+
+    for ( int r = 1; r <= NUM_SAMPLES_HALF; ++r )
+    {        
+        vec2 uvOffset      = lFrameBufferSizeRecipVec2 * blurDirection * float( r );
+        vec4 kernelSample1 = texture2D(lColourTexture, uv - uvOffset);
+        vec4 kernelSample2 = texture2D(lColourTexture, uv + uvOffset);
+
+        float kernelDepth1 = DecodeDepthFromColour(texture2D(lDepthTexture, uv - uvOffset)) * BLUR_DEPTH_FALLOFF;
+        float kernelDepth2 = DecodeDepthFromColour(texture2D(lDepthTexture, uv + uvOffset)) * BLUR_DEPTH_FALLOFF;
+        
+        // Simple depth-aware filtering
+        float depthDiff1 = abs(kernelDepth1 - centerDepth);
+        float depthDiff2 = abs(kernelDepth2 - centerDepth);
+
+        float g1 = saturate(1.0 - (depthDiff1 * depthDiff1));
+        float g2 = saturate(1.0 - (depthDiff2 * depthDiff2));
+
+        float gauss_weight = GaussFilterWeights( r );
+        float weight1 = g1 * gauss_weight;
+        float weight2 = g2 * gauss_weight;
+
+        accumResult += weight1 * kernelSample1; 
+        accumResult += weight2 * kernelSample2;
+
+        accumWeights += weight1;
+        accumWeights += weight2;
+    }
+
+    return  accumResult / accumWeights;
+    //return vec4( accumWeights );
+}
+
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    FRAGMENT_COLOUR = GatherGauss( 
+                            SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ), 
+                            SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer1Map ),
+#if defined ( D_PLATFORM_ORBIS )
+                            vec2(1.0) / vec2(1920.0 * 0.5, 1080.0 * 0.5),
+#else
+                            lUniforms.mpPerFrame->gFrameBufferSizeVec4.zw,
+#endif
+#if defined( D_POSTPROCESS_DEPTH_AWARE_H_GUASS )
+                            vec2(1.0, 0.0),
+#else
+                            vec2(0.0, 1.0),
+#endif
+                            IN( mTexCoordsVec2 ),
+                            lUniforms.mpPerFrame->gClipPlanesVec4 );
+}
+
+#endif
+
+
