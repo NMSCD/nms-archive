@@ -1,0 +1,49 @@
+<!-- Render Albedo to Imposter - Pipeline -->
+<Pipeline>
+    
+  <Setup>
+
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="SetRenderTarget">
+      <BeginTarget target="" />
+    </Stage>
+
+    <Stage id="ClearRenderTarget">
+      <ColourMask channels="RGBA"/>
+      <ClearTarget depthBuf="true" colBuf0="true" excludeX360="true" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+    </Stage>
+
+    <Stage id="Draw">
+      <ColourMask channels="RGBA"/>
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="replace" depthTest="lessEqual" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Mesh"     class="Opaque"      context="IMPOSTER_COLOUR"    order="STATECHANGES" />
+      <DoForwardLightLoop type="Mesh"     class="Cutout"      context="IMPOSTER_COLOUR"    order="STATECHANGES" />
+      <DoForwardLightLoop type="Mesh"     class="Highlight"   context="IMPOSTER_COLOUR"    order="STATECHANGES" />
+      <DoForwardLightLoop type="Mesh"     class="Glow"        context="IMPOSTER_COLOUR"    order="STATECHANGES" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="replace" depthTest="less" alphaToCoverage="true"/>
+      <DoForwardLightLoop type="Mesh"         class="DoubleSided"    context="IMPOSTER_COLOUR"             order="STATECHANGES" />
+      <DoForwardLightLoop type="Mesh"         class="HighlightDoubleSided"    context="IMPOSTER_COLOUR"    order="STATECHANGES" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="less" />
+      <DoForwardLightLoop type="Mesh"         class="Translucent"    context="IMPOSTER_COLOUR"             order="STATECHANGES" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="less" />
+      <DoForwardLightLoop type="Mesh"         class="Additive"    context="IMPOSTER_COLOUR"             order="STATECHANGES" />
+
+    </Stage>
+
+    <Stage id="UnSetRenderTarget">
+      <EndTarget flushCB="true" flushDB="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+
+
+  </CommandQueue>
+
+</Pipeline>

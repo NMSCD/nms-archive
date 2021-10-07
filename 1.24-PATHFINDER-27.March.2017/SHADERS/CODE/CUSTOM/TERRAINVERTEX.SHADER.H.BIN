@@ -1,0 +1,363 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       TerrainVertex.h
+///     @author     User
+///     @date       
+///
+///     @brief      TerrainVertexShader
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+#define D_OCTAHEDRON_NORMALS
+
+#if !defined( D_REFLECT_WATER_UP ) && !defined( D_REFLECT_WATER ) && !defined( D_REFLECT_DUALP ) 
+    #define D_FADE
+#endif
+#if /*defined( D_ASTEROID ) ||*/ defined( D_REFLECT_WATER ) || defined( D_REFLECT_WATER_UP ) || defined( D_REFLECT_DUALP )
+#define _F50_DISABLE_POSTPROCESS
+#endif
+//-----------------------------------------------------------------------------
+//      Include files
+#include "Common/Defines.shader.h"
+#include "Common/CommonUniforms.shader.h"
+
+
+
+
+//
+// In TerrainCommon we have our uniforms specific to terrain declared. PLUS, IMPORTANTLY we have the SRT buffer declared (gUniforms). 
+// This MUST be included after CommonUniforms, but before all the other stuff that references gUniforms.
+//
+#ifdef D_WATER
+    #include "Custom/WaterCommon.h"
+#else
+    #include "Custom/TerrainCommon.h"
+#endif
+
+//
+// Have to include things that reference the global gUniforms under here. Things defined above may be parameters to functions in the following includes.
+//
+#include "Common/CommonVertex.shader.h"
+#include "Common/CommonPlanet.shader.h"
+#include "Common/CommonDepth.shader.h"
+#include "Common/CommonTriplanarTexturing.shader.h"
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+
+
+#ifdef D_WATER
+
+DECLARE_INPUT
+
+    INPUT( vec4, mkLocalPositionVec4, POSITION0 )
+#ifdef D_OCTAHEDRON_NORMALS    
+    INPUT( vec4, mkLocalNormalVec4,   TEXCOORD1       )
+#else
+    INPUT( vec3, mkFaceNormalVec3,    TEXCOORD1       )
+    INPUT( vec3, mkSmoothNormalVec3,  TEXCOORD2       )
+#endif    
+
+DECLARE_END
+
+DECLARE_OUTPUT
+    
+    OUT_VERTEX_SCREEN_POSITION
+    OUTPUT( vec4,   mWorldPositionVec4,         TEXCOORD0 )
+    OUTPUT( vec4,   mLocalNormalVec3,           TEXCOORD1 )
+    OUTPUT( vec4,   mScreenSpacePositionVec4,   TEXCOORD2 )
+    OUTPUT( vec3,   mfLogZ_mfDepth_mfWaveHeight,TEXCOORD3 )
+    //OUTPUT( mat3,   mNormalMat3,                TEXCOORD4 ) // 3 slots
+DECLARE_END
+#else
+
+DECLARE_INPUT
+
+    INPUT( vec4, mkLocalPositionVec4, POSITION0 )
+    INPUT( vec4, mkCustom1Vec4,       BLENDINDICES  )
+#ifdef D_OCTAHEDRON_NORMALS    
+    INPUT( vec4, mkLocalNormalVec4,   TEXCOORD1       )
+#else
+    INPUT( vec3, mkFaceNormalVec3,    TEXCOORD1       )
+    INPUT( vec3, mkSmoothNormalVec3,  TEXCOORD2       )
+#endif    
+
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+///
+///     Output
+///
+///     @brief  Output
+///
+//-----------------------------------------------------------------------------
+DECLARE_OUTPUT
+    
+    OUT_VERTEX_SCREEN_POSITION
+    OUTPUT( vec4,   mWorldPositionVec4,         TEXCOORD0 )
+#ifdef D_ASTEROID    
+    OUTPUT( vec3,   mLocalPositionVec3,         TEXCOORD1 )
+#endif
+    OUTPUT( vec4,   mTileVec4,                  TEXCOORD2 )
+    OUTPUT( vec4,   mFaceNormalVec3_mfDistForFade,TEXCOORD3 )
+    OUTPUT( vec4,   mSmoothNormalVec3,          TEXCOORD4 )
+    OUTPUT( vec4,   mScreenSpacePositionVec4,   TEXCOORD5 )
+DECLARE_END
+#endif     
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+//-----------------------------------------------------------------------------
+///
+///     Vertex Main
+///
+///     @brief      Vertex Main
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+VERTEX_MAIN_SRT
+{    
+    vec4 lWorldPositionVec4;        
+    vec4 lScreenSpacePositionVec4;
+    
+    vec3   lLocalPositionVec3;
+    vec3   lSmoothNormalVec3;
+    vec3   lFaceNormalVec3;
+    vec4   lTiles1Vec4;
+
+    lLocalPositionVec3   = IN( mkLocalPositionVec4 ).xyz;
+#ifdef D_OCTAHEDRON_NORMALS      
+    lFaceNormalVec3      = OctahedronNormalDecode( IN( mkLocalNormalVec4 ).xy );
+    lSmoothNormalVec3    = OctahedronNormalDecode( IN( mkLocalNormalVec4 ).zw );
+#else
+    lFaceNormalVec3      = IN( mkFaceNormalVec3 ).xyz;
+    lSmoothNormalVec3    = IN( mkSmoothNormalVec3 ).xyz;
+#endif
+
+#ifndef D_WATER
+    lTiles1Vec4          = IN( mkCustom1Vec4 );
+#endif
+
+   OUT( mScreenSpacePositionVec4 ) = CalcScreenPosFromLocal( lUniforms.mpCommonPerMesh->gWorldViewProjectionMat4, vec4(lLocalPositionVec3,1.0) );
+
+    #ifdef D_WATER
+        // Calculate a 0-1 value for water depth
+        float mfMaxDepth = lUniforms.mpCustomPerMaterial->gWaveSpeedVec4.w;
+        float mfMinDepth = 0.0;
+
+        float lfHeight   = lUniforms.mpCustomPerMaterial->gWaterFogVec4.r - IN( mkLocalPositionVec4 ).w;
+
+        if( lfHeight < 0.0 )
+        {
+            lfHeight = min( -lfHeight, mfMaxDepth * 0.3 );
+        }
+
+        OUT( mfLogZ_mfDepth_mfWaveHeight ).y = 1.0 - (clamp( lfHeight, mfMinDepth, mfMaxDepth ) - mfMinDepth) / ( mfMaxDepth - mfMinDepth );
+
+        // Scale up position to hide cracks between regions
+        lLocalPositionVec3 *= 1.0015;
+    #endif
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     World Transform
+    ///
+    //-----------------------------------------------------------------------------
+#if defined( D_ASTEROID ) || defined( D_NO_WATER )
+    lWorldPositionVec4          = CalcWorldPos( lUniforms.mpCommonPerMesh->gWorldMat4, vec4( lLocalPositionVec3, 1.0 ) );
+#else
+    lWorldPositionVec4.xyz      = lLocalPositionVec3 + lUniforms.mpCommonPerMesh->gWorldMat4[3].xyz;
+    lWorldPositionVec4.w        = 1.0;
+#endif        
+
+    vec3 lViewPositionVec3 = ( lUniforms.mpPerFrame->gViewPositionVec3 - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz ) / lUniforms.mpCommonPerMesh->gPlanetPositionVec4.w;
+    //vec3 lLightPositionVec3 = lUniforms.mpCustomPerMaterial->gSunPositionVec4.xyz;
+
+
+#ifdef D_WATER
+    //vec3 lWorldPositionVec3 = ( lWorldPositionVec4.xyz - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz ) / lUniforms.mpCommonPerMesh->gPlanetPositionVec4.w;
+    //lWorldPositionVec3 *= 1.0 + 0.0001 * sign( length( lViewPositionVec3 ) - lUniforms.mpCustomPerMaterial->gWaterFogVec4.r );
+
+    // Water waves
+    vec2  lWindDirection1  = lUniforms.mpCustomPerMaterial->gWindDirectionVec4.xy;
+    vec2  lWindDirection2  = lUniforms.mpCustomPerMaterial->gWindDirectionVec4.zw;
+
+    float lfWaveScale1     = lUniforms.mpCustomPerMaterial->gWaveScaleVec4.x;
+    float lfWaveScale2     = lUniforms.mpCustomPerMaterial->gWaveScaleVec4.y;
+
+    vec2  lWaveAnimation1  = lWindDirection1 * lUniforms.mpPerFrame->gfTime.x * lUniforms.mpCustomPerMaterial->gWaveSpeedVec4.x;
+    vec2  lWaveAnimation2  = lWindDirection2 * lUniforms.mpPerFrame->gfTime.x * lUniforms.mpCustomPerMaterial->gWaveSpeedVec4.y;
+
+    float lfOffset1 = 0.0;//GetTriPlanarColour( lFaceNormalVec3, ( lWorldPositionVec4.xyz - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz ), lWaveAnimation1, lfWaveScale1, SAMPLER2DPARAM( lUniforms.mpCustomPerMaterial->gDisplacementMap ) ).x;
+    float lfOffset2 = 0.0;//GetTriPlanarColour( lFaceNormalVec3, ( lWorldPositionVec4.xyz - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz ), lWaveAnimation2, lfWaveScale2, SAMPLER2DPARAM( lUniforms.mpCustomPerMaterial->gDisplacementMap ) ).x;
+
+    OUT( mfLogZ_mfDepth_mfWaveHeight ).z = (lfOffset1 + lfOffset2) * 0.5;
+
+    lfOffset1 *= lUniforms.mpCustomPerMaterial->gWaveScaleVec4.z;
+    lfOffset2 *= lUniforms.mpCustomPerMaterial->gWaveScaleVec4.w;
+
+    float lfOffset = ( lfOffset1 + lfOffset2 ) * ( 1.0 - OUT( mfLogZ_mfDepth_mfWaveHeight ).y );
+
+    lWorldPositionVec4.xyz = normalize( lWorldPositionVec4.xyz - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz ) * ( length( lWorldPositionVec4.xyz - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz ) + lfOffset );
+    lWorldPositionVec4.xyz += lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz;
+
+#endif
+
+    OUT( mWorldPositionVec4 ) = lWorldPositionVec4;
+
+    float lfDistForFade = length( lUniforms.mpPerFrame->gViewPositionVec3 - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz );
+
+#ifndef D_ASTEROID
+
+    float lfFlattenUniform = 0.0;
+
+    #ifndef D_WATER
+        lfFlattenUniform = lUniforms.mpCustomPerMesh->gTerrainLodParamsVec4.z;
+    #endif
+
+    // Flatten terrain down as we go to space
+    float lfRadius                  = lUniforms.mpCommonPerMesh->gPlanetPositionVec4.w + lUniforms.mpCustomPerMaterial->gWaterFogVec4.r * (1.0 - lfFlattenUniform);
+    float lfWorldHeight             = length( lWorldPositionVec4.xyz - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz );
+    vec3 lFlatWorldPositionNormVec3 = normalize( lWorldPositionVec4.xyz - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz );
+    vec3 lFlatWorldPositionVec3;
+    #if defined( D_WATER )
+
+        lFlatWorldPositionVec3 = lFlatWorldPositionNormVec3 * lfRadius;
+
+    #elif defined( D_NO_WATER )
+
+        lFlatWorldPositionVec3 = lFlatWorldPositionNormVec3 * ( lUniforms.mpCommonPerMesh->gPlanetPositionVec4.w - 1.0 );
+
+    #else
+
+        float lfHeightDiff  = lfWorldHeight - lfRadius;
+        lfHeightDiff        = smoothstep( 0.3, 0.7, lfHeightDiff / 10.0 ) * 10.0;
+        lFlatWorldPositionVec3 = lFlatWorldPositionNormVec3 * ( lfRadius + lfHeightDiff - 5.0 );
+
+    #endif
+
+    #if defined( D_NO_WATER )
+
+        lWorldPositionVec4.xyz  = lFlatWorldPositionVec3 + lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz;
+
+    #else
+
+        float lfAngle       = dot( lFlatWorldPositionNormVec3, normalize( lViewPositionVec3 ) );
+        float lfAngleFactor = ( lfAngle + 1.0 ) * 0.5;
+        lfAngleFactor       = 1.0 - smoothstep( 0.985, 1.0, lfAngleFactor );
+        float lfMinHeight = lfRadius + 3500.0;
+        //float lfMaxHeight = lfRadius + 6000.0;
+        float lfFlattenFactor = ( lfDistForFade  - lfMinHeight ) / ( 4000.0 - 2000.0 );
+        lfFlattenFactor       = clamp( lfFlattenFactor + lfAngleFactor + lfFlattenUniform, 0.0, 0.98 );
+        lWorldPositionVec4.xyz  = mix( lWorldPositionVec4.xyz, lFlatWorldPositionVec3 + lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz, lfFlattenFactor );
+
+    #endif
+
+#endif
+
+
+
+#ifdef D_ASTEROID
+    OUT( mLocalPositionVec3 ) = lLocalPositionVec3;
+#endif
+
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Screen Transform
+    ///
+    //-----------------------------------------------------------------------------
+    #ifdef D_REFLECT_DUALP
+    {
+          //lScreenSpacePositionVec4 = CalcDualParaboloidScreenPosition( gCommon.gViewMat4, lWorldPositionVec4, gCommon.gClipPlanesVec4.xy );
+        vec3 lReflectPosition       = GetWorldUp( lWorldPositionVec4.xyz, lUniforms.mpCommonPerMesh->gPlanetPositionVec4 ) * lUniforms.mpCommonPerMesh->gPlanetPositionVec4.w + lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz;
+        lScreenSpacePositionVec4    = CalcDualParaboloidScreenPosition( 
+                                        lUniforms.mpPerFrame->gViewMat4, 
+                                        vec4(lReflectPosition.x, lReflectPosition.y, lReflectPosition.z, lWorldPositionVec4.w), 
+                                        lUniforms.mpPerFrame->gClipPlanesVec4.xy);
+    }
+    #else
+    {
+        lScreenSpacePositionVec4 = CalcScreenPosFromWorld( lUniforms.mpCommonPerMesh->gViewProjectionMat4, lWorldPositionVec4 );
+    }    
+    #endif
+
+#if defined( D_WATER ) && defined( D_USING_LOGDEPTH )
+    OUT( mfLogZ_mfDepth_mfWaveHeight ).x = lScreenSpacePositionVec4.w + 1.0;
+#endif
+    lScreenSpacePositionVec4 = LinearToLogDepth_Vertex( lUniforms.mpPerFrame->gClipPlanesVec4, lScreenSpacePositionVec4 );
+
+    
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Normals
+    ///
+    //-----------------------------------------------------------------------------
+
+
+
+#ifndef D_WATER
+    OUT( mFaceNormalVec3_mfDistForFade ) = vec4( lFaceNormalVec3, lfDistForFade  );
+	OUT( mSmoothNormalVec3 ) = vec4( lSmoothNormalVec3, 1.0);
+#else
+    OUT( mLocalNormalVec3 )  = vec4( lFaceNormalVec3, 1.0 );
+#endif
+
+
+    
+    //----------------------------------------------------------------------------- 
+    ///
+    ///     Terrain Values
+    ///
+    //-----------------------------------------------------------------------------
+    // Indices passed in from dualcontouring
+    float lIndex1 = lTiles1Vec4.x;
+    float lIndex2 = lTiles1Vec4.y;
+    
+    // And this is an optimization to save a LOT of time in GetBlendedColour
+#ifdef D_LOW_QUALITY
+    if ( lTiles1Vec4.z > 0.5 )
+    {
+        float lfSwap    = lIndex1;
+        lIndex1         = lIndex2;
+        lIndex2         = lfSwap;
+    }
+#endif
+   
+#ifndef D_WATER
+    OUT( mTileVec4.x )        = lIndex1;
+    OUT( mTileVec4.y )        = lIndex2;
+    OUT( mTileVec4.z )        = lTiles1Vec4.z;
+    OUT( mTileVec4.w )        = lTiles1Vec4.w;
+#endif
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Output
+    ///
+    //-----------------------------------------------------------------------------
+    VERTEX_SCREEN_POSITION = lScreenSpacePositionVec4;
+}
+
+
+

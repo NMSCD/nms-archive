@@ -1,0 +1,32 @@
+[[FX]]
+
+// Samplers
+sampler gDiffuseMap = sampler_state
+{
+	Address = Wrap;
+	Filter = Trilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 0;
+};
+
+// Uniforms
+float4 gObjectColourVec4 = {1.0, 1.0, 1.0, 1.0};
+
+
+// Contexts
+
+context LIT_FORWARD
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader  = compile GLSL FS_LIGHTING;
+}
+
+[[VS_GENERAL]]
+// =================================================================================================
+#include "Custom/ShieldVertex.shader.h"
+
+
+[[FS_LIGHTING]]
+// =================================================================================================
+#include "Custom/ShieldFragment.shader.h"
+

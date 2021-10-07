@@ -1,0 +1,43 @@
+[[FX]]
+
+sampler gDiffuseMap = sampler_state
+{
+	Filter = Bilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 0;
+};
+
+
+// Contexts
+
+context NANOVGORBIS
+{
+	VertexShader = compile GLSL VS_NANOVG_ORBIS;
+	PixelShader  = compile  GLSL FS_NANOVG_ORBIS;
+	
+	ZWriteEnable = false;
+}
+
+//context NANOVGPC
+//{
+//	VertexShader = compile GLSL VS_NANOVG_PC;
+//	PixelShader  = compile  GLSL FS_NANOVG_PC;	
+//	ZWriteEnable = false;
+//}
+
+
+// [[VS_NANOVG_PC]]
+// =================================================================================================
+// #include "PC/NanoVgVertex.shader.h"
+
+// [[FS_NANOVG_PC]]
+// =================================================================================================
+// #include "PC/NanoVgFragment.shader.h"
+
+[[VS_NANOVG_ORBIS]]
+// =================================================================================================
+#include "ORBIS/NanoVgVertex.shader.h"
+
+[[FS_NANOVG_ORBIS]]
+// =================================================================================================
+#include "ORBIS/NanoVgFragment.shader.h"

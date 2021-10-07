@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.77.0)-->
+<Data template="GcNPCSpawnTable">
+  <Property name="NPCModelNames">
+    <Property name="Traders" value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCGEK.SCENE.MBIN" />
+    </Property>
+    <Property name="Warriors" value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCVYKEEN.SCENE.MBIN" />
+    </Property>
+    <Property name="Explorers" value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCKORVAX.SCENE.MBIN" />
+    </Property>
+    <Property name="Robots" value="NMSString0x80.xml">
+      <Property name="Value" value="" />
+    </Property>
+    <Property name="Atlas" value="NMSString0x80.xml">
+      <Property name="Value" value="" />
+    </Property>
+    <Property name="Diplomats" value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCFOURTH.SCENE.MBIN" />
+    </Property>
+    <Property name="None" value="NMSString0x80.xml">
+      <Property name="Value" value="" />
+    </Property>
+  </Property>
+  <Property name="NPCRaceScale">
+    <Property name="Traders" value="1" />
+    <Property name="Warriors" value="1.1" />
+    <Property name="Explorers" value="1" />
+    <Property name="Robots" value="1" />
+    <Property name="Atlas" value="1" />
+    <Property name="Diplomats" value="1" />
+    <Property name="None" value="1" />
+  </Property>
+  <Property name="UniqueNPCs">
+    <Property value="GcUniqueNPCSpawnData.xml">
+      <Property name="NPCSpawnCondition" value="MiniStation" />
+      <Property name="ID" value="POLO" />
+      <Property name="ResourceElement" value="GcResourceElement.xml">
+        <Property name="Filename" value="MODELS/PLANETS/NPCS/LOWERORDER/ANOMALYLOWERORDER.SCENE.MBIN" />
+        <Property name="Seed" value="GcSeed.xml">
+          <Property name="Seed" value="0" />
+          <Property name="UseSeedValue" value="False" />
+        </Property>
+        <Property name="AltId" value="" />
+        <Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList.xml">
+          <Property name="Samplers" />
+        </Property>
+      </Property>
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="Traders" />
+      </Property>
+    </Property>
+    <Property value="GcUniqueNPCSpawnData.xml">
+      <Property name="NPCSpawnCondition" value="MiniStation" />
+      <Property name="ID" value="NADA" />
+      <Property name="ResourceElement" value="GcResourceElement.xml">
+        <Property name="Filename" value="MODELS/PLANETS/NPCS/EXPLORER/ANOMALYEXPLORER.SCENE.MBIN" />
+        <Property name="Seed" value="GcSeed.xml">
+          <Property name="Seed" value="0" />
+          <Property name="UseSeedValue" value="False" />
+        </Property>
+        <Property name="AltId" value="" />
+        <Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList.xml">
+          <Property name="Samplers" />
+        </Property>
+      </Property>
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="Explorers" />
+      </Property>
+    </Property>
+    <Property value="GcUniqueNPCSpawnData.xml">
+      <Property name="NPCSpawnCondition" value="Always" />
+      <Property name="ID" value="HOLOEXPLORER" />
+      <Property name="ResourceElement" value="GcResourceElement.xml">
+        <Property name="Filename" value="MODELS/PLANETS/NPCS/FOURTHRACE/HOLOEXPLORER.SCENE.MBIN" />
+        <Property name="Seed" value="GcSeed.xml">
+          <Property name="Seed" value="-4448373280081208173" />
+          <Property name="UseSeedValue" value="True" />
+        </Property>
+        <Property name="AltId" value="" />
+        <Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList.xml">
+          <Property name="Samplers" />
+        </Property>
+      </Property>
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+    </Property>
+    <Property value="GcUniqueNPCSpawnData.xml">
+      <Property name="NPCSpawnCondition" value="Always" />
+      <Property name="ID" value="HOLOSCEPTIC" />
+      <Property name="ResourceElement" value="GcResourceElement.xml">
+        <Property name="Filename" value="MODELS/PLANETS/NPCS/FOURTHRACE/HOLOSCEPTIC.SCENE.MBIN" />
+        <Property name="Seed" value="GcSeed.xml">
+          <Property name="Seed" value="-7873259960811393416" />
+          <Property name="UseSeedValue" value="True" />
+        </Property>
+        <Property name="AltId" value="" />
+        <Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList.xml">
+          <Property name="Samplers" />
+        </Property>
+      </Property>
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+    </Property>
+    <Property value="GcUniqueNPCSpawnData.xml">
+      <Property name="NPCSpawnCondition" value="Always" />
+      <Property name="ID" value="HOLONOONE" />
+      <Property name="ResourceElement" value="GcResourceElement.xml">
+        <Property name="Filename" value="MODELS/PLANETS/NPCS/FOURTHRACE/HOLONOONE.SCENE.MBIN" />
+        <Property name="Seed" value="GcSeed.xml">
+          <Property name="Seed" value="8805929756874262542" />
+          <Property name="UseSeedValue" value="True" />
+        </Property>
+        <Property name="AltId" value="" />
+        <Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList.xml">
+          <Property name="Samplers" />
+        </Property>
+      </Property>
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+    </Property>
+    <Property value="GcUniqueNPCSpawnData.xml">
+      <Property name="NPCSpawnCondition" value="Always" />
+      <Property name="ID" value="SPECIALSHOPGUY" />
+      <Property name="ResourceElement" value="GcResourceElement.xml">
+        <Property name="Filename" value="MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCSPECIALSHOP.SCENE.MBIN" />
+        <Property name="Seed" value="GcSeed.xml">
+          <Property name="Seed" value="6305511630285024776" />
+          <Property name="UseSeedValue" value="True" />
+        </Property>
+        <Property name="AltId" value="" />
+        <Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList.xml">
+          <Property name="Samplers" />
+        </Property>
+      </Property>
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="Diplomats" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="PlacementInfos">
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="GENERIC" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPC_" />
+      <Property name="MustPlace" value="False" />
+      <Property name="SpawnChance" value="0.5" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable">
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="MYSTERY_FINAL" />
+          <Property name="Puzzle" value="?NPC_MYSTERY_SOLVED" />
+        </Property>
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="STATION_MYSTERY" />
+          <Property name="Puzzle" value="?NPC_STATION_MYSTERY" />
+        </Property>
+      </Property>
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="NPCHIREABLE" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPCHIREABLE_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="NPC_Recruit" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable">
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="MYSTERY_FINAL" />
+          <Property name="Puzzle" value="?NPC_MYSTERY_SOLVED" />
+        </Property>
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="STATION_MYSTERY" />
+          <Property name="Puzzle" value="?NPC_STATION_MYSTERY" />
+        </Property>
+      </Property>
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="ALWAYS" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPC100_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable">
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="MYSTERY_FINAL" />
+          <Property name="Puzzle" value="?NPC_MYSTERY_SOLVED" />
+        </Property>
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="STATION_MYSTERY" />
+          <Property name="Puzzle" value="?NPC_STATION_MYSTERY" />
+        </Property>
+      </Property>
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="NADA" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR" />
+      <Property name="PlacementNodeName" value="NPC_NADA" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="NADA" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="Explorers" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="POLO" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR" />
+      <Property name="PlacementNodeName" value="NPC_POLO" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="POLO" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="Traders" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="NPC_VEHICLES" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPCVEHICLE_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="Warriors" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="NPC_Recruit" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="?NPC_VEHICLES" />
+      <Property name="PuzzleMissionOverrideTable">
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="MYSTERY_FINAL" />
+          <Property name="Puzzle" value="?NPC_MYSTERY_SOLVED" />
+        </Property>
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="STATION_MYSTERY" />
+          <Property name="Puzzle" value="?NPC_STATION_MYSTERY" />
+        </Property>
+      </Property>
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="NPC_BUILDER" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPCBUILD_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="Traders" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="NPC_Recruit" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="?NPC_BUILDER" />
+      <Property name="PuzzleMissionOverrideTable">
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="MYSTERY_FINAL" />
+          <Property name="Puzzle" value="?NPC_MYSTERY_SOLVED" />
+        </Property>
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="STATION_MYSTERY" />
+          <Property name="Puzzle" value="?NPC_STATION_MYSTERY" />
+        </Property>
+      </Property>
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="FILLER" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPCHIREABLE_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="0.25" />
+      <Property name="MaxNodesActivated" value="0" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="NPC_Secondary" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable">
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="MYSTERY_FINAL" />
+          <Property name="Puzzle" value="?NPC_MYSTERY_SOLVED" />
+        </Property>
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="STATION_MYSTERY" />
+          <Property name="Puzzle" value="?NPC_STATION_MYSTERY" />
+        </Property>
+      </Property>
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="FREIGHTCREW" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPC_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="10" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable" />
+      <Property name="DisableInteraction" value="True" />
+      <Property name="UseFreighterNPC" value="True" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="FREIGHTCAPTAIN" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPCCAPTAIN_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="NPC_Freighter_Captain" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="True" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="NPC_TECHSHOP" />
+      <Property name="SpawnUnderNodeName" value="Interior_" />
+      <Property name="PlacementNodeName" value="NPCTECHSHOP_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="TechShop" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable">
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="MYSTERY_FINAL" />
+          <Property name="Puzzle" value="?NPC_MYSTERY_SOLVED" />
+        </Property>
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="STATION_MYSTERY" />
+          <Property name="Puzzle" value="?TECHSHOP_STATION_MYSTERY" />
+        </Property>
+      </Property>
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="TECHSHOP_SUIT" />
+      <Property name="SpawnUnderNodeName" value="Interior_" />
+      <Property name="PlacementNodeName" value="NPCSUIT_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="TechShop" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="Suit" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable">
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="MYSTERY_FINAL" />
+          <Property name="Puzzle" value="?NPC_MYSTERY_SOLVED" />
+        </Property>
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="STATION_MYSTERY" />
+          <Property name="Puzzle" value="?TECHSHOP_STATION_MYSTERY" />
+        </Property>
+      </Property>
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="TECHSHOP_SHIP" />
+      <Property name="SpawnUnderNodeName" value="Interior_" />
+      <Property name="PlacementNodeName" value="NPCSHIP_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="TechShop" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="Ship" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable">
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="MYSTERY_FINAL" />
+          <Property name="Puzzle" value="?NPC_MYSTERY_SOLVED" />
+        </Property>
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="STATION_MYSTERY" />
+          <Property name="Puzzle" value="?TECHSHOP_STATION_MYSTERY" />
+        </Property>
+      </Property>
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="TECHSHOP_WEAP" />
+      <Property name="SpawnUnderNodeName" value="Interior_" />
+      <Property name="PlacementNodeName" value="NPCWEAP_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="TechShop" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="Weapon" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable">
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="MYSTERY_FINAL" />
+          <Property name="Puzzle" value="?NPC_MYSTERY_SOLVED" />
+        </Property>
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="STATION_MYSTERY" />
+          <Property name="Puzzle" value="?TECHSHOP_STATION_MYSTERY" />
+        </Property>
+      </Property>
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="TECHSHOP_VEH" />
+      <Property name="SpawnUnderNodeName" value="Interior_" />
+      <Property name="PlacementNodeName" value="NPCVEH_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="TechShop" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="AllVehicles" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable">
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="MYSTERY_FINAL" />
+          <Property name="Puzzle" value="?NPC_MYSTERY_SOLVED" />
+        </Property>
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="STATION_MYSTERY" />
+          <Property name="Puzzle" value="?TECHSHOP_STATION_MYSTERY" />
+        </Property>
+      </Property>
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="NPC_BUILDSHOP" />
+      <Property name="SpawnUnderNodeName" value="Interior_" />
+      <Property name="PlacementNodeName" value="NPCBUILDINGSHOP_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="BuildingShop" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="NPC_MISSIONSHOP" />
+      <Property name="SpawnUnderNodeName" value="Interior_" />
+      <Property name="PlacementNodeName" value="NPCMISSIONSHOP_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="MissionGiver" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable">
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="MYSTERY_FINAL" />
+          <Property name="Puzzle" value="?NPC_MYSTERY_SOLVED" />
+        </Property>
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="STATION_MYSTERY" />
+          <Property name="Puzzle" value="?MISSSHOP_STATION_MYSTERY" />
+        </Property>
+      </Property>
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="NPC_GUILDSHOP" />
+      <Property name="SpawnUnderNodeName" value="Interior_" />
+      <Property name="PlacementNodeName" value="NPCGUILDSHOP_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="GuildEnvoy" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable">
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="MYSTERY_FINAL" />
+          <Property name="Puzzle" value="?NPC_MYSTERY_SOLVED" />
+        </Property>
+        <Property value="GcAlienPuzzleMissionOverride.xml">
+          <Property name="Mission" value="STATION_MYSTERY" />
+          <Property name="Puzzle" value="?GUILDSHOP_STATION_MYSTERY" />
+        </Property>
+      </Property>
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="HOLOEXPLORER" />
+      <Property name="SpawnUnderNodeName" value="_Interior" />
+      <Property name="PlacementNodeName" value="NPC_HOLOEXP" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="HOLOEXPLORER" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="HoloExplorer" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="HOLOSCEPTIC" />
+      <Property name="SpawnUnderNodeName" value="_Interior" />
+      <Property name="PlacementNodeName" value="NPC_HOLOSCEP" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="HOLOSCEPTIC" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="HoloSceptic" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="HOLONOONE" />
+      <Property name="SpawnUnderNodeName" value="_Interior" />
+      <Property name="PlacementNodeName" value="NPC_HOLONO" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="HOLONOONE" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="HoloNoone" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="FREIGHTNAV" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPCNAV_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="FleetNavigator" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="True" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="NPC_SPECIALSHOP" />
+      <Property name="SpawnUnderNodeName" value="" />
+      <Property name="PlacementNodeName" value="NPCLOCATION" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="SPECIALSHOPGUY" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionOverride" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="TechShopCategory" value="GcTechnologyCategory.xml">
+        <Property name="TechnologyCategory" value="All" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="PuzzleMissionOverrideTable" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+      <Property name="PlaceAtLeastOne" value="False" />
+      <Property name="SpawnMoving" value="False" />
+      <Property name="SpawnInAbandoned" value="True" />
+    </Property>
+  </Property>
+</Data>

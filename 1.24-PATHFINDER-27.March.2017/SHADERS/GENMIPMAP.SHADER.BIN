@@ -1,0 +1,68 @@
+[[FX]]
+
+// Samplers
+sampler gBufferMap = sampler_state
+{
+	TexUnit = 0;
+};
+
+
+// Uniforms
+float4 gTextureSizeMipLevelVec4 = { 0.0, 0.0, 0.0, 0.0 };
+
+// Contexts
+
+context GENMIPMAP
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_GENMIPMAP;
+}
+
+context COMPRESSMIP
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_COMPRESSMIP;
+}
+
+
+context COMPRESSBC5
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_COMPRESSMIPBC5;
+}
+
+
+context COMPRESSBC7
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_COMPRESSMIPBC7;
+}
+
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_GENMIPMAP]]
+// =================================================================================================
+#define D_GENMIPMAP
+#include "Fullscreen/MipDownsampleFragment.shader.h"
+ 
+[[FS_COMPRESSMIP]]
+// =================================================================================================
+#define D_COMPRESSMIP
+#include "Fullscreen/CompressFragment.shader.h"
+ 
+[[FS_COMPRESSMIPBC5]]
+// =================================================================================================
+#define D_COMPRESSMIP
+#define D_BC5
+#include "Fullscreen/CompressFragment.shader.h"
+ 
+[[FS_COMPRESSMIPBC7]]
+// =================================================================================================
+#define D_COMPRESSMIP
+#define D_BC7
+#include "Fullscreen/CompressFragment.shader.h"
+
+

@@ -1,0 +1,1072 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       CloudFragment.h
+///     @author     User
+///     @date       
+///
+///     @brief      CloudFragment
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+#define D_USE_NOISETEXTURE
+#define D_NORMALISED_NOISE
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/CommonUniforms.shader.h"
+#include "Common/Common.shader.h"
+#include "Common/CommonDepth.shader.h"
+
+#include "Custom/CloudCommon.h"
+
+
+#include "Common/CommonPlanet.shader.h"
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2,                  TEXCOORD0 )
+#if defined( D_CLOUD_RENDER2D )
+    INPUT_NOINTERP( vec4, mUpVec3_mfCameraHeight, TEXCOORD1 )
+    INPUT_NOINTERP( vec3, mCross1Vec3,            TEXCOORD2 )
+    INPUT_NOINTERP( vec3, mCross2Vec3,            TEXCOORD3 )
+#endif
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+//      Functions
+
+vec4
+GetTriPlanarCoverage(
+    in vec3  lNormalVec3,
+    in vec3  lWorldPositionVec3,
+    in float lfScale,
+    SAMPLER2DARG( lTexture ) )
+{
+    vec3 m = pow( abs( lNormalVec3 ), vec3( 32.0 ) );
+
+    vec2  lCoord1Vec2 = lWorldPositionVec3.yz * lfScale;
+    vec2  lCoord2Vec2 = lWorldPositionVec3.zx * lfScale;
+    vec2  lCoord3Vec2 = lWorldPositionVec3.xy * lfScale;
+
+    vec4 lColour1Vec4 = texture2DLod( lTexture, lCoord1Vec2, 0.0 );
+    vec4 lColour2Vec4 = texture2DLod( lTexture, lCoord2Vec2, 0.0 );
+    vec4 lColour3Vec4 = texture2DLod( lTexture, lCoord3Vec2, 0.0 );
+
+    return ( lColour1Vec4 * m.x + lColour2Vec4 * m.y + lColour3Vec4 * m.z ) / ( m.x + m.y + m.z );
+}
+
+vec3 
+InternalRaySphereIntersect( 
+    in float sphereRadius, 
+    in vec3  origin, 
+    in vec3  rayDirection )
+{
+    float a0 = sphereRadius * sphereRadius - dot( origin, origin );
+    float a1 = dot( origin, rayDirection );
+    float result = sqrt( a1 * a1 + a0 ) - a1;
+
+    return origin + rayDirection * result;
+}
+
+#ifdef D_CLOUD_RENDER
+
+vec3
+GetScreenSpaceViewDir(
+    in vec2  lFragCoordsVec2,
+    in mat4  lInverseProjectionMatrix,
+    in mat4  lInverseViewMatrix )
+{
+    vec4 lPositionVec4;
+    lPositionVec4.x = lFragCoordsVec2.x * 2.0 - 1.0;
+
+#ifdef D_PLATFORM_ORBIS    
+    lPositionVec4.y = ( 1.0f-lFragCoordsVec2.y ) * 2.0 - 1.0;
+#else
+    lPositionVec4.y = lFragCoordsVec2.y * 2.0 - 1.0;
+#endif
+
+    lPositionVec4.z = 0.0;
+    lPositionVec4.w = 1.0;
+
+    // Inverse projection
+    lPositionVec4        = MUL( lInverseProjectionMatrix, lPositionVec4 );
+    lPositionVec4        = lPositionVec4 / lPositionVec4.w;
+
+    // Inverse view
+    mat4 lViewMat   = lInverseViewMatrix;
+    MAT4_SET_POS( lViewMat, vec4( 0.0, 0.0, 0.0, 1.0 ) );
+    lPositionVec4   = MUL( lViewMat, lPositionVec4 );
+
+    vec3 lViewVectorVec3 = normalize( lPositionVec4.xyz );
+
+    return lViewVectorVec3;
+}
+
+float
+GetRayIntersectionPoint(
+    in vec3  lStartPointVec3,
+    in vec3  lEndPointVec3,
+    in float lfRadius,
+    out vec3 lOutNearPointVec3,
+    out vec3 lOutFarPointVec3 )
+{
+    lOutNearPointVec3 = lStartPointVec3;
+    lOutFarPointVec3 = lEndPointVec3;
+
+    float lfLength           = length( lStartPointVec3 - lEndPointVec3 );
+    vec3  lNormalisedRayVec3 = normalize( lStartPointVec3 - lEndPointVec3 );
+    float lfB                = 2.0 * dot( lStartPointVec3, lNormalisedRayVec3 );
+    float lfC                = dot( lStartPointVec3, lStartPointVec3 ) - ( lfRadius * lfRadius );
+    float lfDet              = lfB * lfB - 4.0 * lfC;
+
+    if ( lfDet >= 0.0 )
+    {
+        float lfSqrt = sqrt( lfDet );
+        float lfNear = 0.5 * ( -lfB + lfSqrt );
+        float lfFar  = 0.5 * ( -lfB - lfSqrt );
+
+        lOutFarPointVec3 = lStartPointVec3 + lNormalisedRayVec3 * lfFar;
+        lOutNearPointVec3 = lStartPointVec3 + lNormalisedRayVec3 * lfNear;
+
+        lfDet = 1.0;
+
+        return lfDet;
+    }
+
+    return 0.0;
+}
+
+
+struct cCloudProperties
+{
+    // Data
+    float mfMaxIterations;
+    float mfHorizonCoverageStart;
+    float mfHorizonCoverageEnd;
+
+    float mfLightScalar;
+    float mfAmbientScalar;
+    float mfSunRayLength;
+    float mfConeRadius;
+
+    float mfDensity;
+    float mfForwardScatteringG;
+    float mfBackwardScatteringG;
+    float mfDarkOutlineScalar;
+
+    float mfAnimationScale;
+
+    float mfBaseScaleScalar;
+    float mfSampleScalar;
+    float mfSampleThreshold;
+    float mfCloudBottomFade;
+
+    float mfDetailScale;
+    float mfErosionEdgeSize;
+    float mfCloudDistortion;
+    float mfCloudDistortionScale;
+
+    float mfRayMinimumY;
+    float mfLODDistance;
+    float mfHorizonFadeStartAlpha;
+    float mfHorizonFadeScalar;	// Fades clouds on horizon, 1.0 -> 10.0 (1.0 = smooth fade, 10 = no fade)
+
+    float mfHorizonDistance;
+    float mfAtmosphereStartHeight;
+    float mfAtmosphereEndHeight;
+
+    // Calculated
+    vec3  mLightDirectionVec3;
+    vec3  mLightColourVec3;
+    vec3  mCameraPositionVec3;
+    vec3  mPlanetUpNormalVec3;
+    float mfRayAboveHorizon;
+
+    float mfOneMinusHorizonFadeStartAlpha;
+    float mfAtmosphereThickness;
+    float mfEarthRadius;
+    float mfMaxDistance;
+    float mfRayStepLength;
+    float mfBaseScale;
+    float mfCoverageScale;
+};
+
+
+
+// Random on Unit Sphere
+vec3   _Random0 = vec3( 0.4469, 0.5511, 0.7047 );
+vec3   _Random1 = vec3( -0.0791, -0.0898, -0.9928 );
+vec3   _Random2 = vec3( -0.0205, 0.8772, -0.4797 );
+vec3   _Random3 = vec3( 0.4335, -0.0052, -0.9012 );
+vec3   _Random4 = vec3( -0.8569, 0.0677, -0.5111 );
+vec3   _Random5 = vec3( 0.8033, -0.5266, 0.2782 );
+
+#define vec4_COVERAGE( f)	f.r
+#define vec4_RAIN( f)		f.g
+#define vec4_TYPE( f)		f.b
+
+#define M_CALCULATE_HORIZON_DISTANCE( innerRadius, outerRadius )        sqrt( ( outerRadius * outerRadius ) - ( innerRadius * innerRadius ) )
+#define M_CALCULATE_PLANET_RADIUS( atmosphereHeight, horizonDistance )  ((atmosphereHeight * atmosphereHeight + horizonDistance * horizonDistance) / (2.0 * atmosphereHeight)) - atmosphereHeight;
+
+
+float 
+SmoothThreshold( 
+    in float value, 
+    in float threshold, 
+    in float edgeSize )
+{
+    return smoothstep( threshold, threshold + edgeSize, value );
+}
+
+vec3 
+SmoothThreshold( 
+    in vec3  value, 
+    in float threshold, 
+    in float edgeSize )
+{
+    value.r = smoothstep( threshold, threshold + edgeSize, value.r );
+    value.g = smoothstep( threshold, threshold + edgeSize, value.g );
+    value.b = smoothstep( threshold, threshold + edgeSize, value.b );
+
+    return value;
+}
+
+float 
+MixNoise( 
+    in float value, 
+    in float noise, 
+    in float a, 
+    in float b, 
+    in float height )
+{
+    float s = smoothstep( a, b, height );
+    value += noise * s;
+    //value *= lerp( 1.0, 0.5, s);
+
+    return value;
+}
+
+float 
+Lerp3( 
+    in float v0, 
+    in float v1, 
+    in float v2, 
+    in float a )
+{
+    return a < 0.5 ? mix( v0, v1, a * 2.0 ) : mix( v1, v2, ( a - 0.5 ) * 2.0 );
+}
+
+vec4 
+Lerp3( 
+    in vec4 v0, 
+    in vec4 v1, 
+    in vec4 v2, 
+    in float a )
+{
+    return vec4( Lerp3( v0.x, v1.x, v2.x, a ),
+        Lerp3( v0.y, v1.y, v2.y, a ),
+        Lerp3( v0.z, v1.z, v2.z, a ),
+        Lerp3( v0.w, v1.w, v2.w, a ) );
+}
+
+float 
+NormalizedAtmosphereY( 
+    in vec3  lRayVec3,
+    in float lfEarthRadius,
+    in float lfStartHeight,
+    in float lfAtmosphereThickness )
+{
+    float y = length( lRayVec3 ) - lfEarthRadius - lfStartHeight;
+    return y / lfAtmosphereThickness;
+}
+
+float 
+GradientStep( 
+    in float a, 
+    in vec4 gradient )
+{
+    return smoothstep( gradient.x, gradient.y, a ) - smoothstep( gradient.z, gradient.w, a );
+}
+
+float 
+HenyeyGreensteinPhase( 
+    in float cosAngle, 
+    in float g )
+{
+    float g2 = g * g;
+    return ( 1.0 - g2 ) / pow( 1.0 + g2 - 2.0 * g * cosAngle, 1.5 );
+}
+
+float 
+BeerTerm( 
+    in float lfDensity,
+    in float lfDensityAtSample )
+{
+    return exp( -lfDensity * lfDensityAtSample );
+}
+
+float 
+PowderTerm( 
+    in float lfDensityAtSample, 
+    in float lfCosTheta,
+    in float lfDarkOutlineScalar,
+    in float lfDensityScalar )
+{
+    float powder = 1.0 - exp( -lfDensityScalar * lfDensityAtSample * 2.0 );
+    powder = saturate( powder * lfDarkOutlineScalar * 2.0 );
+    return mix( 1.0, powder, smoothstep( 0.5, -0.5, lfCosTheta ) );
+}
+
+vec3
+SampleAmbientLight( 
+    in vec3  lBaseColour,
+    in vec3  lTopColour,
+    in float atmosphereY, 
+    in float depth )
+{
+    return mix( lBaseColour, lTopColour, atmosphereY );
+}
+
+vec4 
+SampleCoverage( 
+    in CustomPerMeshUniforms lCustomPerMeshUniforms,
+    in cCloudProperties      lCloudProperties, 
+    in vec3                  ray,
+    in float                 csRayHeight, 
+    in float                 lod )
+{
+    /*
+    vec2 unit = ray.xz * _CoverageScale;
+    vec2 uv = unit * 0.5 + 0.5;
+    uv += (_CoverageOffset * _AnimationScale ); // * gfTime);
+    */
+
+    float depth = distance( ray, lCloudProperties.mCameraPositionVec3 ) / lCloudProperties.mfMaxDistance;
+    //vec4 coverage = texture2DLod( _Coverage, uv, 0.0 );
+    vec4 coverage = GetTriPlanarCoverage( lCloudProperties.mPlanetUpNormalVec3, ray, lCloudProperties.mfCoverageScale, SAMPLER2DPARAM( lCustomPerMeshUniforms.gCoverage2D ) );
+    vec4 coverageB = vec4( 1.0, 0.0, 0.0, 0.0 );
+    //coverageB.b = saturate( smoothstep( _HorizonCoverageEnd, _HorizonCoverageStart, depth) * 2.0);
+    float alpha = smoothstep( lCloudProperties.mfHorizonCoverageStart, lCloudProperties.mfHorizonCoverageEnd, depth );
+
+    coverageB = vec4( smoothstep( lCloudProperties.mfHorizonCoverageStart, lCloudProperties.mfHorizonCoverageEnd, depth ),
+        0.0,
+        smoothstep( lCloudProperties.mfHorizonCoverageEnd, lCloudProperties.mfHorizonCoverageStart + ( lCloudProperties.mfHorizonCoverageEnd - lCloudProperties.mfHorizonCoverageStart ) * 0.5, depth ),
+        0.0 );
+
+    return mix( coverage, coverageB, alpha );
+}
+
+
+
+float 
+SampleCloud( 
+    in CustomPerMeshUniforms lCustomPerMeshUniforms,
+    in cCloudProperties      lCloudProperties, 
+    in vec3                  ray,
+    in float                 rayDensity, 
+    in vec4                  coverage, 
+    in float                 csRayHeight, 
+    in float                 lod )
+{
+    /*
+    //vec3 coord = vec3( ray * _BaseScale + _BaseOffset );
+    vec3 coord = vec3( ray * _BaseScale );
+    vec4 noiseSample = texture3DLod( _Perlin3D, coord, 0.0 );
+    float noise = saturate( ( ( noiseSample.r  )  ) - 0.75 );
+
+    return noise;
+    */
+    
+    float value = 0.0;
+    vec3 coord = vec3( ray * lCloudProperties.mfBaseScale + (lCustomPerMeshUniforms.gBaseOffset.xyz * lCloudProperties.mfAnimationScale )); // * gfTime
+    vec4 noiseSample = texture3DLod( lCustomPerMeshUniforms.gPerlin3D, coord, 0.0 );
+    vec4 gradientScalar = vec4( 1.0,
+        GradientStep( csRayHeight, lCustomPerMeshUniforms.gCloudHeightGradient1 ),
+        GradientStep( csRayHeight, lCustomPerMeshUniforms.gCloudHeightGradient2 ),
+        GradientStep( csRayHeight, lCustomPerMeshUniforms.gCloudHeightGradient3 ) );
+
+    noiseSample *= gradientScalar;
+
+    float noise = saturate( (( noiseSample.r + noiseSample.g + noiseSample.b + noiseSample.a ) / 4.0) );
+    //float noise = saturate( (( noiseSample.r + noiseSample.g + noiseSample.b + noiseSample.a ) / 4.0) - 0.25 );
+
+
+    vec4 gradient = Lerp3( lCustomPerMeshUniforms.gCloudHeightGradient3,
+        lCustomPerMeshUniforms.gCloudHeightGradient2,
+        lCustomPerMeshUniforms.gCloudHeightGradient1,
+        vec4_TYPE( coverage ) );
+
+    noise *= GradientStep( csRayHeight, gradient );
+
+    noise = SmoothThreshold( noise, lCloudProperties.mfSampleThreshold, lCloudProperties.mfErosionEdgeSize );
+    
+    noise = saturate( noise - ( 1.0 - vec4_COVERAGE( coverage ) ) ) * vec4_COVERAGE( coverage );
+
+    if ( noise > 0.0 && noise < 1.0 && lod == 0 )
+    {
+        //vec4 distUV = vec4( ray.xy * _BaseScale * _CloudDistortionScale, 0.0, 0.0 );
+        //vec3 curl = texture2DLod( _Curl2D, distUV.xy, 0.0 ).xyz * 2.0 - 1.0;
+        //vec4 distUV = vec4( ray.xy * _BaseScale * _CloudDistortionScale, 0.0, 0.0 );
+        vec3 curl   = GetTriPlanarCoverage( lCloudProperties.mPlanetUpNormalVec3, ray, lCloudProperties.mfBaseScale * lCloudProperties.mfCloudDistortionScale, SAMPLER2DPARAM( lCustomPerMeshUniforms.gCurl2D ) ).xyz;
+
+        coord = vec3( ray * lCloudProperties.mfBaseScale * lCloudProperties.mfDetailScale );
+        coord.xyz += (lCustomPerMeshUniforms.gDetailOffset.xyz * lCloudProperties.mfAnimationScale ); // * gfTime
+
+        curl *= lCloudProperties.mfCloudDistortion * csRayHeight;
+        coord.xyz += curl;
+
+        vec3 detail = 1.0 - texture3DLod( lCustomPerMeshUniforms.gDetail3D, coord, 0.0 ).xyz;
+        detail *= gradientScalar.gba;
+        float detailValue = detail.r + detail.g + detail.b;
+        detailValue /= 3.0;
+        detailValue *= smoothstep( 1.0, 0.0, noise ) * 0.5;
+        noise -= detailValue;
+
+        noise = saturate( noise );
+    }
+
+    return noise * lCloudProperties.mfSampleScalar * smoothstep( 0.0, lCloudProperties.mfCloudBottomFade * 1.0, csRayHeight );
+
+}
+
+
+
+
+vec3 
+SampleLight( 
+    in CustomPerMeshUniforms lCustomPerMeshUniforms,
+    in cCloudProperties      lCloudProperties,
+    in vec3                  origin, 
+    in float                 originDensity, 
+    in float                 pixelAlpha, 
+    in float                 cosAngle, 
+    in vec2                  debugUV, 
+    in float                 rayDistance, 
+    in vec3                  RandomUnitSphere[6] )
+{
+    const float iterations = 5.0;
+
+    vec3 rayStep = -lCloudProperties.mLightDirectionVec3 * ( lCloudProperties.mfSunRayLength / iterations );
+    vec3 ray = origin + rayStep;
+
+    float atmosphereY = 0.0;
+
+    float lod = step( 0.3, originDensity ) * 3.0;
+    lod = 0.0;
+
+    float value = 0.0;
+
+    vec4 coverage;
+
+    vec3 randomOffset = vec3( 0.0, 0.0, 0.0 );
+    float coneRadius = 0.0;
+    const float coneStep = lCloudProperties.mfConeRadius / iterations;
+    float energy = 0.0;
+
+    float thickness = 0.0;
+
+    for ( float i = 0.0; i < iterations; i++ )
+    {
+        randomOffset = RandomUnitSphere[int(i)] * coneRadius;
+        ray += rayStep;
+
+        atmosphereY = NormalizedAtmosphereY( ray, lCloudProperties.mfEarthRadius, lCloudProperties.mfAtmosphereStartHeight, lCloudProperties.mfAtmosphereThickness );
+        coverage = SampleCoverage( lCustomPerMeshUniforms, lCloudProperties, ray + randomOffset, atmosphereY, lod );
+        value = SampleCloud( lCustomPerMeshUniforms, lCloudProperties, ray + randomOffset, originDensity, coverage, atmosphereY, lod );
+        value *= float( atmosphereY <= 1.0 );
+
+        thickness += value;
+
+        coneRadius += coneStep;
+    }
+
+    float far = 8.0;
+    ray += rayStep * far;
+    atmosphereY = NormalizedAtmosphereY( ray, lCloudProperties.mfEarthRadius, lCloudProperties.mfAtmosphereStartHeight, lCloudProperties.mfAtmosphereThickness );
+    coverage    = SampleCoverage( lCustomPerMeshUniforms, lCloudProperties, ray, atmosphereY, lod );
+    value       = SampleCloud( lCustomPerMeshUniforms, lCloudProperties, ray, originDensity, coverage, atmosphereY, lod );
+    value      *= float( atmosphereY <= 1.0 );
+    thickness  += value;
+
+
+    float forwardP = HenyeyGreensteinPhase( cosAngle, lCloudProperties.mfForwardScatteringG );
+    float backwardsP = HenyeyGreensteinPhase( cosAngle, lCloudProperties.mfBackwardScatteringG );
+    float P = ( forwardP + backwardsP ) / 2.0;
+
+    return lCloudProperties.mLightColourVec3 * BeerTerm( lCloudProperties.mfDensity, thickness ) * PowderTerm( originDensity, cosAngle, lCloudProperties.mfDarkOutlineScalar, lCloudProperties.mfDensity ) * P;
+}
+
+
+vec4 
+Render( 
+   in CustomPerMeshUniforms lCustomPerMeshUniforms,
+   in cCloudProperties      lCloudProperties,
+   in vec3                  lCameraRayVec3,
+   in vec2                  lUVVec2 )
+{
+    vec4 color = vec4( 0.0, 0.0, 0.0, 0.0 );
+    vec3 rayDirection = normalize( lCameraRayVec3 );
+
+    if ( lCloudProperties.mfRayAboveHorizon > lCloudProperties.mfRayMinimumY )
+    {
+        vec3 ray = InternalRaySphereIntersect( lCloudProperties.mfEarthRadius + lCloudProperties.mfAtmosphereStartHeight, lCloudProperties.mCameraPositionVec3, rayDirection );
+
+        vec3 rayStep = rayDirection * lCloudProperties.mfRayStepLength;
+        float i = 0.0;
+
+        float atmosphereY = 0.0;
+        float transmittance = 1.0;
+        float rayStepScalar = 1.0;
+
+        float cosAngle = dot( rayDirection, -lCloudProperties.mLightDirectionVec3 );
+
+        float normalizedDepth = 0.0;
+        float zeroThreshold = 4.0;
+        float zeroAccumulator = 0.0;
+        const vec3 RandomUnitSphere[6] = { _Random0, _Random1, _Random2, _Random3, _Random4, _Random5 };
+        float value = 1.0;
+
+        while ( true )
+        {
+            if ( i >= lCloudProperties.mfMaxIterations || color.a >= 1.0 || atmosphereY >= 1.0 )
+            {
+                break;
+            }
+
+            normalizedDepth = distance( lCloudProperties.mCameraPositionVec3, ray ) / lCloudProperties.mfMaxDistance;
+            float lod       = step( lCloudProperties.mfLODDistance, normalizedDepth );
+            vec4 coverage   = SampleCoverage( lCustomPerMeshUniforms, lCloudProperties, ray, atmosphereY, lod );
+            value           = SampleCloud( lCustomPerMeshUniforms, lCloudProperties, ray, color.a, coverage, atmosphereY, lod );
+            vec4 particle   = vec4( value, value, value, value );
+
+            if ( value > 0.0 )
+            {
+                zeroAccumulator = 0.0;
+
+                if ( rayStepScalar > 1.0 )
+                {
+                    ray -= rayStep * rayStepScalar;
+                    i   -= rayStepScalar;
+
+                    atmosphereY     = NormalizedAtmosphereY( ray, lCloudProperties.mfEarthRadius, lCloudProperties.mfAtmosphereStartHeight, lCloudProperties.mfAtmosphereThickness );
+                    normalizedDepth = distance( lCloudProperties.mCameraPositionVec3, ray ) / lCloudProperties.mfMaxDistance;
+                    lod             = step( lCloudProperties.mfLODDistance, normalizedDepth );
+                    coverage        = SampleCoverage( lCustomPerMeshUniforms, lCloudProperties, ray, atmosphereY, lod );
+                    value           = SampleCloud( lCustomPerMeshUniforms, lCloudProperties, ray, color.a, coverage, atmosphereY, lod );
+                    particle        = vec4( value, value, value, value );
+                }
+
+                float T = 1.0 - particle.a;
+                transmittance *= T;
+
+                vec3 ambientLight = SampleAmbientLight( lCustomPerMeshUniforms.gCloudBaseColour.rgb, lCustomPerMeshUniforms.gCloudTopColour.rgb, atmosphereY, normalizedDepth );
+                vec3 sunLight     = SampleLight( lCustomPerMeshUniforms, lCloudProperties, ray, particle.a, color.a, cosAngle, lUVVec2, normalizedDepth, RandomUnitSphere );
+
+                sunLight     *= lCloudProperties.mfLightScalar;
+                ambientLight *= lCloudProperties.mfAmbientScalar;
+
+                
+                particle.a   = 1.0 - T;
+                particle.rgb = sunLight + ambientLight;
+                particle.rgb *= particle.a;
+                
+                //particle   = vec4(1.0 - T);
+
+                color = ( 1.0 - color.a ) * particle + color;
+            }
+
+            zeroAccumulator += float( value <= 0.0 );
+            rayStepScalar = 1.0 + step( zeroThreshold, zeroAccumulator ) * 0.0;
+            i += rayStepScalar;
+
+            ray += rayStep * rayStepScalar;
+            atmosphereY = NormalizedAtmosphereY( ray, lCloudProperties.mfEarthRadius, lCloudProperties.mfAtmosphereStartHeight, lCloudProperties.mfAtmosphereThickness );
+        }
+
+        float fade = smoothstep( lCloudProperties.mfRayMinimumY,
+            lCloudProperties.mfRayMinimumY + ( 1.0 - lCloudProperties.mfRayMinimumY ) * lCloudProperties.mfHorizonFadeScalar,
+            lCloudProperties.mfRayAboveHorizon );
+
+        color *= lCloudProperties.mfHorizonFadeStartAlpha + fade * lCloudProperties.mfOneMinusHorizonFadeStartAlpha;
+    }
+
+    return color;
+}
+
+//-----------------------------------------------------------------------------
+///
+///     Fragment Main
+///
+///     @brief      Fragment Main
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+
+FRAGMENT_MAIN_COLOUR_DEPTH_SRT
+{    
+    cCloudProperties lCloudProperties;
+    vec3             lPlanetRelativeCamera;
+    vec3             lRayStartVec3;
+    vec3             lRayDirectionVec3;
+    float            lfDepth         = 0.0;
+    float            lfPlanetRadius  = lUniforms.mpCommonPerMesh->gPlanetPositionVec4.w;
+
+    {
+        lCloudProperties.mfMaxIterations         = lUniforms.mpCustomPerMesh->gCoverageParamsVec4.x;
+        lCloudProperties.mfHorizonCoverageStart  = lUniforms.mpCustomPerMesh->gCoverageParamsVec4.y;
+        lCloudProperties.mfHorizonCoverageEnd    = lUniforms.mpCustomPerMesh->gCoverageParamsVec4.z;
+
+        lCloudProperties.mfLightScalar           = lUniforms.mpCustomPerMesh->gLightingParamsVec4.x;
+        lCloudProperties.mfAmbientScalar         = lUniforms.mpCustomPerMesh->gLightingParamsVec4.y;
+        lCloudProperties.mfSunRayLength          = lUniforms.mpCustomPerMesh->gLightingParamsVec4.z;
+        lCloudProperties.mfConeRadius            = lUniforms.mpCustomPerMesh->gLightingParamsVec4.w;
+
+        lCloudProperties.mfDensity               = lUniforms.mpCustomPerMesh->gLightScatteringParamsVec4.x;
+        lCloudProperties.mfForwardScatteringG    = lUniforms.mpCustomPerMesh->gLightScatteringParamsVec4.y;
+        lCloudProperties.mfBackwardScatteringG   = lUniforms.mpCustomPerMesh->gLightScatteringParamsVec4.z;
+        lCloudProperties.mfDarkOutlineScalar     = lUniforms.mpCustomPerMesh->gLightScatteringParamsVec4.w;
+
+        lCloudProperties.mfAnimationScale        = lUniforms.mpCustomPerMesh->gAnimationParamsVec4.x;
+
+        lCloudProperties.mfBaseScaleScalar       = lUniforms.mpCustomPerMesh->gModelingBaseParamsVec4.x;
+        lCloudProperties.mfSampleScalar          = lUniforms.mpCustomPerMesh->gModelingBaseParamsVec4.y;
+        lCloudProperties.mfSampleThreshold       = lUniforms.mpCustomPerMesh->gModelingBaseParamsVec4.z;
+        lCloudProperties.mfCloudBottomFade       = lUniforms.mpCustomPerMesh->gModelingBaseParamsVec4.w;
+
+        lCloudProperties.mfDetailScale           = lUniforms.mpCustomPerMesh->gModelingDetailParamsVec4.x;
+        lCloudProperties.mfErosionEdgeSize       = lUniforms.mpCustomPerMesh->gModelingDetailParamsVec4.y;
+        lCloudProperties.mfCloudDistortion       = lUniforms.mpCustomPerMesh->gModelingDetailParamsVec4.z;
+        lCloudProperties.mfCloudDistortionScale  = lUniforms.mpCustomPerMesh->gModelingDetailParamsVec4.w;
+
+        lCloudProperties.mfRayMinimumY           = lUniforms.mpCustomPerMesh->gOptimisationParamsVec4.x;
+        lCloudProperties.mfLODDistance           = lUniforms.mpCustomPerMesh->gOptimisationParamsVec4.y;
+        lCloudProperties.mfHorizonFadeStartAlpha = lUniforms.mpCustomPerMesh->gOptimisationParamsVec4.z;
+        lCloudProperties.mfHorizonFadeScalar     = lUniforms.mpCustomPerMesh->gOptimisationParamsVec4.w;	// Fades clouds on horizon, 1.0 -> 10.0 (1.0 = smooth fade, 10 = no fade)
+
+        lCloudProperties.mfHorizonDistance       = lUniforms.mpCustomPerMesh->gAtmosphereParamsVec4.x;
+        lCloudProperties.mfAtmosphereStartHeight = lUniforms.mpCustomPerMesh->gAtmosphereParamsVec4.y;
+        lCloudProperties.mfAtmosphereEndHeight   = lUniforms.mpCustomPerMesh->gAtmosphereParamsVec4.z;
+    }
+
+    {
+        lCloudProperties.mfOneMinusHorizonFadeStartAlpha = 1.0 - lCloudProperties.mfHorizonFadeStartAlpha;
+        lCloudProperties.mfAtmosphereThickness           = lCloudProperties.mfAtmosphereEndHeight - lCloudProperties.mfAtmosphereStartHeight;
+        lCloudProperties.mfEarthRadius                   = M_CALCULATE_PLANET_RADIUS( lCloudProperties.mfAtmosphereStartHeight, lCloudProperties.mfHorizonDistance );
+        lCloudProperties.mfMaxDistance                   = M_CALCULATE_HORIZON_DISTANCE( lCloudProperties.mfEarthRadius, (lCloudProperties.mfEarthRadius + lCloudProperties.mfAtmosphereEndHeight) );
+        lCloudProperties.mfRayStepLength                 = lCloudProperties.mfAtmosphereThickness / floor( lCloudProperties.mfMaxIterations / 2.0f);
+        lCloudProperties.mfBaseScale                     = 1.0 / lCloudProperties.mfAtmosphereEndHeight * lCloudProperties.mfBaseScaleScalar;
+        lCloudProperties.mfCoverageScale                 = 1.0 / lCloudProperties.mfMaxDistance;
+    }
+
+
+    lPlanetRelativeCamera     = lUniforms.mpPerFrame->gViewPositionVec3 - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz;
+    lRayStartVec3             = lPlanetRelativeCamera;
+                              
+    lRayDirectionVec3         = GetScreenSpaceViewDir( IN( mTexCoordsVec2 ), lUniforms.mpCommonPerMesh->gInverseProjectionMat4, lUniforms.mpCommonPerMesh->gInverseViewMat4 );
+                              
+    float lfCloudHeightMin    = lCloudProperties.mfAtmosphereStartHeight;
+    float lfCloudHeightMax    = lCloudProperties.mfAtmosphereEndHeight;
+
+    float lfHeightAbovePlanet = length( lRayStartVec3 ) - lfPlanetRadius;
+    {
+        float lfDeterminant = 0.0;
+
+        vec3 lIntersectionNear;
+        vec3 lIntersectionFar;
+
+        if ( lfHeightAbovePlanet < lfCloudHeightMin )
+        {
+            lfDeterminant = GetRayIntersectionPoint( lRayStartVec3, lRayStartVec3 + lRayDirectionVec3, lfPlanetRadius + lfCloudHeightMin, lIntersectionNear, lIntersectionFar );
+
+            lRayStartVec3 = lIntersectionFar;
+    
+            if ( lfDeterminant == 0.0 )
+            {
+                discard;
+            }
+        }
+        else
+        if ( lfHeightAbovePlanet > lfCloudHeightMax )
+        {
+            lfDeterminant = GetRayIntersectionPoint( lRayStartVec3, lRayStartVec3 + lRayDirectionVec3, lfPlanetRadius + lfCloudHeightMax, lIntersectionNear, lIntersectionFar );
+
+            if ( lfDeterminant == 0.0 ||
+                dot( lIntersectionNear - lRayStartVec3, lRayDirectionVec3 ) < 0.0 )
+            {
+                discard;
+            }
+
+            lRayStartVec3 = lIntersectionNear;
+        }
+    }
+
+    
+
+    
+
+    {
+        vec3 lNormalizedPlanetRelativeCamera;
+
+        lNormalizedPlanetRelativeCamera                  = normalize( lPlanetRelativeCamera );
+        lCloudProperties.mfRayAboveHorizon               = dot( lRayDirectionVec3, lNormalizedPlanetRelativeCamera );
+        lCloudProperties.mCameraPositionVec3             = lNormalizedPlanetRelativeCamera * ( lCloudProperties.mfEarthRadius + lfHeightAbovePlanet );
+        lCloudProperties.mLightDirectionVec3             = lUniforms.mpPerFrame->gLightDirectionVec4.xyz;
+        lCloudProperties.mPlanetUpNormalVec3             = lNormalizedPlanetRelativeCamera;
+        lCloudProperties.mLightColourVec3                = vec3( 1.0 );
+
+        vec4 lCloudColourVec4 = Render(     DEREF_PTR(lUniforms.mpCustomPerMesh), 
+                                            lCloudProperties, 
+                                            lRayDirectionVec3, 
+                                            IN( mTexCoordsVec2 ) );
+        
+        FRAGMENT_COLOUR = vec4( GammaCorrectInput( lCloudColourVec4.xyz ), lCloudColourVec4.a );
+
+        //#if !defined(D_CLOUD_RENDER_REFLECTIONS)        
+        {
+            lfDepth = max( length( lRayStartVec3 - lPlanetRelativeCamera ), 20.0 );
+
+            FRAGMENT_DEPTH = FastNormaliseDepth( lUniforms.mpPerFrame->gClipPlanesRVec4, lfDepth );     
+        }
+        //#endif
+    }
+}
+
+#endif
+
+#ifdef D_CLOUD_SHADOW
+
+vec3
+DecodeGBufferPosition(
+    in  vec2  lScreenPosVec2,
+    in  vec4  lClipPlanes,
+    in  mat4  lInverseProjectionMat4,
+    SAMPLER2DARG( lBuffer1Map ) )
+{
+    vec4 lBuffer1_Vec4 = texture2D( lBuffer1Map, lScreenPosVec2 );
+
+    float lfDepth = FastDenormaliseDepth( lClipPlanes, DecodeDepthFromColour( lBuffer1_Vec4 ) );
+    //vec3 lPositionVec3 = RecreatePositionFromDepth( lfDepth, lScreenPosVec2, lEyePositionVec3, lInverseProjectionMat4, lInverseViewMat4 );
+    vec3 lPositionVec3 = RecreateViewPositionFromDepth( lfDepth, lScreenPosVec2, lInverseProjectionMat4 );
+
+    //return lPositionVec3 - lEyePositionVec3;
+    return lPositionVec3;
+}
+
+
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    cCloudProperties lCloudProperties;
+    vec3             lPlanetRelativeCamera;
+    vec3             lRayStartVec3;
+    vec3             lRayDirectionVec3;
+    float            lfDepth = 0.0;
+    float            lfPlanetRadius = lUniforms.mpCommonPerMesh->gPlanetPositionVec4.w;
+
+    {
+        lCloudProperties.mfMaxIterations = lUniforms.mpCustomPerMesh->gCoverageParamsVec4.x;
+        lCloudProperties.mfHorizonCoverageStart = lUniforms.mpCustomPerMesh->gCoverageParamsVec4.y;
+        lCloudProperties.mfHorizonCoverageEnd = lUniforms.mpCustomPerMesh->gCoverageParamsVec4.z;
+
+        lCloudProperties.mfLightScalar = lUniforms.mpCustomPerMesh->gLightingParamsVec4.x;
+        lCloudProperties.mfAmbientScalar = lUniforms.mpCustomPerMesh->gLightingParamsVec4.y;
+        lCloudProperties.mfSunRayLength = lUniforms.mpCustomPerMesh->gLightingParamsVec4.z;
+        lCloudProperties.mfConeRadius = lUniforms.mpCustomPerMesh->gLightingParamsVec4.w;
+
+        lCloudProperties.mfDensity = lUniforms.mpCustomPerMesh->gLightScatteringParamsVec4.x;
+        lCloudProperties.mfForwardScatteringG = lUniforms.mpCustomPerMesh->gLightScatteringParamsVec4.y;
+        lCloudProperties.mfBackwardScatteringG = lUniforms.mpCustomPerMesh->gLightScatteringParamsVec4.z;
+        lCloudProperties.mfDarkOutlineScalar = lUniforms.mpCustomPerMesh->gLightScatteringParamsVec4.w;
+
+        lCloudProperties.mfAnimationScale = lUniforms.mpCustomPerMesh->gAnimationParamsVec4.x;
+
+        lCloudProperties.mfBaseScaleScalar = lUniforms.mpCustomPerMesh->gModelingBaseParamsVec4.x;
+        lCloudProperties.mfSampleScalar = lUniforms.mpCustomPerMesh->gModelingBaseParamsVec4.y;
+        lCloudProperties.mfSampleThreshold = lUniforms.mpCustomPerMesh->gModelingBaseParamsVec4.z;
+        lCloudProperties.mfCloudBottomFade = lUniforms.mpCustomPerMesh->gModelingBaseParamsVec4.w;
+
+        lCloudProperties.mfDetailScale = lUniforms.mpCustomPerMesh->gModelingDetailParamsVec4.x;
+        lCloudProperties.mfErosionEdgeSize = lUniforms.mpCustomPerMesh->gModelingDetailParamsVec4.y;
+        lCloudProperties.mfCloudDistortion = lUniforms.mpCustomPerMesh->gModelingDetailParamsVec4.z;
+        lCloudProperties.mfCloudDistortionScale = lUniforms.mpCustomPerMesh->gModelingDetailParamsVec4.w;
+
+        lCloudProperties.mfRayMinimumY = lUniforms.mpCustomPerMesh->gOptimisationParamsVec4.x;
+        lCloudProperties.mfLODDistance = lUniforms.mpCustomPerMesh->gOptimisationParamsVec4.y;
+        lCloudProperties.mfHorizonFadeStartAlpha = lUniforms.mpCustomPerMesh->gOptimisationParamsVec4.z;
+        lCloudProperties.mfHorizonFadeScalar = lUniforms.mpCustomPerMesh->gOptimisationParamsVec4.w;	// Fades clouds on horizon, 1.0 -> 10.0 (1.0 = smooth fade, 10 = no fade)
+
+        lCloudProperties.mfHorizonDistance = lUniforms.mpCustomPerMesh->gAtmosphereParamsVec4.x;
+        lCloudProperties.mfAtmosphereStartHeight = lUniforms.mpCustomPerMesh->gAtmosphereParamsVec4.y;
+        lCloudProperties.mfAtmosphereEndHeight = lUniforms.mpCustomPerMesh->gAtmosphereParamsVec4.z;
+    }
+
+    {
+        lCloudProperties.mfOneMinusHorizonFadeStartAlpha = 1.0 - lCloudProperties.mfHorizonFadeStartAlpha;
+        lCloudProperties.mfAtmosphereThickness = lCloudProperties.mfAtmosphereEndHeight - lCloudProperties.mfAtmosphereStartHeight;
+        lCloudProperties.mfEarthRadius = M_CALCULATE_PLANET_RADIUS( lCloudProperties.mfAtmosphereStartHeight, lCloudProperties.mfHorizonDistance );
+        lCloudProperties.mfMaxDistance = M_CALCULATE_HORIZON_DISTANCE( lCloudProperties.mfEarthRadius, ( lCloudProperties.mfEarthRadius + lCloudProperties.mfAtmosphereEndHeight ) );
+        lCloudProperties.mfRayStepLength = lCloudProperties.mfAtmosphereThickness / floor( lCloudProperties.mfMaxIterations / 2.0f );
+        lCloudProperties.mfBaseScale = 1.0 / lCloudProperties.mfAtmosphereEndHeight * lCloudProperties.mfBaseScaleScalar;
+        lCloudProperties.mfCoverageScale = 1.0 / lCloudProperties.mfMaxDistance;
+    }
+
+
+    lPlanetRelativeCamera = lUniforms.mpPerFrame->gViewPositionVec3 - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz;
+    lRayStartVec3 = lPlanetRelativeCamera;
+
+    lRayDirectionVec3 = GetScreenSpaceViewDir( IN( mTexCoordsVec2 ), lUniforms.mpCommonPerMesh->gInverseProjectionMat4, lUniforms.mpCommonPerMesh->gInverseViewMat4 );
+
+    float lfCloudHeightMin = lCloudProperties.mfAtmosphereStartHeight;
+    float lfCloudHeightMax = lCloudProperties.mfAtmosphereEndHeight;
+
+    float lfHeightAbovePlanet = length( lRayStartVec3 ) - lfPlanetRadius;
+    {
+        float lfDeterminant = 0.0;
+
+        vec3 lIntersectionNear;
+        vec3 lIntersectionFar;
+
+        if ( lfHeightAbovePlanet < lfCloudHeightMin )
+        {
+            lfDeterminant = GetRayIntersectionPoint( lRayStartVec3, lRayStartVec3 + lRayDirectionVec3, lfPlanetRadius + lfCloudHeightMin, lIntersectionNear, lIntersectionFar );
+
+            lRayStartVec3 = lIntersectionFar;
+
+            if ( lfDeterminant == 0.0 )
+            {
+                discard;
+            }
+        }
+        else
+            if ( lfHeightAbovePlanet > lfCloudHeightMax )
+            {
+                lfDeterminant = GetRayIntersectionPoint( lRayStartVec3, lRayStartVec3 + lRayDirectionVec3, lfPlanetRadius + lfCloudHeightMax, lIntersectionNear, lIntersectionFar );
+
+                if ( lfDeterminant == 0.0 ||
+                    dot( lIntersectionNear - lRayStartVec3, lRayDirectionVec3 ) < 0.0 )
+                {
+                    discard;
+                }
+
+                lRayStartVec3 = lIntersectionNear;
+            }
+    }
+
+
+
+
+
+    {
+        vec3 lNormalizedPlanetRelativeCamera;
+
+        lNormalizedPlanetRelativeCamera = normalize( lPlanetRelativeCamera );
+        lCloudProperties.mfRayAboveHorizon = dot( lRayDirectionVec3, lNormalizedPlanetRelativeCamera );
+        lCloudProperties.mCameraPositionVec3 = lNormalizedPlanetRelativeCamera * ( lCloudProperties.mfEarthRadius + lfHeightAbovePlanet );
+        lCloudProperties.mLightDirectionVec3 = lUniforms.mpPerFrame->gLightDirectionVec4.xyz;
+        lCloudProperties.mPlanetUpNormalVec3 = lNormalizedPlanetRelativeCamera;
+        lCloudProperties.mLightColourVec3 = vec3( 1.0 );
+
+
+
+
+
+
+
+    FRAGMENT_COLOUR = vec4( 1.0, 0.0, 0.0, 1.0 );
+    /*
+    float depth = SAMPLE_DEPTH_TEXTURE( _CameraDepthTexture, i.uv );
+    depth = Linear01Depth( depth );
+    vec3 ray = i.ray * depth;
+    vec3 pos = mul( _InvCamera, vec4( ray, 1.0 ) ).xyz;
+    pos.y += _EarthRadius;
+    */
+    vec4 lBuffer2_Vec4;
+
+    lPositionVec3  = DecodeGBufferPosition( lFragCoordsVec2,
+                                            lUniforms.mpPerFrame->gClipPlanesVec4,
+                                            lUniforms.mpCommonPerMesh->gInverseProjectionMat4,
+                                            SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer1Map ) );
+
+    vec3 intersect = InternalRaySphereIntersect( _EarthRadius + _StartHeight, pos, -_LightDirection );
+
+    //vec4 coverage = GetTriPlanarCoverage( lCloudProperties.mPlanetUpNormalVec3, ray, lCloudProperties.mfCoverageScale, SAMPLER2DPARAM( lCustomPerMeshUniforms.gCoverage2D ) );
+
+    vec2 unit = intersect.xz * _CoverageScale;
+    vec2 coverageUV = unit * 0.5 + 0.5;
+    coverageUV += _CoverageOffset;
+
+    vec4 coverage = texture2D( _CloudCoverage, coverageUV );
+    float cloudShadow = coverage.r;
+    cloudShadow *= _ShadowStrength;
+    cloudShadow = 1.0 - cloudShadow;
+
+    // TEST PATTERN
+    //return mod( round(abs(pos.x)), 2.0) * mod( round(abs(pos.z)), 2.0);
+
+    return cloudShadow;
+
+}
+/*
+fixed4 frag( v2f i ) : SV_Target
+{
+    //vec4 pixel = texture2D( _MainTex, i.uv );
+    float depth = SAMPLE_DEPTH_TEXTURE( _CameraDepthTexture, i.uv );
+    depth = Linear01Depth( depth );
+    vec3 ray = i.ray * depth;
+    vec3 pos = mul( _InvCamera, vec4( ray, 1.0 ) ).xyz;
+    pos.y += _EarthRadius;
+    vec3 intersect = InternalRaySphereIntersect( _EarthRadius + _StartHeight, pos, -_LightDirection );
+
+    vec2 unit = intersect.xz * _CoverageScale;
+    vec2 coverageUV = unit * 0.5 + 0.5;
+    coverageUV += _CoverageOffset;
+
+    vec4 coverage = texture2D( _CloudCoverage, coverageUV );
+    float cloudShadow = coverage.r;
+    cloudShadow *= _ShadowStrength;
+    cloudShadow = 1.0 - cloudShadow;
+
+    // TEST PATTERN
+    //return mod( round(abs(pos.x)), 2.0) * mod( round(abs(pos.z)), 2.0);
+
+    return cloudShadow;
+}
+*/
+
+#endif
+
+#ifdef D_CLOUD_TEMPORAL
+
+#include "Common/CommonPostProcess.shader.h"
+
+STATIC_CONST float framenumber[4] = { 0.0, 3.0, 2.0, 1.0 };
+
+#define TAA_GET_LUMINANCE( col ) ( 0.25 * ( col.r + col.b ) + 0.5 * col.g )
+
+vec3 SimpleUnReinhard( in vec3 col )
+{
+    return col / ( 1.0 - TAA_GET_LUMINANCE( col ) );
+}
+
+
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    vec4  lFragmentColourVec4 = texture2D( lUniforms.mpCustomPerMesh->gBuffer2Map, IN( mTexCoordsVec2 ) );
+
+    if ( lFragmentColourVec4.a <= 0.001 )
+    {
+        discard;
+    }
+
+
+    float lfDepth      = DecodeDepthFromColour( texture2D( lUniforms.mpCustomPerMesh->gDepthMap, IN( mTexCoordsVec2 ) ) );
+    float lfCloudDepth = DecodeDepthFromColour( texture2D( lUniforms.mpCustomPerMesh->gCloudDepthMap, IN( mTexCoordsVec2 ) ) );
+
+    if ( lfDepth < lfCloudDepth )
+    {
+        discard;
+    }
+
+    float lfFrameIndex = mod( lUniforms.mpCustomPerMesh->gCloudSubFrameParamsVec4.x, 4.0 );
+    vec2  lFrameSizeVec2;
+    vec2  lSubFrameSizeVec2;
+
+    float lfSubPixelSize;
+    float lfSubFrameNumber;
+
+    lFrameSizeVec2      = lUniforms.mpPerFrame->gFrameBufferSizeVec4.xy;
+    lSubFrameSizeVec2   = lFrameSizeVec2 * 0.5;
+    lfSubPixelSize      = 2.0;
+    lfSubFrameNumber    = framenumber[ int(lfFrameIndex) ];
+
+
+    vec2 uv  = floor( IN( mTexCoordsVec2 ) * lFrameSizeVec2 );
+    vec2 uv2 = ( floor( IN( mTexCoordsVec2 ) * lSubFrameSizeVec2 ) + 0.5 ) / lSubFrameSizeVec2;
+
+    float x = mod( uv.x, lfSubPixelSize );
+    float y = mod( uv.y, lfSubPixelSize );
+    float frame = y * lfSubPixelSize + x;
+    vec4 cloud;
+
+    if ( frame == lfSubFrameNumber )
+    {
+        cloud = texture2D( lUniforms.mpCustomPerMesh->gBuffer2Map, uv2 );
+    }
+    else
+    {
+        cloud = vec4( 1.0, 0.0, 0.0, 0.0 );
+        
+        vec2 lSample = IN( mTexCoordsVec2 );
+
+        // compute the previous position of this pixel
+        float lfDepth;
+        float lfDepthNormalised;
+        float lfSpeed;
+        vec2  lMotion;
+        vec2  lEncodedMotion;
+        bool  lWantsColorClipAA;
+        vec2  lSampleReproject = GetPrevPosition(   lSample,
+                                                    lUniforms.mpPerFrame->gCameraDeltaMat4,
+                                                    lUniforms.mpPerFrame->gClipPlanesVec4,
+                                                    lUniforms.mpPerFrame->gClipPlanesRVec4,
+                                                    lUniforms.mpCommonPerMesh->gInverseProjectionMat4,
+                                                    lUniforms.mpCommonPerMesh->gInverseViewMat4,
+                                                    lUniforms.mpCommonPerMesh->gProjectionMat4,
+                                                    lUniforms.mpCommonPerMesh->gViewProjectionMat4,
+                                                    lUniforms.mpPerFrame->gPrevViewProjectionMat4,
+                                                    lUniforms.mpPerFrame->gViewPositionVec3,
+                                                    lUniforms.mpPerFrame->gMBlurSettingsVec4,
+                                                    SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBufferMap ),
+                                                    SAMPLER2DPARAM( lUniforms.mpCustomPerMesh->gBuffer1Map ),
+                                                    lfDepth,
+                                                    lfDepthNormalised,
+                                                    lfSpeed,
+                                                    lMotion,
+                                                    lEncodedMotion,
+                                                    lWantsColorClipAA );
+
+        if ( lSampleReproject.y < 0.0 || lSampleReproject.y > 1.0 || lSampleReproject.x < 0.0 || lSampleReproject.x > 1.0 )
+        {
+            //cloud = float4( 1.0, 0.0, 0.0, 1.0);
+            cloud = texture2D( lUniforms.mpCustomPerMesh->gBuffer2Map, IN( mTexCoordsVec2 ) );
+            //cloud = vec4( 1.0, 0.0, 0.0, 0.0 );
+        }
+        else
+        {
+            cloud.rgb = SimpleUnReinhard( texture2D( lUniforms.mpCustomPerMesh->gBuffer3Map, lSampleReproject.xy ).xyz );
+            cloud.a = 1.0;
+            //cloud = vec4( 0.0, 1.0, 0.0, 0.0 );
+        }
+    }
+
+
+    //FRAGMENT_COLOUR = vec4( 1.0, 0.0, 0.0, 1.0 );
+    FRAGMENT_COLOUR = cloud;
+}
+
+#endif

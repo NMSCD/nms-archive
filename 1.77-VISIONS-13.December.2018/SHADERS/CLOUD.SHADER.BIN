@@ -1,0 +1,216 @@
+[[FX]]
+
+// Samplers
+sampler gBufferMap = sampler_state
+{
+    TexUnit = 0;
+};
+
+sampler gBuffer1Map = sampler_state
+{
+    TexUnit = 1;
+};
+
+sampler gBuffer2Map = sampler_state
+{
+    TexUnit = 2;
+};
+
+sampler gBuffer3Map = sampler_state
+{
+    TexUnit = 3;
+};
+
+sampler gBuffer4Map = sampler_state
+{
+    TexUnit = 4;
+};
+
+sampler gBuffer5Map = sampler_state
+{
+    TexUnit = 5;
+};
+
+sampler gDepthMap = sampler_state
+{
+    TexUnit = 7;
+};
+
+sampler gCloudDepthMap = sampler_state
+{
+    TexUnit = 8;
+};
+
+sampler gPerlin3D = sampler_state
+{
+    DefaultTexture = SHADER/PERLINWORLEY3D.DDS;
+    TexUnit = 9;
+    Address = Wrap;
+};
+
+sampler gDetail3D = sampler_state
+{
+    DefaultTexture = SHADER/DETAILWORLEY3D.DDS;
+    TexUnit = 10;
+    Address = Wrap;
+};
+
+sampler gCoverage2D = sampler_state
+{
+    DefaultTexture = SHADER/COVERAGENEW.DDS;
+    TexUnit = 11;
+    Address = Wrap;
+};
+
+sampler gCurl2D = sampler_state
+{
+    DefaultTexture = SHADER/CURLNEW2D.DDS;
+    TexUnit = 12;
+    Address = Wrap;
+};
+
+sampler gNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/CLOUDNOISE.DDS;
+    TexUnit = 13;
+    Address = Wrap;
+};
+
+sampler gCloudsHigh2D = sampler_state
+{
+    DefaultTexture = SHADER/CLOUDSHIGHRGB.DDS;
+    TexUnit = 14;
+    Address = Wrap;
+};
+
+sampler gBlueNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/BLUENOISE.DDS;
+    TexUnit = 15;
+    Address = Wrap;
+};
+
+
+// Uniforms
+
+// Planet
+float4 gPlanetPositionVec4					= {0.0, 0.0, 0.0, 0.0}; 
+float4 gLightOriginVec4   = {0.0, 0.0, 0.0, 0.0}; 
+
+// Clouds
+float4 gCloudColourInternalVec4       = {0, 0, 0, 0};
+float4 gCloudColourExternalVec4       = {0, 0, 0, 0};
+float4 gCloudRatioVec4                = {0, 0, 0, 0};
+
+float4 gCloudParamsVec4               = {1.0, 1.0, 1.0, 1.0};
+float4 gHueOverlayParamsVec4          = {1.0, 1.0, 1.0, 1.0};
+float4 gSaturationOverlayParamsVec4   = {1.0, 1.0, 1.0, 1.0};
+float4 gValueOverlayParamsVec4        = {1.0, 1.0, 1.0, 1.0};
+
+float4 gSunRayParams;
+float4 gSunPositionVec4;
+
+
+float4 gWindOffset;
+float4 gCloudBaseColour;
+float4 gCloudTopColour;
+float4 gCloudHeightGradient1;
+float4 gCloudHeightGradient2;
+float4 gCloudHeightGradient3;
+float4 gCoverageParamsVec4;
+float4 gLightingParamsVec4;
+float4 gLightScatteringParamsVec4;
+float4 gAnimationParamsVec4;
+float4 gModelingBaseParamsVec4;
+float4 gModelingDetailParamsVec4;
+float4 gOptimisationParamsVec4;
+float4 gAtmosphereParamsVec4;
+float4 gCloudSubFrameParamsVec4;
+
+// Contexts
+
+context RENDER_LOW
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_CLOUD_RENDER_LOW; 
+    ComputeShader = compile GLSL FS_CLOUD_RENDER_LOW;
+}
+
+context RENDER_MED
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_CLOUD_RENDER_MED; 
+    ComputeShader = compile GLSL FS_CLOUD_RENDER_MED;
+}
+
+context RENDER_HIGH
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_CLOUD_RENDER_HIGH; 
+    ComputeShader = compile GLSL FS_CLOUD_RENDER_HIGH;
+}
+
+context RENDER_REFLECTIONS
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_CLOUD_RENDER_REFLECTIONS; 
+}
+
+context RENDER2D
+{
+    VertexShader  = compile GLSL VS_CLOUD_RENDER2D;
+    PixelShader   = compile GLSL FS_CLOUD_RENDER2D;
+    ComputeShader = compile GLSL FS_CLOUD_RENDER2D;
+}
+
+
+context COPY
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_CLOUD_COPY;
+}
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#define D_CLOUD_RENDER
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_CLOUD_RENDER_LOW]]
+// =================================================================================================
+#define D_CLOUD_RENDER
+#define D_RENDER_LOW
+#include "Custom/CloudNewFragment.shader.h"
+
+[[FS_CLOUD_RENDER_MED]]
+// =================================================================================================
+#define D_CLOUD_RENDER
+#define D_RENDER_MED
+#include "Custom/CloudNewFragment.shader.h"
+
+[[FS_CLOUD_RENDER_HIGH]]
+// =================================================================================================
+#define D_CLOUD_RENDER
+#define D_RENDER_HIGH
+#include "Custom/CloudNewFragment.shader.h"
+
+[[FS_CLOUD_COPY]]
+// =================================================================================================
+#define D_CLOUD_COPY
+#include "Custom/CloudFragment.shader.h"
+
+[[FS_CLOUD_RENDER2D]]
+// =================================================================================================
+#define D_CLOUD_RENDER2D
+#include "Custom/CloudNewFragment.shader.h"
+
+[[VS_CLOUD_RENDER2D]]
+// =================================================================================================
+#define D_CLOUD_RENDER2D_VS
+#include "Custom/CloudFragment.shader.h"
+
+[[FS_CLOUD_RENDER_REFLECTIONS]]
+// =================================================================================================
+#define D_CLOUD_RENDER
+#define D_CLOUD_RENDER_REFLECTIONS
+#include "Custom/CloudFragment.shader.h"
+

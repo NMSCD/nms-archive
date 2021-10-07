@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.38.3)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcScannableComponentData.xml">
+      <Property name="ScanRange" value="150" />
+      <Property name="ScanName" value="SCAN_DAMAGED_MACH" />
+      <Property name="ScanTime" value="15" />
+      <Property name="IconType" value="GcScannerIconTypes.xml">
+        <Property name="ScanIconType" value="TechRecipe" />
+      </Property>
+      <Property name="PermanentIcon" value="False" />
+      <Property name="PermanentIconRadius" value="0" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollision" value="False" />
+    </Property>
+    <Property value="GcSimpleInteractionComponentData.xml">
+      <Property name="SimpleInteractionType" value="GenericReward" />
+      <Property name="InteractDistance" value="0" />
+      <Property name="Id" value="TECHDEBRIS" />
+      <Property name="Rarity" value="GcRarity.xml">
+        <Property name="Rarity" value="Common" />
+      </Property>
+      <Property name="SizeIndicator" value="GcSizeIndicator.xml">
+        <Property name="SizeIndicator" value="Medium" />
+      </Property>
+      <Property name="TriggerAction" value="ACTIVATE" />
+      <Property name="BroadcastTriggerAction" value="False" />
+      <Property name="Delay" value="0" />
+      <Property name="InteractIsCrime" value="False" />
+      <Property name="InteractCrimeLevel" value="0" />
+      <Property name="ActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="0" />
+        <Property name="Repeat" value="False" />
+        <Property name="RequiredTech" value="" />
+      </Property>
+      <Property name="StatToTrack" value="GcStatsEnum.xml">
+        <Property name="Stat" value="None" />
+      </Property>
+      <Property name="Name" value="" />
+      <Property name="TerminalMessage" value="" />
+      <Property name="ScanType" value="BINOC_INTERACTABLE" />
+      <Property name="ScanData" value="" />
+      <Property name="ScanIcon" value="GcDiscoveryTypes.xml">
+        <Property name="DiscoveryType" value="Unknown" />
+      </Property>
+      <Property name="BaseBuildingTriggerActions" />
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="" />
+        <Property name="Filename" value="" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="LoopOffsetMin" value="0" />
+        <Property name="LoopOffsetMax" value="0" />
+        <Property name="ControlDelay" value="0" />
+        <Property name="ControlSpeed" value="1" />
+        <Property name="ControlActionFrame" value="-1" />
+        <Property name="ControlCreatureSize" value="AllSizes" />
+        <Property name="FlagsAdditive" value="False" />
+        <Property name="FlagsMirrored" value="False" />
+        <Property name="FlagsActive" value="True" />
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="OPEN" />
+          <Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/DISTRESSSIGNAL/PARTS/BLACKBOXPARTS/ANIM/BLACKBOX_OPEN.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="60" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkAudioComponentData.xml">
+      <Property name="Ambient" value="Bld_Amb_DebrisLarge" />
+      <Property name="MaxDistance" value="90" />
+      <Property name="AnimTriggers">
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="Bld_Blackbox_Open" />
+          <Property name="Anim" value="OPEN" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcObjectPlacementComponentData.xml">
+      <Property name="GroupNodeName" value="_Clump" />
+      <Property name="ActivationType" value="GroupNode" />
+      <Property name="FractionOfNodesActive" value="0.2" />
+      <Property name="MaxNodesActivated" value="0" />
+      <Property name="MaxGroupsActivated" value="2" />
+      <Property name="UseRaycast" value="True" />
+    </Property>
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="BOOT" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="LightON" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Activate" />
+                  <Property name="Name" value="LightOFF" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="MAINTDONE" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Bld_DebrisLarge_Open" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+                <Property value="GcPlayAnimAction.xml">
+                  <Property name="Anim" value="OPEN" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Activate" />
+                  <Property name="Name" value="LightON" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="LightOFF" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+    </Property>
+    <Property value="GcMaintenanceComponentData.xml">
+      <Property name="PreInstalledTech">
+        <Property value="GcMaintenanceElement.xml">
+          <Property name="ItemGroupOverride" value="0" />
+          <Property name="Type" value="GcInventoryType.xml">
+            <Property name="InventoryType" value="Technology" />
+          </Property>
+          <Property name="Id" value="MAINT_TECH3" />
+          <Property name="MinRandAmount" value="0" />
+          <Property name="MaxRandAmount" value="0" />
+          <Property name="AmountEmptyTimePeriod" value="0" />
+          <Property name="UpdateType" value="UpdatesAlways" />
+          <Property name="DamagedAfterTimePeriodMin" value="0" />
+          <Property name="DamagedAfterTimePeriodMax" value="0" />
+          <Property name="DamageStatus" value="Damaged" />
+          <Property name="CompletionRequirement" value="FullyRepaired" />
+        </Property>
+      </Property>
+      <Property name="VisibleMaintenanceSlots" value="-1" />
+      <Property name="AllowRepair" value="True" />
+      <Property name="AllowCharge" value="False" />
+      <Property name="AllowDismantle" value="False" />
+      <Property name="AllowInstallTech" value="False" />
+      <Property name="AllowCraftProduct" value="False" />
+      <Property name="AllowTransfer" value="False" />
+      <Property name="AllowMoveAndStack" value="False" />
+      <Property name="AutoCompleteOnStart" value="False" />
+      <Property name="Interactable" value="OnlyWhenNotComplete" />
+      <Property name="CompletedTransitionDelay" value="3" />
+      <Property name="ModelRendererData" value="TkModelRendererData.xml">
+        <Property name="Camera" value="TkModelRendererCameraData.xml">
+          <Property name="Distance" value="0.5" />
+          <Property name="Offset" value="Vector4f.xml">
+            <Property name="x" value="-0.07" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+            <Property name="t" value="0" />
+          </Property>
+          <Property name="Pitch" value="0" />
+          <Property name="Rotate" value="0" />
+          <Property name="LightPitch" value="45" />
+          <Property name="LightRotate" value="45" />
+          <Property name="Wander" value="TkCameraWanderData.xml">
+            <Property name="CamWander" value="False" />
+            <Property name="CamWanderPhase" value="0.003" />
+            <Property name="CamWanderAmplitude" value="0.5" />
+          </Property>
+        </Property>
+        <Property name="Fov" value="30" />
+        <Property name="AspectRatio" value="1.7777" />
+        <Property name="ThumbnailMode" value="None" />
+        <Property name="FocusType" value="ResourceBounds" />
+        <Property name="Anim" value="" />
+        <Property name="HeightOffset" value="0.005" />
+      </Property>
+      <Property name="ModelRendererResource" value="ModelNode" />
+      <Property name="Title" value="" />
+      <Property name="Description" value="UI_MAINTAIN_TECHDEBRIS_SUB" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>

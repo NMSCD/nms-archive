@@ -1,0 +1,87 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       MapObjectFragment.h
+///     @author     User
+///     @date       
+///
+///     @brief      MapObjectFragment
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/Defines.shader.h"
+
+#include "Common/CommonUniforms.shader.h"
+#include "UberCommon.h"
+
+#include "Common/Common.shader.h"
+#include "Common/CommonDepth.shader.h"
+#include "Common/CommonLighting.shader.h"
+
+
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+	INPUT( vec4, mTexCoordsVec4,           TEXCOORD0 )
+    INPUT( vec4, mScreenSpacePositionVec4, TEXCOORD1 )
+    
+#if defined( _F21_VERTEXCOLOUR )
+    INPUT( vec4, mColourVec4,              TEXCOORD2 )
+#endif
+    
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+//-----------------------------------------------------------------------------
+///
+///     Fragment Main
+///
+///     @brief      Fragment Main
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+FRAGMENT_MAIN_COLOUR_DEPTH_SRT
+{
+	vec4 lFragmentColourVec4;
+
+	lFragmentColourVec4 = lUniforms.mpCustomPerMesh->gObjectColourVec4;
+
+#if defined( _F21_VERTEXCOLOUR )
+    {
+        lFragmentColourVec4 *= IN( mColourVec4 );
+    }
+#endif
+
+    FRAGMENT_COLOUR = lFragmentColourVec4;
+
+}

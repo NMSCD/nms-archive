@@ -1,0 +1,73 @@
+[[FX]]
+
+sampler gDiffuseMap = sampler_state
+{
+	Filter = Bilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 0;
+};
+
+sampler gNormalMap = sampler_state
+{
+	Filter = Trilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 3;
+};
+
+sampler gDepthBuffer = sampler_state
+{
+	Address = Wrap;
+	TexUnit = 1;
+};
+
+// Uniforms
+
+float4 gUVScrollStepVec4    = {0.0, 0.0, 0.0, 0.0};
+float4 gMultiTextureVec4    = {1.0, 0.0, 0.0, 0.0};
+float4 gHeavyAirFadeOutVec4 = {1.0, 0.0, 0.0, 0.0};
+
+// Contexts
+
+context TRANSLUCENT
+{
+	VertexShader = compile GLSL VS_TRANSLUCENT;
+	PixelShader = compile GLSL FS_TRANSLUCENT;
+}
+
+context TRANSLUCENT_SOFT
+{
+	VertexShader = compile GLSL VS_TRANSLUCENT;
+	PixelShader = compile GLSL FS_TRANSLUCENT_SOFT;
+}
+
+context TRANSLUCENT_ADDITIVE
+{
+	VertexShader = compile GLSL VS_TRANSLUCENT;
+	PixelShader = compile GLSL FS_TRANSLUCENT_SOFT;
+}
+
+context HEAVYAIR_SOFT
+{
+	VertexShader = compile GLSL VS_TRANSLUCENT;	
+	PixelShader = compile GLSL FS_HEAVYAIR_SOFT;
+}
+
+[[VS_TRANSLUCENT]]
+// =================================================================================================
+#include "ParticleVertex.shader.h"
+
+[[FS_TRANSLUCENT]]
+// =================================================================================================
+#include "ParticleFragment.shader.h"
+
+[[FS_TRANSLUCENT_SOFT]]
+// =================================================================================================
+#define D_SOFT_PARTICLES
+#include "ParticleFragment.shader.h"
+
+[[FS_HEAVYAIR_SOFT]]
+// =================================================================================================
+#define D_SOFT_PARTICLES
+#define D_HEAVYAIR
+#include "ParticleFragment.shader.h"
+

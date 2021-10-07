@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkSceneNodeData">
+  <Property name="Name" value="MODELS\COMMON\VEHICLES\SHARED\MININGLASER" />
+  <Property name="Type" value="MODEL" />
+  <Property name="Transform" value="TkTransformData.xml">
+    <Property name="TransX" value="0" />
+    <Property name="TransY" value="0" />
+    <Property name="TransZ" value="0" />
+    <Property name="RotX" value="0" />
+    <Property name="RotY" value="0" />
+    <Property name="RotZ" value="0" />
+    <Property name="ScaleX" value="1" />
+    <Property name="ScaleY" value="1" />
+    <Property name="ScaleZ" value="1" />
+  </Property>
+  <Property name="Attributes">
+    <Property value="TkSceneNodeAttributeData.xml">
+      <Property name="Name" value="GEOMETRY" />
+      <Property name="AltID" value="" />
+      <Property name="Value" value="MODELS\COMMON\VEHICLES\SHARED\MININGLASER.GEOMETRY.MBIN" />
+    </Property>
+  </Property>
+  <Property name="Children">
+    <Property value="TkSceneNodeData.xml">
+      <Property name="Name" value="Gun" />
+      <Property name="Type" value="LOCATOR" />
+      <Property name="Transform" value="TkTransformData.xml">
+        <Property name="TransX" value="0" />
+        <Property name="TransY" value="0" />
+        <Property name="TransZ" value="0" />
+        <Property name="RotX" value="0" />
+        <Property name="RotY" value="0" />
+        <Property name="RotZ" value="0" />
+        <Property name="ScaleX" value="1" />
+        <Property name="ScaleY" value="1" />
+        <Property name="ScaleZ" value="1" />
+      </Property>
+      <Property name="Attributes">
+        <Property value="TkSceneNodeAttributeData.xml">
+          <Property name="Name" value="ATTACHMENT" />
+          <Property name="AltID" value="" />
+          <Property name="Value" value="MODELS\COMMON\VEHICLES\SHARED\MININGLASER\ENTITIES\GUN.ENTITY.MBIN" />
+        </Property>
+      </Property>
+      <Property name="Children">
+        <Property value="TkSceneNodeData.xml">
+          <Property name="Name" value="GunBaseJNT" />
+          <Property name="Type" value="JOINT" />
+          <Property name="Transform" value="TkTransformData.xml">
+            <Property name="TransX" value="0" />
+            <Property name="TransY" value="0.305135" />
+            <Property name="TransZ" value="0" />
+            <Property name="RotX" value="0" />
+            <Property name="RotY" value="0" />
+            <Property name="RotZ" value="0" />
+            <Property name="ScaleX" value="1" />
+            <Property name="ScaleY" value="1" />
+            <Property name="ScaleZ" value="1" />
+          </Property>
+          <Property name="Attributes">
+            <Property value="TkSceneNodeAttributeData.xml">
+              <Property name="Name" value="JOINTINDEX" />
+              <Property name="AltID" value="" />
+              <Property name="Value" value="1" />
+            </Property>
+          </Property>
+          <Property name="Children">
+            <Property value="TkSceneNodeData.xml">
+              <Property name="Name" value="GunArmJNT" />
+              <Property name="Type" value="JOINT" />
+              <Property name="Transform" value="TkTransformData.xml">
+                <Property name="TransX" value="-0.530418" />
+                <Property name="TransY" value="0" />
+                <Property name="TransZ" value="0" />
+                <Property name="RotX" value="0" />
+                <Property name="RotY" value="0" />
+                <Property name="RotZ" value="0" />
+                <Property name="ScaleX" value="1" />
+                <Property name="ScaleY" value="1" />
+                <Property name="ScaleZ" value="1" />
+              </Property>
+              <Property name="Attributes">
+                <Property value="TkSceneNodeAttributeData.xml">
+                  <Property name="Name" value="JOINTINDEX" />
+                  <Property name="AltID" value="" />
+                  <Property name="Value" value="2" />
+                </Property>
+              </Property>
+              <Property name="Children">
+                <Property value="TkSceneNodeData.xml">
+                  <Property name="Name" value="GunBarrelJNT" />
+                  <Property name="Type" value="JOINT" />
+                  <Property name="Transform" value="TkTransformData.xml">
+                    <Property name="TransX" value="0" />
+                    <Property name="TransY" value="0" />
+                    <Property name="TransZ" value="0" />
+                    <Property name="RotX" value="0" />
+                    <Property name="RotY" value="0" />
+                    <Property name="RotZ" value="0" />
+                    <Property name="ScaleX" value="1" />
+                    <Property name="ScaleY" value="1" />
+                    <Property name="ScaleZ" value="1" />
+                  </Property>
+                  <Property name="Attributes">
+                    <Property value="TkSceneNodeAttributeData.xml">
+                      <Property name="Name" value="JOINTINDEX" />
+                      <Property name="AltID" value="" />
+                      <Property name="Value" value="3" />
+                    </Property>
+                  </Property>
+                  <Property name="Children">
+                    <Property value="TkSceneNodeData.xml">
+                      <Property name="Name" value="SHOOT" />
+                      <Property name="Type" value="LOCATOR" />
+                      <Property name="Transform" value="TkTransformData.xml">
+                        <Property name="TransX" value="0" />
+                        <Property name="TransY" value="0" />
+                        <Property name="TransZ" value="0.771068" />
+                        <Property name="RotX" value="90" />
+                        <Property name="RotY" value="0" />
+                        <Property name="RotZ" value="0" />
+                        <Property name="ScaleX" value="1" />
+                        <Property name="ScaleY" value="1" />
+                        <Property name="ScaleZ" value="1" />
+                      </Property>
+                      <Property name="Attributes" />
+                      <Property name="Children" />
+                    </Property>
+                    <Property value="TkSceneNodeData.xml">
+                      <Property name="Name" value="GunLight" />
+                      <Property name="Type" value="MESH" />
+                      <Property name="Transform" value="TkTransformData.xml">
+                        <Property name="TransX" value="0.530418" />
+                        <Property name="TransY" value="-2.16751" />
+                        <Property name="TransZ" value="1.25" />
+                        <Property name="RotX" value="0" />
+                        <Property name="RotY" value="0" />
+                        <Property name="RotZ" value="0" />
+                        <Property name="ScaleX" value="1" />
+                        <Property name="ScaleY" value="1" />
+                        <Property name="ScaleZ" value="1" />
+                      </Property>
+                      <Property name="Attributes">
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="BATCHSTART" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="0" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="BATCHCOUNT" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="120" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="VERTRSTART" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="0" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="VERTREND" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="24" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="FIRSTSKINMAT" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="0" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="LASTSKINMAT" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="0" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="MATERIAL" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="MODELS\COMMON\VEHICLES\SHARED\MININGLASER\LIGHTS_MAT.MATERIAL.MBIN" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="MESHLINK" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="GunLightShape" />
+                        </Property>
+                      </Property>
+                      <Property name="Children" />
+                    </Property>
+                    <Property value="TkSceneNodeData.xml">
+                      <Property name="Name" value="SmallLight" />
+                      <Property name="Type" value="MESH" />
+                      <Property name="Transform" value="TkTransformData.xml">
+                        <Property name="TransX" value="0.530418" />
+                        <Property name="TransY" value="-2.16751" />
+                        <Property name="TransZ" value="1.25" />
+                        <Property name="RotX" value="0" />
+                        <Property name="RotY" value="0" />
+                        <Property name="RotZ" value="0" />
+                        <Property name="ScaleX" value="1" />
+                        <Property name="ScaleY" value="1" />
+                        <Property name="ScaleZ" value="1" />
+                      </Property>
+                      <Property name="Attributes">
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="BATCHSTART" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="120" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="BATCHCOUNT" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="12" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="VERTRSTART" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="25" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="VERTREND" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="32" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="FIRSTSKINMAT" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="0" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="LASTSKINMAT" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="0" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="MATERIAL" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="MODELS\COMMON\VEHICLES\SHARED\MININGLASER\LIGHTGLOWMAT1.MATERIAL.MBIN" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="MESHLINK" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="SmallLightShape" />
+                        </Property>
+                      </Property>
+                      <Property name="Children" />
+                    </Property>
+                    <Property value="TkSceneNodeData.xml">
+                      <Property name="Name" value="MiningLaser" />
+                      <Property name="Type" value="MESH" />
+                      <Property name="Transform" value="TkTransformData.xml">
+                        <Property name="TransX" value="0.530418" />
+                        <Property name="TransY" value="-0.305135" />
+                        <Property name="TransZ" value="0" />
+                        <Property name="RotX" value="0" />
+                        <Property name="RotY" value="0" />
+                        <Property name="RotZ" value="0" />
+                        <Property name="ScaleX" value="1" />
+                        <Property name="ScaleY" value="1" />
+                        <Property name="ScaleZ" value="1" />
+                      </Property>
+                      <Property name="Attributes">
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="BATCHSTART" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="132" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="BATCHCOUNT" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="1905" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="VERTRSTART" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="33" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="VERTREND" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="623" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="FIRSTSKINMAT" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="0" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="LASTSKINMAT" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="0" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="MATERIAL" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="MODELS\COMMON\VEHICLES\SHARED\MININGLASER\BIKE6_BUGGYTRIM_MAT.MATERIAL.MBIN" />
+                        </Property>
+                        <Property value="TkSceneNodeAttributeData.xml">
+                          <Property name="Name" value="MESHLINK" />
+                          <Property name="AltID" value="" />
+                          <Property name="Value" value="MiningLaserShape" />
+                        </Property>
+                      </Property>
+                      <Property name="Children">
+                        <Property value="TkSceneNodeData.xml">
+                          <Property name="Name" value="SUB1MiningLaser" />
+                          <Property name="Type" value="MESH" />
+                          <Property name="Transform" value="TkTransformData.xml">
+                            <Property name="TransX" value="0" />
+                            <Property name="TransY" value="0" />
+                            <Property name="TransZ" value="0" />
+                            <Property name="RotX" value="0" />
+                            <Property name="RotY" value="0" />
+                            <Property name="RotZ" value="0" />
+                            <Property name="ScaleX" value="1" />
+                            <Property name="ScaleY" value="1" />
+                            <Property name="ScaleZ" value="1" />
+                          </Property>
+                          <Property name="Attributes">
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="BATCHSTART" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="2037" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="BATCHCOUNT" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="9096" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="VERTRSTART" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="624" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="VERTREND" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="4263" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="FIRSTSKINMAT" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="0" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="LASTSKINMAT" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="0" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="MATERIAL" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="MODELS\COMMON\VEHICLES\SHARED\MININGLASER\BIKE6_BUGGYTRIM_MAT.MATERIAL.MBIN" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="MESHLINK" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="MiningLaserShape" />
+                            </Property>
+                          </Property>
+                          <Property name="Children" />
+                        </Property>
+                        <Property value="TkSceneNodeData.xml">
+                          <Property name="Name" value="SUB2MiningLaser" />
+                          <Property name="Type" value="MESH" />
+                          <Property name="Transform" value="TkTransformData.xml">
+                            <Property name="TransX" value="0" />
+                            <Property name="TransY" value="0" />
+                            <Property name="TransZ" value="0" />
+                            <Property name="RotX" value="0" />
+                            <Property name="RotY" value="0" />
+                            <Property name="RotZ" value="0" />
+                            <Property name="ScaleX" value="1" />
+                            <Property name="ScaleY" value="1" />
+                            <Property name="ScaleZ" value="1" />
+                          </Property>
+                          <Property name="Attributes">
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="BATCHSTART" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="11133" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="BATCHCOUNT" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="5076" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="VERTRSTART" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="4264" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="VERTREND" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="5689" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="FIRSTSKINMAT" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="0" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="LASTSKINMAT" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="0" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="MATERIAL" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="MODELS\COMMON\VEHICLES\SHARED\MININGLASER\BIKE6_BUGGYTRIM_MAT.MATERIAL.MBIN" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="MESHLINK" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="MiningLaserShape" />
+                            </Property>
+                          </Property>
+                          <Property name="Children" />
+                        </Property>
+                        <Property value="TkSceneNodeData.xml">
+                          <Property name="Name" value="SUB3MiningLaser" />
+                          <Property name="Type" value="MESH" />
+                          <Property name="Transform" value="TkTransformData.xml">
+                            <Property name="TransX" value="0" />
+                            <Property name="TransY" value="0" />
+                            <Property name="TransZ" value="0" />
+                            <Property name="RotX" value="0" />
+                            <Property name="RotY" value="0" />
+                            <Property name="RotZ" value="0" />
+                            <Property name="ScaleX" value="1" />
+                            <Property name="ScaleY" value="1" />
+                            <Property name="ScaleZ" value="1" />
+                          </Property>
+                          <Property name="Attributes">
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="BATCHSTART" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="16209" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="BATCHCOUNT" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="1020" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="VERTRSTART" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="5690" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="VERTREND" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="6011" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="FIRSTSKINMAT" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="0" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="LASTSKINMAT" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="0" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="MATERIAL" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="MODELS\COMMON\VEHICLES\SHARED\MININGLASER\BUGGYTRIM_MAT7.MATERIAL.MBIN" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="MESHLINK" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="MiningLaserShape" />
+                            </Property>
+                          </Property>
+                          <Property name="Children" />
+                        </Property>
+                        <Property value="TkSceneNodeData.xml">
+                          <Property name="Name" value="SUB4MiningLaser" />
+                          <Property name="Type" value="MESH" />
+                          <Property name="Transform" value="TkTransformData.xml">
+                            <Property name="TransX" value="0" />
+                            <Property name="TransY" value="0" />
+                            <Property name="TransZ" value="0" />
+                            <Property name="RotX" value="0" />
+                            <Property name="RotY" value="0" />
+                            <Property name="RotZ" value="0" />
+                            <Property name="ScaleX" value="1" />
+                            <Property name="ScaleY" value="1" />
+                            <Property name="ScaleZ" value="1" />
+                          </Property>
+                          <Property name="Attributes">
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="BATCHSTART" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="17229" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="BATCHCOUNT" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="252" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="VERTRSTART" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="6012" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="VERTREND" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="6131" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="FIRSTSKINMAT" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="0" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="LASTSKINMAT" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="0" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="MATERIAL" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="MODELS\COMMON\VEHICLES\SHARED\MININGLASER\LAMBERT1.MATERIAL.MBIN" />
+                            </Property>
+                            <Property value="TkSceneNodeAttributeData.xml">
+                              <Property name="Name" value="MESHLINK" />
+                              <Property name="AltID" value="" />
+                              <Property name="Value" value="MiningLaserShape" />
+                            </Property>
+                          </Property>
+                          <Property name="Children" />
+                        </Property>
+                      </Property>
+                    </Property>
+                  </Property>
+                </Property>
+              </Property>
+            </Property>
+            <Property value="TkSceneNodeData.xml">
+              <Property name="Name" value="Turret" />
+              <Property name="Type" value="MESH" />
+              <Property name="Transform" value="TkTransformData.xml">
+                <Property name="TransX" value="0" />
+                <Property name="TransY" value="-0.305135" />
+                <Property name="TransZ" value="0" />
+                <Property name="RotX" value="0" />
+                <Property name="RotY" value="0" />
+                <Property name="RotZ" value="0" />
+                <Property name="ScaleX" value="1" />
+                <Property name="ScaleY" value="1" />
+                <Property name="ScaleZ" value="1" />
+              </Property>
+              <Property name="Attributes">
+                <Property value="TkSceneNodeAttributeData.xml">
+                  <Property name="Name" value="BATCHSTART" />
+                  <Property name="AltID" value="" />
+                  <Property name="Value" value="17481" />
+                </Property>
+                <Property value="TkSceneNodeAttributeData.xml">
+                  <Property name="Name" value="BATCHCOUNT" />
+                  <Property name="AltID" value="" />
+                  <Property name="Value" value="8724" />
+                </Property>
+                <Property value="TkSceneNodeAttributeData.xml">
+                  <Property name="Name" value="VERTRSTART" />
+                  <Property name="AltID" value="" />
+                  <Property name="Value" value="6132" />
+                </Property>
+                <Property value="TkSceneNodeAttributeData.xml">
+                  <Property name="Name" value="VERTREND" />
+                  <Property name="AltID" value="" />
+                  <Property name="Value" value="9693" />
+                </Property>
+                <Property value="TkSceneNodeAttributeData.xml">
+                  <Property name="Name" value="FIRSTSKINMAT" />
+                  <Property name="AltID" value="" />
+                  <Property name="Value" value="0" />
+                </Property>
+                <Property value="TkSceneNodeAttributeData.xml">
+                  <Property name="Name" value="LASTSKINMAT" />
+                  <Property name="AltID" value="" />
+                  <Property name="Value" value="0" />
+                </Property>
+                <Property value="TkSceneNodeAttributeData.xml">
+                  <Property name="Name" value="MATERIAL" />
+                  <Property name="AltID" value="" />
+                  <Property name="Value" value="MODELS\COMMON\VEHICLES\SHARED\MININGLASER\BIKE5_BUGGYTRIM_MAT.MATERIAL.MBIN" />
+                </Property>
+                <Property value="TkSceneNodeAttributeData.xml">
+                  <Property name="Name" value="MESHLINK" />
+                  <Property name="AltID" value="" />
+                  <Property name="Value" value="TurretShape" />
+                </Property>
+              </Property>
+              <Property name="Children" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+</Data>

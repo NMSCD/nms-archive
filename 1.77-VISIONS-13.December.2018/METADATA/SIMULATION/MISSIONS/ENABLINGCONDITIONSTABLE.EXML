@@ -1,0 +1,2284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.77.0)-->
+<Data template="GcMissionTable">
+  <Property name="Missions">
+    <Property value="GcGenericMissionSequence.xml">
+      <Property name="MissionID" value="?NADA_DIALOG" />
+      <Property name="MissionClass" value="Guide" />
+      <Property name="MissionIsCritical" value="False" />
+      <Property name="MissionObjective" value="" />
+      <Property name="MissionTitles" value="GcNumberedTextList.xml">
+        <Property name="Format" value="" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionSubtitles" value="GcNumberedTextList.xml">
+        <Property name="Format" value="" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionDescriptions" value="GcNumberedTextList.xml">
+        <Property name="Format" value="" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionProcDescriptionHeader" value="GcNumberedTextList.xml">
+        <Property name="Format" value="" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionProcDescriptionA" value="GcNumberedTextList.xml">
+        <Property name="Format" value="" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionProcDescriptionB" value="GcNumberedTextList.xml">
+        <Property name="Format" value="" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionProcDescriptionCs" value="GcNumberedTextList.xml">
+        <Property name="Format" value="" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="MissionIconSelected" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="MissionIconNotSelected" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="MissionPriority" value="-5" />
+      <Property name="MissionCategory" value="GcMissionCategory.xml">
+        <Property name="MissionCategory" value="Mission" />
+      </Property>
+      <Property name="MissionPageHint" value="GcMissionPageHint.xml">
+        <Property name="MissionPageHint" value="None" />
+      </Property>
+      <Property name="MissionPageLocID" value="" />
+      <Property name="MissionBuildMenuHint" value="" />
+      <Property name="MissionHasColourOverride" value="False" />
+      <Property name="MissionColourOverride" value="Colour.xml">
+        <Property name="R" value="1" />
+        <Property name="G" value="1" />
+        <Property name="B" value="1" />
+        <Property name="A" value="1" />
+      </Property>
+      <Property name="DefaultItems" value="GcDefaultMissionItemsTable.xml">
+        <Property name="PrimarySubstances" />
+        <Property name="SecondarySubstances" />
+        <Property name="PrimaryProducts" />
+        <Property name="SecondaryProducts" />
+      </Property>
+      <Property name="PrefixTitle" value="True" />
+      <Property name="NextMissionHint" value="" />
+      <Property name="MessageComplete" value="Never" />
+      <Property name="MessageStart" value="Never" />
+      <Property name="MissionBoardOptions" value="GcMissionBoardOptions.xml">
+        <Property name="Type" value="GcMissionType.xml">
+          <Property name="MissionType" value="SpaceCombat" />
+        </Property>
+        <Property name="Difficulty" value="GcMissionDifficulty.xml">
+          <Property name="MissionDifficulty" value="Normal" />
+        </Property>
+        <Property name="MinRank" value="0" />
+        <Property name="CloseMissionGiver" value="False" />
+        <Property name="RewardPenaltyOnAbandon" value="" />
+        <Property name="Faction" />
+      </Property>
+      <Property name="AutoStart" value="AllModes" />
+      <Property name="RestartOnCompletion" value="False" />
+      <Property name="CancelSetsComplete" value="False" />
+      <Property name="Dialog">
+        <Property value="GcAlienPuzzleEntry.xml">
+          <Property name="Id" value="EXP_NPC_ANOMALY_1" />
+          <Property name="Race" value="GcAlienRace.xml">
+            <Property name="AlienRace" value="Explorers" />
+          </Property>
+          <Property name="Type" value="GcInteractionType.xml">
+            <Property name="InteractionType" value="NPC_Anomaly" />
+          </Property>
+          <Property name="Category" value="GcAlienPuzzleCategory.xml">
+            <Property name="AlienPuzzleCategory" value="Default" />
+          </Property>
+          <Property name="Title" value="" />
+          <Property name="Text" value="EXP_NPC_U3ANOMALY_DESC_1" />
+          <Property name="TextAlien" value="EXP_NPC_U3ANOMALY_LANG_1" />
+          <Property name="TranslateAlienText" value="False" />
+          <Property name="TranslationBrackets" value="True" />
+          <Property name="ProgressiveDialogue" value="False" />
+          <Property name="RequiresScanEvent" value="" />
+          <Property name="Options">
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="ALL_REQUEST_NOTHING" />
+              <Property name="Text" value="" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards" />
+              <Property name="Mood" value="Neutral" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_C_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_C_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="FREE_EXPLORE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="PROC_TECH_ALL" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+          </Property>
+          <Property name="AdditionalText" />
+          <Property name="AdditionalTextAlien" />
+        </Property>
+        <Property value="GcAlienPuzzleEntry.xml">
+          <Property name="Id" value="EXP_NPC_ANOMALY_2" />
+          <Property name="Race" value="GcAlienRace.xml">
+            <Property name="AlienRace" value="Explorers" />
+          </Property>
+          <Property name="Type" value="GcInteractionType.xml">
+            <Property name="InteractionType" value="NPC_Anomaly" />
+          </Property>
+          <Property name="Category" value="GcAlienPuzzleCategory.xml">
+            <Property name="AlienPuzzleCategory" value="Default" />
+          </Property>
+          <Property name="Title" value="" />
+          <Property name="Text" value="EXP_NPC_U3ANOMALY_DESC_2" />
+          <Property name="TextAlien" value="EXP_NPC_U3ANOMALY_LANG_2" />
+          <Property name="TranslateAlienText" value="False" />
+          <Property name="TranslationBrackets" value="True" />
+          <Property name="ProgressiveDialogue" value="False" />
+          <Property name="RequiresScanEvent" value="" />
+          <Property name="Options">
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="ALL_REQUEST_NOTHING" />
+              <Property name="Text" value="" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards" />
+              <Property name="Mood" value="Neutral" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_C_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_C_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="FREE_EXPLORE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="PROC_TECH_ALL" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+          </Property>
+          <Property name="AdditionalText" />
+          <Property name="AdditionalTextAlien" />
+        </Property>
+        <Property value="GcAlienPuzzleEntry.xml">
+          <Property name="Id" value="EXP_NPC_ANOMALY_3" />
+          <Property name="Race" value="GcAlienRace.xml">
+            <Property name="AlienRace" value="Explorers" />
+          </Property>
+          <Property name="Type" value="GcInteractionType.xml">
+            <Property name="InteractionType" value="NPC_Anomaly" />
+          </Property>
+          <Property name="Category" value="GcAlienPuzzleCategory.xml">
+            <Property name="AlienPuzzleCategory" value="Default" />
+          </Property>
+          <Property name="Title" value="" />
+          <Property name="Text" value="EXP_NPC_U3ANOMALY_DESC_3" />
+          <Property name="TextAlien" value="EXP_NPC_U3ANOMALY_LANG_3" />
+          <Property name="TranslateAlienText" value="False" />
+          <Property name="TranslationBrackets" value="True" />
+          <Property name="ProgressiveDialogue" value="False" />
+          <Property name="RequiresScanEvent" value="" />
+          <Property name="Options">
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="ALL_REQUEST_NOTHING" />
+              <Property name="Text" value="" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards" />
+              <Property name="Mood" value="Neutral" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_C_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_C_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="FREE_EXPLORE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="PROC_TECH_ALL" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+          </Property>
+          <Property name="AdditionalText" />
+          <Property name="AdditionalTextAlien" />
+        </Property>
+        <Property value="GcAlienPuzzleEntry.xml">
+          <Property name="Id" value="EXP_NPC_ANOMALY_4" />
+          <Property name="Race" value="GcAlienRace.xml">
+            <Property name="AlienRace" value="Explorers" />
+          </Property>
+          <Property name="Type" value="GcInteractionType.xml">
+            <Property name="InteractionType" value="NPC_Anomaly" />
+          </Property>
+          <Property name="Category" value="GcAlienPuzzleCategory.xml">
+            <Property name="AlienPuzzleCategory" value="Default" />
+          </Property>
+          <Property name="Title" value="" />
+          <Property name="Text" value="EXP_NPC_U3ANOMALY_DESC_4" />
+          <Property name="TextAlien" value="EXP_NPC_U3ANOMALY_LANG_4" />
+          <Property name="TranslateAlienText" value="False" />
+          <Property name="TranslationBrackets" value="True" />
+          <Property name="ProgressiveDialogue" value="False" />
+          <Property name="RequiresScanEvent" value="" />
+          <Property name="Options">
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="ALL_REQUEST_NOTHING" />
+              <Property name="Text" value="" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards" />
+              <Property name="Mood" value="Neutral" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_C_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_C_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="FREE_EXPLORE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="PROC_TECH_ALL" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+          </Property>
+          <Property name="AdditionalText" />
+          <Property name="AdditionalTextAlien" />
+        </Property>
+        <Property value="GcAlienPuzzleEntry.xml">
+          <Property name="Id" value="EXP_NPC_ANOMALY_5" />
+          <Property name="Race" value="GcAlienRace.xml">
+            <Property name="AlienRace" value="Explorers" />
+          </Property>
+          <Property name="Type" value="GcInteractionType.xml">
+            <Property name="InteractionType" value="NPC_Anomaly" />
+          </Property>
+          <Property name="Category" value="GcAlienPuzzleCategory.xml">
+            <Property name="AlienPuzzleCategory" value="Default" />
+          </Property>
+          <Property name="Title" value="" />
+          <Property name="Text" value="EXP_NPC_U3ANOMALY_DESC_5" />
+          <Property name="TextAlien" value="EXP_NPC_U3ANOMALY_LANG_5" />
+          <Property name="TranslateAlienText" value="False" />
+          <Property name="TranslationBrackets" value="True" />
+          <Property name="ProgressiveDialogue" value="False" />
+          <Property name="RequiresScanEvent" value="" />
+          <Property name="Options">
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="ALL_REQUEST_NOTHING" />
+              <Property name="Text" value="" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards" />
+              <Property name="Mood" value="Neutral" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_C_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_C_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="FREE_EXPLORE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="PROC_TECH_ALL" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+          </Property>
+          <Property name="AdditionalText" />
+          <Property name="AdditionalTextAlien" />
+        </Property>
+        <Property value="GcAlienPuzzleEntry.xml">
+          <Property name="Id" value="EXP_NPC_ANOMALY_6" />
+          <Property name="Race" value="GcAlienRace.xml">
+            <Property name="AlienRace" value="Explorers" />
+          </Property>
+          <Property name="Type" value="GcInteractionType.xml">
+            <Property name="InteractionType" value="NPC_Anomaly" />
+          </Property>
+          <Property name="Category" value="GcAlienPuzzleCategory.xml">
+            <Property name="AlienPuzzleCategory" value="Default" />
+          </Property>
+          <Property name="Title" value="" />
+          <Property name="Text" value="EXP_NPC_U3ANOMALY_DESC_6" />
+          <Property name="TextAlien" value="EXP_NPC_U3ANOMALY_LANG_6" />
+          <Property name="TranslateAlienText" value="False" />
+          <Property name="TranslationBrackets" value="True" />
+          <Property name="ProgressiveDialogue" value="False" />
+          <Property name="RequiresScanEvent" value="" />
+          <Property name="Options">
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="ALL_REQUEST_NOTHING" />
+              <Property name="Text" value="" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards" />
+              <Property name="Mood" value="Neutral" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Equal" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_C_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_C_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="FREE_EXPLORE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="PROC_TECH_ALL" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+          </Property>
+          <Property name="AdditionalText" />
+          <Property name="AdditionalTextAlien" />
+        </Property>
+        <Property value="GcAlienPuzzleEntry.xml">
+          <Property name="Id" value="EXP_NPC_ANOMALY_7" />
+          <Property name="Race" value="GcAlienRace.xml">
+            <Property name="AlienRace" value="Explorers" />
+          </Property>
+          <Property name="Type" value="GcInteractionType.xml">
+            <Property name="InteractionType" value="NPC_Anomaly" />
+          </Property>
+          <Property name="Category" value="GcAlienPuzzleCategory.xml">
+            <Property name="AlienPuzzleCategory" value="Default" />
+          </Property>
+          <Property name="Title" value="" />
+          <Property name="Text" value="EXP_NPC_U3ANOMALY_DESC_7" />
+          <Property name="TextAlien" value="EXP_NPC_U3ANOMALY_LANG_7" />
+          <Property name="TranslateAlienText" value="False" />
+          <Property name="TranslationBrackets" value="True" />
+          <Property name="ProgressiveDialogue" value="False" />
+          <Property name="RequiresScanEvent" value="" />
+          <Property name="Options">
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="ALL_REQUEST_NOTHING" />
+              <Property name="Text" value="" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards" />
+              <Property name="Mood" value="Neutral" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_C_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_C_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="FREE_EXPLORE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="PROC_TECH_ALL" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+          </Property>
+          <Property name="AdditionalText" />
+          <Property name="AdditionalTextAlien" />
+        </Property>
+        <Property value="GcAlienPuzzleEntry.xml">
+          <Property name="Id" value="EXP_NPC_ANOMALY_8" />
+          <Property name="Race" value="GcAlienRace.xml">
+            <Property name="AlienRace" value="Explorers" />
+          </Property>
+          <Property name="Type" value="GcInteractionType.xml">
+            <Property name="InteractionType" value="NPC_Anomaly" />
+          </Property>
+          <Property name="Category" value="GcAlienPuzzleCategory.xml">
+            <Property name="AlienPuzzleCategory" value="Default" />
+          </Property>
+          <Property name="Title" value="" />
+          <Property name="Text" value="EXP_NPC_U3ANOMALY_DESC_8" />
+          <Property name="TextAlien" value="EXP_NPC_U3ANOMALY_LANG_8" />
+          <Property name="TranslateAlienText" value="False" />
+          <Property name="TranslationBrackets" value="True" />
+          <Property name="ProgressiveDialogue" value="False" />
+          <Property name="RequiresScanEvent" value="" />
+          <Property name="Options">
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="ALL_REQUEST_NOTHING" />
+              <Property name="Text" value="" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards" />
+              <Property name="Mood" value="Neutral" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_C_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_C_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="FREE_EXPLORE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="PROC_TECH_ALL" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+          </Property>
+          <Property name="AdditionalText" />
+          <Property name="AdditionalTextAlien" />
+        </Property>
+        <Property value="GcAlienPuzzleEntry.xml">
+          <Property name="Id" value="EXP_NPC_ANOMALY_9" />
+          <Property name="Race" value="GcAlienRace.xml">
+            <Property name="AlienRace" value="Explorers" />
+          </Property>
+          <Property name="Type" value="GcInteractionType.xml">
+            <Property name="InteractionType" value="NPC_Anomaly" />
+          </Property>
+          <Property name="Category" value="GcAlienPuzzleCategory.xml">
+            <Property name="AlienPuzzleCategory" value="Default" />
+          </Property>
+          <Property name="Title" value="" />
+          <Property name="Text" value="EXP_NPC_U3ANOMALY_DESC_9" />
+          <Property name="TextAlien" value="EXP_NPC_U3ANOMALY_LANG_9" />
+          <Property name="TranslateAlienText" value="False" />
+          <Property name="TranslationBrackets" value="True" />
+          <Property name="ProgressiveDialogue" value="False" />
+          <Property name="RequiresScanEvent" value="" />
+          <Property name="Options">
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="ALL_REQUEST_NOTHING" />
+              <Property name="Text" value="" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards" />
+              <Property name="Mood" value="Neutral" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="Greater" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_A_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_A_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_ATLAS_STA" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_B_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_B_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="REV_BLACK_HOLE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+            <Property value="GcAlienPuzzleOption.xml">
+              <Property name="Name" value="EXP_NPC_U3ANOMALY_OPT_C_1" />
+              <Property name="Text" value="EXP_NPC_U3ANOMALY_RES_C_1" />
+              <Property name="IsAlien" value="False" />
+              <Property name="Cost" value="" />
+              <Property name="Rewards">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="FREE_EXPLORE" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="R_NADA_PROGRESS" />
+                </Property>
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="PROC_TECH_ALL" />
+                </Property>
+              </Property>
+              <Property name="Mood" value="Positive" />
+              <Property name="KeepOpen" value="True" />
+              <Property name="MarkInteractionComplete" value="True" />
+              <Property name="NextInteraction" value="?EXP_NPC_ANOMALY_HOLD" />
+              <Property name="AudioEvent" value="GcAudioWwiseEvents.xml">
+                <Property name="AkEvent" value="0" />
+              </Property>
+              <Property name="EnablingConditionTest" value="GcMissionConditionTest.xml">
+                <Property name="ConditionTest" value="AnyFalse" />
+              </Property>
+              <Property name="EnablingConditions">
+                <Property value="GcMissionConditionStatLevel.xml">
+                  <Property name="Stat" value="NADA_PROGRESS" />
+                  <Property name="StatGroup" value="GLOBAL_STATS" />
+                  <Property name="Level" value="1" />
+                  <Property name="CompareStat" value="POLO_PROGRESS" />
+                  <Property name="DisplayMilestoneNumber" value="1" />
+                  <Property name="Test" value="TkEqualityEnum.xml">
+                    <Property name="EqualityEnum" value="LessEqual" />
+                  </Property>
+                </Property>
+              </Property>
+              <Property name="EnablingConditionId" value="" />
+            </Property>
+          </Property>
+          <Property name="AdditionalText" />
+          <Property name="AdditionalTextAlien" />
+        </Property>
+      </Property>
+      <Property name="ScanEvents" />
+      <Property name="Rewards" />
+      <Property name="Costs" />
+      <Property name="StartConditionTest" value="GcMissionConditionTest.xml">
+        <Property name="ConditionTest" value="AnyFalse" />
+      </Property>
+      <Property name="CancelConditionTest" value="GcMissionConditionTest.xml">
+        <Property name="ConditionTest" value="AnyFalse" />
+      </Property>
+      <Property name="StartIsCancel" value="False" />
+      <Property name="StartingConditions" />
+      <Property name="CancelingConditions" />
+      <Property name="FinalStageVersions">
+        <Property value="GcGenericMissionVersionProgress.xml">
+          <Property name="Version" value="3" />
+          <Property name="Progress" value="1" />
+        </Property>
+        <Property value="GcGenericMissionVersionProgress.xml">
+          <Property name="Version" value="4" />
+          <Property name="Progress" value="1" />
+        </Property>
+        <Property value="GcGenericMissionVersionProgress.xml">
+          <Property name="Version" value="5" />
+          <Property name="Progress" value="1" />
+        </Property>
+        <Property value="GcGenericMissionVersionProgress.xml">
+          <Property name="Version" value="6" />
+          <Property name="Progress" value="1" />
+        </Property>
+        <Property value="GcGenericMissionVersionProgress.xml">
+          <Property name="Version" value="7" />
+          <Property name="Progress" value="1" />
+        </Property>
+        <Property value="GcGenericMissionVersionProgress.xml">
+          <Property name="Version" value="8" />
+          <Property name="Progress" value="1" />
+        </Property>
+      </Property>
+      <Property name="Stages">
+        <Property value="GcGenericMissionStage.xml">
+          <Property name="Versions">
+            <Property value="GcGenericMissionVersionProgress.xml">
+              <Property name="Version" value="3" />
+              <Property name="Progress" value="0" />
+            </Property>
+            <Property value="GcGenericMissionVersionProgress.xml">
+              <Property name="Version" value="4" />
+              <Property name="Progress" value="0" />
+            </Property>
+            <Property value="GcGenericMissionVersionProgress.xml">
+              <Property name="Version" value="5" />
+              <Property name="Progress" value="0" />
+            </Property>
+            <Property value="GcGenericMissionVersionProgress.xml">
+              <Property name="Version" value="6" />
+              <Property name="Progress" value="0" />
+            </Property>
+            <Property value="GcGenericMissionVersionProgress.xml">
+              <Property name="Version" value="7" />
+              <Property name="Progress" value="0" />
+            </Property>
+            <Property value="GcGenericMissionVersionProgress.xml">
+              <Property name="Version" value="8" />
+              <Property name="Progress" value="0" />
+            </Property>
+          </Property>
+          <Property name="Stage" value="GcMissionSequenceStop.xml">
+            <Property name="Message" value="" />
+            <Property name="DebugText" value="never end" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="ForcesPageHint" value="False" />
+      <Property name="ForcesBuildMenuHint" value="False" />
+      <Property name="IsProceduralAllowed" value="False" />
+      <Property name="IsRecurring" value="False" />
+      <Property name="IsLegacy" value="False" />
+    </Property>
+  </Property>
+</Data>

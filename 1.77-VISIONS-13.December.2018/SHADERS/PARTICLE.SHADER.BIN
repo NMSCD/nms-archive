@@ -1,0 +1,162 @@
+[[FX]]
+
+sampler gDiffuseMap = sampler_state
+{
+	TexUnit = 0;
+};
+
+sampler gNormalMap = sampler_state
+{
+	TexUnit = 1;
+};
+
+
+sampler gDetailDiffuseMap = sampler_state
+{
+    TexUnit = 2;
+};
+
+sampler gDetailNormalMap = sampler_state
+{
+    TexUnit = 3;
+};
+
+sampler gDiffuse2Map = sampler_state
+{
+	TexUnit = 4;
+};
+
+sampler gMasksMap = sampler_state
+{
+	TexUnit = 5;
+};
+
+sampler gCausticMap = sampler_state
+{
+    TexUnit = 6;
+};
+
+sampler gCausticOffsetMap = sampler_state
+{
+    TexUnit = 7;
+};
+
+sampler gShadowMap = sampler_state
+{
+    TexUnit = 8;
+};
+
+sampler gCloudShadowMap = sampler_state
+{
+    TexUnit = 9;
+};
+
+sampler gDualPMapFront = sampler_state
+{
+    TexUnit = 10;
+};
+
+sampler gDualPMapBack = sampler_state
+{
+    TexUnit = 11;
+};
+
+sampler gHSVOverlay = sampler_state
+{
+    DefaultTexture = SHADER/MACROVARIATION.DDS;
+    TexUnit = 12;
+    Address = Wrap;
+};
+
+sampler gHSVNormalOverlay = sampler_state
+{
+    DefaultTexture = SHADER/MACROVARIATION.NORMAL.DDS;
+    TexUnit = 13;
+    Address = Wrap;
+};
+
+sampler gNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/CLOUDNOISE.DDS;
+    TexUnit = 14;
+    Address = Wrap;
+};
+
+sampler gPerlin3D = sampler_state
+{
+    DefaultTexture = SHADER/NOISEHALF.DDS;
+    TexUnit = 15;
+    Address = Wrap;
+};
+
+sampler gFadeNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/BLUENOISE.DDS;
+    TexUnit = 16;
+    Address = Wrap;
+};
+
+sampler gDepthBuffer = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 17;
+};
+
+sampler gBufferMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 18;
+};
+
+
+// Uniforms
+
+float4 gUVScrollStepVec4    = {0.0, 0.0, 0.0, 0.0};
+float4 gMultiTextureVec4    = {1.0, 0.0, 0.0, 0.0};
+float4 gHeavyAirFadeOutVec4 = {1.0, 0.0, 0.0, 0.0};
+
+// Contexts
+
+context TRANSLUCENT
+{
+	VertexShader = compile GLSL VS_TRANSLUCENT;
+	PixelShader = compile GLSL FS_TRANSLUCENT;
+}
+
+context TRANSLUCENT_SOFT
+{
+	VertexShader = compile GLSL VS_TRANSLUCENT;
+	PixelShader = compile GLSL FS_TRANSLUCENT_SOFT;
+}
+
+context TRANSLUCENT_ADDITIVE
+{
+	VertexShader = compile GLSL VS_TRANSLUCENT;
+	PixelShader = compile GLSL FS_TRANSLUCENT_SOFT;
+}
+
+context HEAVYAIR_SOFT
+{
+	VertexShader = compile GLSL VS_TRANSLUCENT;	
+	PixelShader = compile GLSL FS_HEAVYAIR_SOFT;
+}
+
+[[VS_TRANSLUCENT]]
+// =================================================================================================
+#include "ParticleVertex.shader.h"
+
+[[FS_TRANSLUCENT]]
+// =================================================================================================
+#include "ParticleFragment.shader.h"
+
+[[FS_TRANSLUCENT_SOFT]]
+// =================================================================================================
+#define D_SOFT_PARTICLES
+#include "ParticleFragment.shader.h"
+
+[[FS_HEAVYAIR_SOFT]]
+// =================================================================================================
+#define D_SOFT_PARTICLES
+#define D_HEAVYAIR
+#include "ParticleFragment.shader.h"
+

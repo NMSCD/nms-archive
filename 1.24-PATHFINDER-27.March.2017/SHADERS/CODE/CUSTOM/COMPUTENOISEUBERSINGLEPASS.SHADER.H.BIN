@@ -1,0 +1,106 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       ComputeNoise.h
+///     @author     ccummings
+///     @date       
+///
+///     @brief      Basic shader to execute a series of Noise3D samples
+///
+///     Copyright (c) 2016 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+#include "Common/Defines.shader.h"
+#include "Custom/ComputeNoiseCommon.h"
+
+float
+mysmoothstep(
+float edge0,
+float edge1,
+float x)
+{
+	// Scale, and clamp x to 0..1 range
+	x = clamp((x - edge0) / (edge1 - edge0), 0.0f, 1.0f);
+	// Evaluate polynomial
+	return x*x*x*(x*(x*6.0f - 15.0f) + 10.0f);
+}
+
+static const float kfStartAmplitude = 0.9; //! slider[0.1, 0.9, 1.0]
+
+// Declare thread count for each thread group.
+[NUM_THREADS(64, 1, 1)]
+
+// Entry point for the compute shader with semantics that define the 
+// variations of the ID to determine the thread instance invoked.
+void main(uint3 dispatchThreadID : S_DISPATCH_THREAD_ID, Srt lUniforms : S_SRT_DATA)
+{
+	uint idx = dispatchThreadID.x;
+	if (idx >= lUniforms.mpPerDispatchUniforms->miNumRequests)
+		return;
+
+	idx += lUniforms.mpPerDispatchUniforms->miFirstRequest;
+
+	vec3 lPosition = lUniforms.mpGlobalUniforms->mRequests[idx];
+
+	int   liOctaves = lUniforms.mpPerDispatchUniforms->miOctaves;
+	float lfAmplifyFeatures = lUniforms.mpPerDispatchUniforms->mfAmplifyFeatures;		//! slider[0.0, 0.0, 0.5]
+	float lfPerturbFeatures = lUniforms.mpPerDispatchUniforms->mfPerturbFeatures;		//! slider[-0.4, 0.0, 0.4]
+	float lfSharpToRoundFeatures = lUniforms.mpPerDispatchUniforms->mfSharpToRoundFeatures;	//! slider[-1.0, 0.0, 1.0]
+	float lfAltitudeErosion = lUniforms.mpPerDispatchUniforms->mfAltitudeErosion;		//! slider[0.0, 0.0, 0.25]
+	float lfRidgeErosion = lUniforms.mpPerDispatchUniforms->mfRidgeErosion;			//! slider[0.0, 0.0, 1.0]
+	float lfSlopeErosion = lUniforms.mpPerDispatchUniforms->mfSlopeErosion;			//! slider[0.0, 0.0, 1.0]
+	float lfLacunarity = lUniforms.mpPerDispatchUniforms->mfLacunarity;				// = 2.0f
+	float lfGain = lUniforms.mpPerDispatchUniforms->mfGain;					// = 0.5f
+
+	float lfSum = 0.0f;
+	float lfFrequency = 1.0f;
+	float lfAmplitude = liOctaves == 1 ? 1.0f : kfStartAmplitude;
+	float lfSharpness = (float)round(lfSharpToRoundFeatures);
+
+	vec3 lSlopeErosionDerivativeSum = vec3(0.0f);
+	vec3 lPerturbDerivativeSum = vec3(0.0f);
+	vec3 lRidgeErosionDerivativeSum = vec3(0.0f);
+
+	float lfDampedAmplitude = lfAmplitude;
+	float lfCurrentGain = lfGain + (lfSlopeErosion * 0.75f);
+
+	for (int liIndex = 0; liIndex < liOctaves; liIndex++)
+	{
+		vec3 lOctavePosition;
+		vec3 lDerivative;
+
+		lOctavePosition = (lPosition * lfFrequency) + lPerturbDerivativeSum;
+
+		float lfNoise = Noise3d(lOctavePosition.x, lOctavePosition.y, lOctavePosition.z, lDerivative.x, lDerivative.y, lDerivative.z);
+		float lfFeatureNoise = lfNoise;
+
+
+		{
+			float lfRidgedNoise = (1.0f - abs(lfFeatureNoise));
+			float lfBillowNoise = lfFeatureNoise * lfFeatureNoise;
+
+			lfRidgedNoise = (lfRidgedNoise * 1.8f) - 1.2f;
+			lfBillowNoise = (lfBillowNoise * 2.5f) - 0.45f;
+
+			lfFeatureNoise = lerp(lfFeatureNoise, lfBillowNoise, max(0.0, lfSharpness));
+			lfFeatureNoise = lerp(lfFeatureNoise, lfRidgedNoise, abs(min(0.0, lfSharpness)));
+		}
+
+		//lDerivative *= lfNoise * lfNoise;
+		lDerivative *= lfFeatureNoise;
+
+		lSlopeErosionDerivativeSum += lDerivative * lfSlopeErosion;
+		lRidgeErosionDerivativeSum += lDerivative;
+		lPerturbDerivativeSum += lDerivative * lfPerturbFeatures;
+
+		lfSum += lfDampedAmplitude * lfFeatureNoise * (1.0f / (1.0f + dot(lSlopeErosionDerivativeSum, lSlopeErosionDerivativeSum)));
+
+		lfFrequency *= lfLacunarity;
+		lfAmplitude *= lerp(lfCurrentGain, lfCurrentGain * mysmoothstep(0.0f, 1.0f, lfSum), lfAltitudeErosion);
+		lfCurrentGain = lfGain;
+		lfDampedAmplitude = lfAmplitude * (1.0f - (lfRidgeErosion / (1.0f + dot(lRidgeErosionDerivativeSum, lRidgeErosionDerivativeSum))));
+	}
+
+	lUniforms.mpGlobalUniforms->mNoiseResults[idx] = (lfSum + 1.0f) * 0.5f;
+}
+  

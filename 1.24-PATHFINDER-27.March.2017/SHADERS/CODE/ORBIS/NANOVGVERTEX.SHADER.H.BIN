@@ -1,0 +1,67 @@
+#include "Common/Defines.shader.h"
+#include "Common/CommonNanoVg.shader.h"
+
+// attribute vec2 mkLocalPositionVec4; // must be called Vec4 due to app strcmp
+// attribute vec2 mkTexCoordsVec4; // must be called Vec4 due to app strcmp
+// DECLARE_INPUT
+//     INPUT( vec2, mkLocalPositionVec4, POSITION0 ) // must be called Vec4 due to app strcmp
+//     INPUT( vec2, mkTexCoordsVec4,     TEXCOORD0 ) // must be called Vec4 due to app strcmp
+// DECLARE_END
+struct VS_IN
+{
+    float2 mkLocalPositionVec4  : POSITION0;            // Object space position
+    float2 mkTexCoordsVec4      : TEXCOORD0;
+};
+
+
+// varying vec2 mTexCoordsVec2;
+// varying vec2 mPosVec2;
+// DECLARE_OUTPUT
+//     OUT_VERTEX_SCREEN_POSITION
+//     OUTPUT( vec2,   mTexCoordsVec2,     TEXCOORD0 )
+//     OUTPUT( vec2,   mPosVec2,           TEXCOORD1 )
+// DECLARE_END
+struct VS_OUT
+{
+    float4 ProjPos              : S_POSITION;           // Projected space position
+    float2 mTexCoordsVec2       : TEXCOORD0;            // UVs
+    float2 mPosVec2             : TEXCOORD1;
+};
+
+
+//uniform vec2 viewSize;
+struct CommonPerMeshUniforms
+{
+    // mat4 gWorldViewProjectionMat4;
+    float2 viewSize;
+    float4 frag[ UNIFORMARRAY_SIZE ];
+    SAMPLER2D( gDiffuseMap );
+};
+
+struct UniformBuffer
+{
+     CommonPerMeshUniforms* mpCommonPerMesh;       /*: PER_MESH*/
+};
+
+
+
+//void main()
+//VERTEX_MAIN_SRT
+//VS_OUT main( VS_IN In, UniformBuffer lUniforms : S_SRT_DATA, uint vertexId : S_VERTEX_ID )
+VS_OUT main( VS_IN In, UniformBuffer lUniforms : S_SRT_DATA )
+{
+    VS_OUT Out;
+    Out.mTexCoordsVec2  = In.mkTexCoordsVec4;
+    Out.mPosVec2        = In.mkLocalPositionVec4;
+
+    Out.ProjPos         = float4( 
+                            2.0 * ( In.mkLocalPositionVec4.x / lUniforms.mpCommonPerMesh->viewSize.x ) - 1.0, 
+                            1.0 - 2.0 * ( In.mkLocalPositionVec4.y / lUniforms.mpCommonPerMesh->viewSize.y ), 
+                            0, 
+                            1 );
+
+    return Out;
+}
+
+
+

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.38.3)-->
+<Data template="TkMaterialData">
+  <Property name="Name" value="renderplanettexture" />
+  <Property name="Class" value="Opaque" />
+  <Property name="TransparencyLayerID" value="0" />
+  <Property name="CastShadow" value="False" />
+  <Property name="DisableZTest" value="False" />
+  <Property name="Link" value="" />
+  <Property name="Shader" value="SHADERS/TEXTURE.SHADER.BIN" />
+  <Property name="Flags" />
+  <Property name="Uniforms">
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gfTextureParams" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+  </Property>
+  <Property name="Samplers">
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gSource1Map" />
+      <Property name="Map" value="TEXTURES/TESTS/CHECKERBOARD3.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="True" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Wrap" />
+      <Property name="TextureFilterMode" value="None" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gSource2Map" />
+      <Property name="Map" value="TEXTURES/TESTS/CHECKERBOARD3.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="True" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Wrap" />
+      <Property name="TextureFilterMode" value="None" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gPaletteMap" />
+      <Property name="Map" value="TEXTURES/TESTS/CHECKERBOARD3.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="True" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Wrap" />
+      <Property name="TextureFilterMode" value="None" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+  </Property>
+</Data>

@@ -1,0 +1,542 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       TerrainFragment.h
+///     @author     User
+///     @date       
+///
+///     @brief      TerrainFragmentShader
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+#define D_TERRAIN
+
+#if !defined( D_REFLECT_WATER_UP ) && !defined( D_REFLECT_WATER ) && !defined( D_REFLECT_DUALP ) 
+    #define D_FADE
+#endif
+#if /*defined( D_ASTEROID ) ||*/ defined( D_REFLECT_WATER ) || defined( D_REFLECT_WATER_UP ) || defined( D_REFLECT_DUALP )
+#define _F50_DISABLE_POSTPROCESS
+#endif
+
+//#if defined( D_REFLECT_WATER ) || defined( D_REFLECT_DUALP ) 
+//#define D_LOW_QUALITY
+//#endif
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/Defines.shader.h"
+
+#include "Common/Common.shader.h"
+#include "Common/CommonUniforms.shader.h"
+
+
+
+
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+
+//
+// In TerrainCommon we have our uniforms specific to terrain declared. PLUS, IMPORTANTLY we have the SRT buffer declared (gUniforms). 
+// This MUST be included after CommonUniforms, but before all the other stuff that references gUniforms.
+//
+
+#include "Custom/TerrainCommon.h"
+
+//
+// Must be included after gUniforms is declared as they reference it.
+//
+#define D_TEXTURE_ARRAYS
+#if defined(D_DEPTHONLY)
+#include "Common/CommonGBuffer.shader.h"
+#else
+#include "Common/CommonTriPlanarTexturing.shader.h"
+#ifdef D_FADE
+#include "Common/CommonLighting.shader.h"
+#else
+#include "Common/CommonPlanet.shader.h"
+#include "Common/CommonGBuffer.shader.h"
+#endif
+#endif
+#include "Common/CommonFade.shader.h" 
+#include "Common/CommonNoise.shader.h" 
+
+//-----------------------------------------------------------------------------
+//      Constants 
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+#if !defined(D_DEPTHONLY)
+    INPUT( vec4,   mWorldPositionVec4,         TEXCOORD0 )
+#ifdef D_ASTEROID    
+    INPUT( vec3,   mLocalPositionVec3,         TEXCOORD1 )
+#endif
+    INPUT( vec4,   mTileVec4,                  TEXCOORD2 )
+    INPUT( vec4,   mFaceNormalVec3_mfDistForFade, TEXCOORD3 )
+    INPUT( vec4,   mSmoothNormalVec3,          TEXCOORD4 )
+#endif
+    INPUT( vec4,   mScreenSpacePositionVec4,   TEXCOORD5 )
+    
+DECLARE_END
+
+#define D_TERRAIN
+
+#ifdef D_DEFER
+    #include "OutputDeferred.shader.h"
+#else
+    #include "OutputForward.shader.h"
+#endif
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+
+//-----------------------------------------------------------------------------
+///
+///     Main
+///
+///     @brief      Main Fragment
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+#if defined(D_DEPTHONLY)
+VOID_MAIN_SRT
+#else
+FRAGMENT_MAIN_COLOUR_SRT
+#endif
+{  
+    #if defined( D_REFLECT_WATER )
+    {
+        vec3  lWorldUpVec3;
+        float lfHeight;
+        lWorldUpVec3 = GetWorldUp(IN(mWorldPositionVec4).xyz, lUniforms.mpCommonPerMesh->gPlanetPositionVec4, lfHeight);
+
+        if( lfHeight < lUniforms.mpCustomPerMaterial->gWaterFogVec4.r - 0.5 )
+        {
+            discard;
+        }
+    }
+    #endif
+
+    #if defined( D_FADE ) && ( !(defined( D_TERRAIN_X_FACING ) || defined( D_TERRAIN_Y_FACING ) || defined( D_TERRAIN_Z_FACING )  || defined( D_TERRAIN_N_FACING ) ) )
+    {
+        CheckFade( 
+            SAMPLER2DPARAM( lUniforms.mpCustomPerMaterial->gFadeNoiseMap ), 
+            IN( mScreenSpacePositionVec4 ),
+                lUniforms.mpCommonPerMesh->gfFadeValue );
+    }
+    #endif
+
+#if !defined(D_DEPTHONLY)
+    vec3  lFragmentColourVec3;
+    vec3  lNormalVec3;
+
+    float kfTextureSmallScaleFactor = 1.0 / ( lUniforms.mpCustomPerMesh->gTerrainLodParamsVec4.x );
+    float kfTextureLargeScaleFactor = 1.0 / ( lUniforms.mpCustomPerMesh->gTerrainLodParamsVec4.y );
+
+    float lfSpecular = 0.0;
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Triplanar Texturing
+    ///
+    //-----------------------------------------------------------------------------
+    float lfSubsurface = 0.0;
+    float lfMetallic   = 0.0;
+    float lfGlow       = 0.0;
+
+    {
+        vec3  lTerrainSpaceNormalVec3;
+        vec3  lTerrainSpaceFaceNormalVec3;
+        vec3  lTerrainSpacePositionVec3;       
+        vec3  lTerrainOffsetVec3;       
+
+        lTerrainSpaceNormalVec3       = normalize( IN( mSmoothNormalVec3 ).xyz );
+        lTerrainSpaceFaceNormalVec3   = normalize( IN( mSmoothNormalVec3 ).xyz );
+        lTerrainSpacePositionVec3     = IN( mWorldPositionVec4 ).xyz;
+        lTerrainOffsetVec3 = -lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz;
+
+        #ifdef D_ASTEROID
+        {
+            lTerrainOffsetVec3 = vec3( 0.0, 0.0, 0.0 ); 
+            lTerrainSpacePositionVec3 = IN( mLocalPositionVec3 ).xyz;
+        }
+        #endif
+
+
+        float lfFadeDistance    = lUniforms.mpCustomPerMaterial->gTextureParamsVec4.x;
+        float lfFadePower       = lUniforms.mpCustomPerMaterial->gTextureParamsVec4.y;
+        float lfScaleMultiplier = lUniforms.mpCustomPerMaterial->gTextureParamsVec4.z;
+        float lfScalePower      = lUniforms.mpCustomPerMaterial->gTextureParamsVec4.w;
+
+        float lfDistance     = length( lTerrainSpacePositionVec3 - lUniforms.mpPerFrame->gViewPositionVec3 );
+        float lfTileDistance = pow( lfDistance, lfFadePower ) / lfFadeDistance;
+        float lfTileGap      = floor( lfTileDistance );
+        float lfScaleFade     = lfTileDistance - lfTileGap;
+        lfScaleFade = smoothstep( 0.1, 0.9, lfScaleFade );
+
+        int liTileGap = int(lfTileGap);
+
+        // Bring in large scale texture right up close to the camera
+        //if( liTileGap < 1 )
+        //{
+        //    lfTileFade = max( lfTileFade, 0.5 );
+        //}
+#ifndef D_ASTEROID
+
+        if( liTileGap <= 3 )
+        {
+            kfTextureSmallScaleFactor = lUniforms.mpCustomPerMaterial->gTextureScalesVec4[ liTileGap ];
+        }
+        else if( liTileGap <= 7 )
+        {
+            kfTextureSmallScaleFactor = lUniforms.mpCustomPerMaterial->gTextureScales2Vec4[ liTileGap - 4 ];
+        }
+        else
+        {
+            kfTextureSmallScaleFactor = lUniforms.mpCustomPerMaterial->gTextureScales2Vec4[ 3 ] * pow( 2, liTileGap - 7 );
+            kfTextureSmallScaleFactor = min( kfTextureSmallScaleFactor, 64000.0 );
+        }
+        kfTextureSmallScaleFactor = 1.0 / kfTextureSmallScaleFactor;
+
+        liTileGap++;
+        if( liTileGap <= 3 )
+        {
+            kfTextureLargeScaleFactor = lUniforms.mpCustomPerMaterial->gTextureScalesVec4[ liTileGap ];
+        }
+        else if( liTileGap <= 7 )
+        {
+            kfTextureLargeScaleFactor = lUniforms.mpCustomPerMaterial->gTextureScales2Vec4[ liTileGap - 4 ];
+        }
+        else
+        {
+            kfTextureLargeScaleFactor = lUniforms.mpCustomPerMaterial->gTextureScales2Vec4[ 3 ] * pow( 2, liTileGap - 7 );
+            kfTextureLargeScaleFactor = min( kfTextureLargeScaleFactor, 64000.0   );
+        }
+        kfTextureLargeScaleFactor = 1.0 / kfTextureLargeScaleFactor;
+
+#else
+
+    kfTextureSmallScaleFactor = 1.0 / 256.0;
+    kfTextureLargeScaleFactor = 1.0 / 256.0;
+    liTileGap                 = 3;
+    lfScaleFade               = 0.0;
+
+#endif
+
+        uvec4  lTileTextureIndicesSmall1Vec4;
+        uvec4  lTileTextureIndicesSmall2Vec4;
+        uvec4  lTileTextureIndicesLarge1Vec4;
+        uvec4  lTileTextureIndicesLarge2Vec4;
+
+        vec3 lUpDirection = normalize( lTerrainSpacePositionVec3 + lTerrainOffsetVec3 );
+
+        // Tile blend
+        float lfTile = IN( mTileVec4 ).z;
+
+        // Blend to different texture on the slope
+        //Skew the flat towards the top slightly, to show more slope [-1 : 1] -> [-0.8 : 1] -> Clamped to 0
+        float lfSlope = 0.0;
+        lfSlope       = max( dot( lUpDirection, lTerrainSpaceNormalVec3 ), 0.0 );
+        lfSlope       = asin( lfSlope ) / ( 3.1415 * 0.5 );
+        lfSlope       = lfSlope * lfSlope;
+
+        // Patch noise
+        vec4  lfNoiseSample  = texture3DLod( lUniforms.mpCustomPerMaterial->gPerlin3D, ( lTerrainSpacePositionVec3 + lTerrainOffsetVec3 ) * lUniforms.mpCustomPerMaterial->gTileBlendScalesVec4.x, 0.0 );
+        float lfPatch1       = saturate( ( ( lfNoiseSample.r + lfNoiseSample.g + lfNoiseSample.b + lfNoiseSample.a ) / 4.0 ) ) * 2.0 - 1.0;
+
+        lfNoiseSample        = texture3DLod( lUniforms.mpCustomPerMaterial->gPerlin3D, ( lTerrainSpacePositionVec3 + lTerrainOffsetVec3 ) * lUniforms.mpCustomPerMaterial->gTileBlendScalesVec4.y, 0.0 );
+        float lfPatch2       = saturate( ( ( lfNoiseSample.r + lfNoiseSample.g + lfNoiseSample.b + lfNoiseSample.a ) / 4.0 ) ) * 2.0 - 1.0;
+
+        float lfPatch        = lfPatch1 + lfPatch2 * lUniforms.mpCustomPerMaterial->gTileBlendScalesVec4.z;
+        lfPatch              = 1.0 - saturate( lfPatch * 0.5 + 0.5 + lUniforms.mpCustomPerMaterial->gTileBlendScalesVec4.w );
+
+        /*
+        float lfPatch1 = FractBrownianMotion4( ( lTerrainSpacePositionVec3 + lTerrainOffsetVec3 ) * lUniforms.mpCustomPerMaterial->gTileBlendScalesVec4.x  + vec3( 100.0, 100.0, 100.0 ), SAMPLER2DPARAM( lUniforms.mpCustomPerMaterial->gNoiseMap ) );
+        float lfPatch2 = FractBrownianMotion4( ( lTerrainSpacePositionVec3 + lTerrainOffsetVec3 ) * lUniforms.mpCustomPerMaterial->gTileBlendScalesVec4.y  + vec3( 100.0, 100.0, 100.0 ), SAMPLER2DPARAM( lUniforms.mpCustomPerMaterial->gNoiseMap ) );
+        float lfPatch3 = FractBrownianMotion4( ( lTerrainSpacePositionVec3 + lTerrainOffsetVec3 ) * lUniforms.mpCustomPerMaterial->gTileBlendScalesVec4.z  + vec3( 100.0, 100.0, 100.0 ), SAMPLER2DPARAM( lUniforms.mpCustomPerMaterial->gNoiseMap ) );
+
+        float lfPatch = lfPatch1 + lfPatch2 * 0.5 + lfPatch3 * 0.25;
+        lfPatch       = lfPatch * 0.5 + 0.5 + lUniforms.mpCustomPerMaterial->gTileBlendScalesVec4.w;
+        lfPatch       = saturate( lfPatch * lfPatch );
+        */
+
+        float lfCameraHeight = length( lUniforms.mpPerFrame->gViewPositionVec3 - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz ) - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.w;
+        lfCameraHeight = 1.0 - saturate( ( lfCameraHeight - 800.0 ) / 1000.0 );
+
+        lfPatch *= lfCameraHeight;
+        lfSlope  = mix( 1.0, lfSlope, lfCameraHeight );
+
+        // lTileVec2 sometimes comes in negative which crashes PS4. Should be fixed
+        // on CPU wherever it gets passed in from.
+        lTileTextureIndicesLarge1Vec4.x = uint( round( mod( max( IN( mTileVec4 ).x, 0.0 ), D_TERRAINCOLOURARRAY_SIZE ) ) );
+        lTileTextureIndicesLarge1Vec4.y = uint( round( mod( max( IN( mTileVec4 ).y, 0.0 ), D_TERRAINCOLOURARRAY_SIZE ) ) );
+        lTileTextureIndicesLarge1Vec4.z = lTileTextureIndicesLarge1Vec4.x + 1;
+        lTileTextureIndicesLarge1Vec4.w = lTileTextureIndicesLarge1Vec4.y + 1;
+
+        // Patches blend to the next element in the texture atlas
+        lTileTextureIndicesLarge2Vec4.x = lTileTextureIndicesLarge1Vec4.x + 2;
+        lTileTextureIndicesLarge2Vec4.y = lTileTextureIndicesLarge1Vec4.y + 2;
+        lTileTextureIndicesLarge2Vec4.z = lTileTextureIndicesLarge1Vec4.x + 3;
+        lTileTextureIndicesLarge2Vec4.w = lTileTextureIndicesLarge1Vec4.y + 3;
+        lTileTextureIndicesSmall1Vec4   = lTileTextureIndicesLarge1Vec4;
+        lTileTextureIndicesSmall2Vec4   = lTileTextureIndicesLarge2Vec4;
+
+        if( lTileTextureIndicesLarge1Vec4.x >= 20 )
+        {
+            // Substances read from a second atlas, don't have slope textures
+            lTileTextureIndicesLarge1Vec4.z = lTileTextureIndicesLarge1Vec4.x;
+            lTileTextureIndicesLarge2Vec4.x = lTileTextureIndicesLarge1Vec4.x;
+            lTileTextureIndicesLarge2Vec4.z = lTileTextureIndicesLarge1Vec4.x;
+            lTileTextureIndicesSmall1Vec4.z = lTileTextureIndicesLarge1Vec4.x;
+            lTileTextureIndicesSmall2Vec4.x = lTileTextureIndicesLarge1Vec4.x;
+            lTileTextureIndicesSmall2Vec4.z = lTileTextureIndicesLarge1Vec4.x;
+        }
+        else if( lTileTextureIndicesLarge1Vec4.x >= 16 )
+        {
+            lTileTextureIndicesLarge2Vec4.x = lTileTextureIndicesLarge1Vec4.x;
+            lTileTextureIndicesLarge2Vec4.z = lTileTextureIndicesLarge1Vec4.z;
+            lTileTextureIndicesSmall2Vec4.x = lTileTextureIndicesLarge1Vec4.x;
+            lTileTextureIndicesSmall2Vec4.z = lTileTextureIndicesLarge1Vec4.z;
+        }
+        else if( liTileGap < 2 )
+        {
+            // The nearest textures read from detail textures in the second half of the atlas
+            lTileTextureIndicesSmall1Vec4.x += 8;
+            lTileTextureIndicesSmall1Vec4.z += 8;
+            lTileTextureIndicesSmall2Vec4.x += 8;
+            lTileTextureIndicesSmall2Vec4.z += 8;
+        }
+        if( lTileTextureIndicesLarge1Vec4.y >= 20 )
+        {
+            lTileTextureIndicesLarge1Vec4.w = lTileTextureIndicesLarge1Vec4.y;
+            lTileTextureIndicesLarge2Vec4.y = lTileTextureIndicesLarge1Vec4.y;
+            lTileTextureIndicesLarge2Vec4.w = lTileTextureIndicesLarge1Vec4.y;
+            lTileTextureIndicesSmall1Vec4.w = lTileTextureIndicesLarge1Vec4.y;
+            lTileTextureIndicesSmall2Vec4.y = lTileTextureIndicesLarge1Vec4.y;
+            lTileTextureIndicesSmall2Vec4.w = lTileTextureIndicesLarge1Vec4.y;
+        }
+        else if( lTileTextureIndicesLarge1Vec4.y >= 16 )
+        {
+            lTileTextureIndicesLarge2Vec4.y = lTileTextureIndicesLarge1Vec4.y;
+            lTileTextureIndicesLarge2Vec4.w = lTileTextureIndicesLarge1Vec4.w;
+            lTileTextureIndicesSmall2Vec4.y = lTileTextureIndicesLarge1Vec4.y;
+            lTileTextureIndicesSmall2Vec4.w = lTileTextureIndicesLarge1Vec4.w;
+        }
+        else if( liTileGap < 2 )
+        {
+            lTileTextureIndicesSmall1Vec4.y += 8;
+            lTileTextureIndicesSmall1Vec4.w += 8;
+            lTileTextureIndicesSmall2Vec4.y += 8;
+            lTileTextureIndicesSmall2Vec4.w += 8;
+        }
+
+
+#ifdef D_ASTEROID
+        lfPatch = 0.0;
+        lfSlope = 1.0;
+        lTileTextureIndicesSmall1Vec4 = uvec4( 0 );
+        lTileTextureIndicesSmall2Vec4 = uvec4( 0 );
+        lTileTextureIndicesLarge1Vec4 = uvec4( 0 );
+        lTileTextureIndicesLarge2Vec4 = uvec4( 0 );
+#endif
+
+        lFragmentColourVec3 = GetTileColourAndNormal( 
+            DEREF_PTR( lUniforms.mpCustomPerMaterial ),
+            lTerrainSpaceNormalVec3,
+            lTerrainSpaceFaceNormalVec3,
+            lTerrainOffsetVec3,
+            lTerrainSpacePositionVec3,
+            lTileTextureIndicesSmall1Vec4,
+            lTileTextureIndicesSmall2Vec4,
+            lTileTextureIndicesLarge1Vec4,
+            lTileTextureIndicesLarge2Vec4,
+            lfTile,
+            lfSlope,
+            lfPatch,
+            lNormalVec3,
+            kfTextureSmallScaleFactor, 
+            kfTextureLargeScaleFactor,
+            lfScaleFade,
+            SAMPLER2DARRAYPARAM( lUniforms.mpCustomPerMaterial->gDiffuseMap ),
+            SAMPLER2DARRAYPARAM( lUniforms.mpCustomPerMaterial->gNormalMap ),
+            SAMPLER2DARRAYPARAM( lUniforms.mpCustomPerMaterial->gSubstanceDiffuseMap ),
+            SAMPLER2DARRAYPARAM( lUniforms.mpCustomPerMaterial->gSubstanceNormalMap ),
+            lfSpecular,
+            lfSubsurface,
+            lfMetallic,
+            lfGlow );
+
+#if defined( D_ASTEROID ) || defined( D_NO_WATER )    		
+        mat3 lNormalisedMat3;
+        MAT3_SET_COLUMN( lNormalisedMat3, 0, normalize( lUniforms.mpCommonPerMesh->gWorldMat4[0].xyz ) );
+        MAT3_SET_COLUMN( lNormalisedMat3, 1, normalize( lUniforms.mpCommonPerMesh->gWorldMat4[1].xyz ) );
+        MAT3_SET_COLUMN( lNormalisedMat3, 2, normalize( lUniforms.mpCommonPerMesh->gWorldMat4[2].xyz ) );
+        
+        lNormalVec3 = normalize( MUL( lNormalisedMat3 , lNormalVec3 ) );
+#endif
+
+    }
+    
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Distant Water Colouring
+    ///
+    //-----------------------------------------------------------------------------
+    #ifndef D_ASTEROID
+    float lfWaterFade = IN( mFaceNormalVec3_mfDistForFade ).w - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.w;
+    if ( lfWaterFade > 500.0 )
+    {
+        vec3 lFaceNormalVec3 = normalize( IN( mWorldPositionVec4 ).xyz - lUniforms.mpCommonPerMesh->gPlanetPositionVec4.xyz );
+
+        lfWaterFade       = clamp( ( lfWaterFade - 700.0 ) / 200.0, 0.0, 1.0 );
+        lfWaterFade      *= ( 1.0 - IN( mTileVec4 ).w );
+
+        lNormalVec3         = normalize( mix( lNormalVec3, lFaceNormalVec3, max( lfWaterFade - 0.1, 0.0 ) ) );
+
+        lfWaterFade      *= smoothstep( 0.9, 1.0, dot( lNormalVec3, lFaceNormalVec3 ) ) * 0.3 + 0.7;
+
+        vec3 lLightColourVec3  = mix( /*GammaCorrectInput*/( lUniforms.mpCommonPerMesh->gLightColourVec4.xyz ), vec3( 1.0 ), lfWaterFade );
+
+        lFragmentColourVec3 = mix( lFragmentColourVec3, /*GammaCorrectInput*/( lUniforms.mpCustomPerMaterial->gWaterColourFarVec4.xyz ), lfWaterFade );
+        lfSpecular          = mix( lfSpecular, 0.35, lfWaterFade );
+    }
+    #endif
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///		Output
+    ///
+    //-----------------------------------------------------------------------------
+
+    #ifdef D_REFLECT_DUALP
+    {
+        lFragmentColourVec3 *= ( lUniforms.mpCommonPerMesh->gLightColourVec4.xyz );
+    }
+    #endif
+  
+    {
+        float lfRoughness  = lfSpecular * lUniforms.mpCustomPerMaterial->gMaterialParamsVec4.x;
+
+        int liMaterialID = D_DETAILOVERLAY;
+
+#ifdef _F10_NORECEIVESHADOW
+        liMaterialID |= D_NORECEIVESHADOW;
+#else       
+
+#ifdef D_FADE
+        //liMaterialID |= D_EMBEDDED_SHADOW;
+        //vec2 lFragCoordsVec2 = ( IN( mScreenSpacePositionVec4 ).xy / IN( mScreenSpacePositionVec4 ).w ) * 0.5 + 0.5;
+        //lfSubsurface = ComputeShadowIntensity( DEREF_PTR( lUniforms.mpCustomPerMaterial ), DEREF_PTR( lUniforms.mpPerFrame ),DEREF_PTR( lUniforms.mpCommonPerMesh ), IN(mWorldPositionVec4).xyz, lNormalVec3, lFragCoordsVec2, true );
+#endif
+
+#endif
+
+
+#ifdef D_NO_WATER
+        liMaterialID |= D_NOWATER;
+#endif
+        
+
+        //debug tool to render fading terrain different colours
+//#ifdef D_FADE
+//    if( lUniforms.mpCommonPerMesh->gfFadeValue > 0.0 && lUniforms.mpCommonPerMesh->gfFadeValue < 1.0 )
+//    {
+//        lFragmentColourVec3 = vec3( 1.0, 0.0, 0.0 );
+//    }
+//    else if( lUniforms.mpCommonPerMesh->gfFadeValue < 0.0 )
+//    {
+//        lFragmentColourVec3 = vec3( 0.0, 0.0, 1.0 );
+//    }
+//#endif
+
+
+        //lNormalVec3         = IN( mFaceNormalVec3_mfDistForFade ).xyz;
+        //lFragmentColourVec3 = lNormalVec3 * 0.5 + vec3( 0.5 ); 
+        //lfMetallic   = 0.0f;
+        //lfRoughness  = 1.0f;
+        //lfSubsurface = 0.0f;
+        //lfGlow       = 0.0f;
+
+        vec4 lOutColours0Vec4;
+        vec4 lOutColours1Vec4;
+        vec4 lOutColours2Vec4;
+        vec4 lOutColours3Vec4;
+        vec4 lOutColours4Vec4;
+
+        WriteOutput(
+            lOutColours0Vec4,
+            lOutColours1Vec4,
+            lOutColours2Vec4,
+            lOutColours3Vec4,
+            lOutColours4Vec4,
+            DEREF_PTR( lUniforms.mpPerFrame ),
+            DEREF_PTR( lUniforms.mpCommonPerMesh ),
+            DEREF_PTR( lUniforms.mpCustomPerMaterial ),
+            vec4( lFragmentColourVec3, 1.0 ),
+            IN( mWorldPositionVec4 ).xyz,
+            lNormalVec3,
+            liMaterialID,
+            lfMetallic,
+            lfRoughness,
+            lfSubsurface,
+            lfGlow,
+            IN( mScreenSpacePositionVec4 ).xyzw,
+            IN( mScreenSpacePositionVec4 ).xyzw,
+#if !defined( D_ATTRIBUTES ) && !defined( _F07_UNLIT )
+            GetInverseWorldUpTransform(lUniforms.mpPerFrame->gViewPositionVec3, lUniforms.mpCommonPerMesh->gLightOriginVec4),
+#endif
+            0.0,
+            false
+            );
+
+        /*
+        if ( lUniforms.mpCustomPerMesh->gTerrainLodParamsVec4.w == 0.25 )
+        {
+            lOutColours0Vec4 = vec4( 1.0, 0.0, 0.0, 0.0 );
+        }
+        else
+        if ( lUniforms.mpCustomPerMesh->gTerrainLodParamsVec4.w == 0.5 )
+        {
+            lOutColours0Vec4 = vec4( 0.0, 1.0, 0.0, 0.0 );
+        }
+        */
+        //lOutColours0Vec4 = vec4( lUniforms.mpCustomPerMesh->gTerrainLodParamsVec4.xyz, 0.0 );
+
+#if !defined( D_ATTRIBUTES )
+        FRAGMENT_COLOUR  = lOutColours0Vec4;
+#else
+        FRAGMENT_COLOUR0 = lOutColours0Vec4;
+        FRAGMENT_COLOUR1 = lOutColours1Vec4;
+        FRAGMENT_COLOUR2 = lOutColours2Vec4;
+        FRAGMENT_COLOUR3 = lOutColours3Vec4;
+
+
+#endif
+
+    }
+#endif
+    
+}
+
