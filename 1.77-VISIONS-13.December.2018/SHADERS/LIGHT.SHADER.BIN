@@ -1,0 +1,322 @@
+[[FX]]
+
+sampler gBufferMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 0;
+};
+
+sampler gBuffer1Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 1;
+};
+
+sampler gBuffer2Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 2;
+};
+
+sampler gBuffer3Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 3;
+};
+
+sampler gBuffer4Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 4;
+};
+
+sampler gCausticMap = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 6;
+};
+
+sampler gCausticOffsetMap = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 7;
+};
+
+sampler gShadowMap = sampler_state
+{
+    TexUnit = 8;
+};
+
+sampler gCloudShadowMap = sampler_state
+{
+    TexUnit = 9;
+};
+
+sampler gDualPMapFront = sampler_state
+{
+    TexUnit = 10;
+};
+
+sampler gDualPMapBack = sampler_state
+{
+    TexUnit = 11;
+};
+
+sampler gHSVOverlay = sampler_state
+{
+    DefaultTexture = SHADER/MACROVARIATION.DDS;
+    TexUnit = 12;
+    Address = Wrap;
+};
+
+sampler gHSVNormalOverlay = sampler_state
+{
+    DefaultTexture = SHADER/MACROVARIATION.NORMAL.DDS;
+    TexUnit = 13;
+    Address = Wrap;
+};
+
+// -----------------------------------------------------------------------------------
+// Uniforms
+// -----------------------------------------------------------------------------------
+
+// Planet
+
+float4 gLightingHackParamsVec4          = {0.0, 0.0, 0.0, 0.0}; 
+float4 gLightingHackParams2Vec4         = {0.0, 0.0, 0.0, 0.0}; 
+float4 gLightingHackParams3Vec4         = {0.0, 0.0, 0.0, 0.0}; 
+
+float4 gLightShaftParamsVec4;
+
+float4 gPlanetPositionVec4              = {0.0, 0.0, 0.0, 0.0}; 
+float4 gaPlanetPositionsVec4;
+float4 gaPlanetColoursVec4;
+float4 gLightOriginVec4                 = {0.0, 0.0, 0.0, 0.0}; 
+float4 gInverseWorldUpMat4              = {0.0, 0.0, 0.0, 0.0};
+
+// Lighting
+float4 gMaterialSFXVec4                 = {0.0, 0.0, 0.0, 0.0};
+float4 gMaterialSFXColVec4              = {0.0, 0.0, 0.0, 0.0};
+
+// Sky
+float4 gSkyColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gHorizonColourVec4               = {1.0, 0.0, 1.0, 0.0};
+float4 gSunColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gScatteringParamsVec4            = {1.0, 0.0, 1.0, 0.0};
+float4 gSunPositionVec4                 = {1.0, 0.0, 1.0, 0.0};
+
+float4 gSkyUpperColourVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gSkySolarColourVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gSkyGradientSpeedVec4            = {1.0, 0.0, 1.0, 0.0};
+float4 gSkyUpperParamsVec4              = {1.0, 0.0, 1.0, 0.0};
+
+// Fog
+float4 gFogParamsVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gFogColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogColourVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogParamsVec4             = {1.0, 0.0, 1.0, 0.0};
+
+float4 gWaterFogColourNearVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogColourFarVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogVec4                    = {1.0, 0.0, 1.0, 0.0};
+
+// Space
+float4 gSpaceHorizonColourVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gFogFadeHeightsVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gFogFadeHeights2Vec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gFogFadeHeights3Vec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColourVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceScatteringParamsVec4       = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceFogParamsVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceFogColourVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceFogColour2Vec4             = {1.0, 0.0, 1.0, 0.0};
+
+float4 gSpaceSkyColour1Vec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour2Vec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour3Vec4             = {1.0, 0.0, 1.0, 0.0};
+
+// Scan
+float4 gScanParamsPosVec4               = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg1Vec4              = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg2Vec4              = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg3Vec4              = {0.0, 0.0, 0.0, 0.0};
+
+float4 gHueOverlayParamsVec4            = {1.0, 1.0, 1.0, 1.0};
+float4 gSaturationOverlayParamsVec4     = {1.0, 1.0, 1.0, 1.0};
+float4 gValueOverlayParamsVec4          = {1.0, 1.0, 1.0, 1.0};
+float4 gLightTopColourVec4              = {1.0, 1.0, 1.0, 1.0};
+
+// -----------------------------------------------------------------------------------
+// Contexts
+// -----------------------------------------------------------------------------------
+
+context SUNLIGHT
+{
+    VertexShader  = compile GLSL VS_SUNLIGHT;
+    PixelShader   = compile GLSL FS_SUNLIGHT;
+    ComputeShader = compile GLSL FS_SUNLIGHT;
+}
+
+context SUNLIGHT_SPLIT
+{
+    VertexShader  = compile GLSL VS_SUNLIGHT;
+    PixelShader   = compile GLSL FS_SUNLIGHT_SPLIT;
+    ComputeShader = compile GLSL FS_SUNLIGHT_SPLIT;
+}
+
+context SHADOW_APPLY
+{
+    VertexShader  = compile GLSL VS_SUNLIGHT;
+    PixelShader   = compile GLSL FS_SHADOW_APPLY;
+    ComputeShader = compile GLSL FS_SHADOW_APPLY;
+}
+
+context SUNLIGHT_TERRAIN
+{
+    VertexShader = compile GLSL VS_SUNLIGHT;
+    PixelShader = compile GLSL FS_SUNLIGHT_TERRAIN;
+}
+
+context SPOTLIGHT_INNER
+{
+    VertexShader = compile GLSL VS_POS_NOLOGZ;
+    PixelShader  = compile GLSL FS_SPOTLIGHT_INNER;
+}
+
+context SPOTLIGHT_OUTER
+{
+    VertexShader = compile GLSL VS_POS;
+    PixelShader = compile GLSL FS_SPOTLIGHT_OUTER;
+}
+
+context NULL
+{
+    VertexShader = compile GLSL VS_IMVERTEX;
+    PixelShader  = compile GLSL FS_NULL;
+}
+
+context RAYMARCH
+{
+	VertexShader  = compile GLSL VS_IMVERTEX;
+	PixelShader   = compile GLSL FS_RAYMARCH;
+	ComputeShader = compile GLSL FS_RAYMARCH;
+}
+
+context SCATTERING
+{
+	VertexShader  = compile GLSL VS_IMVERTDEPTH;
+	PixelShader   = compile GLSL FS_SCATTERING;
+	ComputeShader = compile GLSL FS_SCATTERING;
+}
+
+context VOLUME
+{
+    VertexShader = compile GLSL VS_POS_SPHERE;
+    PixelShader  = compile GLSL FS_VOLUME;
+}
+
+[[VS_IMVERTEX]]
+// =================================================================================================
+#define D_TEX_QUAD
+#define D_LIGHT
+#include "ImmediateModeVertex.shader.h"
+
+[[VS_IMVERTDEPTH]]
+// =================================================================================================
+#define D_TEX_QUAD_FRUSTUM
+#define D_TEX_QUAD
+#define D_LIGHT
+#include "ImmediateModeVertex.shader.h"
+
+[[VS_POS]]
+// =================================================================================================
+#define D_VERTEX
+#define D_VERTEX_LOGZ
+#define D_SPOTLIGHT
+#include "LightFragment.shader.h"
+
+[[VS_POS_SPHERE]]
+// =================================================================================================
+#define D_VERTEX
+#define D_VERTEX_LOGZ
+#define D_SPHERE
+#include "LightFragment.shader.h"
+
+[[VS_POS_NOLOGZ]]
+// =================================================================================================
+#define D_VERTEX
+#define D_SPOTLIGHT
+#include "LightFragment.shader.h"
+
+[[VS_SUNLIGHT]]
+// =================================================================================================
+#define D_VERTEX_SUNLIGHT
+#include "LightFragment.shader.h"
+
+[[FS_SUNLIGHT]]
+// =================================================================================================
+#define D_LIGHT
+#define _F40_SUBSURFACE_MASK
+#include "LightFragment.shader.h"
+
+[[FS_SUNLIGHT_SPLIT]]
+// =================================================================================================
+#define D_LIGHT
+#define _F40_SUBSURFACE_MASK
+#define D_SPLIT_SHADOW
+#include "LightFragment.shader.h"
+
+[[FS_SHADOW_APPLY]]
+// =================================================================================================
+#define D_SHADOW_APPLY
+#define _F40_SUBSURFACE_MASK
+#include "LightFragment.shader.h"
+
+[[FS_SUNLIGHT_TERRAIN]]
+// =================================================================================================
+#define D_LIGHT
+#define D_LIGHT_TERRAIN
+#define _F40_SUBSURFACE_MASK
+#include "LightFragment.shader.h"
+
+[[FS_SPOTLIGHT_INNER]]
+// =================================================================================================
+#define D_LIGHT
+#define D_SPOTLIGHT
+#define D_SPOTLIGHT_INNER
+#define _F40_SUBSURFACE_MASK
+#define _F10_NORECEIVESHADOW
+#define _F49_DISABLE_AMBIENT
+#include "LightFragment.shader.h"
+
+[[FS_SPOTLIGHT_OUTER]]
+// =================================================================================================
+#define D_LIGHT
+#define D_SPOTLIGHT
+#define D_SPOTLIGHT_OUTER
+#define _F40_SUBSURFACE_MASK
+#define _F10_NORECEIVESHADOW
+#define _F49_DISABLE_AMBIENT
+#include "LightFragment.shader.h"
+
+[[FS_NULL]]
+// =================================================================================================
+#define D_NULL
+#include "LightFragment.shader.h"
+
+[[FS_RAYMARCH]]
+// =================================================================================================
+#define D_RAYMARCH
+#include "Fullscreen/LightShaftFragment.shader.h"
+
+[[FS_SCATTERING]]
+// =================================================================================================
+#define D_SCATTERING
+#include "Fullscreen/LightShaftFragment.shader.h"
+
+[[FS_VOLUME]]
+// =================================================================================================
+#define D_RAYMARCH
+#define D_SPHERE
+#include "Fullscreen/LightShaftFragment.shader.h"
+

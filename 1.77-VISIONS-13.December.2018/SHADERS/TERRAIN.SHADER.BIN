@@ -1,0 +1,773 @@
+[[FX]]
+
+// Samplers
+sampler gDiffuseMap = sampler_state
+{
+    Address = Wrap;
+    Filter = Trilinear;
+    MaxAnisotropy = 8;
+    TexUnit = 0;
+};
+
+sampler gNormalMap = sampler_state
+{
+    Address = Wrap;
+    Filter = Trilinear;
+    MaxAnisotropy = 8;
+    TexUnit = 1;
+};
+
+sampler gSubstanceDiffuseMap = sampler_state
+{
+    Address = Wrap;
+    Filter = Trilinear;
+    MaxAnisotropy = 8;
+    TexUnit = 2;
+};
+
+sampler gSubstanceNormalMap = sampler_state
+{
+    Address = Wrap;
+    Filter = Trilinear;
+    MaxAnisotropy = 8;
+    TexUnit = 3;
+};
+
+sampler gNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/CLOUDNOISE.DDS;
+    TexUnit = 4;
+    Address = Wrap;
+};
+
+sampler gPerlin3D = sampler_state
+{
+    DefaultTexture = SHADER/NOISEHALF.DDS;
+    TexUnit = 5;
+    Address = Wrap;
+};
+
+sampler gCausticMap = sampler_state
+{
+    TexUnit = 6;
+};
+
+sampler gCausticOffsetMap = sampler_state
+{
+    TexUnit = 7;
+};
+
+sampler gShadowMap = sampler_state
+{
+    TexUnit = 8;
+};
+
+
+sampler gCloudShadowMap = sampler_state
+{
+    TexUnit = 9;
+};
+
+sampler gDualPMapFront = sampler_state
+{
+    TexUnit = 10;
+};
+
+sampler gDualPMapBack = sampler_state
+{
+    TexUnit = 11;
+};
+
+sampler gHSVOverlay = sampler_state
+{
+    DefaultTexture = SHADER/MACROVARIATION.DDS;
+    TexUnit = 12;
+    Address = Wrap;
+};
+
+sampler gHSVNormalOverlay = sampler_state
+{
+    DefaultTexture = SHADER/MACROVARIATION.NORMAL.DDS;
+    TexUnit = 13;
+    Address = Wrap;
+};
+
+sampler gFadeNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/BLUENOISE.DDS;
+    TexUnit = 14;
+};
+
+sampler gSparseNearDiffMap = sampler_state
+{
+	TexUnit = 15;
+};
+
+sampler gSparseNearNormMap = sampler_state
+{
+	TexUnit = 16;
+};
+
+sampler gSparseNearStatusMap = sampler_state
+{
+	TexUnit = 17;
+};
+
+sampler gSparseFarStatusMap = sampler_state
+{
+	TexUnit = 19;
+};
+
+sampler gSparseFarDiffMap = sampler_state
+{
+    TexUnit = 21;
+};
+
+sampler gSparseFarNormMap = sampler_state
+{
+    TexUnit = 22;
+};
+
+sampler gFeedbackMap = sampler_state
+{
+	ImgUnit = 1;
+};
+
+// Uniforms
+float4 gTerrainLodParamsVec4	  = {1.0, 0.0, 0.0, 0.0}; 
+                                  
+// Planet                         
+float4 gPlanetPositionVec4		  = {0.0, 0.0, 0.0, 0.0}; 
+float4 gLightOriginVec4           = {0.0, 0.0, 0.0, 0.0}; 
+                                  
+// Lighting                       
+float4 gMaterialParamsVec4        = {0.9, 0.5, 0.0, 0.5};
+
+// Fog
+float4 gSkyColourVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gHorizonColourVec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSunColourVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogColourNearVec4    = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogColourFarVec4     = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gFogColourVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceHorizonColourVec4    = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogColourVec4       = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogParamsVec4       = {1.0, 0.0, 1.0, 0.0};
+float4 gFogParamsVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gScatteringParamsVec4      = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceFogParamsVec4        = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColourVec4        = {1.0, 0.0, 1.0, 0.0};
+float4 gSunPositionVec4           = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceScatteringParamsVec4 = {1.0, 0.0, 1.0, 0.0};
+
+// Scan
+float4 gScanParamsPosVec4         = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg1Vec4        = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg2Vec4        = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg3Vec4        = {0.0, 0.0, 0.0, 0.0};
+
+float4 gMiningPosVec4               = {0.0, 0.0, 0.0, 0.0};
+float4 gDebugColourVec4             = {1.0, 0.0, 0.0, 0.0};
+float4 gTextureScalesVec4           = {8.0, 0.5, 2.0, 2.0};
+float4 gTextureScales2Vec4          = {8.0, 0.5, 2.0, 2.0};
+float4 gTextureDistancesVec4        = {8.0, 0.5, 2.0, 2.0};
+float4 gTextureDistances2Vec4       = {8.0, 0.5, 2.0, 2.0};
+float4 gHueOverlayParamsVec4        = {8.0, 0.5, 2.0, 2.0};
+float4 gSaturationOverlayParamsVec4 = {8.0, 0.5, 2.0, 2.0};
+float4 gValueOverlayParamsVec4      = {8.0, 0.5, 2.0, 2.0};
+float4 gValueOverlayParamsVec4      = {8.0, 0.5, 2.0, 2.0};
+float4 gTileBlendScalesVec4         = {8.0, 0.5, 2.0, 2.0};
+float4 gTerrainSlopeParamsVec4;
+
+float4 gaAverageColoursVec4;
+float4 gaTerrainColoursVec4;
+
+float4 gTriplanarHackParamsVec4;
+float4 gTriplanarHackParams2Vec4;
+
+float4 gTextureCoordsAdjustVec4 = { 1.0, 1.0, 0.0, 0.0 };
+float4 gTextureCoordsBorderVec4 = { 0.0, 0.0, 1.0, 1.0 };
+
+// Contexts
+context SHADOW_FADE
+{
+    VertexShader = compile GLSL VS_SHADOW_FADE;
+    PixelShader = compile GLSL FS_SHADOW_FADE;
+}
+
+context REFLECT_DUALP
+{
+    VertexShader = compile GLSL VS_REFLECT_DUALP;
+    PixelShader  = compile GLSL FS_REFLECT_DUALP;
+}
+
+context REFLECT_WATER_UP
+{
+    VertexShader = compile GLSL VS_REFLECT_WATER_UP;
+    PixelShader  = compile GLSL FS_REFLECT_WATER_UP;
+}
+
+context REFLECT_WATER
+{
+    VertexShader = compile GLSL VS_REFLECT_WATER;
+    PixelShader  = compile GLSL FS_REFLECT_WATER; 
+}
+ 
+context LIT_FORWARD
+{
+    VertexShader = compile GLSL VS_GENERAL;
+    PixelShader  = compile GLSL FS_LIT_FORWARD;
+}
+
+context LIT_FORWARD_LOW
+{
+    VertexShader = compile GLSL VS_GENERAL_LOW;
+    PixelShader  = compile GLSL FS_LIT_FORWARD_LOW;
+}
+
+context LIT_DEFER
+{
+    VertexShader = compile GLSL VS_DEFER;
+    PixelShader  = compile GLSL FS_LIT_DEFER;
+}
+
+context CACHE_COLOUR
+{
+	VertexShader = compile GLSL VS_DEFER_CACHE;
+    HullShader   = compile GLSL HS_DEFER_CACHE_BORDER;
+    DomainShader = compile GLSL DS_DEFER_CACHE_BORDER;
+	PixelShader  = compile GLSL FS_CACHE_COLOUR;
+}
+
+context CACHE_HEIGHT
+{
+    VertexShader = compile GLSL VS_DEFER_CACHE;
+    HullShader   = compile GLSL HS_DEFER_CACHE;
+    DomainShader = compile GLSL DS_DEFER_CACHE;
+    PixelShader  = compile GLSL FS_CACHE_HEIGHT;
+}
+
+context CACHE_NORMALS
+{
+	VertexShader = compile GLSL VS_DEFER_CACHE;
+    HullShader   = compile GLSL HS_DEFER_CACHE_BORDER;
+    DomainShader = compile GLSL DS_DEFER_CACHE_BORDER;
+	PixelShader  = compile GLSL FS_CACHE_NORMAL;
+}
+
+context CACHE_COLOUR_FAR
+{
+	VertexShader = compile GLSL VS_DEFER_CACHE;
+    HullShader   = compile GLSL HS_DEFER_CACHE_BORDER;
+    DomainShader = compile GLSL DS_DEFER_CACHE_BORDER;
+	PixelShader  = compile GLSL FS_CACHE_COLOUR_FAR;
+}
+
+context CACHE_NORMALS_FAR
+{
+	VertexShader = compile GLSL VS_DEFER_CACHE;
+    HullShader   = compile GLSL HS_DEFER_CACHE_BORDER;
+    DomainShader = compile GLSL DS_DEFER_CACHE_BORDER;
+	PixelShader  = compile GLSL FS_CACHE_NORMAL_FAR;
+}
+
+context LIT_DEFER_CACHE
+{
+	VertexShader = compile GLSL VS_DEFER_USE_CACHE;
+    HullShader   = compile GLSL HS_DEFER_USE_CACHE;
+    DomainShader = compile GLSL DS_DEFER_USE_CACHE;
+	PixelShader  = compile GLSL FS_LIT_DEFER_CACHE;
+}
+
+context LIT_DF_CACHE_FB
+{
+    VertexShader = compile GLSL VS_DEFER_USE_CACHE;
+    HullShader   = compile GLSL HS_DEFER_USE_CACHE;
+    DomainShader = compile GLSL DS_DEFER_USE_CACHE;
+    PixelShader  = compile GLSL FS_FEEDBACK_LIT_DEFER_CACHE;
+}
+
+context LIT_DEFER_FB
+{
+    VertexShader   = compile GLSL VS_DEFER_FEEDBACK;
+    HullShader     = compile GLSL HS_DEFER_FEEDBACK;
+    DomainShader   = compile GLSL DS_DEFER_FEEDBACK;
+    PixelShader    = compile GLSL FS_LIT_DEFER_FEEDBACK;
+}
+
+context LIT_TESS_FB
+{
+    VertexShader   = compile GLSL VS_DEFER_FEEDBACK;
+    HullShader     = compile GLSL HS_DEFER_TESS_FEEDBACK;
+    DomainShader   = compile GLSL DS_DEFER_TESS_FEEDBACK;
+    PixelShader    = compile GLSL FS_LIT_DEFER_FB_FADE;
+}
+
+context DEPTHONLY_DEFER
+{
+    VertexShader = compile GLSL VS_DEPTHONLY_DEFER;
+    PixelShader = compile GLSL FS_DEPTHONLY_DEFER;
+}
+
+context DEPTHONLY_TESS
+{
+    VertexShader = compile GLSL VS_DEPTHONLY_DEFER;
+    HullShader   = compile GLSL HS_DEPTHONLY_TESS;
+    DomainShader = compile GLSL DS_DEPTHONLY_TESS;
+    PixelShader  = compile GLSL FS_DEPTHONLY_DEFER;
+}
+
+context DEPTHOCACHETESS
+{
+    VertexShader = compile GLSL VS_DEPTHONLY_USE_CACHE;
+    HullShader   = compile GLSL HS_DEPTHONLY_USE_CACHE;
+    DomainShader = compile GLSL DS_DEPTHONLY_USE_CACHE;
+    PixelShader  = compile GLSL FS_DEPTHONLY_USE_CACHE;
+}
+
+context LIT_DEFER_X_FACING
+{
+    VertexShader   = compile GLSL VS_DEFER;
+    PixelShader   = compile GLSL FS_LIT_DEFER_X_FACING;
+}
+
+context LIT_DEFER_Y_FACING
+{
+    VertexShader   = compile GLSL VS_DEFER;
+    PixelShader   = compile GLSL FS_LIT_DEFER_Y_FACING;
+}
+
+context LIT_DEFER_Z_FACING
+{
+    VertexShader   = compile GLSL VS_DEFER;
+    PixelShader   = compile GLSL FS_LIT_DEFER_Z_FACING;
+}
+
+context LIT_DEFER_N_FACING
+{
+    VertexShader   = compile GLSL VS_DEFER;
+    PixelShader   = compile GLSL FS_LIT_DEFER_N_FACING;
+}
+
+context LIT_DEFER_TESS
+{
+    VertexShader  = compile GLSL VS_DEFER;
+    HullShader    = compile GLSL HS_DEFER_TESS;
+    DomainShader  = compile GLSL DS_DEFER_TESS;
+    PixelShader   = compile GLSL FS_LIT_DEFER;
+}
+
+context LIT_DEFER_LOW
+{
+    VertexShader = compile GLSL VS_DEFER_LOW;
+    PixelShader  = compile GLSL FS_LIT_DEFER_LOW;
+}
+
+context LIT_FORWARD_ASTEROID
+{
+    VertexShader = compile GLSL VS_ASTEROID;
+    PixelShader  = compile GLSL FS_LIT_FORWARD_ASTEROID;
+}
+
+context LIT_DEFER_ASTEROID
+{
+    VertexShader = compile GLSL VS_DEFER_ASTEROID;
+    PixelShader  = compile GLSL FS_LIT_DEFER_ASTEROID;
+}
+
+context LIT_FORWARD_MESH
+{
+    VertexShader = compile GLSL VS_MESH;
+    PixelShader  = compile GLSL FS_LIT_FORWARD;
+}
+
+context LIT_DEFER_MESH
+{
+    VertexShader = compile GLSL VS_DEFER_MESH;
+    PixelShader  = compile GLSL FS_LIT_DEFER;
+}
+
+
+[[VS_SHADOW_FADE]]
+// =================================================================================================
+#define D_TERRAIN
+#define D_FADE
+#include "ShadowVertex.shader.h"
+
+[[FS_SHADOW_FADE]]
+// =================================================================================================
+#define D_TERRAIN
+#define D_FADE
+#include "ShadowFragment.shader.h"
+
+[[VS_GENERAL]]
+// =================================================================================================
+#include "Custom/TerrainVertex.shader.h"
+
+[[VS_MESH]]
+// =================================================================================================
+#define D_CUSTOM_TILES
+#define D_MESH
+#include "Custom/TerrainVertex.shader.h"
+
+[[VS_DEFER_MESH]]
+// =================================================================================================
+#define D_MESH
+#define D_DEFER
+#include "Custom/TerrainVertex.shader.h"
+
+[[VS_DEFER]]
+// =================================================================================================
+#define D_DEFER
+#include "Custom/TerrainVertex.shader.h"
+
+[[VS_DEFER_USE_CACHE]]
+// =================================================================================================
+#define D_DEFER
+#define D_READ_TEX_CACHE
+#define D_WRITE_CACHE_FEEDBACK
+#include "Custom/TerrainVertex.shader.h"
+
+[[VS_DEPTHONLY_USE_CACHE]]
+// =================================================================================================
+#define D_DEFER
+#define D_READ_TEX_CACHE
+#define D_DEPTHONLY
+#include "Custom/TerrainVertex.shader.h"
+
+[[DS_DEFER_TESS]]
+// =================================================================================================
+#define D_DEFER
+#define D_APPLY_DISPLACEMENT
+#include "Custom/TerrainDomain.shader.h"
+
+[[DS_DEFER_FEEDBACK]]
+// =================================================================================================
+#define D_DEFER
+#define D_WRITE_CACHE_FEEDBACK
+#include "Custom/TerrainDomain.shader.h"
+
+[[DS_DEFER_TESS_FEEDBACK]]
+// =================================================================================================
+#define D_DEFER
+#define D_APPLY_DISPLACEMENT
+#define D_WRITE_CACHE_FEEDBACK
+#include "Custom/TerrainDomain.shader.h"
+
+[[DS_DEPTHONLY_TESS]]
+// =================================================================================================
+#define D_DEFER
+#define D_APPLY_DISPLACEMENT
+#define D_DEPTHONLY
+#include "Custom/TerrainDomain.shader.h"
+
+[[DS_DEFER_USE_CACHE]]
+// =================================================================================================
+#define D_DEFER
+#define D_READ_TEX_CACHE
+#define D_APPLY_DISPLACEMENT
+#include "Custom/TerrainDomain.shader.h"
+
+[[DS_DEPTHONLY_USE_CACHE]]
+// =================================================================================================
+#define D_DEFER
+#define D_READ_TEX_CACHE
+#define D_APPLY_DISPLACEMENT
+#define D_DEPTHONLY
+#include "Custom/TerrainDomain.shader.h"
+
+[[HS_DEFER_TESS]]
+// =================================================================================================
+#define D_DEFER
+#define D_APPLY_DISPLACEMENT
+#include "Custom/TerrainHull.shader.h"
+
+[[HS_DEFER_FEEDBACK]]
+// =================================================================================================
+#define D_DEFER
+#define D_WRITE_CACHE_FEEDBACK
+#include "Custom/TerrainHull.shader.h"
+
+[[HS_DEFER_TESS_FEEDBACK]]
+// =================================================================================================
+#define D_DEFER
+#define D_APPLY_DISPLACEMENT
+#define D_WRITE_CACHE_FEEDBACK
+#include "Custom/TerrainHull.shader.h"
+
+[[HS_DEPTHONLY_TESS]]
+// =================================================================================================
+#define D_DEFER
+#define D_APPLY_DISPLACEMENT
+#define D_DEPTHONLY
+#include "Custom/TerrainHull.shader.h"
+
+[[HS_DEFER_USE_CACHE]]
+// =================================================================================================
+#define D_DEFER
+#define D_READ_TEX_CACHE
+#define D_APPLY_DISPLACEMENT
+#include "Custom/TerrainHull.shader.h"
+
+[[HS_DEPTHONLY_USE_CACHE]]
+// =================================================================================================
+#define D_DEFER
+#define D_READ_TEX_CACHE
+#define D_APPLY_DISPLACEMENT
+#define D_DEPTHONLY
+#include "Custom/TerrainHull.shader.h"
+
+[[VS_DEFER_CACHE]]
+// =================================================================================================
+#define D_DEFER
+#define D_WRITE_TEX_CACHE
+#include "Custom/TerrainVertex.shader.h"
+
+[[DS_DEFER_CACHE]]
+// =================================================================================================
+#define D_DEFER
+#define D_WRITE_TEX_CACHE
+#include "Custom/TerrainDomain.shader.h"
+
+[[HS_DEFER_CACHE]]
+// =================================================================================================
+#define D_DEFER
+#define D_WRITE_TEX_CACHE
+#include "Custom/TerrainHull.shader.h"
+
+[[DS_DEFER_CACHE_BORDER]]
+// =================================================================================================
+#define D_DEFER
+#define D_WRITE_TEX_CACHE
+#define D_EXPAND_BORDER
+#include "Custom/TerrainDomain.shader.h"
+
+[[HS_DEFER_CACHE_BORDER]]
+// =================================================================================================
+#define D_DEFER
+#define D_WRITE_TEX_CACHE
+#define D_EXPAND_BORDER
+#include "Custom/TerrainHull.shader.h"
+
+[[VS_DEFER_FEEDBACK]]
+// =================================================================================================
+#define D_DEFER
+#define D_WRITE_CACHE_FEEDBACK
+#include "Custom/TerrainVertex.shader.h"
+
+[[VS_DEPTHONLY_DEFER]]
+// =================================================================================================
+#define D_DEFER
+#define D_DEPTHONLY
+#include "Custom/TerrainVertex.shader.h"
+
+[[VS_GENERAL_LOW]]
+// =================================================================================================
+#define D_NO_WATER
+#include "Custom/TerrainVertex.shader.h"
+
+[[VS_REFLECT_WATER]]
+// =================================================================================================
+#define D_LOW_QUALITY
+#define D_REFLECT_WATER
+#include "Custom/TerrainVertex.shader.h"
+
+[[VS_DEFER_LOW]]
+// =================================================================================================
+#define D_DEFER
+#define D_NO_WATER
+#include "Custom/TerrainVertex.shader.h"
+
+[[FS_LIT_FORWARD]]
+// =================================================================================================
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_LIT_FORWARD_LOW]]
+// =================================================================================================
+#define D_LOW_QUALITY
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_LIT_DEFER]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_LIT_DEFER_CACHE]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_READ_TEX_CACHE
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_DEPTHONLY_USE_CACHE]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_READ_TEX_CACHE
+#define D_DEPTHONLY
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_FEEDBACK_LIT_DEFER_CACHE]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_READ_TEX_CACHE
+#define D_WRITE_CACHE_FEEDBACK
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_CACHE_COLOUR]]
+// =================================================================================================
+#define D_DEFER
+#define D_WRITE_TEX_CACHE
+#define D_CACHE_COLOUR
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_CACHE_HEIGHT]]
+// =================================================================================================
+#define D_DEFER
+#define D_WRITE_TEX_CACHE
+#define D_CACHE_COLOUR
+#define D_CACHE_HEIGHT
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_CACHE_NORMAL]]
+// =================================================================================================
+#define D_DEFER
+#define D_WRITE_TEX_CACHE
+#define D_CACHE_NORMAL
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_CACHE_COLOUR_FAR]]
+// =================================================================================================
+#define D_DEFER
+#define D_WRITE_TEX_CACHE
+#define D_CACHE_COLOUR
+#define D_CACHE_FAR
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_CACHE_NORMAL_FAR]]
+// =================================================================================================
+#define D_DEFER
+#define D_WRITE_TEX_CACHE
+#define D_CACHE_NORMAL
+#define D_CACHE_FAR
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_DEPTHONLY_DEFER]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_DEPTHONLY
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_LIT_DEFER_X_FACING]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_TERRAIN_X_FACING
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_LIT_DEFER_Y_FACING]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_TERRAIN_Y_FACING
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_LIT_DEFER_Z_FACING]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_TERRAIN_Z_FACING
+#include "Custom/TerrainFragment.shader.h"
+
+
+[[FS_LIT_DEFER_N_FACING]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_TERRAIN_N_FACING
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_LIT_DEFER_FEEDBACK]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_WRITE_CACHE_FEEDBACK
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_LIT_DEFER_FB_FADE]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_WRITE_CACHE_FEEDBACK
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_LIT_DEFER_LOW]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_NO_WATER
+#include "Custom/TerrainFragment.shader.h"
+
+[[VS_ASTEROID]]
+// =================================================================================================
+//#define D_LOW_QUALITY
+#define D_ASTEROID
+#include "Custom/TerrainVertex.shader.h"
+
+[[VS_DEFER_ASTEROID]]
+// =================================================================================================
+//#define D_LOW_QUALITY
+#define D_DEFER
+#define D_ASTEROID
+#include "Custom/TerrainVertex.shader.h"
+
+[[FS_LIT_FORWARD_ASTEROID]]
+// =================================================================================================
+//#define D_LOW_QUALITY
+#define D_ASTEROID
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_LIT_DEFER_ASTEROID]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_LOW_QUALITY
+#define D_ASTEROID
+#include "Custom/TerrainFragment.shader.h"
+
+[[VS_REFLECT_DUALP]]
+// =================================================================================================
+#define D_REFLECT_DUALP
+#include "Custom/TerrainVertex.shader.h"
+
+[[FS_REFLECT_DUALP]]
+// =================================================================================================
+#define D_REFLECT_DUALP
+#define _F07_UNLIT
+#include "Custom/TerrainFragment.shader.h"
+
+[[FS_REFLECT_WATER_UP]]
+// =================================================================================================
+#define D_REFLECT_WATER_UP
+#define _F07_UNLIT
+#include "Custom/TerrainFragment.shader.h"
+
+[[VS_REFLECT_WATER_UP]]
+// =================================================================================================
+#define D_REFLECT_WATER_UP
+#define _F07_UNLIT
+#include "Custom/TerrainVertex.shader.h"
+
+[[FS_REFLECT_WATER]]
+// =================================================================================================
+#define D_REFLECT_WATER
+#define _F07_UNLIT
+#include "Custom/TerrainFragment.shader.h"
+ 
+
+
+

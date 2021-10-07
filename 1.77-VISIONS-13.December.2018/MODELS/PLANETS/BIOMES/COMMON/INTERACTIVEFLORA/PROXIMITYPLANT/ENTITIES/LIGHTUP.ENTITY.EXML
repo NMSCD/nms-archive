@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.77.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcScannableComponentData.xml">
+      <Property name="ScanRange" value="250" />
+      <Property name="ScanName" value="NEWPROD13_NAME_L" />
+      <Property name="ScanTime" value="30" />
+      <Property name="CompassRangeMultiplier" value="0.25" />
+      <Property name="AlwaysShowRange" value="0" />
+      <Property name="CantagIcon" value="True" />
+      <Property name="ClearTagOnArrival" value="True" />
+      <Property name="DisableIfBuildingPart" value="False" />
+      <Property name="IconType" value="GcScannerIconTypes.xml">
+        <Property name="ScanIconType" value="Rare2" />
+      </Property>
+      <Property name="ScannableType" value="Binoculars" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollision" value="False" />
+      <Property name="CameraInvisible" value="False" />
+    </Property>
+    <Property value="GcSimpleInteractionComponentData.xml">
+      <Property name="SimpleInteractionType" value="Treasure" />
+      <Property name="InteractDistance" value="8" />
+      <Property name="Id" value="RARE_OBJECT" />
+      <Property name="Rarity" value="GcRarity.xml">
+        <Property name="Rarity" value="Rare" />
+      </Property>
+      <Property name="Size" value="GcSizeIndicator.xml">
+        <Property name="SizeIndicator" value="Small" />
+      </Property>
+      <Property name="TriggerAction" value="KILLME" />
+      <Property name="BroadcastTriggerAction" value="False" />
+      <Property name="Delay" value="0" />
+      <Property name="HideContents" value="True" />
+      <Property name="InteractIsCrime" value="True" />
+      <Property name="InteractFiendCrimeType" value="GcFiendCrime.xml">
+        <Property name="FiendCrime" value="None" />
+      </Property>
+      <Property name="InteractCrimeLevel" value="3" />
+      <Property name="ActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="0" />
+        <Property name="Repeat" value="False" />
+        <Property name="RequiredTech" value="" />
+      </Property>
+      <Property name="StatToTrack" value="GcStatsEnum.xml">
+        <Property name="Stat" value="None" />
+      </Property>
+      <Property name="StartsBuried" value="False" />
+      <Property name="MustBeVisibleToInteract" value="False" />
+      <Property name="NeedsStorm" value="False" />
+      <Property name="Name" value="NEWPROD13_NAME_L" />
+      <Property name="TerminalMessage" value="" />
+      <Property name="ScanType" value="BINOC_INTERACTABLE_NATURAL" />
+      <Property name="ScanData" value="" />
+      <Property name="ScanIcon" value="GcDiscoveryTypes.xml">
+        <Property name="DiscoveryType" value="Unknown" />
+      </Property>
+      <Property name="ActivateLocatorsFromRarity" value="False" />
+      <Property name="RarityLocators">
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="BaseBuildingTriggerActions" />
+      <Property name="RewardOverrideTable" />
+      <Property name="UsePersonalPersistentBuffer" value="False" />
+    </Property>
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="RESTSTATE" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="Lightup" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="False" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcPlayerNearbyEvent.xml">
+                <Property name="RequirePlayerAction" value="None" />
+                <Property name="Distance" value="15" />
+                <Property name="Angle" value="360" />
+                <Property name="AnglePlayerRelative" value="False" />
+                <Property name="AngleOffset" value="0" />
+                <Property name="AngleReflected" value="False" />
+                <Property name="AngleMinDistance" value="1" />
+                <Property name="DistanceCheckType" value="Radius" />
+                <Property name="Inverse" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="UNHIDE" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="Scene" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="UNHIDE" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Plant_Illuminated" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="ProximityPlant1" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="False" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Activate" />
+                  <Property name="Name" value="Lightup" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="False" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcPlayerNearbyEvent.xml">
+                <Property name="RequirePlayerAction" value="None" />
+                <Property name="Distance" value="25" />
+                <Property name="Angle" value="360" />
+                <Property name="AnglePlayerRelative" value="False" />
+                <Property name="AngleOffset" value="0" />
+                <Property name="AngleReflected" value="False" />
+                <Property name="AngleMinDistance" value="1" />
+                <Property name="DistanceCheckType" value="Radius" />
+                <Property name="Inverse" value="True" />
+              </Property>
+              <Property name="Action">
+                <Property value="EmptyNode.xml" />
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Activate" />
+                  <Property name="Name" value="ProximityPlant1" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="False" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                </Property>
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="RESTSTATE" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="Scene" />
+                </Property>
+                <Property value="EmptyNode.xml" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="KILLME" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Plant_Illuminated_Stop" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="Lightup" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="False" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+      <Property name="ResetShotTimeOnStateChange" value="False" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>

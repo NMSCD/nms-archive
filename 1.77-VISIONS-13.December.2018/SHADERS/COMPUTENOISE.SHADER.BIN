@@ -1,0 +1,156 @@
+[[FX]]
+
+// Contexts
+
+context [ ORBIS ] ADDNUMBERS
+{
+	ComputeShader = compile GLSL ADDNUMBERS;
+}
+context [ ORBIS ] NOISE
+{
+	ComputeShader = compile GLSL NOISE;
+}
+context [ ORBIS ] NOISEDERIV
+{
+	ComputeShader = compile GLSL NOISEDERIV;
+}
+context [ ORBIS ] NOISEOCTAVE_SP
+{
+	ComputeShader = compile GLSL NOISEOCTAVE_SP;
+}
+context [ ORBIS ] NOISEUBER_SP
+{
+	ComputeShader = compile GLSL NOISEUBER_SP;
+}
+context [ ORBIS ] TERRAINGEN_UBERNOISELAYER
+{
+	ComputeShader = compile GLSL TERRAINGEN_UBERNOISELAYER;
+}
+context [ ORBIS ] TERRAINGEN_SMOOTHNOISELAYER
+{
+	ComputeShader = compile GLSL TERRAINGEN_SMOOTHNOISELAYER;
+}
+context [ ORBIS ] TGEN_REGIONNOISE
+{
+	ComputeShader = compile GLSL TGEN_REGIONNOISE;
+}
+
+context [ ORBIS ] TGUBERCOMBINE
+{
+	ComputeShader = compile GLSL TGUBERCOMBINE;
+}
+
+context [ ORBIS ] TGVORONOI
+{
+	ComputeShader = compile GLSL TGVORONOI;
+}
+
+context [ ORBIS ] TGVORONOIPOS
+{
+	ComputeShader = compile GLSL TGVORONOIPOS;
+}
+
+context [ ORBIS ] TGVORONOISTREAM
+{
+	ComputeShader = compile GLSL TGVORONOISTREAM;
+}
+
+context [ ORBIS ] TGTURBULENCE
+{
+	ComputeShader = compile GLSL TGTURBULENCE;
+}
+
+context [ ORBIS ] TGUNPACKVERTS
+{
+	ComputeShader = compile GLSL TGUNPACKVERTS;
+}
+
+context [ ORBIS ] TGTRICOUNT
+{
+	ComputeShader = compile GLSL TGTRICOUNT;
+}
+
+context [ ORBIS ] TGTRIPOSITIONS
+{
+	ComputeShader = compile GLSL TGTRIPOSITIONS;
+}
+
+context [ ORBIS ] TGINDIRECTARGS
+{
+	ComputeShader = compile GLSL TGINDIRECTARGS;
+}
+
+context [ ORBIS ] TGTYPESPERPOS
+{
+	ComputeShader = compile GLSL TGTYPESPERPOS;
+}
+
+context [ ORBIS ] TGFILTEROBJECTS
+{
+	ComputeShader = compile GLSL TGFILTEROBJECTS;
+}
+
+context [ ORBIS ] TGLARGEREGION
+{
+	ComputeShader = compile GLSL TGLARGEREGION;
+}
+
+[[ADDNUMBERS]]
+#include "Custom/ComputeAddNumbers.shader.h" 
+
+[[NOISE]]
+#include "Custom/ComputeNoise.shader.h" 
+ 
+[[NOISEDERIV]]
+#include "Custom/ComputeNoiseDeriv.shader.h" 
+
+[[NOISEOCTAVE_SP]]
+#include "Custom/ComputeNoiseOctaveSinglePass.shader.h" 
+
+[[NOISEUBER_SP]]
+#include "Custom/ComputeNoiseUberSinglePass.shader.h" 
+
+[[TERRAINGEN_UBERNOISELAYER]]
+#include "Custom/TerrainGenUberNoiseLayer.shader.h" 
+
+[[TERRAINGEN_SMOOTHNOISELAYER]]
+#include "Custom/TerrainGenSmoothNoiseLayer.shader.h" 
+
+[[TGEN_REGIONNOISE]]
+#include "Custom/TGenRegionNoise.shader.h"
+
+[[TGUBERCOMBINE]]
+#include "Custom/TGUber3DCombine.shader.h"
+
+[[TGVORONOI]]
+#include "Custom/TGVoronoi.shader.h"
+
+[[TGVORONOIPOS]]
+#include "Custom/TGVoronoiPos.shader.h"
+
+[[TGVORONOISTREAM]]
+#include "Custom/TGVoronoiStream.shader.h"
+
+[[TGTURBULENCE]]
+#include "Custom/TGTurbulence.shader.h"
+
+[[TGUNPACKVERTS]]
+#include "Custom/TGUnpackVerts.shader.h"
+
+[[TGTRICOUNT]]
+#include "Custom/TGTriangleCount.shader.h"
+
+[[TGTRIPOSITIONS]]
+#include "Custom/TGTrianglePositions.shader.h"
+
+[[TGINDIRECTARGS]]
+#include "Custom/TGIndirectDispatch.shader.h"
+
+[[TGTYPESPERPOS]]
+#include "Custom/TGBuildTypesPerPosition.shader.h"
+
+[[TGFILTEROBJECTS]]
+#include "Custom/TGFilterObjectTypes.shader.h"
+
+[[TGLARGEREGION]]
+#include "Custom/TGLargeRegion.shader.h"
