@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="" />
+        <Property name="Filename" value="" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="LoopOffsetMin" value="0" />
+        <Property name="LoopOffsetMax" value="0" />
+        <Property name="ControlDelay" value="0" />
+        <Property name="ControlSpeed" value="1" />
+        <Property name="ControlActionFrame" value="-1" />
+        <Property name="ControlCreatureSize" value="AllSizes" />
+        <Property name="FlagsAdditive" value="False" />
+        <Property name="FlagsMirrored" value="False" />
+        <Property name="FlagsActive" value="True" />
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="SHOOT_LEFT" />
+          <Property name="Filename" value="MODELS/COMMON/ROBOTS/ANIMS/DRONE_SHOOTLEFT.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="SHOOT_RIGHT" />
+          <Property name="Filename" value="MODELS/COMMON/ROBOTS/ANIMS/DRONE_SHOOTRIGHT.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcDroneComponentData.xml">
+      <Property name="Id" value="DRONE" />
+      <Property name="PrimaryAxis" value="GcPrimaryAxis.xml">
+        <Property name="PrimaryAxis" value="ZNeg" />
+      </Property>
+      <Property name="Scaler" value="0.5" />
+      <Property name="Health" value="GcCreatureHealthData.xml">
+        <Property name="HurtAnim" value="" />
+        <Property name="DeathAnim" value="" />
+        <Property name="DeathEffect" value="" />
+        <Property name="HurtAudio" value="" />
+        <Property name="DeathAudio" value="" />
+      </Property>
+    </Property>
+    <Property value="GcShootableComponentData.xml">
+      <Property name="Health" value="200" />
+      <Property name="AutoAimTarget" value="False" />
+      <Property name="PlayerOnly" value="False" />
+      <Property name="ImpactShake" value="True" />
+      <Property name="ImpactShakeEffect" value="SMALLPAINSHAKE" />
+      <Property name="ForceImpactType" value="GcProjectileImpactType.xml">
+        <Property name="Impact" value="Default" />
+      </Property>
+      <Property name="IncreaseWanted" value="0" />
+      <Property name="IncreaseWantedThresholdTime" value="0.5" />
+      <Property name="UseMiningDamage" value="False" />
+      <Property name="MinDamage" value="0" />
+      <Property name="StaticUntilShot" value="False" />
+      <Property name="RequiredTech" value="" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="1" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="0" />
+      </Property>
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollision" value="False" />
+    </Property>
+    <Property value="GcDestructableComponentData.xml">
+      <Property name="Explosion" value="DRONEEXPLODE" />
+      <Property name="ExplosionScale" value="1" />
+      <Property name="ExplosionScaleToBounds" value="False" />
+      <Property name="VehicleDestroyEffect" value="VEHICLECRASH" />
+      <Property name="TriggerAction" value="" />
+      <Property name="IncreaseWanted" value="1" />
+      <Property name="LootReward" value="" />
+      <Property name="LootRewardAmountMin" value="0" />
+      <Property name="LootRewardAmountMax" value="0" />
+      <Property name="GivesSubstances">
+        <Property value="GcSubstanceAmount.xml">
+          <Property name="AmountMin" value="30" />
+          <Property name="AmountMax" value="40" />
+          <Property name="Specific" value="SUBDRONE" />
+          <Property name="SubstanceCategory" value="GcRealitySubstanceCategory.xml">
+            <Property name="SubstanceCategory" value="Commodity" />
+          </Property>
+          <Property name="Rarity" value="GcRarity.xml">
+            <Property name="Rarity" value="Rare" />
+          </Property>
+        </Property>
+        <Property value="GcSubstanceAmount.xml">
+          <Property name="AmountMin" value="20" />
+          <Property name="AmountMax" value="30" />
+          <Property name="Specific" value="COMUNCOMMON1" />
+          <Property name="SubstanceCategory" value="GcRealitySubstanceCategory.xml">
+            <Property name="SubstanceCategory" value="Commodity" />
+          </Property>
+          <Property name="Rarity" value="GcRarity.xml">
+            <Property name="Rarity" value="Common" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="GivesReward" value="" />
+      <Property name="HardModeSubstanceMultiplier" value="1" />
+      <Property name="RemoveModel" value="True" />
+      <Property name="DestroyedModel" value="MODELS/COMMON/ROBOTS/LOOTDROP/DRONELOOT.SCENE.MBIN" />
+      <Property name="DestroyedModelUsesScale" value="False" />
+      <Property name="DestroyForce" value="10" />
+      <Property name="DestroyForceRadius" value="5" />
+      <Property name="DestroyEffect" value="" />
+      <Property name="DestroyEffectPoint" value="SFX" />
+      <Property name="DestroyEffectTime" value="2" />
+      <Property name="ShowInteract" value="False" />
+      <Property name="ShowInteractRange" value="20" />
+      <Property name="GrenadeSingleHit" value="True" />
+    </Property>
+    <Property value="EmptyNode.xml" />
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcBeenShotEvent.xml">
+                <Property name="ShotBy" value="Player" />
+                <Property name="DamageThreshold" value="1" />
+                <Property name="HealthThreshold" value="50" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="DRONESMOKE" />
+                  <Property name="Joint" value="ROOT" />
+                  <Property name="Exact" value="True" />
+                </Property>
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="DAMAGED" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="Scene" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="DAMAGED" />
+          <Property name="Triggers" />
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+    </Property>
+  </Property>
+</Data>

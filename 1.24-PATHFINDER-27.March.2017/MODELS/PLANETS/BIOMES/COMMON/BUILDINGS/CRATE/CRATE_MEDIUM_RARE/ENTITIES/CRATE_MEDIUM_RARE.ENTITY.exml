@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollision" value="False" />
+    </Property>
+    <Property value="GcSimpleInteractionComponentData.xml">
+      <Property name="SimpleInteractionType" value="Treasure" />
+      <Property name="InteractDistance" value="0" />
+      <Property name="Id" value="CRATE" />
+      <Property name="Rarity" value="GcRarity.xml">
+        <Property name="Rarity" value="Rare" />
+      </Property>
+      <Property name="SizeIndicator" value="GcSizeIndicator.xml">
+        <Property name="SizeIndicator" value="Medium" />
+      </Property>
+      <Property name="TriggerAction" value="INACTIVE" />
+      <Property name="BroadcastTriggerAction" value="False" />
+      <Property name="Delay" value="0.8" />
+      <Property name="InteractIsCrime" value="False" />
+      <Property name="InteractCrimeLevel" value="0" />
+      <Property name="ActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="0" />
+        <Property name="Repeat" value="False" />
+        <Property name="RequiredTech" value="" />
+      </Property>
+      <Property name="Name" value="" />
+      <Property name="TerminalMessage" value="" />
+      <Property name="BaseBuildingTriggerActions" />
+    </Property>
+    <Property value="GcScannableComponentData.xml">
+      <Property name="ScanRange" value="100" />
+      <Property name="ScanName" value="SCAN_CARGO_DROP" />
+      <Property name="ScanTime" value="15" />
+      <Property name="IconType" value="GcScannerIconTypes.xml">
+        <Property name="ScanIconType" value="Multi" />
+      </Property>
+      <Property name="PermanentIcon" value="False" />
+      <Property name="PermanentIconRadius" value="0" />
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="" />
+        <Property name="Filename" value="" />
+        <Property name="AnimType" value="OneShot" />
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="LoopOffsetMin" value="0" />
+        <Property name="LoopOffsetMax" value="0" />
+        <Property name="ControlDelay" value="0" />
+        <Property name="ControlSpeed" value="1" />
+        <Property name="ControlActionFrame" value="-1" />
+        <Property name="ControlCreatureSize" value="AllSizes" />
+        <Property name="FlagsAdditive" value="False" />
+        <Property name="FlagsMirrored" value="False" />
+        <Property name="FlagsActive" value="False" />
+      </Property>
+      <Property name="Anims" />
+    </Property>
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="" />
+                <Property name="FrameStart" value="0" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Obj_Crate_Med" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Action">
+                <Property value="EmptyNode.xml" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+    </Property>
+  </Property>
+</Data>

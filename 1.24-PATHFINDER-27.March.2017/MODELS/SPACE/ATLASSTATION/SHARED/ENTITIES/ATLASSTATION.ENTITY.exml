@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcOutpostComponentData.xml">
+      <Property name="SpaceStation" value="False" />
+      <Property name="AIDestination" value="False" />
+      <Property name="HasOwnGravity" value="True" />
+      <Property name="Door" value="HANGARDOOR" />
+      <Property name="CircleRadius" value="2000" />
+      <Property name="ApproachRange" value="400" />
+      <Property name="ApproachAngle" value="30" />
+      <Property name="ApproachSpeed" value="100" />
+      <Property name="PlayerAutoLandRange" value="300" />
+      <Property name="LandingSpeed" value="5" />
+      <Property name="LandingHeight" value="10" />
+      <Property name="RotateToDock" value="True" />
+      <Property name="TakeOffHeight" value="3" />
+      <Property name="TakeOffFwdDist" value="5" />
+      <Property name="TakeOffTime" value="1" />
+      <Property name="TakeOffAlignTime" value="1" />
+      <Property name="TakeOffSpeed" value="200" />
+      <Property name="TakeOffBoost" value="100" />
+      <Property name="TakeOffExtraAIHeight" value="7" />
+      <Property name="LSystems" />
+    </Property>
+    <Property value="GcShootableComponentData.xml">
+      <Property name="Health" value="1000000" />
+      <Property name="AutoAimTarget" value="False" />
+      <Property name="PlayerOnly" value="False" />
+      <Property name="ImpactShake" value="False" />
+      <Property name="ImpactShakeEffect" value="SMALLPAINSHAKE" />
+      <Property name="ForceImpactType" value="GcProjectileImpactType.xml">
+        <Property name="Impact" value="Default" />
+      </Property>
+      <Property name="IncreaseWanted" value="0" />
+      <Property name="IncreaseWantedThresholdTime" value="0.5" />
+      <Property name="UseMiningDamage" value="True" />
+      <Property name="MinDamage" value="0" />
+      <Property name="StaticUntilShot" value="False" />
+      <Property name="RequiredTech" value="" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="0" />
+      </Property>
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollision" value="False" />
+    </Property>
+    <Property value="GcMarkerComponentData.xml">
+      <Property name="GenericIconType" value="GcGenericIconTypes.xml">
+        <Property name="GenericIconType" value="SpaceAtlas" />
+      </Property>
+      <Property name="Radius" value="0" />
+      <Property name="DisplayMode" value="SpaceOnly" />
+      <Property name="ShipScannable" value="True" />
+    </Property>
+  </Property>
+</Data>

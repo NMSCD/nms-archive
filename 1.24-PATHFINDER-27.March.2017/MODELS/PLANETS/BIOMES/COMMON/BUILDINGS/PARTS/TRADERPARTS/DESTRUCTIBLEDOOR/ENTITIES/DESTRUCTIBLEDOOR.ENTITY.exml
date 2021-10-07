@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollision" value="False" />
+    </Property>
+    <Property value="GcDestructableComponentData.xml">
+      <Property name="Explosion" value="DOOREXPLODE" />
+      <Property name="ExplosionScale" value="1" />
+      <Property name="ExplosionScaleToBounds" value="False" />
+      <Property name="VehicleDestroyEffect" value="VEHICLECRASH" />
+      <Property name="TriggerAction" value="DOORDESTROYED" />
+      <Property name="IncreaseWanted" value="1" />
+      <Property name="LootReward" value="" />
+      <Property name="LootRewardAmountMin" value="0" />
+      <Property name="LootRewardAmountMax" value="0" />
+      <Property name="GivesSubstances" />
+      <Property name="GivesReward" value="" />
+      <Property name="HardModeSubstanceMultiplier" value="1" />
+      <Property name="RemoveModel" value="True" />
+      <Property name="DestroyedModel" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/DESTRUCTIBLEDOOR_DESTROYED.SCENE.MBIN" />
+      <Property name="DestroyedModelUsesScale" value="True" />
+      <Property name="DestroyForce" value="30" />
+      <Property name="DestroyForceRadius" value="6" />
+      <Property name="DestroyEffect" value="" />
+      <Property name="DestroyEffectPoint" value="SFX" />
+      <Property name="DestroyEffectTime" value="2" />
+      <Property name="ShowInteract" value="True" />
+      <Property name="ShowInteractRange" value="20" />
+      <Property name="GrenadeSingleHit" value="False" />
+    </Property>
+    <Property value="GcShootableComponentData.xml">
+      <Property name="Health" value="800" />
+      <Property name="AutoAimTarget" value="False" />
+      <Property name="PlayerOnly" value="False" />
+      <Property name="ImpactShake" value="True" />
+      <Property name="ImpactShakeEffect" value="SMALLPAINSHAKE" />
+      <Property name="ForceImpactType" value="GcProjectileImpactType.xml">
+        <Property name="Impact" value="Default" />
+      </Property>
+      <Property name="IncreaseWanted" value="2" />
+      <Property name="IncreaseWantedThresholdTime" value="0.5" />
+      <Property name="UseMiningDamage" value="False" />
+      <Property name="MinDamage" value="5" />
+      <Property name="StaticUntilShot" value="False" />
+      <Property name="RequiredTech" value="" />
+    </Property>
+    <Property value="GcScannableComponentData.xml">
+      <Property name="ScanRange" value="150" />
+      <Property name="ScanName" value="SCAN_DOOR" />
+      <Property name="ScanTime" value="15" />
+      <Property name="IconType" value="GcScannerIconTypes.xml">
+        <Property name="ScanIconType" value="None" />
+      </Property>
+      <Property name="PermanentIcon" value="False" />
+      <Property name="PermanentIconRadius" value="0" />
+    </Property>
+  </Property>
+</Data>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcOutpostComponentData.xml">
+      <Property name="SpaceStation" value="False" />
+      <Property name="AIDestination" value="True" />
+      <Property name="HasOwnGravity" value="False" />
+      <Property name="Door" value="HANGARDOOR" />
+      <Property name="CircleRadius" value="200" />
+      <Property name="ApproachRange" value="100" />
+      <Property name="ApproachAngle" value="360" />
+      <Property name="ApproachSpeed" value="30" />
+      <Property name="PlayerAutoLandRange" value="100" />
+      <Property name="LandingSpeed" value="10" />
+      <Property name="LandingHeight" value="10" />
+      <Property name="RotateToDock" value="True" />
+      <Property name="TakeOffHeight" value="10" />
+      <Property name="TakeOffFwdDist" value="1" />
+      <Property name="TakeOffTime" value="1" />
+      <Property name="TakeOffAlignTime" value="1" />
+      <Property name="TakeOffSpeed" value="100" />
+      <Property name="TakeOffBoost" value="10" />
+      <Property name="TakeOffExtraAIHeight" value="7" />
+      <Property name="LSystems" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollision" value="False" />
+    </Property>
+  </Property>
+</Data>
