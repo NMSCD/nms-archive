@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (2.43.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkNetReplicatedEntityComponentData.xml">
+      <Property name="ReplicaComponentMask" />
+      <Property name="ReplicationRange" value="PlanetLocal" />
+      <Property name="SpawnType" value="Basic" />
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="" />
+        <Property name="Filename" value="" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="LoopOffsetMin" value="0" />
+        <Property name="LoopOffsetMax" value="0" />
+        <Property name="Delay" value="0" />
+        <Property name="Speed" value="1" />
+        <Property name="ActionFrameStart" value="0" />
+        <Property name="ActionFrame" value="-1" />
+        <Property name="ControlCreatureSize" value="AllSizes" />
+        <Property name="Additive" value="False" />
+        <Property name="Mirrored" value="False" />
+        <Property name="Active" value="True" />
+        <Property name="AdditiveBaseAnim" value="" />
+        <Property name="AdditiveBaseFrame" value="0" />
+        <Property name="GameData" value="TkAnimationGameData.xml">
+          <Property name="RootMotionEnabled" value="False" />
+          <Property name="BlockPlayerMovement" value="False" />
+          <Property name="BlockPlayerWeapon" value="Unblocked" />
+        </Property>
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="IDLE" />
+          <Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/BUILDABLEPARTS/DECORATION/ANIMS/FIREWORKSHOOT01.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Trees" />
+      <Property name="NetSyncAnimation" value="True" />
+      <Property name="JointLODOverrides" />
+    </Property>
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="BOOT" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="1" />
+                <Property name="RandomSeconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="START" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="Scene" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="START" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAnimAction.xml">
+                  <Property name="Anim" value="IDLE" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="IDLE" />
+                <Property name="FrameStart" value="1" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="LAUNCHERSMOKE" />
+                  <Property name="Joint" value="LauncherSmokeLOC" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="GalaxyMarkerType" value="Scene" />
+                  </Property>
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="IDLE" />
+                <Property name="FrameStart" value="20" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Expl_Firework_Launch" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="IDLE" />
+                <Property name="FrameStart" value="145" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="FIREWORKEXP03" />
+                  <Property name="Joint" value="ExplodeLOC" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="GalaxyMarkerType" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Expl_Firework_Launch" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="IDLE" />
+                <Property name="FrameStart" value="270" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="FIREWORKEXP03" />
+                  <Property name="Joint" value="ExplodeLOC" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="GalaxyMarkerType" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Expl_Firework_Launch" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="IDLE" />
+                <Property name="FrameStart" value="395" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="FIREWORKEXP03" />
+                  <Property name="Joint" value="ExplodeLOC" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="GalaxyMarkerType" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Expl_Firework_Launch" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="IDLE" />
+                <Property name="FrameStart" value="520" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="FIREWORKEXP03" />
+                  <Property name="Joint" value="ExplodeLOC" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="GalaxyMarkerType" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Expl_Firework_Launch" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="IDLE" />
+                <Property name="FrameStart" value="645" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="FIREWORKEXP03" />
+                  <Property name="Joint" value="ExplodeLOC" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="GalaxyMarkerType" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Expl_Firework_Launch" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="IDLE" />
+                <Property name="FrameStart" value="770" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="FIREWORKEXP03" />
+                  <Property name="Joint" value="ExplodeLOC" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="GalaxyMarkerType" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Expl_Firework_Launch" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="IDLE" />
+                <Property name="FrameStart" value="895" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="FIREWORKEXP03" />
+                  <Property name="Joint" value="ExplodeLOC" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="GalaxyMarkerType" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Expl_Firework_Launch" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="IDLE" />
+                <Property name="FrameStart" value="1020" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="FIREWORKEXP03" />
+                  <Property name="Joint" value="ExplodeLOC" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="GalaxyMarkerType" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Expl_Firework_Launch" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="IDLE" />
+                <Property name="FrameStart" value="1145" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="FIREWORKEXP03" />
+                  <Property name="Joint" value="ExplodeLOC" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="GalaxyMarkerType" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Expl_Firework_Launch" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="IDLE" />
+                <Property name="FrameStart" value="1270" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="FIREWORKEXP03" />
+                  <Property name="Joint" value="ExplodeLOC" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="GalaxyMarkerType" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="LaunchLights" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="IDLE" />
+                <Property name="FrameStart" value="1420" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="FireworkData" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="22" />
+                <Property name="RandomSeconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcDestroyAction.xml">
+                  <Property name="DestroyAll" value="True" />
+                  <Property name="UseDestructables" value="False" />
+                  <Property name="PlayEffect" value="FIREWORKEND" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+      <Property name="ResetShotTimeOnStateChange" value="False" />
+      <Property name="LinkStateToBaseGrid" value="False" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>
