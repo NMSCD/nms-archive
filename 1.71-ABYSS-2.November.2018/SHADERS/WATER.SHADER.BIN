@@ -1,0 +1,164 @@
+[[FX]]
+
+// Samplers
+
+sampler gReflectionMap = sampler_state
+{
+    TexUnit = 7;
+};
+
+sampler gDisplacementMap = sampler_state
+{
+    Filter  = Bilinear;
+    Address = Clamp;
+    TexUnit = 9;
+};
+
+sampler gNormalMap = sampler_state
+{
+    Filter = Trilinear;
+    MaxAnisotropy = 0;
+    TexUnit = 2;
+};
+
+sampler gFoamNormalMap = sampler_state
+{
+    Filter = Trilinear;
+    MaxAnisotropy = 0;
+    TexUnit = 8;
+};
+
+sampler gFresnelMap = sampler_state
+{
+    Filter = Bilinear;
+    MaxAnisotropy = 0;
+    TexUnit = 10;
+};
+
+sampler gFoamMap = sampler_state
+{
+    Filter = Trilinear;
+    MaxAnisotropy = 0;
+    TexUnit = 1;
+};
+
+sampler gShadowMap = sampler_state
+{
+    TexUnit = 15;
+};
+
+sampler gCloudShadowMap = sampler_state
+{
+    TexUnit = 14;
+};
+
+sampler gFadeNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/BLUENOISE.DDS;
+    TexUnit = 13;
+};
+
+sampler gBuffer1Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 4;
+};
+
+sampler gBuffer2Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 5;
+};
+
+sampler gBufferMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 6;
+};
+
+sampler gNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/NOISEINVERT.DDS;
+    TexUnit = 12;
+    Address = Wrap;
+};
+
+sampler gFoamHeightMap = sampler_state
+{
+    Filter = Bilinear;
+    MaxAnisotropy = 0;
+    TexUnit = 3;
+};
+
+// Uniforms
+
+// Water
+float4 gWaveScaleVec4                    = {0.0, 0.0, 0.0, 0.0};
+float4 gWaveSpeedVec4                    = {0.0, 0.0, 0.0, 0.0};
+float4 gWindDirectionVec4                = {0.0, 0.0, 0.0, 0.0};
+float4 gWaterSurfaceParamsVec4           = {0.0, 0.0, 0.0, 0.0};
+float4 gFresnelParamsVec4                = {0.0, 0.0, 0.0, 0.0};
+float4 gFoamParamsVec4                   = {0.0, 0.0, 0.0, 0.0};
+float4 gFoamColourVec4                   = {0.0, 0.0, 0.0, 0.0};
+
+// Planet
+float4 gPlanetPositionVec4				= {0.0,  0.0, 0.0, 0.0};
+float4 gLightOriginVec4   = {0.0, 0.0, 0.0, 0.0}; 
+
+// Lighting
+float4 gMaterialParamsVec4              = {0.0, 1.0, 1.0, 0.0};
+
+// Fog
+float4 gSkyColourVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gHorizonColourVec4      = {1.0, 0.0, 1.0, 0.0};
+float4 gSunColourVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterColourBaseVec4    = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterColourAddVec4     = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogColourNearVec4 = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogColourFarVec4  = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogVec4           = {1.0, 0.0, 1.0, 0.0};
+float4 gFogColourVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceHorizonColourVec4 = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogColourVec4    = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogParamsVec4    = {1.0, 0.0, 1.0, 0.0};
+float4 gFogParamsVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gScatteringParamsVec4   = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceFogParamsVec4     = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColourVec4     = {1.0, 0.0, 1.0, 0.0};
+float4 gSunPositionVec4        = {1.0, 0.0, 1.0, 0.0};
+
+
+// Contexts
+
+context FULLSCREEN
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_FULLSCREEN;
+}
+
+context FULLSCREEN_BELOW
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_FULLSCREEN_B;
+}
+
+
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#define D_TEX_QUAD
+#define D_WATER
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_FULLSCREEN]]
+// =================================================================================================
+#define D_FULLSCREEN
+#define D_WATER
+#include "Custom/WaterRaytraceFragment.shader.h"
+
+[[FS_FULLSCREEN_B]]
+// =================================================================================================
+#define D_FULLSCREEN
+#define D_FROM_BELOW
+#define D_WATER
+#include "Custom/WaterRaytraceFragment.shader.h"

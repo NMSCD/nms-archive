@@ -1,0 +1,32 @@
+[[FX]]
+
+// Uniforms
+
+// Planet
+float4 gPlanetPositionVec4              = {0.0, 0.0, 0.0, 0.0}; 
+float4 gPlanetSubstanceColour           = {0.0, 1.0, 1.0, 0.0}; 
+
+// Lighting
+float4 gMaterialParamsVec4              = {0.9, 0.5, 0.0, 0.5};
+
+float4 gScanParamsPosVec4               = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg1Vec4              = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg2Vec4              = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg3Vec4              = {0.0, 0.0, 0.0, 0.0};
+float4 gMiningPosVec4                   = {0.0, 0.0, 0.0, 0.0};
+
+// Contexts
+
+context LIGHTING
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader  = compile GLSL FS_GENERAL;
+}
+
+[[VS_GENERAL]]
+// =================================================================================================
+#include "Custom/QuadVertex.shader.h"
+
+[[FS_GENERAL]]
+// =================================================================================================
+#include "Custom/QuadFragment.shader.h"

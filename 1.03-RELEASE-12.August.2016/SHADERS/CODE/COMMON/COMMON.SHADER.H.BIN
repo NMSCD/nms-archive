@@ -1,0 +1,233 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       Common.h
+///     @author     User
+///     @date       
+///
+///     @brief      Common
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+#ifndef D_COMMON_H
+#define D_COMMON_H
+
+
+STATIC_CONST vec3 kGammaOutVec3 = vec3( 1.0 / 2.2 );
+STATIC_CONST vec3 kGammaInVec3  = vec3( 2.2 );
+STATIC_CONST vec4 RGBToHSV_K    = vec4( 0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0 );
+STATIC_CONST vec4 HSVToRGB_K    = vec4( 1.0,  2.0 / 3.0, 1.0 / 3.0,  3.0 );
+
+
+//-----------------------------------------------------------------------------
+///
+///     GammaCorrect
+///
+//-----------------------------------------------------------------------------
+vec3 
+GammaCorrectInput(
+    in vec3 lColourVec3 )
+{
+    vec3 lCorrectColourVec3;
+
+    lCorrectColourVec3 = pow( lColourVec3, kGammaInVec3 );
+
+    return lCorrectColourVec3;
+}
+
+
+//-----------------------------------------------------------------------------
+///
+///     GammaCorrect
+///
+//-----------------------------------------------------------------------------
+vec3 
+GammaCorrectOutput(
+    in vec3 lColourVec3 )
+{
+    vec3 lCorrectColourVec3;
+
+    lCorrectColourVec3 = pow( lColourVec3, kGammaOutVec3 );
+
+    return lCorrectColourVec3;
+}
+
+
+//-----------------------------------------------------------------------------
+///
+///     RGBToHSV
+///
+//-----------------------------------------------------------------------------
+vec3 
+RGBToHSV(
+    vec3 lRGB )
+{
+    //vec4 p = mix( vec4(lRGB.bg, RGBToHSV_K.wz), vec4(lRGB.gb, RGBToHSV_K.xy), step(lRGB.b, lRGB.g) );
+    //vec4 q = mix( vec4(p.xyw, lRGB.r), vec4(lRGB.r, p.yzx), step(p.x, lRGB.r) );
+    // This variant is faster, since it generates conditional moves
+    vec4 p = lRGB.g < lRGB.b ? vec4(lRGB.bg, RGBToHSV_K.wz) : vec4(lRGB.gb, RGBToHSV_K.xy);
+    vec4 q = lRGB.r < p.x ? vec4(p.xyw, lRGB.r) : vec4(lRGB.r, p.yzx);    
+    float d = q.x - min(q.w, q.y);
+    float e = 1.0e-10;
+    return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
+}
+
+
+//-----------------------------------------------------------------------------
+///
+///     HSVToRGB
+///
+///     @brief      http://lolengine.net/blog/2013/07/27/rgb-to-hsv-in-glsl
+///
+//-----------------------------------------------------------------------------
+vec3 
+HSVToRGB(
+    vec3 lHSV )
+{
+    vec3 p = abs(fract(lHSV.xxx + HSVToRGB_K.xyz) * 6.0 - HSVToRGB_K.www);
+    return lHSV.z * mix(HSVToRGB_K.xxx, saturate(p - HSVToRGB_K.xxx), lHSV.y);
+}
+
+
+//-----------------------------------------------------------------------------
+///
+///     BrightnessVibranceContrast
+///
+//-----------------------------------------------------------------------------
+vec3 BrightnessVibranceContrast(
+    vec3  lInputColour,
+    float lfBrightness,
+    float lfVibrance,
+    float lfContrast)
+{
+    vec3 lBrtResult     = lInputColour * lfBrightness;
+
+    // get lum
+    vec3 lLuma          = vec3( dot(lBrtResult, vec3( 0.2125, 0.7154, 0.0721 )) );
+
+    // get saturation
+    float lfMaxCol      = max( lBrtResult.r, max(lBrtResult.g, lBrtResult.b) );
+    float lfMinCol      = min( lBrtResult.r, min(lBrtResult.g, lBrtResult.b) );
+    float lfCurSatV     = lfMaxCol - lfMinCol;
+
+    // lerp by 1 + (1 - vibrance) - current saturation
+    float lfVibranceMix = (1.0 + (lfVibrance * (1.0 - (sign(lfVibrance) * lfCurSatV))));
+    vec3 lVibResult     = mix( lLuma, lBrtResult, lfVibranceMix );
+
+    // lerp from mid gray for contrast
+    vec3 lContrastBase  = vec3( 0.5, 0.5, 0.5 );
+    vec3 lConResult     = mix( lContrastBase , lVibResult, lfContrast );
+
+    return lConResult;
+}
+
+
+//-----------------------------------------------------------------------------
+///
+///     Desaturate
+///
+//-----------------------------------------------------------------------------
+vec3 Desaturate( vec3 color, float lfAmount )
+{
+    vec3 gray = vec3( dot( vec3( 0.299, 0.587, 0.114 ), color) );
+    return mix( color, gray, lfAmount );
+}
+
+
+// improved rgb lerp by @stormoid
+// https://www.shadertoy.com/view/lsdGzN
+//---------------Improved RGB--------------
+
+/*
+    The idea behind this function is to avoid the low saturation area in the
+    rgb color space. This is done by getting the direction to that diagonal
+    and displacing the interpolated color by it's inverse while scaling it
+    by saturation error and desired lightness. 
+
+    I find it behaves very well under most circumstances, the only instance
+    where it doesn't behave ideally is when the hues are very close to 180 
+    degrees apart, since the method I am using to find the displacement vector
+    does not compensate for non-curving motion. I tried a few things to 
+    circumvent this problem but none were cheap and effective enough..
+*/
+
+//Changes the strength of the displacement
+#define DSP_STR 1.5
+
+//-----------------------------------------------------------------------------
+float _getsat( vec3 lColour )
+{
+    float mi = min(min(lColour.x, lColour.y), lColour.z);
+    float ma = max(max(lColour.x, lColour.y), lColour.z);
+    return (ma - mi) / (ma + 1e-7);
+}
+
+vec3 NmzRgbLerp( vec3 a, vec3 b, float x )
+{
+    // interpolated base color (with singularity fix)
+    vec3 ic = mix( a, b, x ) + vec3( 1e-6, 0.0, 0.0 );
+
+    // saturation difference from ideal scenario
+    float sd = abs( _getsat( ic ) - mix( _getsat( a ), _getsat( b ), x ) );
+
+    // displacement direction
+    vec3 dir = normalize( 
+        vec3( 2.0 * ic.x - ic.y - ic.z, 
+              2.0 * ic.y - ic.x - ic.z, 
+              2.0 * ic.z - ic.y - ic.x ) 
+        );
+
+    // simple Lighntess
+    float lgt = dot( vec3( 1.0 ), ic );
+
+    // extra scaling factor for the displacement
+    float ff = dot( dir, normalize( ic ) );
+
+    // displace the color
+    ic += DSP_STR * dir * sd * ff * lgt;
+    return clamp( ic, 0.0, 1.0 );
+}
+
+
+
+
+//-----------------------------------------------------------------------------
+///
+///     Inverse
+///
+//-----------------------------------------------------------------------------
+mat4
+Inverse(
+    const mat4 lInMat4 )
+{
+#ifdef D_PLATFORM_PC
+    return inverse( lInMat4 );
+#else
+    float det = determinant( lInMat4 );
+    det = 1.0f / det;
+
+    mat4 M = lInMat4;
+    mat4 IM;
+    IM[0][0] = det * ( M[1][2]*M[2][3]*M[3][1] - M[1][3]*M[2][2]*M[3][1] + M[1][3]*M[2][1]*M[3][2] - M[1][1]*M[2][3]*M[3][2] - M[1][2]*M[2][1]*M[3][3] + M[1][1]*M[2][2]*M[3][3] );
+    IM[0][1] = det * ( M[0][3]*M[2][2]*M[3][1] - M[0][2]*M[2][3]*M[3][1] - M[0][3]*M[2][1]*M[3][2] + M[0][1]*M[2][3]*M[3][2] + M[0][2]*M[2][1]*M[3][3] - M[0][1]*M[2][2]*M[3][3] );
+    IM[0][2] = det * ( M[0][2]*M[1][3]*M[3][1] - M[0][3]*M[1][2]*M[3][1] + M[0][3]*M[1][1]*M[3][2] - M[0][1]*M[1][3]*M[3][2] - M[0][2]*M[1][1]*M[3][3] + M[0][1]*M[1][2]*M[3][3] );
+    IM[0][3] = det * ( M[0][3]*M[1][2]*M[2][1] - M[0][2]*M[1][3]*M[2][1] - M[0][3]*M[1][1]*M[2][2] + M[0][1]*M[1][3]*M[2][2] + M[0][2]*M[1][1]*M[2][3] - M[0][1]*M[1][2]*M[2][3] );
+    IM[1][0] = det * ( M[1][3]*M[2][2]*M[3][0] - M[1][2]*M[2][3]*M[3][0] - M[1][3]*M[2][0]*M[3][2] + M[1][0]*M[2][3]*M[3][2] + M[1][2]*M[2][0]*M[3][3] - M[1][0]*M[2][2]*M[3][3] );
+    IM[1][1] = det * ( M[0][2]*M[2][3]*M[3][0] - M[0][3]*M[2][2]*M[3][0] + M[0][3]*M[2][0]*M[3][2] - M[0][0]*M[2][3]*M[3][2] - M[0][2]*M[2][0]*M[3][3] + M[0][0]*M[2][2]*M[3][3] );
+    IM[1][2] = det * ( M[0][3]*M[1][2]*M[3][0] - M[0][2]*M[1][3]*M[3][0] - M[0][3]*M[1][0]*M[3][2] + M[0][0]*M[1][3]*M[3][2] + M[0][2]*M[1][0]*M[3][3] - M[0][0]*M[1][2]*M[3][3] );
+    IM[1][3] = det * ( M[0][2]*M[1][3]*M[2][0] - M[0][3]*M[1][2]*M[2][0] + M[0][3]*M[1][0]*M[2][2] - M[0][0]*M[1][3]*M[2][2] - M[0][2]*M[1][0]*M[2][3] + M[0][0]*M[1][2]*M[2][3] );
+    IM[2][0] = det * ( M[1][1]*M[2][3]*M[3][0] - M[1][3]*M[2][1]*M[3][0] + M[1][3]*M[2][0]*M[3][1] - M[1][0]*M[2][3]*M[3][1] - M[1][1]*M[2][0]*M[3][3] + M[1][0]*M[2][1]*M[3][3] );
+    IM[2][1] = det * ( M[0][3]*M[2][1]*M[3][0] - M[0][1]*M[2][3]*M[3][0] - M[0][3]*M[2][0]*M[3][1] + M[0][0]*M[2][3]*M[3][1] + M[0][1]*M[2][0]*M[3][3] - M[0][0]*M[2][1]*M[3][3] );
+    IM[2][2] = det * ( M[0][1]*M[1][3]*M[3][0] - M[0][3]*M[1][1]*M[3][0] + M[0][3]*M[1][0]*M[3][1] - M[0][0]*M[1][3]*M[3][1] - M[0][1]*M[1][0]*M[3][3] + M[0][0]*M[1][1]*M[3][3] );
+    IM[2][3] = det * ( M[0][3]*M[1][1]*M[2][0] - M[0][1]*M[1][3]*M[2][0] - M[0][3]*M[1][0]*M[2][1] + M[0][0]*M[1][3]*M[2][1] + M[0][1]*M[1][0]*M[2][3] - M[0][0]*M[1][1]*M[2][3] );
+    IM[3][0] = det * ( M[1][2]*M[2][1]*M[3][0] - M[1][1]*M[2][2]*M[3][0] - M[1][2]*M[2][0]*M[3][1] + M[1][0]*M[2][2]*M[3][1] + M[1][1]*M[2][0]*M[3][2] - M[1][0]*M[2][1]*M[3][2] );
+    IM[3][1] = det * ( M[0][1]*M[2][2]*M[3][0] - M[0][2]*M[2][1]*M[3][0] + M[0][2]*M[2][0]*M[3][1] - M[0][0]*M[2][2]*M[3][1] - M[0][1]*M[2][0]*M[3][2] + M[0][0]*M[2][1]*M[3][2] );
+    IM[3][2] = det * ( M[0][2]*M[1][1]*M[3][0] - M[0][1]*M[1][2]*M[3][0] - M[0][2]*M[1][0]*M[3][1] + M[0][0]*M[1][2]*M[3][1] + M[0][1]*M[1][0]*M[3][2] - M[0][0]*M[1][1]*M[3][2] );
+    IM[3][3] = det * ( M[0][1]*M[1][2]*M[2][0] - M[0][2]*M[1][1]*M[2][0] + M[0][2]*M[1][0]*M[2][1] - M[0][0]*M[1][2]*M[2][1] - M[0][1]*M[1][0]*M[2][2] + M[0][0]*M[1][1]*M[2][2] );
+
+    return IM;
+#endif
+}
+
+#endif

@@ -1,0 +1,90 @@
+[[FX]]
+
+sampler gNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/CLOUDNOISE.DDS;
+    TexUnit = 13;
+    Address = Wrap;
+};
+
+sampler gDiffuseMap = sampler_state
+{
+	Filter = Trilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 0;
+};
+
+// Uniforms
+// Fog
+float4 gSkyColourVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gHorizonColourVec4               = {1.0, 0.0, 1.0, 0.0};
+float4 gSunColourVec4               = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterColourNearVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogVec4                    = {1.0, 0.0, 1.0, 0.0};
+float4 gFogColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceHorizonColourVec4               = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogColourVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogParamsVec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gFogParamsVec4                         = {1.0, 0.0, 1.0, 0.0};
+float4 gScatteringParamsVec4           = {1.0, 0.0, 1.0, 0.0};
+float4 gFogFadeHeightsVec4                    = {1.0, 0.0, 1.0, 0.0};
+float4 gFogFadeHeights2Vec4                    = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour1Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour2Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour3Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceCloudColourVec4            = {1.0, 0.0, 1.0, 0.0};
+float4 gSunPositionVec4                 = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceScatteringParamsVec4       = {1.0, 0.0, 1.0, 0.0};
+
+float4 gSpaceNebulaColour1Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceNebulaColour2Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceNebulaColour3Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceNebulaColour4Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceNormalParamsVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceNebulaParamsVec4          = {1.0, 0.0, 1.0, 0.0};
+
+// Planet
+float4 gPlanetPositionVec4				= {0.0, -1204.0, 0.0, 1204.0};
+
+context LIGHTING
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader = compile GLSL FS_LIGHTING;
+}
+
+context LIGHTING_LOWQ
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader = compile GLSL FS_LIGHTING_LOWQ;
+}
+
+
+context REFLECT
+{
+	VertexShader = compile GLSL VS_REFLECT;
+	PixelShader = compile GLSL FS_LIGHTING_LOWQ;
+}
+
+
+[[VS_GENERAL]]
+// =================================================================================================
+#define D_SKY
+#include "Custom/SkyVertex.shader.h"
+
+[[VS_REFLECT]]
+// =================================================================================================
+#define D_SKY
+#define D_REFLECT
+#include "Custom/SkyVertex.shader.h"
+
+[[FS_LIGHTING]]
+// =================================================================================================
+#define D_SKY
+#include "Custom/SkyFragment.shader.h"
+
+[[FS_LIGHTING_LOWQ]]
+// =================================================================================================
+#define D_SKY
+#define D_LOWQUALITY
+#include "Custom/SkyFragment.shader.h"
+

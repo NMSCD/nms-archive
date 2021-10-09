@@ -1,0 +1,128 @@
+[[FX]]
+
+// Samplers
+sampler gDistortMap = sampler_state
+{
+  Address = Wrap;
+  Filter = Bilinear;
+  MaxAnisotropy = 0;
+  TexUnit = 0;
+};
+
+sampler gFieldMap = sampler_state
+{
+  Address = Wrap;
+  Filter = Bilinear;
+  MaxAnisotropy = 0;
+  TexUnit = 1;
+};
+
+sampler gNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/CLOUDNOISE.DDS;
+    TexUnit = 13;
+    Address = Wrap;
+};
+sampler gPlasmaMap = sampler_state
+{
+  Address = Wrap;
+  Filter = Bilinear;
+  MaxAnisotropy = 0;
+  TexUnit = 2;
+};
+
+
+// Contexts
+context PSTREAM_STARS
+{
+  VertexShader = compile GLSL VS_PSTREAM_STARS;
+  PixelShader = compile GLSL FS_PSTREAM_STARS;
+
+  ZWriteEnable = false;
+  Instanced = true;
+}
+
+context PSTREAM_SYSTEM
+{
+  VertexShader = compile GLSL VS_PSTREAM_STARS;
+  PixelShader = compile GLSL FS_PSTREAM_SOLARSYSTEM;
+
+  ZWriteEnable = false;
+  Instanced = true;
+}
+
+context PSTREAM_FIELD
+{
+  VertexShader = compile GLSL VS_PSTREAM_FIELD;
+  PixelShader = compile GLSL FS_PSTREAM_FIELD;
+
+  ZWriteEnable = false;
+  Instanced = true;
+}
+
+context PSTREAM_CARDS
+{
+  VertexShader = compile GLSL VS_PSTREAM_CARDS;
+  PixelShader = compile GLSL FS_PSTREAM_CARDS;
+
+  ZWriteEnable = false;
+  Instanced = true;
+}
+
+
+// Uniforms
+float4 gGalacticScale                    = {0.0, 0.0, 0.0, 0.0};
+float4 gSpaceCloudColourVec4             = {0.0, 0.0, 0.0, 0.0};
+float4 gSpaceNebulaColour3Vec4           = {0.0, 0.0, 0.0, 0.0};
+float4 gSpaceNebulaParamsVec4            = {0.0, 0.0, 0.0, 0.0};
+float4 gSpaceSkyColour1Vec4              = {0.0, 0.0, 0.0, 0.0};
+
+[[VS_PSTREAM_STARS]]
+// =================================================================================================
+#define D_VERTEX
+#define D_PSTREAM
+#define D_PSTREAM_STARS
+#include "PStream.shader.h"
+
+[[VS_PSTREAM_FIELD]]
+// =================================================================================================
+#define D_VERTEX
+#define D_PSTREAM
+#define D_PSTREAM_FIELD
+#include "PStream.shader.h"
+
+[[VS_PSTREAM_CARDS]]
+// =================================================================================================
+#define D_VERTEX
+#define D_CARDS
+#include "PStream.shader.h"
+
+
+[[FS_PSTREAM_STARS]]
+// =================================================================================================
+#define D_FRAGMENT
+#define D_PSTREAM
+#define D_PSTREAM_STARS
+#include "PStream.shader.h"
+
+[[FS_PSTREAM_SOLARSYSTEM]]
+// =================================================================================================
+#define D_FRAGMENT
+#define D_PSTREAM
+#define D_PSTREAM_STARS
+#define D_PSTREAM_SOLARSYSTEM
+#include "PStream.shader.h"
+
+[[FS_PSTREAM_FIELD]]
+// =================================================================================================
+#define D_FRAGMENT
+#define D_PSTREAM
+#define D_PSTREAM_FIELD
+#include "PStream.shader.h"
+
+[[FS_PSTREAM_CARDS]]
+// =================================================================================================
+#define D_FRAGMENT
+#define D_CARDS
+#include "PStream.shader.h"
+

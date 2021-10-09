@@ -1,0 +1,366 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       CommonDepth.h
+///     @author     User
+///     @date       
+///
+///     @brief      CommonDepth
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+#ifndef D_COMMONSCATTERING_H
+#define D_COMMONSCATTERING_H
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/Common.shader.h"
+#include "Common/noise3d.glsl"
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+//-----------------------------------------------------------------------------
+//      Functions
+
+
+//-----------------------------------------------------------------------------
+//      Global Data
+    
+STATIC_CONST float lf4Pi = 3.14159265358979323846 * 4.0;
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+vec3
+GetFarRayIntersectionPoint(
+    vec3     lStartPointVec3,
+    vec3     lDirection,
+    float    lfRadius )
+{
+    float lfB                = 2.0 * dot( lStartPointVec3, lDirection );
+    float lfC                = dot( lStartPointVec3, lStartPointVec3 ) - ( lfRadius * lfRadius );
+    float lfDet              = lfB*lfB - 4.0 * lfC;
+
+    if( lfDet >= 0.0 )
+    {
+        float lfSqrt = sqrt( lfDet );
+        float lfFar  = 0.5 * ( -lfB + lfSqrt );
+
+        return lStartPointVec3 + lDirection * lfFar;
+    }
+    else
+    {
+        return vec3( 0.0 );
+    }
+}
+
+vec3
+GetNearRayIntersectionPoint(
+    vec3     lStartPointVec3,
+    vec3     lDirection,
+    float    lfRadius )
+{
+    float lfB     = 2.0 * dot( lStartPointVec3, lDirection );
+    float lfC     = dot( lStartPointVec3, lStartPointVec3 ) - ( lfRadius * lfRadius );
+    float lfDet   = lfB*lfB - 4.0 * lfC;
+
+    if( lfDet >= 0.0 )
+    {
+        float lfSqrt = sqrt( lfDet );
+        float lfNear = 0.5 * ( -lfB - lfSqrt );
+
+        return normalize( lStartPointVec3 + lDirection * lfNear ) * lfRadius;
+    }
+    else
+    {
+        return vec3( 0.0 );
+    }
+}
+
+
+float
+GetRayIntersectionPoint(
+    in vec3     lStartPointVec3,
+    in vec3     lEndPointVec3,
+    in float    lfRadius,
+    out vec3 lOutNearPointVec3,
+    out vec3 lOutFarPointVec3 )
+{
+    lOutNearPointVec3 = lStartPointVec3;
+    lOutFarPointVec3 = lEndPointVec3;
+
+    float lfLength           = length( lStartPointVec3 - lEndPointVec3 );
+    vec3  lNormalisedRayVec3 = normalize( lStartPointVec3 - lEndPointVec3  );
+    float lfB                = 2.0 * dot( lStartPointVec3, lNormalisedRayVec3 );
+    float lfC                = dot( lStartPointVec3, lStartPointVec3 ) - ( lfRadius * lfRadius );
+    float lfDet              = lfB * lfB - 4.0 * lfC;
+     
+    if( lfDet >= 0.0 && lfLength != 0.0 )
+    {
+        float lfSqrt = sqrt( lfDet );
+        float lfNear = 0.5 * ( -lfB + lfSqrt );
+        float lfFar  = 0.5 * ( -lfB - lfSqrt );
+
+        lOutFarPointVec3  = lStartPointVec3 + lNormalisedRayVec3 * lfFar;
+        lOutNearPointVec3 = lStartPointVec3 + lNormalisedRayVec3 * lfNear;
+
+        lfDet = 1.0;
+
+        if( max( length( lOutNearPointVec3 - lEndPointVec3 ), length( lOutNearPointVec3 - lStartPointVec3 ) ) > lfLength )
+        {
+            lOutNearPointVec3 = lStartPointVec3;
+            lfDet += 1.0;
+        }
+
+        if( max( length( lOutFarPointVec3 - lEndPointVec3 ), length( lOutFarPointVec3 - lStartPointVec3 ) ) > lfLength )
+        {
+            lOutFarPointVec3 = lEndPointVec3;
+            lfDet += 2.0;
+        }
+
+        return lfDet;
+    }
+
+    return 0.0;
+}
+
+float
+GetAtmosphereDensity(
+    vec3      lSamplePointVec3,
+    float     lfInvAtmosphereSize,
+    float     lfScaleDepth )
+{ 
+    float lfDensity;
+
+    // Distances from planet
+    float lfHeight            = length( lSamplePointVec3 );
+    float lfHeightAbovePlanet = lfHeight - 1.0; // Inner radius size
+
+    // Scale based on average depth of scattering particles
+    lfDensity = ( lfHeightAbovePlanet * lfInvAtmosphereSize );
+    lfDensity = lfDensity / lfScaleDepth;
+
+    // Exponential curve out from planet
+    return exp( -lfDensity );
+
+}
+
+float
+OutScattering(
+    vec3     lStartPointVec3,
+    vec3     lStartPoint,
+    float    lfInvAtmosphereSize,
+    float    lScatteringRatio,
+    float    lfScaleDepth )
+{    
+    float lScattering;
+    float lfSegments = float( 20 );
+    vec3  lSamplePointVec3    = lStartPointVec3;
+    vec3  lRayStepVec3        = ( lStartPoint - lStartPointVec3 ) / lfSegments;
+    float lfIntegrationFactor = length( lStartPoint - lStartPointVec3 ) / ( 2.0 * lfSegments );
+    float lfInvAtmosphereSizeSN = lfInvAtmosphereSize / -lfScaleDepth;
+    lScattering=  exp( (length(lSamplePointVec3 + 0.0 * lRayStepVec3)-1.0f) * lfInvAtmosphereSizeSN );
+    lScattering+= exp( (length(lSamplePointVec3 + 1.0 * lRayStepVec3)-1.0f) * lfInvAtmosphereSizeSN );
+    lScattering+= exp( (length(lSamplePointVec3 + 2.0 * lRayStepVec3)-1.0f) * lfInvAtmosphereSizeSN );
+    lScattering+= exp( (length(lSamplePointVec3 + 3.0 * lRayStepVec3)-1.0f) * lfInvAtmosphereSizeSN );
+    lScattering+= exp( (length(lSamplePointVec3 + 5.0 * lRayStepVec3)-1.0f) * lfInvAtmosphereSizeSN );
+    lScattering+= exp( (length(lSamplePointVec3 + 7.0 * lRayStepVec3)-1.0f) * lfInvAtmosphereSizeSN );
+    lScattering+= exp( (length(lSamplePointVec3 + 11.0 * lRayStepVec3)-1.0f) * lfInvAtmosphereSizeSN );
+    lScattering+= exp( (length(lSamplePointVec3 + 15.0 * lRayStepVec3)-1.0f) * lfInvAtmosphereSizeSN );
+    lScattering+= exp( (length(lSamplePointVec3 + 20.0 * lRayStepVec3)-1.0f) * lfInvAtmosphereSizeSN );
+    //lScattering*= exp( -lfInvAtmosphereSizeSN );
+    return lScattering*lfIntegrationFactor*lf4Pi*lScatteringRatio;
+}
+
+vec3
+OutScatteringReference(
+    vec3     lStartPointVec3,
+    vec3     lStartPoint,
+    float    lfInvAtmosphereSize,
+    float    lScatteringRatio,
+    float    lfScaleDepth )
+{
+    
+    // Atmosphere Scattering
+    vec3 lScatteringVec3 = vec3( 0.0 );
+
+    int   liSegments = 20;
+    float lfSegments = float( liSegments );
+
+    vec3  lSamplePointVec3    = lStartPointVec3;
+    vec3  lRayStepVec3        = ( lStartPoint - lStartPointVec3 ) / lfSegments;
+    float lfIntegrationFactor = length( lStartPoint - lStartPointVec3 ) / ( 2.0 * lfSegments );
+
+    // Sample density at points along the ray
+    for( int i = 0; i < liSegments + 1; i++ )
+    {
+        float lfDensity = 0.0;
+
+        lfDensity = GetAtmosphereDensity(
+            lSamplePointVec3,
+            lfInvAtmosphereSize,
+            lfScaleDepth );
+
+        // Accumulate and move along ray
+        lScatteringVec3  += vec3( lfDensity );
+        lSamplePointVec3 += lRayStepVec3;
+    }
+
+    lScatteringVec3         *= lfIntegrationFactor;
+
+    // Combine out scattering factors
+    lScatteringVec3 *= vec3( lf4Pi * lScatteringRatio );
+
+    return lScatteringVec3;
+}
+
+vec3
+InScattering(
+    vec3     lStartPointVec3,
+    vec3     lSunPositionVec3,
+    vec3     lCameraPositionVec3,
+    float    lfOuterRadius,
+    float    lScatteringRatio,
+    float    lfScaleDepth,
+    bool	 lbLowQuality,
+    bool     lbNoTest )
+{
+
+    float lfInvAtmosphereSize  = 1.0 / ( lfOuterRadius - 1.0 );
+    int   liSegments           = lbLowQuality ? 4 : 8;
+    float lfSegments           = float( liSegments );
+
+    float lfCameraScattering = 0.0;
+    float lfTotalScattering = 0.0;
+
+    // Space
+    vec3 lAtmosphereHitPointNear = lStartPointVec3;
+    vec3 lAtmosphereHitPointFar  = lCameraPositionVec3 ;
+    if (lfScaleDepth != 0.0)
+    {
+        vec3  lSamplePointVec3       = lAtmosphereHitPointFar;
+        vec3  lRayStepVec3           = ( lAtmosphereHitPointNear - lAtmosphereHitPointFar ) / lfSegments;
+        float lfSunIntegrationFactor = length( lAtmosphereHitPointNear - lAtmosphereHitPointFar ) / ( 2.0 * lfSegments );
+
+        // Sum samples along ray from camera to world position
+        for( int i = 0; i < liSegments + 1; i++ )
+        {
+            float lfDensity = GetAtmosphereDensity( lSamplePointVec3, lfInvAtmosphereSize, lfScaleDepth );			
+			if (abs(lfDensity) > 0.0003)
+			{
+	            // At each step, calculate out scattering back to the camera
+	            lfCameraScattering               += lfDensity ;
+	            float lfCurrentCameraScattering    = lfCameraScattering;
+	            if( i > 0 )
+	            {
+	                float lfCameraIntegrationFactor  = length( lSamplePointVec3 - lAtmosphereHitPointFar ) / ( 2.0 * float(i) );
+	                lfCurrentCameraScattering    *= lfCameraIntegrationFactor;
+	                lfCurrentCameraScattering    *= lf4Pi * lScatteringRatio ;
+	            }
+	
+   				// Out scattering between the lightsource and the sample point
+	            float lfSunScattering = OutScattering(
+	                lSamplePointVec3, lSamplePointVec3 + lSunPositionVec3,
+	                lfInvAtmosphereSize,
+	                lScatteringRatio, lfScaleDepth );
+	            float lfSunDensity = exp( -( lfSunScattering + lfCurrentCameraScattering ) );                
+	           
+	           /* 	                
+	       		vec3 lSunScatteringVec3Old = OutScatteringReference(
+	                lSamplePointVec3, lSamplePointVec3 + lSunPositionVec3,
+	                lfInvAtmosphereSize,
+	                lScatteringRatio, lfScaleDepth );                
+	            vec3 lSunDensityOldVec3 = exp( -( lSunScatteringVec3Old + lCurrentCameraScatteringVec3 ) );	                
+	            vec3 diff = abs(lSunDensityOldVec3 - lSunDensityVec3);      
+	            if ( (diff.x > 0.03) || (diff.y > 0.03) || (diff.z > 0.03) )
+	            {
+	           		_SCE_BREAK();
+	        	}*/	                
+	
+	            // Accumulate 
+	            lfTotalScattering += lfDensity * lfSunDensity ;         
+        	}
+            lSamplePointVec3     += lRayStepVec3;
+        }
+        lfTotalScattering *= lfSunIntegrationFactor;
+    }   
+    return vec3(isnan(lfTotalScattering) ? 0.0 : lfTotalScattering);
+}
+
+
+float
+MiePhase(
+vec3  lSunPositionVec3,
+vec3  lRayDirectionVec3,
+float lfSunScale )
+{
+    float lfCos        = dot( normalize( lSunPositionVec3 ), lRayDirectionVec3 ) / length( lRayDirectionVec3 );
+    float lfSunScale2  = lfSunScale * lfSunScale;
+
+    return 1.5 * ( ( 1.0 - lfSunScale2 ) / ( 2.0 + lfSunScale2 ) ) * ( 1.0 + lfCos*lfCos ) / pow( 1.0 + lfSunScale2 - 2.0*lfSunScale*lfCos, 1.5 );
+}
+
+float
+RayleighPhase(
+vec3  lSunPositionVec3,
+vec3  lRayDirectionVec3 )
+{
+    float lfCos = dot( normalize( lSunPositionVec3 ), lRayDirectionVec3 ) / length( lRayDirectionVec3 );
+    return 0.75 * ( 1.0 + lfCos*lfCos );
+}
+
+vec3
+InScatteringPhase(
+    vec3  lInScatteringVec3,
+    vec3  lSunColour,
+    float lfSunFactor,
+    float lScatteringRatio,
+    float lfPhase )
+{
+    vec3  lSunStrengthVec3     = lSunColour * lfSunFactor;
+    float lScatterStrengthVec3 = lScatteringRatio * lfPhase;
+
+    return lSunStrengthVec3 * lScatterStrengthVec3 * lInScatteringVec3;
+}
+
+vec3
+GetSpaceColour(
+    vec3  lWorldPositionVec3,
+    vec3  lCameraPositionVec3,
+    vec3  lSunPositionVec3,
+    vec3  lColour1Vec3,
+    vec3  lColour2Vec3,
+    vec3  lColour3Vec3,
+    float lfPower )
+{
+    vec3 lCircumSolar0Vec3;
+    vec3 lCircumSolar1Vec3;
+    vec3 lCircumSolar2Vec3;
+
+    lCircumSolar0Vec3 = /*GammaCorrectInput*/ ( lColour1Vec3 );
+    lCircumSolar1Vec3 = /*GammaCorrectInput*/ (lColour2Vec3)-lCircumSolar0Vec3;
+    lCircumSolar2Vec3 = /*GammaCorrectInput*/ (lColour3Vec3)-lCircumSolar0Vec3;
+
+    float lfVS = dot( normalize( lWorldPositionVec3 - lCameraPositionVec3 ), normalize( lSunPositionVec3 - lCameraPositionVec3 ) );
+
+    if( lfVS > 0.0 )
+    {
+        lfVS = pow( lfVS, lfPower );
+        return (lCircumSolar0Vec3)+( lCircumSolar1Vec3 * lfVS );
+    }
+    else
+    {
+        lfVS = pow( abs( lfVS ), lfPower );
+        return (lCircumSolar0Vec3)+( lCircumSolar2Vec3 * lfVS );
+    }
+}
+
+
+#endif

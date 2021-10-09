@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.13.2)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkAudioComponentData.xml">
+      <Property name="Ambient" value="Bld_Sc_Obs_In" />
+      <Property name="MaxDistance" value="90" />
+      <Property name="AnimTriggers" />
+    </Property>
+    <Property value="GcInteractionComponentData.xml">
+      <Property name="InteractionAction" value="PressButton" />
+      <Property name="InteractionType" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="Observatory" />
+      </Property>
+      <Property name="Renderer" value="TkModelRendererData.xml">
+        <Property name="Camera" value="TkModelRendererCameraData.xml">
+          <Property name="Distance" value="1.5" />
+          <Property name="Offset" value="Vector4f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+            <Property name="t" value="0" />
+          </Property>
+          <Property name="Pitch" value="0" />
+          <Property name="Rotate" value="0" />
+          <Property name="LightPitch" value="45" />
+          <Property name="LightRotate" value="45" />
+          <Property name="Wander" value="TkCameraWanderData.xml">
+            <Property name="CamWander" value="False" />
+            <Property name="CamWanderPhase" value="0.003" />
+            <Property name="CamWanderAmplitude" value="0.5" />
+          </Property>
+        </Property>
+        <Property name="Fov" value="30" />
+        <Property name="AspectRatio" value="1.7777" />
+        <Property name="ThumbnailMode" value="None" />
+        <Property name="FocusType" value="ResourceBounds" />
+        <Property name="Anim" value="" />
+        <Property name="HeightOffset" value="0.005" />
+      </Property>
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="Explorers" />
+      </Property>
+      <Property name="AttractDistanceSq" value="9" />
+      <Property name="RepeatInteraction" value="False" />
+      <Property name="UseInteractCamera" value="True" />
+      <Property name="BlendToCameraTime" value="0.5" />
+      <Property name="BlendFromCameraTime" value="-1" />
+      <Property name="ActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="0" />
+        <Property name="Repeat" value="False" />
+        <Property name="RequiredTech" value="" />
+      </Property>
+      <Property name="TriggerAction" value="INACTIVE" />
+      <Property name="BroadcastTriggerAction" value="False" />
+      <Property name="InteractAngle" value="360" />
+      <Property name="InteractDistance" value="5" />
+      <Property name="InteractInvertFace" value="False" />
+      <Property name="SecondaryInteractionType" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="SecondaryActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="0" />
+        <Property name="Repeat" value="False" />
+        <Property name="RequiredTech" value="" />
+      </Property>
+      <Property name="EventRenderers" />
+      <Property name="SecondaryCameraTransitionTime" value="1" />
+      <Property name="DoInteractionsInOrder" value="False" />
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="OPEN" />
+        <Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/OBSERVATORY/ANIMS/SCIENTIFICOPEN.ANIM.MBIN" />
+        <Property name="AnimType" value="OneShot" />
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="LoopOffsetMin" value="0" />
+        <Property name="LoopOffsetMax" value="0" />
+        <Property name="ControlDelay" value="0" />
+        <Property name="ControlSpeed" value="1" />
+        <Property name="ControlActionFrame" value="-1" />
+        <Property name="ControlCreatureSize" value="AllSizes" />
+        <Property name="FlagsAdditive" value="False" />
+        <Property name="FlagsMirrored" value="False" />
+        <Property name="FlagsActive" value="False" />
+      </Property>
+      <Property name="Anims" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="TriggerVolume" value="False" />
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="Climbable" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+    </Property>
+    <Property value="GcSimpleInteractionComponentData.xml">
+      <Property name="SimpleInteractionType" value="Interact" />
+      <Property name="InteractDistance" value="0" />
+      <Property name="Id" value="" />
+      <Property name="Rarity" value="GcRarity.xml">
+        <Property name="Rarity" value="Common" />
+      </Property>
+      <Property name="SizeIndicator" value="GcSizeIndicator.xml">
+        <Property name="SizeIndicator" value="Medium" />
+      </Property>
+      <Property name="TriggerAction" value="ACTIVATE" />
+      <Property name="BroadcastTriggerAction" value="False" />
+      <Property name="Delay" value="0" />
+      <Property name="InteractIsCrime" value="False" />
+      <Property name="InteractCrimeLevel" value="0" />
+      <Property name="ActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="0" />
+        <Property name="Repeat" value="False" />
+        <Property name="RequiredTech" value="" />
+      </Property>
+      <Property name="Name" value="" />
+      <Property name="TerminalMessage" value="" />
+      <Property name="BaseBuildingTriggerActions" />
+    </Property>
+  </Property>
+</Data>

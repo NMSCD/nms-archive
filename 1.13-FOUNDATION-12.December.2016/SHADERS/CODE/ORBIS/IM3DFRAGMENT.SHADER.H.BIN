@@ -1,0 +1,52 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       Im3dFragment.shader.h
+///     @author     
+///     @date       
+///
+///     @brief      Immediate Mode Fragment
+///
+///     Copyright (c) 2009 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+#include "Common/Defines.shader.h"
+
+
+struct CommonPerMeshUniforms
+{
+    //SamplerState gColourMapSS;
+    //Texture2D    gColourMap;
+
+    vec4 gImmediateRenderParams;
+    mat4 gWorldViewProjectionMat4;
+    SAMPLER2D( gColourMap );
+};
+
+struct UniformBuffer
+{
+     CommonPerMeshUniforms* mpCommonPerMesh;       /*: PER_MESH*/
+};
+
+
+struct cInput
+{
+    vec4 ScreenPosition : S_POSITION;
+    vec2 UV             : TEXCOORD0;
+    vec4 Color          : COLOR;
+    vec2 mDepthVal      : TEXCOORD1;
+};
+
+struct cOutput 
+{ 
+    vec4  mColour : S_TARGET_OUTPUT; 
+    float mDepth  : S_DEPTH_OUTPUT; 
+};	
+
+void main( cInput In, out cOutput Out, UniformBuffer lUniforms : S_SRT_DATA  )
+//float4 main( PS_IN In, UniformBuffer lUniforms : S_SRT_DATA  ) : S_TARGET_OUTPUT 
+{
+    Out.mColour = In.Color;
+    Out.mDepth  = log2( In.mDepthVal.x ) * In.mDepthVal.y;
+}
+

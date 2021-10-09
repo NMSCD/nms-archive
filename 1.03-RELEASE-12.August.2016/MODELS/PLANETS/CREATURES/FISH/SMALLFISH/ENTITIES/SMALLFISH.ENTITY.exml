@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcCreatureBaitComponentData.xml">
+      <Property name="AttractList">
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="BaitStrength" value="0.2" />
+      <Property name="BaitRadius" value="30" />
+      <Property name="Debug" value="False" />
+      <Property name="InducesRage" value="False" />
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="" />
+        <Property name="Filename" value="MODELS/PLANETS/CREATURES/FISH/ANIMS/SMALLFISHSWIM.ANIM.MBIN" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="LoopOffsetMin" value="0" />
+        <Property name="LoopOffsetMax" value="0" />
+        <Property name="ControlDelay" value="0" />
+        <Property name="ControlSpeed" value="0.66" />
+        <Property name="ControlActionFrame" value="-1" />
+        <Property name="ControlCreatureSize" value="AllSizes" />
+        <Property name="FlagsAdditive" value="False" />
+        <Property name="FlagsMirrored" value="False" />
+        <Property name="FlagsActive" value="True" />
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="LEFT" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/FISH/ANIMS/SMALLFISHTURNLEFT.ANIM.MBIN" />
+          <Property name="AnimType" value="Control" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="True" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="RIGHT" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/FISH/ANIMS/SMALLFISHTURNRIGHT.ANIM.MBIN" />
+          <Property name="AnimType" value="Control" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="True" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcShootableComponentData.xml">
+      <Property name="Health" value="1" />
+      <Property name="AutoAimTarget" value="False" />
+      <Property name="PlayerOnly" value="False" />
+      <Property name="ImpactShake" value="False" />
+      <Property name="ImpactShakeEffect" value="SMALLPAINSHAKE" />
+      <Property name="ImpactType" value="GcProjectileImpactType.xml">
+        <Property name="Impact" value="Default" />
+      </Property>
+      <Property name="IncreaseWanted" value="0" />
+      <Property name="IncreaseWantedThresholdTime" value="0.5" />
+      <Property name="UseMiningDamage" value="False" />
+      <Property name="MinDamage" value="0" />
+      <Property name="StaticUntilShot" value="False" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="1" />
+        <Property name="Friction" value="0" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="0" />
+      </Property>
+      <Property name="Unknown20" value="TkRagdollData.xml">
+        <Property name="Density" value="1" />
+        <Property name="Gravity" value="20" />
+        <Property name="ChainEnds">
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="joint2" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="joint16" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="joint9" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="joint11" />
+          </Property>
+        </Property>
+        <Property name="ExcludeJoints" />
+      </Property>
+    </Property>
+    <Property value="GcCreatureComponentData.xml">
+      <Property name="Id" value="FISH" />
+      <Property name="PrimaryAxis" value="GcPrimaryAxis.xml">
+        <Property name="PrimaryAxis" value="ZNeg" />
+      </Property>
+      <Property name="Scaler" value="1" />
+    </Property>
+  </Property>
+</Data>

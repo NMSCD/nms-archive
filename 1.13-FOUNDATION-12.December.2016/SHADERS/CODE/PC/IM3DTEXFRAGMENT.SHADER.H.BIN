@@ -1,0 +1,29 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       Im3dTexFragment.shader.h
+///     @author     
+///     @date       
+///
+///     @brief      Immediate Mode Textured Fragment
+///
+///     Copyright (c) 2009 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+uniform sampler2D baseTexture;                              
+uniform float gfUserMipLevel;
+
+varying vec4 color;                                     
+varying vec2 texCoord;   
+varying vec2 depthVals;
+
+
+void main()                                             
+{                                                           
+    vec2 lTexcoords = texCoord;             
+    
+    gl_FragColor = color * texture2DLod(baseTexture, lTexcoords, gfUserMipLevel );  
+
+    gl_FragDepth = log2( depthVals.x ) * depthVals.y;
+
+}

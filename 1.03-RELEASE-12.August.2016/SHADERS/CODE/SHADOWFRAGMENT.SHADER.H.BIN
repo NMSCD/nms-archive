@@ -1,0 +1,129 @@
+
+#if defined( _F02_SKINNED )
+    #define D_SKINNING_UNIFORMS
+#endif
+
+#include "Common/Defines.shader.h"
+#include "Common/CommonUniforms.shader.h"
+
+#include "UberCommon.h"
+
+#ifdef D_FADE
+#include "Common/CommonFade.shader.h"
+#endif
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+#if defined( D_TERRAIN )
+    INPUT( vec4, mScreenSpacePositionVec4, TEXCOORD0 )
+#else
+//#ifdef _F11_ALPHACUTOUT
+    INPUT( vec4, mTexCoordsVec4,           TEXCOORD0 )
+//#endif
+#endif
+
+#if defined( D_FADE ) && defined( D_INSTANCE )
+    INPUT_NOINTERP( float, mfFadeValueForInstance,    TEXCOORD1 )
+#endif    
+
+
+/*#ifdef _F32_LEAF
+    INPUT( vec4, mWorldPositionVec3_mfFadeValueForInstance,        TEXCOORD3 )
+    INPUT( vec3, mTangentSpaceNormalVec3, TEXCOORD6 )
+#endif*/
+
+DECLARE_END
+
+
+#ifdef D_PLATFORM_ORBIS
+#if defined( _F11_ALPHACUTOUT ) || defined( D_FADE )
+VOID_MAIN_COLOUR_SRT
+#else
+VOID_MAIN_COLOUR_EARLYZ_SRT
+#endif
+#else
+FRAGMENT_MAIN_COLOUR_SRT
+#endif
+{ 
+
+#ifdef D_FADE    
+    
+    #ifdef D_TERRAIN
+
+       CheckFade(
+            SAMPLER2DPARAM( lUniforms.mpCustomPerMaterial->gFadeNoiseMap ),
+            IN( mScreenSpacePositionVec4 ),
+            lUniforms.mpCommonPerMesh->gfFadeValue );    
+        
+    #else
+
+        vec4 lTexCoords = IN( mTexCoordsVec4 );
+        #if defined( _F44_IMPOSTER )
+        lTexCoords *= lUniforms.mpCustomPerMaterial->gImposterDataVec4.x;
+        #endif
+
+        CheckFadeUber(
+            SAMPLER2DPARAM( lUniforms.mpCustomPerMaterial->gFadeNoiseMap ),
+            lTexCoords,
+    #ifdef  D_INSTANCE             
+             IN( mfFadeValueForInstance ) 
+    #else
+             lUniforms.mpCommonPerMesh->gfFadeValue                     
+    #endif             
+             );
+    
+    #endif
+
+#endif
+
+    #ifdef _F01_DIFFUSEMAP
+    {
+        #if defined( _F11_ALPHACUTOUT )
+        {
+            vec4 lDiffuseColourVec4 = vec4(1.0, 1.0, 1.0, 1.0);
+            vec4 lTexCoordsVec4;
+
+            lTexCoordsVec4 = IN(mTexCoordsVec4);
+
+            lDiffuseColourVec4 = texture2D(lUniforms.mpCustomPerMaterial->gDiffuseMap, lTexCoordsVec4.xy);
+
+            if ( lDiffuseColourVec4.a < 0.5 ) // needs to be alpharef passed into constant buffer
+            {
+                discard;
+            }
+        }
+        #endif 
+    }
+    #endif
+    /*
+    #if defined( _F32_LEAF )
+        vec3 lViewDirVec3 = normalize( lUniforms.mpPerFrame->gViewPositionVec3 - IN( mWorldPositionVec3_mfFadeValueForInstance ).xyz );
+
+        float lfNdotCam = dot( lViewDirVec3, normalize( IN( mTangentSpaceNormalVec3 ).xyz ) );
+
+        //lColourVec4.xyz = vec3( abs( lfNdotCam ) );
+        if ( lfNdotCam < 0.707 )
+        {
+            discard;
+        }
+
+#endif*/
+
+#ifdef D_PLATFORM_ORBIS
+
+	//FRAGMENT_COLOUR = vec4(0.0);
+
+#else
+
+    float lfShadowAlpha = 1.0;
+
+#ifdef D_FADE
+    lfShadowAlpha *= lUniforms.mpCommonPerMesh->gfFadeValue;
+#endif
+
+    FRAGMENT_COLOUR = vec4(1.0, 0.0, 1.0, lfShadowAlpha);
+
+#endif    
+    
+}

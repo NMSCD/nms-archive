@@ -1,0 +1,101 @@
+[[FX]]
+
+// Samplers
+sampler gBufferMap = sampler_state
+{
+};
+
+sampler gBuffer1Map = sampler_state
+{
+};
+
+sampler gBuffer2Map = sampler_state
+{
+};
+
+sampler gBuffer3Map = sampler_state
+{
+};
+
+sampler gBuffer4Map = sampler_state
+{
+};
+
+sampler gDepthMap = sampler_state
+{
+};
+
+sampler gColourLUT = sampler_state
+{
+	Address = Clamp;
+};
+
+sampler gShadowMap = sampler_state
+{
+};
+
+
+
+// Contexts
+
+context FLATCOLOUR
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_DEBUG_FLATCOLOUR;
+	
+	ZWriteEnable = false;
+}
+
+context SHADOW
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_DEBUG_SHADOW;
+	
+	ZWriteEnable = false;
+}
+
+context QUAD_SPLIT
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_DEBUG_QUAD_SPLIT;
+	
+	ZWriteEnable = false;
+}
+
+context QUAD_COMBINE
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_DEBUG_QUAD_COMBINE;
+	
+	ZWriteEnable = false;
+}
+
+
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#include "ImmediateModeVertex.shader.h"
+
+
+[[FS_DEBUG_FLATCOLOUR]]
+// =================================================================================================
+#define D_DEBUG_FLATCOLOUR
+#include "Fullscreen/DebugFragment.shader.h"
+
+
+[[FS_DEBUG_SHADOW]]
+// =================================================================================================
+#define D_DEBUG_SHADOW
+#include "Fullscreen/DebugFragment.shader.h"
+
+[[FS_DEBUG_QUAD_SPLIT]]
+// =================================================================================================
+#define D_DEBUG_QUAD_SPLIT
+#include "Fullscreen/DebugFragment.shader.h"
+
+[[FS_DEBUG_QUAD_COMBINE]]
+// =================================================================================================
+#define D_DEBUG_QUAD_COMBINE
+#include "Fullscreen/DebugFragment.shader.h"
+
+

@@ -1,0 +1,87 @@
+<Pipeline>
+  <Setup>
+    
+    
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="FROMBELOW">
+      
+      <BeginTarget target="" />
+      <ClearTarget depthBuf="true" colBuf0="true" excludeX360="false" col_R="1.0" col_G="0.0" col_B="0.0" />
+      <ColourMask channels="RGB"/>
+      
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+      <DrawGeometry type="Mesh"     class="Sky"     context="LIGHTING_LOWQ"    order="STATECHANGES" />
+      
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="less" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Mesh" class="AtmosphereNear" context="REFLECT_WATER" order="BACK_TO_FRONT" />
+      
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Terrain"  class="LOD3"      context="REFLECT_WATER_UP"        order="STATECHANGES" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+    </Stage>
+
+    <Stage id="FROMABOVE">
+
+      <BeginTarget target="" />
+      <ClearTarget depthBuf="true" colBuf0="true" excludeX360="false" col_R="0.0" col_G="0.0" col_B="1.0" />
+      <ColourMask channels="RGB"/>
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+      <DrawGeometry type="Mesh"     class="Sky"     context="LIGHTING_LOWQ"    order="STATECHANGES" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="less" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Mesh" class="AtmosphereNear" context="REFLECT_WATER" order="BACK_TO_FRONT" />
+  
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+      <!--<DrawGeometry type="Terrain"  class="LOD0"      context="REFLECT_WATER"        order="STATECHANGES" />-->
+      <DoForwardLightLoop type="Terrain"  class="LOD3"      context="REFLECT_WATER"        order="STATECHANGES" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+    </Stage>
+
+    <!--<Stage id="DepthOfFieldBlur">
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+
+      <BeginTarget target="DOF_BLURBUF2" />
+      <BindBuffer sampler="gBufferMap" sourceRT="RENDER" bufIndex="0" />
+      <SetUniform material="materials/DepthOfField.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="5.0" />
+      <DrawQuad material="materials/DepthOfField.material.mbin" context="GUASS_DEPTH_9" />
+      <EndTarget flushCB="true" flushDB="true" />
+
+      <BeginTarget target="DOF_BLURBUF1" />
+      <BindBuffer sampler="gBufferMap" sourceRT="DOF_BLURBUF2" bufIndex="0" />
+      <SetUniform material="materials/DepthOfField.material.mbin" uniform="gBlurParamsVec4" a="0.0" b="1.0" c="5.0" />
+      <DrawQuad material="materials/DepthOfField.material.mbin" context="GUASS_DEPTH_9" />
+      <EndTarget flushCB="true" flushDB="true" />
+
+      <BeginTarget target="DOF_BLURBUF2" />
+      <BindBuffer sampler="gBufferMap" sourceRT="DOF_BLURBUF1" bufIndex="0" />
+      <SetUniform material="materials/DepthOfField.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="5.0" />
+      <DrawQuad material="materials/DepthOfField.material.mbin" context="GUASS_DEPTH_9" />
+      <EndTarget flushCB="true" flushDB="true" />
+
+      <BeginTarget target="" />
+      <BindBuffer sampler="gBufferMap" sourceRT="DOF_BLURBUF2" bufIndex="0" />
+      <SetUniform material="materials/DepthOfField.material.mbin" uniform="gBlurParamsVec4" a="0.0" b="1.0" c="5.0" />
+      <DrawQuad material="materials/DepthOfField.material.mbin" context="GUASS_DEPTH_9" />
+      <EndTarget flushCB="true" flushDB="true" />
+
+      <UnbindBuffers />
+    </Stage>-->
+
+    <Stage id="Reset States">
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>

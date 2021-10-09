@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.13.2)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcDestructableComponentData.xml">
+      <Property name="Explosion" value="DRONEEXPLODE" />
+      <Property name="ExplosionScale" value="1" />
+      <Property name="TriggerAction" value="" />
+      <Property name="IncreaseWanted" value="5" />
+      <Property name="LootReward" value="" />
+      <Property name="LootRewardAmountMin" value="0" />
+      <Property name="LootRewardAmountMax" value="0" />
+      <Property name="GivesSubstances">
+        <Property value="GcSubstanceAmount.xml">
+          <Property name="AmountMin" value="70" />
+          <Property name="AmountMax" value="100" />
+          <Property name="Specific" value="" />
+          <Property name="SubstanceCategory" value="GcRealitySubstanceCategory.xml">
+            <Property name="SubstanceCategory" value="Commodity" />
+          </Property>
+          <Property name="Rarity" value="GcRarity.xml">
+            <Property name="Rarity" value="Rare" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="GivesReward" value="" />
+      <Property name="HardModeSubstanceMultiplier" value="1" />
+      <Property name="RemoveModel" value="False" />
+      <Property name="DestroyedModel" value="MODELS/COMMON/ROBOTS/LOOTDROP/WALKERLOOT.SCENE.MBIN" />
+      <Property name="DestroyedModelUsesScale" value="False" />
+      <Property name="DestroyForce" value="20" />
+      <Property name="DestroyForceRadius" value="10" />
+      <Property name="DestroyEffect" value="" />
+      <Property name="DestroyEffectPoint" value="SFX" />
+      <Property name="DestroyEffectTime" value="2" />
+      <Property name="ShowInteract" value="False" />
+      <Property name="ShowInteractRange" value="20" />
+      <Property name="GrenadeSingleHit" value="False" />
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="IDLE" />
+        <Property name="Filename" value="MODELS/COMMON/ROBOTS/ANIMS/WALKER_IDLE.ANIM.MBIN" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="LoopOffsetMin" value="0" />
+        <Property name="LoopOffsetMax" value="0" />
+        <Property name="ControlDelay" value="0" />
+        <Property name="ControlSpeed" value="1" />
+        <Property name="ControlActionFrame" value="-1" />
+        <Property name="ControlCreatureSize" value="AllSizes" />
+        <Property name="FlagsAdditive" value="False" />
+        <Property name="FlagsMirrored" value="False" />
+        <Property name="FlagsActive" value="True" />
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="WALK" />
+          <Property name="Filename" value="MODELS/COMMON/ROBOTS/ANIMS/WALKER_WALK.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="STANDUP" />
+          <Property name="Filename" value="MODELS/COMMON/ROBOTS/ANIMS/WALKERSTANDUP.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="1000" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="17.5" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcCreatureComponentData.xml">
+      <Property name="Id" value="WALKER" />
+      <Property name="PrimaryAxis" value="GcPrimaryAxis.xml">
+        <Property name="PrimaryAxis" value="ZNeg" />
+      </Property>
+      <Property name="Scaler" value="6" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="1" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="TriggerVolume" value="False" />
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="Climbable" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="RagdollData" value="TkRagdollData.xml">
+        <Property name="Density" value="1" />
+        <Property name="Gravity" value="20" />
+        <Property name="ChainEnds">
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="ToeR" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="ToeL" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="Flap" />
+          </Property>
+        </Property>
+        <Property name="ExcludeJoints" />
+      </Property>
+    </Property>
+    <Property value="GcShootableComponentData.xml">
+      <Property name="Health" value="1000" />
+      <Property name="AutoAimTarget" value="False" />
+      <Property name="PlayerOnly" value="False" />
+      <Property name="ImpactShake" value="False" />
+      <Property name="ImpactShakeEffect" value="SMALLPAINSHAKE" />
+      <Property name="ImpactType" value="GcProjectileImpactType.xml">
+        <Property name="Impact" value="Default" />
+      </Property>
+      <Property name="IncreaseWanted" value="3" />
+      <Property name="IncreaseWantedThresholdTime" value="2" />
+      <Property name="UseMiningDamage" value="False" />
+      <Property name="MinDamage" value="0" />
+      <Property name="StaticUntilShot" value="False" />
+      <Property name="RequiredTech" value="" />
+    </Property>
+    <Property value="GcCreatureFullBodyIKComponentData.xml">
+      <Property name="JointData">
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Head" />
+          </Property>
+          <Property name="JointName" value="Head" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Foot" />
+          </Property>
+          <Property name="JointName" value="FootL" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Foot" />
+          </Property>
+          <Property name="JointName" value="FootR" />
+        </Property>
+      </Property>
+      <Property name="HeadUpAxis" value="Z" />
+      <Property name="UseFootGlue" value="False" />
+    </Property>
+  </Property>
+</Data>

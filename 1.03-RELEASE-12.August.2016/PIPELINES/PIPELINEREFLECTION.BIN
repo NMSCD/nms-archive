@@ -1,0 +1,40 @@
+<Pipeline>
+  <Setup>
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="Lighting">
+
+      <!-- IMPORTANT! -->
+      <!-- Render everything with opposite culling from what you intend, to avoid awkward transform in vertex shader -->
+      
+      <BeginTarget target="" />
+      <ClearTarget depthBuf="true" colBuf0="true" excludeX360="false" col_R="0.0" col_G="0.0" col_B="0.0" />
+      <ColourMask channels="RGB"/>
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Terrain"  class="LOD3"      context="REFLECT_DUALP"        order="STATECHANGES" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Mesh"     class="Sky"     context="REFLECT"    order="STATECHANGES" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="less" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Mesh" class="AtmosphereNear" context="REFLECT" order="BACK_TO_FRONT" />
+      
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="blend" depthTest="less" alphaToCoverage="false"/>
+      <SetUniform material="materials/Cloud.material.mbin" uniform="gCloudParamsVec4" a="10.0" />
+      <DrawQuad material="Materials/Cloud.material.mbin" context="RENDER_REFLECTIONS" width ="1.0" height="1.0" />
+      <EndTarget flushCB="true" flushDB="true" />
+
+    </Stage>
+
+    <Stage id="Reset States">
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>

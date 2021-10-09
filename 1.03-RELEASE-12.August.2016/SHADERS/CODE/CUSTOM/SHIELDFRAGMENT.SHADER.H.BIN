@@ -1,0 +1,81 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       MapObjectFragment.h
+///     @author     User
+///     @date       
+///
+///     @brief      MapObjectFragment
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/Defines.shader.h"
+#include "Common/Common.shader.h"
+#include "Common/CommonDepth.shader.h"
+#include "Common/CommonLighting.shader.h"
+
+#include "UberCommon.h"
+
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+	INPUT( vec4, mTexCoordsVec4,           TEXCOORD0 )
+    INPUT( vec4, mScreenSpacePositionVec4, TEXCOORD1 )
+    
+#if defined( _F21_VERTEXCOLOUR )
+    INPUT( vec4, mColourVec4,              TEXCOORD2 )
+#endif
+    
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+//-----------------------------------------------------------------------------
+///
+///     Fragment Main
+///
+///     @brief      Fragment Main
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+FRAGMENT_MAIN_COLOUR_DEPTH_SRT
+{
+	vec4 lFragmentColourVec4;    
+    float lfHeight = IN( mScreenSpacePositionVec4 ).y;
+    
+    lFragmentColourVec4 = lUniforms.mpCustomPerMesh->gObjectColourVec4;
+
+   // lFragmentColourVec4 *= 1.0 + 0.4 * sin( 5.0 * lUniforms.mpCommonPerMaterial->gfTime - lfHeight*150.0 ) * (1.0 - lfHeight) * (1.0 - lfHeight);                                              // Scan lines
+   // lFragmentColourVec4 *= 0.9 + 0.3 * sin( 13.0*lUniforms.mpCommonPerMaterial->gfTime )*sin( 5.0*lUniforms.mpCommonPerMaterial->gfTime )*sin( 23.0*lUniforms.mpCommonPerMaterial->gfTime );   // Pulse
+
+    FRAGMENT_COLOUR = vec4( 1.0, 0.0, 0.0, 1.0 );// lFragmentColourVec4;
+}

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+    </Property>
+    <Property value="GcShootableComponentData.xml">
+      <Property name="Health" value="40" />
+      <Property name="AutoAimTarget" value="False" />
+      <Property name="PlayerOnly" value="True" />
+      <Property name="ImpactShake" value="True" />
+      <Property name="ImpactShakeEffect" value="SMALLPAINSHAKE" />
+      <Property name="ImpactType" value="GcProjectileImpactType.xml">
+        <Property name="Impact" value="Default" />
+      </Property>
+      <Property name="IncreaseWanted" value="0" />
+      <Property name="IncreaseWantedThresholdTime" value="0.5" />
+      <Property name="UseMiningDamage" value="True" />
+      <Property name="MinDamage" value="0" />
+      <Property name="StaticUntilShot" value="False" />
+    </Property>
+    <Property value="GcDestructableComponentData.xml">
+      <Property name="Explosion" value="SPACEEXPLOSION" />
+      <Property name="ExplosionScale" value="1" />
+      <Property name="TriggerAction" value="" />
+      <Property name="IncreaseWanted" value="1" />
+      <Property name="LootReward" value="FREIGHTERLOOT" />
+      <Property name="LootRewardAmountMin" value="3" />
+      <Property name="LootRewardAmountMax" value="5" />
+      <Property name="GivesSubstances" />
+      <Property name="GivesReward" value="" />
+      <Property name="RemoveModel" value="True" />
+      <Property name="DestroyedModel" value="TkModelResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="DestroyedModelUsesScale" value="True" />
+      <Property name="DestroyForce" value="5" />
+      <Property name="DestroyForceRadius" value="3" />
+      <Property name="DestroyEffectPoints" />
+      <Property name="DestroyEffectTime" value="0" />
+      <Property name="ShowInteract" value="True" />
+      <Property name="ShowInteractRange" value="2000" />
+      <Property name="GrenadeSingleHit" value="True" />
+    </Property>
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="BOOT" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcBeenShotEvent.xml">
+                <Property name="ShotBy" value="Anything" />
+                <Property name="DamageThreshold" value="1" />
+                <Property name="HealthThreshold" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="DESTROYED" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="Scene" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="DESTROYED" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="SPACEEXPLOSION" />
+                  <Property name="Joint" value="SFX1" />
+                  <Property name="Exact" value="True" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="1" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="SPACEEXPLOSION" />
+                  <Property name="Joint" value="SFX2" />
+                  <Property name="Exact" value="True" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="3" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="SPACEEXPLOSION" />
+                  <Property name="Joint" value="SFX3" />
+                  <Property name="Exact" value="True" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+    </Property>
+  </Property>
+</Data>

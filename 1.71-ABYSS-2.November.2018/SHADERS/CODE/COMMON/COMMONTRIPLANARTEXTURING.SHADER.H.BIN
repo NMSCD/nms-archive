@@ -1,0 +1,941 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       CommonTriplanarTexturing.h
+///     @author     User
+///     @date       
+///
+///     @brief      CommonTriplanarTexturing
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+//-----------------------------------------------------------------------------
+//      Include files
+#ifndef D_COMMONTRIPLANARTEXTURING
+#define D_COMMONTRIPLANARTEXTURING
+
+#include "Common/CommonFragment.shader.h"
+
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+#if defined(D_PLATFORM_OPENGL)
+uniform vec4 gaAverageColoursVec4[ D_TERRAINCOLOURARRAY_SIZE ];
+uniform vec4 gaTerrainColoursVec4[ D_TERRAINCOLOURARRAY_SIZE ];
+#endif
+
+
+//-----------------------------------------------------------------------------
+//      Functions
+
+STATIC_CONST float kfBlendPower = 64.0;
+
+vec3
+GetTriPlanarColour(
+    vec3  lNormalVec3,
+    vec3  lWorldPositionVec3,
+    vec2  lAnimationOffsetVec2,
+    float lfScale,
+    SAMPLER2DARG( lTexture ) )
+{
+    #if defined( D_TERRAIN_X_FACING )
+    vec3    m = vec3( 1.0, 0.0, 0.0 );
+    #elif defined( D_TERRAIN_Y_FACING )
+    vec3    m = vec3( 0.0, 1.0, 0.0 );
+    #elif defined( D_TERRAIN_Z_FACING )
+    vec3    m = vec3( 0.0, 0.0, 1.0 );
+    #else
+    vec3    m = pow( abs( lNormalVec3 ), vec3( kfBlendPower, kfBlendPower, kfBlendPower) );
+    #endif
+
+    vec2  lCoord1Vec2 = lWorldPositionVec3.yz * lfScale + lAnimationOffsetVec2;
+    vec2  lCoord2Vec2 = lWorldPositionVec3.zx * lfScale + lAnimationOffsetVec2;
+    vec2  lCoord3Vec2 = lWorldPositionVec3.xy * lfScale + lAnimationOffsetVec2;
+
+    vec3 lColour1Vec3 = texture2DLod( lTexture, lCoord1Vec2, 0.0 ).rgb;
+    vec3 lColour2Vec3 = texture2DLod( lTexture, lCoord2Vec2, 0.0 ).rgb;
+    vec3 lColour3Vec3 = texture2DLod( lTexture, lCoord3Vec2, 0.0 ).rgb;
+
+    return ( lColour1Vec3 * m.x + lColour2Vec3 * m.y + lColour3Vec3 * m.z ) / (m.x + m.y + m.z);
+}
+
+// mip-mapped variant of the above
+
+vec3
+GetTriPlanarColourMM(
+    vec3  lNormalVec3,
+    vec3  lWorldPositionVec3,
+    vec2  lAnimationOffsetVec2,
+    float lfScale,
+    SAMPLER2DARG( lTexture ) )
+{
+    #if defined( D_TERRAIN_X_FACING )
+    vec3    m = vec3( 1.0, 0.0, 0.0 );
+    #elif defined( D_TERRAIN_Y_FACING )
+    vec3    m = vec3( 0.0, 1.0, 0.0 );
+    #elif defined( D_TERRAIN_Z_FACING )
+    vec3    m = vec3( 0.0, 0.0, 1.0 );
+    #else
+    vec3    m = pow( abs( lNormalVec3 ), vec3(kfBlendPower, kfBlendPower, kfBlendPower) );
+    #endif
+
+    vec2  lCoord1Vec2 = lWorldPositionVec3.yz * lfScale + lAnimationOffsetVec2;
+    vec2  lCoord2Vec2 = lWorldPositionVec3.zx * lfScale + lAnimationOffsetVec2;
+    vec2  lCoord3Vec2 = lWorldPositionVec3.xy * lfScale + lAnimationOffsetVec2;
+
+    vec3 lColour1Vec3 = texture2DComputeGrad( lTexture, lCoord1Vec2 ).rgb;
+    vec3 lColour2Vec3 = texture2DComputeGrad( lTexture, lCoord2Vec2 ).rgb;
+    vec3 lColour3Vec3 = texture2DComputeGrad( lTexture, lCoord3Vec2 ).rgb;
+
+    return ( lColour1Vec3 * m.x + lColour2Vec3 * m.y + lColour3Vec3 * m.z ) / (m.x + m.y + m.z);
+}
+
+
+vec3
+GetTriPlanarNormal(
+    vec3  lNormalVec3,
+    vec3  lWorldPositionVec3,
+    vec2  lAnimationOffsetVec2,
+    float lfScale,
+    SAMPLER2DARG( lTexture ) )
+{
+    #if defined( D_TERRAIN_X_FACING )
+    vec3    m = vec3( 1.0, 0.0, 0.0 );
+    #elif defined( D_TERRAIN_Y_FACING )
+    vec3    m = vec3( 0.0, 1.0, 0.0 );
+    #elif defined( D_TERRAIN_Z_FACING )
+    vec3    m = vec3( 0.0, 0.0, 1.0 );
+    #else
+    vec3    m = pow( abs( lNormalVec3 ), vec3(kfBlendPower, kfBlendPower, kfBlendPower) );
+    #endif
+
+    vec2  lCoord1Vec2 = vec2( lWorldPositionVec3.z, -lWorldPositionVec3.y ) * lfScale + lAnimationOffsetVec2;
+    vec2  lCoord2Vec2 = vec2( lWorldPositionVec3.z, lWorldPositionVec3.x ) * lfScale + lAnimationOffsetVec2;
+    vec2  lCoord3Vec2 = vec2( lWorldPositionVec3.x, -lWorldPositionVec3.y ) * lfScale + lAnimationOffsetVec2;
+
+    vec3 lNormal1Vec3 = DecodeNormalMap( texture2D( lTexture, lCoord1Vec2 ) );
+    vec3 lNormal2Vec3 = DecodeNormalMap( texture2D( lTexture, lCoord2Vec2 ) );
+    vec3 lNormal3Vec3 = DecodeNormalMap( texture2D( lTexture, lCoord3Vec2 ) );
+
+    lNormal1Vec3 = vec3( 0.0, lNormal1Vec3.x, lNormal1Vec3.y );  // YZ 
+    lNormal2Vec3 = vec3( -lNormal2Vec3.x, 0.0, lNormal2Vec3.y );  // ZX
+    lNormal3Vec3 = vec3( lNormal3Vec3.y, lNormal3Vec3.x, 0.0 );  // XY
+
+    return (lNormal1Vec3 * m.x + lNormal2Vec3 * m.y + lNormal3Vec3 * m.z) / (m.x + m.y + m.z);
+}
+
+
+#ifdef D_TEXTURE_ARRAYS
+//-----------------------------------------------------------------------------
+///
+///     GetTriPlanarNormal
+///
+///     @brief      GetTriPlanarNormal
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+
+float 
+GetBias( 
+	float time, 
+	float bias )
+{
+    return ( time / ( ( ( ( 1.0 / bias ) - 2.0 )*( 1.0 - time ) ) + 1.0 ) );
+}
+
+vec3
+GetTriPlanarNormalArray(
+    in  CustomPerMaterialUniforms lCustomUniforms,
+    in  vec2           lCoordVec2,
+    SAMPLER2DARRAYARG( lNormalMap ),
+    SAMPLER2DARRAYARG( lSubstanceNormalMap ),
+    in  int            liIndex,
+    out float          lfHeight,
+    out float          lfDisplacement,
+    out float          lfSpecular )
+{
+    vec4 lTexValueVec4;
+
+    if( liIndex < 16 )
+    {
+        #ifdef D_CACHE_HEIGHT
+        lTexValueVec4 = texture2DArrayLod( lNormalMap, vec3( lCoordVec2, float( liIndex ) ), 0 );
+        #else
+        lTexValueVec4 = texture2DArray( lNormalMap, vec3( lCoordVec2, float( liIndex ) ) );
+        #endif
+    }
+    else
+    {
+        #ifdef D_CACHE_HEIGHT
+        lTexValueVec4 = texture2DArrayLod( lSubstanceNormalMap, vec3( lCoordVec2, float( liIndex & 15 ) ), 0 );
+        #else
+        lTexValueVec4 = texture2DArray( lSubstanceNormalMap, vec3( lCoordVec2, float( liIndex & 15 ) ) );
+        #endif
+    }
+    //vec3 lLocalNormalAVec3 = DecodeNormalMap( lTexValueVec4 );
+    vec3 lLocalNormalAVec3 = vec3( lTexValueVec4.a * 2.0 - 1.0, lTexValueVec4.g * 2.0 - 1.0, 0.0 );
+
+    #if 1
+    lLocalNormalAVec3 *= 0.85;
+    float lNormalZValue = sqrt( max( 0.0, 1.0 - lLocalNormalAVec3.x*lLocalNormalAVec3.x -  lLocalNormalAVec3.y*lLocalNormalAVec3.y ) );
+    lLocalNormalAVec3.xy = lLocalNormalAVec3.xy / max( 0.125, lNormalZValue );
+    #endif
+
+    lfDisplacement = lTexValueVec4.r;
+
+    float lfBrightness = ARRAY_LOOKUP_FS( lCustomUniforms, gaTerrainColoursVec4, liIndex ).a;
+    float lfContrast   = ARRAY_LOOKUP_FS( lCustomUniforms, gaAverageColoursVec4, liIndex ).a;
+
+    lfHeight   = lTexValueVec4.r;
+    lfHeight  += saturate( lfBrightness );
+    lfHeight   = saturate( ( ( lfHeight - 0.5 ) * max( lfContrast + 1.0, 0.0 ) ) + 0.5 );
+
+    //lfHeight     = ( lfHeight / ( ( ( ( 1.0 / ( lfBrightness * 0.5 + 0.5 ) ) - 2.0 )*( 1.0 - lfHeight ) ) + 1.0 ) );
+
+    //if( lfHeight < 0.5 )
+    //    lfHeight = GetBias( lfHeight * 2.0, lfContrast ) / 2.0;
+    //else
+    //    lfHeight = GetBias( lfHeight * 2.0 - 1.0, 1.0 - lfContrast ) / 2.0 + 0.5;
+
+    lfSpecular = lTexValueVec4.b;
+    return lLocalNormalAVec3;
+
+}
+//-----------------------------------------------------------------------------
+///
+///     GetTriPlanarColour
+///
+///     @brief      GetTriPlanarColour
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+vec3
+GetTriPlanarColourArray(
+    in vec2            lCoordVec2,
+    SAMPLER2DARRAYARG( lDiffuseMap ),
+    SAMPLER2DARRAYARG( lSubstanceDiffuseMap ),
+    in int             liIndex,
+    in vec3            lAverageHSVVec3, 
+    in vec3            lRecolourVec3 )
+{
+    vec3 lColourVec3;
+    if( liIndex < 16 )
+    {
+        lColourVec3 = texture2DArray( lDiffuseMap, vec3( lCoordVec2, float( liIndex ) ) ).rgb;
+    }
+    else
+    {
+        lColourVec3 = texture2DArray( lSubstanceDiffuseMap, vec3( lCoordVec2, float( liIndex & 15 ) ) ).rgb;
+    }
+    lColourVec3.r = fract( ( lColourVec3.r - lAverageHSVVec3.r ) + lRecolourVec3.r );
+    lColourVec3.g = saturate( min( lRecolourVec3.g, lColourVec3.g ) );
+    lColourVec3.b = saturate( ( lColourVec3.b - lAverageHSVVec3.b ) + lRecolourVec3.b );
+    lColourVec3   = saturate( HSVToRGB( lColourVec3 ) );
+
+    return lColourVec3;
+}
+
+
+//-----------------------------------------------------------------------------
+///
+///     GetBlendedNormal
+///
+///     @brief      GetBlendedNormal
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+vec3
+GetBlendedNormal(
+    in  CustomPerMaterialUniforms lCustomUniforms,
+    in    vec2         lTileCoordsVec2,
+    SAMPLER2DARRAYARG( lNormalMap ),
+    SAMPLER2DARRAYARG( lSubstanceNormalMap ),
+    in    uvec4        lTile1Vec4,
+    in    uvec4        lTile2Vec4,
+    in    float        lfPatch,
+    in    float        lfSlope1,
+    in    float        lfSlope2,
+    in    float        lfTileType,
+    out   float        lfSpecular,
+    out   float        lfDisplacement,
+    out   float        lfHeight1,
+    out   float        lfHeight2,
+    out   float        lfHeight3,
+    out   float        lfHeight4,
+    out   float        lfHeight5,
+    out   float        lfHeight6,
+    out   float        lfHeight7,
+    out   float        lfHeight8 )
+{
+#ifndef D_LOW_QUALITY
+
+    const float lfThreshold     = 1.0 / 100.0;
+    const float lfOffset        = 0.1;
+    const float lfDefaultHeight = 0.5;
+
+    vec3  lNormal5    = vec3( 0.0, 0.0, 0.0 );
+    vec3  lNormal6    = vec3( 0.0, 0.0, 0.0 );
+    float lfSpecular5 = 0.0;
+    float lfSpecular6 = 0.0;
+    lfHeight1         = 0.0;
+    lfHeight2         = 0.0;
+    lfHeight3         = 0.0;
+    lfHeight4         = 0.0;
+    lfHeight5         = 0.0;
+    lfHeight6         = 0.0;
+    lfHeight7         = 0.0;
+    lfHeight8         = 0.0;
+
+    float lfHeightE       = lfDefaultHeight;
+    float lfHeightF       = lfDefaultHeight;
+    float lfDisplacementE = lfDefaultHeight;
+    float lfDisplacementF = lfDefaultHeight;
+
+    if( lfTileType < 1.0 - lfThreshold )
+    {
+        vec3  lNormal3         = vec3( 0.0, 0.0, 0.0 );
+        vec3  lNormal4         = vec3( 0.0, 0.0, 0.0 );
+
+        float lfHeightC        = lfDefaultHeight;
+        float lfHeightD        = lfDefaultHeight;
+        float lfDisplacementC  = lfDefaultHeight;
+        float lfDisplacementD  = lfDefaultHeight;
+        float lfSpecular3      = 0.0;
+        float lfSpecular4      = 0.0;
+
+        if( lfSlope1 < 1.0 - lfThreshold )
+        {
+            vec3  lNormal1        = vec3( 0.0, 0.0, 0.0 );
+            vec3  lNormal2        = vec3( 0.0, 0.0, 0.0 );
+
+            float lfHeightA       = lfDefaultHeight;
+            float lfHeightB       = lfDefaultHeight;
+            float lfDisplacementA = lfDefaultHeight;
+            float lfDisplacementB = lfDefaultHeight;
+            float lfSpecular1     = 0.0;
+            float lfSpecular2     = 0.0;
+
+            if( lfPatch < 1.0 - lfThreshold )
+            {
+                lNormal1 = GetTriPlanarNormalArray( lCustomUniforms, lTileCoordsVec2, SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ), int( lTile1Vec4[ 0 ] ), lfHeightA, lfDisplacementA, lfSpecular1 );
+            }
+
+            if( lfPatch > lfThreshold )
+            {
+                lNormal2 = GetTriPlanarNormalArray( lCustomUniforms, lTileCoordsVec2,SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ),  int( lTile1Vec4[ 1 ] ), lfHeightB, lfDisplacementB, lfSpecular2 );
+            }
+
+             // blend between height textures
+            lfHeight1      = mix( lfHeightA, 1.0 - lfHeightB, lfPatch );
+
+            // use height as a cutoff for smoothstep to get sharp transition between height maps
+            float lfHeight = smoothstep( lfHeight1 - lfOffset, lfHeight1 + lfOffset, lfPatch );
+
+            lfSpecular3    = mix( lfSpecular1, lfSpecular2, lfHeight );
+            lNormal3       = mix( lNormal1,    lNormal2,    lfHeight );
+
+            // blend between height maps again to get map which can be combined with other height maps
+            lfHeightC       = mix( lfHeightA,       lfHeightB,       lfPatch );
+            lfDisplacementC = mix( lfDisplacementA, lfDisplacementB, lfHeight );
+        }
+
+        if( lfSlope1 > lfThreshold )
+        {
+            vec3  lNormal1        = vec3( 0.0, 0.0, 0.0 );
+            vec3  lNormal2        = vec3( 0.0, 0.0, 0.0 );
+
+            float lfHeightA       = lfDefaultHeight;
+            float lfHeightB       = lfDefaultHeight;
+            float lfDisplacementA = lfDefaultHeight;
+            float lfDisplacementB = lfDefaultHeight;
+            float lfSpecular1     = 0.0;
+            float lfSpecular2     = 0.0;
+
+            if( lfPatch < 1.0 - lfThreshold )
+            {
+                lNormal1 = GetTriPlanarNormalArray( lCustomUniforms, lTileCoordsVec2, SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ), int( lTile1Vec4[ 2 ] ), lfHeightA, lfDisplacementA, lfSpecular1 );
+            }
+
+            if( lfPatch > lfThreshold )
+            {
+                lNormal2 = GetTriPlanarNormalArray( lCustomUniforms, lTileCoordsVec2, SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ), int( lTile1Vec4[ 3 ] ), lfHeightB, lfDisplacementB, lfSpecular2 );
+            }
+
+            lfHeight2       = mix( lfHeightA, 1.0 - lfHeightB, lfPatch );
+            float lfHeight  = smoothstep( lfHeight2 - lfOffset, lfHeight2 + lfOffset, lfPatch );
+
+            lfSpecular4     = mix( lfSpecular1,     lfSpecular2,     lfHeight );
+            lNormal4        = mix( lNormal1,        lNormal2,        lfHeight );
+            lfHeightD       = mix( lfHeightA,       lfHeightB,       lfPatch );
+            lfDisplacementD = mix( lfDisplacementA, lfDisplacementB, lfHeight );
+
+        }
+
+        lfHeight5      = mix( lfHeightC, 1.0 - lfHeightD, lfSlope1 );
+        float lfHeight = smoothstep( lfHeight5 - lfOffset, lfHeight5 + lfOffset, lfSlope1 );
+
+        lfSpecular5     = mix( lfSpecular3,     lfSpecular4,     lfHeight );
+        lNormal5        = mix( lNormal3,        lNormal4,        lfHeight );
+        lfHeightE       = mix( lfHeightC,       lfHeightD,       lfSlope1 );
+        lfDisplacementE = mix( lfDisplacementC, lfDisplacementD, lfHeight );
+    }
+
+    if( lfTileType > lfThreshold )
+    {
+        vec3  lNormal3         = vec3( 0.0, 0.0, 0.0 );
+        vec3  lNormal4         = vec3( 0.0, 0.0, 0.0 );
+
+        float lfHeightC        = lfDefaultHeight;
+        float lfHeightD        = lfDefaultHeight;
+        float lfDisplacementC  = lfDefaultHeight;
+        float lfDisplacementD  = lfDefaultHeight;
+        float lfSpecular3      = 0.0;
+        float lfSpecular4      = 0.0;
+
+        if( lfSlope2 < 1.0 - lfThreshold )
+        {
+            vec3  lNormal1        = vec3( 0.0, 0.0, 0.0 );
+            vec3  lNormal2        = vec3( 0.0, 0.0, 0.0 );
+
+            float lfHeightA       = lfDefaultHeight;
+            float lfHeightB       = lfDefaultHeight;
+            float lfDisplacementA = lfDefaultHeight;
+            float lfDisplacementB = lfDefaultHeight;
+            float lfSpecular1     = 0.0;
+            float lfSpecular2     = 0.0;
+
+            if( lfPatch < 1.0 - lfThreshold )
+            {
+                lNormal1 = GetTriPlanarNormalArray( lCustomUniforms, lTileCoordsVec2, SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ), int( lTile2Vec4[ 0 ] ), lfHeightA, lfDisplacementA, lfSpecular1 );
+            }
+
+            if( lfPatch > lfThreshold )
+            {
+                lNormal2 = GetTriPlanarNormalArray( lCustomUniforms, lTileCoordsVec2, SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ), int( lTile2Vec4[ 1 ] ), lfHeightB, lfDisplacementB, lfSpecular2 );
+            }
+
+            lfHeight3       = mix( lfHeightA, 1.0 - lfHeightB, lfPatch );
+            float lfHeight  = smoothstep( lfHeight3 - lfOffset, lfHeight3 + lfOffset, lfPatch );
+
+            lfSpecular3     = mix( lfSpecular1,     lfSpecular2,     lfHeight );
+            lNormal3        = mix( lNormal1,        lNormal2,        lfHeight );
+            lfHeightC       = mix( lfHeightA,       lfHeightB,       lfPatch );
+            lfDisplacementC = mix( lfDisplacementA, lfDisplacementB, lfHeight );
+
+        }
+
+        if( lfSlope2 > lfThreshold )
+        {
+            vec3  lNormal1        = vec3( 0.0, 0.0, 0.0 );
+            vec3  lNormal2        = vec3( 0.0, 0.0, 0.0 );
+
+            float lfHeightA       = lfDefaultHeight;
+            float lfHeightB       = lfDefaultHeight;
+            float lfDisplacementA = lfDefaultHeight;
+            float lfDisplacementB = lfDefaultHeight;
+            float lfSpecular1     = 0.0;
+            float lfSpecular2     = 0.0;
+
+            if( lfPatch < 1.0 - lfThreshold )
+            {
+                lNormal1 = GetTriPlanarNormalArray( lCustomUniforms, lTileCoordsVec2, SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ), int( lTile2Vec4[ 2 ] ), lfHeightA, lfDisplacementA, lfSpecular1 );
+            }
+
+            if( lfPatch > lfThreshold )
+            {
+                lNormal2 = GetTriPlanarNormalArray( lCustomUniforms, lTileCoordsVec2, SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ), int( lTile2Vec4[ 3 ] ), lfHeightB, lfDisplacementB, lfSpecular2 );
+            }
+
+            lfHeight4      = mix( lfHeightA, 1.0 - lfHeightB, lfPatch );
+            float lfHeight = smoothstep( lfHeight4 - lfOffset, lfHeight4 + lfOffset, lfPatch );
+
+            lfSpecular4     = mix( lfSpecular1,     lfSpecular2,     lfHeight );
+            lNormal4        = mix( lNormal1,        lNormal2,        lfHeight );
+            lfHeightD       = mix( lfHeightA,       lfHeightB,       lfPatch );
+            lfDisplacementD = mix( lfDisplacementA, lfDisplacementB, lfHeight );
+        }
+
+        lfHeight6       = mix( lfHeightC, 1.0 - lfHeightD, lfSlope2 );
+        float lfHeight  = smoothstep( lfHeight6 - lfOffset, lfHeight6 + lfOffset, lfSlope2 );
+                        
+        lfSpecular6     = mix( lfSpecular3,     lfSpecular4,     lfHeight );
+        lNormal6        = mix( lNormal3,        lNormal4,        lfHeight );
+        lfHeightF       = mix( lfHeightC,       lfHeightD,       lfSlope2 );
+        lfDisplacementF = mix( lfDisplacementC, lfDisplacementD, lfHeight );
+    }
+
+    lfHeight7      = mix( lfHeightE, 1.0 - lfHeightF, lfTileType );
+    float lfHeight = smoothstep( lfHeight7 - lfOffset, lfHeight7 + lfOffset, lfTileType );
+
+    lfHeight8      = mix( lfHeightE,       lfHeightF,       lfTileType );
+    lfDisplacement = mix( lfDisplacementE, lfDisplacementF, lfHeight );
+
+    lfSpecular     = mix( lfSpecular5, lfSpecular6, lfHeight );
+    return mix( lNormal5, lNormal6, lfHeight );
+
+#else
+
+    vec3 lNormal = GetTriPlanarNormalArray(
+        lCustomUniforms,
+        lTileCoordsVec2,
+        SAMPLER2DARRAYPARAM( lNormalMap ),
+        SAMPLER2DARRAYPARAM( lSubstanceNormalMap ),
+        int( lTile1Vec4[ 0 ] ),
+        lfHeight1,
+        lfDisplacement,
+        lfSpecular );
+
+    lfHeight2 = lfHeight1;
+    lfHeight3 = lfHeight1;
+    lfHeight4 = lfHeight1;
+    lfHeight5 = lfHeight1;
+    lfHeight6 = lfHeight1;
+    lfHeight7 = lfHeight1;
+    lfHeight8 = lfHeight1;
+
+    return lNormal;
+
+#endif
+}
+
+
+vec3
+GetBlendedColour(
+    in  CustomPerMaterialUniforms lCustomUniforms,
+    in    vec2         lTileCoordsVec2,
+    SAMPLER2DARRAYARG( lDiffuseMap ),
+    SAMPLER2DARRAYARG( lSubstanceDiffuseMap ),
+    in    uvec4        lTile1Vec4,
+    in    uvec4        lTile2Vec4,
+    in    float        lfHeight1,
+    in    float        lfHeight2,
+    in    float        lfHeight3,
+    in    float        lfHeight4,
+    in    float        lfHeight5,
+    in    float        lfHeight6,
+    in    float        lfHeight7,
+    out   float        lfMetallic )
+{
+    lfMetallic = 0.0;
+#ifndef D_LOW_QUALITY
+    const float lfThreshold = 1.0 / 100.0;
+    vec3  lColour5    = vec3( 0.0, 0.0, 0.0 );
+    vec3  lColour6    = vec3( 0.0, 0.0, 0.0 );
+    float lfMetallic5 = 0.0;
+    float lfMetallic6 = 0.0;
+
+    if( lfHeight7 < 1.0 - lfThreshold )
+    {
+#ifdef D_PLATFORM_OPENGL
+        if( lfHeight5 < 1.0 - lfThreshold )
+#endif
+        {
+            if( ( 1.0 - lfHeight1 ) * ( 1.0 - lfHeight5 ) > lfThreshold )
+            {
+                int liIndex = int( floor( lTile1Vec4.x ) );
+                vec3 lOriginalColourVec3 = ARRAY_LOOKUP_FS( lCustomUniforms, gaAverageColoursVec4, liIndex ).rgb;
+                vec3 lRecolourVec3       = ARRAY_LOOKUP_FS( lCustomUniforms, gaTerrainColoursVec4, liIndex ).rgb;
+                lfMetallic5             += ( 1.0 - lfHeight1 ) * ( 1.0 - lfHeight5 ) *  ( liIndex >= 20 ? 1.0 : 0.0 );
+                lColour5                += ( 1.0 - lfHeight1 ) * ( 1.0 - lfHeight5 ) * GetTriPlanarColourArray( lTileCoordsVec2, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), liIndex, lOriginalColourVec3, lRecolourVec3 ).xyz;
+            
+            }
+            if( lfHeight1 * ( 1.0 - lfHeight5 ) > lfThreshold )
+            {
+                int liIndex = int( floor( lTile1Vec4.y ) );
+                vec3 lOriginalColourVec3 = ARRAY_LOOKUP_FS( lCustomUniforms, gaAverageColoursVec4, liIndex ).rgb;
+                vec3 lRecolourVec3       = ARRAY_LOOKUP_FS( lCustomUniforms, gaTerrainColoursVec4, liIndex ).rgb;
+                lfMetallic5             += lfHeight1 * ( 1.0 - lfHeight5 )  *  ( liIndex >= 20 ? 1.0 : 0.0 );
+                lColour5                += lfHeight1 * ( 1.0 - lfHeight5 ) * GetTriPlanarColourArray( lTileCoordsVec2, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), liIndex, lOriginalColourVec3, lRecolourVec3 ).xyz;
+            }
+        }
+#ifdef D_PLATFORM_OPENGL
+        if( lfHeight5 > lfThreshold )
+#endif
+        {
+            if( ( 1.0 - lfHeight2 ) * lfHeight5 > lfThreshold )
+            {
+                int liIndex = int( floor( lTile1Vec4.z ) );
+                vec3 lOriginalColourVec3 = ARRAY_LOOKUP_FS( lCustomUniforms, gaAverageColoursVec4, liIndex ).rgb;
+                vec3 lRecolourVec3       = ARRAY_LOOKUP_FS( lCustomUniforms, gaTerrainColoursVec4, liIndex ).rgb;
+                lfMetallic5             += ( 1.0 - lfHeight2 ) * lfHeight5  *  ( liIndex >= 20 ? 1.0 : 0.0 );
+                lColour5                += ( 1.0 - lfHeight2 ) * lfHeight5 * GetTriPlanarColourArray( lTileCoordsVec2, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), liIndex, lOriginalColourVec3, lRecolourVec3 ).xyz;
+            }
+            if( lfHeight2 * lfHeight5 > lfThreshold )
+            {
+                int liIndex = int( floor( lTile1Vec4.w ) );
+                vec3 lOriginalColourVec3 = ARRAY_LOOKUP_FS( lCustomUniforms, gaAverageColoursVec4, liIndex ).rgb;
+                vec3 lRecolourVec3       = ARRAY_LOOKUP_FS( lCustomUniforms, gaTerrainColoursVec4, liIndex ).rgb;
+                lfMetallic5             += lfHeight2 * lfHeight5  *  ( liIndex >= 20 ? 1.0 : 0.0 );
+                lColour5                += lfHeight2 * lfHeight5 * GetTriPlanarColourArray( lTileCoordsVec2, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), liIndex, lOriginalColourVec3, lRecolourVec3 ).xyz;
+            }
+        }
+    }
+
+    if( lfHeight7 > lfThreshold )
+    {
+#ifdef D_PLATFORM_OPENGL
+         if( lfHeight6 < 1.0 - lfThreshold )
+#endif
+        {
+            if( ( 1.0 - lfHeight3 ) * ( 1.0 - lfHeight6 ) > lfThreshold )
+            {
+                int liIndex = int( floor( lTile2Vec4.x ) );
+                vec3 lOriginalColourVec3 = ARRAY_LOOKUP_FS( lCustomUniforms, gaAverageColoursVec4, liIndex ).rgb;
+                vec3 lRecolourVec3       = ARRAY_LOOKUP_FS( lCustomUniforms, gaTerrainColoursVec4, liIndex ).rgb;
+                lfMetallic6             += ( 1.0 - lfHeight3 ) * ( 1.0 - lfHeight6 )  *  ( liIndex >= 20 ? 1.0 : 0.0 );
+                lColour6                += ( 1.0 - lfHeight3 ) * ( 1.0 - lfHeight6 ) * GetTriPlanarColourArray( lTileCoordsVec2, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), liIndex, lOriginalColourVec3, lRecolourVec3 ).xyz;
+            }
+            if( lfHeight3 * ( 1.0 - lfHeight6 ) > lfThreshold )
+            {
+                int liIndex = int( floor( lTile2Vec4.y ) );
+                vec3 lOriginalColourVec3 = ARRAY_LOOKUP_FS( lCustomUniforms, gaAverageColoursVec4, liIndex ).rgb;
+                vec3 lRecolourVec3       = ARRAY_LOOKUP_FS( lCustomUniforms, gaTerrainColoursVec4, liIndex ).rgb;
+                lfMetallic6             += lfHeight3 * ( 1.0 - lfHeight6 )  *  ( liIndex >= 20 ? 1.0 : 0.0 );
+                lColour6                += lfHeight3 * ( 1.0 - lfHeight6 ) * GetTriPlanarColourArray( lTileCoordsVec2, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), liIndex, lOriginalColourVec3, lRecolourVec3 ).xyz;
+            }
+        }
+#ifdef D_PLATFORM_OPENGL
+        if( lfHeight6 > lfThreshold )
+#endif
+        {
+            if( ( 1.0 - lfHeight4 ) * lfHeight6 > lfThreshold )
+            {
+                int liIndex = int( floor( lTile2Vec4.z ) );
+                vec3 lOriginalColourVec3 = ARRAY_LOOKUP_FS( lCustomUniforms, gaAverageColoursVec4, liIndex ).rgb;
+                vec3 lRecolourVec3       = ARRAY_LOOKUP_FS( lCustomUniforms, gaTerrainColoursVec4, liIndex ).rgb;
+                lfMetallic6             += ( 1.0 - lfHeight4 ) * lfHeight6  *  ( liIndex >= 20 ? 1.0 : 0.0 );
+                lColour6                += ( 1.0 - lfHeight4 ) * lfHeight6 * GetTriPlanarColourArray( lTileCoordsVec2, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), liIndex, lOriginalColourVec3, lRecolourVec3 ).xyz;
+            }
+#ifdef D_DEFER
+            if( lfHeight4 * lfHeight6 > lfThreshold )
+            {
+                int liIndex = int( floor( lTile2Vec4.w ) );
+                vec3 lOriginalColourVec3 = ARRAY_LOOKUP_FS( lCustomUniforms, gaAverageColoursVec4, liIndex ).rgb;
+                vec3 lRecolourVec3       = ARRAY_LOOKUP_FS( lCustomUniforms, gaTerrainColoursVec4, liIndex ).rgb;
+                lfMetallic6             += lfHeight4 * lfHeight6  *  ( liIndex >= 20 ? 1.0 : 0.0 );
+                lColour6                += lfHeight4 * lfHeight6 * GetTriPlanarColourArray( lTileCoordsVec2, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), liIndex, lOriginalColourVec3, lRecolourVec3 ).xyz;
+            }
+#endif
+        }
+    }
+
+    lfMetallic = mix( lfMetallic5, lfMetallic6, lfHeight7 );
+    return       mix( lColour5, lColour6, lfHeight7 );
+#else
+    int liIndex = int( floor( lTile1Vec4[ 0 ] ) );
+    vec3 lOriginalColourVec3 = ARRAY_LOOKUP_FS( lCustomUniforms, gaAverageColoursVec4, liIndex ).rgb;
+    vec3 lRecolourVec3       = ARRAY_LOOKUP_FS( lCustomUniforms, gaTerrainColoursVec4, liIndex ).rgb;
+    return GetTriPlanarColourArray(
+        lTileCoordsVec2,
+        SAMPLER2DARRAYPARAM( lDiffuseMap ),
+        SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ),
+        int( lTile1Vec4[ 0 ] ),
+        lOriginalColourVec3,
+        lRecolourVec3 );
+#endif
+}
+
+vec3
+GetTileColourAndNormal(
+    in  CustomPerMaterialUniforms lCustomUniforms,
+    in  vec3           lSmoothNormalVec3,
+    in  vec3           lFacetNormalVec3,
+    in  vec3           lCenterPositionVec3,
+    in  vec3           lTilePositionVec3,  
+    in  uvec4           lTileTextureIndicesSmall1Vec4,
+    in  uvec4           lTileTextureIndicesSmall2Vec4,
+    in  uvec4           lTileTextureIndicesLarge1Vec4,
+    in  uvec4           lTileTextureIndicesLarge2Vec4,
+    in  float          lfPatch,
+    in  float          lfSlope1,
+    in  float          lfSlope2,
+    in  float          lfTileType,
+    out vec3           lOutWorldNormalVec3,
+    in  float          lfSmallScale,
+    in  float          lfLargeScale,
+    in  float          lfFade, 
+    SAMPLER2DARRAYARG( lDiffuseMap ),
+    SAMPLER2DARRAYARG( lNormalMap  ),
+    SAMPLER2DARRAYARG( lSubstanceDiffuseMap ),
+    SAMPLER2DARRAYARG( lSubstanceNormalMap  ),
+    out float          lfSpecular,
+    out float          lfSubsurface,
+    out float          lfMetallic,
+    out float          lfGlow,
+    out float          lfHeight)
+{
+
+#if defined( D_TERRAIN_X_FACING )
+    vec3    lWeightsVec3 = vec3( 1.0, 0.0, 0.0 );
+#elif defined( D_TERRAIN_Y_FACING )
+    vec3    lWeightsVec3 = vec3( 0.0, 1.0, 0.0 );
+#elif defined( D_TERRAIN_Z_FACING )
+    vec3    lWeightsVec3 = vec3( 0.0, 0.0, 1.0 );
+    #else
+    vec3    lWeightsVec3 = pow( abs( lSmoothNormalVec3 ), vec3(kfBlendPower, kfBlendPower, kfBlendPower) );
+    #endif
+
+    vec3    lTexCoordsVec3;
+    vec3    lSmallTexCoordsVec3;
+    vec3    lLargeTexCoordsVec3;
+    float   lfWeightRecip = 1.0 / ( lWeightsVec3.x + lWeightsVec3.y + lWeightsVec3.z );
+    vec3    lNormalVec3;
+
+#if 0
+    {
+        float lfDot = dot(normalize(lSmoothNormalVec3), normalize(lFacetNormalVec3));
+
+        lNormalVec3 = mix( lFacetNormalVec3, lSmoothNormalVec3, smoothstep(0.9, 0.95, lfDot ) );
+    }
+#else
+    lNormalVec3 = lSmoothNormalVec3;
+#endif
+
+    lfSubsurface = 0.0;
+    lfMetallic   = 0.0;
+    lfGlow       = 0.0;
+    lfHeight     = 0.0;
+
+    // these two offsets tell us how much fractional part of the planet offset is left
+    // after the texture has wrapped around many many times. They have some error but
+    // it is the same error everywhere on a planet - so it should not have a visible effect.
+    vec3 lCenterPositionFlippedVec3 = lCenterPositionVec3;
+    lCenterPositionFlippedVec3.y    = -lCenterPositionFlippedVec3.y; // this must match the y flip of the tex coords
+    vec3 lTextureOffsetSmall        = fract( lCenterPositionFlippedVec3 * lfSmallScale );
+    vec3 lTextureOffsetLarge        = fract( lCenterPositionFlippedVec3 * lfLargeScale );
+
+    lTexCoordsVec3      = lTilePositionVec3; 
+    lTexCoordsVec3.y    = -lTexCoordsVec3.y;
+    lSmallTexCoordsVec3 = ( lTexCoordsVec3 * lfSmallScale ) + lTextureOffsetSmall;
+    lLargeTexCoordsVec3 = ( lTexCoordsVec3 * lfLargeScale ) + lTextureOffsetLarge; 
+
+    vec3 lWeightsVec3N = lWeightsVec3 * lfWeightRecip;
+
+
+    // Normals + (Spec and Height)
+    float lafHeights[8]  = { 0., 0, 0, 0, 0, 0, 0, 0 };
+    float lfDisplacement = 0.0;
+    {
+        vec3  lSmallMappedNormalVec3 = vec3( 0.0, 0.0, 0.0 );
+        vec3  lLargeMappedNormalVec3 = vec3( 0.0, 0.0, 0.0 );
+        vec3  lSpecularLargeVec3     = vec3(0.0, 0.0, 0.0);
+        vec3  lSpecularSmallVec3     = vec3(0.0, 0.0, 0.0);
+        vec3  lHeightsLargeVec3[ 8 ] ={ vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ) };
+        vec3  lHeightsSmallVec3[ 8 ] ={ vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ), vec3( 0.5, 0.5, 0.5 ) };
+        vec3  lDisplacementSmallVec3 = vec3( 0.0, 0.0, 0.0 );
+        vec3  lDisplacementLargeVec3 = vec3( 0.0, 0.0, 0.0 );
+        float lfFadeThreshold        = 1.0 / 100.0;
+
+        if( lfFade > lfFadeThreshold )
+        {
+            if( lWeightsVec3N.x > 0.003 )
+            {
+                vec3 lNormalLargeVec3  = GetBlendedNormal( lCustomUniforms, lLargeTexCoordsVec3.zy, SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ), lTileTextureIndicesLarge1Vec4, lTileTextureIndicesLarge2Vec4, lfPatch, lfSlope1, lfSlope2, lfTileType, lSpecularLargeVec3.x, lDisplacementLargeVec3.x,
+                                                           lHeightsLargeVec3[ 0 ].x, lHeightsLargeVec3[ 1 ].x, lHeightsLargeVec3[ 2 ].x, lHeightsLargeVec3[ 3 ].x, lHeightsLargeVec3[ 4 ].x, lHeightsLargeVec3[ 5 ].x, lHeightsLargeVec3[ 6 ].x, lHeightsLargeVec3[ 7 ].x );
+
+                lLargeMappedNormalVec3 += lWeightsVec3N.x * vec3( 0.0, lNormalLargeVec3.x, lNormalLargeVec3.y );  // YZ 
+            }
+
+            if( lWeightsVec3N.y > 0.003 )
+            {
+                vec3 lNormalLargeVec3 = GetBlendedNormal( lCustomUniforms, lLargeTexCoordsVec3.zx, SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ), lTileTextureIndicesLarge1Vec4, lTileTextureIndicesLarge2Vec4, lfPatch, lfSlope1, lfSlope2, lfTileType, lSpecularLargeVec3.y, lDisplacementLargeVec3.y,
+                                                          lHeightsLargeVec3[ 0 ].y, lHeightsLargeVec3[ 1 ].y, lHeightsLargeVec3[ 2 ].y, lHeightsLargeVec3[ 3 ].y, lHeightsLargeVec3[ 4 ].y, lHeightsLargeVec3[ 5 ].y, lHeightsLargeVec3[ 6 ].y, lHeightsLargeVec3[ 7 ].y );
+
+                lLargeMappedNormalVec3 += lWeightsVec3N.y * vec3( -lNormalLargeVec3.x, 0.0, lNormalLargeVec3.y );  // ZX
+            }
+
+            if( lWeightsVec3N.z > 0.003 )
+            {
+                vec3 lNormalLargeVec3 = GetBlendedNormal( lCustomUniforms, lLargeTexCoordsVec3.xy, SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ), lTileTextureIndicesLarge1Vec4, lTileTextureIndicesLarge2Vec4, lfPatch, lfSlope1, lfSlope2, lfTileType, lSpecularLargeVec3.z, lDisplacementLargeVec3.z,
+                                                          lHeightsLargeVec3[ 0 ].z, lHeightsLargeVec3[ 1 ].z, lHeightsLargeVec3[ 2 ].z, lHeightsLargeVec3[ 3 ].z, lHeightsLargeVec3[ 4 ].z, lHeightsLargeVec3[ 5 ].z, lHeightsLargeVec3[ 6 ].z, lHeightsLargeVec3[ 7 ].z );
+
+                lLargeMappedNormalVec3 += lWeightsVec3N.z * vec3( lNormalLargeVec3.y, lNormalLargeVec3.x, 0.0 );  // XY
+            }
+        }
+        else
+        {
+            lfFade = 0.0;
+        }
+
+        if( lfFade < 1.0 - lfFadeThreshold )
+        {
+            if( lWeightsVec3N.x > 0.003 )
+            {
+                vec3 lNormalSmallVec3  = GetBlendedNormal( lCustomUniforms, lSmallTexCoordsVec3.zy, SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ), lTileTextureIndicesSmall1Vec4, lTileTextureIndicesSmall2Vec4, lfPatch, lfSlope1, lfSlope2, lfTileType, lSpecularSmallVec3.x, lDisplacementSmallVec3.x,
+                                                           lHeightsSmallVec3[ 0 ].x, lHeightsSmallVec3[ 1 ].x, lHeightsSmallVec3[ 2 ].x, lHeightsSmallVec3[ 3 ].x, lHeightsSmallVec3[ 4 ].x, lHeightsSmallVec3[ 5 ].x, lHeightsSmallVec3[ 6 ].x, lHeightsSmallVec3[ 7 ].x );
+
+                lSmallMappedNormalVec3 += lWeightsVec3N.x * vec3( 0.0, lNormalSmallVec3.x, lNormalSmallVec3.y );  // YZ 
+            }
+
+            if( lWeightsVec3N.y > 0.003 )
+            {
+                vec3 lNormalSmallVec3 = GetBlendedNormal( lCustomUniforms, lSmallTexCoordsVec3.zx, SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ), lTileTextureIndicesSmall1Vec4, lTileTextureIndicesSmall2Vec4, lfPatch, lfSlope1, lfSlope2, lfTileType, lSpecularSmallVec3.y, lDisplacementSmallVec3.y,
+                                                          lHeightsSmallVec3[ 0 ].y, lHeightsSmallVec3[ 1 ].y, lHeightsSmallVec3[ 2 ].y, lHeightsSmallVec3[ 3 ].y, lHeightsSmallVec3[ 4 ].y, lHeightsSmallVec3[ 5 ].y, lHeightsSmallVec3[ 6 ].y, lHeightsSmallVec3[ 7 ].y );
+
+                lSmallMappedNormalVec3 += lWeightsVec3N.y * vec3( -lNormalSmallVec3.x, 0.0, lNormalSmallVec3.y );  // ZX
+            }
+
+            if( lWeightsVec3N.z > 0.003 )
+            {
+                vec3 lNormalSmallVec3 = GetBlendedNormal( lCustomUniforms, lSmallTexCoordsVec3.xy, SAMPLER2DARRAYPARAM( lNormalMap ), SAMPLER2DARRAYPARAM( lSubstanceNormalMap ), lTileTextureIndicesSmall1Vec4, lTileTextureIndicesSmall2Vec4, lfPatch, lfSlope1, lfSlope2, lfTileType, lSpecularSmallVec3.z, lDisplacementSmallVec3.z,
+                                                          lHeightsSmallVec3[ 0 ].z, lHeightsSmallVec3[ 1 ].z, lHeightsSmallVec3[ 2 ].z, lHeightsSmallVec3[ 3 ].z, lHeightsSmallVec3[ 4 ].z, lHeightsSmallVec3[ 5 ].z, lHeightsSmallVec3[ 6 ].z, lHeightsSmallVec3[ 7 ].z );
+
+                lSmallMappedNormalVec3 += lWeightsVec3N.z * vec3( lNormalSmallVec3.y, lNormalSmallVec3.x, 0.0 );  // XY
+            }
+        }
+        else
+        {
+            lfFade = 1.0;
+        }
+
+
+        {
+            for( int i = 0; i < 8; i++ )
+            {
+                float lfHeightLarge = dot( lHeightsLargeVec3[ i ], lWeightsVec3 ) * lfWeightRecip;
+                float lfHeightSmall = dot( lHeightsSmallVec3[ i ], lWeightsVec3 ) * lfWeightRecip;
+                lafHeights[ i ]     = mix( lfHeightSmall, lfHeightLarge, lfFade );
+            }
+
+            float lfDisplacementLarge = dot( lDisplacementLargeVec3, lWeightsVec3 ) * lfWeightRecip;
+            float lfDisplacementSmall = dot( lDisplacementSmallVec3, lWeightsVec3 ) * lfWeightRecip;
+            lfDisplacement            = mix( lfDisplacementSmall, lfDisplacementLarge, lfFade );
+
+            lfHeight = lfDisplacement;
+
+            float lfWidth = 0.1;
+
+            lafHeights[ 0 ]     = smoothstep( lafHeights[ 0 ] - lfWidth, lafHeights[ 0 ] + lfWidth, lfPatch );
+            lafHeights[ 1 ]     = smoothstep( lafHeights[ 1 ] - lfWidth, lafHeights[ 1 ] + lfWidth, lfPatch );
+            lafHeights[ 2 ]     = smoothstep( lafHeights[ 2 ] - lfWidth, lafHeights[ 2 ] + lfWidth, lfPatch );
+            lafHeights[ 3 ]     = smoothstep( lafHeights[ 3 ] - lfWidth, lafHeights[ 3 ] + lfWidth, lfPatch );
+            lafHeights[ 4 ]     = smoothstep( lafHeights[ 4 ] - lfWidth, lafHeights[ 4 ] + lfWidth, lfSlope1 );
+            lafHeights[ 5 ]     = smoothstep( lafHeights[ 5 ] - lfWidth, lafHeights[ 5 ] + lfWidth, lfSlope2 );
+            lafHeights[ 6 ]     = smoothstep( lafHeights[ 6 ] - lfWidth, lafHeights[ 6 ] + lfWidth, lfTileType );
+            lafHeights[ 7 ]     = smoothstep( lafHeights[ 7 ] - lfWidth, lafHeights[ 7 ] + lfWidth, lfFade );
+
+
+            float lfSpecularLarge  = dot(lSpecularLargeVec3, lWeightsVec3) * lfWeightRecip;
+            float lfSpecularSmall  = dot(lSpecularSmallVec3, lWeightsVec3) * lfWeightRecip;
+
+            #if defined( D_CACHE_NORMAL )
+            lOutWorldNormalVec3 = ( lfFade > lfFadeThreshold )? lLargeMappedNormalVec3 : lSmallMappedNormalVec3;
+            lOutWorldNormalVec3 -= lNormalVec3 * dot(lOutWorldNormalVec3, lNormalVec3);  
+            #else
+
+            // removing the height blend.. it doesn't work with caching
+            lLargeMappedNormalVec3 *= lfFade; //lafHeights[ 7 ];
+            lSmallMappedNormalVec3 *= 1.0 - lfFade; //lafHeights[ 7 ];
+
+            lSmallMappedNormalVec3 = vec3( lSmallMappedNormalVec3.x + lLargeMappedNormalVec3.x, lSmallMappedNormalVec3.y + lLargeMappedNormalVec3.y, lSmallMappedNormalVec3.z + lLargeMappedNormalVec3.z );
+
+            lSmallMappedNormalVec3 -= lNormalVec3 * dot(lSmallMappedNormalVec3, lNormalVec3);  
+            lOutWorldNormalVec3    = normalize( lNormalVec3 + lSmallMappedNormalVec3 );
+            #endif
+
+            lfSpecular             = mix( lfSpecularSmall, lfSpecularLarge, lfFade ); 
+        }
+    }
+
+    float lfFinalFade = lafHeights[ 7 ];
+
+    #if 1
+    //#ifdef D_CACHE_COLOUR
+    lfFinalFade = lfFade;
+    #endif
+
+#ifdef D_PLATFORM_OPENGL
+
+    vec3 lTileColourVec3 = vec3(0.0, 0.0, 0.0);
+
+    {
+        if (lWeightsVec3N.x * lfFinalFade  > 0.003)
+        {
+            lTileColourVec3 += lfFinalFade * lWeightsVec3N.x * GetBlendedColour(lCustomUniforms, lLargeTexCoordsVec3.zy, SAMPLER2DARRAYPARAM(lDiffuseMap), SAMPLER2DARRAYPARAM(lSubstanceDiffuseMap), lTileTextureIndicesLarge1Vec4, lTileTextureIndicesLarge2Vec4,
+                lafHeights[0], lafHeights[1], lafHeights[2], lafHeights[3], lafHeights[4], lafHeights[5], lafHeights[6], lfMetallic).xyz;
+        }
+        if (lWeightsVec3N.y * lfFinalFade > 0.003)
+        {
+            lTileColourVec3 += lfFinalFade * lWeightsVec3N.y * GetBlendedColour(lCustomUniforms, lLargeTexCoordsVec3.zx, SAMPLER2DARRAYPARAM(lDiffuseMap), SAMPLER2DARRAYPARAM(lSubstanceDiffuseMap), lTileTextureIndicesLarge1Vec4, lTileTextureIndicesLarge2Vec4,
+                lafHeights[0], lafHeights[1], lafHeights[2], lafHeights[3], lafHeights[4], lafHeights[5], lafHeights[6], lfMetallic).xyz;
+        }
+        if (lWeightsVec3N.z * lfFinalFade > 0.003)
+        {
+            lTileColourVec3 += lfFinalFade * lWeightsVec3N.z * GetBlendedColour(lCustomUniforms, lLargeTexCoordsVec3.xy, SAMPLER2DARRAYPARAM(lDiffuseMap), SAMPLER2DARRAYPARAM(lSubstanceDiffuseMap), lTileTextureIndicesLarge1Vec4, lTileTextureIndicesLarge2Vec4,
+                lafHeights[0], lafHeights[1], lafHeights[2], lafHeights[3], lafHeights[4], lafHeights[5], lafHeights[6], lfMetallic).xyz;
+        }
+
+        if (lWeightsVec3N.x * (1.0 - lfFinalFade ) > 0.003)
+        {
+            lTileColourVec3 += (1.0 - lfFinalFade ) * lWeightsVec3N.x * GetBlendedColour(lCustomUniforms, lSmallTexCoordsVec3.zy, SAMPLER2DARRAYPARAM(lDiffuseMap), SAMPLER2DARRAYPARAM(lSubstanceDiffuseMap), lTileTextureIndicesSmall1Vec4, lTileTextureIndicesSmall2Vec4,
+                lafHeights[0], lafHeights[1], lafHeights[2], lafHeights[3], lafHeights[4], lafHeights[5], lafHeights[6], lfMetallic).xyz;
+        }
+        if (lWeightsVec3N.y * (1.0 - lfFinalFade ) > 0.003)
+        {
+            lTileColourVec3 += (1.0 - lfFinalFade ) * lWeightsVec3N.y * GetBlendedColour(lCustomUniforms, lSmallTexCoordsVec3.zx, SAMPLER2DARRAYPARAM(lDiffuseMap), SAMPLER2DARRAYPARAM(lSubstanceDiffuseMap), lTileTextureIndicesSmall1Vec4, lTileTextureIndicesSmall2Vec4,
+                lafHeights[0], lafHeights[1], lafHeights[2], lafHeights[3], lafHeights[4], lafHeights[5], lafHeights[6], lfMetallic).xyz;
+        }
+        if (lWeightsVec3N.z * (1.0 - lfFinalFade ) > 0.003)
+        {
+            lTileColourVec3 += (1.0 - lfFinalFade ) * lWeightsVec3N.z * GetBlendedColour(lCustomUniforms, lSmallTexCoordsVec3.xy, SAMPLER2DARRAYPARAM(lDiffuseMap), SAMPLER2DARRAYPARAM(lSubstanceDiffuseMap), lTileTextureIndicesSmall1Vec4, lTileTextureIndicesSmall2Vec4,
+                lafHeights[0], lafHeights[1], lafHeights[2], lafHeights[3], lafHeights[4], lafHeights[5], lafHeights[6], lfMetallic).xyz;
+        }
+    }
+
+#else
+
+    vec3    lTileColourSmallVec3 = vec3( 0.0, 0.0, 0.0 );
+    vec3    lTileColourLargeVec3 = vec3( 0.0, 0.0, 0.0 );
+    {
+        if( lWeightsVec3N.x > 0.003 )
+        {
+            lTileColourLargeVec3 += lWeightsVec3N.x * GetBlendedColour( lCustomUniforms, lLargeTexCoordsVec3.zy, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), lTileTextureIndicesLarge1Vec4, lTileTextureIndicesLarge2Vec4,
+                                                                                    lafHeights[ 0 ], lafHeights[ 1 ], lafHeights[ 2 ], lafHeights[ 3 ], lafHeights[ 4 ], lafHeights[ 5 ], lafHeights[ 6 ], lfMetallic ).xyz;
+            lTileColourSmallVec3 += lWeightsVec3N.x * GetBlendedColour( lCustomUniforms, lSmallTexCoordsVec3.zy, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), lTileTextureIndicesSmall1Vec4, lTileTextureIndicesSmall2Vec4,
+                                                                                      lafHeights[ 0 ], lafHeights[ 1 ], lafHeights[ 2 ], lafHeights[ 3 ], lafHeights[ 4 ], lafHeights[ 5 ], lafHeights[ 6 ], lfMetallic ).xyz;
+        }
+        if( lWeightsVec3N.y > 0.003 )
+        {
+            lTileColourLargeVec3 += lWeightsVec3N.y * GetBlendedColour( lCustomUniforms, lLargeTexCoordsVec3.zx, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), lTileTextureIndicesLarge1Vec4, lTileTextureIndicesLarge2Vec4,
+                                                                                    lafHeights[ 0 ], lafHeights[ 1 ], lafHeights[ 2 ], lafHeights[ 3 ], lafHeights[ 4 ], lafHeights[ 5 ], lafHeights[ 6 ], lfMetallic ).xyz;
+            lTileColourSmallVec3 += lWeightsVec3N.y * GetBlendedColour( lCustomUniforms, lSmallTexCoordsVec3.zx, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), lTileTextureIndicesSmall1Vec4, lTileTextureIndicesSmall2Vec4,
+                                                                                      lafHeights[ 0 ], lafHeights[ 1 ], lafHeights[ 2 ], lafHeights[ 3 ], lafHeights[ 4 ], lafHeights[ 5 ], lafHeights[ 6 ], lfMetallic ).xyz;
+        }
+        if( lWeightsVec3N.z > 0.003 )
+        {
+            lTileColourLargeVec3 += lWeightsVec3N.z * GetBlendedColour( lCustomUniforms, lLargeTexCoordsVec3.xy, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), lTileTextureIndicesLarge1Vec4, lTileTextureIndicesLarge2Vec4,
+                                                                                    lafHeights[ 0 ], lafHeights[ 1 ], lafHeights[ 2 ], lafHeights[ 3 ], lafHeights[ 4 ], lafHeights[ 5 ], lafHeights[ 6 ], lfMetallic ).xyz;
+            lTileColourSmallVec3 += lWeightsVec3N.z * GetBlendedColour( lCustomUniforms, lSmallTexCoordsVec3.xy, SAMPLER2DARRAYPARAM( lDiffuseMap ), SAMPLER2DARRAYPARAM( lSubstanceDiffuseMap ), lTileTextureIndicesSmall1Vec4, lTileTextureIndicesSmall2Vec4,
+                                                                                      lafHeights[ 0 ], lafHeights[ 1 ], lafHeights[ 2 ], lafHeights[ 3 ], lafHeights[ 4 ], lafHeights[ 5 ], lafHeights[ 6 ], lfMetallic ).xyz;
+        }
+    }
+
+    vec3 lTileColourVec3;
+
+    lTileColourVec3 = mix( lTileColourSmallVec3, lTileColourLargeVec3, lfFinalFade );
+#endif
+
+#ifndef D_CACHE_COLOUR
+    lTileColourVec3 = GammaCorrectInput( lTileColourVec3 );
+#endif
+  
+    return lTileColourVec3;
+}
+
+
+#endif	
+
+#endif

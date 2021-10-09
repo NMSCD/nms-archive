@@ -1,0 +1,334 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       CompressFragment.h
+///     @author     User
+///     @date       
+///
+///     @brief      Dxt5 Compression Shader
+///                 compress a 4x4 block to DXT5 format
+///                 integer version, renders to 4 x int32 buffer
+///                 code based on 
+///                 https://github.com/OpenGLInsights/OpenGLInsightsCode
+///                 ( Chapter 31 
+///                   In-Game Video Capture with Real-Time Texture Compression )
+///
+///     Copyright (c) 2015 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+#include "Common/Defines.shader.h"
+
+#include "Common/CommonUniforms.shader.h"
+#include "Common/CommonFragment.shader.h"
+
+#include "Fullscreen/PostCommon.h"
+
+#ifdef D_PLATFORM_PC
+
+
+FRAGMENT_COLOUR_UVEC4_DEFINE;
+
+struct cInput
+{
+    float Test;
+};
+
+DECLARE_INPUT
+    INPUT(  vec4, mkLocalPositionVec4, POSITION0 )
+    INPUT(  vec2, mkTexCoordsVec4,     TEXCOORD0 )
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//      Functions 
+
+float 
+mySaturate( float lfVal ) 
+{ 
+    return clamp( lfVal, -1.0, 1.0 ); 
+}
+
+vec2 
+mySaturate( vec2 lValVec2 ) 
+{ 
+    return clamp( lValVec2, vec2( -1.0 ), vec2( 1.0 ) ); 
+}
+
+vec3 
+mySaturate( vec3 lValVec3 ) 
+{ 
+    return clamp( lValVec3, vec3( -1.0 ), vec3( 1.0 ) ); 
+}
+
+vec4 
+mySaturate( vec4 lValVec4 ) 
+{ 
+    return clamp( lValVec4, vec4( -1.0 ), vec4( 1.0 ) ); 
+}
+
+
+void 
+ExtractColorBlockRGBA(
+    out vec4 lColorVec4[ 16 ],
+    sampler2D lImage,
+    ivec2 lCoordIVec2,
+    int liMip )
+{
+    for ( int liY = 0; liY < 4; liY++ ) 
+    {
+        for ( int liX = 0; liX < 4; liX++ ) 
+        {
+            lColorVec4[ liY * 4 + liX ] = texelFetch( lImage, lCoordIVec2 + ivec2( liX, liY ), liMip );
+        }
+    }
+}
+
+//
+// find minimum and maximum colors based on bounding box in color space
+//
+void FindMinMaxColorsBox(
+    vec4 lBlockVec4[ 16 ],
+    out vec4 lMinColorVec4, 
+    out vec4 lMaxColorVec4 )
+{
+    lMinColorVec4 = lBlockVec4[ 0 ];
+    lMaxColorVec4 = lBlockVec4[ 0 ];
+
+    for ( int liIdx = 1; liIdx < 16; liIdx++ ) 
+    {
+        lMinColorVec4 = min( lMinColorVec4, lBlockVec4[ liIdx ] );
+        lMaxColorVec4 = max( lMaxColorVec4, lBlockVec4[ liIdx ] );
+    }
+}
+
+void SelectRGBDiagonal(
+    vec4 lBlockVec4[ 16 ], 
+    inout vec3 lMinColorVec3, 
+    inout vec3 lMaxColorVec3 )
+{
+    vec3 lCenterVec3 = ( lMinColorVec3 + lMaxColorVec3 ) * 0.5;
+
+    vec2 lCovVec2 = vec2( 0 );
+    for ( int liIdx = 0; liIdx < 16; liIdx++ )
+    {
+        vec3 lTVec3 = lBlockVec4[ liIdx ].rgb - lCenterVec3;
+        lCovVec2.x += lTVec3.x * lTVec3.z;
+        lCovVec2.y += lTVec3.y * lTVec3.z;
+    }
+
+    if ( lCovVec2.x < 0 ) 
+    {
+        float lfTemp    = lMaxColorVec3.x;
+        lMaxColorVec3.x = lMinColorVec3.x;
+        lMinColorVec3.x = lfTemp;
+    }
+    if ( lCovVec2.y < 0 ) 
+    {
+        float lfTemp    = lMaxColorVec3.y;
+        lMaxColorVec3.y = lMinColorVec3.y;
+        lMinColorVec3.y = lfTemp;
+    }
+}
+
+
+uint EmitEndPointsAlpha(
+    inout float lfMinColor, 
+    inout float lfMaxColor )
+{
+    float lfInset = ( lfMaxColor - lfMinColor ) / 32.0 - ( 16.0 / 255.0 ) / 32.0;
+    lfMinColor    = mySaturate( lfMinColor + lfInset );
+    lfMaxColor    = mySaturate( lfMaxColor - lfInset );
+
+    uint luC0     = uint( round( lfMinColor * 255.0 ) );
+    uint luC1     = uint( round( lfMaxColor * 255.0 ) );
+
+    return ( ( luC0 << 8u ) | luC1 );
+}
+
+
+uvec2 EmitIndicesAlpha(
+    vec4 lBlockVec4[ 16 ], 
+    float lfMinAlpha, 
+    float lfMaxAlpha )
+{
+    const int ALPHA_RANGE = 7;
+
+    float lfBias  = lfMaxAlpha + ( lfMaxAlpha - lfMinAlpha ) / ( 2.0 * ALPHA_RANGE );
+    float lfScale = 1.0 / ( lfMaxAlpha - lfMinAlpha );
+
+    uvec2 lIndicesUVec2 = uvec2( 0u );
+
+    for ( int liIdx = 0; liIdx < 6; liIdx++ )
+    {
+        uint luIndex = uint( mySaturate( ( lfBias - lBlockVec4[ liIdx ].a ) * lfScale ) * ALPHA_RANGE );
+        lIndicesUVec2.x |= luIndex << uint( 3 * liIdx );
+    }
+
+    for ( int liIdx = 6; liIdx < 16; liIdx++ )
+    {
+        uint luIndex = uint( mySaturate( ( lfBias - lBlockVec4[ liIdx ].a ) * lfScale ) * ALPHA_RANGE );
+        lIndicesUVec2.y |= luIndex << uint( 3 * liIdx - 18 );
+    }
+
+    uvec2 lIdx0UVec2 = ( lIndicesUVec2 >> 0u ) & 0x09249249u;
+    uvec2 lIdx1UVec2 = ( lIndicesUVec2 >> 1u ) & 0x09249249u;
+    uvec2 lIdx2UVec2 = ( lIndicesUVec2 >> 2u ) & 0x09249249u;
+
+    lIdx2UVec2 ^= lIdx0UVec2 & lIdx1UVec2;
+    lIdx1UVec2 ^= lIdx0UVec2;
+    lIdx0UVec2 ^= ( lIdx1UVec2 | lIdx2UVec2 );
+
+    lIndicesUVec2.x = ( lIdx2UVec2.x << 2u ) | ( lIdx1UVec2.x << 1u ) | lIdx0UVec2.x;
+    lIndicesUVec2.y = ( ( ( lIdx2UVec2.y << 2u ) | ( lIdx1UVec2.y << 1u ) | lIdx0UVec2.y ) << 2u ) | ( lIndicesUVec2.x >> 16u );
+    lIndicesUVec2.x <<= 16u;
+
+    return lIndicesUVec2;
+}
+
+
+
+vec3 RoundAndExpand(
+    vec3 lValVec3, 
+    out uint luW )
+{
+    ivec3 lCVec3 = ivec3( round( lValVec3 * vec3( 31, 63, 31 ) ) );
+    luW = uint( ( lCVec3.r << 11 ) | ( lCVec3.g << 5 ) | lCVec3.b );
+
+    lCVec3.rb = ( lCVec3.rb << 3 ) | ( lCVec3.rb >> 2 );
+    lCVec3.g  = ( lCVec3.g  << 2 ) | ( lCVec3.g  >> 4 );
+
+    return vec3( lCVec3 * ( 1.0 / 255.0 ) );
+}
+
+uint EmitEndPointsDXT1(
+    inout vec4 lMinColorVec4, 
+    inout vec4 lMaxColorVec4 )
+{
+    vec4 lInsetVec4 = ( lMaxColorVec4 - lMinColorVec4 ) / 16.0 - ( 8.0 / 255.0 ) / 16.0;
+    lMinColorVec4   = mySaturate( lMinColorVec4 + lInsetVec4 );
+    lMaxColorVec4   = mySaturate( lMaxColorVec4 - lInsetVec4 );
+
+    uvec2 lOutValUVec2;
+    lMaxColorVec4.rgb = RoundAndExpand( lMaxColorVec4.rgb, lOutValUVec2.x );
+    lMinColorVec4.rgb = RoundAndExpand( lMinColorVec4.rgb, lOutValUVec2.y );
+
+    // We have to do this in case we select an alternate diagonal.
+    if ( lOutValUVec2.x < lOutValUVec2.y )
+    {
+        vec3 lTmpVec3     = lMinColorVec4.rgb;
+        lMinColorVec4.rgb = lMaxColorVec4.rgb;
+        lMaxColorVec4.rgb = lTmpVec3;
+        return lOutValUVec2.y | ( lOutValUVec2.x << 16u );
+    }
+
+    return lOutValUVec2.x | ( lOutValUVec2.y << 16u );
+}
+
+uint EmitIndicesDXT1_noalpha(
+    vec4 lBlockVec4[ 16 ], 
+    vec4 lMinColorVec4, 
+    vec4 lMaxColorVec4 )
+{
+    const float RGB_RANGE = 3;  //divisions of min-max range
+
+    vec3 lDirVec3 = ( lMaxColorVec4.rgb - lMinColorVec4.rgb );
+    vec3 lOriginVec3 = lMaxColorVec4.rgb + lDirVec3.rgb / ( 2.0 * RGB_RANGE );   //half the division above max
+    lDirVec3 /= dot( lDirVec3, lDirVec3 );
+
+    // Compute indices
+    uint luIndices = 0u;
+    for ( int liIdx = 0; liIdx < 16; liIdx++ )
+    {
+        uint luIndex = uint( mySaturate( dot( lOriginVec3 - lBlockVec4[ liIdx ].rgb, lDirVec3 ) ) * RGB_RANGE );
+        luIndices |= luIndex << uint( liIdx * 2 );
+    }
+
+    uint luI0 = ( luIndices & 0x55555555u );
+    uint luI1 = ( luIndices & 0xAAAAAAAAu ) >> 1u;
+    luIndices = ( ( luI0 ^ luI1 ) << 1u ) | luI1;
+
+    // Output indices
+    return luIndices;
+}
+
+//
+// DXT1 with alpha
+//
+uint EmitIndicesDXT1_alpha(
+    vec4 lBlockVec4[ 16 ], 
+    vec4 lMinColorVec4, 
+    vec4 lMaxColorVec4 )
+{
+    const float RGB_RANGE = 2;  //divisions of min-max range
+
+    vec3 lDirVec3    = ( lMaxColorVec4.rgb - lMinColorVec4.rgb );
+    vec3 lOriginVec3 = lMaxColorVec4.rgb + lDirVec3.rgb / ( 2.0 * RGB_RANGE );   //half the division above max
+    lDirVec3 /= dot( lDirVec3, lDirVec3 );
+
+    // Compute indices
+    uint luIndices = 0u;
+    for ( int i = 0; i < 16; i++ )
+    {
+        uint luIndex = ( lBlockVec4[ i ].a < 0.5 )
+            ? 3u
+            : min( 2u, uint( mySaturate( dot( lOriginVec3 - lBlockVec4[ i ].rgb, lDirVec3 ) ) * RGB_RANGE ) );
+        luIndices |= luIndex << uint( i * 2 );
+    }
+
+    uint luI0 = ( ( luIndices & 0x55555555u ) << 1u );
+    uint luI1 = ( ( luIndices & 0xAAAAAAAAu ) >> 1u );
+    luIndices = luI0 | luI1;
+
+    // Output indices
+    return luIndices;
+}
+
+
+
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    int liMipLevel = int( lUniforms.mpCustomPerMesh->gTextureSizeMipLevelVec4.z + 0.5 );
+
+    ivec2 lTexCoordIVec2 = ivec2( 4 * gl_FragCoord.xy ) & ivec2( ~3 );
+
+    // read block
+    vec4 lBlockVec4[ 16 ] ;
+
+    ExtractColorBlockRGBA( lBlockVec4, lUniforms.mpCustomPerMesh->gBufferMap, lTexCoordIVec2, liMipLevel );
+
+    // find min and max colors
+    vec4 lMinColorVec4, lMaxColorVec4;
+    FindMinMaxColorsBox( lBlockVec4, lMinColorVec4, lMaxColorVec4 );
+
+    uvec4 lCompressedValueUVec4;
+    SelectRGBDiagonal( lBlockVec4, lMinColorVec4.rgb, lMaxColorVec4.rgb );
+
+    // Output RGB in DXT1 block.
+    lCompressedValueUVec4.z = EmitEndPointsDXT1( lMinColorVec4, lMaxColorVec4 );
+    lCompressedValueUVec4.w = EmitIndicesDXT1_noalpha( lBlockVec4, lMinColorVec4, lMaxColorVec4 );
+
+    // Output Y in DXT5 alpha block.
+    lCompressedValueUVec4.x = EmitEndPointsAlpha( lMinColorVec4.a, lMaxColorVec4.a );
+
+    uvec2 lIndicesUVec2 = EmitIndicesAlpha( lBlockVec4, lMinColorVec4.a, lMaxColorVec4.a );
+    lCompressedValueUVec4.x |= lIndicesUVec2.x;
+    lCompressedValueUVec4.y = lIndicesUVec2.y;
+
+    FRAGMENT_COLOUR_UVEC4 = lCompressedValueUVec4;
+}
+#else
+
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+    INPUT(  vec2, mTexCoordsVec2,      TEXCOORD0 )
+DECLARE_END
+
+
+
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    FRAGMENT_COLOUR = vec4( 0.0, 1.0, 0.0, 0.0 );
+}
+
+#endif

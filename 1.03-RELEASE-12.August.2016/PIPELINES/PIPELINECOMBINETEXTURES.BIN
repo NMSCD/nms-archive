@@ -1,0 +1,49 @@
+<Pipeline>
+  <Setup>
+
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="Setup">
+      
+      <BeginTarget target="" />
+      <ClearTarget depthBuf="true" colBuf0="true" excludeX360="false" col_R="1.0" col_G="0.0" col_B="0.0" col_A="1.0" />
+      <ColourMask channels="RGBA"/>
+
+    </Stage>
+
+    <Stage id="CombineAndColourDiffuseMaps">
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/CombineMaps.material.mbin" context="COMBINE_DIFFUSE" />
+      <UnbindBuffers />
+
+    </Stage>
+
+    <Stage id="CombineMaps">
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/CombineMaps.material.mbin" context="COMBINE_MAPS" />
+      <UnbindBuffers />
+
+    </Stage>
+
+    <Stage id="CombineMasks">
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/CombineMaps.material.mbin" context="COMBINE_MASKS" />
+      <UnbindBuffers />
+
+    </Stage>
+
+    <Stage id="Reset States">
+      <EndTarget flushCB="true" flushDB="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>

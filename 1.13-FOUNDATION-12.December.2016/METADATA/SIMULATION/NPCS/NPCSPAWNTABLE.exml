@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.13.2)-->
+<Data template="GcNPCSpawnTable">
+  <Property name="NPCModelNames">
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/PLANETS/NPCS/LOWERORDER/LOWERORDER.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/PLANETS/NPCS/WARRIOR/WARRIOR.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/PLANETS/NPCS/EXPLORER/EXPLORERIPAD.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/PLANETS/NPCS/FOURTHRACE/FOURTHRACE.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="" />
+    </Property>
+  </Property>
+  <Property name="NPCRaceScale">
+    <Property value="0.8" />
+    <Property value="0.8" />
+    <Property value="0.8" />
+    <Property value="1" />
+    <Property value="1" />
+    <Property value="1" />
+    <Property value="1" />
+  </Property>
+  <Property name="UniqueNPCs">
+    <Property value="GcUniqueNPCSpawnData.xml">
+      <Property name="NPCSpawnCondition" value="MiniStation" />
+      <Property name="ID" value="POLO" />
+      <Property name="ResourceElement" value="GcResourceElement.xml">
+        <Property name="Filename" value="MODELS/PLANETS/NPCS/LOWERORDER/ANOMALYLOWERORDER.SCENE.MBIN" />
+        <Property name="Seed" value="GcSeed.xml">
+          <Property name="Seed" value="0" />
+          <Property name="UseSeedValue" value="False" />
+        </Property>
+        <Property name="AltId" value="" />
+        <Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList.xml">
+          <Property name="Samplers" />
+        </Property>
+      </Property>
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="Traders" />
+      </Property>
+    </Property>
+    <Property value="GcUniqueNPCSpawnData.xml">
+      <Property name="NPCSpawnCondition" value="MiniStation" />
+      <Property name="ID" value="NADA" />
+      <Property name="ResourceElement" value="GcResourceElement.xml">
+        <Property name="Filename" value="MODELS/PLANETS/NPCS/EXPLORER/ANOMALYEXPLORER.SCENE.MBIN" />
+        <Property name="Seed" value="GcSeed.xml">
+          <Property name="Seed" value="0" />
+          <Property name="UseSeedValue" value="False" />
+        </Property>
+        <Property name="AltId" value="" />
+        <Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList.xml">
+          <Property name="Samplers" />
+        </Property>
+      </Property>
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="Explorers" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="PlacementInfos">
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="GENERIC" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPC_" />
+      <Property name="MustPlace" value="False" />
+      <Property name="SpawnChance" value="0.5" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionType" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="NPCHIREABLE" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPCHIREABLE_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionType" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="NPC_Recruit" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="ALWAYS" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPC100_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionType" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="NADA" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR" />
+      <Property name="PlacementNodeName" value="NPC_NADA" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="NADA" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="Explorers" />
+      </Property>
+      <Property name="InteractionType" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="POLO" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR" />
+      <Property name="PlacementNodeName" value="NPC_POLO" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="POLO" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="Traders" />
+      </Property>
+      <Property name="InteractionType" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="FILLER" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPCHIREABLE_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="0.25" />
+      <Property name="MaxNodesActivated" value="0" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionType" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="DisableInteraction" value="True" />
+      <Property name="UseFreighterNPC" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="NPC_BUILDER" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPCBUILD_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="Traders" />
+      </Property>
+      <Property name="InteractionType" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="NPC_Recruit" />
+      </Property>
+      <Property name="ForceInteraction" value="?NPC_BUILDER" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="False" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="FREIGHTCREW" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPC_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="10" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionType" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="DisableInteraction" value="True" />
+      <Property name="UseFreighterNPC" value="True" />
+    </Property>
+    <Property value="GcNPCPlacementInfo.xml">
+      <Property name="PlacementRuleId" value="FREIGHTCAPTAIN" />
+      <Property name="SpawnUnderNodeName" value="INTERIOR_" />
+      <Property name="PlacementNodeName" value="NPCCAPTAIN_" />
+      <Property name="MustPlace" value="True" />
+      <Property name="SpawnChance" value="1" />
+      <Property name="FractionOfNodesActive" value="1" />
+      <Property name="MaxNodesActivated" value="1" />
+      <Property name="SpawnSpecific" value="" />
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="InteractionType" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="NPC_Freighter_Captain" />
+      </Property>
+      <Property name="ForceInteraction" value="" />
+      <Property name="DisableInteraction" value="False" />
+      <Property name="UseFreighterNPC" value="True" />
+    </Property>
+  </Property>
+</Data>

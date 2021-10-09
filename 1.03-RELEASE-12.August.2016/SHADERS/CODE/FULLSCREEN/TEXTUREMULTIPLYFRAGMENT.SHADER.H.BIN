@@ -1,0 +1,196 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       TextureMultiplyFragment.h
+///     @author     User
+///     @date       
+///
+///     @brief      TextureMultiplyFragmentShader
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#include "Common/Defines.shader.h"
+#include "Common/CommonUniforms.shader.h"
+#include "Fullscreen/RecolourCommon.shader.h"
+
+#include "Common/Common.shader.h"
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2, mTexCoordsVec2, TEXCOORD0 )
+
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+vec3
+Recolour(
+    vec3  lOriginalColourVec3,
+    vec3  lAverageColourVec3,
+    vec3  lRecolourVec3,
+    float lfMix )
+{
+    vec3 lOriginalHSVVec3 = RGBToHSV( lOriginalColourVec3 );
+    vec3 lAverageHSVVec3  = RGBToHSV( lAverageColourVec3 );
+    vec3 lRecolourHSVVec3 = RGBToHSV( lRecolourVec3 );
+
+    lOriginalHSVVec3.r = fract( (  lOriginalHSVVec3.r - lAverageHSVVec3.r ) + lRecolourHSVVec3.r );
+    lOriginalHSVVec3.g = min(      lOriginalHSVVec3.g, lRecolourHSVVec3.g );
+    //lOriginalHSVVec3.b = saturate( lOriginalHSVVec3.b + sin( 3.14 * lOriginalHSVVec3.b ) * ( lRecolourHSVVec3.b - lAverageHSVVec3.b ) );
+    lOriginalHSVVec3.b = pow(10.0, (-10.0 * (lOriginalHSVVec3.b-0.5)*(lOriginalHSVVec3.b-0.5) ) ) * (0.5 * ( lRecolourHSVVec3.b - lAverageHSVVec3.b )) + lOriginalHSVVec3.b;
+
+    lOriginalHSVVec3 = GammaCorrectInput( saturate( HSVToRGB( lOriginalHSVVec3 ) ) );
+
+    lOriginalHSVVec3 = mix( GammaCorrectInput( lOriginalColourVec3 ), lOriginalHSVVec3, lfMix );
+     
+    return lOriginalHSVVec3;
+}
+
+//-----------------------------------------------------------------------------
+///
+///     Vertex Main
+///
+///     @brief      Vertex Main
+///
+///     @param      void
+///     @return     Nothing.
+///
+//-----------------------------------------------------------------------------
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    
+    vec2 lTexCoordsVec2;
+    lTexCoordsVec2 = IN( mTexCoordsVec2 );
+
+    // Read each layer from the textures
+    vec4 lLayer1Vec4 = texture2DLod( lUniforms.mpCustomPerMesh->gSource1Map, lTexCoordsVec2, 0.0 );
+    vec4 lLayer2Vec4 = texture2DLod( lUniforms.mpCustomPerMesh->gSource2Map, lTexCoordsVec2, 0.0 );
+    vec4 lLayer3Vec4 = texture2DLod( lUniforms.mpCustomPerMesh->gSource3Map, lTexCoordsVec2, 0.0 );
+    vec4 lLayer4Vec4 = texture2DLod( lUniforms.mpCustomPerMesh->gSource4Map, lTexCoordsVec2, 0.0 );
+    vec4 lLayer5Vec4 = texture2DLod( lUniforms.mpCustomPerMesh->gSource5Map, lTexCoordsVec2, 0.0 );
+    vec4 lLayer6Vec4 = texture2DLod( lUniforms.mpCustomPerMesh->gSource6Map, lTexCoordsVec2, 0.0 );
+    vec4 lLayer7Vec4 = texture2DLod( lUniforms.mpCustomPerMesh->gSource7Map, lTexCoordsVec2, 0.0 );
+    vec4 lLayer8Vec4 = texture2DLod( lUniforms.mpCustomPerMesh->gSource8Map, lTexCoordsVec2, 0.0 );
+
+    // Copy alpha from each layer so we can use it for blending
+    float lfAlpha1 = lLayer1Vec4.a;
+    float lfAlpha2 = lLayer2Vec4.a;
+    float lfAlpha3 = lLayer3Vec4.a;
+    float lfAlpha4 = lLayer4Vec4.a;
+    float lfAlpha5 = lLayer5Vec4.a;
+    float lfAlpha6 = lLayer6Vec4.a;
+    float lfAlpha7 = lLayer7Vec4.a;
+    float lfAlpha8 = lLayer8Vec4.a;
+
+#ifndef D_HASALPHACHANNEL
+    lfAlpha1 = mix( 1.0, texture2DLod( lUniforms.mpCustomPerMesh->gAlpha1Map, lTexCoordsVec2, 0.0 ).a, lUniforms.mpCustomPerMesh->gAlphaLayersUsed1Vec4.r );
+    lfAlpha2 = mix( 1.0, texture2DLod( lUniforms.mpCustomPerMesh->gAlpha2Map, lTexCoordsVec2, 0.0 ).a, lUniforms.mpCustomPerMesh->gAlphaLayersUsed1Vec4.g );
+    lfAlpha3 = mix( 1.0, texture2DLod( lUniforms.mpCustomPerMesh->gAlpha3Map, lTexCoordsVec2, 0.0 ).a, lUniforms.mpCustomPerMesh->gAlphaLayersUsed1Vec4.b );
+    lfAlpha4 = mix( 1.0, texture2DLod( lUniforms.mpCustomPerMesh->gAlpha4Map, lTexCoordsVec2, 0.0 ).a, lUniforms.mpCustomPerMesh->gAlphaLayersUsed1Vec4.a );
+    lfAlpha5 = mix( 1.0, texture2DLod( lUniforms.mpCustomPerMesh->gAlpha5Map, lTexCoordsVec2, 0.0 ).a, lUniforms.mpCustomPerMesh->gAlphaLayersUsed2Vec4.r );
+    lfAlpha6 = mix( 1.0, texture2DLod( lUniforms.mpCustomPerMesh->gAlpha6Map, lTexCoordsVec2, 0.0 ).a, lUniforms.mpCustomPerMesh->gAlphaLayersUsed2Vec4.g );
+    lfAlpha7 = mix( 1.0, texture2DLod( lUniforms.mpCustomPerMesh->gAlpha7Map, lTexCoordsVec2, 0.0 ).a, lUniforms.mpCustomPerMesh->gAlphaLayersUsed2Vec4.b );
+    lfAlpha8 = mix( 1.0, texture2DLod( lUniforms.mpCustomPerMesh->gAlpha8Map, lTexCoordsVec2, 0.0 ).a, lUniforms.mpCustomPerMesh->gAlphaLayersUsed2Vec4.a );
+#endif
+    
+    // Set the lowest alpha layer to be fully opaque
+    lfAlpha1 = mix( lfAlpha1, 1.0, lUniforms.mpCustomPerMesh->gBaseAlphaLayer1Vec4.r );
+    lfAlpha2 = mix( lfAlpha2, 1.0, lUniforms.mpCustomPerMesh->gBaseAlphaLayer1Vec4.g );
+    lfAlpha3 = mix( lfAlpha3, 1.0, lUniforms.mpCustomPerMesh->gBaseAlphaLayer1Vec4.b );
+    lfAlpha4 = mix( lfAlpha4, 1.0, lUniforms.mpCustomPerMesh->gBaseAlphaLayer1Vec4.a );
+    lfAlpha5 = mix( lfAlpha5, 1.0, lUniforms.mpCustomPerMesh->gBaseAlphaLayer2Vec4.r );
+    lfAlpha6 = mix( lfAlpha6, 1.0, lUniforms.mpCustomPerMesh->gBaseAlphaLayer2Vec4.g );
+    lfAlpha7 = mix( lfAlpha7, 1.0, lUniforms.mpCustomPerMesh->gBaseAlphaLayer2Vec4.b );
+    lfAlpha8 = mix( lfAlpha8, 1.0, lUniforms.mpCustomPerMesh->gBaseAlphaLayer2Vec4.a );
+
+    // Set the alpha for any layer which is not used to 0
+    lfAlpha1 *= lUniforms.mpCustomPerMesh->gLayersUsed1Vec4.r;
+    lfAlpha2 *= lUniforms.mpCustomPerMesh->gLayersUsed1Vec4.g;
+    lfAlpha3 *= lUniforms.mpCustomPerMesh->gLayersUsed1Vec4.b;
+    lfAlpha4 *= lUniforms.mpCustomPerMesh->gLayersUsed1Vec4.a;
+    lfAlpha5 *= lUniforms.mpCustomPerMesh->gLayersUsed2Vec4.r;
+    lfAlpha6 *= lUniforms.mpCustomPerMesh->gLayersUsed2Vec4.g;
+    lfAlpha7 *= lUniforms.mpCustomPerMesh->gLayersUsed2Vec4.b;
+    lfAlpha8 *= lUniforms.mpCustomPerMesh->gLayersUsed2Vec4.a;
+
+    // Recolour diffuse textures
+    #ifdef D_RECOLOUR
+        lLayer1Vec4.rgb = Recolour( lLayer1Vec4.rgb, lUniforms.mpCustomPerMesh->gAverageColour1Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour1Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour1Vec4.a );
+        lLayer2Vec4.rgb = Recolour( lLayer2Vec4.rgb, lUniforms.mpCustomPerMesh->gAverageColour2Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour2Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour2Vec4.a );
+        lLayer3Vec4.rgb = Recolour( lLayer3Vec4.rgb, lUniforms.mpCustomPerMesh->gAverageColour3Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour3Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour3Vec4.a );
+        lLayer4Vec4.rgb = Recolour( lLayer4Vec4.rgb, lUniforms.mpCustomPerMesh->gAverageColour4Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour4Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour4Vec4.a );
+        lLayer5Vec4.rgb = Recolour( lLayer5Vec4.rgb, lUniforms.mpCustomPerMesh->gAverageColour5Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour5Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour5Vec4.a );
+        lLayer6Vec4.rgb = Recolour( lLayer6Vec4.rgb, lUniforms.mpCustomPerMesh->gAverageColour6Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour6Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour6Vec4.a );
+        lLayer7Vec4.rgb = Recolour( lLayer7Vec4.rgb, lUniforms.mpCustomPerMesh->gAverageColour7Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour7Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour7Vec4.a );
+        lLayer8Vec4.rgb = Recolour( lLayer8Vec4.rgb, lUniforms.mpCustomPerMesh->gAverageColour8Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour8Vec4.rgb, lUniforms.mpCustomPerMesh->gRecolour8Vec4.a );
+    #endif
+    
+    vec4 lFragmentColourVec4 = vec4( 1.0, 1.0, 1.0, 0.0 );
+
+    // Blend layers together, based on alpha
+    lFragmentColourVec4 = mix( lFragmentColourVec4, lLayer1Vec4, lfAlpha1 );
+    lFragmentColourVec4 = mix( lFragmentColourVec4, lLayer2Vec4, lfAlpha2 );
+    lFragmentColourVec4 = mix( lFragmentColourVec4, lLayer3Vec4, lfAlpha3 );
+    lFragmentColourVec4 = mix( lFragmentColourVec4, lLayer4Vec4, lfAlpha4 );
+    lFragmentColourVec4 = mix( lFragmentColourVec4, lLayer5Vec4, lfAlpha5 );
+    lFragmentColourVec4 = mix( lFragmentColourVec4, lLayer6Vec4, lfAlpha6 );
+    lFragmentColourVec4 = mix( lFragmentColourVec4, lLayer7Vec4, lfAlpha7 );
+    lFragmentColourVec4 = mix( lFragmentColourVec4, lLayer8Vec4, lfAlpha8 );
+
+    #ifdef D_COMBINE_MASKS
+        lFragmentColourVec4.r = 0.0;
+        lFragmentColourVec4.r = max( lFragmentColourVec4.r, ( 1.0 - lLayer1Vec4.r ) * lfAlpha1 );
+        lFragmentColourVec4.r = max( lFragmentColourVec4.r, ( 1.0 - lLayer2Vec4.r ) * lfAlpha2 );
+        lFragmentColourVec4.r = max( lFragmentColourVec4.r, ( 1.0 - lLayer3Vec4.r ) * lfAlpha3 );
+        lFragmentColourVec4.r = max( lFragmentColourVec4.r, ( 1.0 - lLayer4Vec4.r ) * lfAlpha4 );
+        lFragmentColourVec4.r = max( lFragmentColourVec4.r, ( 1.0 - lLayer5Vec4.r ) * lfAlpha5 );
+        lFragmentColourVec4.r = max( lFragmentColourVec4.r, ( 1.0 - lLayer6Vec4.r ) * lfAlpha6 );
+        lFragmentColourVec4.r = max( lFragmentColourVec4.r, ( 1.0 - lLayer7Vec4.r ) * lfAlpha7 );
+        lFragmentColourVec4.r = max( lFragmentColourVec4.r, ( 1.0 - lLayer8Vec4.r ) * lfAlpha8 );
+
+            // Red is AO - invert it to get proper results
+        lFragmentColourVec4.r = 1.0 - lFragmentColourVec4.r;
+    #endif
+        
+
+    // Set final alpha to match based layer
+    #ifdef D_HASALPHACHANNEL
+        lFragmentColourVec4.a = mix( lFragmentColourVec4.a, lLayer1Vec4.a, lUniforms.mpCustomPerMesh->gBaseAlphaLayer1Vec4.r );
+        lFragmentColourVec4.a = mix( lFragmentColourVec4.a, lLayer2Vec4.a, lUniforms.mpCustomPerMesh->gBaseAlphaLayer1Vec4.g );
+        lFragmentColourVec4.a = mix( lFragmentColourVec4.a, lLayer3Vec4.a, lUniforms.mpCustomPerMesh->gBaseAlphaLayer1Vec4.b );
+        lFragmentColourVec4.a = mix( lFragmentColourVec4.a, lLayer4Vec4.a, lUniforms.mpCustomPerMesh->gBaseAlphaLayer1Vec4.a );
+        lFragmentColourVec4.a = mix( lFragmentColourVec4.a, lLayer5Vec4.a, lUniforms.mpCustomPerMesh->gBaseAlphaLayer2Vec4.r );
+        lFragmentColourVec4.a = mix( lFragmentColourVec4.a, lLayer6Vec4.a, lUniforms.mpCustomPerMesh->gBaseAlphaLayer2Vec4.g );
+        lFragmentColourVec4.a = mix( lFragmentColourVec4.a, lLayer7Vec4.a, lUniforms.mpCustomPerMesh->gBaseAlphaLayer2Vec4.b );
+        lFragmentColourVec4.a = mix( lFragmentColourVec4.a, lLayer8Vec4.a, lUniforms.mpCustomPerMesh->gBaseAlphaLayer2Vec4.a );
+    #endif
+
+    FRAGMENT_COLOUR = lFragmentColourVec4;
+    
+
+}
+

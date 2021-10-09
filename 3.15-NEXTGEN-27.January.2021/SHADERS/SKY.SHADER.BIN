@@ -1,0 +1,218 @@
+[[FX]]
+
+sampler gDiffuseMap = sampler_state
+{
+	TexUnit = 0;
+};
+
+sampler gNormalMap = sampler_state
+{
+	TexUnit = 1;
+};
+
+
+sampler gDetailDiffuseMap = sampler_state
+{
+    TexUnit = 2;
+};
+
+sampler gDetailNormalMap = sampler_state
+{
+    TexUnit = 3;
+};
+
+sampler gDiffuse2Map = sampler_state
+{
+	TexUnit = 4;
+};
+
+sampler gMasksMap = sampler_state
+{
+	TexUnit = 5;
+};
+
+sampler gCausticMap = sampler_state
+{
+    TexUnit = 6;
+};
+
+sampler gCausticOffsetMap = sampler_state
+{
+    TexUnit = 7;
+};
+
+sampler gShadowMap = sampler_state
+{
+    TexUnit = 8;
+};
+
+sampler gCloudShadowMap = sampler_state
+{
+    TexUnit = 9;
+};
+
+sampler gDualPMapFront = sampler_state
+{
+    TexUnit = 10;
+};
+
+sampler gDualPMapBack = sampler_state
+{
+    TexUnit = 11;
+};
+
+sampler gHSVOverlay = sampler_state
+{
+    DefaultTexture = SHADER/MACROVARIATION.DDS;
+    TexUnit = 12;
+    Address = Wrap;
+};
+
+sampler gHSVNormalOverlay = sampler_state
+{
+    DefaultTexture = SHADER/MACROVARIATION.NORMAL.DDS;
+    TexUnit = 13;
+    Address = Wrap;
+};
+
+sampler gNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/CLOUDNOISE.DDS;
+    TexUnit = 14;
+    Address = Wrap;
+};
+
+sampler gPerlin3D = sampler_state
+{
+    DefaultTexture = SHADER/NOISEHALF.DDS;
+    TexUnit = 15;
+    Address = Wrap;
+};
+
+sampler gFadeNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/BLUENOISE.DDS;
+    TexUnit = 16;
+    Address = Wrap;
+};
+
+sampler gDepthBuffer = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 17;
+};
+
+sampler gBufferMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 18;
+};
+
+
+
+// Uniforms
+// Fog
+float4 gSkyColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gHorizonColourVec4               = {1.0, 0.0, 1.0, 0.0};
+float4 gSunColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogColourNearVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogVec4                    = {1.0, 0.0, 1.0, 0.0};
+float4 gFogColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceHorizonColourVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogColourVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogParamsVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gFogParamsVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gScatteringParamsVec4            = {1.0, 0.0, 1.0, 0.0};
+float4 gFogFadeHeightsVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gFogFadeHeights2Vec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour1Vec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour2Vec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour3Vec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSunColourVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceCloudColourVec4            = {1.0, 0.0, 1.0, 0.0};
+float4 gSunPositionVec4                 = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceScatteringParamsVec4       = {1.0, 0.0, 1.0, 0.0};
+
+float4 gSpaceNebulaColour1Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceNebulaColour2Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceNebulaColour3Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceNebulaColour4Vec4         = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceNormalParamsVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceNebulaParamsVec4          = {1.0, 0.0, 1.0, 0.0};
+
+// Planet
+float4 gPlanetPositionVec4             = {0.0, -1204.0, 0.0, 1204.0};
+float4 gLightOriginVec4                = {0.0, 0.0, 0.0, 0.0}; 
+
+context CLEAR
+{
+    VertexShader = compile GLSL VS_GENERAL;
+    PixelShader  = compile GLSL FS_CLEAR;
+}
+
+context LIGHTING
+{
+    VertexShader = compile GLSL VS_GENERAL;
+    PixelShader  = compile GLSL FS_LIGHTING;
+}
+
+context LIGHTING_LOWQ
+{
+    VertexShader = compile GLSL VS_GENERAL_LOWQ;
+    PixelShader  = compile GLSL FS_LIGHTING_LOWQ;
+}
+
+context REFLECT
+{
+    VertexShader = compile GLSL VS_REFLECT;
+    PixelShader  = compile GLSL FS_LIGHTING_LOWQ;
+}
+
+context SCRATCHPAD
+{
+    VertexShader = compile GLSL VS_GENERAL;
+    PixelShader  = compile GLSL FS_SCRATCHPAD;
+}
+
+
+[[VS_GENERAL]]
+// =================================================================================================
+#define D_SKY
+#include "Custom/SkyVertex.shader.h"
+
+[[VS_GENERAL_LOWQ]]
+// =================================================================================================
+#define D_SKY
+#define D_LOWQUALITY
+#include "Custom/SkyVertex.shader.h"
+
+[[VS_REFLECT]]
+// =================================================================================================
+#define D_SKY
+#define D_LOWQUALITY
+#define D_REFLECT
+#include "Custom/SkyVertex.shader.h"
+
+[[FS_CLEAR]]
+// =================================================================================================
+#define D_ATTRIBUTES
+#define D_SKY
+#define D_SKY_CLEAR
+#include "Custom/SkyFragment.shader.h"
+
+[[FS_LIGHTING]]
+// =================================================================================================
+#define D_SKY
+#include "Custom/SkyFragment.shader.h"
+
+[[FS_LIGHTING_LOWQ]]
+// =================================================================================================
+#define D_SKY
+#define D_LOWQUALITY
+#include "Custom/SkyFragment.shader.h"
+
+[[FS_SCRATCHPAD]]
+// =================================================================================================
+#define D_SKY
+#define D_SCRATCHPAD
+#include "Custom/SkyFragment.shader.h"

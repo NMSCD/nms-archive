@@ -1,0 +1,22 @@
+[[FX]]
+
+// Contexts
+context UNTEXTURED
+{
+	VertexShader = compile GLSL VS_BASIC;
+	PixelShader = compile GLSL FS_UNTEXTURED;
+	
+	ZWriteEnable = false;
+}
+
+
+[[VS_BASIC]]
+// =================================================================================================
+#define D_VERTEX
+#include "Basic.shader.h"
+
+[[FS_UNTEXTURED]]
+// =================================================================================================
+#define D_FRAGMENT
+#include "Basic.shader.h"
+

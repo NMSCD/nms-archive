@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.13.2)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkAudioComponentData.xml">
+      <Property name="Ambient" value="" />
+      <Property name="MaxDistance" value="90" />
+      <Property name="AnimTriggers">
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="SpiderAttack" />
+          <Property name="Anim" value="ATTACK1" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="SpiderAttack2" />
+          <Property name="Anim" value="ATTACK2" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="SpiderAttack3" />
+          <Property name="Anim" value="ATTACK3" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="CREATURE_VOC_BIG" />
+          <Property name="Anim" value="ROAR" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="SpiderRoar" />
+          <Property name="Anim" value="ROAR" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="CREATURE_VOC_BIG" />
+          <Property name="Anim" value="PERFORM04" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="SpiderRoar" />
+          <Property name="Anim" value="PERFORM04" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="SpiderPerform01" />
+          <Property name="Anim" value="PERFORM01" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="SpiderPounce" />
+          <Property name="Anim" value="POUNCE1" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="1" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="TriggerVolume" value="False" />
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="Climbable" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="RagdollData" value="TkRagdollData.xml">
+        <Property name="Density" value="1" />
+        <Property name="Gravity" value="20" />
+        <Property name="ChainEnds">
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="RFirstLeg3JNT" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="RFourthLeg3JNT" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="LFirstLeg3JNT" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="LFourthLeg3JNT" />
+          </Property>
+        </Property>
+        <Property name="ExcludeJoints" />
+      </Property>
+    </Property>
+    <Property value="GcCreatureComponentData.xml">
+      <Property name="Id" value="SPIDER" />
+      <Property name="PrimaryAxis" value="GcPrimaryAxis.xml">
+        <Property name="PrimaryAxis" value="ZNeg" />
+      </Property>
+      <Property name="Scaler" value="0.75" />
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="IDLE" />
+        <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDIDLE.ANIM.MBIN" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="LoopOffsetMin" value="0" />
+        <Property name="LoopOffsetMax" value="0" />
+        <Property name="ControlDelay" value="0" />
+        <Property name="ControlSpeed" value="1" />
+        <Property name="ControlActionFrame" value="-1" />
+        <Property name="ControlCreatureSize" value="AllSizes" />
+        <Property name="FlagsAdditive" value="False" />
+        <Property name="FlagsMirrored" value="False" />
+        <Property name="FlagsActive" value="True" />
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="SLOWWALK" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDSLOWWALK.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="WALK" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDWALK.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="FASTWALK" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDFASTWALK.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="TROT" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDTROT.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="RUN" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDRUN.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="EAT" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDEAT.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="ATTACK1" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDATTACK.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="29" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="ATTACK2" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDATTACK2.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="29" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="ATTACK3" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDATTACK3.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="29" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PAIN1" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDPAIN.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="NEWHEADJNT" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="1" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PAIN2" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDPAIN2.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="NEWHEADJNT" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="1" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PAIN3" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDPAIN3.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="NEWHEADJNT" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="1" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="TURN_WALK" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDTURNWALK.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="ROAR" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDROAR.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PERFORM01" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDPERFORM01.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PERFORM02" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDPERFORM02.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PERFORM03" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDPERFORM03.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PERFORM04" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDROAR.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="POUNCE1" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDPOUNCE.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="DEATH01" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/SPIDERRIG/ANIM/FIENDDEATH01.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="ControlDelay" value="0" />
+          <Property name="ControlSpeed" value="1" />
+          <Property name="ControlActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="FlagsAdditive" value="False" />
+          <Property name="FlagsMirrored" value="False" />
+          <Property name="FlagsActive" value="True" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcCreatureFullBodyIKComponentData.xml">
+      <Property name="JointData">
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Head" />
+          </Property>
+          <Property name="JointName" value="NewHeadJNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Foot" />
+          </Property>
+          <Property name="JointName" value="LFirstLeg4END" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Foot" />
+          </Property>
+          <Property name="JointName" value="LFourthLeg4END" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Foot" />
+          </Property>
+          <Property name="JointName" value="RFirstLeg4END" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Foot" />
+          </Property>
+          <Property name="JointName" value="RFourthLeg4END" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Hinge_Z" />
+          </Property>
+          <Property name="JointName" value="RFirstLeg2JNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Hinge_Z" />
+          </Property>
+          <Property name="JointName" value="RFirstLeg3JNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Hinge_Z" />
+          </Property>
+          <Property name="JointName" value="RFourthLeg2JNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Hinge_Z" />
+          </Property>
+          <Property name="JointName" value="RFourthLeg3JNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Hinge_Z" />
+          </Property>
+          <Property name="JointName" value="LFirstLeg2JNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Hinge_Z" />
+          </Property>
+          <Property name="JointName" value="LFirstLeg3JNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Hinge_Z" />
+          </Property>
+          <Property name="JointName" value="LFourthLeg2JNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Hinge_Z" />
+          </Property>
+          <Property name="JointName" value="LFourthLeg3JNT" />
+        </Property>
+      </Property>
+      <Property name="HeadUpAxis" value="Y" />
+      <Property name="UseFootGlue" value="False" />
+    </Property>
+    <Property value="GcShootableComponentData.xml">
+      <Property name="Health" value="5" />
+      <Property name="AutoAimTarget" value="False" />
+      <Property name="PlayerOnly" value="False" />
+      <Property name="ImpactShake" value="False" />
+      <Property name="ImpactShakeEffect" value="SMALLPAINSHAKE" />
+      <Property name="ImpactType" value="GcProjectileImpactType.xml">
+        <Property name="Impact" value="Default" />
+      </Property>
+      <Property name="IncreaseWanted" value="0" />
+      <Property name="IncreaseWantedThresholdTime" value="0.5" />
+      <Property name="UseMiningDamage" value="False" />
+      <Property name="MinDamage" value="0" />
+      <Property name="StaticUntilShot" value="False" />
+      <Property name="RequiredTech" value="" />
+    </Property>
+  </Property>
+</Data>

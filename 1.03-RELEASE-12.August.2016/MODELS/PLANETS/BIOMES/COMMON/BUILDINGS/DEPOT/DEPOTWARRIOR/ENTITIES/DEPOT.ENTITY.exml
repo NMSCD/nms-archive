@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkAudioComponentData.xml">
+      <Property name="Ambient" value="Bld_Amb_Depots" />
+      <Property name="MaxDistance" value="90" />
+      <Property name="AnimTriggers" />
+    </Property>
+    <Property value="GcShootableComponentData.xml">
+      <Property name="Health" value="200" />
+      <Property name="AutoAimTarget" value="False" />
+      <Property name="PlayerOnly" value="False" />
+      <Property name="ImpactShake" value="True" />
+      <Property name="ImpactShakeEffect" value="SMALLPAINSHAKE" />
+      <Property name="ImpactType" value="GcProjectileImpactType.xml">
+        <Property name="Impact" value="Default" />
+      </Property>
+      <Property name="IncreaseWanted" value="0" />
+      <Property name="IncreaseWantedThresholdTime" value="0.5" />
+      <Property name="UseMiningDamage" value="False" />
+      <Property name="MinDamage" value="5" />
+      <Property name="StaticUntilShot" value="False" />
+    </Property>
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Trigger" value="GcBeenShotEvent.xml">
+                <Property name="ShotBy" value="Player" />
+                <Property name="DamageThreshold" value="0" />
+                <Property name="HealthThreshold" value="50" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="LASERSUBSTANCE" />
+                  <Property name="Joint" value="" />
+                  <Property name="Exact" value="True" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+    </Property>
+    <Property value="GcDestructableComponentData.xml">
+      <Property name="Explosion" value="EXPLOSION" />
+      <Property name="ExplosionScale" value="1" />
+      <Property name="TriggerAction" value="" />
+      <Property name="IncreaseWanted" value="1" />
+      <Property name="LootReward" value="" />
+      <Property name="LootRewardAmountMin" value="0" />
+      <Property name="LootRewardAmountMax" value="0" />
+      <Property name="GivesSubstances">
+        <Property value="GcSubstanceAmount.xml">
+          <Property name="AmountMin" value="20" />
+          <Property name="AmountMax" value="20" />
+          <Property name="Specific" value="" />
+          <Property name="SubstanceCategory" value="GcRealitySubstanceCategory.xml">
+            <Property name="SubstanceCategory" value="Commodity" />
+          </Property>
+          <Property name="Rarity" value="GcRarity.xml">
+            <Property name="Rarity" value="Rare" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="GivesReward" value="" />
+      <Property name="RemoveModel" value="True" />
+      <Property name="DestroyedModel" value="TkModelResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="DestroyedModelUsesScale" value="True" />
+      <Property name="DestroyForce" value="16" />
+      <Property name="DestroyForceRadius" value="6" />
+      <Property name="DestroyEffectPoints" />
+      <Property name="DestroyEffectTime" value="0" />
+      <Property name="ShowInteract" value="True" />
+      <Property name="ShowInteractRange" value="20" />
+      <Property name="GrenadeSingleHit" value="True" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+    </Property>
+  </Property>
+</Data>

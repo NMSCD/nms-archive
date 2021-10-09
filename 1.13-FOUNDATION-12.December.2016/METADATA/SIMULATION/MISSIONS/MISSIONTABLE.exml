@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.13.2)-->
+<Data template="GcMissionTable">
+  <Property name="Missions">
+    <Property value="GcGenericMissionSequence.xml">
+      <Property name="MissionID" value="GENERIC_TEST" />
+      <Property name="AutoStart" value="True" />
+      <Property name="RemoveOnCompletion" value="False" />
+      <Property name="StartingConditions" />
+      <Property name="CancelingConditions" />
+      <Property name="NotificationSequence">
+        <Property value="GcMissionSequenceWait.xml">
+          <Property name="DebugText" value="Waiting..." />
+          <Property name="Time" value="5" />
+        </Property>
+        <Property value="GcMissionSequenceShowMessage.xml">
+          <Property name="DebugText" value="Showing message" />
+          <Property name="Time" value="5" />
+          <Property name="Message" value="TESTING" />
+        </Property>
+        <Property value="GcMissionSequenceGroup.xml">
+          <Property name="DebugText" value="Build signal scanner" />
+          <Property name="Behaviour" value="RepeatIfConditionFails" />
+          <Property name="Conditions">
+            <Property value="GcMissionConditionBasePartNear.xml">
+              <Property name="PartID" value="SIGNAL_SCANNER" />
+              <Property name="Distance" value="0" />
+            </Property>
+          </Property>
+          <Property name="Consequences" />
+          <Property name="NotificationSequence">
+            <Property value="GcMissionSequenceBuild.xml">
+              <Property name="Message" value="NOTIFY_LEAVE_GOTOSIGNAL" />
+              <Property name="DebugText" value="Build_Signal_Scanner" />
+              <Property name="Part" value="SIGNAL_SCANNER" />
+              <Property name="BaseOnly" value="False" />
+              <Property name="Base" value="GcPersistentBaseTypes.xml">
+                <Property name="PersistentBaseTypes" value="HomePlanetBase" />
+              </Property>
+            </Property>
+            <Property value="GcMissionSequenceWaitForMessage.xml">
+              <Property name="Message" value="NOTIFY_LEAVE_USESIGNAL" />
+              <Property name="DebugText" value="Use_Signal_Scanner" />
+              <Property name="WaitMessageID" value="SCAN_POD" />
+            </Property>
+            <Property value="GcMissionSequenceWait.xml">
+              <Property name="DebugText" value="Wait" />
+              <Property name="Time" value="5" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcMissionSequenceShowMessage.xml">
+          <Property name="DebugText" value="Testing loc ID" />
+          <Property name="Time" value="10" />
+          <Property name="Message" value="NOTIFY_LEAVE_PLANET2" />
+        </Property>
+        <Property value="GcMissionSequenceBuild.xml">
+          <Property name="Message" value="NOTIFY_LEAVE_GOTOSIGNAL" />
+          <Property name="DebugText" value="Build_Signal_Scanner" />
+          <Property name="Part" value="SIGNAL_SCANNER" />
+          <Property name="BaseOnly" value="False" />
+          <Property name="Base" value="GcPersistentBaseTypes.xml">
+            <Property name="PersistentBaseTypes" value="HomePlanetBase" />
+          </Property>
+        </Property>
+        <Property value="GcMissionSequenceWaitForMessage.xml">
+          <Property name="Message" value="NOTIFY_LEAVE_USESIGNAL" />
+          <Property name="DebugText" value="Use_Signal_Scanner" />
+          <Property name="WaitMessageID" value="SCAN_POD" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcGenericMissionSequence.xml">
+      <Property name="MissionID" value="BASEBUILD_TUT" />
+      <Property name="AutoStart" value="False" />
+      <Property name="RemoveOnCompletion" value="False" />
+      <Property name="StartingConditions">
+        <Property value="GcMissionConditionBaseClaimed.xml">
+          <Property name="Claimed" value="True" />
+          <Property name="Base" value="GcPersistentBaseTypes.xml">
+            <Property name="PersistentBaseTypes" value="HomePlanetBase" />
+          </Property>
+          <Property name="IsOnCurrentSystem" value="Yes" />
+        </Property>
+      </Property>
+      <Property name="CancelingConditions">
+        <Property value="GcMissionConditionBaseClaimed.xml">
+          <Property name="Claimed" value="True" />
+          <Property name="Base" value="GcPersistentBaseTypes.xml">
+            <Property name="PersistentBaseTypes" value="HomePlanetBase" />
+          </Property>
+          <Property name="IsOnCurrentSystem" value="No" />
+        </Property>
+      </Property>
+      <Property name="NotificationSequence">
+        <Property value="GcMissionSequenceBuild.xml">
+          <Property name="Message" value="NOTIFY_BUILD_PLANET_CORR" />
+          <Property name="DebugText" value="BaseBuilding_Tutorial_BuildCorridor" />
+          <Property name="Part" value="CORRIDOR" />
+          <Property name="BaseOnly" value="True" />
+          <Property name="Base" value="GcPersistentBaseTypes.xml">
+            <Property name="PersistentBaseTypes" value="HomePlanetBase" />
+          </Property>
+        </Property>
+        <Property value="GcMissionSequenceBuild.xml">
+          <Property name="Message" value="NOTIFY_BUILD_PLANET_ROOM" />
+          <Property name="DebugText" value="BaseBuilding_Tutorial_BuildRoom" />
+          <Property name="Part" value="MAINROOM" />
+          <Property name="BaseOnly" value="True" />
+          <Property name="Base" value="GcPersistentBaseTypes.xml">
+            <Property name="PersistentBaseTypes" value="HomePlanetBase" />
+          </Property>
+        </Property>
+        <Property value="GcMissionSequenceBuild.xml">
+          <Property name="Message" value="NOTIFY_BUILD_PLANET_BUILER_NPC" />
+          <Property name="DebugText" value="BaseBuilding_Tutorial_BuildNPCBuilder" />
+          <Property name="Part" value="NPCBUILDERTERM" />
+          <Property name="BaseOnly" value="True" />
+          <Property name="Base" value="GcPersistentBaseTypes.xml">
+            <Property name="PersistentBaseTypes" value="HomePlanetBase" />
+          </Property>
+        </Property>
+        <Property value="GcMissionSequenceGroup.xml">
+          <Property name="DebugText" value="Skin_Creative_Mode" />
+          <Property name="Behaviour" value="SkipIfConditionFails" />
+          <Property name="Conditions">
+            <Property value="GcMissionConditionGameMode.xml">
+              <Property name="Mode" value="GcGameMode.xml">
+                <Property name="PresetGameMode" value="Normal" />
+              </Property>
+            </Property>
+            <Property value="GcMissionConditionGameMode.xml">
+              <Property name="Mode" value="GcGameMode.xml">
+                <Property name="PresetGameMode" value="Survival" />
+              </Property>
+            </Property>
+          </Property>
+          <Property name="Consequences" />
+          <Property name="NotificationSequence">
+            <Property value="GcMissionSequenceWait.xml">
+              <Property name="DebugText" value="BaseBuilding_Wait" />
+              <Property name="Time" value="10" />
+            </Property>
+            <Property value="GcMissionSequenceStartScanEvent.xml">
+              <Property name="DebugText" value="BaseBuilding_Tutorial_StartHireBuilder" />
+              <Property name="Time" value="0" />
+              <Property name="Event" value="" />
+              <Property name="FromShipScan" value="False" />
+              <Property name="Table" value="Space" />
+            </Property>
+            <Property value="GcMissionSequenceGetToScanEvent.xml">
+              <Property name="Message" value="NOTIFY_BUILD_PLANET_NPC_HIRE" />
+              <Property name="DebugText" value="BaseBuilding_Tutorial_GoToHireBuilder" />
+              <Property name="Event" value="HIRE_NPC" />
+              <Property name="Distance" value="50" />
+            </Property>
+            <Property value="GcMissionSequenceWaitForScanEvent.xml">
+              <Property name="Message" value="NOTIFY_BUILD_PLANET_NPC_HIRE" />
+              <Property name="DebugText" value="BaseBuilding_Tutorial_HireBuilder" />
+              <Property name="Event" value="HIRE_NPC" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+</Data>

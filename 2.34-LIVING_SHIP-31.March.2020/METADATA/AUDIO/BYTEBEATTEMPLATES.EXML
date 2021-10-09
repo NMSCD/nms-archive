@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (2.34.0)-->
+<Data template="GcByteBeatTemplates">
+  <Property name="InitalTrees">
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQcPCKDwBHk=" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQUA8Mhz" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQMPyDA=" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQUP0PACkw==" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQUA8AMW" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQcA8AYX8Axg" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQkPCmDwBq/odA==" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQUPAmBA" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQUPA2AQ" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQcPAmBAMA==" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQUA8P+B" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQcA8GTwAqEw" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQkA8ACPCn8CYQ==" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQcPZPAZfwxh" />
+    </Property>
+    <Property value="NMSString0x40.xml">
+      <Property name="Value" value="AQcPAmAQMA==" />
+    </Property>
+  </Property>
+  <Property name="Templates">
+    <Property value="GcByteBeatTemplate.xml">
+      <Property name="Weight" value="1" />
+      <Property name="TokenType" value="GcByteBeatToken.xml">
+        <Property name="ByteBeatToken" value="OR" />
+      </Property>
+      <Property name="MinValue" value="1" />
+      <Property name="MaxValue" value="255" />
+      <Property name="Children">
+        <Property value="GcByteBeatTemplate.xml">
+          <Property name="Weight" value="1" />
+          <Property name="TokenType" value="GcByteBeatToken.xml">
+            <Property name="ByteBeatToken" value="ShiftRight" />
+          </Property>
+          <Property name="MinValue" value="1" />
+          <Property name="MaxValue" value="255" />
+          <Property name="Children">
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="T" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="255" />
+              <Property name="Children" />
+            </Property>
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="Number" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="15" />
+              <Property name="Children" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcByteBeatTemplate.xml">
+          <Property name="Weight" value="1" />
+          <Property name="TokenType" value="GcByteBeatToken.xml">
+            <Property name="ByteBeatToken" value="Divide" />
+          </Property>
+          <Property name="MinValue" value="1" />
+          <Property name="MaxValue" value="255" />
+          <Property name="Children">
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="T" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="255" />
+              <Property name="Children" />
+            </Property>
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="Number" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="255" />
+              <Property name="Children" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcByteBeatTemplate.xml">
+      <Property name="Weight" value="1" />
+      <Property name="TokenType" value="GcByteBeatToken.xml">
+        <Property name="ByteBeatToken" value="AND" />
+      </Property>
+      <Property name="MinValue" value="1" />
+      <Property name="MaxValue" value="255" />
+      <Property name="Children">
+        <Property value="GcByteBeatTemplate.xml">
+          <Property name="Weight" value="1" />
+          <Property name="TokenType" value="GcByteBeatToken.xml">
+            <Property name="ByteBeatToken" value="ShiftRight" />
+          </Property>
+          <Property name="MinValue" value="1" />
+          <Property name="MaxValue" value="255" />
+          <Property name="Children">
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="T" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="255" />
+              <Property name="Children" />
+            </Property>
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="T" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="7" />
+              <Property name="Children" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcByteBeatTemplate.xml">
+          <Property name="Weight" value="1" />
+          <Property name="TokenType" value="GcByteBeatToken.xml">
+            <Property name="ByteBeatToken" value="Multiply" />
+          </Property>
+          <Property name="MinValue" value="1" />
+          <Property name="MaxValue" value="255" />
+          <Property name="Children">
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="T" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="255" />
+              <Property name="Children" />
+            </Property>
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="T" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="255" />
+              <Property name="Children" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcByteBeatTemplate.xml">
+      <Property name="Weight" value="1" />
+      <Property name="TokenType" value="GcByteBeatToken.xml">
+        <Property name="ByteBeatToken" value="AND" />
+      </Property>
+      <Property name="MinValue" value="1" />
+      <Property name="MaxValue" value="255" />
+      <Property name="Children">
+        <Property value="GcByteBeatTemplate.xml">
+          <Property name="Weight" value="1" />
+          <Property name="TokenType" value="GcByteBeatToken.xml">
+            <Property name="ByteBeatToken" value="Divide" />
+          </Property>
+          <Property name="MinValue" value="1" />
+          <Property name="MaxValue" value="255" />
+          <Property name="Children">
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="T" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="255" />
+              <Property name="Children" />
+            </Property>
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="T" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="31" />
+              <Property name="Children" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcByteBeatTemplate.xml">
+          <Property name="Weight" value="1" />
+          <Property name="TokenType" value="GcByteBeatToken.xml">
+            <Property name="ByteBeatToken" value="Plus" />
+          </Property>
+          <Property name="MinValue" value="1" />
+          <Property name="MaxValue" value="255" />
+          <Property name="Children">
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="T" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="255" />
+              <Property name="Children" />
+            </Property>
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="Number" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="255" />
+              <Property name="Children" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcByteBeatTemplate.xml">
+      <Property name="Weight" value="1" />
+      <Property name="TokenType" value="GcByteBeatToken.xml">
+        <Property name="ByteBeatToken" value="AND" />
+      </Property>
+      <Property name="MinValue" value="1" />
+      <Property name="MaxValue" value="255" />
+      <Property name="Children">
+        <Property value="GcByteBeatTemplate.xml">
+          <Property name="Weight" value="1" />
+          <Property name="TokenType" value="GcByteBeatToken.xml">
+            <Property name="ByteBeatToken" value="T" />
+          </Property>
+          <Property name="MinValue" value="1" />
+          <Property name="MaxValue" value="255" />
+          <Property name="Children" />
+        </Property>
+        <Property value="GcByteBeatTemplate.xml">
+          <Property name="Weight" value="1" />
+          <Property name="TokenType" value="GcByteBeatToken.xml">
+            <Property name="ByteBeatToken" value="ShiftRight" />
+          </Property>
+          <Property name="MinValue" value="1" />
+          <Property name="MaxValue" value="255" />
+          <Property name="Children">
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="T" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="255" />
+              <Property name="Children" />
+            </Property>
+            <Property value="GcByteBeatTemplate.xml">
+              <Property name="Weight" value="1" />
+              <Property name="TokenType" value="GcByteBeatToken.xml">
+                <Property name="ByteBeatToken" value="Number" />
+              </Property>
+              <Property name="MinValue" value="1" />
+              <Property name="MaxValue" value="15" />
+              <Property name="Children" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcByteBeatTemplate.xml">
+      <Property name="Weight" value="4" />
+      <Property name="TokenType" value="GcByteBeatToken.xml">
+        <Property name="ByteBeatToken" value="ShiftRight" />
+      </Property>
+      <Property name="MinValue" value="1" />
+      <Property name="MaxValue" value="255" />
+      <Property name="Children">
+        <Property value="GcByteBeatTemplate.xml">
+          <Property name="Weight" value="1" />
+          <Property name="TokenType" value="GcByteBeatToken.xml">
+            <Property name="ByteBeatToken" value="T" />
+          </Property>
+          <Property name="MinValue" value="1" />
+          <Property name="MaxValue" value="255" />
+          <Property name="Children" />
+        </Property>
+        <Property value="GcByteBeatTemplate.xml">
+          <Property name="Weight" value="1" />
+          <Property name="TokenType" value="GcByteBeatToken.xml">
+            <Property name="ByteBeatToken" value="Number" />
+          </Property>
+          <Property name="MinValue" value="1" />
+          <Property name="MaxValue" value="15" />
+          <Property name="Children" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="CombinerWeights">
+    <Property name="T" value="0" />
+    <Property name="AND" value="1" />
+    <Property name="OR" value="1" />
+    <Property name="XOR" value="1" />
+    <Property name="Plus" value="1" />
+    <Property name="Minus" value="1" />
+    <Property name="Multiply" value="1" />
+    <Property name="Divide" value="0" />
+    <Property name="Modulo" value="0" />
+    <Property name="ShiftLeft" value="0.2" />
+    <Property name="ShiftRight" value="1" />
+    <Property name="Greater" value="0" />
+    <Property name="GreaterEqual" value="0" />
+    <Property name="Less" value="0" />
+    <Property name="LessEqual" value="0" />
+    <Property name="Number" value="0" />
+    <Property name="OpenParenthesis" value="0" />
+    <Property name="CloseParenthesis" value="0" />
+  </Property>
+  <Property name="KickDrums">
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&amp;t&gt;&gt;3|t&gt;&gt;4)/100" />
+      <Property name="Volume" value="0.8" />
+      <Property name="Duration" value="0.08" />
+      <Property name="OctaveShift" value="-1" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sine" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&amp;t&gt;&gt;3|t&gt;&gt;2)/500" />
+      <Property name="Volume" value="0.8" />
+      <Property name="Duration" value="0.09" />
+      <Property name="OctaveShift" value="0" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*t^6|t*2" />
+      <Property name="Volume" value="0.6" />
+      <Property name="Duration" value="0.14" />
+      <Property name="OctaveShift" value="-5" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sine" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;4)&gt;&gt;(t&gt;&gt;2000)" />
+      <Property name="Volume" value="0.75" />
+      <Property name="Duration" value="0.08" />
+      <Property name="OctaveShift" value="-3" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="(t&gt;&gt;6|t&gt;&gt;8)" />
+      <Property name="Volume" value="0.85" />
+      <Property name="Duration" value="0.07" />
+      <Property name="OctaveShift" value="5" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="(t&gt;&gt;1|t&gt;&gt;4)^100" />
+      <Property name="Volume" value="0.85" />
+      <Property name="Duration" value="0.14" />
+      <Property name="OctaveShift" value="0" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t&gt;&gt;2^t&gt;&gt;6^t" />
+      <Property name="Volume" value="0.650001" />
+      <Property name="Duration" value="0.08" />
+      <Property name="OctaveShift" value="-1" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Med" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t&gt;&gt;(t&gt;&gt;9)|(t&gt;&gt;10)" />
+      <Property name="Volume" value="0.6" />
+      <Property name="Duration" value="0.11" />
+      <Property name="OctaveShift" value="0" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t&gt;&gt;(t&gt;&gt;9)|(t&gt;&gt;10)" />
+      <Property name="Volume" value="0.85" />
+      <Property name="Duration" value="0.13" />
+      <Property name="OctaveShift" value="1" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Med" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t&gt;&gt;(t&gt;&gt;10)|(t&gt;&gt;9)" />
+      <Property name="Volume" value="0.7" />
+      <Property name="Duration" value="0.13" />
+      <Property name="OctaveShift" value="2" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t&gt;&gt;(t&gt;&gt;3)|(t&gt;&gt;100)*10" />
+      <Property name="Volume" value="1" />
+      <Property name="Duration" value="0.08" />
+      <Property name="OctaveShift" value="-1" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t&gt;&gt;(t&gt;&gt;9)|(t&gt;&gt;9)" />
+      <Property name="Volume" value="0.8" />
+      <Property name="Duration" value="0.34" />
+      <Property name="OctaveShift" value="0" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sine" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t&gt;&gt;(t&amp;t&gt;&gt;1|t&gt;&gt;2)/10" />
+      <Property name="Volume" value="0.75" />
+      <Property name="Duration" value="0.06" />
+      <Property name="OctaveShift" value="1" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sine" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="SnareDrums">
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;3)|(t&gt;&gt;6)" />
+      <Property name="Volume" value="0.55" />
+      <Property name="Duration" value="0.09" />
+      <Property name="OctaveShift" value="0" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Square" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;2)|(t&gt;&gt;1)&gt;&gt;2" />
+      <Property name="Volume" value="0.8" />
+      <Property name="Duration" value="0.14" />
+      <Property name="OctaveShift" value="0" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;100)&gt;&gt;8" />
+      <Property name="Volume" value="0.9" />
+      <Property name="Duration" value="0.11" />
+      <Property name="OctaveShift" value="5" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;2) + t*(t&gt;&gt;100)" />
+      <Property name="Volume" value="0.55" />
+      <Property name="Duration" value="0.1" />
+      <Property name="OctaveShift" value="-1" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;1) + t*(t&gt;&gt;100)" />
+      <Property name="Volume" value="0.45" />
+      <Property name="Duration" value="0.09" />
+      <Property name="OctaveShift" value="0" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&amp;t&gt;&gt;5|t&gt;&gt;99)/10" />
+      <Property name="Volume" value="0.45" />
+      <Property name="Duration" value="0.08" />
+      <Property name="OctaveShift" value="0" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&amp;t&gt;&gt;4|t&gt;&gt;3)/5" />
+      <Property name="Volume" value="0.75" />
+      <Property name="Duration" value="0.1" />
+      <Property name="OctaveShift" value="0" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;100) - t*20" />
+      <Property name="Volume" value="0.9" />
+      <Property name="Duration" value="0.1" />
+      <Property name="OctaveShift" value="0" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t/1^t&gt;&gt;2)/100" />
+      <Property name="Volume" value="0.6" />
+      <Property name="Duration" value="0.08" />
+      <Property name="OctaveShift" value="-1" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Med" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t^t&gt;&gt;1/t&gt;&gt;4)/5" />
+      <Property name="Volume" value="0.45" />
+      <Property name="Duration" value="0.08" />
+      <Property name="OctaveShift" value="-1" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;3)|(t&gt;&gt;10)" />
+      <Property name="Volume" value="0.6" />
+      <Property name="Duration" value="0.1" />
+      <Property name="OctaveShift" value="1" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Med" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t^t+100&gt;&gt;10)/10" />
+      <Property name="Volume" value="0.7" />
+      <Property name="Duration" value="0.1" />
+      <Property name="OctaveShift" value="-1" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;4) ^ t*2" />
+      <Property name="Volume" value="0.5" />
+      <Property name="Duration" value="0.1" />
+      <Property name="OctaveShift" value="1" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="HiHats">
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*t/256&amp;t&gt;&gt;t/50" />
+      <Property name="Volume" value="0.9" />
+      <Property name="Duration" value="0.04" />
+      <Property name="OctaveShift" value="7" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t  &gt;&gt; 6 &lt;&lt;t" />
+      <Property name="Volume" value="0.75" />
+      <Property name="Duration" value="0.09" />
+      <Property name="OctaveShift" value="5" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*t*100" />
+      <Property name="Volume" value="0.4" />
+      <Property name="Duration" value="0.08" />
+      <Property name="OctaveShift" value="2" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*t/256&amp;t&gt;&gt;t/50" />
+      <Property name="Volume" value="0.8" />
+      <Property name="Duration" value="0.09" />
+      <Property name="OctaveShift" value="6" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;6)|(t&gt;&gt;10)" />
+      <Property name="Volume" value="0.55" />
+      <Property name="Duration" value="0.07" />
+      <Property name="OctaveShift" value="6" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t&amp;t&gt;&gt;t^100*5000" />
+      <Property name="Volume" value="0.55" />
+      <Property name="Duration" value="0.1" />
+      <Property name="OctaveShift" value="3" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;7)*20" />
+      <Property name="Volume" value="0.6" />
+      <Property name="Duration" value="0.1" />
+      <Property name="OctaveShift" value="1" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t/(t&gt;&gt;2) - t*(t&gt;&gt;100)&amp;200" />
+      <Property name="Volume" value="0.55" />
+      <Property name="Duration" value="0.06" />
+      <Property name="OctaveShift" value="3" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;10)|(t&gt;&gt;50)" />
+      <Property name="Volume" value="0.6" />
+      <Property name="Duration" value="0.07" />
+      <Property name="OctaveShift" value="5" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="(t&gt;&gt;3|t&gt;&gt;12)&gt;&gt;t" />
+      <Property name="Volume" value="0.5" />
+      <Property name="Duration" value="0.06" />
+      <Property name="OctaveShift" value="2.5" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Med" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;5)*20" />
+      <Property name="Volume" value="0.7" />
+      <Property name="Duration" value="0.02" />
+      <Property name="OctaveShift" value="5" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;8)|(t&gt;&gt;25)" />
+      <Property name="Volume" value="0.5" />
+      <Property name="Duration" value="0.05" />
+      <Property name="OctaveShift" value="4" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+    <Property value="GcByteBeatDrum.xml">
+      <Property name="Tree" value="t*(t&gt;&gt;4) ^ t*2" />
+      <Property name="Volume" value="0.8" />
+      <Property name="Duration" value="0.04" />
+      <Property name="OctaveShift" value="7" />
+      <Property name="AttackEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Short" />
+      </Property>
+      <Property name="DecayEnvelope" value="GcByteBeatEnvelope.xml">
+        <Property name="ByteBeatEnvelope" value="Long" />
+      </Property>
+      <Property name="WaveType" value="GcByteBeatWave.xml">
+        <Property name="ByteBeatWave" value="Sawtooth" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="OperatorPermuteChance" value="0.3" />
+  <Property name="TemplateCombineChanceAtRoot" value="0.55" />
+  <Property name="TemplateCombineChance" value="0" />
+</Data>

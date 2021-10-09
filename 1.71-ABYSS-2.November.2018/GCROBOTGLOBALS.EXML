@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.71.0)-->
+<Data template="GcRobotGlobals">
+  <Property name="GrenadeLaunchFlightTime" value="4" />
+  <Property name="AttackSentinelWantedValue" value="3" />
+  <Property name="MaxNumPatrolDrones" value="1" />
+  <Property name="UnderwaterPerceptionMargin" value="8" />
+  <Property name="DronePatrolScanPlayer" value="False" />
+  <Property name="DroneSearchPickNearbyTime" value="6" />
+  <Property name="DroneSearchPickNearbyAngleMin" value="5" />
+  <Property name="DroneSearchPickNearbyAngleMax" value="40" />
+  <Property name="DroneInvestigateMinWitnessRange" value="22" />
+  <Property name="DroneInvestigateMinWitnessTime" value="10" />
+  <Property name="DroneInvestigateSpeedBoost" value="2.5" />
+  <Property name="DroneInvestigateSpeedBoostStartDistance" value="20" />
+  <Property name="DroneInvestigateSpeedBoostRange" value="100" />
+  <Property name="DroneCrimePostInvestigateWaitTime" value="20" />
+  <Property name="DroneAttackPlayerHeightOffset" value="1.5" />
+  <Property name="DroneSpawnTime" value="2" />
+  <Property name="DroneSpawnFadeTime" value="0.8" />
+  <Property name="LineOfSightReturnCheckMinDistance" value="5" />
+  <Property name="LineOfSightReturnCheckRadius" value="1" />
+  <Property name="LineOfSightReturnRange" value="1" />
+  <Property name="FakeQuadGuard" value="0" />
+  <Property name="RobotSightAngle" value="80" />
+  <Property name="DroneRepairOffset" value="Vector4f.xml">
+    <Property name="x" value="1" />
+    <Property name="y" value="1.1" />
+    <Property name="z" value="0" />
+    <Property name="t" value="0" />
+  </Property>
+  <Property name="QuadLookAngleMin" value="40" />
+  <Property name="QuadLookAngleMax" value="120" />
+  <Property name="QuadLookTurnSpeeds" value="Vector2f.xml">
+    <Property name="x" value="1" />
+    <Property name="y" value="1.1" />
+  </Property>
+  <Property name="QuadAttackTurnAngleMin" value="20" />
+  <Property name="QuadAttackTurnAngleMax" value="120" />
+  <Property name="QuadAttackTurnSpeeds" value="Vector2f.xml">
+    <Property name="x" value="1" />
+    <Property name="y" value="1.2" />
+  </Property>
+  <Property name="DroneAggroDamage" value="40" />
+  <Property name="CombatWaveSpawnTime" value="10" />
+  <Property name="DronePerceptionMinHearingSpeed" value="1" />
+  <Property name="DroneSearchLookSpeed" value="0.2" />
+  <Property name="DroneSearchLookDistance" value="80" />
+  <Property name="DroneMiningValueActivate" value="25" />
+  <Property name="DroneCrimeWitnessLimit" value="3" />
+  <Property name="DroneCrimeWitnessInvestigateDistance" value="30" />
+  <Property name="DroneCrimeProximityMultiplier" value="3" />
+  <Property name="DroneSeriousCrimeStep" value="4" />
+  <Property name="DroneChatter" value="False" />
+  <Property name="DroneHealth" value="2800" />
+  <Property name="QuadHealth" value="7000" />
+  <Property name="WalkerHealth" value="30000" />
+  <Property name="WalkerEnergyLength" value="8" />
+  <Property name="WalkerEnergySpeedMin" value="1.2" />
+  <Property name="WalkerEnergySpeedMax" value="200" />
+  <Property name="WalkerEnergyRadiusStartMin" value="150" />
+  <Property name="WalkerEnergyRadiusStartMax" value="150" />
+  <Property name="WalkerEnergyMinAlpha" value="0.6" />
+  <Property name="WalkerEnergyMaxAlpha" value="1" />
+  <Property name="CriticalHitSizeDrone" value="0.15" />
+  <Property name="CriticalHitSizeQuad" value="0.25" />
+  <Property name="CriticalHitSizeWalker" value="1.5" />
+  <Property name="LabelOffsetDrone" value="0.7" />
+  <Property name="LabelOffsetQuad" value="0.5" />
+  <Property name="LabelOffsetWalker" value="0.6" />
+  <Property name="QuadCriticalOffset" value="Vector4f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="0.4" />
+    <Property name="z" value="0" />
+    <Property name="t" value="0" />
+  </Property>
+  <Property name="DroneCriticalOffset" value="Vector4f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="-0.8" />
+    <Property name="z" value="-0.1" />
+    <Property name="t" value="0" />
+  </Property>
+  <Property name="WalkerGunOffset1" value="Vector4f.xml">
+    <Property name="x" value="0.2" />
+    <Property name="y" value="-0.3" />
+    <Property name="z" value="0" />
+    <Property name="t" value="0" />
+  </Property>
+  <Property name="WalkerGunOffset2" value="Vector4f.xml">
+    <Property name="x" value="-0.2" />
+    <Property name="y" value="-0.3" />
+    <Property name="z" value="0" />
+    <Property name="t" value="0" />
+  </Property>
+  <Property name="RobotSteeringFollowWeight" value="2" />
+  <Property name="RobotSteeringAvoidTurnWeight" value="3" />
+  <Property name="RobotSteeringAvoidCreaturesWeight" value="0.5" />
+  <Property name="RobotSteeringAvoidDangerWeight" value="0.5" />
+  <Property name="AttackScan" value="GcScanData.xml">
+    <Property name="ScanType" value="Tool" />
+    <Property name="PulseRange" value="50" />
+    <Property name="PulseTime" value="2" />
+    <Property name="PlayAudioOnMarkers" value="False" />
+    <Property name="ChargeTime" value="4" />
+  </Property>
+  <Property name="RobotHUDMarkerRange" value="80" />
+  <Property name="RobotHUDMarkerFalloff" value="50" />
+  <Property name="RobotHUDMarkerMinChangeTime" value="1.5" />
+  <Property name="DroneSquadSpawnRadius" value="2" />
+  <Property name="DroneSpawnHeight" value="1" />
+  <Property name="DroneScale" value="0.5" />
+  <Property name="TestLookFactor" value="20" />
+  <Property name="TurnInPlaceTorque" value="0.5" />
+  <Property name="TurnInPlaceHopTorque" value="2" />
+  <Property name="TurnInPlaceHopTimeMin" value="0.2" />
+  <Property name="TurnInPlaceHopTimeMax" value="0.4" />
+  <Property name="TrackArrowOffsetMultiplier" value="3" />
+  <Property name="DroneCombatSpawnAngle" value="30" />
+  <Property name="CombatSpawnSquadRadiusDrones" value="60" />
+  <Property name="CombatSpawnSquadRadiusRobots" value="50" />
+  <Property name="RobotMapScale" value="1.5" />
+  <Property name="WalkerTestNeckAngle" value="0" />
+  <Property name="SuspiciousFactorGoingToSceneDistance" value="80" />
+  <Property name="SuspiciousFactorGoingToScene" value="0.75" />
+  <Property name="SuspiciousFactorBase" value="0.5" />
+  <Property name="WalkerLaserOvershootVehicleReducer" value="0.1" />
+  <Property name="DronesUseEscalationTimer" value="True" />
+  <Property name="DisableDronePerception" value="False" />
+  <Property name="DroneHeightAngle" value="5" />
+  <Property name="DroneAttackGetInRangeBoost" value="1.4" />
+  <Property name="DroneAggressiveInvestigateAttackTime" value="2" />
+  <Property name="DronePushLaserForce" value="3" />
+  <Property name="DronePushMaxSpeed" value="20" />
+  <Property name="DronePushMaxTurn" value="2" />
+  <Property name="DroneInvestigateMaxRange" value="100" />
+  <Property name="DroneInvestigateCooldownTime" value="5" />
+  <Property name="DroneCriminalScanTime" value="12" />
+  <Property name="DroneClickToMove" value="False" />
+  <Property name="DroneInvestigateMinScanTimeAttackMe" value="1" />
+  <Property name="DroneInvestigateMinScanTime" value="0.5" />
+  <Property name="DroneScanEffect" value="GcScanEffectData.xml">
+    <Property name="Id" value="" />
+    <Property name="ScanEffectType" value="Creature" />
+    <Property name="Colour" value="Colour.xml">
+      <Property name="R" value="0.086" />
+      <Property name="G" value="0.68" />
+      <Property name="B" value="1" />
+      <Property name="A" value="0.1" />
+    </Property>
+    <Property name="BasecolourIntensity" value="0.2" />
+    <Property name="ScanlinesSeparation" value="-2" />
+    <Property name="FresnelIntensity" value="-3" />
+    <Property name="GlowIntensity" value="0" />
+    <Property name="WaveOffset" value="0" />
+    <Property name="WaveActive" value="True" />
+    <Property name="FixedUpAxis" value="True" />
+    <Property name="Transparent" value="False" />
+    <Property name="FadeInTime" value="0" />
+    <Property name="FadeOutTime" value="0" />
+  </Property>
+  <Property name="HeightTestSampleDistance" value="0.1" />
+  <Property name="HeightTestSampleTime" value="0.5" />
+  <Property name="CollisionDistance" value="6" />
+  <Property name="RobotSightTimer" value="0.5" />
+  <Property name="DroneReAttackTime" value="10" />
+  <Property name="DronePatrolAttackSightTime" value="2.5" />
+  <Property name="DronePatrolInvestigateSpeedBoost" value="1.5" />
+  <Property name="DronePatrolSearchTime" value="3.5" />
+  <Property name="MaxNumInvestigatingDrones" value="3" />
+  <Property name="DroneCrimeCooldown" value="0.3" />
+  <Property name="DroneCrimeCooldownWaitTime" value="10" />
+  <Property name="DroneCrimeCooldownWaitTimeAtMax" value="15" />
+  <Property name="DroneRadius" value="1" />
+  <Property name="DroneLightPulseFreq" value="0.1" />
+  <Property name="DroneLightPulseAmp" value="0.1" />
+  <Property name="DroneMaxScanLength" value="3" />
+  <Property name="DroneDecisionTime" value="2" />
+  <Property name="DroneInvestigateAttackDecisionTime" value="5" />
+  <Property name="DroneInvestigateMajorAttackDecisionTime" value="1.5" />
+  <Property name="DroneInvestigateMinPositionAngle" value="8" />
+  <Property name="DroneInvestigateMaxPositionAngle" value="15" />
+  <Property name="DroneInvestigateRepositionTime" value="1" />
+  <Property name="DroneInvestigateMinCrimeInterval" value="2" />
+  <Property name="DroneScanRadius" value="0.3" />
+  <Property name="DroneMaxScanAngle" value="5" />
+  <Property name="DroneScanWaitTime" value="0.5" />
+  <Property name="DroneScanMinPerpSpeed" value="20" />
+  <Property name="EnergyExplodeTime" value="0.1" />
+  <Property name="FollowRoutineArriveRadius" value="4" />
+  <Property name="WalkerPauseTime" value="0.8" />
+  <Property name="WalkerAttackRange" value="60" />
+  <Property name="WalkerGuardAlertRange" value="20" />
+  <Property name="WalkerClosingRange" value="20" />
+  <Property name="WalkerAttackRate" value="5" />
+  <Property name="WalkerAttackAngle" value="180" />
+  <Property name="WalkerMoveSpeed" value="5" />
+  <Property name="WalkerFastMoveFactor" value="2" />
+  <Property name="WalkerHeight" value="50" />
+  <Property name="WalkerNavRadius" value="3" />
+  <Property name="WalkerPushTime" value="1.5" />
+  <Property name="WalkerPushRadius" value="3" />
+  <Property name="WalkerLaserOvershootStart" value="5" />
+  <Property name="WalkerLaserOvershootEnd" value="-2" />
+  <Property name="WalkerLaserBodyOffset" value="0.1" />
+  <Property name="WalkerObstacleSize" value="20" />
+  <Property name="WalkerGunShootTime" value="4" />
+  <Property name="WalkerGunChargeTime" value="0.3" />
+  <Property name="WalkerGunRate" value="0.1" />
+  <Property name="QuadAlertRange" value="16" />
+  <Property name="QuadAttackRange" value="30" />
+  <Property name="QuadAttackMinRange" value="8" />
+  <Property name="QuadAttackAngle" value="30" />
+  <Property name="QuadAttackRepositionTime" value="15" />
+  <Property name="QuadRepairOffsetChangeTime" value="6" />
+  <Property name="QuadRepairOffset" value="3" />
+  <Property name="QuadRepairScanArriveDistance" value="3" />
+  <Property name="QuadRepairRate" value="8" />
+  <Property name="QuadRepairScanRadius" value="1" />
+  <Property name="QuadRepairChargeTime" value="2" />
+  <Property name="QuadJumpBackRange" value="10" />
+  <Property name="QuadJumpBackCheckRange" value="2" />
+  <Property name="QuadJumpBackHeightRange" value="2" />
+  <Property name="QuadJumpBackJumpDistance" value="15" />
+  <Property name="QuadJumpBackJumpMinLength" value="5" />
+  <Property name="QuadJumpBackDoFlipDistance" value="12" />
+  <Property name="QuadJumpBackMinTime" value="1" />
+  <Property name="QuadJumpBackFacingAngle" value="25" />
+  <Property name="QuadJumpBackTestRadius" value="0.25" />
+  <Property name="QuadJumpBackTestHeightOffset" value="1" />
+  <Property name="QuadPounceRange" value="18" />
+  <Property name="QuadPounceMinRange" value="10" />
+  <Property name="QuadPounceMinTimeBetweenPounces" value="8" />
+  <Property name="QuadPounceOffset" value="0" />
+  <Property name="QuadPounceDamageRadius" value="2" />
+  <Property name="QuadCannotSeeTargetRepositionTime" value="1" />
+  <Property name="QuadChargeTime" value="0.6" />
+  <Property name="QuadFireTime" value="2" />
+  <Property name="QuadChargeTargetLockPercent" value="0.8" />
+  <Property name="QuadHopMinTime" value="0.2" />
+  <Property name="QuadHopCombatMinTime" value="0.5" />
+  <Property name="QuadDamageMoveThreshold" value="5" />
+  <Property name="QuadAttackRate" value="1" />
+  <Property name="QuadMoveSpeed" value="3" />
+  <Property name="QuadLaserSpringMin" value="0.08" />
+  <Property name="QuadLaserSpringMax" value="0.11" />
+  <Property name="QuadLaserIntensity" value="5" />
+  <Property name="QuadFastMoveFactor" value="1" />
+  <Property name="QuadTurnBlendTime" value="0.5" />
+  <Property name="QuadHeight" value="20" />
+  <Property name="QuadNavRadius" value="1.2" />
+  <Property name="QuadObstacleSize" value="20" />
+  <Property name="QuadPatrolRadius" value="20" />
+  <Property name="QuadPatrolPauseTime" value="Vector2f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="3" />
+  </Property>
+  <Property name="QuadHearingRange" value="25" />
+  <Property name="QuadSightRange" value="30" />
+  <Property name="QuadSightAngle" value="40" />
+  <Property name="DronePerceptionRange" value="15" />
+  <Property name="DronePerceptionSightRange" value="30" />
+  <Property name="DronePerceptionSightAngle" value="40" />
+  <Property name="AttackMoveMaxTime" value="4" />
+  <Property name="AttackMoveArrivalDistance" value="3" />
+  <Property name="LaserFadeTime" value="0.2" />
+  <Property name="LaserFadeTime2" value="0.2" />
+  <Property name="WalkerLaser" value="GcRobotLaserData.xml">
+    <Property name="LaserID" value="ROBOT_WALKER" />
+    <Property name="LaserSpringTime" value="3" />
+    <Property name="LaserActiveSpringTime" value="0.1" />
+    <Property name="LaserMiningDamage" value="30" />
+    <Property name="LaserChargeTime" value="1.8" />
+    <Property name="LaserTime" value="2" />
+    <Property name="LaserLightChargeSize" value="20" />
+    <Property name="LaserLightAttackSize" value="40" />
+    <Property name="LaserLightOffset" value="Vector4f.xml">
+      <Property name="x" value="0" />
+      <Property name="y" value="0" />
+      <Property name="z" value="0.1" />
+      <Property name="t" value="0" />
+    </Property>
+    <Property name="LaserColour" value="Colour.xml">
+      <Property name="R" value="0.963" />
+      <Property name="G" value="0.188" />
+      <Property name="B" value="0.102" />
+      <Property name="A" value="1" />
+    </Property>
+  </Property>
+  <Property name="QuadLaser" value="GcRobotLaserData.xml">
+    <Property name="LaserID" value="ROBOT_QUAD" />
+    <Property name="LaserSpringTime" value="1" />
+    <Property name="LaserActiveSpringTime" value="0.2" />
+    <Property name="LaserMiningDamage" value="0" />
+    <Property name="LaserChargeTime" value="0.6" />
+    <Property name="LaserTime" value="0.8" />
+    <Property name="LaserLightChargeSize" value="5" />
+    <Property name="LaserLightAttackSize" value="5" />
+    <Property name="LaserLightOffset" value="Vector4f.xml">
+      <Property name="x" value="0" />
+      <Property name="y" value="0" />
+      <Property name="z" value="0.05" />
+      <Property name="t" value="0" />
+    </Property>
+    <Property name="LaserColour" value="Colour.xml">
+      <Property name="R" value="0.963" />
+      <Property name="G" value="0.188" />
+      <Property name="B" value="0.102" />
+      <Property name="A" value="1" />
+    </Property>
+  </Property>
+  <Property name="DroneControl" value="GcDroneData.xml">
+    <Property name="Patrol" value="GcDroneControlData.xml">
+      <Property name="MaxSpeed" value="4" />
+      <Property name="Strength" value="0.5" />
+      <Property name="DirectionBrake" value="1" />
+      <Property name="MinHeight" value="1.5" />
+      <Property name="MaxHeight" value="4" />
+      <Property name="HeightAdjustStrength" value="3" />
+      <Property name="HeightAdjustDownStrength" value="0.1" />
+      <Property name="LookStrength" value="3" />
+      <Property name="StopTime" value="1" />
+      <Property name="RepelForce" value="50" />
+      <Property name="RepelRange" value="5" />
+    </Property>
+    <Property name="Attack" value="GcDroneControlData.xml">
+      <Property name="MaxSpeed" value="4" />
+      <Property name="Strength" value="1.3" />
+      <Property name="DirectionBrake" value="0.3" />
+      <Property name="MinHeight" value="0.8" />
+      <Property name="MaxHeight" value="3" />
+      <Property name="HeightAdjustStrength" value="5" />
+      <Property name="HeightAdjustDownStrength" value="0.1" />
+      <Property name="LookStrength" value="8" />
+      <Property name="StopTime" value="1" />
+      <Property name="RepelForce" value="50" />
+      <Property name="RepelRange" value="10" />
+    </Property>
+    <Property name="Search" value="GcDroneControlData.xml">
+      <Property name="MaxSpeed" value="5" />
+      <Property name="Strength" value="1.5" />
+      <Property name="DirectionBrake" value="2" />
+      <Property name="MinHeight" value="1.5" />
+      <Property name="MaxHeight" value="5" />
+      <Property name="HeightAdjustStrength" value="2" />
+      <Property name="HeightAdjustDownStrength" value="0.1" />
+      <Property name="LookStrength" value="3" />
+      <Property name="StopTime" value="1" />
+      <Property name="RepelForce" value="20" />
+      <Property name="RepelRange" value="10" />
+    </Property>
+    <Property name="Scan" value="GcDroneControlData.xml">
+      <Property name="MaxSpeed" value="6" />
+      <Property name="Strength" value="1.8" />
+      <Property name="DirectionBrake" value="2" />
+      <Property name="MinHeight" value="0.7" />
+      <Property name="MaxHeight" value="8" />
+      <Property name="HeightAdjustStrength" value="2" />
+      <Property name="HeightAdjustDownStrength" value="0.1" />
+      <Property name="LookStrength" value="6" />
+      <Property name="StopTime" value="1" />
+      <Property name="RepelForce" value="20" />
+      <Property name="RepelRange" value="10" />
+    </Property>
+    <Property name="CollisionAvoidOffset" value="2.2" />
+    <Property name="DronePatrolDistanceMin" value="10" />
+    <Property name="DronePatrolDistanceMax" value="30" />
+    <Property name="DronePatrolTargetDistance" value="10" />
+    <Property name="DronePatrolInspectDistanceMin" value="2" />
+    <Property name="DronePatrolInspectDistanceMax" value="20" />
+    <Property name="DronePatrolInspectTargetTime" value="8" />
+    <Property name="DronePatrolInspectSwitchTime" value="3" />
+    <Property name="DronePatrolInspectRadius" value="3" />
+    <Property name="DronePatrolRepelDistance" value="5" />
+    <Property name="DronePatrolRepelStrength" value="50" />
+    <Property name="DronePatrolHonkRadius" value="5" />
+    <Property name="DronePatrolHonkTime" value="2" />
+    <Property name="DronePatrolHonkProbability" value="4" />
+    <Property name="DroneAlertTime" value="6" />
+    <Property name="AttackTimeout" value="0.3" />
+    <Property name="AttackFireRate" value="3" />
+    <Property name="AttackNumShotsMin" value="3" />
+    <Property name="AttackNumShotsMax" value="4" />
+    <Property name="AttackFireTimeMin" value="2" />
+    <Property name="AttackFireTimeMax" value="5" />
+    <Property name="AttackMoveLookDistanceRange" value="20" />
+    <Property name="AttackMoveLookDistanceMin" value="10" />
+    <Property name="AttackAngle" value="15" />
+    <Property name="AttackRange" value="30" />
+    <Property name="AttackMinSpeed" value="20" />
+    <Property name="AttackActivateTime" value="2" />
+    <Property name="AttackBobAmount" value="0.5" />
+    <Property name="AttackBobRotation" value="0.02" />
+    <Property name="AttackMoveDistanceMin" value="4" />
+    <Property name="AttackMoveDistanceMax" value="8" />
+    <Property name="AttackMoveMinChoiceTime" value="1.5" />
+    <Property name="AttackMoveAngle" value="30" />
+    <Property name="AttackMaxDistanceFromAlert" value="50" />
+    <Property name="AttackAlertFailTime" value="8" />
+    <Property name="EyeColourAlert" value="Colour.xml">
+      <Property name="R" value="1" />
+      <Property name="G" value="1" />
+      <Property name="B" value="1" />
+      <Property name="A" value="1" />
+    </Property>
+    <Property name="EyeColourSearch" value="Colour.xml">
+      <Property name="R" value="1" />
+      <Property name="G" value="1" />
+      <Property name="B" value="1" />
+      <Property name="A" value="1" />
+    </Property>
+    <Property name="EyeColourPatrol" value="Colour.xml">
+      <Property name="R" value="1" />
+      <Property name="G" value="1" />
+      <Property name="B" value="1" />
+      <Property name="A" value="1" />
+    </Property>
+    <Property name="DroneSearchTime" value="10" />
+    <Property name="DroneSearchRadius" value="5" />
+    <Property name="DroneSearchPauseTime" value="3" />
+    <Property name="DroneSearchCriminalScanRadius" value="8" />
+    <Property name="DroneScanPlayerTime" value="8" />
+    <Property name="LeanAmount" value="20" />
+    <Property name="LeanSpeedMin" value="0.5" />
+    <Property name="LeanSpeedRange" value="5" />
+    <Property name="EyeOffset" value="2" />
+    <Property name="EyeFocusTime" value="2" />
+    <Property name="EyeNumRandomsMin" value="3" />
+    <Property name="EyeNumRandomsMax" value="5" />
+    <Property name="EyeTimeMin" value="0.2" />
+    <Property name="EyeTimeMax" value="0.5" />
+    <Property name="EyeAngleMax" value="80" />
+    <Property name="EngineDirSpeedMin" value="1" />
+    <Property name="EngineDirAngleMax" value="60" />
+  </Property>
+</Data>

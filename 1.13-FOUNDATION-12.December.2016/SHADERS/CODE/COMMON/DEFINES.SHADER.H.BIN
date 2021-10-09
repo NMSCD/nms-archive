@@ -1,0 +1,556 @@
+// =================================================================================================
+
+#ifndef D_DEFINES
+#define D_DEFINES
+
+
+// =================================================================================================
+// Platform defines
+// =================================================================================================
+#ifdef D_PLATFORM_PC
+
+    #pragma optionNV(strict on)
+    #extension GL_ARB_gpu_shader5 : enable
+    #extension GL_ARB_fragment_coord_conventions : enable
+
+	#ifndef D_PLATFORM_PC_LOWEND
+	#extension GL_ARB_derivative_control : enable
+	#endif
+
+    #ifdef D_FRAGMENT
+    //{
+        //layout( origin_upper_left, pixel_center_integer ) in vec4 gl_FragCoord;
+    //}
+    #endif
+
+#elif defined(D_PLATFORM_ORBIS)
+
+    // use this with sdk 2.0 compiler 
+   // #pragma argument (allow-scratch-buffer-spill)
+
+    //define these flags so they don't get ignored in build process and in the comb mask
+    //this is because materials, vertex layouts and shaders need to be synced on 360 to avoid patching
+    #ifdef _F27_VBTANGENT
+    #endif
+    #ifdef _F28_VBSKINNED
+    #endif
+    #ifdef _F29_VBCOLOUR
+    #endif
+    #ifdef _F21_VERTEXCOLOUR
+    #endif
+    #ifdef _F02_SKINNED
+    #endif
+    #ifdef _F03_NORMALMAP
+    #endif
+    #if defined( _F01_DIFFUSEMAP ) || defined( D_LOD0 ) || defined( D_LOD1 ) || defined( D_LOD2 ) || defined( D_LOD3) || defined( D_LOD4 ) 
+    #endif
+    #ifdef _F01_DIFFUSEMAP
+    #endif
+    #ifdef _F09_TRANSPARENT
+    #endif
+    #ifdef _F10_NORECEIVESHADOW
+    #endif
+
+
+    // disable warnings for unused parameters. This happens a lot because of defining different things.
+    #pragma warning (disable: 5203)
+
+    // temp thing to know what things are still required on ps4.
+    #define D_PLATFORM_ORBIS_FIX
+
+#endif
+
+// =================================================================================================
+// Basic Types
+// =================================================================================================
+#ifdef D_PLATFORM_PC
+
+    #define JOINT_TYPE    vec4
+
+    //#define CONST         const
+    #define STATIC_CONST  const
+
+#elif defined(D_PLATFORM_ORBIS)
+
+    #define JOINT_TYPE      int4
+    #define float           float
+    #define vec2            float2
+    #define vec3            float3
+    #define vec4            float4
+    #define ivec2           int2
+    #define ivec3           int3
+    #define ivec4           int4
+    #define uvec2           uint2
+    #define uvec3           uint3
+    #define uvec4           uint4
+    // NOTE: 
+    // operator[] accesses rows, not columns 
+    // matrix constructors interpret the passed vectors as row vectors, not column vectors
+    #define mat2            row_major float2x2
+    #define mat3            row_major float3x3
+    #define mat4            row_major float4x4
+
+    //#define CONST           
+    #define STATIC_CONST    static const
+   // #define const           ERROR, DON'T USE CONST FOR PS4. USE STATIC_CONST INSTEAD FOR A COMPILED IN CONSTANT. OTHERWISE IT TRIES TO PUT IT IN A CONSTANT BUFFER AND FOR SOME REASON IT DOESN'T WORK.
+
+
+#endif
+
+// =================================================================================================
+// Functions
+// =================================================================================================
+#ifdef D_PLATFORM_PC
+
+    #define saturate( V )  min( max( V, 0.0) , 1.0)
+    #define atan2( Y, X )  atan( Y, X )
+    #define invsqrt( X )   inversesqrt( X )
+
+	// These can be deleted if ARB_derivative_control can be used
+	#ifdef D_PLATFORM_PC_LOWEND
+	#define dFdxFine	dFdx
+	#define dFdyFine	dFdy
+	#endif
+
+#elif defined(D_PLATFORM_ORBIS)
+
+    #define mix             lerp
+    #define fract           frac
+    #define dFdx			ddx
+    #define dFdy			ddy
+	#define dFdxFine		ddx_fine
+	#define dFdyFine		ddy_fine
+#define mod				fmod
+    #define saturate( V )   ( min( max( V, 0.0) , 1.0) )
+    #define invsqrt( X )    rsqrt( X )
+
+#endif
+
+
+// =================================================================================================
+// Samplers and textures
+// =================================================================================================
+#ifdef D_PLATFORM_PC
+
+	#define shadow2D( S, UV )				texture( S, UV )
+
+    #define SAMPLER2DSHADOW( NAME, REG )    uniform sampler2DShadow NAME
+
+    #define SAMPLERCUBE( NAME )             samplerCube NAME
+    #define SAMPLERCUBEARG( NAME )          in samplerCube NAME
+    #define SAMPLERCUBEPARAM( NAME )        NAME
+
+#if defined( D_TEXTURE_FEEDBACK )
+
+    #define texture2D( T, C )               Tex2dFeedback( T, T##FB, C )
+
+    #define texture2DLod( T, C, N )         Tex2dLodFeedback( T, T##FB, C, N )  
+    #define texture2DArray(  T, C )         Tex2dArrayFeedback( T, T##FB, C )
+
+    #define texture3D( S, UV )           Tex3deedback( S, S##FB, UV )
+    #define texture3DLod( S, UV, LOD )      Tex3dLodFeedback( S, S##FB, UV, LOD )
+
+    #define SAMPLER2DARG( NAME )            in sampler2D NAME, in int NAME##FB
+    #define SAMPLER2DPARAM( NAME )          NAME, NAME##FB
+
+    #define SAMPLER2DARRAYARG( NAME )       in sampler2DArray NAME, in int NAME##FB
+    #define SAMPLER2DARRAYPARAM( NAME )     NAME, NAME##FB
+
+    #define SAMPLER2D( NAME )               sampler2D       NAME; int NAME##FB
+    #define SAMPLER2DARRAY( NAME )          sampler2DArray  NAME; int NAME##FB
+    #define SAMPLER3D( NAME )               sampler3D       NAME; int NAME##FB
+    #define SAMPLER2DSHADOW_SRT( NAME )     sampler2DShadow NAME; int NAME##FB
+
+#else
+
+    #define texture2DLod( S, UV, LOD )      textureLod( S, UV, LOD )
+    #define texture3DLod( S, UV, LOD )      textureLod( S, UV, LOD )
+
+    #define SAMPLER2DARG( NAME )            in sampler2D NAME
+    #define SAMPLER2DPARAM( NAME )          NAME
+
+    #define SAMPLER2DARRAYARG( NAME )       in sampler2DArray NAME
+    #define SAMPLER2DARRAYPARAM( NAME )     NAME
+
+    #define SAMPLER2D( NAME )               sampler2D       NAME
+    #define SAMPLER2DARRAY( NAME )          sampler2DArray  NAME
+    #define SAMPLER3D( NAME )               sampler3D       NAME
+    #define SAMPLER2DSHADOW_SRT( NAME )     sampler2DShadow NAME
+#endif
+
+    #define textureGatherRed(   lTex, lSamp ) textureGather( lTex, lSamp, 0 )
+    #define textureGatherGreen( lTex, lSamp ) textureGather( lTex, lSamp, 1 )
+    #define textureGatherBlue(  lTex, lSamp ) textureGather( lTex, lSamp, 2 )
+    #define textureGatherAlpha( lTex, lSamp ) textureGather( lTex, lSamp, 3 )
+
+
+#elif defined(D_PLATFORM_ORBIS)
+
+    #define SAMPLERCUBE( NAME, REG )        SamplerState NAME##SS : register( s##REG ); TextureCube NAME##TU : register( t##REG )
+
+    #define SAMPLER2D( NAME )               Texture2D NAME; SamplerState NAME##SS
+    #define SAMPLER2DSHADOW_SRT( NAME )     Texture2D NAME; SamplerComparisonState NAME##SS  //SAMPLER2D( NAME )
+    #define SAMPLER3D( NAME )               Texture3D NAME; SamplerState NAME##SS
+
+
+    #define SAMPLER2DARRAY( NAME )          Texture2D_Array NAME; SamplerState NAME##SS
+    #define SAMPLER2DARRAYARG( NAME )       Texture2D_Array NAME, SamplerState NAME##SS
+    #define SAMPLER2DARRAYPARAM( NAME )     NAME, NAME##SS
+
+    #define SAMPLER2DPARAM( NAME )          NAME, NAME##SS
+    #define SAMPLER2DARG( NAME )            Texture2D NAME, SamplerState NAME##SS
+
+    #define texture2D( T, C )		        T.Sample( T##SS, C )
+
+    #define texture2DLod( T, C, N )         T.SampleLOD( T##SS, C, N )
+    #define texture2DArray(  T, C )         T.Sample( T##SS, C )
+    #define texture3DLod( T, C, N )         T.SampleLOD( T##SS, C, N )
+
+    //#define shadow2D( T, C )                vec3( C.z > T.Sample( T##SS, C.xy ).x ? 1.0 : 0.0 )                    
+    //#define shadow2D( T, C )                T.GatherCmp( T##SS, C.xy, C.z )
+    //#define shadow2D( T, C )                T.SampleCmpLOD0( T##SS, C.xy, C.z )
+    #define shadow2D( T, C )                T.SampleCmp( T##SS, C.xy, C.z )
+    #define textureCube( T, C )		        T##TU.Sample( T##SS, C )
+    #define textureCubeLod( T, C, N )	    T##TU.Sample( T##SS, C, N )
+    #define textureGrad( T, C, DDX, DDY )   T.SampleGradient( T##SS, C, DDX, DDY )                    
+
+
+    #define textureGatherRed(   lTex, lSamp ) lTex.GatherRed  ( lTex##SS, lSamp )
+    #define textureGatherGreen( lTex, lSamp ) lTex.GatherGreen( lTex##SS, lSamp )
+    #define textureGatherBlue(  lTex, lSamp ) lTex.GatherBlue ( lTex##SS, lSamp )
+    #define textureGatherAlpha( lTex, lSamp ) lTex.GatherAlpha( lTex##SS, lSamp )
+
+
+#endif
+
+// =================================================================================================
+// Matrices
+// =================================================================================================
+#ifdef D_PLATFORM_PC
+
+    #define MUL( INPUT_A, INPUT_B )         (INPUT_A * INPUT_B)
+    #define PLATFORM_TRANSPOSE
+    #define MAT4_SET_POS( M, P )            M[ 3 ] = P
+    #define MAT4_SET_TRANSLATION( M, T )    M[ 3 ].xyz = T
+    #define MAT4_GET_COLUMN( M, C )         M[ C ].xyz
+    #define MAT3_GET_COLUMN( M, C )         M[ C ]
+    #define MAT4_GET_COLUMN_VEC4( M, C )    M[ C ]
+
+    #define MAT3_SET_COLUMN( M, C, V )      M[ C ] = V;
+    #define MAT4_SET_COLUMN( M, C, V )      M[ C ] = V;
+
+#elif defined(D_PLATFORM_ORBIS)
+
+    #define MUL( INPUT_A, INPUT_B )         mul( INPUT_B, INPUT_A )
+    #define PLATFORM_TRANSPOSE
+    #define MAT4_SET_POS( M, P )            M[ 3 ] = P
+    #define MAT4_SET_TRANSLATION( M, T )    M[ 3 ].xyz = T
+    #define MAT4_GET_COLUMN( M, C )         M[ C ].xyz
+    #define MAT3_GET_COLUMN( M, C )         M[ C ]
+    #define MAT4_GET_COLUMN_VEC4( M, C )    M[ C ]
+
+    #define MAT3_SET_COLUMN( M, C, V )      M[ C ] = V;
+    #define MAT4_SET_COLUMN( M, C, V )      M[ C ] = V;
+
+#endif
+
+// =================================================================================================
+// Arrays (workaround AMD shader compiler issues by making arrays have global scope)
+// =================================================================================================
+
+#if defined(D_PLATFORM_ORBIS)
+
+#define ARRAY_LOOKUP_FS( _UNIFORMS, _ELEMENT, _INDEX)   _UNIFORMS._ELEMENT[_INDEX]
+#define ARRAY_LOOKUP_FP( _UNIFORMS, _ELEMENT, _INDEX)   _UNIFORMS->_ELEMENT[_INDEX]
+
+#else
+
+#define ARRAY_LOOKUP_FS( _UNIFORMS, _ELEMENT, _INDEX)   _ELEMENT[_INDEX]
+#define ARRAY_LOOKUP_FP( _UNIFORMS, _ELEMENT, _INDEX)   _ELEMENT[_INDEX]
+
+#endif
+
+
+// =================================================================================================
+// Input and Output
+// =================================================================================================
+#ifdef D_PLATFORM_PC
+
+    #define UNIFORM( TYPE, NAME )           uniform TYPE NAME
+    #define UNIFORM_SRT( TYPE, NAME )       uniform TYPE NAME
+
+    #define DECLARE_INPUT
+    #define DECLARE_OUTPUT
+    #define DECLARE_END  
+    #define DECLARE_PTR( TYPE, NAME )       TYPE  NAME;
+
+    #define INPUT(   TYPE, NAME, REG )      in    TYPE NAME;
+    #define INPUT_NOINTERP(   TYPE, NAME, REG )      in    TYPE NAME;
+    #define OUTPUT(  TYPE, NAME, REG )      out   TYPE NAME;
+    #define OUTPUT_NOINTERP(  TYPE, NAME, REG )      out   TYPE NAME;
+    
+	#define FRAGMENT_COLOUR_UVEC4_DEFINE    layout(location = 0) out uvec4 outu_color0
+	#define FRAGMENT_COLOUR_UVEC4           outu_color0
+
+#ifdef D_PLATFORM_PC_LOWEND
+
+	#define FRAGMENT_COLOUR                 out_color0
+	#define FRAGMENT_COLOUR0                out_color0
+	#define FRAGMENT_COLOUR1                out_color1
+	#define FRAGMENT_COLOUR2                out_color2
+	#define FRAGMENT_COLOUR3                out_color3
+	#define FRAGMENT_COLOUR4                out_color4
+    #if defined( D_TAA_RENDER_TARGETS )	
+		#define FRAGMENT_COLOUR_VEC4_DEFINE     layout(location = 0) out vec4 out_color0;  layout(location = 1) out vec4 out_color1;  layout(location = 2) out vec4 out_color2;	
+	#elif !defined(D_ATTRIBUTES)
+		#define FRAGMENT_COLOUR_VEC4_DEFINE     layout(location = 0) out vec4 out_color0;
+	#else
+		#define FRAGMENT_COLOUR_VEC4_DEFINE     layout(location = 0) out vec4 out_color0;  layout(location = 1) out vec4 out_color1;  layout(location = 2) out vec4 out_color2; layout(location = 3) out vec4 out_color3; layout(location = 4) out vec4 out_color4;
+	#endif    
+    #define FRAGMENT_COLOUR01_VEC4_DEFINE       layout(location = 0) out vec4 out_color0;  layout(location = 1) out vec4 out_color1;
+
+#else
+
+	#define FRAGMENT_COLOUR                 gl_FragData[ 0 ]
+    #define FRAGMENT_COLOUR0                gl_FragData[ 0 ]
+    #define FRAGMENT_COLOUR1                gl_FragData[ 1 ]
+    #define FRAGMENT_COLOUR2                gl_FragData[ 2 ]
+    #define FRAGMENT_COLOUR3                gl_FragData[ 3 ]
+    #define FRAGMENT_COLOUR4                gl_FragData[ 4 ]
+	#define FRAGMENT_COLOUR_VEC4_DEFINE  
+    #define FRAGMENT_COLOUR01_VEC4_DEFINE  
+
+#endif
+    #define FRAGMENT_DEPTH                  gl_FragDepth
+    #define FRAGMENT_FRONTFACE              gl_FrontFacing
+    #define INPUT_FRONTFACING
+
+    #define IN(  VAR )                      VAR
+    #define OUT( VAR )                      VAR
+    #define DEREF_PTR( VAR )                VAR
+
+    #define OUT_VERTEX_SCREEN_POSITION 
+    #define IN_SCREEN_POSITION 
+    #define VERTEX_SCREEN_POSITION          gl_Position
+
+#elif defined(D_PLATFORM_ORBIS)
+
+    #define UNIFORM( TYPE, NAME )           ConstantBuffer NAME##CB{ TYPE NAME; };
+    #define UNIFORM_SRT( TYPE, NAME )       ConstantBuffer NAME##CB{ TYPE NAME : S_SRT_DATA; };
+
+    #define DECLARE_OUTPUT                  struct cOutput {
+    #define DECLARE_INPUT                   struct cInput  {
+    #define DECLARE_END                     };
+    #define DECLARE_PTR( TYPE, NAME )       TYPE* NAME;
+
+    #define INPUT(   TYPE, NAME, REG )               TYPE NAME : REG;
+    #define INPUT_NOINTERP(   TYPE, NAME, REG )      nointerp TYPE NAME : REG;    	
+    #define OUTPUT(  TYPE, NAME, REG )      TYPE NAME : REG;    
+    #define OUTPUT_NOINTERP(  TYPE, NAME, REG )      nointerp TYPE NAME : REG;
+    
+    #define FRAGMENT_COLOUR_UVEC4_DEFINE
+    #define FRAGMENT_COLOUR_UVEC4           Out.mColour
+    #define FRAGMENT_COLOUR                 Out.mColour
+    #define FRAGMENT_COLOUR0                Out.mColour0
+    #define FRAGMENT_COLOUR1                Out.mColour1
+    #define FRAGMENT_COLOUR2                Out.mColour2
+    #define FRAGMENT_COLOUR3                Out.mColour3
+    #define FRAGMENT_COLOUR4                Out.mColour4
+    #define FRAGMENT_DEPTH                  Out.mDepth
+    
+    #define FRAGMENT_FRONTFACE              In.mbFrontFacing
+    #define INPUT_FRONTFACING               bool mbFrontFacing : S_FRONT_FACE;
+
+
+    #define IN(  VAR )                      In.VAR
+
+    #define OUT( VAR )                      Out.VAR
+
+// TODO get rid of this - don't pass struct through functinos, pass members.
+    #define DEREF_PTR( VAR )                *VAR
+
+
+    #define OUT_VERTEX_SCREEN_POSITION      OUTPUT( vec4, mScreenPositionVec4, S_POSITION )
+    #define IN_SCREEN_POSITION              INPUT ( vec4, mScreenPositionVec4, S_POSITION )
+    #define VERTEX_SCREEN_POSITION          OUT( mScreenPositionVec4 )
+
+#endif
+
+// =================================================================================================
+// Main
+// =================================================================================================
+#ifdef D_PLATFORM_PC
+
+    #define VERTEX_MAIN                         void main( void )
+    #define VERTEX_MAIN_SRT                     uniform UniformBuffer lUniforms; void main( void )
+
+    #define FRAGMENT_MAIN_COLOUR                FRAGMENT_COLOUR_VEC4_DEFINE void main( void )
+    #define VOID_MAIN_COLOUR                    FRAGMENT_COLOUR_VEC4_DEFINE void main( void )
+    #define FRAGMENT_MAIN_COLOUR_DEPTH          FRAGMENT_COLOUR_VEC4_DEFINE void main( void )
+
+    #define FRAGMENT_MAIN_COLOUR_DEPTH_SRT      FRAGMENT_COLOUR_VEC4_DEFINE uniform UniformBuffer lUniforms; void main( void )
+    #define FRAGMENT_MAIN_COLOUR_DEPTH_GE_SRT   FRAGMENT_COLOUR_VEC4_DEFINE uniform UniformBuffer lUniforms; void main( void )
+    #define FRAGMENT_MAIN_COLOUR_DEPTH_LE_SRT   FRAGMENT_COLOUR_VEC4_DEFINE uniform UniformBuffer lUniforms; void main( void )
+    #define FRAGMENT_MAIN_COLOUR_SRT            FRAGMENT_COLOUR_VEC4_DEFINE uniform UniformBuffer lUniforms; void main( void )
+    #define FRAGMENT_MAIN_COLOUR_EARLYZ_SRT     FRAGMENT_COLOUR_VEC4_DEFINE uniform UniformBuffer lUniforms; void main( void )
+
+    #define VOID_MAIN_COLOUR_SRT                FRAGMENT_COLOUR_VEC4_DEFINE uniform UniformBuffer lUniforms; void main( void )
+
+    #define FRAGMENT_MAIN_COLOUR01_SRT          FRAGMENT_COLOUR01_VEC4_DEFINE uniform UniformBuffer lUniforms; void main( void )
+    #define FRAGMENT_MAIN_COLOUR01_DEPTH_SRT    FRAGMENT_COLOUR01_VEC4_DEFINE uniform UniformBuffer lUniforms; void main( void )
+
+
+#elif defined( D_PLATFORM_ORBIS )
+
+    #define VERTEX_MAIN                     void main( cInput In, out cOutput Out )
+    #define VERTEX_MAIN_SRT                 void main( cInput In, out cOutput Out, UniformBuffer lUniforms : S_SRT_DATA  )
+
+
+#define FRAGMENT_MAIN_COLOUR            struct cOutput { vec4  mColour : S_TARGET_OUTPUT; };									[RE_Z] void main( cInput In, out cOutput Out )
+#define VOID_MAIN_COLOUR                struct cOutput { vec4  mColour : S_TARGET_OUTPUT; };									       void main( cInput In, out cOutput Out )
+#define FRAGMENT_MAIN_COLOUR_DEPTH      struct cOutput { vec4  mColour : S_TARGET_OUTPUT; float mDepth  : S_DEPTH_OUTPUT; };	[RE_Z] void main( cInput In, out cOutput Out )
+    
+    #if defined( D_TAA_RENDER_TARGETS )
+
+        #define FRAGMENT_MAIN_COLOUR_SRT        struct cOutput { vec4  mColour0 : S_TARGET_OUTPUT0;    \
+                                                                 vec4  mColour1 : S_TARGET_OUTPUT1;    \
+                                                                 vec4  mColour2 : S_TARGET_OUTPUT2; }; \
+                                                [RE_Z] void main( cInput In, out cOutput Out, UniformBuffer lUniforms : S_SRT_DATA )
+
+
+    #elif !defined( D_ATTRIBUTES )
+#define FRAGMENT_MAIN_COLOUR_DEPTH_SRT     struct cOutput { vec4 mColour : S_TARGET_OUTPUT; float mDepth : S_DEPTH_OUTPUT;    }; [RE_Z] void main( cInput In, out cOutput Out, UniformBuffer lUniforms : S_SRT_DATA  )
+#define FRAGMENT_MAIN_COLOUR_DEPTH_GE_SRT  struct cOutput { vec4 mColour : S_TARGET_OUTPUT; float mDepth : S_DEPTH_GE_OUTPUT; }; [RE_Z] void main( cInput In, out cOutput Out, UniformBuffer lUniforms : S_SRT_DATA  )
+#define FRAGMENT_MAIN_COLOUR_DEPTH_LE_SRT  struct cOutput { vec4 mColour : S_TARGET_OUTPUT; float mDepth : S_DEPTH_LE_OUTPUT; }; [RE_Z] void main( cInput In, out cOutput Out, UniformBuffer lUniforms : S_SRT_DATA  )
+#define FRAGMENT_MAIN_COLOUR_SRT           struct cOutput { vec4  mColour : S_TARGET_OUTPUT; };	                                        void main( cInput In, out cOutput Out, UniformBuffer lUniforms : S_SRT_DATA )
+#define VOID_MAIN_COLOUR_SRT            	                                													       void main( cInput In, UniformBuffer lUniforms : S_SRT_DATA )
+#define VOID_MAIN_COLOUR_EARLYZ_SRT        	                                								[FORCE_EARLY_DEPTH_STENCIL]void main( cInput In, UniformBuffer lUniforms : S_SRT_DATA )
+	
+#define FRAGMENT_MAIN_COLOUR01_SRT         struct cOutput { vec4  mColour0 : S_TARGET_OUTPUT0;    \
+                                                            vec4  mColour1 : S_TARGET_OUTPUT1; }; \
+                                                [RE_Z] void main( cInput In, out cOutput Out, UniformBuffer lUniforms : S_SRT_DATA )
+#define FRAGMENT_MAIN_COLOUR01_DEPTH_SRT   struct cOutput { vec4  mColour0 : S_TARGET_OUTPUT0;  \
+                                                            vec4  mColour1 : S_TARGET_OUTPUT1;  \
+                                                            float mDepth   : S_DEPTH_OUTPUT; }; \
+                                                [RE_Z] void main( cInput In, out cOutput Out, UniformBuffer lUniforms : S_SRT_DATA  )
+
+    #else
+    	
+    	#pragma PSSL_target_output_format(target 1 FMT_32_AR)
+    
+        #define FRAGMENT_MAIN_COLOUR_DEPTH_SRT  struct cOutput { vec4  mColour0 : S_TARGET_OUTPUT0;  \
+                                                                 vec4  mColour1 : S_TARGET_OUTPUT1;  \
+                                                                 vec4  mColour2 : S_TARGET_OUTPUT2;  \
+                                                                 vec4  mColour3 : S_TARGET_OUTPUT3;  \
+                                                                 vec4  mColour4 : S_TARGET_OUTPUT4;  \
+                                                                 float mDepth   : S_DEPTH_OUTPUT; }; \
+                                                [RE_Z] void main( cInput In, out cOutput Out, UniformBuffer lUniforms : S_SRT_DATA  )
+
+        #define FRAGMENT_MAIN_COLOUR_SRT        struct cOutput { vec4  mColour0 : S_TARGET_OUTPUT0;    \
+                                                                 vec4  mColour1 : S_TARGET_OUTPUT1;    \
+                                                                 vec4  mColour2 : S_TARGET_OUTPUT2;    \
+                                                                 vec4  mColour3 : S_TARGET_OUTPUT3;    \
+                                                                 vec4  mColour4 : S_TARGET_OUTPUT4; }; \
+                                                [RE_Z] void main( cInput In, out cOutput Out, UniformBuffer lUniforms : S_SRT_DATA )
+                                                    
+        #define FRAGMENT_MAIN_COLOUR_EARLYZ_SRT        struct cOutput { vec4  mColour0 : S_TARGET_OUTPUT0;    \
+                                                                 vec4  mColour1 : S_TARGET_OUTPUT1;    \
+                                                                 vec4  mColour2 : S_TARGET_OUTPUT2;    \
+                                                                 vec4  mColour3 : S_TARGET_OUTPUT3;    \
+                                                                 vec4  mColour4 : S_TARGET_OUTPUT4; }; \
+                                                [FORCE_EARLY_DEPTH_STENCIL] void main( cInput In, out cOutput Out, UniformBuffer lUniforms : S_SRT_DATA )                                                    
+    #endif
+
+
+#endif
+
+// =================================================================================================
+// Texture resolution
+// =================================================================================================
+
+#ifdef D_PLATFORM_ORBIS
+uvec2 GetResolution( Texture2D lTexture )
+{
+    uvec2 lResolution;
+    lTexture.GetDimensionsFast(lResolution.x, lResolution.y);
+    return lResolution;
+}
+#else
+uvec2 GetResolution( sampler2D lTexture )
+{
+    return textureSize( lTexture, 0 );
+}
+#endif
+
+// =================================================================================================
+// Viewport
+// =================================================================================================
+#ifdef D_PLATFORM_PC
+
+    #define SCREENSPACE_AS_RENDERTARGET_UVS( A ) A.xy
+
+#elif defined(D_PLATFORM_ORBIS)
+
+    #define SCREENSPACE_AS_RENDERTARGET_UVS( A ) ( float2( A.x, 1.0 - A.y ) )
+
+#endif
+
+// =================================================================================================
+// Texture usage feedback
+// =================================================================================================
+#if defined( D_TEXTURE_FEEDBACK ) && defined( D_PLATFORM_PC )
+
+layout(r32i) uniform  iimage2D gTexFeedbackImg;
+
+void WriteTexFeedback( in int liCounter, in float liMip )
+{
+    if( liCounter != 0 )
+    {
+        #if defined( GL_ARB_shader_ballot ) && ( GL_ARB_shader_ballot == 1 )
+        if( readFirstInvocationARB( gl_SubGroupInvocationARB ) == gl_SubGroupInvocationARB )
+        #endif
+        {
+            int liIntMip = int(floor(liMip));
+            //imageStore( gTexFeedbackImg, ivec2( liCounter, liIntMip ), ivec4(1,0,0,0) );
+            imageAtomicAdd( gTexFeedbackImg, ivec2( liCounter, liIntMip ), int(1) );
+        }
+    }
+}
+
+vec4 Tex2dFeedback( in sampler2D lSamp, in int liCounter, in vec2 lCoords )
+{
+    float liLod = textureQueryLOD( lSamp, lCoords ).x;
+    WriteTexFeedback( liCounter, liLod );
+    return texture( lSamp, lCoords );
+}
+
+vec4 Tex2dLodFeedback( in sampler2D lSamp, in int liCounter, in vec2 lCoords, in float liLod )
+{
+    WriteTexFeedback( liCounter, liLod );
+    return textureLod( lSamp, lCoords, liLod );
+}
+
+vec4 Tex2dArrayFeedback( in sampler2DArray lSamp, in int liCounter, in vec3 lCoords )
+{
+    float liLod = textureQueryLOD( lSamp, lCoords.xy ).x;
+    WriteTexFeedback( liCounter, liLod );
+    return texture( lSamp, lCoords );
+}
+
+vec4 Tex3dFeedback( in sampler3D lSamp, in int liCounter, in vec3 lCoords )
+{
+    float liLod = textureQueryLOD( lSamp, lCoords ).x;
+    WriteTexFeedback( liCounter, liLod );
+    return texture( lSamp, lCoords );
+}
+
+vec4 Tex3dLodFeedback( in sampler3D lSamp, in int liCounter, in vec3 lCoords, in float liLod )
+{
+    WriteTexFeedback( liCounter, liLod );
+    return textureLod( lSamp, lCoords, liLod );
+}
+
+
+#endif
+
+#endif

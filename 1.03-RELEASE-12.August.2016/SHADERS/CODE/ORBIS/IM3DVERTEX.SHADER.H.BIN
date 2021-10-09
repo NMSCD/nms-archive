@@ -1,0 +1,83 @@
+
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       Im3dVertex.shader.h
+///     @author     
+///     @date       
+///
+///     @brief      Immediate Mode Vertex
+///
+///     Copyright (c) 2009 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+#include "Common/Defines.shader.h"
+
+
+struct CommonPerMeshUniforms
+{
+    //SamplerState gColourMapSS;
+    //Texture2D    gColourMap;
+
+    vec4 gImmediateRenderParams;
+    mat4 gWorldViewProjectionMat4;
+    SAMPLER2D( gColourMap );
+};
+
+struct UniformBuffer
+{
+     CommonPerMeshUniforms* mpCommonPerMesh;       /*: PER_MESH*/
+};
+
+
+                                                    
+struct VS_IN                              
+{                                        
+    vec4 ObjPos   : POSITION0;            // Object space position      
+    vec2 UV       : TEXCOORD0;            // UVs
+    vec4 Color    : COLOR;                // Vertex color     
+};                                      
+
+struct VS_OUT                            
+{                                        
+     vec4 ProjPos  : S_POSITION;           // Projected space position 
+     vec2 UV       : TEXCOORD0;            // UVs
+     vec4 Color    : COLOR;                // Vertex color  
+     vec2 mDepthVal : TEXCOORD1;
+};                                           
+                                                    
+ VS_OUT main( VS_IN In, UniformBuffer lUniforms : S_SRT_DATA )
+ {        
+     /*
+     VS_OUT Out;                                    
+     float4 pos = In.ObjPos;                        
+     pos.w = 1.0;                   
+
+     Out.ProjPos = MUL( lUniforms.mpCommonPerMesh->gWorldViewProjectionMat4, pos ); 
+     Out.Color   = In.Color; 
+     Out.UV      = In.UV;
+
+     return Out;                                    
+
+     */
+
+    
+    float lfFarClipPlane = 5000000.0;
+     
+    VS_OUT Out;                                    
+    vec4 pos = In.ObjPos;                        
+    pos.w = 1.0;       
+
+    vec4 lScreenSpacePositionVec4 = MUL( lUniforms.mpCommonPerMesh->gWorldViewProjectionMat4, pos ); 
+
+    Out.mDepthVal.x = lScreenSpacePositionVec4.z+ lUniforms.mpCommonPerMesh->gImmediateRenderParams.y; 
+    Out.mDepthVal.y = 1.0 / log2( lfFarClipPlane + 1.0 );
+
+    Out.ProjPos = lScreenSpacePositionVec4; 
+    Out.Color   = In.Color; 
+    Out.UV      = In.UV;
+     
+    return Out;                                    
+ }                                                 
+
+

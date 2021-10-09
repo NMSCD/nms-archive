@@ -1,0 +1,180 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       LineFragment.h
+///     @author     User
+///     @date       
+///
+///     @brief      LineFragment
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+#include "Common/Defines.shader.h"
+#include "Common/Common.shader.h"
+#include "Common/CommonUniforms.shader.h"
+#include "Common/CommonDepth.shader.h"
+#include "Common/CommonPlanet.shader.h"
+
+//-----------------------------------------------------------------------------
+///
+///     CustomPerMeshUniforms
+///
+///     @brief      CustomPerMeshUniforms
+///
+///     Stuff that is only used for these types of meshes.
+//-----------------------------------------------------------------------------
+struct CustomPerMaterialUniforms
+{
+    SAMPLER2D( gDiffuseMap );
+    SAMPLER2D( gNormalMap );
+};
+
+//
+// This is the SRT buffer that everything gets uploaded to (on PS4). PC just functions as normal.
+//
+struct UniformBuffer
+{
+     DECLARE_PTR( PerFrameUniforms,             mpPerFrame )   /*: PER_MATERIAL*/ // sematics currently crash the compiler so the parser is hardcoded to look for names.
+     DECLARE_PTR( CustomPerMaterialUniforms,    mpCustomPerMaterial )       /*: PER_MESH*/
+     DECLARE_PTR( CommonPerMeshUniforms,        mpCommonPerMesh )       /*: PER_MESH*/
+};
+
+/*float noise(
+    in vec3 x,
+    in CustomPerMaterialUniforms lCustomUniforms)
+{
+    vec3 p = floor(x);
+    vec3 f = fract(x);
+    f = f*f*(3.0 - 2.0*f);
+    vec2 uv = (p.xy + vec2(37.0, 17.0)*p.z) + f.xy;
+    vec2 rg = texture2D(lCustomUniforms.gNormalMap, (uv + 0.5) / 256.0, -100.0).yx;
+    return mix(rg.x, rg.y, f.z);
+}*/
+
+float hash(float n) { return fract(sin(n) * 1e4); }
+float hash(vec2 p) { return fract(1e4 * sin(17.0 * p.x + p.y * 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x)))); }
+
+float noise(vec3 x) {
+    const vec3 lNoiseStep = vec3(110, 241, 171);
+
+    vec3 i = floor(x);
+    vec3 f = fract(x);
+
+    // For performance, compute the base input to a 1D hash from the integer part of the argument and the 
+    // incremental change to the 1D based on the 3D -> 1D wrapping
+    float n = dot(i, lNoiseStep);
+
+    vec3 u = f * f * (3.0 - 2.0 * f);
+    return mix(mix(mix(hash(n + dot(lNoiseStep, vec3(0, 0, 0))), hash(n + dot(lNoiseStep, vec3(1, 0, 0))), u.x),
+        mix(hash(n + dot(lNoiseStep, vec3(0, 1, 0))), hash(n + dot(lNoiseStep, vec3(1, 1, 0))), u.x), u.y),
+        mix(mix(hash(n + dot(lNoiseStep, vec3(0, 0, 1))), hash(n + dot(lNoiseStep, vec3(1, 0, 1))), u.x),
+        mix(hash(n + dot(lNoiseStep, vec3(0, 1, 1))), hash(n + dot(lNoiseStep, vec3(1, 1, 1))), u.x), u.y), u.z);
+}
+
+float fbm(vec3 x) {
+    int NUM_OCTAVES = 1;
+    float v = 0.0;
+    float a = 0.5;
+    vec3 shift = vec3(100);
+    for (int i = 0; i < NUM_OCTAVES; ++i) {
+        v += a * noise(x);
+        x = x * 2.0 + shift;
+        a *= 0.5;
+    }
+    return v;
+}
+
+
+DECLARE_INPUT
+    IN_SCREEN_POSITION
+
+    INPUT( vec2,   mTexCoordsVec2,      TEXCOORD0 )
+    INPUT( vec4,   mWorldPositionVec4,  TEXCOORD1 )
+    INPUT( float,  mfLogZ,              TEXCOORD2 )
+    INPUT( float,  mfVertAlpha,         TEXCOORD3 )
+    INPUT( vec4,   mColourVec4,         TEXCOORD4 )
+
+DECLARE_END
+        
+FRAGMENT_MAIN_COLOUR_DEPTH_SRT
+{
+    vec4 lFragmentColourVec4;
+    vec4 lTintColourVec4 = IN( mColourVec4 );
+
+    lFragmentColourVec4 = texture2D( lUniforms.mpCustomPerMaterial->gDiffuseMap, IN( mTexCoordsVec2 ).xy );
+
+    vec3 lOriginalHSVVec3 = RGBToHSV(lFragmentColourVec4.xyz);
+    vec3 lTintHSVVec3 = RGBToHSV(lTintColourVec4.xyz);
+
+    vec3 lHSVColourVec3 = lOriginalHSVVec3;
+    lHSVColourVec3.x = lTintHSVVec3.x;
+    if (lTintHSVVec3.y > 0)
+    {
+        lFragmentColourVec4.rgb = HSVToRGB(lHSVColourVec3);
+    }
+
+
+#ifdef D_SUBSTANCES
+
+    float lfProgress = pow(lUniforms.mpCommonPerMesh->gScanParamsCfg1Vec4.y, 3.0);
+    float lfTime = lUniforms.mpCommonPerMesh->gScanParamsCfg1Vec4.z;
+    bool lbUndergroundSubstance = lUniforms.mpCommonPerMesh->gScanParamsCfg2Vec4.z > 0;
+    vec4 lScanConfigPos = lUniforms.mpCommonPerMesh->gScanParamsPosVec4;
+
+    vec3  lWorldToScanPt = IN(mWorldPositionVec4).xyz - lScanConfigPos.xyz;
+    float lfDistToScanPt = length(lWorldToScanPt);
+
+    // adjust distance so that values inside the pulse radius fall 0..1
+    float lfRadius = 1.0 / lScanConfigPos.w;
+    float lfPosOverRadius01 = lfDistToScanPt * lScanConfigPos.w;
+    float lfValue = clamp( (lfProgress - lfPosOverRadius01) * 10.0 , 0.0, 1.0);
+    lFragmentColourVec4.w *= lfValue;
+
+
+    // Waves
+    float lfHeight = GetHeight(IN(mWorldPositionVec4).xyz, lUniforms.mpCommonPerMesh->gPlanetPositionVec4);
+    float lfWaves = pow(max(0.0, sin(lUniforms.mpPerFrame->gfTime.x * 3.0 + lfHeight * 0.1)), 5.0);
+
+    // Clusters of cubes
+    // Clusters pulse effect
+    float lfPulse = clamp(sin(lUniforms.mpPerFrame->gfTime.x), 0.0, 1.0);
+    float lfPulseCore = pow(lfPulse, 50.0);
+
+    // Noise Displacement
+    float PI = 3.14159;
+    float lfWave1 = lfPulse;
+    float lfWave2 = clamp(sin(lUniforms.mpPerFrame->gfTime.x * 0.5   + PI * 0.25   ), 0.0, 1.0);
+    float lfWave3 = clamp(sin(lUniforms.mpPerFrame->gfTime.x * 0.25  + PI * 0.125  ), 0.0, 1.0);
+    //float lfWave4 = clamp(sin(lUniforms.mpPerFrame->gfTime.x * 0.125 + PI * 0.0625 ), 0.0, 1.0);
+    vec3 lDisplacement = vec3(normalize(lfWave1), normalize(lfWave2), normalize(lfWave3)) * 20.0;
+
+    // Noise value
+    float lfNoise = fbm(IN(mWorldPositionVec4).xyz * 0.2 + lDisplacement);
+    
+
+    // Fade out    
+    float lfFadeOut = 1.0;
+    if (lbUndergroundSubstance)
+    {
+        lfFadeOut = 1.0 - clamp(max(0.0, lfTime - 0.9) * 1.0, 0.0, 1.0);
+        lfWaves = 1.0;
+    }
+
+    float lAlpha = lUniforms.mpCommonPerMesh->gScanParamsCfg2Vec4.x + 
+                   saturate(step(lUniforms.mpCommonPerMesh->gScanParamsCfg2Vec4.y, lfNoise) * lfPulse + lfWaves) * lUniforms.mpCommonPerMesh->gScanParamsCfg2Vec4.w;
+    
+    lFragmentColourVec4.w *= lAlpha;
+    lFragmentColourVec4.w *= lfFadeOut;
+
+    lFragmentColourVec4.xyz += step(lUniforms.mpCommonPerMesh->gScanParamsCfg2Vec4.y, lfNoise) * lfPulseCore * lUniforms.mpCommonPerMesh->gScanParamsCfg2Vec4.w * 0.5;
+
+#else
+    lFragmentColourVec4.w *= IN(mfVertAlpha);
+#endif // D_SUBSTANCES
+    FRAGMENT_COLOUR = lFragmentColourVec4;
+
+#ifdef _F47_WRITE_LOG_Z
+    FRAGMENT_DEPTH = LinearToLogDepth_Pixel( IN( mfLogZ ), lUniforms.mpPerFrame->gClipPlanesVec4 );
+#endif
+}

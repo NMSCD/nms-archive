@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcCreatureSpawnComponentData.xml">
+      <Property name="TriggerID" value="" />
+      <Property name="Model" value="MODELS/PLANETS/CREATURES/TREXRIG/TREX.SCENE.MBIN" />
+      <Property name="Creature" value="TREX" />
+      <Property name="CreatureType" value="GcCreatureTypes.xml">
+        <Property name="CreatureType" value="Passive" />
+      </Property>
+      <Property name="ShipType" value="GcAISpaceshipTypes.xml">
+        <Property name="ShipType" value="None" />
+      </Property>
+      <Property name="Seed" value="GcSeed.xml">
+        <Property name="Seed" value="633527026" />
+        <Property name="UseSeedValue" value="True" />
+      </Property>
+      <Property name="FunctionKey" value="0" />
+      <Property name="TriggerDistance" value="0" />
+      <Property name="Scale" value="1" />
+      <Property name="StartTimeMin" value="0" />
+      <Property name="StartTimeMax" value="0" />
+      <Property name="SpawnAlert" value="False" />
+      <Property name="SpawnerMode" value="Hidden" />
+      <Property name="SpecificModel" value="GcResourceElement.xml">
+        <Property name="Filename" value="" />
+        <Property name="GenerationSeed" value="GcSeed.xml">
+          <Property name="Seed" value="0" />
+          <Property name="UseSeedValue" value="False" />
+        </Property>
+        <Property name="AltId" value="" />
+        <Property name="Texture" value="TkProceduralTextureChosenOptionList.xml">
+          <Property name="Samplers" />
+        </Property>
+      </Property>
+      <Property name="SpawnOptionList" />
+    </Property>
+    <Property value="GcCreatureBaitComponentData.xml">
+      <Property name="AttractList">
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="QUADRUPED" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="WALKER" />
+        </Property>
+      </Property>
+      <Property name="BaitStrength" value="2000" />
+      <Property name="BaitRadius" value="2000" />
+      <Property name="Debug" value="False" />
+      <Property name="InducesRage" value="True" />
+    </Property>
+  </Property>
+</Data>
