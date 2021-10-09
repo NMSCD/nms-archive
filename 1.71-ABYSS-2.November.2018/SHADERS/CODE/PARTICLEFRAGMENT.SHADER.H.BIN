@@ -1,0 +1,250 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       ParticleFragment.h
+///     @author     User
+///     @date       
+///
+///     @brief      ParticleFragment
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+#define D_PARTICLE_UNIFORMS
+
+
+#ifndef D_FRAGMENT
+#define D_FRAGMENT
+#endif
+#include "Common/Defines.shader.h"
+#include "Common/CommonUniforms.shader.h"
+
+#include "UberCommon.h"
+
+
+#include "Common/Common.shader.h"
+#include "Common/CommonDepth.shader.h"
+#include "Common/CommonFragment.shader.h"
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+DECLARE_INPUT
+
+    INPUT_SCREEN_POSITION
+
+    INPUT( vec4,   mColourVec4,				    TEXCOORD0 )
+    INPUT( vec4,   mTexCoordsVec4,		     	TEXCOORD1 )
+    INPUT( vec4,   mScreenSpacePositionVec4,	TEXCOORD2 )
+#ifdef _F13_UVANIMATION
+    INPUT( float, mfAnimBlendValue,             TEXCOORD3 )
+#endif
+#ifndef _F07_UNLIT
+    INPUT( vec3,   mWorldNormalVec3,			TEXCOORD4 )
+#ifdef _F03_NORMALMAP
+    flat INPUT(mat3, mTangentSpaceMat3,     TEXCOORD5 )
+#endif
+#endif
+
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+//-----------------------------------------------------------------------------
+///
+///     ComputeLightColour
+///
+///     @brief      ComputeLightColour
+///
+///     @param      void
+///     @return     
+///
+//-----------------------------------------------------------------------------
+vec3
+ComputeLightColour(
+    in vec3  lLightDirectionVec3,
+    in vec3  lLightColourVec3,
+    in vec3  lNormalVec3 )
+{
+    float lfLightDirDotN;
+    float lfLightColour;
+
+    lfLightDirDotN = -dot( lNormalVec3, lLightDirectionVec3 );
+        
+    // back bit
+    //float lfBackLightMin = 0.05;
+    //float lfBackLight    = min( 0.5, lfBackLightMin + (1.0 + lfLightColour)*(0.5-lfBackLightMin));
+        
+    lfLightColour = (lfLightDirDotN + 1.0) * 0.5;
+    //lfLightColour = max( lfLightColour, lfBackLight );
+        
+    return vec3(lfLightColour * lLightColourVec3);
+}
+
+//-----------------------------------------------------------------------------
+///
+///     Main
+///
+///     @brief      Main
+///
+///     @param      void
+///     @return     
+///
+//-----------------------------------------------------------------------------
+FRAGMENT_MAIN_COLOUR_SRT
+{
+    vec4 lFragmentColourVec4;
+    vec3 lNormalVec3;
+    
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Colour
+    ///
+    //-----------------------------------------------------------------------------
+
+    vec2 lTexCoords = vec2( IN(mTexCoordsVec4).x, 1.0 - IN(mTexCoordsVec4).y );
+    lFragmentColourVec4 = texture2D( SAMPLER_GETMAP( lUniforms.mpCustomPerMaterial, gDiffuseMap ), lTexCoords); // vec4(1.0, 1.0, 1.0, 1.0);
+
+#ifdef _F33_ALPHACUTOUT
+    if( lFragmentColourVec4.a < 1.0 )
+    {
+        discard;
+    }
+#endif
+
+#ifdef _F13_UVANIMATION
+    vec2 lNextFrameTexCoords = vec2( IN( mTexCoordsVec4 ).z, 1.0 - IN( mTexCoordsVec4 ).w );
+    vec4 lNextFrameColour    = texture2D( SAMPLER_GETMAP( lUniforms.mpCustomPerMaterial, gDiffuseMap ), lNextFrameTexCoords);
+    lFragmentColourVec4 = mix( lFragmentColourVec4, lNextFrameColour, IN( mfAnimBlendValue ) );
+#endif
+    
+    lFragmentColourVec4 *= IN(mColourVec4);
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Soft Particles
+    ///
+    //-----------------------------------------------------------------------------
+    #if defined( D_USING_LOGDEPTH )
+    float lWindowCoordZ = IN(mScreenSpacePositionVec4).z / IN(mScreenSpacePositionVec4).w;
+    lWindowCoordZ = lWindowCoordZ * 0.5 + 0.5;
+    float lfLinearZParticle = LogToLinearDepth(lUniforms.mpPerFrame->gClipPlanesRVec4, lWindowCoordZ);
+    #else
+    float lfLinearZParticle = IN(mScreenSpacePositionVec4).w;
+    #endif
+
+    
+    #ifdef D_SOFT_PARTICLES			
+
+        #if defined( D_HEAVYAIR ) && !defined( _F02_SKINNED )
+        lFragmentColourVec4.a *= lUniforms.mpCustomPerMesh->gHeavyAirFadeOutVec4.r;		
+        lFragmentColourVec4.a *= saturate(lfLinearZParticle * 0.07);
+        if (lFragmentColourVec4.a < (1.0 / 384.0) )
+        {
+            discard;
+        }
+        #endif
+    #endif
+
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Normal Mapping and Lighting
+    ///
+    //-----------------------------------------------------------------------------
+    #ifndef _F07_UNLIT
+    {
+        vec3 lLightColourVec3;
+        vec2 lTexCoordsVec2;
+
+        #ifdef _F03_NORMALMAP
+        {
+            vec3 lNormalMapVec3;
+
+            #ifdef _F14_UVSCROLL
+                // Scroll UV's of mWorldNormalVec3 map independently
+                lTexCoordsVec2 = IN(mTexCoordsVec4).zw;
+            #else
+                lTexCoordsVec2 = IN(mTexCoordsVec4).xy;
+            #endif
+
+            lNormalVec3 = DecodeNormalMap( texture2D( SAMPLER_GETMAP( lUniforms.mpCustomPerMaterial, gNormalMap ), lTexCoordsVec2 ) );
+            lNormalVec3 = MUL( IN( mTangentSpaceMat3 ), lNormalVec3 );            
+        }
+        #else
+        {
+            lNormalVec3 = normalize( IN( mWorldNormalVec3 ) );
+        }
+        #endif
+
+        lLightColourVec3 = ComputeLightColour(lUniforms.mpPerFrame->gLightDirectionVec4.rgb, lUniforms.mpCommonPerMesh->gLightColourVec4.rgb, lNormalVec3);        
+
+        //add a little ambient, because steep normals produce black and it dont blend well with almost opaque particles
+        lLightColourVec3 += 0.2;
+
+        lFragmentColourVec4.rgb *= lLightColourVec3;
+    }
+    #endif
+    
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Soft Particles - depth buffer
+    ///
+    //-----------------------------------------------------------------------------
+    #ifdef D_SOFT_PARTICLES
+        //float lfMaxRGB = max3(lFragmentColourVec4.r, lFragmentColourVec4.g, lFragmentColourVec4.b);
+        //if ((lFragmentColourVec4.a * lfMaxRGB) < (1.0 / 384.0))
+        //{
+        //    discard;
+        //}
+        vec2 lWindowCoordsVec2      = (IN( mScreenSpacePositionVec4 ).xy / IN( mScreenSpacePositionVec4 ).w) * 0.5 + 0.5;			
+        float lfLinearZDepthBuffer  = texture2D( SAMPLER_GETMAP(lUniforms.mpCustomPerMaterial, gDepthBuffer), SCREENSPACE_AS_RENDERTARGET_UVS( lWindowCoordsVec2 ) ).r;
+        float lfDepthFade = saturate((lfLinearZDepthBuffer - lfLinearZParticle) * 5.0);
+
+        #ifdef _F02_SKINNED
+
+            if( lfLinearZParticle >= lfLinearZDepthBuffer )
+            {
+                lFragmentColourVec4.a = 0.0;
+            }
+
+        #else
+
+            lFragmentColourVec4.a *= lfDepthFade;
+            lFragmentColourVec4.a  = min( lfDepthFade, lFragmentColourVec4.a );	
+            // visualise depth fade
+            //lFragmentColourVec4.rgba = vec4(1.0, 1.0, 1.0, 1.0 - lfDepthFade);
+
+        #endif
+
+    #else
+
+        lFragmentColourVec4.a   *= clamp((lfLinearZParticle / 5.0) - 0.5, 0.0, 1.0);
+        
+   #endif
+
+   FRAGMENT_COLOUR = vec4( lFragmentColourVec4 );		// vec4( 0.0, 1.0, 0.0, 0.5 );		
+   
+}

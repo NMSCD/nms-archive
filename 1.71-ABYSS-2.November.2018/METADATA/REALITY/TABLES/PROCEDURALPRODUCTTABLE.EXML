@@ -1,0 +1,1140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.71.0)-->
+<Data template="GcProceduralProductTable">
+  <Property name="Table">
+    <Property value="GcProceduralProductData.xml">
+      <Property name="Product" value="GcProductData.xml">
+        <Property name="Id" value="PROC_LOOT" />
+        <Property name="Name" value="ITEMGEN_FORMAT_LOOT" />
+        <Property name="NameLower" value="ITEMGEN_FORMAT_LOOT" />
+        <Property name="Subtitle" value="VariableSizeString.xml">
+          <Property name="Value" value="TREASURE_SUB" />
+        </Property>
+        <Property name="Description" value="VariableSizeString.xml">
+          <Property name="Value" value="TREASURE_SUB" />
+        </Property>
+        <Property name="Hint" value="" />
+        <Property name="GroupID" value="" />
+        <Property name="DebrisFile" value="TkModelResource.xml">
+          <Property name="Filename" value="MODELS/EFFECTS/DEBRIS/TERRAINDEBRIS/TERRAINDEBRIS4.SCENE.MBIN" />
+        </Property>
+        <Property name="BaseValue" value="1000" />
+        <Property name="Level" value="0" />
+        <Property name="Icon" value="TkModelResource.xml">
+          <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/UPDATE3/TREASUREPROD.COINCRATE.DDS" />
+        </Property>
+        <Property name="HeroIcon" value="TkModelResource.xml">
+          <Property name="Filename" value="" />
+        </Property>
+        <Property name="Colour" value="Colour.xml">
+          <Property name="R" value="0.12" />
+          <Property name="G" value="0.723" />
+          <Property name="B" value="0.038" />
+          <Property name="A" value="1" />
+        </Property>
+        <Property name="SubstanceCategory" value="GcRealitySubstanceCategory.xml">
+          <Property name="SubstanceCategory" value="Earth" />
+        </Property>
+        <Property name="Type" value="GcProductCategory.xml">
+          <Property name="ProductCategory" value="Procedural" />
+        </Property>
+        <Property name="ProceduralType" value="GcProceduralProductCategory.xml">
+          <Property name="ProceduralProductCategory" value="Loot" />
+        </Property>
+        <Property name="Rarity" value="GcRarity.xml">
+          <Property name="Rarity" value="Rare" />
+        </Property>
+        <Property name="Legality" value="GcLegality.xml">
+          <Property name="Legality" value="Legal" />
+        </Property>
+        <Property name="Consumable" value="False" />
+        <Property name="ChargeValue" value="1" />
+        <Property name="StackMultiplier" value="1" />
+        <Property name="DefaultCraftAmount" value="1" />
+        <Property name="CraftAmountStepSize" value="1" />
+        <Property name="CraftAmountMultiplier" value="1" />
+        <Property name="Requirements" />
+        <Property name="AltRequirements" />
+        <Property name="Cost" value="GcItemPriceModifiers.xml">
+          <Property name="SpaceStationMarkup" value="0" />
+          <Property name="LowPriceMod" value="0" />
+          <Property name="HighPriceMod" value="0" />
+          <Property name="BuyBaseMarkup" value="0" />
+          <Property name="BuyMarkupMod" value="0" />
+        </Property>
+        <Property name="SpecificChargeOnly" value="False" />
+        <Property name="NormalisedValueOnWorld" value="0" />
+        <Property name="NormalisedValueOffWorld" value="0" />
+        <Property name="TradeCategory" value="GcTradeCategory.xml">
+          <Property name="TradingClass" value="None" />
+        </Property>
+        <Property name="WikiEnabled" value="False" />
+        <Property name="IsCraftable" value="False" />
+        <Property name="DeploysInto" value="" />
+        <Property name="EconomyInfluenceMultiplier" value="1" />
+        <Property name="PinObjeective" value="" />
+        <Property name="PinObjeectiveTip" value="" />
+      </Property>
+      <Property name="ProceduralData">
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="4" />
+          <Property name="BasevalueMin" value="100000" />
+          <Property name="BaseValueMax" value="200000" />
+          <Property name="AgeMin" value="200" />
+          <Property name="AgeMax" value="500" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_TREASURE_COMMON_%i" />
+            <Property name="Count" value="5" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="4" />
+          <Property name="BasevalueMin" value="400000" />
+          <Property name="BaseValueMax" value="700000" />
+          <Property name="AgeMin" value="600" />
+          <Property name="AgeMax" value="1100" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_TREASURE_UNCOMMON_%i" />
+            <Property name="Count" value="3" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="2" />
+          <Property name="BasevalueMin" value="800000" />
+          <Property name="BaseValueMax" value="2000000" />
+          <Property name="AgeMin" value="1400" />
+          <Property name="AgeMax" value="3000" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_TREASURE_RARE_%i" />
+            <Property name="Count" value="3" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="PerBiomeDropWeights" value="GcBiomeList.xml">
+        <Property name="BiomeProbability">
+          <Property name="Lush" value="0" />
+          <Property name="Toxic" value="0" />
+          <Property name="Scorched" value="0" />
+          <Property name="Radioactive" value="1" />
+          <Property name="Frozen" value="1" />
+          <Property name="Barren" value="0" />
+          <Property name="Dead" value="1" />
+          <Property name="Weird" value="1" />
+          <Property name="Red" value="1" />
+          <Property name="Green" value="1" />
+          <Property name="Blue" value="1" />
+          <Property name="Test" value="1" />
+          <Property name="All" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcProceduralProductData.xml">
+      <Property name="Product" value="GcProductData.xml">
+        <Property name="Id" value="PROC_HIST" />
+        <Property name="Name" value="ITEMGEN_FORMAT_DOC" />
+        <Property name="NameLower" value="ITEMGEN_FORMAT_DOC" />
+        <Property name="Subtitle" value="VariableSizeString.xml">
+          <Property name="Value" value="HIST_SUB" />
+        </Property>
+        <Property name="Description" value="VariableSizeString.xml">
+          <Property name="Value" value="HIST_SUB" />
+        </Property>
+        <Property name="Hint" value="" />
+        <Property name="GroupID" value="" />
+        <Property name="DebrisFile" value="TkModelResource.xml">
+          <Property name="Filename" value="MODELS/EFFECTS/DEBRIS/TERRAINDEBRIS/TERRAINDEBRIS4.SCENE.MBIN" />
+        </Property>
+        <Property name="BaseValue" value="1000" />
+        <Property name="Level" value="0" />
+        <Property name="Icon" value="TkModelResource.xml">
+          <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/UPDATE3/TREASUREPROD.STRANGEBOOK.DDS" />
+        </Property>
+        <Property name="HeroIcon" value="TkModelResource.xml">
+          <Property name="Filename" value="" />
+        </Property>
+        <Property name="Colour" value="Colour.xml">
+          <Property name="R" value="0.12" />
+          <Property name="G" value="0.723" />
+          <Property name="B" value="0.038" />
+          <Property name="A" value="1" />
+        </Property>
+        <Property name="SubstanceCategory" value="GcRealitySubstanceCategory.xml">
+          <Property name="SubstanceCategory" value="Earth" />
+        </Property>
+        <Property name="Type" value="GcProductCategory.xml">
+          <Property name="ProductCategory" value="Procedural" />
+        </Property>
+        <Property name="ProceduralType" value="GcProceduralProductCategory.xml">
+          <Property name="ProceduralProductCategory" value="Document" />
+        </Property>
+        <Property name="Rarity" value="GcRarity.xml">
+          <Property name="Rarity" value="Rare" />
+        </Property>
+        <Property name="Legality" value="GcLegality.xml">
+          <Property name="Legality" value="Legal" />
+        </Property>
+        <Property name="Consumable" value="False" />
+        <Property name="ChargeValue" value="1" />
+        <Property name="StackMultiplier" value="1" />
+        <Property name="DefaultCraftAmount" value="1" />
+        <Property name="CraftAmountStepSize" value="1" />
+        <Property name="CraftAmountMultiplier" value="1" />
+        <Property name="Requirements" />
+        <Property name="AltRequirements" />
+        <Property name="Cost" value="GcItemPriceModifiers.xml">
+          <Property name="SpaceStationMarkup" value="0" />
+          <Property name="LowPriceMod" value="0" />
+          <Property name="HighPriceMod" value="0" />
+          <Property name="BuyBaseMarkup" value="0" />
+          <Property name="BuyMarkupMod" value="0" />
+        </Property>
+        <Property name="SpecificChargeOnly" value="False" />
+        <Property name="NormalisedValueOnWorld" value="0" />
+        <Property name="NormalisedValueOffWorld" value="0" />
+        <Property name="TradeCategory" value="GcTradeCategory.xml">
+          <Property name="TradingClass" value="None" />
+        </Property>
+        <Property name="WikiEnabled" value="False" />
+        <Property name="IsCraftable" value="False" />
+        <Property name="DeploysInto" value="" />
+        <Property name="EconomyInfluenceMultiplier" value="1" />
+        <Property name="PinObjeective" value="" />
+        <Property name="PinObjeectiveTip" value="" />
+      </Property>
+      <Property name="ProceduralData">
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="4" />
+          <Property name="BasevalueMin" value="100000" />
+          <Property name="BaseValueMax" value="200000" />
+          <Property name="AgeMin" value="200" />
+          <Property name="AgeMax" value="500" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_HIST_COMMON_%i" />
+            <Property name="Count" value="5" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="4" />
+          <Property name="BasevalueMin" value="400000" />
+          <Property name="BaseValueMax" value="700000" />
+          <Property name="AgeMin" value="600" />
+          <Property name="AgeMax" value="1100" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_HIST_UNCOMMON_%i" />
+            <Property name="Count" value="3" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="2" />
+          <Property name="BasevalueMin" value="800000" />
+          <Property name="BaseValueMax" value="2000000" />
+          <Property name="AgeMin" value="1400" />
+          <Property name="AgeMax" value="3000" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_HIST_RARE_%i" />
+            <Property name="Count" value="3" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="PerBiomeDropWeights" value="GcBiomeList.xml">
+        <Property name="BiomeProbability">
+          <Property name="Lush" value="1" />
+          <Property name="Toxic" value="0" />
+          <Property name="Scorched" value="0" />
+          <Property name="Radioactive" value="1" />
+          <Property name="Frozen" value="1" />
+          <Property name="Barren" value="0" />
+          <Property name="Dead" value="0" />
+          <Property name="Weird" value="1" />
+          <Property name="Red" value="1" />
+          <Property name="Green" value="1" />
+          <Property name="Blue" value="1" />
+          <Property name="Test" value="1" />
+          <Property name="All" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcProceduralProductData.xml">
+      <Property name="Product" value="GcProductData.xml">
+        <Property name="Id" value="PROC_BIO" />
+        <Property name="Name" value="ITEMGEN_FORMAT_BIO" />
+        <Property name="NameLower" value="ITEMGEN_FORMAT_BIO" />
+        <Property name="Subtitle" value="VariableSizeString.xml">
+          <Property name="Value" value="BIO_SUB" />
+        </Property>
+        <Property name="Description" value="VariableSizeString.xml">
+          <Property name="Value" value="BIO_SUB" />
+        </Property>
+        <Property name="Hint" value="" />
+        <Property name="GroupID" value="" />
+        <Property name="DebrisFile" value="TkModelResource.xml">
+          <Property name="Filename" value="MODELS/EFFECTS/DEBRIS/TERRAINDEBRIS/TERRAINDEBRIS4.SCENE.MBIN" />
+        </Property>
+        <Property name="BaseValue" value="1000" />
+        <Property name="Level" value="0" />
+        <Property name="Icon" value="TkModelResource.xml">
+          <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/UPDATE3/TREASUREPROD.WEIRDSEEDS.DDS" />
+        </Property>
+        <Property name="HeroIcon" value="TkModelResource.xml">
+          <Property name="Filename" value="" />
+        </Property>
+        <Property name="Colour" value="Colour.xml">
+          <Property name="R" value="0.12" />
+          <Property name="G" value="0.723" />
+          <Property name="B" value="0.038" />
+          <Property name="A" value="1" />
+        </Property>
+        <Property name="SubstanceCategory" value="GcRealitySubstanceCategory.xml">
+          <Property name="SubstanceCategory" value="Earth" />
+        </Property>
+        <Property name="Type" value="GcProductCategory.xml">
+          <Property name="ProductCategory" value="Procedural" />
+        </Property>
+        <Property name="ProceduralType" value="GcProceduralProductCategory.xml">
+          <Property name="ProceduralProductCategory" value="BioSample" />
+        </Property>
+        <Property name="Rarity" value="GcRarity.xml">
+          <Property name="Rarity" value="Rare" />
+        </Property>
+        <Property name="Legality" value="GcLegality.xml">
+          <Property name="Legality" value="Legal" />
+        </Property>
+        <Property name="Consumable" value="False" />
+        <Property name="ChargeValue" value="1" />
+        <Property name="StackMultiplier" value="1" />
+        <Property name="DefaultCraftAmount" value="1" />
+        <Property name="CraftAmountStepSize" value="1" />
+        <Property name="CraftAmountMultiplier" value="1" />
+        <Property name="Requirements" />
+        <Property name="AltRequirements" />
+        <Property name="Cost" value="GcItemPriceModifiers.xml">
+          <Property name="SpaceStationMarkup" value="0" />
+          <Property name="LowPriceMod" value="0" />
+          <Property name="HighPriceMod" value="0" />
+          <Property name="BuyBaseMarkup" value="0" />
+          <Property name="BuyMarkupMod" value="0" />
+        </Property>
+        <Property name="SpecificChargeOnly" value="False" />
+        <Property name="NormalisedValueOnWorld" value="0" />
+        <Property name="NormalisedValueOffWorld" value="0" />
+        <Property name="TradeCategory" value="GcTradeCategory.xml">
+          <Property name="TradingClass" value="None" />
+        </Property>
+        <Property name="WikiEnabled" value="False" />
+        <Property name="IsCraftable" value="False" />
+        <Property name="DeploysInto" value="" />
+        <Property name="EconomyInfluenceMultiplier" value="1" />
+        <Property name="PinObjeective" value="" />
+        <Property name="PinObjeectiveTip" value="" />
+      </Property>
+      <Property name="ProceduralData">
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="4" />
+          <Property name="BasevalueMin" value="100000" />
+          <Property name="BaseValueMax" value="200000" />
+          <Property name="AgeMin" value="200" />
+          <Property name="AgeMax" value="500" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_BIO_COMMON_%i" />
+            <Property name="Count" value="5" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="4" />
+          <Property name="BasevalueMin" value="400000" />
+          <Property name="BaseValueMax" value="700000" />
+          <Property name="AgeMin" value="600" />
+          <Property name="AgeMax" value="1100" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_BIO_UNCOMMON_%i" />
+            <Property name="Count" value="3" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="2" />
+          <Property name="BasevalueMin" value="800000" />
+          <Property name="BaseValueMax" value="2000000" />
+          <Property name="AgeMin" value="1400" />
+          <Property name="AgeMax" value="3000" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_BIO_RARE_%i" />
+            <Property name="Count" value="3" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="PerBiomeDropWeights" value="GcBiomeList.xml">
+        <Property name="BiomeProbability">
+          <Property name="Lush" value="1" />
+          <Property name="Toxic" value="1" />
+          <Property name="Scorched" value="0" />
+          <Property name="Radioactive" value="0" />
+          <Property name="Frozen" value="0" />
+          <Property name="Barren" value="0" />
+          <Property name="Dead" value="0" />
+          <Property name="Weird" value="1" />
+          <Property name="Red" value="1" />
+          <Property name="Green" value="1" />
+          <Property name="Blue" value="1" />
+          <Property name="Test" value="1" />
+          <Property name="All" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcProceduralProductData.xml">
+      <Property name="Product" value="GcProductData.xml">
+        <Property name="Id" value="PROC_FOSS" />
+        <Property name="Name" value="ITEMGEN_FORMAT_FOSSIL" />
+        <Property name="NameLower" value="ITEMGEN_FORMAT_FOSSIL" />
+        <Property name="Subtitle" value="VariableSizeString.xml">
+          <Property name="Value" value="FOSSIL_SUB" />
+        </Property>
+        <Property name="Description" value="VariableSizeString.xml">
+          <Property name="Value" value="FOSSIL_SUB" />
+        </Property>
+        <Property name="Hint" value="" />
+        <Property name="GroupID" value="" />
+        <Property name="DebrisFile" value="TkModelResource.xml">
+          <Property name="Filename" value="MODELS/EFFECTS/DEBRIS/TERRAINDEBRIS/TERRAINDEBRIS4.SCENE.MBIN" />
+        </Property>
+        <Property name="BaseValue" value="1000" />
+        <Property name="Level" value="0" />
+        <Property name="Icon" value="TkModelResource.xml">
+          <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/UPDATE3/TREASUREPROD.FOSSIL.DDS" />
+        </Property>
+        <Property name="HeroIcon" value="TkModelResource.xml">
+          <Property name="Filename" value="" />
+        </Property>
+        <Property name="Colour" value="Colour.xml">
+          <Property name="R" value="0.12" />
+          <Property name="G" value="0.723" />
+          <Property name="B" value="0.038" />
+          <Property name="A" value="1" />
+        </Property>
+        <Property name="SubstanceCategory" value="GcRealitySubstanceCategory.xml">
+          <Property name="SubstanceCategory" value="Earth" />
+        </Property>
+        <Property name="Type" value="GcProductCategory.xml">
+          <Property name="ProductCategory" value="Procedural" />
+        </Property>
+        <Property name="ProceduralType" value="GcProceduralProductCategory.xml">
+          <Property name="ProceduralProductCategory" value="Fossil" />
+        </Property>
+        <Property name="Rarity" value="GcRarity.xml">
+          <Property name="Rarity" value="Rare" />
+        </Property>
+        <Property name="Legality" value="GcLegality.xml">
+          <Property name="Legality" value="Legal" />
+        </Property>
+        <Property name="Consumable" value="False" />
+        <Property name="ChargeValue" value="1" />
+        <Property name="StackMultiplier" value="1" />
+        <Property name="DefaultCraftAmount" value="1" />
+        <Property name="CraftAmountStepSize" value="1" />
+        <Property name="CraftAmountMultiplier" value="1" />
+        <Property name="Requirements" />
+        <Property name="AltRequirements" />
+        <Property name="Cost" value="GcItemPriceModifiers.xml">
+          <Property name="SpaceStationMarkup" value="0" />
+          <Property name="LowPriceMod" value="0" />
+          <Property name="HighPriceMod" value="0" />
+          <Property name="BuyBaseMarkup" value="0" />
+          <Property name="BuyMarkupMod" value="0" />
+        </Property>
+        <Property name="SpecificChargeOnly" value="False" />
+        <Property name="NormalisedValueOnWorld" value="0" />
+        <Property name="NormalisedValueOffWorld" value="0" />
+        <Property name="TradeCategory" value="GcTradeCategory.xml">
+          <Property name="TradingClass" value="None" />
+        </Property>
+        <Property name="WikiEnabled" value="False" />
+        <Property name="IsCraftable" value="False" />
+        <Property name="DeploysInto" value="" />
+        <Property name="EconomyInfluenceMultiplier" value="1" />
+        <Property name="PinObjeective" value="" />
+        <Property name="PinObjeectiveTip" value="" />
+      </Property>
+      <Property name="ProceduralData">
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="4" />
+          <Property name="BasevalueMin" value="100000" />
+          <Property name="BaseValueMax" value="200000" />
+          <Property name="AgeMin" value="200" />
+          <Property name="AgeMax" value="500" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_FOSSIL_COMMON_%i" />
+            <Property name="Count" value="5" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="4" />
+          <Property name="BasevalueMin" value="400000" />
+          <Property name="BaseValueMax" value="700000" />
+          <Property name="AgeMin" value="600" />
+          <Property name="AgeMax" value="1100" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_FOSSIL_UNCOMMON_%i" />
+            <Property name="Count" value="3" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="2" />
+          <Property name="BasevalueMin" value="800000" />
+          <Property name="BaseValueMax" value="2000000" />
+          <Property name="AgeMin" value="1400" />
+          <Property name="AgeMax" value="3000" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_FOSSIL_RARE_%i" />
+            <Property name="Count" value="3" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="PerBiomeDropWeights" value="GcBiomeList.xml">
+        <Property name="BiomeProbability">
+          <Property name="Lush" value="0" />
+          <Property name="Toxic" value="0" />
+          <Property name="Scorched" value="1" />
+          <Property name="Radioactive" value="0" />
+          <Property name="Frozen" value="0" />
+          <Property name="Barren" value="1" />
+          <Property name="Dead" value="1" />
+          <Property name="Weird" value="1" />
+          <Property name="Red" value="1" />
+          <Property name="Green" value="1" />
+          <Property name="Blue" value="1" />
+          <Property name="Test" value="1" />
+          <Property name="All" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcProceduralProductData.xml">
+      <Property name="Product" value="GcProductData.xml">
+        <Property name="Id" value="PROC_PLNT" />
+        <Property name="Name" value="ITEMGEN_FORMAT_PLANT" />
+        <Property name="NameLower" value="ITEMGEN_FORMAT_PLANT" />
+        <Property name="Subtitle" value="VariableSizeString.xml">
+          <Property name="Value" value="PLANT_SUB" />
+        </Property>
+        <Property name="Description" value="VariableSizeString.xml">
+          <Property name="Value" value="PLANT_SUB" />
+        </Property>
+        <Property name="Hint" value="" />
+        <Property name="GroupID" value="" />
+        <Property name="DebrisFile" value="TkModelResource.xml">
+          <Property name="Filename" value="MODELS/EFFECTS/DEBRIS/TERRAINDEBRIS/TERRAINDEBRIS4.SCENE.MBIN" />
+        </Property>
+        <Property name="BaseValue" value="1000" />
+        <Property name="Level" value="0" />
+        <Property name="Icon" value="TkModelResource.xml">
+          <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDABLE/DECORATION.PLANTPOT3.DDS" />
+        </Property>
+        <Property name="HeroIcon" value="TkModelResource.xml">
+          <Property name="Filename" value="" />
+        </Property>
+        <Property name="Colour" value="Colour.xml">
+          <Property name="R" value="0.12" />
+          <Property name="G" value="0.723" />
+          <Property name="B" value="0.038" />
+          <Property name="A" value="1" />
+        </Property>
+        <Property name="SubstanceCategory" value="GcRealitySubstanceCategory.xml">
+          <Property name="SubstanceCategory" value="Earth" />
+        </Property>
+        <Property name="Type" value="GcProductCategory.xml">
+          <Property name="ProductCategory" value="Procedural" />
+        </Property>
+        <Property name="ProceduralType" value="GcProceduralProductCategory.xml">
+          <Property name="ProceduralProductCategory" value="Plant" />
+        </Property>
+        <Property name="Rarity" value="GcRarity.xml">
+          <Property name="Rarity" value="Rare" />
+        </Property>
+        <Property name="Legality" value="GcLegality.xml">
+          <Property name="Legality" value="Legal" />
+        </Property>
+        <Property name="Consumable" value="False" />
+        <Property name="ChargeValue" value="1" />
+        <Property name="StackMultiplier" value="1" />
+        <Property name="DefaultCraftAmount" value="1" />
+        <Property name="CraftAmountStepSize" value="1" />
+        <Property name="CraftAmountMultiplier" value="1" />
+        <Property name="Requirements" />
+        <Property name="AltRequirements" />
+        <Property name="Cost" value="GcItemPriceModifiers.xml">
+          <Property name="SpaceStationMarkup" value="0" />
+          <Property name="LowPriceMod" value="0" />
+          <Property name="HighPriceMod" value="0" />
+          <Property name="BuyBaseMarkup" value="0" />
+          <Property name="BuyMarkupMod" value="0" />
+        </Property>
+        <Property name="SpecificChargeOnly" value="False" />
+        <Property name="NormalisedValueOnWorld" value="0" />
+        <Property name="NormalisedValueOffWorld" value="0" />
+        <Property name="TradeCategory" value="GcTradeCategory.xml">
+          <Property name="TradingClass" value="None" />
+        </Property>
+        <Property name="WikiEnabled" value="False" />
+        <Property name="IsCraftable" value="False" />
+        <Property name="DeploysInto" value="" />
+        <Property name="EconomyInfluenceMultiplier" value="1" />
+        <Property name="PinObjeective" value="" />
+        <Property name="PinObjeectiveTip" value="" />
+      </Property>
+      <Property name="ProceduralData">
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="4" />
+          <Property name="BasevalueMin" value="100000" />
+          <Property name="BaseValueMax" value="200000" />
+          <Property name="AgeMin" value="200" />
+          <Property name="AgeMax" value="500" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_PLANT_COMMON_%i" />
+            <Property name="Count" value="5" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="4" />
+          <Property name="BasevalueMin" value="400000" />
+          <Property name="BaseValueMax" value="700000" />
+          <Property name="AgeMin" value="600" />
+          <Property name="AgeMax" value="1100" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_PLANT_UNCOMMON_%i" />
+            <Property name="Count" value="3" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="2" />
+          <Property name="BasevalueMin" value="800000" />
+          <Property name="BaseValueMax" value="2000000" />
+          <Property name="AgeMin" value="1400" />
+          <Property name="AgeMax" value="3000" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_PLANT_RARE_%i" />
+            <Property name="Count" value="3" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="PerBiomeDropWeights" value="GcBiomeList.xml">
+        <Property name="BiomeProbability">
+          <Property name="Lush" value="1" />
+          <Property name="Toxic" value="1" />
+          <Property name="Scorched" value="0" />
+          <Property name="Radioactive" value="0" />
+          <Property name="Frozen" value="0" />
+          <Property name="Barren" value="0" />
+          <Property name="Dead" value="0" />
+          <Property name="Weird" value="1" />
+          <Property name="Red" value="1" />
+          <Property name="Green" value="1" />
+          <Property name="Blue" value="1" />
+          <Property name="Test" value="1" />
+          <Property name="All" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcProceduralProductData.xml">
+      <Property name="Product" value="GcProductData.xml">
+        <Property name="Id" value="PROC_TOOL" />
+        <Property name="Name" value="ITEMGEN_FORMAT_TOOL" />
+        <Property name="NameLower" value="ITEMGEN_FORMAT_TOOL" />
+        <Property name="Subtitle" value="VariableSizeString.xml">
+          <Property name="Value" value="TOOL_SUB" />
+        </Property>
+        <Property name="Description" value="VariableSizeString.xml">
+          <Property name="Value" value="TOOL_SUB" />
+        </Property>
+        <Property name="Hint" value="" />
+        <Property name="GroupID" value="" />
+        <Property name="DebrisFile" value="TkModelResource.xml">
+          <Property name="Filename" value="MODELS/EFFECTS/DEBRIS/TERRAINDEBRIS/TERRAINDEBRIS4.SCENE.MBIN" />
+        </Property>
+        <Property name="BaseValue" value="1000" />
+        <Property name="Level" value="0" />
+        <Property name="Icon" value="TkModelResource.xml">
+          <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/UPDATE3/TRADEPROD.COMPONENT4.DDS" />
+        </Property>
+        <Property name="HeroIcon" value="TkModelResource.xml">
+          <Property name="Filename" value="" />
+        </Property>
+        <Property name="Colour" value="Colour.xml">
+          <Property name="R" value="0.12" />
+          <Property name="G" value="0.723" />
+          <Property name="B" value="0.038" />
+          <Property name="A" value="1" />
+        </Property>
+        <Property name="SubstanceCategory" value="GcRealitySubstanceCategory.xml">
+          <Property name="SubstanceCategory" value="Earth" />
+        </Property>
+        <Property name="Type" value="GcProductCategory.xml">
+          <Property name="ProductCategory" value="Procedural" />
+        </Property>
+        <Property name="ProceduralType" value="GcProceduralProductCategory.xml">
+          <Property name="ProceduralProductCategory" value="Tool" />
+        </Property>
+        <Property name="Rarity" value="GcRarity.xml">
+          <Property name="Rarity" value="Rare" />
+        </Property>
+        <Property name="Legality" value="GcLegality.xml">
+          <Property name="Legality" value="Legal" />
+        </Property>
+        <Property name="Consumable" value="False" />
+        <Property name="ChargeValue" value="1" />
+        <Property name="StackMultiplier" value="1" />
+        <Property name="DefaultCraftAmount" value="1" />
+        <Property name="CraftAmountStepSize" value="1" />
+        <Property name="CraftAmountMultiplier" value="1" />
+        <Property name="Requirements" />
+        <Property name="AltRequirements" />
+        <Property name="Cost" value="GcItemPriceModifiers.xml">
+          <Property name="SpaceStationMarkup" value="0" />
+          <Property name="LowPriceMod" value="0" />
+          <Property name="HighPriceMod" value="0" />
+          <Property name="BuyBaseMarkup" value="0" />
+          <Property name="BuyMarkupMod" value="0" />
+        </Property>
+        <Property name="SpecificChargeOnly" value="False" />
+        <Property name="NormalisedValueOnWorld" value="0" />
+        <Property name="NormalisedValueOffWorld" value="0" />
+        <Property name="TradeCategory" value="GcTradeCategory.xml">
+          <Property name="TradingClass" value="None" />
+        </Property>
+        <Property name="WikiEnabled" value="False" />
+        <Property name="IsCraftable" value="False" />
+        <Property name="DeploysInto" value="" />
+        <Property name="EconomyInfluenceMultiplier" value="1" />
+        <Property name="PinObjeective" value="" />
+        <Property name="PinObjeectiveTip" value="" />
+      </Property>
+      <Property name="ProceduralData">
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="4" />
+          <Property name="BasevalueMin" value="100000" />
+          <Property name="BaseValueMax" value="200000" />
+          <Property name="AgeMin" value="200" />
+          <Property name="AgeMax" value="500" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_TOOL_COMMON_%i" />
+            <Property name="Count" value="5" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="4" />
+          <Property name="BasevalueMin" value="400000" />
+          <Property name="BaseValueMax" value="700000" />
+          <Property name="AgeMin" value="600" />
+          <Property name="AgeMax" value="1100" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_TOOL_UNCOMMON_%i" />
+            <Property name="Count" value="3" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="2" />
+          <Property name="BasevalueMin" value="800000" />
+          <Property name="BaseValueMax" value="2000000" />
+          <Property name="AgeMin" value="1400" />
+          <Property name="AgeMax" value="3000" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_TOOL_RARE_%i" />
+            <Property name="Count" value="3" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="PerBiomeDropWeights" value="GcBiomeList.xml">
+        <Property name="BiomeProbability">
+          <Property name="Lush" value="0" />
+          <Property name="Toxic" value="0" />
+          <Property name="Scorched" value="1" />
+          <Property name="Radioactive" value="0" />
+          <Property name="Frozen" value="0" />
+          <Property name="Barren" value="0" />
+          <Property name="Dead" value="1" />
+          <Property name="Weird" value="1" />
+          <Property name="Red" value="1" />
+          <Property name="Green" value="1" />
+          <Property name="Blue" value="1" />
+          <Property name="Test" value="1" />
+          <Property name="All" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcProceduralProductData.xml">
+      <Property name="Product" value="GcProductData.xml">
+        <Property name="Id" value="PROC_FARM" />
+        <Property name="Name" value="ITEMGEN_FORMAT_PLANT" />
+        <Property name="NameLower" value="ITEMGEN_FORMAT_PLANT" />
+        <Property name="Subtitle" value="VariableSizeString.xml">
+          <Property name="Value" value="PLANT_SUB" />
+        </Property>
+        <Property name="Description" value="VariableSizeString.xml">
+          <Property name="Value" value="ITEMGEN_PLANT_MODERN" />
+        </Property>
+        <Property name="Hint" value="" />
+        <Property name="GroupID" value="" />
+        <Property name="DebrisFile" value="TkModelResource.xml">
+          <Property name="Filename" value="MODELS/EFFECTS/DEBRIS/TERRAINDEBRIS/TERRAINDEBRIS4.SCENE.MBIN" />
+        </Property>
+        <Property name="BaseValue" value="1000" />
+        <Property name="Level" value="0" />
+        <Property name="Icon" value="TkModelResource.xml">
+          <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDABLE/DECORATION.PLANTPOT3.DDS" />
+        </Property>
+        <Property name="HeroIcon" value="TkModelResource.xml">
+          <Property name="Filename" value="" />
+        </Property>
+        <Property name="Colour" value="Colour.xml">
+          <Property name="R" value="0.118" />
+          <Property name="G" value="0.722" />
+          <Property name="B" value="0.035" />
+          <Property name="A" value="1" />
+        </Property>
+        <Property name="SubstanceCategory" value="GcRealitySubstanceCategory.xml">
+          <Property name="SubstanceCategory" value="Earth" />
+        </Property>
+        <Property name="Type" value="GcProductCategory.xml">
+          <Property name="ProductCategory" value="Procedural" />
+        </Property>
+        <Property name="ProceduralType" value="GcProceduralProductCategory.xml">
+          <Property name="ProceduralProductCategory" value="Farm" />
+        </Property>
+        <Property name="Rarity" value="GcRarity.xml">
+          <Property name="Rarity" value="Rare" />
+        </Property>
+        <Property name="Legality" value="GcLegality.xml">
+          <Property name="Legality" value="Legal" />
+        </Property>
+        <Property name="Consumable" value="False" />
+        <Property name="ChargeValue" value="1" />
+        <Property name="StackMultiplier" value="1" />
+        <Property name="DefaultCraftAmount" value="1" />
+        <Property name="CraftAmountStepSize" value="1" />
+        <Property name="CraftAmountMultiplier" value="1" />
+        <Property name="Requirements" />
+        <Property name="AltRequirements" />
+        <Property name="Cost" value="GcItemPriceModifiers.xml">
+          <Property name="SpaceStationMarkup" value="0" />
+          <Property name="LowPriceMod" value="0" />
+          <Property name="HighPriceMod" value="0" />
+          <Property name="BuyBaseMarkup" value="0" />
+          <Property name="BuyMarkupMod" value="0" />
+        </Property>
+        <Property name="SpecificChargeOnly" value="False" />
+        <Property name="NormalisedValueOnWorld" value="0" />
+        <Property name="NormalisedValueOffWorld" value="0" />
+        <Property name="TradeCategory" value="GcTradeCategory.xml">
+          <Property name="TradingClass" value="None" />
+        </Property>
+        <Property name="WikiEnabled" value="False" />
+        <Property name="IsCraftable" value="False" />
+        <Property name="DeploysInto" value="" />
+        <Property name="EconomyInfluenceMultiplier" value="1" />
+        <Property name="PinObjeective" value="" />
+        <Property name="PinObjeectiveTip" value="" />
+      </Property>
+      <Property name="ProceduralData">
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="10" />
+          <Property name="BasevalueMin" value="100000" />
+          <Property name="BaseValueMax" value="200000" />
+          <Property name="AgeMin" value="2" />
+          <Property name="AgeMax" value="5" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_PLANT_MODERN" />
+            <Property name="Count" value="1" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="6" />
+          <Property name="BasevalueMin" value="400000" />
+          <Property name="BaseValueMax" value="700000" />
+          <Property name="AgeMin" value="6" />
+          <Property name="AgeMax" value="11" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_PLANT_MODERN" />
+            <Property name="Count" value="1" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="1" />
+          <Property name="BasevalueMin" value="800000" />
+          <Property name="BaseValueMax" value="1200000" />
+          <Property name="AgeMin" value="14" />
+          <Property name="AgeMax" value="30" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_PLANT_MODERN" />
+            <Property name="Count" value="1" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="PerBiomeDropWeights" value="GcBiomeList.xml">
+        <Property name="BiomeProbability">
+          <Property name="Lush" value="1" />
+          <Property name="Toxic" value="1" />
+          <Property name="Scorched" value="1" />
+          <Property name="Radioactive" value="1" />
+          <Property name="Frozen" value="1" />
+          <Property name="Barren" value="1" />
+          <Property name="Dead" value="1" />
+          <Property name="Weird" value="1" />
+          <Property name="Red" value="1" />
+          <Property name="Green" value="1" />
+          <Property name="Blue" value="1" />
+          <Property name="Test" value="1" />
+          <Property name="All" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcProceduralProductData.xml">
+      <Property name="Product" value="GcProductData.xml">
+        <Property name="Id" value="PROC_SEA" />
+        <Property name="Name" value="ITEMGEN_FORMAT_WATER" />
+        <Property name="NameLower" value="ITEMGEN_FORMAT_WATER" />
+        <Property name="Subtitle" value="VariableSizeString.xml">
+          <Property name="Value" value="ITEMGEN_WATER_SUB" />
+        </Property>
+        <Property name="Description" value="VariableSizeString.xml">
+          <Property name="Value" value="ITEMGEN_WATER_DESC" />
+        </Property>
+        <Property name="Hint" value="" />
+        <Property name="GroupID" value="" />
+        <Property name="DebrisFile" value="TkModelResource.xml">
+          <Property name="Filename" value="MODELS/EFFECTS/DEBRIS/TERRAINDEBRIS/TERRAINDEBRIS4.SCENE.MBIN" />
+        </Property>
+        <Property name="BaseValue" value="1000" />
+        <Property name="Level" value="0" />
+        <Property name="Icon" value="TkModelResource.xml">
+          <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/UPDATE3/TREASUREPROD.WATERLOOT.DDS" />
+        </Property>
+        <Property name="HeroIcon" value="TkModelResource.xml">
+          <Property name="Filename" value="" />
+        </Property>
+        <Property name="Colour" value="Colour.xml">
+          <Property name="R" value="0.118" />
+          <Property name="G" value="0.722" />
+          <Property name="B" value="0.035" />
+          <Property name="A" value="1" />
+        </Property>
+        <Property name="SubstanceCategory" value="GcRealitySubstanceCategory.xml">
+          <Property name="SubstanceCategory" value="Earth" />
+        </Property>
+        <Property name="Type" value="GcProductCategory.xml">
+          <Property name="ProductCategory" value="Procedural" />
+        </Property>
+        <Property name="ProceduralType" value="GcProceduralProductCategory.xml">
+          <Property name="ProceduralProductCategory" value="SeaLoot" />
+        </Property>
+        <Property name="Rarity" value="GcRarity.xml">
+          <Property name="Rarity" value="Rare" />
+        </Property>
+        <Property name="Legality" value="GcLegality.xml">
+          <Property name="Legality" value="Legal" />
+        </Property>
+        <Property name="Consumable" value="False" />
+        <Property name="ChargeValue" value="1" />
+        <Property name="StackMultiplier" value="1" />
+        <Property name="DefaultCraftAmount" value="1" />
+        <Property name="CraftAmountStepSize" value="1" />
+        <Property name="CraftAmountMultiplier" value="1" />
+        <Property name="Requirements" />
+        <Property name="AltRequirements" />
+        <Property name="Cost" value="GcItemPriceModifiers.xml">
+          <Property name="SpaceStationMarkup" value="0" />
+          <Property name="LowPriceMod" value="0" />
+          <Property name="HighPriceMod" value="0" />
+          <Property name="BuyBaseMarkup" value="0" />
+          <Property name="BuyMarkupMod" value="0" />
+        </Property>
+        <Property name="SpecificChargeOnly" value="False" />
+        <Property name="NormalisedValueOnWorld" value="0" />
+        <Property name="NormalisedValueOffWorld" value="0" />
+        <Property name="TradeCategory" value="GcTradeCategory.xml">
+          <Property name="TradingClass" value="None" />
+        </Property>
+        <Property name="WikiEnabled" value="False" />
+        <Property name="IsCraftable" value="False" />
+        <Property name="DeploysInto" value="" />
+        <Property name="EconomyInfluenceMultiplier" value="1" />
+        <Property name="PinObjeective" value="" />
+        <Property name="PinObjeectiveTip" value="" />
+      </Property>
+      <Property name="ProceduralData">
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="10" />
+          <Property name="BasevalueMin" value="100000" />
+          <Property name="BaseValueMax" value="200000" />
+          <Property name="AgeMin" value="2" />
+          <Property name="AgeMax" value="5" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_WATER_DESC" />
+            <Property name="Count" value="1" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="6" />
+          <Property name="BasevalueMin" value="400000" />
+          <Property name="BaseValueMax" value="700000" />
+          <Property name="AgeMin" value="6" />
+          <Property name="AgeMax" value="11" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_WATER_DESC" />
+            <Property name="Count" value="1" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="1" />
+          <Property name="BasevalueMin" value="800000" />
+          <Property name="BaseValueMax" value="1200000" />
+          <Property name="AgeMin" value="14" />
+          <Property name="AgeMax" value="30" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_WATER_DESC" />
+            <Property name="Count" value="1" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="PerBiomeDropWeights" value="GcBiomeList.xml">
+        <Property name="BiomeProbability">
+          <Property name="Lush" value="1" />
+          <Property name="Toxic" value="1" />
+          <Property name="Scorched" value="1" />
+          <Property name="Radioactive" value="1" />
+          <Property name="Frozen" value="1" />
+          <Property name="Barren" value="1" />
+          <Property name="Dead" value="1" />
+          <Property name="Weird" value="1" />
+          <Property name="Red" value="1" />
+          <Property name="Green" value="1" />
+          <Property name="Blue" value="1" />
+          <Property name="Test" value="1" />
+          <Property name="All" value="1" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcProceduralProductData.xml">
+      <Property name="Product" value="GcProductData.xml">
+        <Property name="Id" value="PROC_FEAR" />
+        <Property name="Name" value="ITEMGEN_FORMAT_WATERWEIRD" />
+        <Property name="NameLower" value="ITEMGEN_FORMAT_WATERWEIRD" />
+        <Property name="Subtitle" value="VariableSizeString.xml">
+          <Property name="Value" value="ITEMGEN_WATERWEIRD_SUB" />
+        </Property>
+        <Property name="Description" value="VariableSizeString.xml">
+          <Property name="Value" value="ITEMGEN_WATERWEIRD_DESC" />
+        </Property>
+        <Property name="Hint" value="" />
+        <Property name="GroupID" value="" />
+        <Property name="DebrisFile" value="TkModelResource.xml">
+          <Property name="Filename" value="MODELS/EFFECTS/DEBRIS/TERRAINDEBRIS/TERRAINDEBRIS4.SCENE.MBIN" />
+        </Property>
+        <Property name="BaseValue" value="1000" />
+        <Property name="Level" value="0" />
+        <Property name="Icon" value="TkModelResource.xml">
+          <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/U4PRODUCTS/PRODUCT.HORRIFICARTIFACT.DDS" />
+        </Property>
+        <Property name="HeroIcon" value="TkModelResource.xml">
+          <Property name="Filename" value="" />
+        </Property>
+        <Property name="Colour" value="Colour.xml">
+          <Property name="R" value="0.118" />
+          <Property name="G" value="0.722" />
+          <Property name="B" value="0.035" />
+          <Property name="A" value="1" />
+        </Property>
+        <Property name="SubstanceCategory" value="GcRealitySubstanceCategory.xml">
+          <Property name="SubstanceCategory" value="Earth" />
+        </Property>
+        <Property name="Type" value="GcProductCategory.xml">
+          <Property name="ProductCategory" value="Procedural" />
+        </Property>
+        <Property name="ProceduralType" value="GcProceduralProductCategory.xml">
+          <Property name="ProceduralProductCategory" value="SeaHorror" />
+        </Property>
+        <Property name="Rarity" value="GcRarity.xml">
+          <Property name="Rarity" value="Rare" />
+        </Property>
+        <Property name="Legality" value="GcLegality.xml">
+          <Property name="Legality" value="Legal" />
+        </Property>
+        <Property name="Consumable" value="False" />
+        <Property name="ChargeValue" value="1" />
+        <Property name="StackMultiplier" value="1" />
+        <Property name="DefaultCraftAmount" value="1" />
+        <Property name="CraftAmountStepSize" value="1" />
+        <Property name="CraftAmountMultiplier" value="1" />
+        <Property name="Requirements" />
+        <Property name="AltRequirements" />
+        <Property name="Cost" value="GcItemPriceModifiers.xml">
+          <Property name="SpaceStationMarkup" value="0" />
+          <Property name="LowPriceMod" value="0" />
+          <Property name="HighPriceMod" value="0" />
+          <Property name="BuyBaseMarkup" value="0" />
+          <Property name="BuyMarkupMod" value="0" />
+        </Property>
+        <Property name="SpecificChargeOnly" value="False" />
+        <Property name="NormalisedValueOnWorld" value="0" />
+        <Property name="NormalisedValueOffWorld" value="0" />
+        <Property name="TradeCategory" value="GcTradeCategory.xml">
+          <Property name="TradingClass" value="None" />
+        </Property>
+        <Property name="WikiEnabled" value="False" />
+        <Property name="IsCraftable" value="False" />
+        <Property name="DeploysInto" value="" />
+        <Property name="EconomyInfluenceMultiplier" value="1" />
+        <Property name="PinObjeective" value="" />
+        <Property name="PinObjeectiveTip" value="" />
+      </Property>
+      <Property name="ProceduralData">
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="10" />
+          <Property name="BasevalueMin" value="100000" />
+          <Property name="BaseValueMax" value="250000" />
+          <Property name="AgeMin" value="2" />
+          <Property name="AgeMax" value="5" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_WATERWEIRD_DESC" />
+            <Property name="Count" value="1" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="6" />
+          <Property name="BasevalueMin" value="300000" />
+          <Property name="BaseValueMax" value="600000" />
+          <Property name="AgeMin" value="6" />
+          <Property name="AgeMax" value="11" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_WATERWEIRD_DESC" />
+            <Property name="Count" value="1" />
+          </Property>
+        </Property>
+        <Property value="GcProductProceduralOnlyData.xml">
+          <Property name="DropWeight" value="1" />
+          <Property name="BasevalueMin" value="900000" />
+          <Property name="BaseValueMax" value="1200000" />
+          <Property name="AgeMin" value="14" />
+          <Property name="AgeMax" value="30" />
+          <Property name="Descriptions" value="GcNumberedTextList.xml">
+            <Property name="Format" value="ITEMGEN_WATERWEIRD_DESC" />
+            <Property name="Count" value="1" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="PerBiomeDropWeights" value="GcBiomeList.xml">
+        <Property name="BiomeProbability">
+          <Property name="Lush" value="1" />
+          <Property name="Toxic" value="1" />
+          <Property name="Scorched" value="1" />
+          <Property name="Radioactive" value="1" />
+          <Property name="Frozen" value="1" />
+          <Property name="Barren" value="1" />
+          <Property name="Dead" value="1" />
+          <Property name="Weird" value="1" />
+          <Property name="Red" value="1" />
+          <Property name="Green" value="1" />
+          <Property name="Blue" value="1" />
+          <Property name="Test" value="1" />
+          <Property name="All" value="1" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+</Data>

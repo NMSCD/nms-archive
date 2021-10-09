@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (1.71.0)-->
+<Data template="GcMissionTable">
+  <Property name="Missions">
+    <Property value="GcGenericMissionSequence.xml">
+      <Property name="MissionID" value="WIKI_TRADE5" />
+      <Property name="MissionClass" value="Secondary" />
+      <Property name="MissionIsCritical" value="False" />
+      <Property name="MissionObjective" value="" />
+      <Property name="MissionTitles" value="GcNumberedTextList.xml">
+        <Property name="Format" value="WIKI_TRADE5_MISSION_TITLE" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionSubtitles" value="GcNumberedTextList.xml">
+        <Property name="Format" value="WIKI_TRADE5_MISSION_DESC" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionDescriptions" value="GcNumberedTextList.xml">
+        <Property name="Format" value="WIKI_TRADE5_MISSION_FLAVOUR" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionProcDescriptionHeader" value="GcNumberedTextList.xml">
+        <Property name="Format" value="" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionProcDescriptionA" value="GcNumberedTextList.xml">
+        <Property name="Format" value="" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionProcDescriptionB" value="GcNumberedTextList.xml">
+        <Property name="Format" value="" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionProcDescriptionCs" value="GcNumberedTextList.xml">
+        <Property name="Format" value="" />
+        <Property name="Count" value="1" />
+      </Property>
+      <Property name="MissionIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/HUD/ICONS/MISSIONS/DEFAULT.DDS" />
+      </Property>
+      <Property name="MissionIconSelected" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/MISSIONS/MISSION.MISSINGPERSON.ON.DDS" />
+      </Property>
+      <Property name="MissionIconNotSelected" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/MISSIONS/MISSION.MISSINGPERSON.OFF.DDS" />
+      </Property>
+      <Property name="MissionPriority" value="0" />
+      <Property name="MissionCategory" value="GcMissionCategory.xml">
+        <Property name="MissionCategory" value="Mission" />
+      </Property>
+      <Property name="MissionPageHint" value="GcMissionPageHint.xml">
+        <Property name="MissionPageHint" value="None" />
+      </Property>
+      <Property name="MissionPageLocID" value="" />
+      <Property name="MissionBuildMenuHint" value="" />
+      <Property name="MissionHasColourOverride" value="False" />
+      <Property name="MissionColourOverride" value="Colour.xml">
+        <Property name="R" value="1" />
+        <Property name="G" value="1" />
+        <Property name="B" value="1" />
+        <Property name="A" value="1" />
+      </Property>
+      <Property name="DefaultItems" value="GcDefaultMissionItemsTable.xml">
+        <Property name="PrimarySubstances" />
+        <Property name="SecondarySubstances" />
+        <Property name="PrimaryProducts" />
+        <Property name="SecondaryProducts" />
+      </Property>
+      <Property name="PrefixTitle" value="True" />
+      <Property name="NextMissionHint" value="" />
+      <Property name="MessageComplete" value="Default" />
+      <Property name="MessageStart" value="Default" />
+      <Property name="MissionBoardOptions" value="GcMissionBoardOptions.xml">
+        <Property name="Type" value="GcMissionType.xml">
+          <Property name="MissionType" value="SpaceCombat" />
+        </Property>
+        <Property name="Difficulty" value="GcMissionDifficulty.xml">
+          <Property name="MissionDifficulty" value="Normal" />
+        </Property>
+        <Property name="MinRank" value="0" />
+        <Property name="CloseMissionGiver" value="False" />
+        <Property name="RewardPenaltyOnAbandon" value="" />
+        <Property name="Faction" />
+      </Property>
+      <Property name="AutoStart" value="None" />
+      <Property name="RestartOnCompletion" value="False" />
+      <Property name="CancelSetsComplete" value="False" />
+      <Property name="Dialog" />
+      <Property name="ScanEvents">
+        <Property value="GcScanEventData.xml">
+          <Property name="Name" value="SE_WIKI_MISSION_TRADE5" />
+          <Property name="ForceInteraction" value="" />
+          <Property name="ForceInteractionType" value="GcInteractionType.xml">
+            <Property name="InteractionType" value="MissionGiver" />
+          </Property>
+          <Property name="ForceBroken" value="False" />
+          <Property name="ForceFixed" value="False" />
+          <Property name="ForceOverridesAll" value="True" />
+          <Property name="AlwaysShow" value="False" />
+          <Property name="NeverShow" value="False" />
+          <Property name="IsCommunityPortalOverride" value="False" />
+          <Property name="ClearForcedInteractionOnCompletion" value="False" />
+          <Property name="EventStartType" value="Special" />
+          <Property name="EventEndType" value="Interact" />
+          <Property name="EventPriority" value="Regular" />
+          <Property name="CanEndFromOutsideMission" value="False" />
+          <Property name="DisableMultiplayerSync" value="False" />
+          <Property name="BuildingLocation" value="Nearest" />
+          <Property name="BuildingType" value="SpaceStation" />
+          <Property name="BuildingClass" value="GcBuildingClassification.xml">
+            <Property name="BuildingClass" value="None" />
+          </Property>
+          <Property name="AllowFriendBases" value="False" />
+          <Property name="SolarSystemLocation" value="LocalOrNear" />
+          <Property name="SolarSystemAttributes" value="GcScanEventSolarSystemLookup.xml">
+            <Property name="UseStarType" value="False" />
+            <Property name="UseWealth" value="False" />
+            <Property name="Usetrading" value="False" />
+            <Property name="Userace" value="GcAlienRace.xml">
+              <Property name="AlienRace" value="None" />
+            </Property>
+            <Property name="UseAnomaly" value="GcGalaxyStarAnomaly.xml">
+              <Property name="GalaxyStarAnomaly" value="None" />
+            </Property>
+            <Property name="UseConflict" value="GcPlayerConflictData.xml">
+              <Property name="ConflictLevel" value="Default" />
+            </Property>
+            <Property name="StarType" value="GcGalaxyStarTypes.xml">
+              <Property name="GalaxyStarType" value="Yellow" />
+            </Property>
+            <Property name="TradingData" value="GcPlanetTradingData.xml">
+              <Property name="WealthClass" value="GcWealthClass.xml">
+                <Property name="WealthClass" value="Average" />
+              </Property>
+              <Property name="TradingClass" value="GcTradingClass.xml">
+                <Property name="TradingClass" value="Mining" />
+              </Property>
+            </Property>
+            <Property name="NeedsWaterPlanet" value="False" />
+          </Property>
+          <Property name="ForceRestartInteraction" value="True" />
+          <Property name="HasReward" value="" />
+          <Property name="NextOption" value="" />
+          <Property name="TriggerActions" value="GcScanEventTriggers.xml">
+            <Property name="Range" value="100" />
+            <Property name="Triggers" />
+            <Property name="AllowRetrigger" value="False" />
+          </Property>
+          <Property name="UAsList" />
+          <Property name="OSDMessage" value="WIKI_MISSION_TRADE5_OSD" />
+          <Property name="MarkerLabel" value="WIKI_MISSION_TRADE5_MARKER" />
+          <Property name="MarkerIcon" value="TkTextureResource.xml">
+            <Property name="Filename" value="TEXTURES/UI/HUD/ICONS/MISSIONS/DEFAULT.DDS" />
+          </Property>
+          <Property name="StartTime" value="0" />
+          <Property name="MessageTime" value="0" />
+          <Property name="MessageDisplayTime" value="4" />
+          <Property name="MessageAudio" value="GcAudioWwiseEvents.xml">
+            <Property name="AkEvent" value="0" />
+          </Property>
+          <Property name="IconTime" value="4" />
+          <Property name="TooltipTime" value="10" />
+          <Property name="TooltipRepeats" value="False" />
+          <Property name="ShowEndTooltip" value="True" />
+          <Property name="TooltipMessage" value="" />
+        </Property>
+      </Property>
+      <Property name="Rewards" />
+      <Property name="Costs" />
+      <Property name="StartConditionTest" value="GcMissionConditionTest.xml">
+        <Property name="ConditionTest" value="AnyFalse" />
+      </Property>
+      <Property name="CancelConditionTest" value="GcMissionConditionTest.xml">
+        <Property name="ConditionTest" value="AnyFalse" />
+      </Property>
+      <Property name="StartIsCancel" value="False" />
+      <Property name="StartingConditions" />
+      <Property name="CancelingConditions" />
+      <Property name="FinalStageVersions">
+        <Property value="GcGenericMissionVersionProgress.xml">
+          <Property name="Version" value="1" />
+          <Property name="Progress" value="4" />
+        </Property>
+        <Property value="GcGenericMissionVersionProgress.xml">
+          <Property name="Version" value="3" />
+          <Property name="Progress" value="4" />
+        </Property>
+        <Property value="GcGenericMissionVersionProgress.xml">
+          <Property name="Version" value="4" />
+          <Property name="Progress" value="4" />
+        </Property>
+        <Property value="GcGenericMissionVersionProgress.xml">
+          <Property name="Version" value="5" />
+          <Property name="Progress" value="4" />
+        </Property>
+        <Property value="GcGenericMissionVersionProgress.xml">
+          <Property name="Version" value="6" />
+          <Property name="Progress" value="4" />
+        </Property>
+        <Property value="GcGenericMissionVersionProgress.xml">
+          <Property name="Version" value="7" />
+          <Property name="Progress" value="4" />
+        </Property>
+        <Property value="GcGenericMissionVersionProgress.xml">
+          <Property name="Version" value="8" />
+          <Property name="Progress" value="4" />
+        </Property>
+      </Property>
+      <Property name="Stages">
+        <Property value="GcGenericMissionStage.xml">
+          <Property name="Versions">
+            <Property value="GcGenericMissionVersionProgress.xml">
+              <Property name="Version" value="1" />
+              <Property name="Progress" value="1" />
+            </Property>
+          </Property>
+          <Property name="Stage" value="GcMissionSequenceGroup.xml">
+            <Property name="Silent" value="False" />
+            <Property name="Icon" value="TkTextureResource.xml">
+              <Property name="Filename" value="" />
+            </Property>
+            <Property name="PageHint" value="GcMissionPageHint.xml">
+              <Property name="MissionPageHint" value="None" />
+            </Property>
+            <Property name="PageDataLocID" value="" />
+            <Property name="BuildMenuHint" value="" />
+            <Property name="DebugText" value="Wiki Mission Group 1" />
+            <Property name="ObjectiveID" value="WIKI_TRADE5_MISSION_OBJ" />
+            <Property name="ObjectiveTipID" value="WIKI_TRADE5_MISSION_OBJ_TIP" />
+            <Property name="HasCategoryOverride" value="False" />
+            <Property name="OverrideCategory" value="GcMissionCategory.xml">
+              <Property name="MissionCategory" value="Mission" />
+            </Property>
+            <Property name="HasColourOverride" value="False" />
+            <Property name="ColourOverride" value="Colour.xml">
+              <Property name="R" value="1" />
+              <Property name="G" value="1" />
+              <Property name="B" value="1" />
+              <Property name="A" value="1" />
+            </Property>
+            <Property name="PrefixTitle" value="False" />
+            <Property name="PrefixTitleText" value="" />
+            <Property name="ConditionTest" value="GcMissionConditionTest.xml">
+              <Property name="ConditionTest" value="AnyFalse" />
+            </Property>
+            <Property name="RepeatLogic" value="None" />
+            <Property name="Conditions" />
+            <Property name="Consequences" />
+            <Property name="Stages">
+              <Property value="GcGenericMissionStage.xml">
+                <Property name="Versions">
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="1" />
+                    <Property name="Progress" value="1" />
+                  </Property>
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="3" />
+                    <Property name="Progress" value="1" />
+                  </Property>
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="4" />
+                    <Property name="Progress" value="1" />
+                  </Property>
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="5" />
+                    <Property name="Progress" value="1" />
+                  </Property>
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="6" />
+                    <Property name="Progress" value="1" />
+                  </Property>
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="7" />
+                    <Property name="Progress" value="1" />
+                  </Property>
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="8" />
+                    <Property name="Progress" value="1" />
+                  </Property>
+                </Property>
+                <Property name="Stage" value="GcMissionSequenceStartScanEvent.xml">
+                  <Property name="Participant" value="GcPlayerMissionParticipantType.xml">
+                    <Property name="ParticipantType" value="None" />
+                  </Property>
+                  <Property name="Event" value="SE_WIKI_MISSION_TRADE5" />
+                  <Property name="Time" value="1" />
+                  <Property name="AllowOtherPlayerBase" value="False" />
+                  <Property name="DebugText" value="Starting wiki mission board scan event" />
+                </Property>
+              </Property>
+              <Property value="GcGenericMissionStage.xml">
+                <Property name="Versions">
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="1" />
+                    <Property name="Progress" value="2" />
+                  </Property>
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="3" />
+                    <Property name="Progress" value="2" />
+                  </Property>
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="4" />
+                    <Property name="Progress" value="2" />
+                  </Property>
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="5" />
+                    <Property name="Progress" value="2" />
+                  </Property>
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="6" />
+                    <Property name="Progress" value="2" />
+                  </Property>
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="7" />
+                    <Property name="Progress" value="2" />
+                  </Property>
+                  <Property value="GcGenericMissionVersionProgress.xml">
+                    <Property name="Version" value="8" />
+                    <Property name="Progress" value="2" />
+                  </Property>
+                </Property>
+                <Property name="Stage" value="GcMissionSequenceGetToScanEvent.xml">
+                  <Property name="Message" value="WIKI_TRADE5_MISSION_MSG" />
+                  <Property name="GalaxyMapMessage" value="UI_SCANEVENT_GOTO_MAP" />
+                  <Property name="Event" value="SE_WIKI_MISSION_TRADE5" />
+                  <Property name="Distance" value="10" />
+                  <Property name="EndEventWhenReached" value="True" />
+                  <Property name="Timeout" value="0" />
+                  <Property name="DistanceTimeout" value="False" />
+                  <Property name="TimeoutOSD" value="SIGNAL_TIME_FAIL" />
+                  <Property name="DebugText" value="Waiting for player to approach the mission board" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="ForcesPageHint" value="False" />
+      <Property name="ForcesBuildMenuHint" value="False" />
+      <Property name="IsProceduralAllowed" value="False" />
+      <Property name="IsRecurring" value="False" />
+      <Property name="IsLegacy" value="False" />
+    </Property>
+  </Property>
+</Data>

@@ -1,0 +1,158 @@
+<!-- High Dynamic Range (HDR) utf-8Shading Pipeline -->
+<Pipeline>
+  <Setup>
+    <RenderTarget id="SHADOWBUF"   depthBuf="true"  numColBufs="0"  format="RGBA8" depthFormat="DEPTH16" scale="1.0" width="2880" height="960" maxSamples="0" shadow="true" hasMips="false" numUniformBuffers="3" crossPipeShareId="SHADOW_SHARED" />  
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="Shadow_All_Clear">
+      <BeginTarget target="SHADOWBUF" />
+      <SetShadowMap index="-1" />
+      <ColourMask channels="RGBA"/>
+      <ClearTarget depthBuf="true" colBuf0="false" excludeX360="false" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+
+    <Stage id="Shadow_0_Clear" enabled="false">
+      <BeginTarget target="SHADOWBUF" />
+      <ColourMask channels="RGBA"/>
+      <SetShadowMap index="0" />
+      <ClearTarget depthBuf="true" colBuf0="false" excludeX360="false" depthViewportOnly="true" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+    </Stage>
+
+    <Stage id="Shadow_0">
+      
+      <BeginTarget target="SHADOWBUF" />
+
+      <UpdateShadowMap />
+
+      <ColourMask channels="RGBA"/>
+      <!--PS4: default setting after ClearTarget equals RT0-RGBA, so no need to call ColourMask again-->
+      
+      <!--PS4: we're using HTile but not allowing compression, to save decompressing the very large shadowmap target at the end -->
+      
+
+      <SetShadowMap index="0" />
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="lessEqual" />
+      <DrawShadowGeometry type="Mesh"         class="Glow"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="Opaque"         context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="Cutout"         context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="Highlight"      context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="ShadowOnly"     context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="InstanceMesh" class="Opaque"         context="SHADOW_INSTANCE_FADE"   order="STATECHANGES"/>
+      <DrawShadowGeometry type="InstanceMesh" class="Cutout"         context="SHADOW_INSTANCE_FADE"   order="STATECHANGES"/>
+      <DrawShadowGeometry type="InstanceMesh" class="Glow"           context="SHADOW_INSTANCE_FADE"   order="STATECHANGES"/>
+
+      <SetContext zwrite="true" colourWrite="false" cullMode="none" blendMode="replace" depthTest="lessEqual" />
+      <DrawShadowGeometry type="Mesh"         class="DoubleSided"             context="SHADOW_FADE"            order="STATECHANGES" />
+      <DrawShadowGeometry type="InstanceMesh" class="DoubleSided"             context="SHADOW_INSTANCE_FADE"   order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="HighlightDoubleSided"    context="SHADOW_FADE"            order="STATECHANGES" />
+
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="lessEqual" />
+      <DrawShadowGeometry type="Terrain"      class="LOD0"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Terrain"      class="LOD1"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Terrain"      class="LOD2"           context="SHADOW_FADE"            order="STATECHANGES"/>
+
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+
+    <Stage id="Shadow_1_Clear" enabled="false">
+      <BeginTarget target="SHADOWBUF" />
+      <ColourMask channels="RGBA"/>
+      <SetShadowMap index="1" />
+      <ClearTarget depthBuf="true" colBuf0="false" excludeX360="false" depthViewportOnly="true" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+    </Stage>
+
+    <Stage id="Shadow_1">
+      
+      <BeginTarget target="SHADOWBUF" />
+
+      <UpdateShadowMap />
+
+      <ColourMask channels="RGBA"/>
+      <!--PS4: default setting after ClearTarget equals RT0-RGBA, so no need to call ColourMask again-->
+      
+      <!--PS4: we're using HTile but not allowing compression, to save decompressing the very large shadowmap target at the end -->
+      
+
+      <SetShadowMap index="1" />
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="lessEqual" UniformBufferIndex="1" />
+      <DrawShadowGeometry type="Mesh"         class="Glow"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="Opaque"         context="SHADOW_FADE"            order="STATECHANGES" />
+      <DrawShadowGeometry type="Mesh"         class="Cutout"         context="SHADOW_FADE"            order="STATECHANGES" />
+      <DrawShadowGeometry type="Mesh"         class="Highlight"      context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="ShadowOnly"     context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="InstanceMesh" class="Opaque"         context="SHADOW_INSTANCE_FADE"   order="STATECHANGES" />
+      <DrawShadowGeometry type="InstanceMesh" class="Cutout"         context="SHADOW_INSTANCE_FADE"   order="STATECHANGES" />
+      <DrawShadowGeometry type="InstanceMesh" class="Glow"           context="SHADOW_INSTANCE_FADE"   order="STATECHANGES"/>
+
+      <SetContext zwrite="true" colourWrite="false" cullMode="none" blendMode="replace" depthTest="lessEqual" UniformBufferIndex="1" />
+      <DrawShadowGeometry type="Mesh"         class="DoubleSided"             context="SHADOW_FADE"            order="STATECHANGES" />
+      <DrawShadowGeometry type="InstanceMesh" class="DoubleSided"             context="SHADOW_INSTANCE_FADE"   order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="HighlightDoubleSided"    context="SHADOW_FADE"            order="STATECHANGES" />
+
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="lessEqual" UniformBufferIndex="1" />
+      <DrawShadowGeometry type="Terrain"      class="LOD0"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Terrain"      class="LOD1"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Terrain"      class="LOD2"           context="SHADOW_FADE"            order="STATECHANGES"/>
+
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+
+    <Stage id="Shadow_2_Clear" enabled="false">
+      <BeginTarget target="SHADOWBUF" />
+      <ColourMask channels="RGBA"/>
+      <SetShadowMap index="2" />
+      <ClearTarget depthBuf="true" colBuf0="false" excludeX360="false" depthViewportOnly="true" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+    </Stage>
+
+    <Stage id="Shadow_2">
+      
+      <BeginTarget target="SHADOWBUF" />
+
+      <UpdateShadowMap />
+
+      <ColourMask channels="RGBA"/>
+      <!--PS4: default setting after ClearTarget equals RT0-RGBA, so no need to call ColourMask again-->
+      
+      <!--PS4: we're using HTile but not allowing compression, to save decompressing the very large shadowmap target at the end -->
+      
+
+      <SetShadowMap index="2" />
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="lessEqual" UniformBufferIndex="2" />
+      <DrawShadowGeometry type="Mesh"         class="Glow"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="Opaque"         context="SHADOW_FADE"            order="STATECHANGES" />
+      <DrawShadowGeometry type="Mesh"         class="Cutout"         context="SHADOW_FADE"            order="STATECHANGES" />
+      <DrawShadowGeometry type="Mesh"         class="Highlight"      context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="ShadowOnly"     context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="InstanceMesh" class="Opaque"         context="SHADOW_INSTANCE_FADE"   order="STATECHANGES" />
+      <DrawShadowGeometry type="InstanceMesh" class="Cutout"         context="SHADOW_INSTANCE_FADE"   order="STATECHANGES" />
+      <DrawShadowGeometry type="InstanceMesh" class="Glow"           context="SHADOW_INSTANCE_FADE"   order="STATECHANGES"/>
+
+      <SetContext zwrite="true" colourWrite="false" cullMode="none" blendMode="replace" depthTest="lessEqual" UniformBufferIndex="2"  />
+      <DrawShadowGeometry type="Mesh"         class="DoubleSided"             context="SHADOW_FADE"            order="STATECHANGES" />
+      <DrawShadowGeometry type="InstanceMesh" class="DoubleSided"             context="SHADOW_INSTANCE_FADE"   order="STATECHANGES"/>
+      <DrawShadowGeometry type="Mesh"         class="HighlightDoubleSided"    context="SHADOW_FADE"            order="STATECHANGES" />
+
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="lessEqual" UniformBufferIndex="2" />      
+      <DrawShadowGeometry type="Terrain"      class="LOD0"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Terrain"      class="LOD1"           context="SHADOW_FADE"            order="STATECHANGES"/>
+      <DrawShadowGeometry type="Terrain"      class="LOD2"           context="SHADOW_FADE"            order="STATECHANGES"/>
+
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+
+    <Stage id="Shadow_End">
+      <BeginTarget target="SHADOWBUF" />
+      <SetShadowMap index="-1" />
+
+      <SetDepthBufferControl allowCompression="true" />    
+      <EndTarget flushCB="false" flushDB="true" />
+    </Stage>
+
+
+  </CommandQueue>
+
+</Pipeline>
