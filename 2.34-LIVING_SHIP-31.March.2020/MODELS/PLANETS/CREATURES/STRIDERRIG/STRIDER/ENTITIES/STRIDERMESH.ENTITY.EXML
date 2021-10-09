@@ -1,0 +1,4958 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (2.34.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkAudioComponentData.xml">
+      <Property name="Ambient" value="" />
+      <Property name="AmbientState" value="" />
+      <Property name="MaxDistance" value="90" />
+      <Property name="AnimTriggers">
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="StriderAttack" />
+          <Property name="Anim" value="ATTACK1" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="CREATURE_VOC_ATTACK" />
+          <Property name="Anim" value="ATTACK1" />
+          <Property name="FrameStart" value="20" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="StriderAttack2" />
+          <Property name="Anim" value="ATTACK2" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="CREATURE_VOC_ATTACK" />
+          <Property name="Anim" value="ATTACK2" />
+          <Property name="FrameStart" value="20" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="StriderAttack3" />
+          <Property name="Anim" value="ATTACK3" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="CREATURE_VOC_ATTACK" />
+          <Property name="Anim" value="ATTACK3" />
+          <Property name="FrameStart" value="15" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="CREATURE_VOC_BIG" />
+          <Property name="Anim" value="ROAR" />
+          <Property name="FrameStart" value="60" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="StriderRoar" />
+          <Property name="Anim" value="ROAR" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="CREATURE_VOC_BIG" />
+          <Property name="Anim" value="PERFORM04" />
+          <Property name="FrameStart" value="60" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="StriderRoar" />
+          <Property name="Anim" value="PERFORM04" />
+          <Property name="FrameStart" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkAnimPoseComponentData.xml">
+      <Property name="PoseAnims">
+        <Property value="TkAnimPoseData.xml">
+          <Property name="Anim" value="HEADPOSE" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="199" />
+        </Property>
+        <Property value="TkAnimPoseData.xml">
+          <Property name="Anim" value="HEADSCALE" />
+          <Property name="FrameStart" value="201" />
+          <Property name="FrameEnd" value="299" />
+        </Property>
+        <Property value="TkAnimPoseData.xml">
+          <Property name="Anim" value="LEGLENGTH" />
+          <Property name="FrameStart" value="301" />
+          <Property name="FrameEnd" value="399" />
+        </Property>
+        <Property value="TkAnimPoseData.xml">
+          <Property name="Anim" value="BODYROTATION" />
+          <Property name="FrameStart" value="401" />
+          <Property name="FrameEnd" value="499" />
+        </Property>
+        <Property value="TkAnimPoseData.xml">
+          <Property name="Anim" value="TAILSCALE" />
+          <Property name="FrameStart" value="501" />
+          <Property name="FrameEnd" value="599" />
+        </Property>
+      </Property>
+      <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERPOSE.ANIM.MBIN" />
+      <Property name="Correlations">
+        <Property value="TkAnimPoseCorrelationData.xml">
+          <Property name="ItemA" value="SCALE" />
+          <Property name="ItemB" value="HEADSCALE" />
+          <Property name="Correlation" value="-0.391362" />
+        </Property>
+        <Property value="TkAnimPoseCorrelationData.xml">
+          <Property name="ItemA" value="SCALE" />
+          <Property name="ItemB" value="LEGLENGTH" />
+          <Property name="Correlation" value="0.324382" />
+        </Property>
+        <Property value="TkAnimPoseCorrelationData.xml">
+          <Property name="ItemA" value="SCALE" />
+          <Property name="ItemB" value="TAILSCALE" />
+          <Property name="Correlation" value="-0.289313" />
+        </Property>
+        <Property value="TkAnimPoseCorrelationData.xml">
+          <Property name="ItemA" value="HEADSCALE" />
+          <Property name="ItemB" value="SCALE" />
+          <Property name="Correlation" value="-0.391362" />
+        </Property>
+        <Property value="TkAnimPoseCorrelationData.xml">
+          <Property name="ItemA" value="LEGLENGTH" />
+          <Property name="ItemB" value="SCALE" />
+          <Property name="Correlation" value="0.324382" />
+        </Property>
+        <Property value="TkAnimPoseCorrelationData.xml">
+          <Property name="ItemA" value="TAILSCALE" />
+          <Property name="ItemB" value="SCALE" />
+          <Property name="Correlation" value="-0.289313" />
+        </Property>
+      </Property>
+      <Property name="Examples" />
+      <Property name="CorrelationMat">
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-0.625591" />
+        <Property value="0.569547" />
+        <Property value="0" />
+        <Property value="-0.537879" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.016445" />
+        <Property value="0.99983" />
+        <Property value="1" />
+        <Property value="160.17627" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1.64898013E+28" />
+        <Property value="10.027195" />
+        <Property value="1.88325888E+11" />
+        <Property value="1.21404076E+33" />
+        <Property value="4.20275959E+30" />
+        <Property value="2.873928E+23" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-0.222637" />
+        <Property value="-7.4E-05" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-0.302937" />
+        <Property value="-0.181734" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-0.000245" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="13.6568975" />
+        <Property value="34.1422119" />
+        <Property value="13.6568975" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="-0.625591" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="-0.00407" />
+        <Property value="0" />
+        <Property value="0.003844" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.569547" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-0.00407" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="-0.003498" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="115.350807" />
+        <Property value="110.790909" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="-0.537879" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.003844" />
+        <Property value="-0.003498" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.757663E+32" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.2E-05" />
+        <Property value="-2.2E-05" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.91565031E+31" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0.1" />
+        <Property value="0.1" />
+        <Property value="0.1" />
+        <Property value="0.1" />
+        <Property value="0" />
+        <Property value="5" />
+        <Property value="0.2" />
+        <Property value="0.8" />
+        <Property value="0.001" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0.002" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.757663E+32" />
+        <Property value="0" />
+        <Property value="8.67122369E+18" />
+        <Property value="0" />
+        <Property value="7.742753E+37" />
+        <Property value="0" />
+        <Property value="6.93838E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="6.866775E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.553286E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.34186678E+31" />
+        <Property value="0" />
+        <Property value="-4.553286E+32" />
+        <Property value="0" />
+        <Property value="-2.20020785E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.37088777E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.20020785E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="8" />
+        <Property value="20" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.5" />
+        <Property value="0.5" />
+        <Property value="-1" />
+        <Property value="0" />
+        <Property value="0.2" />
+        <Property value="0.25" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="2" />
+        <Property value="0.5" />
+        <Property value="0.149414" />
+        <Property value="0.6" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="32" />
+        <Property value="500" />
+        <Property value="1" />
+        <Property value="5" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="100" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.200212E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="128" />
+        <Property value="350" />
+        <Property value="0.2" />
+        <Property value="4" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.26224412E+32" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.26224412E+32" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.2137847E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.2" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="2" />
+        <Property value="0.5" />
+        <Property value="0.1" />
+        <Property value="0.9" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="250" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.10616174E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.9541664E+31" />
+        <Property value="0" />
+        <Property value="-8.205356E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.58512187E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.37855323E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.14898625E+31" />
+        <Property value="0" />
+        <Property value="-8.20518029E+18" />
+        <Property value="0" />
+        <Property value="-1.27890794E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-2.34928833E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.99462431E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.27899415E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="6.939801E+32" />
+        <Property value="0" />
+        <Property value="7.909815E+37" />
+        <Property value="0" />
+        <Property value="7.75434344E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.909815E+37" />
+        <Property value="0" />
+        <Property value="7.909856E+37" />
+        <Property value="0" />
+        <Property value="7.760581E+32" />
+        <Property value="0" />
+        <Property value="7.909856E+37" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.909815E+37" />
+        <Property value="0" />
+        <Property value="7.757663E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="100" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.909856E+37" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.909815E+37" />
+        <Property value="0" />
+        <Property value="7.757663E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="64" />
+        <Property value="96" />
+        <Property value="128" />
+        <Property value="128" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.005" />
+        <Property value="5" />
+        <Property value="0" />
+        <Property value="0.5" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="2" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="5" />
+        <Property value="10" />
+        <Property value="1" />
+        <Property value="5" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="100" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7" />
+        <Property value="20.45" />
+        <Property value="-0.33" />
+        <Property value="-3.54" />
+        <Property value="7" />
+        <Property value="20.45" />
+        <Property value="-0.33" />
+        <Property value="-3.54" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.742753E+37" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.757663E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.34928059E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-2.350862E+32" />
+        <Property value="0" />
+        <Property value="-2.34868174E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.996921E+31" />
+        <Property value="0" />
+        <Property value="-1.2790135E+19" />
+        <Property value="0" />
+        <Property value="-1.2790135E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="2" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.200212E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.54" />
+        <Property value="7" />
+        <Property value="20.45" />
+        <Property value="-0.33" />
+        <Property value="-3.54" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.26224412E+32" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.2137847E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.5" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="2" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="100" />
+        <Property value="1" />
+        <Property value="5" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="100" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.9541664E+31" />
+        <Property value="0" />
+        <Property value="-8.205356E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.58512187E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.37855323E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.757663E+32" />
+        <Property value="0" />
+        <Property value="-2.34928059E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-2.350862E+32" />
+        <Property value="0" />
+        <Property value="-2.34868174E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.99462431E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.27913488E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.757663E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.742753E+37" />
+        <Property value="0" />
+        <Property value="6.93838E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.39608154E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="8.171341E+36" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="6.939801E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.75434344E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.909815E+37" />
+        <Property value="0" />
+        <Property value="7.909856E+37" />
+        <Property value="0" />
+        <Property value="7.760581E+32" />
+        <Property value="0" />
+        <Property value="7.909856E+37" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.909815E+37" />
+        <Property value="0" />
+        <Property value="7.757663E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.8E-05" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="8.171341E+36" />
+        <Property value="0" />
+        <Property value="8.171341E+36" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.909815E+37" />
+        <Property value="0" />
+        <Property value="7.757663E+32" />
+        <Property value="0" />
+        <Property value="7.742753E+37" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.757663E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7.757663E+32" />
+        <Property value="0" />
+        <Property value="100" />
+        <Property value="100" />
+        <Property value="10" />
+        <Property value="10" />
+        <Property value="10" />
+        <Property value="10" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="5" />
+        <Property value="0" />
+        <Property value="0.5" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="2" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="100" />
+        <Property value="1" />
+        <Property value="5" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="100" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="7" />
+        <Property value="20.45" />
+        <Property value="-0.33" />
+        <Property value="-3.54" />
+        <Property value="7" />
+        <Property value="20.45" />
+        <Property value="-0.33" />
+        <Property value="-3.54" />
+        <Property value="1" />
+        <Property value="-2.34928059E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-2.350862E+32" />
+        <Property value="0" />
+        <Property value="-2.34868174E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.996921E+31" />
+        <Property value="0" />
+        <Property value="-1.27915424E+19" />
+        <Property value="0" />
+        <Property value="-1.27915424E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.200212E+31" />
+        <Property value="0" />
+        <Property value="100" />
+        <Property value="100" />
+        <Property value="10" />
+        <Property value="10" />
+        <Property value="10" />
+        <Property value="10" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="5" />
+        <Property value="0" />
+        <Property value="0.5" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="2" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="100" />
+        <Property value="1" />
+        <Property value="5" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.26224412E+32" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.2137847E+31" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-103.290787" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.10616174E+31" />
+        <Property value="0" />
+        <Property value="-8.20522E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.606091E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="5" />
+        <Property value="-1.27869684E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-2.34928833E+32" />
+        <Property value="0" />
+        <Property value="-8.20504835E+18" />
+        <Property value="0" />
+        <Property value="-5.14898625E+31" />
+        <Property value="0" />
+        <Property value="-2.34928059E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-2.350862E+32" />
+        <Property value="0" />
+        <Property value="-2.34868174E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.99462431E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.27941636E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.200212E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.200212E+31" />
+        <Property value="0" />
+        <Property value="100" />
+        <Property value="100" />
+        <Property value="10" />
+        <Property value="10" />
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="5" />
+        <Property value="0" />
+        <Property value="0.5" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="2" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.26224412E+32" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.2137847E+31" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.2137847E+31" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.69672858E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.682518E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.10616174E+31" />
+        <Property value="0" />
+        <Property value="-8.20522E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.58512187E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.606091E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.9541664E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.27927738E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-2.34928833E+32" />
+        <Property value="0" />
+        <Property value="-8.20504835E+18" />
+        <Property value="0" />
+        <Property value="-5.14898625E+31" />
+        <Property value="0" />
+        <Property value="-2.34928059E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-2.350862E+32" />
+        <Property value="0" />
+        <Property value="-2.34868174E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.996921E+31" />
+        <Property value="0" />
+        <Property value="-1.27943571E+19" />
+        <Property value="0" />
+        <Property value="-1.27943571E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="20.45" />
+        <Property value="-0.33" />
+        <Property value="-3.54" />
+        <Property value="7" />
+        <Property value="20.45" />
+        <Property value="-0.33" />
+        <Property value="-3.54" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.500015" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="128" />
+        <Property value="64" />
+        <Property value="0" />
+        <Property value="4000" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="64" />
+        <Property value="0" />
+        <Property value="8" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0.642212" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="2.5" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0.662003" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="2.5" />
+        <Property value="0" />
+        <Property value="100" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="2.5" />
+        <Property value="0" />
+        <Property value="100" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="24" />
+        <Property value="256" />
+        <Property value="0" />
+        <Property value="600" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="32" />
+        <Property value="-390.164063" />
+        <Property value="0" />
+        <Property value="32.5" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="2.5" />
+        <Property value="0" />
+        <Property value="100" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-123.539063" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="2.5" />
+        <Property value="0" />
+        <Property value="100" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="15" />
+        <Property value="50" />
+        <Property value="0" />
+        <Property value="50" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.5" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="25" />
+        <Property value="12.5" />
+        <Property value="0" />
+        <Property value="125" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="500" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="4" />
+        <Property value="0" />
+        <Property value="16" />
+        <Property value="6" />
+        <Property value="6" />
+        <Property value="8" />
+        <Property value="1" />
+        <Property value="-2.34928059E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-2.350862E+32" />
+        <Property value="0" />
+        <Property value="-2.34868174E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.05859253E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.35085432E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.75860137E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.200212E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-0.157212" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.26224412E+32" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.26224412E+32" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.2137847E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.382399E+15" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="13.2669191" />
+        <Property value="13.265934" />
+        <Property value="2.111045E+08" />
+        <Property value="3.32083731E+12" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="3397.20923" />
+        <Property value="3.52631526E+09" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.10616174E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.0585513E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.35085432E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.75860137E+31" />
+        <Property value="0" />
+        <Property value="-8.205356E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.37855323E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.14898625E+31" />
+        <Property value="0" />
+        <Property value="-2.34928059E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-2.350862E+32" />
+        <Property value="0" />
+        <Property value="-2.34868174E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.996921E+31" />
+        <Property value="0" />
+        <Property value="-1.27936534E+19" />
+        <Property value="0" />
+        <Property value="-1.27936534E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.38208281E+15" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.200212E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.78700243E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="2.111045E+08" />
+        <Property value="3.32083731E+12" />
+        <Property value="0" />
+        <Property value="8.901868E+11" />
+        <Property value="3397.20923" />
+        <Property value="3.52631526E+09" />
+        <Property value="3140.331" />
+        <Property value="861237.2" />
+        <Property value="3.377746E+09" />
+        <Property value="48.33233" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="3.61268852E+12" />
+        <Property value="3268.14087" />
+        <Property value="215282736" />
+        <Property value="182772976" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.89163582E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.26224412E+32" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.05861452E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.35085432E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.75860137E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.68125672E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.28711053E+09" />
+        <Property value="-1.60686687E+30" />
+        <Property value="-2.3488241E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.18903483E+30" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.9541664E+31" />
+        <Property value="0" />
+        <Property value="-8.205356E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.37855323E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.3487328E+32" />
+        <Property value="0" />
+        <Property value="-2.34928059E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-2.350862E+32" />
+        <Property value="0" />
+        <Property value="-2.34868174E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.996921E+31" />
+        <Property value="0" />
+        <Property value="-1.27934775E+19" />
+        <Property value="0" />
+        <Property value="-1.27934775E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.200212E+31" />
+        <Property value="0" />
+        <Property value="-1.64530278E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.3488241E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.68125672E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.05861177E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.35085432E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.75860137E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.26224412E+32" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.2137847E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.78700243E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.3488241E+32" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.68125672E+31" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.10616174E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.95437531E+31" />
+        <Property value="0" />
+        <Property value="-8.205022E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.58512187E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.37860275E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.14898625E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.34928833E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.9946306E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.10948992E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.0586585E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.35085432E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.75860137E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.200212E+31" />
+        <Property value="0" />
+        <Property value="-2.348708E+32" />
+        <Property value="0" />
+        <Property value="-1.27941812E+19" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.68125672E+31" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.26224412E+32" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.26224412E+32" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.2137847E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.3488241E+32" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.68125672E+31" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.10616174E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.95437531E+31" />
+        <Property value="0" />
+        <Property value="-8.205022E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.05865026E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.35085432E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.75860137E+31" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.996921E+31" />
+        <Property value="0" />
+        <Property value="-2.90758373E+19" />
+        <Property value="0" />
+        <Property value="-1.10949519E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.200212E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.001867E+20" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.37811376E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.70560835E+31" />
+        <Property value="0" />
+        <Property value="-1.10949519E+19" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.26224412E+32" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.26224412E+32" />
+        <Property value="0" />
+        <Property value="-2.26219925E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.2137847E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.3782422E+32" />
+        <Property value="0" />
+        <Property value="-2.001867E+20" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-0.088887" />
+        <Property value="1.528341" />
+        <Property value="-0.823343" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.05864751E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.35085432E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.75860137E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.200212E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.205022E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.58512187E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.37860275E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.14898625E+31" />
+        <Property value="0" />
+        <Property value="-2.34928059E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-2.350862E+32" />
+        <Property value="0" />
+        <Property value="-2.34868174E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.996921E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.22096572E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="-4.30151977E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="-1.10949519E+19" />
+        <Property value="0" />
+        <Property value="-1.10950223E+19" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.10950223E+19" />
+        <Property value="1" />
+        <Property value="-4.704443E+31" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.012394E+31" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="2" />
+        <Property value="-2.34868174E+32" />
+        <Property value="0" />
+        <Property value="-8.2053826E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.01004972E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.05864476E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.35085432E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.75860137E+31" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20536941E+18" />
+        <Property value="0" />
+        <Property value="-5.947236E+23" />
+        <Property value="0" />
+        <Property value="-2.3488241E+32" />
+        <Property value="0" />
+        <Property value="-5.947236E+23" />
+        <Property value="0" />
+        <Property value="-5.947236E+23" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.3782422E+32" />
+        <Property value="0" />
+        <Property value="-2.001867E+20" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.37811376E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.10949519E+19" />
+        <Property value="0" />
+        <Property value="-2.05868049E+18" />
+        <Property value="0" />
+        <Property value="-2.37811376E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.783182E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.200212E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.21497453E+31" />
+        <Property value="0" />
+        <Property value="-1.10940371E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.25481855E+31" />
+        <Property value="0" />
+        <Property value="-1.10949519E+19" />
+        <Property value="0" />
+        <Property value="-4.991217E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.34928059E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-2.350862E+32" />
+        <Property value="0" />
+        <Property value="-0.088887" />
+        <Property value="1.528341" />
+        <Property value="-0.823343" />
+        <Property value="1" />
+        <Property value="0.088887" />
+        <Property value="1.554194" />
+        <Property value="-0.797611" />
+        <Property value="1" />
+        <Property value="-2.90756966E+19" />
+        <Property value="0" />
+        <Property value="-1.10940371E+19" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.90758373E+19" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.704443E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-0.088887" />
+        <Property value="1.528341" />
+        <Property value="-0.823343" />
+        <Property value="1" />
+        <Property value="0.088887" />
+        <Property value="1.554194" />
+        <Property value="-0.797611" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.058642E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.35085432E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.75860137E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.040197" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.10949519E+19" />
+        <Property value="0" />
+        <Property value="-3.22863418E+31" />
+        <Property value="0" />
+        <Property value="-2.3488241E+32" />
+        <Property value="0" />
+        <Property value="-3.25745715E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.30151977E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.22099014E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.37811376E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.37841242E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.044047E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.90758373E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.10942658E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.03541927E+31" />
+        <Property value="0" />
+        <Property value="-1.10942658E+19" />
+        <Property value="0" />
+        <Property value="-8.178556E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.25745715E+31" />
+        <Property value="0" />
+        <Property value="-6.336057E+17" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-1.64530278E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="-4.98893753E+31" />
+        <Property value="0" />
+        <Property value="-6.336057E+17" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.37841242E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.3487328E+32" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.0586695E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.35085432E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.75860137E+31" />
+        <Property value="0" />
+        <Property value="-1.10940371E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.10942658E+19" />
+        <Property value="0" />
+        <Property value="-3.25745715E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.90756966E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.062346E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.10942658E+19" />
+        <Property value="0" />
+        <Property value="-2.90756966E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.27936534E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-5.06382855E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.6" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.040197" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.64530278E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.690789E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.83345864E+16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.05866675E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.35085432E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.75860137E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.040197" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.64530278E+32" />
+        <Property value="0" />
+        <Property value="-2.71361617E+15" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.690789E+31" />
+        <Property value="0" />
+        <Property value="-2.71361617E+15" />
+        <Property value="0" />
+        <Property value="-2.750583E+16" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.3487328E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.78700243E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.68344781E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.3488241E+32" />
+        <Property value="0" />
+        <Property value="-2.3784836E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.34881637E+32" />
+        <Property value="0" />
+        <Property value="7.82197E+24" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-8.9E-05" />
+        <Property value="741.7436" />
+        <Property value="-2.699071E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.27943571E+19" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.3487328E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.78700243E+31" />
+        <Property value="0" />
+        <Property value="-2.05850182E+18" />
+        <Property value="0" />
+        <Property value="-2.34868174E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="3140.9563" />
+        <Property value="1.1765887E+10" />
+        <Property value="3300.081" />
+        <Property value="175.3255" />
+        <Property value="3.32036676E+12" />
+        <Property value="8.4748986E+11" />
+        <Property value="2.27982164E+11" />
+        <Property value="2.11813548E+11" />
+        <Property value="0" />
+        <Property value="2.110843E+08" />
+        <Property value="3.62812827E+12" />
+        <Property value="3140.58252" />
+        <Property value="8.904058E+11" />
+        <Property value="810258752" />
+        <Property value="182768784" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.301563E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.200212E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-1.64530278E+32" />
+        <Property value="0" />
+        <Property value="-8.20495159E+18" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-530.237" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.25745715E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-3.22096572E+31" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-4.30151977E+32" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.43044415E+15" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.52828216E+15" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="1.770557" />
+        <Property value="0" />
+        <Property value="1.770557" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0.582227" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.01486876E+30" />
+        <Property value="0" />
+        <Property value="2" />
+        <Property value="1.770557" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="-2.784295E+31" />
+        <Property value="0" />
+        <Property value="1.858022" />
+        <Property value="0" />
+        <Property value="1.858022" />
+        <Property value="0" />
+        <Property value="1.363093" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="0" />
+      </Property>
+      <Property name="AdultCorrelationValue" value="0.6" />
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="IDLE" />
+        <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERIDLEFAST01.ANIM.MBIN" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="540" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="LoopOffsetMin" value="0" />
+        <Property name="LoopOffsetMax" value="0" />
+        <Property name="Delay" value="0" />
+        <Property name="Speed" value="1" />
+        <Property name="ActionFrameStart" value="0" />
+        <Property name="ActionFrame" value="-1" />
+        <Property name="ControlCreatureSize" value="AllSizes" />
+        <Property name="Additive" value="False" />
+        <Property name="Mirrored" value="False" />
+        <Property name="Active" value="True" />
+        <Property name="AdditiveBaseAnim" value="" />
+        <Property name="AdditiveBaseFrame" value="0" />
+        <Property name="GameData" value="TkAnimationGameData.xml">
+          <Property name="RootMotionEnabled" value="False" />
+          <Property name="BlockPlayerMovement" value="False" />
+          <Property name="BlockPlayerWeapon" value="Unblocked" />
+        </Property>
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="SLOWWALK" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERSLOWWALK.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="96" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="WALK" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERWALK.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="64" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="FASTWALK" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERFASTWALK.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="64" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="TROT" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERTROT.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="64" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="RUN" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERRUN.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="40" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="IDLE2" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERIDLEFAST02.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="240" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="EAT" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDEREAT.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="318" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PAIN" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERPAIN.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="30" />
+          <Property name="StartNode" value="BACK2JNT" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="1" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PAIN2" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERPAIN2.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="30" />
+          <Property name="StartNode" value="BACK2JNT" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="1" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PAIN3" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERPAIN3.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="30" />
+          <Property name="StartNode" value="BACK2JNT" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="1" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="ATTACK1" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERATTACK.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="70" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="29" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="ATTACK2" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERATTACK2.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="60" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="28" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="ATTACK3" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERATTACK3.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="60" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="28" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="TURN_WALK" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERTURNWALK.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="112" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="ROAR" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERROAR.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="200" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PERFORM01" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERPERFORM01.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="200" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PERFORM02" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERPERFORM02.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="168" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PERFORM03" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERPERFORM03.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="200" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="PERFORM04" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/STRIDERRIG/ANIMS/STRIDERROAR.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShot" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="200" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="LoopOffsetMin" value="0" />
+          <Property name="LoopOffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionFrameStart" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="ControlCreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Trees" />
+      <Property name="NetSyncAnimation" value="True" />
+      <Property name="JointLODOverrides" />
+    </Property>
+    <Property value="GcCreatureFullBodyIKComponentData.xml">
+      <Property name="JointData">
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Head" />
+          </Property>
+          <Property name="JointName" value="HeadJNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Hinge_Y" />
+          </Property>
+          <Property name="JointName" value="RKneeJNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Hinge_Y" />
+          </Property>
+          <Property name="JointName" value="RDoubleKneeJNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Hinge_Y" />
+          </Property>
+          <Property name="JointName" value="LKneeJNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Hinge_Y" />
+          </Property>
+          <Property name="JointName" value="LDoubleKneeJNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Foot" />
+          </Property>
+          <Property name="JointName" value="RAnkleJNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Foot" />
+          </Property>
+          <Property name="JointName" value="LAnkleJNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Toe" />
+          </Property>
+          <Property name="JointName" value="LSmallToeJNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Toe" />
+          </Property>
+          <Property name="JointName" value="LBigToeJNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Toe" />
+          </Property>
+          <Property name="JointName" value="RSmallToeJNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Toe" />
+          </Property>
+          <Property name="JointName" value="RBigToeJNT" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Toe" />
+          </Property>
+          <Property name="JointName" value="LSmallToeEND" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Toe" />
+          </Property>
+          <Property name="JointName" value="LBigToeEND" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Toe" />
+          </Property>
+          <Property name="JointName" value="RSmallToeEND" />
+        </Property>
+        <Property value="GcCreatureIkData.xml">
+          <Property name="CreatureIkType" value="GcCreatureIkType.xml">
+            <Property name="CreatureIkType" value="Toe" />
+          </Property>
+          <Property name="JointName" value="RBigToeEND" />
+        </Property>
+      </Property>
+      <Property name="HeadUpAxis" value="ZNeg" />
+      <Property name="UseFootGlue" value="False" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="1" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="RagdollData" value="TkRagdollData.xml">
+        <Property name="Density" value="1" />
+        <Property name="Gravity" value="20" />
+        <Property name="ChainEnds">
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="HeadJNT" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="Tail7JNT" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="LAnkleJNT" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="RAnkleJNT" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="" />
+          </Property>
+        </Property>
+        <Property name="ExcludeJoints" />
+      </Property>
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollide" value="False" />
+      <Property name="NoPlayerCollide" value="False" />
+      <Property name="CameraInvisible" value="False" />
+      <Property name="InvisibleForInteraction" value="False" />
+      <Property name="AllowTeleporter" value="False" />
+      <Property name="BlockTeleporter" value="False" />
+    </Property>
+    <Property value="GcCreatureComponentData.xml">
+      <Property name="Id" value="STRIDER" />
+      <Property name="Axis" value="GcPrimaryAxis.xml">
+        <Property name="PrimaryAxis" value="ZNeg" />
+      </Property>
+      <Property name="Scaler" value="1" />
+      <Property name="DeathEffect" value="" />
+      <Property name="ReplacementImpacts" />
+      <Property name="DiscoveryUIScaler" value="0.5" />
+      <Property name="DiscoveryUIOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0.3" />
+      </Property>
+    </Property>
+    <Property value="GcShootableComponentData.xml">
+      <Property name="Health" value="40" />
+      <Property name="AutoAimTarget" value="False" />
+      <Property name="PlayerOnly" value="False" />
+      <Property name="ImpactShake" value="False" />
+      <Property name="ImpactShakeEffect" value="SHOOTABLESHAKE" />
+      <Property name="ForceImpactType" value="GcProjectileImpactType.xml">
+        <Property name="Impact" value="Default" />
+      </Property>
+      <Property name="IncreaseWanted" value="0" />
+      <Property name="IncreaseWantedThresholdTime" value="0.5" />
+      <Property name="FiendCrimeType" value="GcFiendCrime.xml">
+        <Property name="FiendCrime" value="None" />
+      </Property>
+      <Property name="FiendCrimeModifier" value="1" />
+      <Property name="RepairTime" value="8" />
+      <Property name="MinDamage" value="0" />
+      <Property name="StaticUntilShot" value="False" />
+      <Property name="IgnoreHitPush" value="True" />
+      <Property name="HitEffectEnabled" value="False" />
+      <Property name="HitEffectEntireModel" value="True" />
+      <Property name="IsArmoured" value="False" />
+      <Property name="IgnoreTerrainEditKill" value="False" />
+      <Property name="NameOverride" value="" />
+      <Property name="RequiredTech" value="" />
+      <Property name="DamageMultiplier" value="CREATURE" />
+    </Property>
+    <Property value="GcSimpleInteractionComponentData.xml">
+      <Property name="SimpleInteractionType" value="Feed" />
+      <Property name="InteractDistance" value="8" />
+      <Property name="Id" value="" />
+      <Property name="Rarity" value="GcRarity.xml">
+        <Property name="Rarity" value="Common" />
+      </Property>
+      <Property name="Size" value="GcSizeIndicator.xml">
+        <Property name="SizeIndicator" value="Medium" />
+      </Property>
+      <Property name="TriggerAction" value="INACTIVE" />
+      <Property name="TriggerActionOnPrepare" value="" />
+      <Property name="TriggerActionToggle" value="" />
+      <Property name="BroadcastTriggerAction" value="False" />
+      <Property name="Delay" value="0" />
+      <Property name="HideContents" value="True" />
+      <Property name="InteractIsCrime" value="False" />
+      <Property name="InteractFiendCrimeType" value="GcFiendCrime.xml">
+        <Property name="FiendCrime" value="None" />
+      </Property>
+      <Property name="InteractCrimeLevel" value="0" />
+      <Property name="ActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="FUEL1" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="20" />
+        <Property name="Repeat" value="False" />
+        <Property name="RequiredTech" value="" />
+      </Property>
+      <Property name="StatToTrack" value="GcStatsEnum.xml">
+        <Property name="Stat" value="None" />
+      </Property>
+      <Property name="StartsBuried" value="False" />
+      <Property name="MustBeVisibleToInteract" value="False" />
+      <Property name="NeedsStorm" value="False" />
+      <Property name="Name" value="" />
+      <Property name="VRInteractMessage" value="" />
+      <Property name="TerminalMessage" value="" />
+      <Property name="ScanType" value="BINOC_INTERACTABLE" />
+      <Property name="ScanData" value="" />
+      <Property name="ScanIcon" value="GcDiscoveryTypes.xml">
+        <Property name="DiscoveryType" value="Unknown" />
+      </Property>
+      <Property name="ActivateLocatorsFromRarity" value="False" />
+      <Property name="RarityLocators">
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="BaseBuildingTriggerActions" />
+      <Property name="RewardOverrideTable" />
+      <Property name="PersistencyBufferOverride" />
+      <Property name="UsePersonalPersistentBuffer" value="False" />
+      <Property name="ReseedOnRewardSuccess" value="False" />
+    </Property>
+    <Property value="GcNetworkInterpolationComponentData.xml">
+      <Property name="SynchroniseScale" value="Once" />
+      <Property name="SupportTeleportation" value="False" />
+    </Property>
+    <Property value="TkNetReplicatedEntityComponentData.xml">
+      <Property name="ReplicaComponentMask" />
+      <Property name="ReplicationRange" value="PlanetLocal" />
+      <Property name="SpawnType" value="Creature" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>
