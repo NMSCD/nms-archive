@@ -1,0 +1,207 @@
+[[FX]]
+
+// Samplers
+
+sampler gDiffuseMap = sampler_state
+{
+	TexUnit = 0;
+};
+
+sampler gCausticMap = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 1;
+};
+
+
+sampler gCausticOffsetMap = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 2;
+};
+
+sampler gNormalMap = sampler_state
+{
+	TexUnit = 3;
+};
+
+sampler gDiffuse2Map = sampler_state
+{
+	TexUnit = 4;
+};
+
+//sampler gRefractionMap = sampler_state
+//{
+//	TexUnit = 5;
+//};
+
+sampler gMasksMap = sampler_state
+{
+	TexUnit = 6;
+};
+
+sampler gDetailDiffuseMap = sampler_state
+{
+	TexUnit = 7;
+};
+
+sampler gDetailNormalMap = sampler_state
+{
+	TexUnit = 8;
+};
+
+sampler gDualPMapFront = sampler_state
+{
+    TexUnit = 9;
+};
+
+sampler gDualPMapBack = sampler_state
+{
+    TexUnit = 10;
+};
+
+sampler gFadeNoiseMap = sampler_state
+{
+	DefaultTexture = SHADER/FADENOISE.DDS;
+	TexUnit = 13;
+    Address = Wrap;
+};
+
+sampler gBufferMap = sampler_state
+{
+	TexUnit = 5;
+    Address = Clamp;
+};
+
+
+sampler gCloudShadowMap = sampler_state
+{
+    TexUnit = 14;
+};
+
+sampler gShadowMap = sampler_state
+{
+    TexUnit = 15;
+};
+
+
+sketchcode DECAL
+{
+    Flag         "Reduce_AA_Blur"        = D_CLAMP_AA;
+    Flag         "AlphaCutout"           = _F11_ALPHACUTOUT;
+    Flag         "DisregardVertexColour" = D_DISREGARD_VERTCOLOUR;
+
+    InputColour  "Colour"         = vec4 lColourVec4;
+    InputColour  "TangentNormal"  = vec3 lSkInNormal;
+    InputColour  "WorldNormal1"   = vec3 lSkInWorldNormal1;
+    InputColour  "WorldNormal2"   = vec3 lSkInWorldNormal2;
+    InputColour  "WorldNormalBlended" = vec3 lSkInWorldNormal;
+    InputVector  "Metallic"       = float lfMetallic;
+    InputVector  "Roughness"      = float lfRoughness;
+    InputVector  "Subsurface"     = float lfSubsurface;
+    InputVector  "GlobalTime"     = float lfSkGlobalTime;
+    InputVector  "Glow"           = float lfGlow;
+    InputVector  "UV_1"           = vec2 lSkUv1;
+    InputVector  "UV_2"           = vec2 lSkUv2;
+    InputVector  "UserData"       = vec4 lSkUserData;
+    InputVector  "LocalPosition"  = vec3 lSkLocalPositionVec3;
+    InputVector  "WorldPosition"  = vec3 lSkWorldPositionVec3;
+    InputVector  "NodePosition"   = vec3 lSkNodePositionVec3;
+    InputVector  "PlanetPosition" = vec3 lSkPlanetPositionVec3;
+    InputVector  "CameraPosition" = vec3 lSkCameraPositionVec3;
+    InputVector  "CameraDirection" = vec3 lSkCameraDirectionVec3;
+    InputVector  "SunPosition"    = vec3 lSkSunPositionVec3;
+ 
+    InputTexture "Diffuse_1"    = sampler gDiffuseMap;
+    InputTexture "Diffuse_2"    = sampler gDiffuse2Map;
+    InputTexture "Normal"       = sampler gNormalMap;
+    InputTexture "Noise"        = sampler gFadeNoiseMap;
+    InputMaskTex "Masks"        = sampler gMasksMap;
+    InputTexture "Normal_2"     = sampler gDetailNormalMap;
+    
+    OutputColour "Colour"        = vec4 lfOutColour;
+    OutputColour "TangentNormal" = vec3 lOutNormal;
+    OutputVector "Metallic"      = float lfOutMetallic;
+    OutputVector "Roughness"     = float lfOutRoughness;
+    OutputVector "Subsurface"    = float lfOutSubsurface;
+
+    NeededFlag = gFadeNoiseMap        D_NOISE_MAP;
+    NeededFlag = lSkLocalPositionVec3 D_SK_USE_LOCAL_POSITION;
+    NeededFlag = gDiffuse2Map         D_SKETCH_DIFFUSE2;
+    NeededFlag = gDetailNormalMap     D_SKETCH_NORMAL2;
+}
+
+// Uniforms
+
+// Planet
+float4 gPlanetPositionVec4				= {0.0, -1204.0, 0.0, 1204.0};
+
+// Lighting
+float4 gMaterialParamsVec4              = {0.9, 0.5, 0.0, 0.5};
+float4 gMaterialSFXVec4                 = { 0.0, 0.0, 0.0, 0.0 };
+float4 gMaterialSFXColVec4              = { 0.0, 0.0, 0.0, 0.0 };
+
+// Texturing
+float4 gMaterialColourVec4              = {1.0, 1.0, 1.0, 1.0};
+float4 gUVScrollStepVec4                = {0.0, 0.0, 0.0, 0.0};
+float4 gCustomParams02Vec4              = {0.0, 1.0, 1.0, 0.0};
+float4 gCustomParams01Vec4              = {0.0, 0.0, 0.0, 0.0};
+
+float4 gAlphaCutoutThresholdVec4        = {0.45, 0.5, 0.0, 0.0};
+
+
+
+context LIT_DEFER
+{
+	VertexShader = compile GLSL VS_DEFER;
+	PixelShader  = compile GLSL FS_LIT_DEFER;
+    SketchContext = DECAL;
+}
+
+context LIT_DEFER_INSTANCE
+{
+	VertexShader = compile GLSL VS_DEFER_INSTANCE;
+	PixelShader  = compile GLSL FS_LIT_DEFER_INSTANCE;
+    SketchContext = DECAL;
+
+	Instanced = true;
+}
+
+
+[[VS_DEFER]]
+// =================================================================================================
+#define D_DEFER
+#define D_DEFERRED_DECAL
+
+#emit_sketchcode DECAL
+#include "UberVertex.shader.h"
+
+
+[[FS_LIT_DEFER]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_DEFERRED_DECAL
+
+#emit_sketchcode DECAL
+#include "UberFragment.shader.h"
+
+[[VS_DEFER_INSTANCE]]
+// =================================================================================================
+#define D_DEFER
+#define D_INSTANCE
+#define D_DEFERRED_DECAL
+
+#emit_sketchcode DECAL
+#include "UberVertex.shader.h"
+
+[[FS_LIT_DEFER_INSTANCE]]
+// =================================================================================================
+#define D_DEFER
+#define D_INSTANCE
+#define D_ATTRIBUTES
+#define D_DEFERRED_DECAL
+
+#emit_sketchcode DECAL
+#include "UberFragment.shader.h"
+

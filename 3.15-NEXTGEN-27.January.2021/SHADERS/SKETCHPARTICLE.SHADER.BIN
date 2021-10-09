@@ -1,0 +1,217 @@
+[[FX]]
+
+sampler gDiffuseMap = sampler_state
+{
+	TexUnit = 0;
+};
+
+sampler gNormalMap = sampler_state
+{
+	TexUnit = 1;
+};
+
+
+sampler gDetailDiffuseMap = sampler_state
+{
+    TexUnit = 2;
+};
+
+sampler gDetailNormalMap = sampler_state
+{
+    TexUnit = 3;
+};
+
+sampler gDiffuse2Map = sampler_state
+{
+	TexUnit = 4;
+};
+
+sampler gMasksMap = sampler_state
+{
+	TexUnit = 5;
+};
+
+sampler gCausticMap = sampler_state
+{
+    TexUnit = 6;
+};
+
+sampler gCausticOffsetMap = sampler_state
+{
+    TexUnit = 7;
+};
+
+sampler gShadowMap = sampler_state
+{
+    TexUnit = 8;
+};
+
+sampler gCloudShadowMap = sampler_state
+{
+    TexUnit = 9;
+};
+
+sampler gDualPMapFront = sampler_state
+{
+    TexUnit = 10;
+};
+
+sampler gDualPMapBack = sampler_state
+{
+    TexUnit = 11;
+};
+
+sampler gHSVOverlay = sampler_state
+{
+    DefaultTexture = SHADER/MACROVARIATION.DDS;
+    TexUnit = 12;
+    Address = Wrap;
+};
+
+sampler gHSVNormalOverlay = sampler_state
+{
+    DefaultTexture = SHADER/MACROVARIATION.NORMAL.DDS;
+    TexUnit = 13;
+    Address = Wrap;
+};
+
+sampler gNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/CLOUDNOISE.DDS;
+    TexUnit = 14;
+    Address = Wrap;
+};
+
+sampler gPerlin3D = sampler_state
+{
+    DefaultTexture = SHADER/NOISEHALF.DDS;
+    TexUnit = 15;
+    Address = Wrap;
+};
+
+sampler gFadeNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/BLUENOISE.DDS;
+    TexUnit = 16;
+    Address = Wrap;
+};
+
+sampler gDepthBuffer = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 17;
+};
+
+sampler gBufferMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 18;
+};
+
+
+// Uniforms
+
+float4 gUVScrollStepVec4    = {0.0, 0.0, 0.0, 0.0};
+float4 gMultiTextureVec4    = {1.0, 0.0, 0.0, 0.0};
+float4 gHeavyAirFadeOutVec4 = {1.0, 0.0, 0.0, 0.0};
+float4 gPlanetPositionVec4  = {0.0, 0.0, 0.0, 0.0}; 
+float4 gSunPositionVec4     = {1.0, 0.0, 1.0, 0.0};
+
+// Sketch
+
+sketchcode TEST
+{
+    Flag         "Unlit"        = _F07_UNLIT;
+    Flag         "Alpha_Cutout" = _F33_ALPHACUTOUT;
+
+    InputVector  "UV_1"          = vec2 lTexCoords;
+    InputVector  "Scale"         = float lfScale;
+    InputVector  "Rotation"      = float lfRotation;
+    InputVector  "TimeElapsed"   = float lfTimeElapsed;
+    InputVector  "AnimFrame"     = float lfFrameNumber;
+    InputVector  "GlobalTime"    = float lfSkGlobalTime;
+    InputVector  "LocalPosition" = vec3 lvLocalPosition;
+    InputVector  "SunPosition"    = vec3 lSkSunPositionVec3;
+    InputVector  "NodePosition"   = vec3 lSkNodePositionVec3;
+    InputVector  "PlanetPosition" = vec3 lSkPlanetPositionVec3;
+    InputColour  "Colour"         = vec4 lFragmentColour;
+    InputColour  "VertexColour"   = vec4 lVertexColour;
+
+    InputTexture "Diffuse_1"    = sampler gDiffuseMap;
+    InputTexture "Diffuse_2"    = sampler gDiffuse2Map;
+    InputTexture "Normal"       = sampler gNormalMap;
+    InputTexture "Noise"        = sampler gFadeNoiseMap;
+    
+    OutputColour "Colour"        = vec4 lFragmentColour;
+    OutputColour "VertexColour"  = vec4 lVertexColour;
+    OutputColour "Normal"        = vec3 lFragmentNormal;
+    OutputVector "Scale"         = float lfOutScale;
+    OutputVector "Rotation"      = float lfOutRotation;
+    OutputVector "LocalPosition" = vec3 lvOutLocalPosition;
+    OutputVector "Glow"          = float lfOutGlow;
+
+    NeededFlag = lFragmentNormal _F03_NORMALMAP;
+    NeededFlag = gDiffuse2Map D_SKETCH_DIFFUSE2;
+    NeededFlag = lfOutGlow _F34_GLOW;
+}
+ 
+// Contexts
+
+context TRANSLUCENT
+{
+	VertexShader = compile GLSL VS_TRANSLUCENT;
+	PixelShader = compile GLSL FS_TRANSLUCENT;
+    SketchContext = TEST;
+}
+
+context TRANSLUCENT_SOFT
+{
+	VertexShader = compile GLSL VS_TRANSLUCENT;
+	PixelShader = compile GLSL FS_TRANSLUCENT_SOFT;
+    SketchContext = TEST;
+}
+
+context TRANSLUCENT_ADDITIVE
+{
+	VertexShader = compile GLSL VS_TRANSLUCENT;
+	PixelShader = compile GLSL FS_TRANSLUCENT_SOFT;
+    SketchContext = TEST;
+}
+
+context HEAVYAIR_SOFT
+{
+	VertexShader = compile GLSL VS_HEAVYAIR_SOFT;
+	PixelShader = compile GLSL FS_HEAVYAIR_SOFT;
+    SketchContext = TEST;
+}
+
+[[VS_TRANSLUCENT]]
+// =================================================================================================
+#emit_sketchcode TEST
+#include "ParticleVertex.shader.h"
+
+[[VS_HEAVYAIR_SOFT]]
+// =================================================================================================
+#define D_SOFT_PARTICLES
+#define D_HEAVYAIR
+#emit_sketchcode TEST
+#include "ParticleVertex.shader.h"
+
+[[FS_TRANSLUCENT]]
+// =================================================================================================
+#emit_sketchcode TEST
+#include "ParticleFragment.shader.h"
+
+[[FS_TRANSLUCENT_SOFT]]
+// =================================================================================================
+#define D_SOFT_PARTICLES
+#emit_sketchcode TEST
+#include "ParticleFragment.shader.h"
+
+[[FS_HEAVYAIR_SOFT]]
+// =================================================================================================
+#define D_SOFT_PARTICLES
+#define D_HEAVYAIR
+#emit_sketchcode TEST
+#include "ParticleFragment.shader.h"
+
