@@ -1,0 +1,259 @@
+[[FX]]
+
+sampler gDiffuseMap = sampler_state
+{
+    Address = Wrap;
+    Filter = Trilinear;
+    MaxAnisotropy = 8;
+    TexUnit = 0;
+};
+
+sampler gNormalMap = sampler_state
+{
+    Address = Wrap;
+    Filter = Trilinear;
+    MaxAnisotropy = 8;
+    TexUnit = 1;
+};
+
+sampler gWaterMap = sampler_state
+{
+    Address = Wrap;
+    Filter = Trilinear;
+    TexUnit = 2;
+};
+
+sampler gCloudMap = sampler_state
+{
+    Address = Wrap;
+    Filter = Trilinear;
+    TexUnit = 4;
+};
+
+sampler gBufferMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 3;
+};
+
+sampler gRainbowMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 5;
+};
+
+sampler gShadowMap = sampler_state
+{
+    TexUnit = 15;
+};
+
+sampler gPerlin3D = sampler_state
+{
+    DefaultTexture = SHADER/NOISEHALF.DDS;
+    TexUnit = 17;
+    Address = Wrap;
+};
+
+
+float4 gPlanetPositionVec4	  		= {0.0, -1204.0, 0.0, 1204.0};
+float4 gLightOriginVec4             = {0.0, 0.0, 0.0, 0.0}; 
+float4 gLightTopColourVec4          = {0.0, 0.0, 1.0, 1.0}; 
+
+// Lighting
+float4 gMaterialColourVec4          = {1.0, 1.0, 1.0, 1.0};
+float4 gMaterialParamsVec4          = {0.9, 0.5, 0.0, 0.5};
+
+// Fog
+float4 gSkyColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gSkyUpperColourVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gSkySolarColourVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gSkyGradientSpeedVec4            = {1.0, 0.0, 1.0, 0.0};
+float4 gSkyUpperParamsVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gHorizonColourVec4               = {1.0, 0.0, 1.0, 0.0};
+float4 gSunColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogColourNearVec4          = { 1.0, 0.0, 1.0, 0.0 };
+float4 gWaterFogColourFarVec4           = { 1.0, 0.0, 1.0, 0.0 };
+float4 gWaterFogVec4                    = {1.0, 0.0, 1.0, 0.0};
+float4 gFogColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceHorizonColourVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogColourVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogParamsVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gFogParamsVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gScatteringParamsVec4            = {1.0, 0.0, 1.0, 0.0};
+float4 gFogFadeHeightsVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour1Vec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour2Vec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColour3Vec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColourVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gSunPositionVec4                 = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceScatteringParamsVec4       = {1.0, 0.0, 1.0, 0.0};
+float4 gaPlanetPositionsVec4;
+
+// Rings
+float4 gRingParamsVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gRingParams2Vec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gRingColour1Vec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gRingColour2Vec4             = {1.0, 0.0, 1.0, 0.0};
+
+float4 gRainbowParamsVec4           = {1.0, 0.0, 1.0, 0.0};
+
+// Planet Clouds
+float4 gPlanetCloudParamsVec4       = {1.0, 0.0, 1.0, 0.0};
+float4 gPlanetCloudParams2Vec4      = {1.0, 0.0, 1.0, 0.0};
+
+// Planet texture
+float4 gTileBlendScalesVec4         = {8.0, 0.5, 2.0, 2.0};
+float4 gaAverageColoursVec4;
+float4 gaTerrainColoursVec4;
+float4 gTerrainSlopeParamsVec4;
+
+context SCATTERING
+{
+    VertexShader = compile GLSL VS_GENERAL;
+    PixelShader = compile GLSL FS_SCATTERING; 
+}
+
+context SCATTER_MASK
+{
+    VertexShader = compile GLSL VS_GENERAL;
+    PixelShader = compile GLSL FS_SCATTER_MASK; 
+}
+
+context CLOUDSHADOW
+{
+    VertexShader = compile GLSL VS_CLOUDSHADOW;
+    PixelShader = compile GLSL FS_CLOUDSHADOW; 
+}
+
+context CLOUD
+{
+    VertexShader = compile GLSL VS_CLOUD;
+    PixelShader = compile GLSL FS_CLOUD; 
+}
+
+context REFLECT
+{
+    VertexShader = compile GLSL VS_REFLECT;
+    PixelShader = compile GLSL FS_REFLECT; 
+}
+
+context REFLECT_WATER
+{
+    VertexShader = compile GLSL VS_GENERAL;
+    PixelShader = compile GLSL FS_REFLECT_WATER;
+}
+
+context RINGS
+{
+	VertexShader = compile GLSL VS_RINGS;
+	PixelShader = compile GLSL FS_RINGS; 
+}
+
+context RAINBOW
+{
+	VertexShader = compile GLSL VS_RAINBOW;
+	PixelShader  = compile GLSL FS_RAINBOW; 
+}
+
+context PLANET
+{
+    VertexShader = compile GLSL VS_PLANET;
+    PixelShader  = compile GLSL FS_PLANET; 
+}
+
+[[VS_REFLECT]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_REFLECT
+#include "Custom/AtmosphereVertex.shader.h"
+
+[[VS_GENERAL]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#include "Custom/AtmosphereVertex.shader.h"
+
+[[VS_PLANET]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_PLANET
+#include "Custom/AtmosphereVertex.shader.h"
+
+[[VS_CLOUD]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_CLOUD
+#include "Custom/AtmosphereVertex.shader.h"
+
+[[VS_CLOUDSHADOW]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_CLOUD
+#define D_SHADOW
+#include "Custom/AtmosphereVertex.shader.h"
+
+[[VS_RINGS]]
+// =================================================================================================
+#define D_RINGS
+#include "Custom/AtmosphereVertex.shader.h"
+
+[[VS_RAINBOW]]
+// =================================================================================================
+#define D_RAINBOW
+#include "Custom/AtmosphereVertex.shader.h"
+
+[[FS_SCATTERING]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_SCATTERING
+#include "Custom/AtmosphereFragment.shader.h"
+
+[[FS_REFLECT_WATER]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_SCATTERING
+#define D_REFLECT_WATER
+#include "Custom/AtmosphereFragment.shader.h"
+
+[[FS_SCATTER_MASK]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_SCATTERING
+#define D_SCATTER_MASK
+#include "Custom/AtmosphereFragment.shader.h"
+
+[[FS_CLOUD]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_CLOUD
+#include "Custom/AtmosphereFragment.shader.h"
+
+[[FS_CLOUDSHADOW]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_CLOUD
+#define D_SHADOW
+#include "Custom/AtmosphereFragment.shader.h"
+
+[[FS_REFLECT]]
+// =================================================================================================
+#define D_ATMOSPHERE
+#define D_SCATTERING
+#define D_REFLECT
+#include "Custom/AtmosphereFragment.shader.h"
+
+[[FS_RINGS]]
+// =================================================================================================
+#define D_RINGS
+#include "Custom/RingsFragment.shader.h"
+
+[[FS_RAINBOW]]
+// =================================================================================================
+#define D_RAINBOW
+#include "Custom/RainbowFragment.shader.h"
+
+[[FS_PLANET]]
+// =================================================================================================
+#define D_PLANET
+#define D_ATMOSPHERE
+#define D_ATTRIBUTES
+#include "Custom/PlanetFragment.shader.h"
