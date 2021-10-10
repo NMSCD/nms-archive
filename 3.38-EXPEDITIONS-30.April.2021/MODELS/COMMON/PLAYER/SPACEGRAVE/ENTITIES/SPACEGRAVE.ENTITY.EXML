@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.38.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcDistanceScaleComponentData.xml">
+      <Property name="UseGlobals" value="True" />
+      <Property name="Scale" value="2" />
+      <Property name="MinDistance" value="1000" />
+      <Property name="MaxDistance" value="1000" />
+      <Property name="MinHeight" value="100" />
+      <Property name="MaxHeight" value="5000" />
+      <Property name="DisabledWhenOnFreighter" value="False" />
+    </Property>
+    <Property value="GcLootComponentData.xml">
+      <Property name="Timed" value="Vector2f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+      </Property>
+      <Property name="TimeOutEffect" value="" />
+      <Property name="DeathPoint" value="True" />
+      <Property name="FlashPercent" value="0" />
+      <Property name="NumFlashes" value="0" />
+      <Property name="PhysicsControlled" value="False" />
+      <Property name="KeepUpright" value="False" />
+      <Property name="Reward" value="" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="1" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="0" />
+      </Property>
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="Floor" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollide" value="False" />
+      <Property name="NoPlayerCollide" value="False" />
+      <Property name="CameraInvisible" value="False" />
+      <Property name="InvisibleForInteraction" value="False" />
+      <Property name="AllowTeleporter" value="False" />
+      <Property name="BlockTeleporter" value="False" />
+      <Property name="DisableGravity" value="False" />
+      <Property name="SpinOnCreate" value="0" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>
