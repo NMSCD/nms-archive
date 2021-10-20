@@ -1,0 +1,317 @@
+[[FX]]
+// -----------------------------------------------------------------------------------
+// Samplers
+// -----------------------------------------------------------------------------------
+
+sampler gBufferMap = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 0;
+};
+
+sampler gBuffer1Map = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 1;
+};
+
+sampler gBuffer2Map = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 2;
+};
+
+sampler gBuffer3Map = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 3;
+};
+
+sampler gBuffer4Map = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 4;
+};
+
+sampler gBuffer5Map = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 5;
+};
+
+sampler gBuffer6Map = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 6;
+};
+
+sampler gBuffer7Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 7;
+};
+
+sampler gBuffer8Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 8;
+};
+
+sampler gSobolMap = sampler_state
+{
+    DefaultTexture  = SHADER/SOBOL.DDS;
+    SamplingOptions = On;
+    Filter  = None;
+    Address = Clamp;
+    TexUnit = 9;
+};
+
+sampler gRankArray0Map = sampler_state
+{
+    DefaultTexture  = SHADER/RANKARRAY_0.DDS;
+    SamplingOptions = On;
+    Filter  = None;
+    Address = Clamp;
+    TexUnit = 10;
+};
+
+sampler gRankArray1Map = sampler_state
+{
+    DefaultTexture  = SHADER/RANKARRAY_1.DDS;
+    SamplingOptions = On;
+    Filter  = None;
+    Address = Clamp;
+    TexUnit = 11;
+};
+
+sampler gRankArray2Map = sampler_state
+{
+    DefaultTexture  = SHADER/RANKARRAY_2.DDS;
+    SamplingOptions = On;
+    Filter  = None;
+    Address = Clamp;
+    TexUnit = 12;
+};
+
+sampler gScrambleArray0Map = sampler_state
+{
+    DefaultTexture  = SHADER/SCRAMBLEARRAY_0.DDS;
+    SamplingOptions = On;
+    Filter  = None;
+    Address = Clamp;
+    TexUnit = 13;
+};
+
+sampler gScrambleArray1Map = sampler_state
+{
+    DefaultTexture  = SHADER/SCRAMBLEARRAY_1.DDS;
+    SamplingOptions = On;
+    Filter  = None;
+    Address = Clamp;
+    TexUnit = 14;
+};
+
+sampler gScrambleArray2Map = sampler_state
+{
+    DefaultTexture  = SHADER/SCRAMBLEARRAY_2.DDS;
+    SamplingOptions = On;
+    Filter  = None;
+    Address = Clamp;
+    TexUnit = 15;
+};
+
+sampler gProbe00Map = sampler_state
+{
+    DefaultTexture  = TESTS/AMBIENTMAP.DDS;
+    SamplingOptions = On;
+    MaxAnisotropy   = 0;
+    Filter  = Trilinear;
+    Address = Clamp;
+    TexUnit = 16;
+};
+
+sampler gProbe01Map = sampler_state
+{
+    DefaultTexture  = TESTS/AMBIENTMAP.DDS;
+    SamplingOptions = On;
+    MaxAnisotropy   = 0;
+    Filter  = Trilinear;
+    Address = Clamp;
+    TexUnit = 17;
+};
+
+sampler gProbe02Map = sampler_state
+{
+    DefaultTexture  = TESTS/AMBIENTMAP.DDS;
+    SamplingOptions = On;
+    MaxAnisotropy   = 0;
+    Filter  = Trilinear;
+    Address = Clamp;
+    TexUnit = 18;
+};
+
+sampler gProbe03Map = sampler_state
+{
+    DefaultTexture  = TESTS/AMBIENTMAP.DDS;
+    SamplingOptions = On;
+    MaxAnisotropy   = 0;
+    Filter  = Trilinear;
+    Address = Clamp;
+    TexUnit = 19;
+};
+
+sampler gProbe04Map = sampler_state
+{
+    DefaultTexture  = TESTS/AMBIENTMAP.DDS;
+    SamplingOptions = On;
+    MaxAnisotropy   = 0;
+    Filter  = Trilinear;
+    Address = Clamp;
+    TexUnit = 20;
+};
+
+sampler gProbe05Map = sampler_state
+{
+    DefaultTexture  = TESTS/AMBIENTMAP.DDS;
+    SamplingOptions = On;
+    MaxAnisotropy   = 0;
+    Filter  = Trilinear;
+    Address = Clamp;
+    TexUnit = 21;
+};
+
+sampler gProbe06Map = sampler_state
+{
+    DefaultTexture  = TESTS/AMBIENTMAP.DDS;
+    SamplingOptions = On;
+    MaxAnisotropy   = 0;
+    Filter  = Trilinear;
+    Address = Clamp;
+    TexUnit = 22;
+};
+
+sampler gProbe07Map = sampler_state
+{
+    DefaultTexture  = TESTS/AMBIENTMAP.DDS;
+    SamplingOptions = On;
+    MaxAnisotropy   = 0;
+    Filter  = Trilinear;
+    Address = Clamp;
+    TexUnit = 23;
+};
+
+// -----------------------------------------------------------------------------------
+// Uniforms
+// -----------------------------------------------------------------------------------
+
+// custom
+float4 gCustomParamsVec4    = { 0, 0, 0, 0 };
+
+// probes
+float4 gaProbePositionsVec4;
+float4 gaProbeExtentsVec4;
+float4 gaProbeMat4;
+
+// -----------------------------------------------------------------------------------
+// Contexts
+// -----------------------------------------------------------------------------------
+
+context SSR_MARCH
+{
+    VertexShader    = compile GLSL VS_SSR_FSQUAD_PROBE;
+    PixelShader     = compile GLSL FS_SSR_MARCH;
+}
+
+context SSR_RADIANCE
+{
+    VertexShader    = compile GLSL VS_SSR_FSQUAD_PROBE;
+    PixelShader     = compile GLSL FS_SSR_RADIANCE;
+}
+
+context SSR_RESOLVE
+{
+    VertexShader    = compile GLSL VS_SSR_FSQUAD;
+    PixelShader     = compile GLSL FS_SSR_RESOLVE;
+}
+
+context SSR_TEMPORAL
+{
+    VertexShader    = compile GLSL VS_SSR_FSQUAD;
+    PixelShader     = compile GLSL FS_SSR_TEMPORAL;
+}
+
+context SSR_MEDIAN
+{
+    VertexShader    = compile GLSL VS_SSR_FSQUAD;
+    PixelShader     = compile GLSL FS_SSR_MEDIAN;
+}
+
+context SSR_APPLY
+{
+    VertexShader    = compile GLSL VS_SSR_FSQUAD;
+    PixelShader     = compile GLSL FS_SSR_APPLY;
+}
+
+context PROBE_REFLECTIONS
+{
+    VertexShader    = compile GLSL VS_SSR_FSQUAD_PROBE;
+    PixelShader     = compile GLSL FS_PROBE_REFLECTIONS;
+}
+
+[[VS_SSR_FSQUAD]]
+// =================================================================================================
+#define D_TEX_QUAD
+#define D_SSR_SHADER
+#include "ImmediateModeVertex.shader.h"
+
+[[VS_SSR_FSQUAD_PROBE]]
+// =================================================================================================
+#define D_TEX_QUAD
+#define D_SSR_SHADER
+#define D_SSR_USES_PROBES
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_SSR_MARCH]]
+// =================================================================================================
+#define D_SSR_MARCH
+#define D_SSR_SHADER
+#define D_SSR_USES_PROBES
+#include "Fullscreen/SSRFragment.shader.h"
+
+[[FS_SSR_RADIANCE]]
+// =================================================================================================
+#define D_SSR_RADIANCE
+#define D_SSR_SHADER
+#define D_SSR_USES_PROBES
+#include "Fullscreen/SSRFragment.shader.h"
+
+[[FS_SSR_RESOLVE]]
+// =================================================================================================
+#define D_SSR_RESOLVE
+#define D_SSR_SHADER
+#include "Fullscreen/SSRFragment.shader.h"
+
+[[FS_SSR_TEMPORAL]]
+// =================================================================================================
+#define D_SSR_TEMPORAL
+#define D_SSR_SHADER
+#include "Fullscreen/SSRFragment.shader.h"
+
+[[FS_SSR_MEDIAN]]
+// =================================================================================================
+#define D_SSR_MEDIAN
+#define D_SSR_SHADER
+#include "Fullscreen/SSRFragment.shader.h"
+
+[[FS_SSR_APPLY]]
+// =================================================================================================
+#define D_SSR_APPLY
+#define D_SSR_SHADER
+#include "Fullscreen/SSRFragment.shader.h"
+
+[[FS_PROBE_REFLECTIONS]]
+// =================================================================================================
+#define D_SSR_SHADER
+#define D_SSR_USES_PROBES
+#define D_PROBE_REFLECTIONS
+#include "Fullscreen/SSRFragment.shader.h"
