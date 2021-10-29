@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.71.0)-->
+<Data template="GcHUDLayerData">
+  <Property name="Data" value="GcHUDComponent.xml">
+    <Property name="ID" value="" />
+    <Property name="PosX" value="0" />
+    <Property name="PosY" value="0" />
+    <Property name="Width" value="50" />
+    <Property name="Height" value="50" />
+    <Property name="Align" value="TopLeft" />
+  </Property>
+  <Property name="Children">
+    <Property value="GcHUDLayerData.xml">
+      <Property name="Data" value="GcHUDComponent.xml">
+        <Property name="ID" value="" />
+        <Property name="PosX" value="980" />
+        <Property name="PosY" value="0" />
+        <Property name="Width" value="50" />
+        <Property name="Height" value="50" />
+        <Property name="Align" value="TopLeft" />
+      </Property>
+      <Property name="Children">
+        <Property value="GcHUDImageData.xml">
+          <Property name="Data" value="GcHUDComponent.xml">
+            <Property name="ID" value="" />
+            <Property name="PosX" value="46" />
+            <Property name="PosY" value="95" />
+            <Property name="Width" value="180" />
+            <Property name="Height" value="30" />
+            <Property name="Align" value="TopLeft" />
+          </Property>
+          <Property name="Image" value="TEXTURES/UI/HUD/MISSILICON.DDS" />
+          <Property name="Colour" value="Colour.xml">
+            <Property name="R" value="1" />
+            <Property name="G" value="1" />
+            <Property name="B" value="1" />
+            <Property name="A" value="1" />
+          </Property>
+        </Property>
+        <Property value="GcHUDLayerData.xml">
+          <Property name="Data" value="GcHUDComponent.xml">
+            <Property name="ID" value="AMMO_LAYER" />
+            <Property name="PosX" value="60" />
+            <Property name="PosY" value="58" />
+            <Property name="Width" value="50" />
+            <Property name="Height" value="50" />
+            <Property name="Align" value="TopLeft" />
+          </Property>
+          <Property name="Children">
+            <Property value="GcHUDTextData.xml">
+              <Property name="Data" value="GcHUDComponent.xml">
+                <Property name="ID" value="" />
+                <Property name="PosX" value="0" />
+                <Property name="PosY" value="0" />
+                <Property name="Width" value="50" />
+                <Property name="Height" value="50" />
+                <Property name="Align" value="TopLeft" />
+              </Property>
+              <Property name="Text" value="x4" />
+              <Property name="Preset" value="GcTextPreset.xml">
+                <Property name="FontType" value="GcFontTypesEnum.xml">
+                  <Property name="Font" value="GeosansLight" />
+                </Property>
+                <Property name="Height" value="22" />
+                <Property name="Colour" value="Colour.xml">
+                  <Property name="R" value="0" />
+                  <Property name="G" value="0" />
+                  <Property name="B" value="0" />
+                  <Property name="A" value="1" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcHUDLayerData.xml">
+          <Property name="Data" value="GcHUDComponent.xml">
+            <Property name="ID" value="GRENADES_LAYER" />
+            <Property name="PosX" value="160" />
+            <Property name="PosY" value="58" />
+            <Property name="Width" value="50" />
+            <Property name="Height" value="50" />
+            <Property name="Align" value="TopLeft" />
+          </Property>
+          <Property name="Children">
+            <Property value="GcHUDTextData.xml">
+              <Property name="Data" value="GcHUDComponent.xml">
+                <Property name="ID" value="GRENADE_COUNT" />
+                <Property name="PosX" value="32" />
+                <Property name="PosY" value="4" />
+                <Property name="Width" value="50" />
+                <Property name="Height" value="50" />
+                <Property name="Align" value="TopLeft" />
+              </Property>
+              <Property name="Text" value="x3" />
+              <Property name="Preset" value="GcTextPreset.xml">
+                <Property name="FontType" value="GcFontTypesEnum.xml">
+                  <Property name="Font" value="GeosansLight" />
+                </Property>
+                <Property name="Height" value="24" />
+                <Property name="Colour" value="Colour.xml">
+                  <Property name="R" value="0" />
+                  <Property name="G" value="0" />
+                  <Property name="B" value="0" />
+                  <Property name="A" value="1" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcHUDImageData.xml">
+              <Property name="Data" value="GcHUDComponent.xml">
+                <Property name="ID" value="GRENADE" />
+                <Property name="PosX" value="0" />
+                <Property name="PosY" value="0" />
+                <Property name="Width" value="32" />
+                <Property name="Height" value="32" />
+                <Property name="Align" value="TopLeft" />
+              </Property>
+              <Property name="Image" value="TEXTURES/UI/HUD/GRENADEICON.DDS" />
+              <Property name="Colour" value="Colour.xml">
+                <Property name="R" value="1" />
+                <Property name="G" value="1" />
+                <Property name="B" value="1" />
+                <Property name="A" value="1" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcHUDTextData.xml">
+          <Property name="Data" value="GcHUDComponent.xml">
+            <Property name="ID" value="WEAPON_TITLE" />
+            <Property name="PosX" value="80" />
+            <Property name="PosY" value="35" />
+            <Property name="Width" value="50" />
+            <Property name="Height" value="50" />
+            <Property name="Align" value="TopLeft" />
+          </Property>
+          <Property name="Text" value="LAZEUS" />
+          <Property name="Preset" value="GcTextPreset.xml">
+            <Property name="FontType" value="GcFontTypesEnum.xml">
+              <Property name="Font" value="GeosansLightWide" />
+            </Property>
+            <Property name="Height" value="22" />
+            <Property name="Colour" value="Colour.xml">
+              <Property name="R" value="0" />
+              <Property name="G" value="0" />
+              <Property name="B" value="0" />
+              <Property name="A" value="1" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcHUDImageData.xml">
+          <Property name="Data" value="GcHUDComponent.xml">
+            <Property name="ID" value="" />
+            <Property name="PosX" value="0" />
+            <Property name="PosY" value="0" />
+            <Property name="Width" value="300" />
+            <Property name="Height" value="175" />
+            <Property name="Align" value="TopLeft" />
+          </Property>
+          <Property name="Image" value="TEXTURES/UI/HUD/WEAPONBORDERS.DDS" />
+          <Property name="Colour" value="Colour.xml">
+            <Property name="R" value="1" />
+            <Property name="G" value="1" />
+            <Property name="B" value="1" />
+            <Property name="A" value="1" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+</Data>

@@ -1,0 +1,33 @@
+<!-- High Dynamic Range (HDR) utf-8Shading Pipeline -->
+<Pipeline>
+  <Setup>
+
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="Lighting">
+
+      <BeginTarget target="" />
+      <ColourMask channels="RGBA"/>
+      <ClearTarget depthBuf="true" colBuf0="true" excludeX360="true" col_R="0.1" col_G="0.1" col_B="0.1" col_A="1.0" />
+      <ColourMask channels="RGB"/>
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="replace" depthTest="less" alphaToCoverage="true"/>
+      <DoForwardLightLoop type="Mesh" class="Opaque"      context="LIT_FORWARD" order="STATECHANGES" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="less" alphaToCoverage="true"/>
+      <DoForwardLightLoop type="Mesh" class="Translucent" context="LIT_FORWARD" order="BACK_TO_FRONT"/>
+      <EndTarget flushCB="true" flushDB="true" />
+
+    </Stage>
+
+    <Stage id="Reset States">
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>
