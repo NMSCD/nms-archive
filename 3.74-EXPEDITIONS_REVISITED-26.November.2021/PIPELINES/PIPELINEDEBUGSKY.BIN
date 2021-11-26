@@ -1,0 +1,52 @@
+<!-- Render Albedo to Imposter - Pipeline -->
+<Pipeline>
+    
+  <Setup>
+    
+    <RenderTarget id="FINAL"          depthBuf="true"  numColBufs="1"  format="RGBA8" scale="1.0" maxSamples="0" /> 
+  
+  </Setup>
+  
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="SetRenderTarget">
+      <BeginTarget target="FINAL" />
+    </Stage>
+
+    <Stage id="ClearRenderTarget">
+      <ColourMask channels="RGBA"/>
+      <ClearTarget depthBuf="true" colBuf0="true" excludeX360="true" col_R="0.0" col_G="0.0" col_B="0.0" col_A="1.0" />
+    </Stage>
+
+    <Stage id="Draw">
+      <ColourMask channels="RGBA"/>
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Mesh" class="Atmosphere" context="SCATTERING" order="BACK_TO_FRONT" />
+      
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="replace" depthTest="lessEqual" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Terrain"  class="PLANET"    context="LIT_FORWARD"        order="FRONT_TO_BACK" />
+      <EndTarget flushCB="true" flushDB="true" />
+
+    </Stage>
+    
+  <Stage id="PostProcess">
+    
+      <ColourMask channels="RGBA"/>
+      <BeginTarget target=""/>
+      <ClearTarget depthBuf="true" colBuf0="true" excludeX360="true" col_R="0.0" col_G="0.0" col_B="0.0" col_A="1.0" />
+      
+      <ColourMask channels="RGB"/>
+      <SetContext zwrite="true" colourWrite="true" cullMode="back"  blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <BindBuffer sampler="gBufferMap" sourceRT="FINAL"  bufIndex="0" />
+      <BindBuffer sampler="gBuffer1Map" sourceRT="FINAL"        bufIndex="32" />
+      <DrawQuad material="materials/PostProcess.material.mbin" context="COMBINE" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="true" />
+
+  </Stage>
+
+  </CommandQueue>
+
+</Pipeline>
