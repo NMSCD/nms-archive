@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.81.0)-->
+<Data template="GcPlayerClothComponentData">
+  <Property name="Enabled" value="False" />
+  <Property name="NumConstraintSolvingIterations" value="8" />
+  <Property name="ClothPieces">
+    <Property value="GcClothPiece.xml">
+      <Property name="Enabled" value="False" />
+      <Property name="DebugName" value="Skirt" />
+      <Property name="RenderMeshNodeName" value="CapeRed" />
+      <Property name="NumPointsInRenderMeshI" value="19" />
+      <Property name="NumPointsInRenderMeshJ" value="30" />
+      <Property name="VertexRemappingPermutation" value="13" />
+      <Property name="NumSimPointsI" value="19" />
+      <Property name="NumSimPointsJ" value="15" />
+      <Property name="ClothHeight" value="0.9" />
+      <Property name="ParticleRadius" value="0" />
+      <Property name="StaticFriction" value="1.02" />
+      <Property name="ParticleDamping" value="0.1" />
+      <Property name="GlobalDamping" value="0.05" />
+      <Property name="StandardGravityScale" value="1" />
+      <Property name="ApplyMoreGravityAtBottom" value="True" />
+      <Property name="GravityScaleAtBottom" value="1.5" />
+      <Property name="InitialShapeReferenceBone" value="player01_spine_01SHJnt" />
+      <Property name="InitialShapeIsCapeLike" value="True" />
+      <Property name="CapeLikeInitialShape" value="GcCapeLikeInitialShape.xml">
+        <Property name="TopRadius" value="0.2" />
+        <Property name="TopInnerRadius" value="0.2" />
+        <Property name="BottomRadius" value="0.3" />
+        <Property name="TopDropOffHeight" value="0.07" />
+        <Property name="ForwardSquash" value="0.8" />
+        <Property name="TopX" value="0" />
+        <Property name="TopY" value="0.05" />
+        <Property name="TopZ" value="0" />
+        <Property name="RightAxisIndex" value="5" />
+        <Property name="ForwardAxisIndex" value="1" />
+        <Property name="CircleStartAngle" value="100" />
+        <Property name="CircleEndAngle" value="440" />
+        <Property name="WrapIAround" value="False" />
+        <Property name="WrapJAround" value="False" />
+      </Property>
+      <Property name="RectangularInitialShape" value="GcRectangularInitialShape.xml">
+        <Property name="TopLineStartX" value="-0.1" />
+        <Property name="TopLineStartY" value="1" />
+        <Property name="TopLineStartZ" value="0" />
+        <Property name="TopLineEndX" value="0.1" />
+        <Property name="TopLineEndY" value="1" />
+        <Property name="TopLineEndZ" value="0" />
+        <Property name="BottomLineStartX" value="-0.1" />
+        <Property name="BottomLineStartY" value="0.5" />
+        <Property name="BottomLineStartZ" value="0" />
+        <Property name="BottomLineEndX" value="0.1" />
+        <Property name="BottomLineEndY" value="0.5" />
+        <Property name="BottomLineEndZ" value="0" />
+      </Property>
+      <Property name="NumFixedTopRowsInInitialShape" value="2" />
+      <Property name="NumExtraFixedBoundaryRowsInInitialShape" value="0" />
+      <Property name="AttachmentCircles" />
+      <Property name="AttachmentLines" />
+      <Property name="CollisionBones">
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_spine_TopSHJnt" />
+          <Property name="CapsuleCentreX" value="-0.176" />
+          <Property name="CapsuleCentreY" value="0.035" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.222" />
+          <Property name="CapsuleLength" value="0.388" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_spine_01SHJnt" />
+          <Property name="CapsuleCentreX" value="-0.22" />
+          <Property name="CapsuleCentreY" value="0.08" />
+          <Property name="CapsuleCentreZ" value="-0.009" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.2" />
+          <Property name="CapsuleLength" value="0" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_l_arm_ShoulderSHJnt" />
+          <Property name="CapsuleCentreX" value="0.163" />
+          <Property name="CapsuleCentreY" value="-0.04" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.136" />
+          <Property name="CapsuleLength" value="0.349" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_r_arm_ShoulderSHJnt" />
+          <Property name="CapsuleCentreX" value="-0.159" />
+          <Property name="CapsuleCentreY" value="0.04" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.139" />
+          <Property name="CapsuleLength" value="0.298" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_l_leg_HipSHJnt" />
+          <Property name="CapsuleCentreX" value="0.246" />
+          <Property name="CapsuleCentreY" value="0" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.115" />
+          <Property name="CapsuleLength" value="0.387" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_r_leg_HipSHJnt" />
+          <Property name="CapsuleCentreX" value="-0.233" />
+          <Property name="CapsuleCentreY" value="0" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.115" />
+          <Property name="CapsuleLength" value="0.377" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_l_leg_KneeSHJnt" />
+          <Property name="CapsuleCentreX" value="0.17" />
+          <Property name="CapsuleCentreY" value="0" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.121" />
+          <Property name="CapsuleLength" value="0.671" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_r_leg_KneeSHJnt" />
+          <Property name="CapsuleCentreX" value="-0.173" />
+          <Property name="CapsuleCentreY" value="0" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.123" />
+          <Property name="CapsuleLength" value="0.69" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+      </Property>
+      <Property name="NodesToRemove">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="_Backpack_GRP" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcClothPiece.xml">
+      <Property name="Enabled" value="False" />
+      <Property name="DebugName" value="Cape" />
+      <Property name="RenderMeshNodeName" value="CapeRed" />
+      <Property name="NumPointsInRenderMeshI" value="19" />
+      <Property name="NumPointsInRenderMeshJ" value="30" />
+      <Property name="VertexRemappingPermutation" value="13" />
+      <Property name="NumSimPointsI" value="19" />
+      <Property name="NumSimPointsJ" value="30" />
+      <Property name="ClothHeight" value="1.45" />
+      <Property name="ParticleRadius" value="0" />
+      <Property name="StaticFriction" value="1" />
+      <Property name="ParticleDamping" value="0.1" />
+      <Property name="GlobalDamping" value="0.05" />
+      <Property name="StandardGravityScale" value="1" />
+      <Property name="ApplyMoreGravityAtBottom" value="True" />
+      <Property name="GravityScaleAtBottom" value="1.5" />
+      <Property name="InitialShapeReferenceBone" value="player01_spine_TopSHJnt" />
+      <Property name="InitialShapeIsCapeLike" value="True" />
+      <Property name="CapeLikeInitialShape" value="GcCapeLikeInitialShape.xml">
+        <Property name="TopRadius" value="0.315" />
+        <Property name="TopInnerRadius" value="0.15" />
+        <Property name="BottomRadius" value="0.475" />
+        <Property name="TopDropOffHeight" value="0.07" />
+        <Property name="ForwardSquash" value="0.7" />
+        <Property name="TopX" value="0.21" />
+        <Property name="TopY" value="0" />
+        <Property name="TopZ" value="0" />
+        <Property name="RightAxisIndex" value="5" />
+        <Property name="ForwardAxisIndex" value="1" />
+        <Property name="CircleStartAngle" value="115" />
+        <Property name="CircleEndAngle" value="415" />
+        <Property name="WrapIAround" value="False" />
+        <Property name="WrapJAround" value="False" />
+      </Property>
+      <Property name="RectangularInitialShape" value="GcRectangularInitialShape.xml">
+        <Property name="TopLineStartX" value="-0.1" />
+        <Property name="TopLineStartY" value="1" />
+        <Property name="TopLineStartZ" value="0" />
+        <Property name="TopLineEndX" value="0.1" />
+        <Property name="TopLineEndY" value="1" />
+        <Property name="TopLineEndZ" value="0" />
+        <Property name="BottomLineStartX" value="-0.1" />
+        <Property name="BottomLineStartY" value="0.5" />
+        <Property name="BottomLineStartZ" value="0" />
+        <Property name="BottomLineEndX" value="0.1" />
+        <Property name="BottomLineEndY" value="0.5" />
+        <Property name="BottomLineEndZ" value="0" />
+      </Property>
+      <Property name="NumFixedTopRowsInInitialShape" value="2" />
+      <Property name="NumExtraFixedBoundaryRowsInInitialShape" value="2" />
+      <Property name="AttachmentCircles">
+        <Property value="GcClothAttachmentCirlce.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_r_leg_HipSHJnt" />
+          <Property name="Radius" value="0.115" />
+          <Property name="CenterX" value="-0.2" />
+          <Property name="CenterY" value="0" />
+          <Property name="CenterZ" value="0" />
+          <Property name="RightAxisIndex" value="1" />
+          <Property name="ForwardAxisIndex" value="2" />
+          <Property name="ClothDirectionAxis" value="1" />
+          <Property name="StartAngle" value="130" />
+          <Property name="EndAngle" value="400" />
+          <Property name="WrapIAround" value="False" />
+          <Property name="WrapJAround" value="False" />
+          <Property name="NumRowsOfSameJToFix" value="0" />
+          <Property name="RowToFixJ" value="0" />
+          <Property name="NumRowsOfSameIToFix" value="0" />
+          <Property name="RowToFixI" value="0" />
+          <Property name="Unwrinkle" value="False" />
+        </Property>
+        <Property value="GcClothAttachmentCirlce.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_spine_TopSHJnt" />
+          <Property name="Radius" value="0.3" />
+          <Property name="CenterX" value="-1" />
+          <Property name="CenterY" value="0" />
+          <Property name="CenterZ" value="0" />
+          <Property name="RightAxisIndex" value="1" />
+          <Property name="ForwardAxisIndex" value="2" />
+          <Property name="ClothDirectionAxis" value="1" />
+          <Property name="StartAngle" value="130" />
+          <Property name="EndAngle" value="400" />
+          <Property name="WrapIAround" value="False" />
+          <Property name="WrapJAround" value="False" />
+          <Property name="NumRowsOfSameJToFix" value="0" />
+          <Property name="RowToFixJ" value="0" />
+          <Property name="NumRowsOfSameIToFix" value="0" />
+          <Property name="RowToFixI" value="0" />
+          <Property name="Unwrinkle" value="True" />
+        </Property>
+      </Property>
+      <Property name="AttachmentLines">
+        <Property value="GcClothAttachmentLine.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_r_leg_KneeSHJnt" />
+          <Property name="StartX" value="-0.3" />
+          <Property name="StartY" value="0" />
+          <Property name="StartZ" value="0.3" />
+          <Property name="EndX" value="-1" />
+          <Property name="EndY" value="0" />
+          <Property name="EndZ" value="-0.3" />
+          <Property name="NumRowsOfSameJToFix" value="0" />
+          <Property name="RowToFixJ" value="0" />
+          <Property name="NumRowsOfSameIToFix" value="0" />
+          <Property name="RowToFixI" value="0" />
+          <Property name="Unwrinkle" value="True" />
+          <Property name="LengthScale" value="1" />
+        </Property>
+      </Property>
+      <Property name="CollisionBones">
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_spine_TopSHJnt" />
+          <Property name="CapsuleCentreX" value="-0.176" />
+          <Property name="CapsuleCentreY" value="0.035" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.222" />
+          <Property name="CapsuleLength" value="0.388" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_spine_01SHJnt" />
+          <Property name="CapsuleCentreX" value="-0.1" />
+          <Property name="CapsuleCentreY" value="0.1" />
+          <Property name="CapsuleCentreZ" value="-0.009" />
+          <Property name="CapsuleAxisIndex" value="2" />
+          <Property name="CapsuleRadius" value="0.329" />
+          <Property name="CapsuleLength" value="0" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_l_arm_ShoulderSHJnt" />
+          <Property name="CapsuleCentreX" value="0.163" />
+          <Property name="CapsuleCentreY" value="-0.04" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.136" />
+          <Property name="CapsuleLength" value="0.349" />
+          <Property name="ExtractPointPairs" value="True" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_r_arm_ShoulderSHJnt" />
+          <Property name="CapsuleCentreX" value="-0.159" />
+          <Property name="CapsuleCentreY" value="0.04" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.139" />
+          <Property name="CapsuleLength" value="0.298" />
+          <Property name="ExtractPointPairs" value="True" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_l_leg_HipSHJnt" />
+          <Property name="CapsuleCentreX" value="0.246" />
+          <Property name="CapsuleCentreY" value="0" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.115" />
+          <Property name="CapsuleLength" value="0.387" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_r_leg_HipSHJnt" />
+          <Property name="CapsuleCentreX" value="-0.233" />
+          <Property name="CapsuleCentreY" value="0" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.115" />
+          <Property name="CapsuleLength" value="0.377" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_l_leg_KneeSHJnt" />
+          <Property name="CapsuleCentreX" value="0.17" />
+          <Property name="CapsuleCentreY" value="0" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.121" />
+          <Property name="CapsuleLength" value="0.671" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_r_leg_KneeSHJnt" />
+          <Property name="CapsuleCentreX" value="-0.173" />
+          <Property name="CapsuleCentreY" value="0" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.123" />
+          <Property name="CapsuleLength" value="0.69" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+      </Property>
+      <Property name="NodesToRemove">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="_Backpack_GRP" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcClothPiece.xml">
+      <Property name="Enabled" value="True" />
+      <Property name="DebugName" value="Strip" />
+      <Property name="RenderMeshNodeName" value="CapeRed" />
+      <Property name="NumPointsInRenderMeshI" value="19" />
+      <Property name="NumPointsInRenderMeshJ" value="30" />
+      <Property name="VertexRemappingPermutation" value="13" />
+      <Property name="NumSimPointsI" value="1" />
+      <Property name="NumSimPointsJ" value="15" />
+      <Property name="ClothHeight" value="0.6" />
+      <Property name="ParticleRadius" value="0" />
+      <Property name="StaticFriction" value="1.03" />
+      <Property name="ParticleDamping" value="0.1" />
+      <Property name="GlobalDamping" value="0.05" />
+      <Property name="StandardGravityScale" value="1" />
+      <Property name="ApplyMoreGravityAtBottom" value="True" />
+      <Property name="GravityScaleAtBottom" value="1.5" />
+      <Property name="InitialShapeReferenceBone" value="player01_spine_TopSHJnt" />
+      <Property name="InitialShapeIsCapeLike" value="True" />
+      <Property name="CapeLikeInitialShape" value="GcCapeLikeInitialShape.xml">
+        <Property name="TopRadius" value="1" />
+        <Property name="TopInnerRadius" value="1" />
+        <Property name="BottomRadius" value="1" />
+        <Property name="TopDropOffHeight" value="0.07" />
+        <Property name="ForwardSquash" value="0.7" />
+        <Property name="TopX" value="-0.1" />
+        <Property name="TopY" value="-0.12" />
+        <Property name="TopZ" value="-0.11" />
+        <Property name="RightAxisIndex" value="5" />
+        <Property name="ForwardAxisIndex" value="1" />
+        <Property name="CircleStartAngle" value="0" />
+        <Property name="CircleEndAngle" value="360" />
+        <Property name="WrapIAround" value="True" />
+        <Property name="WrapJAround" value="False" />
+      </Property>
+      <Property name="RectangularInitialShape" value="GcRectangularInitialShape.xml">
+        <Property name="TopLineStartX" value="-0.1" />
+        <Property name="TopLineStartY" value="1" />
+        <Property name="TopLineStartZ" value="0" />
+        <Property name="TopLineEndX" value="0.1" />
+        <Property name="TopLineEndY" value="1" />
+        <Property name="TopLineEndZ" value="0" />
+        <Property name="BottomLineStartX" value="-0.1" />
+        <Property name="BottomLineStartY" value="0.5" />
+        <Property name="BottomLineStartZ" value="0" />
+        <Property name="BottomLineEndX" value="0.1" />
+        <Property name="BottomLineEndY" value="0.5" />
+        <Property name="BottomLineEndZ" value="0" />
+      </Property>
+      <Property name="NumFixedTopRowsInInitialShape" value="0" />
+      <Property name="NumExtraFixedBoundaryRowsInInitialShape" value="0" />
+      <Property name="AttachmentCircles">
+        <Property value="GcClothAttachmentCirlce.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_spine_TopSHJnt" />
+          <Property name="Radius" value="0.02" />
+          <Property name="CenterX" value="-0.27" />
+          <Property name="CenterY" value="-0.26" />
+          <Property name="CenterZ" value="-0.2" />
+          <Property name="RightAxisIndex" value="0" />
+          <Property name="ForwardAxisIndex" value="1" />
+          <Property name="ClothDirectionAxis" value="5" />
+          <Property name="StartAngle" value="360" />
+          <Property name="EndAngle" value="0" />
+          <Property name="WrapIAround" value="True" />
+          <Property name="WrapJAround" value="False" />
+          <Property name="NumRowsOfSameJToFix" value="2" />
+          <Property name="RowToFixJ" value="0" />
+          <Property name="NumRowsOfSameIToFix" value="0" />
+          <Property name="RowToFixI" value="0" />
+          <Property name="Unwrinkle" value="False" />
+        </Property>
+        <Property value="GcClothAttachmentCirlce.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_l_leg_HipSHJnt" />
+          <Property name="Radius" value="0.02" />
+          <Property name="CenterX" value="0.15" />
+          <Property name="CenterY" value="0.09" />
+          <Property name="CenterZ" value="-0.03" />
+          <Property name="RightAxisIndex" value="0" />
+          <Property name="ForwardAxisIndex" value="1" />
+          <Property name="ClothDirectionAxis" value="2" />
+          <Property name="StartAngle" value="0" />
+          <Property name="EndAngle" value="360" />
+          <Property name="WrapIAround" value="False" />
+          <Property name="WrapJAround" value="False" />
+          <Property name="NumRowsOfSameJToFix" value="2" />
+          <Property name="RowToFixJ" value="-1" />
+          <Property name="NumRowsOfSameIToFix" value="0" />
+          <Property name="RowToFixI" value="0" />
+          <Property name="Unwrinkle" value="False" />
+        </Property>
+      </Property>
+      <Property name="AttachmentLines">
+        <Property value="GcClothAttachmentLine.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_r_leg_KneeSHJnt" />
+          <Property name="StartX" value="-0.3" />
+          <Property name="StartY" value="0" />
+          <Property name="StartZ" value="0.3" />
+          <Property name="EndX" value="-1" />
+          <Property name="EndY" value="0" />
+          <Property name="EndZ" value="-0.3" />
+          <Property name="NumRowsOfSameJToFix" value="0" />
+          <Property name="RowToFixJ" value="0" />
+          <Property name="NumRowsOfSameIToFix" value="0" />
+          <Property name="RowToFixI" value="0" />
+          <Property name="Unwrinkle" value="True" />
+          <Property name="LengthScale" value="1" />
+        </Property>
+      </Property>
+      <Property name="CollisionBones">
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_spine_TopSHJnt" />
+          <Property name="CapsuleCentreX" value="-0.176" />
+          <Property name="CapsuleCentreY" value="0.035" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.15" />
+          <Property name="CapsuleLength" value="0.388" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_spine_01SHJnt" />
+          <Property name="CapsuleCentreX" value="-0.1" />
+          <Property name="CapsuleCentreY" value="0" />
+          <Property name="CapsuleCentreZ" value="-0.09" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.14" />
+          <Property name="CapsuleLength" value="0.25" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_l_arm_ShoulderSHJnt" />
+          <Property name="CapsuleCentreX" value="0.163" />
+          <Property name="CapsuleCentreY" value="-0.04" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.136" />
+          <Property name="CapsuleLength" value="0.349" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_r_arm_ShoulderSHJnt" />
+          <Property name="CapsuleCentreX" value="-0.159" />
+          <Property name="CapsuleCentreY" value="0.04" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.139" />
+          <Property name="CapsuleLength" value="0.298" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_l_leg_HipSHJnt" />
+          <Property name="CapsuleCentreX" value="0.246" />
+          <Property name="CapsuleCentreY" value="0" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.11" />
+          <Property name="CapsuleLength" value="0.387" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="True" />
+          <Property name="BoneName" value="player01_r_leg_HipSHJnt" />
+          <Property name="CapsuleCentreX" value="-0.233" />
+          <Property name="CapsuleCentreY" value="0" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.15" />
+          <Property name="CapsuleLength" value="0.377" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_l_leg_KneeSHJnt" />
+          <Property name="CapsuleCentreX" value="0.17" />
+          <Property name="CapsuleCentreY" value="0" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.121" />
+          <Property name="CapsuleLength" value="0.671" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+        <Property value="GcClothCollisionBone.xml">
+          <Property name="Enabled" value="False" />
+          <Property name="BoneName" value="player01_r_leg_KneeSHJnt" />
+          <Property name="CapsuleCentreX" value="-0.173" />
+          <Property name="CapsuleCentreY" value="0" />
+          <Property name="CapsuleCentreZ" value="0" />
+          <Property name="CapsuleAxisIndex" value="0" />
+          <Property name="CapsuleRadius" value="0.123" />
+          <Property name="CapsuleLength" value="0.69" />
+          <Property name="ExtractPointPairs" value="False" />
+        </Property>
+      </Property>
+      <Property name="NodesToRemove" />
+    </Property>
+  </Property>
+</Data>
