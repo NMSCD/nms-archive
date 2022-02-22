@@ -1,0 +1,55 @@
+<Pipeline>
+  <Setup>
+    <ScaleInfo resScalingDefault="true" />
+
+    <RenderTarget id="CLOUDS_HIGH"    depthBuf="false"  numColBufs="2" format0="RGBA8"  format1="RED32F" bilinear="true" width="442" height="496"  allowDcc="false" numUniformBuffers="3" numSlices="2"  crossPipeShareId="CLOUDS_SHARED"   />
+    <RenderTarget id="CLOUD_BLURBUF1" depthBuf="false" numColBufs="1" format="RGBA8" bilinear="true" width="442" height="496" allowDcc="false" numUniformBuffers="3" numSlices="2" crossPipeShareId="CLOUDSB1_SHARED" />
+    <RenderTarget id="CLOUD_BLURBUF2" depthBuf="false" numColBufs="1" format="RGBA8" bilinear="true" width="442" height="496" allowDcc="false" numUniformBuffers="3" numSlices="2" crossPipeShareId="CLOUDSB2_SHARED" />
+    <RenderTarget id="DEPTH_DOWN"     depthBuf="true"   depthBufUsesBB="true" numColBufs="0"  format="RGBA8" scale="1.0" maxSamples="0" stencilBuf="true"   esramPageDepthBuf="0" crossPipeShareId="DEPTHD_SHARED" numUniformBuffers="3" numSlices="2" />
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="CloudsHigh">
+      <SyncGraphicsToCompute compute="async" />
+
+      <BeginTarget target="CLOUDS_HIGH" />
+      <ColourMask channels="RGBA"/>
+      <BindBuffer sampler="gBufferMap" sourceRT="DEPTH_DOWN" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/Cloud.material.mbin" uniform="gCloudParamsVec4" a="10.0" />
+      <DrawQuad material="Materials/Cloud.material.mbin" context="RENDER_HIGH" width ="1.0" height="1.0" compute="async"  />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+      
+    </Stage>
+
+    <Stage id="CloudsBlur">
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA" />
+
+      <BeginTarget target="CLOUD_BLURBUF2" />
+      <BindBuffer sampler="gBufferMap" sourceRT="CLOUDS_HIGH" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="5.0" />
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_SIMPLE" compute="async" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="CLOUD_BLURBUF1" />
+      <BindBuffer sampler="gBufferMap" sourceRT="CLOUD_BLURBUF2" bufIndex="0" />
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.0" b="1.0" c="5.0" />
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_SIMPLE" compute="async" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+    </Stage>    
+    
+    <Stage id="Reset States">
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>

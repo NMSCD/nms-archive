@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.81.0)-->
+<Data template="GcCreatureBehaviourTrees">
+  <Property name="BehaviourTree">
+    <Property value="GcCreatureBehaviourTreeData.xml">
+      <Property name="Id" value="MELEE" />
+      <Property name="Nodes">
+        <Property value="GcBehaviourCheckDeathData.xml" />
+        <Property value="GcBehaviourAppearData.xml">
+          <Property name="AppearAnim" value="GRNDAPPEAR" />
+        </Property>
+        <Property value="TkBehaviourTreeConcurrentSelectorData.xml">
+          <Property name="Name" value="MELEE" />
+          <Property name="SucceedWhen" value="AllChildrenSucceed" />
+          <Property name="FailWhen" value="AnyChildFails" />
+          <Property name="Children">
+            <Property value="GcBehaviourRegisterAttackerData.xml">
+              <Property name="TargetKey" value="TARGET" />
+            </Property>
+            <Property value="TkBehaviourTreeSequentialSelectorData.xml">
+              <Property name="Name" value="MELEE" />
+              <Property name="Looping" value="False" />
+              <Property name="FailWhenAnyChildFails" value="True" />
+              <Property name="Children">
+                <Property value="TkBehaviourTreeConcurrentSelectorData.xml">
+                  <Property name="Name" value="MOVE_CLOSE" />
+                  <Property name="SucceedWhen" value="AllChildrenSucceed" />
+                  <Property name="FailWhen" value="AnyChildFails" />
+                  <Property name="Children">
+                    <Property value="GcBehaviourGetTargetData.xml">
+                      <Property name="TargetKey" value="TARGET" />
+                    </Property>
+                    <Property value="GcBehaviourMoveToTargetData.xml">
+                      <Property name="TargetKey" value="TARGET" />
+                      <Property name="ArriveDist" value="TkBlackboardDefaultValueFloat.xml">
+                        <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                          <Property name="BlackboardCategory" value="Local" />
+                        </Property>
+                        <Property name="BlackboardKey" value="" />
+                        <Property name="DefaultValue" value="1" />
+                      </Property>
+                      <Property name="BehaviourMoveSpeed" value="Normal" />
+                      <Property name="DynamicMoveSlowdownDistMul" value="4" />
+                      <Property name="SpeedModifier" value="1" />
+                      <Property name="AvoidCreaturesStrength" value="0" />
+                    </Property>
+                  </Property>
+                </Property>
+                <Property value="TkBehaviourTreeSequentialSelectorData.xml">
+                  <Property name="Name" value="ATTACK" />
+                  <Property name="Looping" value="False" />
+                  <Property name="FailWhenAnyChildFails" value="True" />
+                  <Property name="Children">
+                    <Property value="GcBehaviourFaceTargetData.xml">
+                      <Property name="TargetKey" value="TARGET" />
+                      <Property name="ArriveAngle" value="5" />
+                    </Property>
+                    <Property value="TkBehaviourTreeConcurrentSelectorData.xml">
+                      <Property name="Name" value="HIT" />
+                      <Property name="SucceedWhen" value="AllChildrenSucceed" />
+                      <Property name="FailWhen" value="AnyChildFails" />
+                      <Property name="Children">
+                        <Property value="GcBehaviourPlayAnimData.xml">
+                          <Property name="Anim" value="ATTACK1" />
+                          <Property name="BlendInTime" value="0.2" />
+                          <Property name="BlendOutAt" value="0.9" />
+                          <Property name="Triggers">
+                            <Property value="GcBehaviourPlayAnimTrigger.xml">
+                              <Property name="Frame" value="20" />
+                              <Property name="Trigger" value="HIT" />
+                            </Property>
+                          </Property>
+                        </Property>
+                        <Property value="TkBehaviourTreeSucceedDecoratorData.xml">
+                          <Property name="Child" value="GcBlackboardValueDecoratorData.xml">
+                            <Property name="Key" value="HIT" />
+                            <Property name="ClearOnSuccess" value="True" />
+                            <Property name="Child" value="GcBehaviourApplyDamageData.xml">
+                              <Property name="PlayerDamageType" value="TkBlackboardDefaultValueId.xml">
+                                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                                  <Property name="BlackboardCategory" value="Local" />
+                                </Property>
+                                <Property name="BlackboardKey" value="" />
+                                <Property name="DefaultValue" value="FIEND_DMG" />
+                              </Property>
+                              <Property name="Radius" value="TkBlackboardDefaultValueFloat.xml">
+                                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                                  <Property name="BlackboardCategory" value="Local" />
+                                </Property>
+                                <Property name="BlackboardKey" value="" />
+                                <Property name="DefaultValue" value="1" />
+                              </Property>
+                              <Property name="Offset" value="TkBlackboardDefaultValueVector.xml">
+                                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                                  <Property name="BlackboardCategory" value="Local" />
+                                </Property>
+                                <Property name="BlackboardKey" value="" />
+                                <Property name="DefaultValue" value="Vector3f.xml">
+                                  <Property name="x" value="0" />
+                                  <Property name="y" value="1" />
+                                  <Property name="z" value="1.5" />
+                                </Property>
+                              </Property>
+                            </Property>
+                          </Property>
+                        </Property>
+                      </Property>
+                    </Property>
+                  </Property>
+                </Property>
+                <Property value="GcBehaviourWaitData.xml">
+                  <Property name="Seconds" value="0.1" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcCreatureBehaviourTreeData.xml">
+      <Property name="Id" value="RANGED_SPIT" />
+      <Property name="Nodes">
+        <Property value="GcBehaviourCheckDeathData.xml" />
+        <Property value="GcBehaviourAppearData.xml">
+          <Property name="AppearAnim" value="GRNDAPPEAR" />
+        </Property>
+        <Property value="TkBehaviourTreeConcurrentSelectorData.xml">
+          <Property name="Name" value="RANGED_ATTACK" />
+          <Property name="SucceedWhen" value="AllChildrenSucceed" />
+          <Property name="FailWhen" value="AnyChildFails" />
+          <Property name="Children">
+            <Property value="GcBehaviourRegisterAttackerData.xml">
+              <Property name="TargetKey" value="TARGET" />
+            </Property>
+            <Property value="TkBehaviourTreeSequentialSelectorData.xml">
+              <Property name="Name" value="RANGED_ATTACK" />
+              <Property name="Looping" value="False" />
+              <Property name="FailWhenAnyChildFails" value="True" />
+              <Property name="Children">
+                <Property value="TkBehaviourTreeConcurrentSelectorData.xml">
+                  <Property name="Name" value="MOVE_CLOSE" />
+                  <Property name="SucceedWhen" value="AllChildrenSucceed" />
+                  <Property name="FailWhen" value="AnyChildFails" />
+                  <Property name="Children">
+                    <Property value="GcBehaviourGetTargetData.xml">
+                      <Property name="TargetKey" value="TARGET" />
+                    </Property>
+                    <Property value="GcBehaviourMoveToTargetData.xml">
+                      <Property name="TargetKey" value="TARGET" />
+                      <Property name="ArriveDist" value="TkBlackboardDefaultValueFloat.xml">
+                        <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                          <Property name="BlackboardCategory" value="Local" />
+                        </Property>
+                        <Property name="BlackboardKey" value="" />
+                        <Property name="DefaultValue" value="10" />
+                      </Property>
+                      <Property name="BehaviourMoveSpeed" value="Normal" />
+                      <Property name="DynamicMoveSlowdownDistMul" value="4" />
+                      <Property name="SpeedModifier" value="1" />
+                      <Property name="AvoidCreaturesStrength" value="0" />
+                    </Property>
+                  </Property>
+                </Property>
+                <Property value="TkBehaviourTreeSequentialSelectorData.xml">
+                  <Property name="Name" value="ATTACK" />
+                  <Property name="Looping" value="False" />
+                  <Property name="FailWhenAnyChildFails" value="True" />
+                  <Property name="Children">
+                    <Property value="GcBehaviourFaceTargetData.xml">
+                      <Property name="TargetKey" value="TARGET" />
+                      <Property name="ArriveAngle" value="5" />
+                    </Property>
+                    <Property value="TkBehaviourTreeConcurrentSelectorData.xml">
+                      <Property name="Name" value="HIT" />
+                      <Property name="SucceedWhen" value="AllChildrenSucceed" />
+                      <Property name="FailWhen" value="AnyChildFails" />
+                      <Property name="Children">
+                        <Property value="GcBehaviourPlayAnimData.xml">
+                          <Property name="Anim" value="ROAR" />
+                          <Property name="BlendInTime" value="0.2" />
+                          <Property name="BlendOutAt" value="0.9" />
+                          <Property name="Triggers">
+                            <Property value="GcBehaviourPlayAnimTrigger.xml">
+                              <Property name="Frame" value="25" />
+                              <Property name="Trigger" value="SHOOT" />
+                            </Property>
+                            <Property value="GcBehaviourPlayAnimTrigger.xml">
+                              <Property name="Frame" value="35" />
+                              <Property name="Trigger" value="SHOOT" />
+                            </Property>
+                            <Property value="GcBehaviourPlayAnimTrigger.xml">
+                              <Property name="Frame" value="45" />
+                              <Property name="Trigger" value="SHOOT" />
+                            </Property>
+                          </Property>
+                        </Property>
+                        <Property value="TkBehaviourTreeSucceedDecoratorData.xml">
+                          <Property name="Child" value="GcBlackboardValueDecoratorData.xml">
+                            <Property name="Key" value="SHOOT" />
+                            <Property name="ClearOnSuccess" value="True" />
+                            <Property name="Child" value="GcBehaviourLaunchProjectileData.xml">
+                              <Property name="Projectile" value="TkBlackboardDefaultValueId.xml">
+                                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                                  <Property name="BlackboardCategory" value="Local" />
+                                </Property>
+                                <Property name="BlackboardKey" value="" />
+                                <Property name="DefaultValue" value="FIENDSPIT" />
+                              </Property>
+                              <Property name="LaunchJoint" value="Back1JNT" />
+                              <Property name="Amount" value="1" />
+                              <Property name="HorizontalDispersion" value="0" />
+                              <Property name="VerticalDispersion" value="0" />
+                            </Property>
+                          </Property>
+                        </Property>
+                      </Property>
+                    </Property>
+                  </Property>
+                </Property>
+                <Property value="GcBehaviourWaitData.xml">
+                  <Property name="Seconds" value="0.1" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcCreatureBehaviourTreeData.xml">
+      <Property name="Id" value="RANGED_FIRE" />
+      <Property name="Nodes">
+        <Property value="GcBehaviourCheckDeathData.xml" />
+        <Property value="GcBehaviourAppearData.xml">
+          <Property name="AppearAnim" value="GRNDAPPEAR" />
+        </Property>
+        <Property value="TkBehaviourTreeConcurrentSelectorData.xml">
+          <Property name="Name" value="RANGED_ATTACK" />
+          <Property name="SucceedWhen" value="AllChildrenSucceed" />
+          <Property name="FailWhen" value="AnyChildFails" />
+          <Property name="Children">
+            <Property value="GcBehaviourRegisterAttackerData.xml">
+              <Property name="TargetKey" value="TARGET" />
+            </Property>
+            <Property value="TkBehaviourTreeSequentialSelectorData.xml">
+              <Property name="Name" value="RANGED_ATTACK" />
+              <Property name="Looping" value="False" />
+              <Property name="FailWhenAnyChildFails" value="True" />
+              <Property name="Children">
+                <Property value="TkBehaviourTreeConcurrentSelectorData.xml">
+                  <Property name="Name" value="MOVE_CLOSE" />
+                  <Property name="SucceedWhen" value="AllChildrenSucceed" />
+                  <Property name="FailWhen" value="AnyChildFails" />
+                  <Property name="Children">
+                    <Property value="GcBehaviourGetTargetData.xml">
+                      <Property name="TargetKey" value="TARGET" />
+                    </Property>
+                    <Property value="GcBehaviourMoveToTargetData.xml">
+                      <Property name="TargetKey" value="TARGET" />
+                      <Property name="ArriveDist" value="TkBlackboardDefaultValueFloat.xml">
+                        <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                          <Property name="BlackboardCategory" value="Archetype" />
+                        </Property>
+                        <Property name="BlackboardKey" value="" />
+                        <Property name="DefaultValue" value="5" />
+                      </Property>
+                      <Property name="BehaviourMoveSpeed" value="Fast" />
+                      <Property name="DynamicMoveSlowdownDistMul" value="4" />
+                      <Property name="SpeedModifier" value="1" />
+                      <Property name="AvoidCreaturesStrength" value="0" />
+                    </Property>
+                  </Property>
+                </Property>
+                <Property value="TkBehaviourTreeSequentialSelectorData.xml">
+                  <Property name="Name" value="ATTACK" />
+                  <Property name="Looping" value="False" />
+                  <Property name="FailWhenAnyChildFails" value="True" />
+                  <Property name="Children">
+                    <Property value="GcBehaviourFaceTargetData.xml">
+                      <Property name="TargetKey" value="TARGET" />
+                      <Property name="ArriveAngle" value="5" />
+                    </Property>
+                    <Property value="TkBehaviourTreeConcurrentSelectorData.xml">
+                      <Property name="Name" value="HIT" />
+                      <Property name="SucceedWhen" value="AllChildrenSucceed" />
+                      <Property name="FailWhen" value="AnyChildFails" />
+                      <Property name="Children">
+                        <Property value="GcBehaviourPlayAnimData.xml">
+                          <Property name="Anim" value="ROAR" />
+                          <Property name="BlendInTime" value="0.2" />
+                          <Property name="BlendOutAt" value="0.9" />
+                          <Property name="Triggers">
+                            <Property value="GcBehaviourPlayAnimTrigger.xml">
+                              <Property name="Frame" value="20" />
+                              <Property name="Trigger" value="HIT" />
+                            </Property>
+                            <Property value="GcBehaviourPlayAnimTrigger.xml">
+                              <Property name="Frame" value="30" />
+                              <Property name="Trigger" value="ANIM_TRIGGER" />
+                            </Property>
+                            <Property value="GcBehaviourPlayAnimTrigger.xml">
+                              <Property name="Frame" value="40" />
+                              <Property name="Trigger" value="ANIM_TRIGGER" />
+                            </Property>
+                            <Property value="GcBehaviourPlayAnimTrigger.xml">
+                              <Property name="Frame" value="50" />
+                              <Property name="Trigger" value="ANIM_TRIGGER" />
+                            </Property>
+                          </Property>
+                        </Property>
+                        <Property value="TkBehaviourTreeSucceedDecoratorData.xml">
+                          <Property name="Child" value="GcBlackboardValueDecoratorData.xml">
+                            <Property name="Key" value="ANIM_TRIGGER" />
+                            <Property name="ClearOnSuccess" value="True" />
+                            <Property name="Child" value="GcBehaviourLaunchProjectileData.xml">
+                              <Property name="Projectile" value="TkBlackboardDefaultValueId.xml">
+                                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                                  <Property name="BlackboardCategory" value="Archetype" />
+                                </Property>
+                                <Property name="BlackboardKey" value="" />
+                                <Property name="DefaultValue" value="FIENDSPIT" />
+                              </Property>
+                              <Property name="LaunchJoint" value="JawJNT" />
+                              <Property name="Amount" value="2" />
+                              <Property name="HorizontalDispersion" value="30" />
+                              <Property name="VerticalDispersion" value="0" />
+                            </Property>
+                          </Property>
+                        </Property>
+                      </Property>
+                    </Property>
+                  </Property>
+                </Property>
+                <Property value="GcBehaviourWaitData.xml">
+                  <Property name="Seconds" value="1" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcCreatureBehaviourTreeData.xml">
+      <Property name="Id" value="IDLE" />
+      <Property name="Nodes">
+        <Property value="TkBehaviourTreeConcurrentSelectorData.xml">
+          <Property name="Name" value="IDLE" />
+          <Property name="SucceedWhen" value="AllChildrenSucceed" />
+          <Property name="FailWhen" value="AnyChildFails" />
+          <Property name="Children">
+            <Property value="GcBehaviourGetTargetData.xml">
+              <Property name="TargetKey" value="TARGET" />
+            </Property>
+            <Property value="GcBehaviourIdleData.xml" />
+            <Property value="GcBehaviourLookData.xml">
+              <Property name="LookTargetKey" value="TARGET" />
+              <Property name="LookWhenBeyondMaxAngle" value="True" />
+              <Property name="FocusOnTarget" value="TkBlackboardDefaultValueBool.xml">
+                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                  <Property name="BlackboardCategory" value="Local" />
+                </Property>
+                <Property name="BlackboardKey" value="FOCUS_ON_TARGET" />
+                <Property name="DefaultValue" value="False" />
+              </Property>
+              <Property name="RelaxedLook" value="TkBlackboardDefaultValueBool.xml">
+                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                  <Property name="BlackboardCategory" value="Local" />
+                </Property>
+                <Property name="BlackboardKey" value="RELAXED_LOOK" />
+                <Property name="DefaultValue" value="True" />
+              </Property>
+              <Property name="CanLook" value="TkBlackboardDefaultValueBool.xml">
+                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                  <Property name="BlackboardCategory" value="Local" />
+                </Property>
+                <Property name="BlackboardKey" value="CAN_LOOK" />
+                <Property name="DefaultValue" value="True" />
+              </Property>
+            </Property>
+            <Property value="GcBehaviourDetailAnimsData.xml">
+              <Property name="CanDetail" value="TkBlackboardDefaultValueBool.xml">
+                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                  <Property name="BlackboardCategory" value="Local" />
+                </Property>
+                <Property name="BlackboardKey" value="CAN_DETAIL" />
+                <Property name="DefaultValue" value="True" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcCreatureBehaviourTreeData.xml">
+      <Property name="Id" value="HERBIVORE" />
+      <Property name="Nodes">
+        <Property value="GcBehaviourCheckDeathData.xml" />
+        <Property value="GcBehaviourLegacyData.xml">
+          <Property name="LegacyBehaviour" value="Interaction" />
+        </Property>
+        <Property value="GcBehaviourLegacyData.xml">
+          <Property name="LegacyBehaviour" value="Riding" />
+        </Property>
+        <Property value="GcBehaviourLegacyData.xml">
+          <Property name="LegacyBehaviour" value="Attracted" />
+        </Property>
+        <Property value="GcBehaviourLegacyData.xml">
+          <Property name="LegacyBehaviour" value="Flee" />
+        </Property>
+        <Property value="GcBehaviourLegacyData.xml">
+          <Property name="LegacyBehaviour" value="Defend" />
+        </Property>
+        <Property value="GcBehaviourLegacyData.xml">
+          <Property name="LegacyBehaviour" value="FollowPlayer" />
+        </Property>
+        <Property value="GcBehaviourLegacyData.xml">
+          <Property name="LegacyBehaviour" value="AvoidPlayer" />
+        </Property>
+        <Property value="GcBehaviourLegacyData.xml">
+          <Property name="LegacyBehaviour" value="NoticePlayer" />
+        </Property>
+        <Property value="GcBehaviourLegacyData.xml">
+          <Property name="LegacyBehaviour" value="FollowRoutine" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcCreatureBehaviourTreeData.xml">
+      <Property name="Id" value="FLYING" />
+      <Property name="Nodes">
+        <Property value="GcBehaviourCheckDeathData.xml" />
+        <Property value="TkBehaviourTreeConcurrentSelectorData.xml">
+          <Property name="Name" value="FLYING_ATTACK" />
+          <Property name="SucceedWhen" value="AllChildrenSucceed" />
+          <Property name="FailWhen" value="AnyChildFails" />
+          <Property name="Children">
+            <Property value="GcBehaviourGetTargetData.xml">
+              <Property name="TargetKey" value="TARGET" />
+            </Property>
+            <Property value="GcBehaviourRegisterAttackerData.xml">
+              <Property name="TargetKey" value="TARGET" />
+            </Property>
+            <Property value="GcBehaviourMaintainRangeFromTargetData.xml">
+              <Property name="TargetKey" value="TARGET" />
+              <Property name="MinDist" value="TkBlackboardDefaultValueFloat.xml">
+                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                  <Property name="BlackboardCategory" value="Local" />
+                </Property>
+                <Property name="BlackboardKey" value="" />
+                <Property name="DefaultValue" value="2" />
+              </Property>
+              <Property name="MaxDist" value="TkBlackboardDefaultValueFloat.xml">
+                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                  <Property name="BlackboardCategory" value="Local" />
+                </Property>
+                <Property name="BlackboardKey" value="" />
+                <Property name="DefaultValue" value="4" />
+              </Property>
+              <Property name="_2D" value="False" />
+              <Property name="SucceedWhenInRange" value="False" />
+              <Property name="SpeedModifier" value="1" />
+              <Property name="AvoidCreaturesStrength" value="1" />
+            </Property>
+            <Property value="GcBehaviourFaceTargetData.xml">
+              <Property name="TargetKey" value="TARGET" />
+              <Property name="ArriveAngle" value="5" />
+            </Property>
+            <Property value="TkBehaviourTreeSequentialSelectorData.xml">
+              <Property name="Name" value="SHOOT" />
+              <Property name="Looping" value="False" />
+              <Property name="FailWhenAnyChildFails" value="True" />
+              <Property name="Children">
+                <Property value="GcBehaviourLaunchProjectileData.xml">
+                  <Property name="Projectile" value="TkBlackboardDefaultValueId.xml">
+                    <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                      <Property name="BlackboardCategory" value="Local" />
+                    </Property>
+                    <Property name="BlackboardKey" value="" />
+                    <Property name="DefaultValue" value="FIENDSPIT" />
+                  </Property>
+                  <Property name="LaunchJoint" value="RootJNT" />
+                  <Property name="Amount" value="1" />
+                  <Property name="HorizontalDispersion" value="0" />
+                  <Property name="VerticalDispersion" value="0" />
+                </Property>
+                <Property value="GcBehaviourWaitData.xml">
+                  <Property name="Seconds" value="1" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcCreatureBehaviourTreeData.xml">
+      <Property name="Id" value="CRASHY" />
+      <Property name="Nodes">
+        <Property value="GcBehaviourCheckDeathData.xml" />
+        <Property value="TkBehaviourTreeConcurrentSelectorData.xml">
+          <Property name="Name" value="FLYING_ATTACK" />
+          <Property name="SucceedWhen" value="AllChildrenSucceed" />
+          <Property name="FailWhen" value="AnyChildFails" />
+          <Property name="Children">
+            <Property value="GcBehaviourGetTargetData.xml">
+              <Property name="TargetKey" value="TARGET" />
+            </Property>
+            <Property value="GcBehaviourRegisterAttackerData.xml">
+              <Property name="TargetKey" value="TARGET" />
+            </Property>
+            <Property value="GcBehaviourMaintainRangeFromTargetData.xml">
+              <Property name="TargetKey" value="TARGET" />
+              <Property name="MinDist" value="TkBlackboardDefaultValueFloat.xml">
+                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                  <Property name="BlackboardCategory" value="Local" />
+                </Property>
+                <Property name="BlackboardKey" value="" />
+                <Property name="DefaultValue" value="4" />
+              </Property>
+              <Property name="MaxDist" value="TkBlackboardDefaultValueFloat.xml">
+                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                  <Property name="BlackboardCategory" value="Local" />
+                </Property>
+                <Property name="BlackboardKey" value="" />
+                <Property name="DefaultValue" value="8" />
+              </Property>
+              <Property name="_2D" value="False" />
+              <Property name="SucceedWhenInRange" value="False" />
+              <Property name="SpeedModifier" value="1" />
+              <Property name="AvoidCreaturesStrength" value="1" />
+            </Property>
+            <Property value="GcBehaviourFaceTargetData.xml">
+              <Property name="TargetKey" value="TARGET" />
+              <Property name="ArriveAngle" value="5" />
+            </Property>
+            <Property value="GcCooldownDecoratorData.xml">
+              <Property name="Key" value="COOLDOWN" />
+              <Property name="CooldownTime" value="TkBlackboardDefaultValueFloat.xml">
+                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                  <Property name="BlackboardCategory" value="Local" />
+                </Property>
+                <Property name="BlackboardKey" value="" />
+                <Property name="DefaultValue" value="1" />
+              </Property>
+              <Property name="Child" value="GcBlackboardFloatCompareDecoratorData.xml">
+                <Property name="Key" value="TO_TARGET" />
+                <Property name="CompareTo" value="TkBlackboardDefaultValueFloat.xml">
+                  <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                    <Property name="BlackboardCategory" value="Local" />
+                  </Property>
+                  <Property name="BlackboardKey" value="" />
+                  <Property name="DefaultValue" value="20" />
+                </Property>
+                <Property name="CompareBlackboardValueType" value="TkBlackboardComparisonTypeEnum.xml">
+                  <Property name="ComparisonType" value="LessThan" />
+                </Property>
+                <Property name="OnFalse" value="GcBlackboardIntModify.xml">
+                  <Property name="Key" value="COUNT" />
+                  <Property name="Value" value="0" />
+                  <Property name="ModifyIntType" value="SetValue" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcCreatureBehaviourTreeData.xml">
+      <Property name="Id" value="COOLDOWN" />
+      <Property name="Nodes">
+        <Property value="TkBehaviourTreeConcurrentSelectorData.xml">
+          <Property name="Name" value="" />
+          <Property name="SucceedWhen" value="AllChildrenSucceed" />
+          <Property name="FailWhen" value="AnyChildFails" />
+          <Property name="Children">
+            <Property value="GcBehaviourFaceTargetData.xml">
+              <Property name="TargetKey" value="TARGET" />
+              <Property name="ArriveAngle" value="5" />
+            </Property>
+            <Property value="GcCooldownDecoratorData.xml">
+              <Property name="Key" value="COOLDOWN" />
+              <Property name="CooldownTime" value="TkBlackboardDefaultValueFloat.xml">
+                <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                  <Property name="BlackboardCategory" value="Local" />
+                </Property>
+                <Property name="BlackboardKey" value="" />
+                <Property name="DefaultValue" value="2" />
+              </Property>
+              <Property name="Child" value="GcBlackboardFloatCompareDecoratorData.xml">
+                <Property name="Key" value="ANGLE" />
+                <Property name="CompareTo" value="TkBlackboardDefaultValueFloat.xml">
+                  <Property name="BlackboardCategory" value="TkBlackboardCategory.xml">
+                    <Property name="BlackboardCategory" value="Local" />
+                  </Property>
+                  <Property name="BlackboardKey" value="" />
+                  <Property name="DefaultValue" value="10" />
+                </Property>
+                <Property name="CompareBlackboardValueType" value="TkBlackboardComparisonTypeEnum.xml">
+                  <Property name="ComparisonType" value="LessThan" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+</Data>
