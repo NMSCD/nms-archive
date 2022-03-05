@@ -1,0 +1,1668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.82.0)-->
+<Data template="GcFreighterDungeonsTable">
+  <Property name="Dungeons">
+    <Property value="GcFreighterDungeonParams.xml">
+      <Property name="Name" value="MEDI_TURRETS" />
+      <Property name="DungeonParams" value="GcDungeonGenerationParams.xml">
+        <Property name="SizeX" value="13" />
+        <Property name="SizeY" value="4" />
+        <Property name="SizeZ" value="13" />
+        <Property name="EntranceX" value="6" />
+        <Property name="EntranceY" value="3" />
+        <Property name="EntranceZ" value="0" />
+        <Property name="Rooms" value="7" />
+        <Property name="XProbability" value="1" />
+        <Property name="YProbability" value="0.5" />
+        <Property name="ZProbability" value="1" />
+        <Property name="StraightProbability" value="1.25" />
+        <Property name="MainRoomTypes">
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_END" />
+            <Property name="BranchProbability" value="0" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_BARR" />
+            <Property name="BranchProbability" value="0.75" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_BARR" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_MEDI" />
+            <Property name="BranchProbability" value="0.8" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_MEDI" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_HANG" />
+            <Property name="BranchProbability" value="0" />
+          </Property>
+        </Property>
+        <Property name="BranchRoomTypes">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_BARR" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_MEDI" />
+          </Property>
+        </Property>
+        <Property name="Quests">
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CAPT" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CREW" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_END" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="GenerationRules">
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_HANG" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_MEDI" />
+            <Property name="Min" value="2" />
+            <Property name="Max" value="100" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_S_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_END" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CAPT" />
+            <Property name="MinRoomIndex" value="0" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="R_W_CREW" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_MEDI" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CREW" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_MEDI" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="PruningRules">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT1" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT2" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT3" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="DATAPAD" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="LARGEDEBRIS" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="SALVAGESHIP" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcFreighterDungeonParams.xml">
+      <Property name="Name" value="MEDI_FLOATERS" />
+      <Property name="DungeonParams" value="GcDungeonGenerationParams.xml">
+        <Property name="SizeX" value="13" />
+        <Property name="SizeY" value="4" />
+        <Property name="SizeZ" value="13" />
+        <Property name="EntranceX" value="6" />
+        <Property name="EntranceY" value="3" />
+        <Property name="EntranceZ" value="0" />
+        <Property name="Rooms" value="7" />
+        <Property name="XProbability" value="1" />
+        <Property name="YProbability" value="0.5" />
+        <Property name="ZProbability" value="1" />
+        <Property name="StraightProbability" value="1.25" />
+        <Property name="MainRoomTypes">
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_END" />
+            <Property name="BranchProbability" value="0" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_FLO_BARR" />
+            <Property name="BranchProbability" value="0.75" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_FLO_BARR" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_FLO_MEDI" />
+            <Property name="BranchProbability" value="0.8" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_FLO_MEDI" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+        </Property>
+        <Property name="BranchRoomTypes">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_FLO_MEDI" />
+          </Property>
+        </Property>
+        <Property name="Quests">
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CAPT" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CREW" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_END" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="GenerationRules">
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_FLO_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_S_FLO_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_END" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CAPT" />
+            <Property name="MinRoomIndex" value="0" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="R_W_CREW" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_FLO_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_FLO_MEDI" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CREW" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_FLO_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_FLO_MEDI" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="PruningRules">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT1" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT2" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT3" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="DATAPAD" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="LARGEDEBRIS" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="SALVAGESHIP" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcFreighterDungeonParams.xml">
+      <Property name="Name" value="MEDI_BUGS" />
+      <Property name="DungeonParams" value="GcDungeonGenerationParams.xml">
+        <Property name="SizeX" value="13" />
+        <Property name="SizeY" value="4" />
+        <Property name="SizeZ" value="13" />
+        <Property name="EntranceX" value="6" />
+        <Property name="EntranceY" value="3" />
+        <Property name="EntranceZ" value="0" />
+        <Property name="Rooms" value="7" />
+        <Property name="XProbability" value="1" />
+        <Property name="YProbability" value="0.5" />
+        <Property name="ZProbability" value="1" />
+        <Property name="StraightProbability" value="1.25" />
+        <Property name="MainRoomTypes">
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_END" />
+            <Property name="BranchProbability" value="0" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_BUG_BARR" />
+            <Property name="BranchProbability" value="0.75" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_BUG_BARR" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_BUG_MEDI" />
+            <Property name="BranchProbability" value="0.8" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_BUG_MEDI" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_MEDI" />
+            <Property name="BranchProbability" value="1" />
+          </Property>
+        </Property>
+        <Property name="BranchRoomTypes">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_BUG_BARR" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_BUG_MED" />
+          </Property>
+        </Property>
+        <Property name="Quests">
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CAPT" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CREW" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_END" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="GenerationRules">
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_BUG_BARR" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_S_BUG_BARR" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_S_BUG_MEDI" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_BUG_MEDI" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_S_MEDI" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_BUG_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_S_BUG_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_END" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CAPT" />
+            <Property name="MinRoomIndex" value="0" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="R_W_CREW" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BUG_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BUG_MEDI" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CREW" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BUG_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BUG_MEDI" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="PruningRules">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT1" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT2" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT3" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="DATAPAD" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="LARGEDEBRIS" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="SALVAGESHIP" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcFreighterDungeonParams.xml">
+      <Property name="Name" value="MEDI_SLIME" />
+      <Property name="DungeonParams" value="GcDungeonGenerationParams.xml">
+        <Property name="SizeX" value="13" />
+        <Property name="SizeY" value="4" />
+        <Property name="SizeZ" value="13" />
+        <Property name="EntranceX" value="6" />
+        <Property name="EntranceY" value="3" />
+        <Property name="EntranceZ" value="0" />
+        <Property name="Rooms" value="7" />
+        <Property name="XProbability" value="1" />
+        <Property name="YProbability" value="0.5" />
+        <Property name="ZProbability" value="1" />
+        <Property name="StraightProbability" value="1.25" />
+        <Property name="MainRoomTypes">
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_END" />
+            <Property name="BranchProbability" value="0" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_SLI_BARR" />
+            <Property name="BranchProbability" value="0.75" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_SLI_BARR" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_SLI_MEDI" />
+            <Property name="BranchProbability" value="0.8" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_SLI_MEDI" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+        </Property>
+        <Property name="BranchRoomTypes">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_SLI_MEDI" />
+          </Property>
+        </Property>
+        <Property name="Quests">
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CAPT" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CREW" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_END" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="GenerationRules">
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_SLI_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_S_SLI_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_END" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CAPT" />
+            <Property name="MinRoomIndex" value="0" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="R_W_CREW" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_SLI_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_SLI_MEDI" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CREW" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_SLI_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_SLI_MEDI" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="PruningRules">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT1" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT2" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT3" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="DATAPAD" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="LARGEDEBRIS" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="SALVAGESHIP" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcFreighterDungeonParams.xml">
+      <Property name="Name" value="MEDI_MAZE" />
+      <Property name="DungeonParams" value="GcDungeonGenerationParams.xml">
+        <Property name="SizeX" value="13" />
+        <Property name="SizeY" value="4" />
+        <Property name="SizeZ" value="13" />
+        <Property name="EntranceX" value="6" />
+        <Property name="EntranceY" value="3" />
+        <Property name="EntranceZ" value="0" />
+        <Property name="Rooms" value="4" />
+        <Property name="XProbability" value="1" />
+        <Property name="YProbability" value="0.5" />
+        <Property name="ZProbability" value="1" />
+        <Property name="StraightProbability" value="1.25" />
+        <Property name="MainRoomTypes">
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_END" />
+            <Property name="BranchProbability" value="0" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_BARR" />
+            <Property name="BranchProbability" value="1" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_BARR" />
+            <Property name="BranchProbability" value="1" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_MEDI" />
+            <Property name="BranchProbability" value="1" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_MEDI" />
+            <Property name="BranchProbability" value="1" />
+          </Property>
+        </Property>
+        <Property name="BranchRoomTypes">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="R_S_MEDI" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="R_S_BARR" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_BARR" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_MEDI" />
+          </Property>
+        </Property>
+        <Property name="Quests">
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CAPT" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CREW" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_END" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="GenerationRules">
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_S_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="2" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="MinRoomIndex" value="3" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_END" />
+            <Property name="MinRoomIndex" value="3" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_END" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CAPT" />
+            <Property name="MinRoomIndex" value="0" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="R_W_CREW" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_MEDI" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CREW" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_MEDI" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="PruningRules">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT1" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT2" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT3" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="DATAPAD" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="LARGEDEBRIS" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="SALVAGESHIP" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcFreighterDungeonParams.xml">
+      <Property name="Name" value="CARGO_TURRETS" />
+      <Property name="DungeonParams" value="GcDungeonGenerationParams.xml">
+        <Property name="SizeX" value="13" />
+        <Property name="SizeY" value="4" />
+        <Property name="SizeZ" value="13" />
+        <Property name="EntranceX" value="6" />
+        <Property name="EntranceY" value="3" />
+        <Property name="EntranceZ" value="0" />
+        <Property name="Rooms" value="7" />
+        <Property name="XProbability" value="1" />
+        <Property name="YProbability" value="0.5" />
+        <Property name="ZProbability" value="1" />
+        <Property name="StraightProbability" value="1.25" />
+        <Property name="MainRoomTypes">
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_END" />
+            <Property name="BranchProbability" value="0" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_BARR" />
+            <Property name="BranchProbability" value="0.75" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_BARR" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_CARG" />
+            <Property name="BranchProbability" value="0.8" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_CARG" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_HANG" />
+            <Property name="BranchProbability" value="0" />
+          </Property>
+        </Property>
+        <Property name="BranchRoomTypes">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_BARR" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_CARG" />
+          </Property>
+        </Property>
+        <Property name="Quests">
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CAPT" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CREW" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_END" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="GenerationRules">
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_HANG" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_S_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_END" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CAPT" />
+            <Property name="MinRoomIndex" value="0" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="R_W_CREW" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_CARG" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CREW" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_CARG" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="PruningRules">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT1" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT2" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT3" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="DATAPAD" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="LARGEDEBRIS" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="SALVAGESHIP" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcFreighterDungeonParams.xml">
+      <Property name="Name" value="CARGO_FLOATERS" />
+      <Property name="DungeonParams" value="GcDungeonGenerationParams.xml">
+        <Property name="SizeX" value="13" />
+        <Property name="SizeY" value="4" />
+        <Property name="SizeZ" value="13" />
+        <Property name="EntranceX" value="6" />
+        <Property name="EntranceY" value="3" />
+        <Property name="EntranceZ" value="0" />
+        <Property name="Rooms" value="7" />
+        <Property name="XProbability" value="1" />
+        <Property name="YProbability" value="0.5" />
+        <Property name="ZProbability" value="1" />
+        <Property name="StraightProbability" value="1.25" />
+        <Property name="MainRoomTypes">
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_END" />
+            <Property name="BranchProbability" value="0" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_FLO_BARR" />
+            <Property name="BranchProbability" value="0.75" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_FLO_BARR" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_FLO_CARG" />
+            <Property name="BranchProbability" value="0.8" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_FLO_CARG" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+        </Property>
+        <Property name="BranchRoomTypes">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_FLO_BARR" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_FLO_CARG" />
+          </Property>
+        </Property>
+        <Property name="Quests">
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CAPT" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CREW" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_END" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="GenerationRules">
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_FLO_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_S_FLO_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_END" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CAPT" />
+            <Property name="MinRoomIndex" value="0" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="R_W_CREW" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_FLO_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_FLO_CARG" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CREW" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_FLO_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_FLO_CARG" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="PruningRules">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT1" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT2" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT3" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="DATAPAD" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="LARGEDEBRIS" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="SALVAGESHIP" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcFreighterDungeonParams.xml">
+      <Property name="Name" value="CARGO_BUGS" />
+      <Property name="DungeonParams" value="GcDungeonGenerationParams.xml">
+        <Property name="SizeX" value="13" />
+        <Property name="SizeY" value="4" />
+        <Property name="SizeZ" value="13" />
+        <Property name="EntranceX" value="6" />
+        <Property name="EntranceY" value="3" />
+        <Property name="EntranceZ" value="0" />
+        <Property name="Rooms" value="7" />
+        <Property name="XProbability" value="1" />
+        <Property name="YProbability" value="0.5" />
+        <Property name="ZProbability" value="1" />
+        <Property name="StraightProbability" value="1.25" />
+        <Property name="MainRoomTypes">
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_END" />
+            <Property name="BranchProbability" value="0" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_BUG_BARR" />
+            <Property name="BranchProbability" value="0.75" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_BUG_BARR" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_BUG_CARG" />
+            <Property name="BranchProbability" value="0.8" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_BUG_CARG" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_CARG" />
+            <Property name="BranchProbability" value="1" />
+          </Property>
+        </Property>
+        <Property name="BranchRoomTypes">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_BUG_BARR" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_BUG_CARG" />
+          </Property>
+        </Property>
+        <Property name="Quests">
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CAPT" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CREW" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_END" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="GenerationRules">
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_BUG_BARR" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_S_BUG_BARR" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_S_BUG_CARG" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_BUG_CARG" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_BUG_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_S_BUG_BARR" />
+            <Property name="Min" value="0" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_S_CARG" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_END" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CAPT" />
+            <Property name="MinRoomIndex" value="0" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="R_W_CREW" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BUG_CARG" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BUG_BARR" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CREW" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BUG_CARG" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BUG_BARR" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="PruningRules">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT1" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT2" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT3" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="DATAPAD" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="LARGEDEBRIS" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="SALVAGESHIP" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcFreighterDungeonParams.xml">
+      <Property name="Name" value="CARGO_SLIME" />
+      <Property name="DungeonParams" value="GcDungeonGenerationParams.xml">
+        <Property name="SizeX" value="13" />
+        <Property name="SizeY" value="4" />
+        <Property name="SizeZ" value="13" />
+        <Property name="EntranceX" value="6" />
+        <Property name="EntranceY" value="3" />
+        <Property name="EntranceZ" value="0" />
+        <Property name="Rooms" value="7" />
+        <Property name="XProbability" value="1" />
+        <Property name="YProbability" value="0.5" />
+        <Property name="ZProbability" value="1" />
+        <Property name="StraightProbability" value="1.25" />
+        <Property name="MainRoomTypes">
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_END" />
+            <Property name="BranchProbability" value="0" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_SLI_BARR" />
+            <Property name="BranchProbability" value="0.75" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_SLI_BARR" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_SLI_CARG" />
+            <Property name="BranchProbability" value="0.8" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_SLI_CARG" />
+            <Property name="BranchProbability" value="0.33" />
+          </Property>
+        </Property>
+        <Property name="BranchRoomTypes">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_SLI_CARG" />
+          </Property>
+        </Property>
+        <Property name="Quests">
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CAPT" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CREW" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_END" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="GenerationRules">
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_SLI_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_S_SLI_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_END" />
+            <Property name="MinRoomIndex" value="6" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_END" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CAPT" />
+            <Property name="MinRoomIndex" value="0" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="R_W_CREW" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_SLI_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_SLI_CARG" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CREW" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_SLI_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_SLI_CARG" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="PruningRules">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT1" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT2" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT3" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="DATAPAD" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="LARGEDEBRIS" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="SALVAGESHIP" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcFreighterDungeonParams.xml">
+      <Property name="Name" value="CARGO_MAZE" />
+      <Property name="DungeonParams" value="GcDungeonGenerationParams.xml">
+        <Property name="SizeX" value="13" />
+        <Property name="SizeY" value="4" />
+        <Property name="SizeZ" value="13" />
+        <Property name="EntranceX" value="6" />
+        <Property name="EntranceY" value="3" />
+        <Property name="EntranceZ" value="0" />
+        <Property name="Rooms" value="4" />
+        <Property name="XProbability" value="1" />
+        <Property name="YProbability" value="0.5" />
+        <Property name="ZProbability" value="1" />
+        <Property name="StraightProbability" value="1.25" />
+        <Property name="MainRoomTypes">
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_END" />
+            <Property name="BranchProbability" value="0" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_BARR" />
+            <Property name="BranchProbability" value="1" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_BARR" />
+            <Property name="BranchProbability" value="1" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_CARG" />
+            <Property name="BranchProbability" value="1" />
+          </Property>
+          <Property value="GcDungeonRoomParams.xml">
+            <Property name="RoomId" value="R_S_CARG" />
+            <Property name="BranchProbability" value="1" />
+          </Property>
+        </Property>
+        <Property name="BranchRoomTypes">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="R_S_BARR" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="R_S_CARG" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_BARR" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="B_CARG" />
+          </Property>
+        </Property>
+        <Property name="Quests">
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CAPT" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_CREW" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcDungeonQuestParams.xml">
+            <Property name="Probability" value="1" />
+            <Property name="QuestItems">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_W_END" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="GenerationRules">
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_S_BARR" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="2" />
+          </Property>
+          <Property value="GcRoomSequenceRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="MinRoomIndex" value="3" />
+            <Property name="MustBeBeforeRoom" value="" />
+            <Property name="MustBeAfterRoom" value="" />
+          </Property>
+          <Property value="GcRoomCountRule.xml">
+            <Property name="RoomID" value="R_END" />
+            <Property name="Min" value="1" />
+            <Property name="Max" value="1" />
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_END" />
+            <Property name="MinRoomIndex" value="3" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_END" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CAPT" />
+            <Property name="MinRoomIndex" value="0" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="R_W_CREW" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_CARG" />
+              </Property>
+            </Property>
+          </Property>
+          <Property value="GcQuestItemPlacementRule.xml">
+            <Property name="QuestItemID" value="R_W_CREW" />
+            <Property name="MinRoomIndex" value="1" />
+            <Property name="MaxRoomIndex" value="100" />
+            <Property name="MustBeBeforeQuestItem" value="" />
+            <Property name="MustBeAfterQuestItem" value="" />
+            <Property name="ValidRoomsIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_BARR" />
+              </Property>
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="R_CARG" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property name="PruningRules">
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT1" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT2" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="STANDINGLIGHT3" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="DATAPAD" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="LARGEDEBRIS" />
+          </Property>
+          <Property value="NMSString0x10.xml">
+            <Property name="Value" value="SALVAGESHIP" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+</Data>

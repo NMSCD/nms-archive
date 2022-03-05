@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.82.0)-->
+<Data template="TkParticleData">
+  <Property name="StartEnabled" value="True" />
+  <Property name="Oneshot" value="False" />
+  <Property name="MaxCount" value="3" />
+  <Property name="Burst" value="0" />
+  <Property name="EmissionRate" value="TkEmitterFloatProperty.xml">
+    <Property name="Authoring" value="FixedValue" />
+    <Property name="FixedValue" value="2" />
+    <Property name="MinRandomValue" value="0.1" />
+    <Property name="MaxRandomValue" value="1" />
+    <Property name="CurveVariation" value="0" />
+    <Property name="CurveStartValue" value="1" />
+    <Property name="CurveMidValue" value="1" />
+    <Property name="CurveEndValue" value="1" />
+    <Property name="CurveBlendMidpoint" value="0.5" />
+    <Property name="Curve1Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+    <Property name="Curve2Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+  </Property>
+  <Property name="Delay" value="0" />
+  <Property name="EmitFromParticleInfo" value="TkEmitFromParticleInfo.xml">
+    <Property name="OtherEmitterIndex" value="-1" />
+    <Property name="EmissionRateType" value="PerParticle" />
+  </Property>
+  <Property name="ParticleLife" value="TkEmitterFloatProperty.xml">
+    <Property name="Authoring" value="FixedValue" />
+    <Property name="FixedValue" value="0.2" />
+    <Property name="MinRandomValue" value="0.1" />
+    <Property name="MaxRandomValue" value="1" />
+    <Property name="CurveVariation" value="0" />
+    <Property name="CurveStartValue" value="1" />
+    <Property name="CurveMidValue" value="1" />
+    <Property name="CurveEndValue" value="1" />
+    <Property name="CurveBlendMidpoint" value="0.5" />
+    <Property name="Curve1Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+    <Property name="Curve2Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+  </Property>
+  <Property name="EmitterLife" value="TkEmitterFloatProperty.xml">
+    <Property name="Authoring" value="FixedValue" />
+    <Property name="FixedValue" value="0.15" />
+    <Property name="MinRandomValue" value="0.1" />
+    <Property name="MaxRandomValue" value="1" />
+    <Property name="CurveVariation" value="0" />
+    <Property name="CurveStartValue" value="1" />
+    <Property name="CurveMidValue" value="1" />
+    <Property name="CurveEndValue" value="1" />
+    <Property name="CurveBlendMidpoint" value="0.5" />
+    <Property name="Curve1Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+    <Property name="Curve2Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+  </Property>
+  <Property name="EmitterMidLifeRatio" value="0.5" />
+  <Property name="EmitterLifeCurve1" value="TkCurveType.xml">
+    <Property name="Curve" value="Linear" />
+  </Property>
+  <Property name="EmitterLifeCurve2" value="TkCurveType.xml">
+    <Property name="Curve" value="Linear" />
+  </Property>
+  <Property name="EmitterSpreadAngle" value="360" />
+  <Property name="EmitterSpreadAngleMin" value="0" />
+  <Property name="EmitterDirection" value="Vector3f.xml">
+    <Property name="x" value="0.01" />
+    <Property name="y" value="0.01" />
+    <Property name="z" value="0.01" />
+  </Property>
+  <Property name="ParticleSpeedMultiplier" value="TkEmitterFloatProperty.xml">
+    <Property name="Authoring" value="RandomRangeFloat" />
+    <Property name="FixedValue" value="1" />
+    <Property name="MinRandomValue" value="1" />
+    <Property name="MaxRandomValue" value="1.3" />
+    <Property name="CurveVariation" value="0" />
+    <Property name="CurveStartValue" value="1" />
+    <Property name="CurveMidValue" value="1" />
+    <Property name="CurveEndValue" value="1" />
+    <Property name="CurveBlendMidpoint" value="0.5" />
+    <Property name="Curve1Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+    <Property name="Curve2Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+  </Property>
+  <Property name="ParticleGravity" value="TkEmitterFloatProperty.xml">
+    <Property name="Authoring" value="FixedValue" />
+    <Property name="FixedValue" value="0" />
+    <Property name="MinRandomValue" value="0.1" />
+    <Property name="MaxRandomValue" value="1" />
+    <Property name="CurveVariation" value="0" />
+    <Property name="CurveStartValue" value="1" />
+    <Property name="CurveMidValue" value="1" />
+    <Property name="CurveEndValue" value="1" />
+    <Property name="CurveBlendMidpoint" value="0.5" />
+    <Property name="Curve1Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+    <Property name="Curve2Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+  </Property>
+  <Property name="ParticleDamping" value="TkEmitterFloatProperty.xml">
+    <Property name="Authoring" value="FixedValue" />
+    <Property name="FixedValue" value="0" />
+    <Property name="MinRandomValue" value="0.1" />
+    <Property name="MaxRandomValue" value="1" />
+    <Property name="CurveVariation" value="0" />
+    <Property name="CurveStartValue" value="1" />
+    <Property name="CurveMidValue" value="1" />
+    <Property name="CurveEndValue" value="1" />
+    <Property name="CurveBlendMidpoint" value="0.5" />
+    <Property name="Curve1Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+    <Property name="Curve2Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+  </Property>
+  <Property name="ParticleDrag" value="TkEmitterFloatProperty.xml">
+    <Property name="Authoring" value="FixedValue" />
+    <Property name="FixedValue" value="0" />
+    <Property name="MinRandomValue" value="0.1" />
+    <Property name="MaxRandomValue" value="1" />
+    <Property name="CurveVariation" value="0" />
+    <Property name="CurveStartValue" value="1" />
+    <Property name="CurveMidValue" value="1" />
+    <Property name="CurveEndValue" value="1" />
+    <Property name="CurveBlendMidpoint" value="0.5" />
+    <Property name="Curve1Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+    <Property name="Curve2Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+  </Property>
+  <Property name="DragType" value="IgnoreGravity" />
+  <Property name="Variation" value="0.3" />
+  <Property name="StartOffset" value="0" />
+  <Property name="SpawnOffsetType" value="Sphere" />
+  <Property name="SpawnOffsetParams" value="Vector3f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="0" />
+    <Property name="z" value="0" />
+  </Property>
+  <Property name="ParticleSize" value="TkEmitterFloatProperty.xml">
+    <Property name="Authoring" value="Curves" />
+    <Property name="FixedValue" value="1" />
+    <Property name="MinRandomValue" value="0.1" />
+    <Property name="MaxRandomValue" value="1" />
+    <Property name="CurveVariation" value="0.3" />
+    <Property name="CurveStartValue" value="0.15" />
+    <Property name="CurveMidValue" value="0.2" />
+    <Property name="CurveEndValue" value="0.5" />
+    <Property name="CurveBlendMidpoint" value="0.5" />
+    <Property name="Curve1Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+    <Property name="Curve2Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+  </Property>
+  <Property name="ParticleSizeY" value="TkEmitterFloatProperty.xml">
+    <Property name="Authoring" value="FixedValue" />
+    <Property name="FixedValue" value="0" />
+    <Property name="MinRandomValue" value="0.1" />
+    <Property name="MaxRandomValue" value="1" />
+    <Property name="CurveVariation" value="0" />
+    <Property name="CurveStartValue" value="1" />
+    <Property name="CurveMidValue" value="1" />
+    <Property name="CurveEndValue" value="1" />
+    <Property name="CurveBlendMidpoint" value="0.5" />
+    <Property name="Curve1Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+    <Property name="Curve2Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+  </Property>
+  <Property name="StartRotationVariation" value="100" />
+  <Property name="Rotation" value="TkEmitterFloatProperty.xml">
+    <Property name="Authoring" value="RandomRangeFloat" />
+    <Property name="FixedValue" value="100" />
+    <Property name="MinRandomValue" value="-15.000001" />
+    <Property name="MaxRandomValue" value="15.000001" />
+    <Property name="CurveVariation" value="0" />
+    <Property name="CurveStartValue" value="1" />
+    <Property name="CurveMidValue" value="1" />
+    <Property name="CurveEndValue" value="1" />
+    <Property name="CurveBlendMidpoint" value="0.5" />
+    <Property name="Curve1Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+    <Property name="Curve2Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+  </Property>
+  <Property name="Alignment" value="Rotation" />
+  <Property name="BillboardAlignment" value="Screen" />
+  <Property name="RotationPivot" value="Vector3f.xml">
+    <Property name="x" value="0.5" />
+    <Property name="y" value="0.5" />
+    <Property name="z" value="0" />
+  </Property>
+  <Property name="UCoordinate" value="TkCoordinateOrientation.xml">
+    <Property name="CoordinateOrientation" value="None" />
+  </Property>
+  <Property name="VCoordinate" value="TkCoordinateOrientation.xml">
+    <Property name="CoordinateOrientation" value="None" />
+  </Property>
+  <Property name="VelocityInheritance" value="0" />
+  <Property name="TrackEmitterPosition" value="0" />
+  <Property name="RotateAroundEmitter" value="0" />
+  <Property name="RotateAroundEmitterAxis" value="Vector3f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="0" />
+    <Property name="z" value="0" />
+  </Property>
+  <Property name="FlipbookPlaybackRate" value="Absolute" />
+  <Property name="HueVariance" value="0.05" />
+  <Property name="SaturationVariance" value="0.1" />
+  <Property name="LightnessVariance" value="0.1" />
+  <Property name="AlphaVariance" value="0.05" />
+  <Property name="ColourStart" value="Colour.xml">
+    <Property name="R" value="0.043" />
+    <Property name="G" value="0.5" />
+    <Property name="B" value="0.004" />
+    <Property name="A" value="0.108" />
+  </Property>
+  <Property name="ColourMiddle" value="Colour.xml">
+    <Property name="R" value="0.34" />
+    <Property name="G" value="1" />
+    <Property name="B" value="0" />
+    <Property name="A" value="0.236" />
+  </Property>
+  <Property name="ColourEnd" value="Colour.xml">
+    <Property name="R" value="1" />
+    <Property name="G" value="1" />
+    <Property name="B" value="1" />
+    <Property name="A" value="0" />
+  </Property>
+  <Property name="AlphaThreshold" value="TkEmitterFloatProperty.xml">
+    <Property name="Authoring" value="FixedValue" />
+    <Property name="FixedValue" value="0" />
+    <Property name="MinRandomValue" value="0.1" />
+    <Property name="MaxRandomValue" value="1" />
+    <Property name="CurveVariation" value="0" />
+    <Property name="CurveStartValue" value="1" />
+    <Property name="CurveMidValue" value="1" />
+    <Property name="CurveEndValue" value="1" />
+    <Property name="CurveBlendMidpoint" value="0.5" />
+    <Property name="Curve1Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+    <Property name="Curve2Shape" value="TkCurveType.xml">
+      <Property name="Curve" value="Linear" />
+    </Property>
+  </Property>
+  <Property name="UserColour" value="" />
+  <Property name="MaxRenderDistance" value="0" />
+  <Property name="MaxSpawnDistance" value="0" />
+  <Property name="SoftFadeStrength" value="5" />
+  <Property name="CameraDistanceFade" value="TkFloatRange.xml">
+    <Property name="Minimum" value="0" />
+    <Property name="Maximum" value="0" />
+  </Property>
+</Data>

@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.82.0)-->
+<Data template="TkMaterialData">
+  <Property name="Name" value="AtmosphereMat" />
+  <Property name="Metamaterial" value="" />
+  <Property name="Class" value="Atmosphere" />
+  <Property name="TransparencyLayerID" value="0" />
+  <Property name="CastShadow" value="False" />
+  <Property name="DisableZTest" value="False" />
+  <Property name="CreateFur" value="False" />
+  <Property name="Link" value="" />
+  <Property name="Shader" value="SHADERS/ATMOSPHERE.SHADER.BIN" />
+  <Property name="Flags">
+    <Property value="TkMaterialFlags.xml">
+      <Property name="MaterialFlag" value="_F01_DIFFUSEMAP" />
+    </Property>
+    <Property value="TkMaterialFlags.xml">
+      <Property name="MaterialFlag" value="_F09_TRANSPARENT" />
+    </Property>
+    <Property value="TkMaterialFlags.xml">
+      <Property name="MaterialFlag" value="_F01_DIFFUSEMAP" />
+    </Property>
+    <Property value="TkMaterialFlags.xml">
+      <Property name="MaterialFlag" value="_F01_DIFFUSEMAP" />
+    </Property>
+    <Property value="TkMaterialFlags.xml">
+      <Property name="MaterialFlag" value="_F01_DIFFUSEMAP" />
+    </Property>
+    <Property value="TkMaterialFlags.xml">
+      <Property name="MaterialFlag" value="_F10_NORECEIVESHADOW" />
+    </Property>
+  </Property>
+  <Property name="Uniforms">
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gTileBlendScalesVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gFogFadeHeightsVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gSpaceFogWavelengthVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gHeightFogVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gHeightFogParamsVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gScatteringParamsVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gSunColourVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gHorizonColourVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gSkyColourVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gWaterFogVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gWaterFogColourFarVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gWindDirectionVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gPlanetPositionVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gPlanetCloudParamsVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gPlanetCloudParams2Vec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gaAverageColoursVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues">
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gaTerrainColoursVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues">
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gaSpecularValuesVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues">
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+        <Property value="Vector4f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+          <Property name="t" value="0" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="Samplers">
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gDiffuseMap" />
+      <Property name="Map" value="TEXTURES/TERRAIN/EMPTYTILEMAP.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Wrap" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="2" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gNormalMap" />
+      <Property name="Map" value="TEXTURES/TERRAIN/EMPTYTILEMAP.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Wrap" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="2" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gWaterMap" />
+      <Property name="Map" value="TEXTURES/TESTS/AMBIENTMAP.DDS" />
+      <Property name="IsCube" value="True" />
+      <Property name="UseCompression" value="False" />
+      <Property name="UseMipMaps" value="False" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Wrap" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gCloudMap" />
+      <Property name="Map" value="TEXTURES/SPACE/ATMOSPHERE/ATMOSPHERE02.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="True" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Wrap" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+  </Property>
+  <Property name="ShaderMillDataHash" value="0" />
+</Data>

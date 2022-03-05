@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.82.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="RagdollData" value="TkRagdollData.xml">
+        <Property name="Density" value="1" />
+        <Property name="Gravity" value="20" />
+        <Property name="ChainEnds" />
+        <Property name="ExcludeJoints" />
+      </Property>
+      <Property name="VolumeTriggerType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="Floor" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollide" value="False" />
+      <Property name="NoPlayerCollide" value="False" />
+      <Property name="CameraInvisible" value="False" />
+      <Property name="InvisibleForInteraction" value="False" />
+      <Property name="AllowTeleporter" value="False" />
+      <Property name="BlockTeleporter" value="False" />
+      <Property name="DisableGravity" value="False" />
+      <Property name="SpinOnCreate" value="0" />
+      <Property name="UseBasePartOptimisation" value="False" />
+    </Property>
+    <Property value="GcSimpleInteractionComponentData.xml">
+      <Property name="SimpleInteractionType" value="Treasure" />
+      <Property name="InteractDistance" value="0" />
+      <Property name="Use2dInteractDistance" value="False" />
+      <Property name="Id" value="CRATE" />
+      <Property name="Rarity" value="GcRarity.xml">
+        <Property name="Rarity" value="Rare" />
+      </Property>
+      <Property name="Size" value="GcSizeIndicator.xml">
+        <Property name="SizeIndicator" value="Large" />
+      </Property>
+      <Property name="TriggerAction" value="INACTIVE" />
+      <Property name="TriggerActionOnPrepare" value="" />
+      <Property name="TriggerActionToggle" value="" />
+      <Property name="BroadcastTriggerAction" value="False" />
+      <Property name="Delay" value="0.6" />
+      <Property name="HideContents" value="True" />
+      <Property name="InteractIsCrime" value="False" />
+      <Property name="InteractFiendCrimeType" value="GcFiendCrime.xml">
+        <Property name="FiendCrime" value="None" />
+      </Property>
+      <Property name="InteractFiendCrimeChance" value="1" />
+      <Property name="InteractCrimeLevel" value="0" />
+      <Property name="NotifyEncounter" value="False" />
+      <Property name="ActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="0" />
+        <Property name="Repeat" value="False" />
+        <Property name="RequiredTech" value="" />
+      </Property>
+      <Property name="StatToTrack" value="GcStatsEnum.xml">
+        <Property name="GcStatEnum" value="None" />
+      </Property>
+      <Property name="StartsBuried" value="False" />
+      <Property name="MustBeVisibleToInteract" value="False" />
+      <Property name="NeedsStorm" value="False" />
+      <Property name="Name" value="BLD_LOCKBOX_NAME_L" />
+      <Property name="VRInteractMessage" value="" />
+      <Property name="TerminalMessage" value="" />
+      <Property name="ScanType" value="BINOC_INTERACTABLE" />
+      <Property name="ScanData" value="" />
+      <Property name="ScanIcon" value="GcDiscoveryTypes.xml">
+        <Property name="DiscoveryType" value="Unknown" />
+      </Property>
+      <Property name="ActivateLocatorsFromRarity" value="False" />
+      <Property name="RarityLocators">
+        <Property name="Common" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="Uncommon" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="Rare" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="BaseBuildingTriggerActions" />
+      <Property name="RewardOverrideTable">
+        <Property value="GcRewardMissionOverride.xml">
+          <Property name="Mission" value="TUT_NEXT1" />
+          <Property name="Reward" value="TUT_GOODS" />
+        </Property>
+      </Property>
+      <Property name="PersistencyBufferOverride" />
+      <Property name="UsePersonalPersistentBuffer" value="False" />
+      <Property name="ReseedOnRewardSuccess" value="False" />
+      <Property name="CanCollectInMech" value="False" />
+    </Property>
+    <Property value="GcScannableComponentData.xml">
+      <Property name="ScanRange" value="200" />
+      <Property name="ScanName" value="SCAN_CARGO_DROP" />
+      <Property name="ScanTime" value="30" />
+      <Property name="CompassRangeMultiplier" value="0.25" />
+      <Property name="AlwaysShowRange" value="0" />
+      <Property name="CanTagIcon" value="True" />
+      <Property name="ClearTagOnArrival" value="True" />
+      <Property name="DisableIfBuildingPart" value="False" />
+      <Property name="DisableIfInBase" value="False" />
+      <Property name="UseModelNode" value="True" />
+      <Property name="Icon" value="GcScannerIconTypes.xml">
+        <Property name="ScanIconType" value="Crate" />
+      </Property>
+      <Property name="ScannableType" value="Binoculars" />
+      <Property name="IsPlacedMarker" value="False" />
+      <Property name="ShowInFreighterBranchRoom" value="False" />
+      <Property name="TellPlayerIfFreighterObjectUsed" value="False" />
+      <Property name="FreighterObjectAlreadyUsedLocID" value="UI_ABAND_LOG_READ" />
+      <Property name="AllowedToMerge" value="True" />
+      <Property name="MissionSurveyId" value="" />
+      <Property name="MinDisplayDistanceOverride" value="-1" />
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="" />
+        <Property name="Filename" value="" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="OffsetMin" value="0" />
+        <Property name="OffsetMax" value="0" />
+        <Property name="Delay" value="0" />
+        <Property name="Speed" value="1" />
+        <Property name="ActionStartFrame" value="0" />
+        <Property name="ActionFrame" value="-1" />
+        <Property name="CreatureSize" value="AllSizes" />
+        <Property name="Additive" value="False" />
+        <Property name="Mirrored" value="False" />
+        <Property name="Active" value="True" />
+        <Property name="AdditiveBaseAnim" value="" />
+        <Property name="AdditiveBaseFrame" value="0" />
+        <Property name="GameData" value="TkAnimationGameData.xml">
+          <Property name="RootMotionEnabled" value="False" />
+          <Property name="BlockPlayerMovement" value="False" />
+          <Property name="BlockPlayerWeapon" value="Unblocked" />
+        </Property>
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="OPEN" />
+          <Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/CRATE/ANIMS/CRATE_LARGE_RARE_OPEN.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShotBlendable" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="70" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="False" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Trees" />
+      <Property name="NetSyncAnimation" value="False" />
+      <Property name="JointLODOverrides" />
+    </Property>
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="BOOT" />
+          <Property name="Triggers" />
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="MAINTDONE" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="Obj_Crate_Large" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+                <Property value="GcPlayAnimAction.xml">
+                  <Property name="Anim" value="OPEN" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+      <Property name="ResetShotTimeOnStateChange" value="False" />
+      <Property name="LinkStateToBaseGrid" value="False" />
+    </Property>
+    <Property value="GcMaintenanceComponentData.xml">
+      <Property name="PreInstalledTech">
+        <Property value="GcMaintenanceElement.xml">
+          <Property name="ItemGroupOverride" value="GcMaintenanceElementGroups.xml">
+            <Property name="MaintenanceGroup" value="Custom" />
+          </Property>
+          <Property name="Type" value="GcInventoryType.xml">
+            <Property name="InventoryType" value="Substance" />
+          </Property>
+          <Property name="Id" value="SPACEGUNK3" />
+          <Property name="MinRandAmount" value="50" />
+          <Property name="MaxRandAmount" value="100" />
+          <Property name="MaxCapactiy" value="-1" />
+          <Property name="AmountEmptyTimePeriod" value="0" />
+          <Property name="UpdateType" value="UpdatesAlways" />
+          <Property name="DamagedAfterTimePeriodMin" value="0" />
+          <Property name="DamagedAfterTimePeriodMax" value="0" />
+          <Property name="DamageStatus" value="Damaged" />
+          <Property name="CompletionRequirement" value="EmptySlot" />
+        </Property>
+      </Property>
+      <Property name="VisibleMaintenanceSlots" value="-1" />
+      <Property name="AllowRepair" value="False" />
+      <Property name="AllowCharge" value="False" />
+      <Property name="AllowDismantle" value="True" />
+      <Property name="AllowInstallTech" value="False" />
+      <Property name="AllowCraftProduct" value="False" />
+      <Property name="AllowTransfer" value="True" />
+      <Property name="AllowMoveAndStack" value="False" />
+      <Property name="AllowTransferIn" value="False" />
+      <Property name="AutoCompleteOnStart" value="False" />
+      <Property name="UseModelResourceRenderer" value="False" />
+      <Property name="UseBoundsForIconCentre" value="True" />
+      <Property name="Interactable" value="OnlyWhenNotComplete" />
+      <Property name="ForceNoninteraction" value="False" />
+      <Property name="CompletedTransitionDelay" value="2" />
+      <Property name="ShareInteractionModelRender" value="True" />
+      <Property name="ModelRendererData" value="TkModelRendererData.xml">
+        <Property name="Camera" value="TkModelRendererCameraData.xml">
+          <Property name="Distance" value="3" />
+          <Property name="Offset" value="Vector3f.xml">
+            <Property name="x" value="0.15" />
+            <Property name="y" value="0.5" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="Roll" value="0" />
+          <Property name="Pitch" value="31" />
+          <Property name="Rotate" value="0" />
+          <Property name="LightPitch" value="45" />
+          <Property name="LightRotate" value="45" />
+          <Property name="Wander" value="TkCameraWanderData.xml">
+            <Property name="CamWander" value="False" />
+            <Property name="CamWanderPhase" value="0.003" />
+            <Property name="CamWanderAmplitude" value="0.5" />
+          </Property>
+        </Property>
+        <Property name="Fov" value="30" />
+        <Property name="AspectRatio" value="1.7777" />
+        <Property name="ThumbnailMode" value="None" />
+        <Property name="FocusType" value="ResourceBounds" />
+        <Property name="FocusLocator" value="" />
+        <Property name="FocusOffset" value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property name="FocusInterpTime" value="0" />
+        <Property name="BlendInTime" value="0.8" />
+        <Property name="BlendInOffset" value="0" />
+        <Property name="Anim" value="" />
+        <Property name="HeightOffset" value="0.005" />
+        <Property name="UsePlayerCameraInHmd" value="True" />
+        <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+        <Property name="LookForFocusInMasterModel" value="False" />
+      </Property>
+      <Property name="ModelRendererDataAlt" value="TkModelRendererData.xml">
+        <Property name="Camera" value="TkModelRendererCameraData.xml">
+          <Property name="Distance" value="2.25" />
+          <Property name="Offset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="1.75" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="Roll" value="0" />
+          <Property name="Pitch" value="0" />
+          <Property name="Rotate" value="0" />
+          <Property name="LightPitch" value="45" />
+          <Property name="LightRotate" value="45" />
+          <Property name="Wander" value="TkCameraWanderData.xml">
+            <Property name="CamWander" value="False" />
+            <Property name="CamWanderPhase" value="0.003" />
+            <Property name="CamWanderAmplitude" value="0.5" />
+          </Property>
+        </Property>
+        <Property name="Fov" value="30" />
+        <Property name="AspectRatio" value="1.7777" />
+        <Property name="ThumbnailMode" value="None" />
+        <Property name="FocusType" value="ResourceBounds" />
+        <Property name="FocusLocator" value="" />
+        <Property name="FocusOffset" value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property name="FocusInterpTime" value="0" />
+        <Property name="BlendInTime" value="0.8" />
+        <Property name="BlendInOffset" value="0" />
+        <Property name="Anim" value="" />
+        <Property name="HeightOffset" value="0.005" />
+        <Property name="UsePlayerCameraInHmd" value="False" />
+        <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+        <Property name="LookForFocusInMasterModel" value="False" />
+      </Property>
+      <Property name="ModelRendererResource" value="ModelNode" />
+      <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+        <Property name="BroadcastLevel" value="Scene" />
+      </Property>
+      <Property name="Title" value="" />
+      <Property name="Description" value="UI_MAINTAIN_CRATE_SUB" />
+      <Property name="ActionButtonOverride" value="REPAIR" />
+      <Property name="ActionDescriptionOverride" value="REPAIR_DESC" />
+      <Property name="ActionWarningOverride" value="WARN_TECH_DAMAGED" />
+      <Property name="InWorldUIScaler" value="0" />
+      <Property name="InteractionRequiresPower" value="False" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>
