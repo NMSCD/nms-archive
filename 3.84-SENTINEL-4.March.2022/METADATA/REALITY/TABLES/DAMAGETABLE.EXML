@@ -1,0 +1,2328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.82.0)-->
+<Data template="GcPlayerDamageTable">
+  <Property name="DamageTable">
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="BASICDAMAGE" />
+      <Property name="DeathMessage" value="" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="1" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="ENERGY" />
+      <Property name="DeathMessage" value="DEATH_ENERGY" />
+      <Property name="DeathStat" value="DEATH_ENERGY" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HUDLIFESUPPORT.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_ENERGY" />
+      <Property name="HitMessage" value="NOTIFY_HIT_ENERGY" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_HIT_ENERGY" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_ENERGY" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_ENERGY" />
+      </Property>
+      <Property name="Damage" value="28" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="EXTREMEHEATDMG" />
+      <Property name="DeathMessage" value="DEATH_HEAT" />
+      <Property name="DeathStat" value="DEATH_HOT" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HAZARDS.HEAT.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_HEAT" />
+      <Property name="HitMessage" value="NOTIFY_HIT_HEAT" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_HIT_HEAT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITICAL_HEAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITICAL_HEAT" />
+      </Property>
+      <Property name="Damage" value="28" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Scorch" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="NOOXYDAMAGE" />
+      <Property name="DeathMessage" value="DEATH_DROWN" />
+      <Property name="DeathStat" value="DEATH_DROWN" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HAZARDS.WATER.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_DROWN" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITICAL_NOOXYGEN" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITICAL_NOOXYGEN" />
+      </Property>
+      <Property name="Damage" value="28" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="EXTREMECOLDDMG" />
+      <Property name="DeathMessage" value="DEATH_COLD" />
+      <Property name="DeathStat" value="DEATH_COLD" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HAZARDS.COLD.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_COLD" />
+      <Property name="HitMessage" value="NOTIFY_HIT_COLD" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_HIT_COLD" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITICAL_COLD" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITICAL_COLD" />
+      </Property>
+      <Property name="Damage" value="28" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Freeze" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="TOXICGASDMG" />
+      <Property name="DeathMessage" value="DEATH_TOXIC" />
+      <Property name="DeathStat" value="DEATH_TOXIC" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HAZARDS.TOXIC.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_TOXIC" />
+      <Property name="HitMessage" value="NOTIFY_HIT_TOXIC" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_HIT_TOXIC" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITICAL_TOXIC" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITICAL_TOXIC" />
+      </Property>
+      <Property name="Damage" value="28" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Toxic" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="RADIATIONDMG" />
+      <Property name="DeathMessage" value="DEATH_RADIATION" />
+      <Property name="DeathStat" value="DEATH_RAD" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HAZARDS.RADIOACTIVE.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_RADIATION" />
+      <Property name="HitMessage" value="NOTIFY_HIT_RAD" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_HIT_RAD" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITICAL_RAD" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITICAL_RAD" />
+      </Property>
+      <Property name="Damage" value="28" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Radioactive" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="IMPACTDAMAGE" />
+      <Property name="DeathMessage" value="DEATH_TERRAIN" />
+      <Property name="DeathStat" value="DEATH_FALL" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_TERRAIN" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_ONFOOT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="10" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="IMPACTGROUND" />
+      <Property name="DeathMessage" value="DEATH_TERRAIN" />
+      <Property name="DeathStat" value="DEATH_FALL" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_TERRAIN" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_ONFOOT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="10" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="EXPLOSIONPAINSH" />
+      <Property name="CameraShakeNoShield" value="EXPLOSIONPAINSH" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="IMPACTINSTANCE" />
+      <Property name="DeathMessage" value="DEATH_TERRAIN" />
+      <Property name="DeathStat" value="DEATH_FALL" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_TERRAIN" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="Damage" value="30" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="SMALLPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="STANDING_STONE" />
+      <Property name="DeathMessage" value="DEATH_STANDSTONE" />
+      <Property name="DeathStat" value="UI_DAMAGE_STAND" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="50" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="20" />
+      <Property name="CameraTurn" value="15" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="ROBOTGUNDMG" />
+      <Property name="DeathMessage" value="DEATH_GUN" />
+      <Property name="DeathStat" value="DEATH_ROBOT" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SENTINEL" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="2" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="ROBOTGUNDMG_MED" />
+      <Property name="DeathMessage" value="DEATH_GUN" />
+      <Property name="DeathStat" value="DEATH_ROBOT" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SENTINEL" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="3.5" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="ROBOTBIGGUN" />
+      <Property name="DeathMessage" value="DEATH_GUN" />
+      <Property name="DeathStat" value="DEATH_ROBOT" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SENTINEL" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="6" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="ROBOTGRENADEDMG" />
+      <Property name="DeathMessage" value="DEATH_GUN" />
+      <Property name="DeathStat" value="DEATH_ROBOT" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SENTINEL" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="7" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="LASERDAMAGE" />
+      <Property name="DeathMessage" value="DEATH_LASER" />
+      <Property name="DeathStat" value="DEATH_ROBOT" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_LASER" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="3" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="SMLCREATUREDMG" />
+      <Property name="DeathMessage" value="DEATH_CREATURE" />
+      <Property name="DeathStat" value="DEATH_CREATURE" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_CREATURE" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="20" />
+      <Property name="HardModeMultiplier" value="2" />
+      <Property name="PushForce" value="10" />
+      <Property name="CameraTurn" value="10" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MEDCREATUREDMG" />
+      <Property name="DeathMessage" value="DEATH_CREATURE" />
+      <Property name="DeathStat" value="DEATH_CREATURE" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_CREATURE" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="30" />
+      <Property name="HardModeMultiplier" value="2" />
+      <Property name="PushForce" value="10" />
+      <Property name="CameraTurn" value="10" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="LRGCREATUREDMG" />
+      <Property name="DeathMessage" value="DEATH_CREATURE" />
+      <Property name="DeathStat" value="DEATH_CREATURE" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_CREATURE" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="50" />
+      <Property name="HardModeMultiplier" value="2" />
+      <Property name="PushForce" value="15" />
+      <Property name="CameraTurn" value="10" />
+      <Property name="CameraShakeShield" value="BIGPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="HUGECREATUREDMG" />
+      <Property name="DeathMessage" value="DEATH_CREATURE" />
+      <Property name="DeathStat" value="DEATH_CREATURE" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_CREATURE" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="80" />
+      <Property name="HardModeMultiplier" value="2" />
+      <Property name="PushForce" value="15" />
+      <Property name="CameraTurn" value="10" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="PLAYERPREDDMG" />
+      <Property name="DeathMessage" value="DEATH_CREATURE" />
+      <Property name="DeathStat" value="DEATH_CREATURE" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_CREATURE" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="40" />
+      <Property name="HardModeMultiplier" value="2" />
+      <Property name="PushForce" value="15" />
+      <Property name="CameraTurn" value="10" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="PREDDMGVR" />
+      <Property name="DeathMessage" value="DEATH_CREATURE" />
+      <Property name="DeathStat" value="DEATH_CREATURE" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_CREATURE" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="20" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="15" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="WEIRDCRTDMG" />
+      <Property name="DeathMessage" value="DEATH_CREATURE" />
+      <Property name="DeathStat" value="DEATH_CREATURE" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_CREATURE" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="40" />
+      <Property name="HardModeMultiplier" value="2" />
+      <Property name="PushForce" value="50" />
+      <Property name="CameraTurn" value="1" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="FIEND_DMG" />
+      <Property name="DeathMessage" value="DEATH_FIEND" />
+      <Property name="DeathStat" value="DEATH_HORROR" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_FIEND" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="30" />
+      <Property name="HardModeMultiplier" value="2" />
+      <Property name="PushForce" value="2" />
+      <Property name="CameraTurn" value="5" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="FIENDSPIT_DMG" />
+      <Property name="DeathMessage" value="DEATH_FIEND" />
+      <Property name="DeathStat" value="DEATH_HORROR" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_FIEND" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="1" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="WORM_DMG" />
+      <Property name="DeathMessage" value="DEATH_WORM" />
+      <Property name="DeathStat" value="DEATH_HORROR" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_WORM" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="30" />
+      <Property name="HardModeMultiplier" value="2" />
+      <Property name="PushForce" value="50" />
+      <Property name="CameraTurn" value="1" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="PLANTDMG" />
+      <Property name="DeathMessage" value="DEATH_PLANT" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HAZARDS.TOXIC.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_FLORA" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="Damage" value="20" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="True" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Toxic" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="AISHIPGUN" />
+      <Property name="DeathMessage" value="DEATH_SHIP" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="14" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="SHIPLASER" />
+      <Property name="DeathMessage" value="DEATH_LASER" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="15" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="BOUNTYGUN1" />
+      <Property name="DeathMessage" value="DEATH_SHIP" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="16" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="BOUNTYGUN2" />
+      <Property name="DeathMessage" value="DEATH_SHIP" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="16" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="BOUNTYGUN3" />
+      <Property name="DeathMessage" value="DEATH_SHIP" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="16" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="BOUNTYLASER1" />
+      <Property name="DeathMessage" value="DEATH_SHIP" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="20" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="BOUNTYLASER3" />
+      <Property name="DeathMessage" value="DEATH_SHIP" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="30" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="BOUNTYLASER3" />
+      <Property name="DeathMessage" value="DEATH_SHIP" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="50" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="WALKERLASER" />
+      <Property name="DeathMessage" value="DEATH_WALKER" />
+      <Property name="DeathStat" value="DEATH_ROBOT" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SENTINEL_WALKER" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="5" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="5" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="BIGPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="POLICEGUN" />
+      <Property name="DeathMessage" value="DEATH_POLICE" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_POLICE" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="16" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="POLICELASER" />
+      <Property name="DeathMessage" value="DEATH_POLICE" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_POLICE" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="15" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="SMALLASTEROID" />
+      <Property name="DeathMessage" value="DEATH_ASTEROID" />
+      <Property name="DeathStat" value="DEATH_FALL" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_ASTEROID" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="5" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MEDIUMASTEROID" />
+      <Property name="DeathMessage" value="DEATH_ASTEROID" />
+      <Property name="DeathStat" value="DEATH_FALL" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_ASTEROID" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="15" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="LARGEASTEROID" />
+      <Property name="DeathMessage" value="DEATH_ASTEROID" />
+      <Property name="DeathStat" value="DEATH_FALL" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_ASTEROID" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="40" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="BIGPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="LANDING" />
+      <Property name="DeathMessage" value="DEATH_LANDING" />
+      <Property name="DeathStat" value="DEATH_FALL" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_LANDING" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="80" />
+      <Property name="HardModeMultiplier" value="4" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="FREIGHTERGUN" />
+      <Property name="DeathMessage" value="DEATH_FREIGHTER" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_FREIGHTER" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="20" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="BIGPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="FREIGHTERLASER" />
+      <Property name="DeathMessage" value="DEATH_FREIGHTER" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_FREIGHTER" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="20" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="20" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="BIGPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="VOLUNTARY" />
+      <Property name="DeathMessage" value="DEATH_VOLUNTARY" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="100" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPGUN" />
+      <Property name="DeathMessage" value="DEATH_GUN" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SENTINEL" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="4" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPSHIPGUN" />
+      <Property name="DeathMessage" value="DEATH_SHIP" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="25" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPSHIPSHOTGUN" />
+      <Property name="DeathMessage" value="DEATH_SHIP" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="90" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPSHIPMINIGUN" />
+      <Property name="DeathMessage" value="DEATH_SHIP" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="17.5" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPSHIPPLASMAGUN" />
+      <Property name="DeathMessage" value="DEATH_SHIP" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="125" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPPLAYER" />
+      <Property name="DeathMessage" value="DEATH_PLAYER" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_PLAYER" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="1.5" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPPLAYER_SHIP" />
+      <Property name="DeathMessage" value="DEATH_SHIP" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="45" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPPLAYER_RAIL" />
+      <Property name="DeathMessage" value="DEATH_PLAYER" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_PLAYER_WEAP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="5" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPPLAYER_SHOT" />
+      <Property name="DeathMessage" value="DEATH_PLAYER" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_PLAYER_WEAP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="1" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPPLAYER_SMG" />
+      <Property name="DeathMessage" value="DEATH_PLAYER" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_PLAYER_WEAP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="1" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPPLAYER_GUN" />
+      <Property name="DeathMessage" value="DEATH_PLAYER" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_PLAYER_WEAP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="4" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPPLAYER_CANNON" />
+      <Property name="DeathMessage" value="DEATH_PLAYER" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_PLAYER_WEAP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITICAL_HEAT" />
+      </Property>
+      <Property name="Damage" value="1" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="1" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPVEHICLE" />
+      <Property name="DeathMessage" value="DEATH_LASER" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_EXOCRAFT" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="1" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPSHIPROCKET" />
+      <Property name="DeathMessage" value="DEATH_SHIP" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SHIP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="250" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPGRENADE" />
+      <Property name="DeathMessage" value="DEATH_PLAYER" />
+      <Property name="DeathStat" value="DEATH_ACCIDENT" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_PLAYER_WEAP" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="50" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MPVEHICLEGUN" />
+      <Property name="DeathMessage" value="DEATH_PLAYER" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_EXOCRAFT" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="1" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="GASPLANT" />
+      <Property name="DeathMessage" value="DEATH_TOXIC" />
+      <Property name="DeathStat" value="DEATH_TOXIC" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HAZARDS.TOXIC.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_FLORA" />
+      <Property name="HitMessage" value="NOTIFY_GAS_PLANT" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_GAS_PLANT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITICAL_TOXIC" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITICAL_TOXIC" />
+      </Property>
+      <Property name="Damage" value="18" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="True" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Toxic" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="LOSTINSPACE" />
+      <Property name="DeathMessage" value="DEATH_LOSTINSPACE" />
+      <Property name="DeathStat" value="DEATH_FALL" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_LOSTINSPACE" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="Damage" value="1" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="NOSHAKE" />
+      <Property name="CameraShakeNoShield" value="NOSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Freeze" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="RADIATION_LEAK" />
+      <Property name="DeathMessage" value="DEATH_RADIATION" />
+      <Property name="DeathStat" value="DEATH_RAD" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HAZARDS.RADIOACTIVE.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_RADIATION" />
+      <Property name="HitMessage" value="NOTIFY_RADLEAK_DAMAGE" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_RADLEAK_DAMAGE" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITICAL_RAD" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITICAL_RAD" />
+      </Property>
+      <Property name="Damage" value="15" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="True" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Radioactive" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="JUSTPUSH" />
+      <Property name="DeathMessage" value="" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="Damage" value="0" />
+      <Property name="HardModeMultiplier" value="0" />
+      <Property name="PushForce" value="50" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="VENT_HEAT" />
+      <Property name="DeathMessage" value="DEATH_HEAT" />
+      <Property name="DeathStat" value="DEATH_HOT" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HAZARDS.HEAT.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_HEAT" />
+      <Property name="HitMessage" value="NOTIFY_HIT_HEAT" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_HIT_HEAT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITICAL_HEAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITICAL_HEAT" />
+      </Property>
+      <Property name="Damage" value="75" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="100" />
+      <Property name="CameraTurn" value="5" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="True" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="SPORE_VENT" />
+      <Property name="DeathMessage" value="DEATH_TOXIC" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HAZARDS.TOXIC.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_FLORA" />
+      <Property name="HitMessage" value="NOTIFY_GAS_PLANT" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_GAS_PLANT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITICAL_TOXIC" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITICAL_TOXIC" />
+      </Property>
+      <Property name="Damage" value="20" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="25" />
+      <Property name="CameraTurn" value="0.25" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="True" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="FISHFIEND_DMG" />
+      <Property name="DeathMessage" value="DEATH_FISHFIEND" />
+      <Property name="DeathStat" value="DEATH_HORROR" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_FISHFIEND" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="65" />
+      <Property name="HardModeMultiplier" value="2" />
+      <Property name="PushForce" value="30" />
+      <Property name="CameraTurn" value="10" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="FLOATER_DMG" />
+      <Property name="DeathMessage" value="DEATH_FLOATER" />
+      <Property name="DeathStat" value="DEATH_HORROR" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/LIFESUPPORT.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_FLOATER" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="80" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="3" />
+      <Property name="CameraTurn" value="0.02" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="True" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="JELLYFISH_DMG" />
+      <Property name="DeathMessage" value="DEATH_JELLYFISH" />
+      <Property name="DeathStat" value="DEATH_HORROR" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/LIFESUPPORT.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_JELLYFISH" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="20" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="3" />
+      <Property name="CameraTurn" value="0.02" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="True" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="GRABPLANT_DMG" />
+      <Property name="DeathMessage" value="DEATH_FISHFIEND" />
+      <Property name="DeathStat" value="DEATH_HORROR" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HAZARDS.TOXIC.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_GRABPLANT" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_ONFOOT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="10" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="True" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Toxic" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="FISHFIEND_PROP" />
+      <Property name="DeathMessage" value="DEATH_FISHFIEND" />
+      <Property name="DeathStat" value="DEATH_HORROR" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_FISHFIEND" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_ONFOOT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="1" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="100" />
+      <Property name="CameraTurn" value="5" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="True" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="CLAM_DMG" />
+      <Property name="DeathMessage" value="DEATH_CREATURE" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_CLAM" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_ONFOOT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="35" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="50" />
+      <Property name="CameraTurn" value="0.1" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="VENUSFLY_DMG" />
+      <Property name="DeathMessage" value="DEATH_CREATURE" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_FLORA" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_ONFOOT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="20" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="20" />
+      <Property name="CameraTurn" value="0.1" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="INTERACT_SMALL" />
+      <Property name="DeathMessage" value="DEATH_ENERGY" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="50" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="20" />
+      <Property name="CameraTurn" value="15" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="True" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="INTERACT_LARGE" />
+      <Property name="DeathMessage" value="DEATH_ENERGY" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="80" />
+      <Property name="HardModeMultiplier" value="2" />
+      <Property name="PushForce" value="15" />
+      <Property name="CameraTurn" value="10" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="True" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="INTERACT_ENERGY" />
+      <Property name="DeathMessage" value="DEATH_ENERGY" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/ENERGY.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="" />
+      <Property name="HitMessage" value="NOTIFY_HIT_ENERGY" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_HIT_ENERGY" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_ENERGY" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_ENERGY" />
+      </Property>
+      <Property name="Damage" value="28" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="True" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="BARRELEXPLODE" />
+      <Property name="DeathMessage" value="DEATH_BARRELEXPLODE" />
+      <Property name="DeathStat" value="DEATH_FALL" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_BARRELEXPLODE" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="50" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="SCUTTLERSPITDMG" />
+      <Property name="DeathMessage" value="DEATH_SCUTTLER" />
+      <Property name="DeathStat" value="DEATH_HORROR" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SCUTTLER" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="10" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="BASETURRETPDMG" />
+      <Property name="DeathMessage" value="DEATH_TURRET" />
+      <Property name="DeathStat" value="DEATH_ROBOT" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_TURRET" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="5" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="LIGHTNING" />
+      <Property name="DeathMessage" value="UI_DEATH_LIGHTNING" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_LIGHTNING" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_ONFOOT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="75" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="10" />
+      <Property name="CameraTurn" value="5" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="True" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="METEOR" />
+      <Property name="DeathMessage" value="UI_DEATH_METEOR" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_METEOR" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_ONFOOT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="75" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="30" />
+      <Property name="CameraTurn" value="5" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="True" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="TORNADO" />
+      <Property name="DeathMessage" value="UI_DEATH_TORNADO" />
+      <Property name="DeathStat" value="" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_TORNADO" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_ONFOOT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="35" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="1" />
+      <Property name="CameraTurn" value="50" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="True" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="MINIDRONE_DMG" />
+      <Property name="DeathMessage" value="DEATH_GUN" />
+      <Property name="DeathStat" value="DEATH_ROBOT" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SENTINEL" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITIAL_HIT" />
+      </Property>
+      <Property name="Damage" value="6" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Normal" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="FIRE_CE_DMG" />
+      <Property name="DeathMessage" value="DEATH_HEAT" />
+      <Property name="DeathStat" value="DEATH_HOT" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HAZARDS.HEAT.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_HEAT" />
+      <Property name="HitMessage" value="NOTIFY_HIT_HEAT" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_HIT_HEAT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITICAL_HEAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITICAL_HEAT" />
+      </Property>
+      <Property name="Damage" value="0" />
+      <Property name="HardModeMultiplier" value="1.5" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Scorch" />
+    </Property>
+    <Property value="GcPlayerDamageData.xml">
+      <Property name="Id" value="SENTINEL_FLAME" />
+      <Property name="DeathMessage" value="DEATH_GUN" />
+      <Property name="DeathStat" value="DEATH_ROBOT" />
+      <Property name="HitIcon" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/HAZARDS/HAZARDS.HEAT.DDS" />
+      </Property>
+      <Property name="HitChatMessage" value="UI_DAMAGE_SENTINEL" />
+      <Property name="HitMessage" value="" />
+      <Property name="HitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="CriticalHitMessage" value="NOTIFY_CRITIAL_HIT_COMBAT" />
+      <Property name="CriticalHitMessageAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="NOTIFY_CRITICAL_HEAT" />
+      </Property>
+      <Property name="Damage" value="3" />
+      <Property name="HardModeMultiplier" value="1" />
+      <Property name="PushForce" value="0" />
+      <Property name="CameraTurn" value="0" />
+      <Property name="CameraShakeShield" value="SMALLPAINSHAKE" />
+      <Property name="CameraShakeNoShield" value="BIGPAINSHAKE" />
+      <Property name="ShowTrackIcon" value="False" />
+      <Property name="ForceDamageInInteraction" value="False" />
+      <Property name="AllowDeathInInteraction" value="False" />
+      <Property name="PlayerDamageType" value="Scorch" />
+    </Property>
+  </Property>
+</Data>
