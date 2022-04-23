@@ -1,0 +1,23 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       Im3dVertex.shader.h
+///     @author     
+///     @date       
+///
+///     @brief      Immediate Mode Vertex Shader
+///
+///     Copyright (c) 2009 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+varying vec3 texCoord;                                      
+varying vec4 color;                                         
+uniform float userZ; 
+
+void main()                                             
+{                                                           
+    texCoord      = gl_MultiTexCoord0.xyz;                       
+    color         = gl_Color;                                   
+    gl_Position   = gl_ModelViewProjectionMatrix * gl_Vertex;   
+    gl_Position.z = userZ;                                     
+}

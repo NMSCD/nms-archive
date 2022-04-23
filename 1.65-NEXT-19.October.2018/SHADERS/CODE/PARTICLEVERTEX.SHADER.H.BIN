@@ -1,0 +1,281 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+///     @file       ParticleVertex.h
+///     @author     User
+///     @date       
+///
+///     @brief      ParticleVertex
+///
+///     Copyright (c) 2008 Hello Games Ltd. All Rights Reserved.
+///
+////////////////////////////////////////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
+//      Compilation defines 
+
+#ifdef _F14_UVSCROLL
+#define D_DECLARE_TIME
+#define D_UV_DYNAMIC
+#endif
+
+#ifdef _F13_UVANIMATION
+#define D_DECLARE_TIME
+#define D_UV_DYNAMIC
+#endif
+
+#ifdef _F18_UVTILES
+#define D_UV_DYNAMIC
+#endif
+
+#define D_PARTICLE_UNIFORMS
+
+//-----------------------------------------------------------------------------
+//      Include files
+
+
+#ifndef D_VERTEX
+#define D_VERTEX
+#endif
+
+#include "Common/Defines.shader.h"
+#include "Common/CommonUniforms.shader.h"
+
+#include "UberCommon.h"
+
+#include "Common/Common.shader.h"
+#include "Common/CommonParticle.shader.h"
+#include "Common/CommonDepth.shader.h"
+#include "Common/CommonDynamicVertex.shader.h"
+
+//-----------------------------------------------------------------------------
+//      Global Data
+
+
+
+//-----------------------------------------------------------------------------
+//      Typedefs and Classes 
+
+//-----------------------------------------------------------------------------
+///
+///     Input
+///
+///     @brief  Input
+///
+//-----------------------------------------------------------------------------
+DECLARE_INPUT
+
+    INPUT( vec3,  mkLocalPositionVec3, POSITION0 )
+	INPUT( vec2,  mkTexCoordsVec4,      TEXCOORD0 )
+	INPUT( float, mkfParticleCornerId,  NORMAL    )
+	INPUT( float, mkfParticleId,        TANGENT   )
+
+DECLARE_END
+
+//-----------------------------------------------------------------------------
+///
+///     Output
+///
+///     @brief  Output
+///
+//-----------------------------------------------------------------------------
+DECLARE_OUTPUT
+
+    OUTPUT_SCREEN_POSITION
+
+    OUTPUT( vec4,   mColourVec4,              TEXCOORD0 )
+	OUTPUT( vec4,   mTexCoordsVec4,           TEXCOORD1 )
+    OUTPUT( vec4,   mScreenSpacePositionVec4, TEXCOORD2 )
+#ifdef _F13_UVANIMATION
+    OUTPUT( float,  mfAnimBlendValue,         TEXCOORD3)
+#endif
+#ifndef _F07_UNLIT
+	OUTPUT( vec3,   mWorldNormalVec3,         TEXCOORD4 )
+#ifdef _F03_NORMALMAP
+    flat OUTPUT(mat3, mTangentSpaceMat3,  TEXCOORD5 )
+#endif
+#endif
+
+DECLARE_END
+
+
+//-----------------------------------------------------------------------------
+//    Functions
+
+mat3
+RotationAboutAxis(
+    float lRadians, 
+    vec3   lVec ) 
+{
+    float s;
+    float c;
+    float oneMinusC;
+    float xy;
+    float yz;
+    float zx;
+
+    s = sin( lRadians );
+    c = cos( lRadians );
+
+    xy = ( lVec.x * lVec.y );
+    yz = ( lVec.y * lVec.z );
+    zx = ( lVec.z * lVec.x );
+    
+    oneMinusC = ( 1.0 - c );
+
+    return mat3(
+        vec3( (((lVec.x*lVec.x) * oneMinusC) + c), ((xy*oneMinusC) + (lVec.z*s)),       ((zx*oneMinusC) - (lVec.y*s))),
+        vec3( ((xy*oneMinusC) - (lVec.z*s)),       (((lVec.y*lVec.y) * oneMinusC) + c), ((yz*oneMinusC) + (lVec.x*s))),
+        vec3( ((zx*oneMinusC) + (lVec.y*s)),       ((yz*oneMinusC) - (lVec.x*s)),       (((lVec.z*lVec.z) * oneMinusC) + c)));
+}
+
+vec2
+AnimateTexture(
+    vec2  lTexCoord,
+    vec2  lTexSize,
+    float lfFrameNumber )
+{
+    vec2  lMappedUV;
+    float lfFrameY = floor( (lfFrameNumber + 0.5) * lTexSize.x );
+
+    lMappedUV.x = lTexCoord.x       * lTexSize.x + fract( (lfFrameNumber + 0.5) * lTexSize.x ) - lTexSize.x*0.5;
+    lMappedUV.y = (1.0-lTexCoord.y) * lTexSize.y + fract( (lfFrameY      + 0.5) * lTexSize.y ) - lTexSize.y*0.5;
+    lMappedUV.y = 1.0 - lMappedUV.y;
+
+    return lMappedUV;
+}
+
+//-----------------------------------------------------------------------------
+///
+///     Main
+///
+///     @brief      Main
+///
+///     @param      void
+///     @return     Fresnel
+///
+//-----------------------------------------------------------------------------
+VERTEX_MAIN_SRT
+{
+    vec4 lParticlePositionVec4;
+    vec4 lParticleViewPositionVec4;
+	    
+    
+    int  liParticleID     = int( IN(mkfParticleId) );
+    int  liParticleCorner = int( IN(mkfParticleCornerId) );
+
+    vec4 lTexCoordsVec4 = IN( mkTexCoordsVec4 ).xyxy;
+    
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Texture Coords
+    ///
+    //-----------------------------------------------------------------------------
+    #ifdef _F13_UVANIMATION
+    {
+        vec2  lAnimFrameSize = lUniforms.mpCustomPerMesh->gUVScrollStepVec4.xy;
+        float lfAnimSpeed    = lUniforms.mpCustomPerMesh->gUVScrollStepVec4.z;
+	
+        float lfStartTime   = ARRAY_LOOKUP_FP( lUniforms.mpCommonPerMesh, gaParticleSizeAndRotationsVec4, liParticleID).z;
+        float lfTimeElapsed = lUniforms.mpPerFrame->gfTime - lfStartTime;
+        float lfFrameNumber = floor( lfTimeElapsed * lfAnimSpeed );
+
+        lTexCoordsVec4.xy = AnimateTexture( IN( mkTexCoordsVec4 ).xy, lAnimFrameSize, lfFrameNumber );
+        lTexCoordsVec4.zw = AnimateTexture( IN( mkTexCoordsVec4 ).xy, lAnimFrameSize, lfFrameNumber + 1.0 );
+        
+        OUT( mfAnimBlendValue ) = fract( lfTimeElapsed * lfAnimSpeed );
+		OUT( mTexCoordsVec4 )   = lTexCoordsVec4;
+    }
+    #elif defined( _F14_UVSCROLL )
+    { 
+        float lfStartTime = ARRAY_LOOKUP_FP( lUniforms.mpCommonPerMesh, gaParticleSizeAndRotationsVec4, liParticleID ).z;
+
+        lTexCoordsVec4.zw  = lTexCoordsVec4.xy + lUniforms.mpCustomPerMesh->gUVScrollStepVec4.xy * (lUniforms.mpPerFrame->gfTime-lfStartTime);
+
+        OUT( mTexCoordsVec4 ) = lTexCoordsVec4;
+    }
+    #elif defined( _F18_UVTILES )
+    {
+        // Take the particle start time to decide on the UV section
+        float lfPos = ARRAY_LOOKUP_FP( lUniforms.mpCommonPerMesh, gaParticleSizeAndRotationsVec4, liParticleID).z;
+
+        lTexCoordsVec4.x /= lUniforms.mpCustomPerMesh->gUVScrollStepVec4.z;
+        lTexCoordsVec4.x += floor( mod( lfPos, lUniforms.mpCustomPerMesh->gUVScrollStepVec4.z ) ) / lUniforms.mpCustomPerMesh->gUVScrollStepVec4.z;
+
+        OUT( mTexCoordsVec4 ) = lTexCoordsVec4;
+    }
+    #else
+	{		
+		lTexCoordsVec4.x    = (lTexCoordsVec4.x / lUniforms.mpCustomPerMesh->gMultiTextureVec4.x);
+		lTexCoordsVec4.x   += mod( IN(mkfParticleId) , lUniforms.mpCustomPerMesh->gMultiTextureVec4.x ) / lUniforms.mpCustomPerMesh->gMultiTextureVec4.x ;
+
+		OUT( mTexCoordsVec4 ) = lTexCoordsVec4;
+	}
+	#endif
+	
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Position
+    ///
+    //-----------------------------------------------------------------------------
+	//calculate position and billboard
+	lParticlePositionVec4 = GetParticlePos( DEREF_PTR(lUniforms.mpPerFrame), DEREF_PTR(lUniforms.mpCommonPerMesh), IN(mkLocalPositionVec3), liParticleID, liParticleCorner);
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Colour
+    ///
+    //-----------------------------------------------------------------------------
+	//calculate colour and fade alpha if we have stretched the particle
+    OUT(mColourVec4)    = ARRAY_LOOKUP_FP( lUniforms.mpCommonPerMesh, gaParticleColoursVec4, liParticleID );
+	OUT(mColourVec4).xyz = GammaCorrectInput( OUT(mColourVec4).xyz );
+	OUT(mColourVec4).a  *= lParticlePositionVec4.w;
+	OUT(mColourVec4).a   = min( OUT(mColourVec4).a , 1.0 );
+	
+	//alpha was previously stored in position w in the case of stretchy particles
+	//reset to 0 for vertex transform.
+	lParticlePositionVec4.w = 1.0;
+
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Normal mapping
+    ///
+    //-----------------------------------------------------------------------------
+    #ifndef _F07_UNLIT
+    {
+        vec3 lCameraRightVec3   = MAT4_GET_COLUMN( lUniforms.mpPerFrame->gCameraMat4, 0 );
+        vec3 lCameraUpVec3      = MAT4_GET_COLUMN( lUniforms.mpPerFrame->gCameraMat4, 1 );        
+        vec3 lCameraAtVec3      = MAT4_GET_COLUMN( lUniforms.mpPerFrame->gCameraMat4, 2 );
+	
+        float  lfRadius         = ARRAY_LOOKUP_FP( lUniforms.mpCommonPerMesh, gaParticleSizeAndRotationsVec4, liParticleID).x;
+        vec3   lMidPointVec3    = ARRAY_LOOKUP_FP( lUniforms.mpCommonPerMesh, gaParticlePositionsVec4, liParticleID).xyz;
+		vec3   lSphereApexVec3  = lMidPointVec3 - ( lCameraAtVec3 * lfRadius);
+		vec3   lWorldNormalVec3 = normalize( lParticlePositionVec4.xyz - lSphereApexVec3 );
+			
+        OUT( mWorldNormalVec3 ) = lWorldNormalVec3;
+				
+        #ifdef _F03_NORMALMAP
+        {
+            float lfRotation     = -ARRAY_LOOKUP_FP( lUniforms.mpCommonPerMesh, gaParticleSizeAndRotationsVec4, liParticleID ).y * 0.0174532925;
+            mat3   lRotationMat3 = RotationAboutAxis( lfRotation, lCameraAtVec3 );
+            mat3   lCamMatMat3   = mat3( lCameraRightVec3, lCameraUpVec3, lCameraAtVec3 );
+
+            OUT( mTangentSpaceMat3 ) = MUL( lRotationMat3, lCamMatMat3 );
+        }
+        #endif
+    }
+    #endif
+	
+    //-----------------------------------------------------------------------------
+    ///
+    ///     Transform
+    ///
+    //-----------------------------------------------------------------------------
+	
+	vec4 lScreenSpacePositionVec4 = MUL( lUniforms.mpCommonPerMesh->gViewProjectionMat4, lParticlePositionVec4 );	
+    lScreenSpacePositionVec4.xy  -= lUniforms.mpPerFrame->gDeJitterVec4.xy * lScreenSpacePositionVec4.w;
+	lScreenSpacePositionVec4      = LinearToLogDepth_Vertex( lUniforms.mpPerFrame->gClipPlanesVec4, lScreenSpacePositionVec4 );
+
+	OUT( mScreenSpacePositionVec4 ) = lScreenSpacePositionVec4;
+    SCREEN_POSITION          = lScreenSpacePositionVec4;
+	
+}
