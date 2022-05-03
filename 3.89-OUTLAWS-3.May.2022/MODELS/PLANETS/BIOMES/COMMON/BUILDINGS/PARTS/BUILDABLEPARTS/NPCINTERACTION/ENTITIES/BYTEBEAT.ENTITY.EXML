@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.88.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcNPCInteractiveObjectComponentData.xml">
+      <Property name="InteractiveObjectType" value="GcNPCInteractiveObjectType.xml">
+        <Property name="NPCInteractiveObjectType" value="Dance" />
+      </Property>
+      <Property name="MaxCapacity" value="1" />
+      <Property name="DurationMin" value="10" />
+      <Property name="DurationMax" value="30" />
+      <Property name="States">
+        <Property value="GcNPCInteractiveObjectState.xml">
+          <Property name="Name" value="EMOTE_SPC_02_IN" />
+          <Property name="FaceSpawnDir" value="False" />
+          <Property name="FaceNodeDir" value="True" />
+          <Property name="FaceInvNodeDir" value="False" />
+          <Property name="LookAtModel" value="False" />
+          <Property name="LookAtNode" value="" />
+          <Property name="FaceLookAt" value="False" />
+          <Property name="MaintainLookAt" value="False" />
+          <Property name="PlayIdles" value="False" />
+          <Property name="CanConverse" value="False" />
+          <Property name="Prop" value="GcNPCPropTypes.xml">
+            <Property name="NPCProp" value="None" />
+          </Property>
+          <Property name="SeatedPosture" value="GcNPCSeatedPosture.xml">
+            <Property name="NPCSeatedPosture" value="Sofa" />
+          </Property>
+          <Property name="BlendTime" value="0.3" />
+          <Property name="EarlyOutTime" value="0" />
+          <Property name="Animations">
+            <Property value="GcNPCProbabilityAnimationData.xml">
+              <Property name="Name" value="EMOTE_SPC_02_IN" />
+              <Property name="Probability" value="1" />
+              <Property name="AnimationIntensity" value="None" />
+              <Property name="ExcludeRace" />
+              <Property name="Tags" />
+            </Property>
+          </Property>
+          <Property name="SpineAdjustAmount" value="0" />
+          <Property name="MinAnims" value="1" />
+          <Property name="MaxAnims" value="1" />
+          <Property name="MinTime" value="0" />
+          <Property name="MaxTime" value="0" />
+          <Property name="Transitions">
+            <Property value="GcNPCInteractiveObjectStateTransition.xml">
+              <Property name="NewState" value="EMOTE_SPC_02" />
+              <Property name="Probability" value="1" />
+              <Property name="RequireEvent" value="" />
+              <Property name="RequireLocator" value="" />
+              <Property name="RequireMode" value="None" />
+              <Property name="ExcludeTags" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcNPCInteractiveObjectState.xml">
+          <Property name="Name" value="EMOTE_SPC_02" />
+          <Property name="FaceSpawnDir" value="False" />
+          <Property name="FaceNodeDir" value="False" />
+          <Property name="FaceInvNodeDir" value="False" />
+          <Property name="LookAtModel" value="False" />
+          <Property name="LookAtNode" value="" />
+          <Property name="FaceLookAt" value="False" />
+          <Property name="MaintainLookAt" value="False" />
+          <Property name="PlayIdles" value="False" />
+          <Property name="CanConverse" value="False" />
+          <Property name="Prop" value="GcNPCPropTypes.xml">
+            <Property name="NPCProp" value="None" />
+          </Property>
+          <Property name="SeatedPosture" value="GcNPCSeatedPosture.xml">
+            <Property name="NPCSeatedPosture" value="Sofa" />
+          </Property>
+          <Property name="BlendTime" value="0.3" />
+          <Property name="EarlyOutTime" value="0" />
+          <Property name="Animations">
+            <Property value="GcNPCProbabilityAnimationData.xml">
+              <Property name="Name" value="EMOTE_SPC_02" />
+              <Property name="Probability" value="1" />
+              <Property name="AnimationIntensity" value="None" />
+              <Property name="ExcludeRace" />
+              <Property name="Tags" />
+            </Property>
+          </Property>
+          <Property name="SpineAdjustAmount" value="0" />
+          <Property name="MinAnims" value="1" />
+          <Property name="MaxAnims" value="10" />
+          <Property name="MinTime" value="0" />
+          <Property name="MaxTime" value="0" />
+          <Property name="Transitions">
+            <Property value="GcNPCInteractiveObjectStateTransition.xml">
+              <Property name="NewState" value="EMOTE_SPC_02" />
+              <Property name="Probability" value="1" />
+              <Property name="RequireEvent" value="" />
+              <Property name="RequireLocator" value="" />
+              <Property name="RequireMode" value="None" />
+              <Property name="ExcludeTags" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>
