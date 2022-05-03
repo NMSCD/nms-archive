@@ -1,0 +1,67 @@
+<!-- Render Albedo to Imposter - Pipeline -->
+<Pipeline>
+    
+  <Setup>
+
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="DiffuseNear" enabled="false">
+      <BeginTarget target="" />
+
+      <ColourMask channels="RGBA"/>
+
+      <ClearTarget colBuf0="true"   colBuf1="false" colBuf2="false"  colBuf3="false" colBuf4="false" depthBuf="false"   stencilBuf="false" />
+      
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Terrain"  class="LOD0"      context="CACHE_COLOUR"    order="STATECHANGES" />
+      <DoForwardLightLoop type="Terrain"  class="LOD1"      context="CACHE_COLOUR"    order="STATECHANGES" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="alphaOnly" depthTest="always" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Terrain"  class="LOD0"      context="CACHE_HEIGHT"    order="STATECHANGES" />
+      <DoForwardLightLoop type="Terrain"  class="LOD1"      context="CACHE_HEIGHT"    order="STATECHANGES" />
+
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="NormalsNear" enabled="false">
+      <BeginTarget target="" />
+
+      <ColourMask channels="RGBA"/>
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Terrain"  class="LOD0"      context="CACHE_NORMALS"    order="STATECHANGES" />
+      <DoForwardLightLoop type="Terrain"  class="LOD1"      context="CACHE_NORMALS"    order="STATECHANGES" />
+
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="DiffuseFar" enabled="false">
+      <BeginTarget target="" />
+
+      <ColourMask channels="RGBA"/>
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Terrain"  class="LOD0"      context="CACHE_COLOUR_FAR"    order="STATECHANGES" />
+      <DoForwardLightLoop type="Terrain"  class="LOD1"      context="CACHE_COLOUR_FAR"    order="STATECHANGES" />
+
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="NormalsFar" enabled="false">
+      <BeginTarget target="" />
+
+      <ColourMask channels="RGBA"/>
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Terrain"  class="LOD0"      context="CACHE_NORMALS_FAR"    order="STATECHANGES" />
+      <DoForwardLightLoop type="Terrain"  class="LOD1"      context="CACHE_NORMALS_FAR"    order="STATECHANGES" />
+
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>
