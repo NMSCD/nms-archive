@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.88.0)-->
+<Data template="GcWFCModuleSet">
+  <Property name="Name" value="Settlement Monument" />
+  <Property name="BlockSize" value="Vector3f.xml">
+    <Property name="x" value="18" />
+    <Property name="y" value="6" />
+    <Property name="z" value="18" />
+  </Property>
+  <Property name="ApplyWallThemes" value="False" />
+  <Property name="ModulePrototypes">
+    <Property value="GcWFCModulePrototype.xml">
+      <Property name="Name" value="Monument" />
+      <Property name="Id" value="MONUMENT" />
+      <Property name="Group" value="" />
+      <Property name="RelativeProbability" value="1" />
+      <Property name="Include" value="True" />
+      <Property name="ExcludeOnGround" value="False" />
+      <Property name="ExcludeOnTop" value="False" />
+      <Property name="Indoors" value="False" />
+      <Property name="LimitToOnePerLevel" value="False" />
+      <Property name="ExcludeRotatedVariants" value="False" />
+      <Property name="DontRotateModel" value="False" />
+      <Property name="LayoutGroup" value="DEFAULT" />
+      <Property name="Scenes">
+        <Property value="GcWeightedResource.xml">
+          <Property name="RelativeProbability" value="1" />
+          <Property name="Geometry" value="TkModelResource.xml">
+            <Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/WFC/BLOCKS/BASE/BASIC/TIMBER/MONUMENT/MONUMENT.SCENE.MBIN" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="TerrainEdits" value="ClearEntireBlock" />
+      <Property name="TerrainConstraints" />
+      <Property name="Left" value="GcWFCFace.xml">
+        <Property name="Connector" value="0" />
+        <Property name="Symmetric" value="True" />
+        <Property name="Transform" value="None" />
+        <Property name="ExcludedNeighboursR0" />
+        <Property name="ExcludedNeighboursR1" />
+        <Property name="ExcludedNeighboursR2" />
+        <Property name="ExcludedNeighboursR3" />
+        <Property name="Walkable" value="True" />
+        <Property name="Incomplete" value="False" />
+        <Property name="IsEntrance" value="True" />
+        <Property name="Name" value="EMPTY" />
+      </Property>
+      <Property name="Down" value="GcWFCFace.xml">
+        <Property name="Connector" value="0" />
+        <Property name="Symmetric" value="True" />
+        <Property name="Transform" value="None" />
+        <Property name="ExcludedNeighboursR0" />
+        <Property name="ExcludedNeighboursR1" />
+        <Property name="ExcludedNeighboursR2" />
+        <Property name="ExcludedNeighboursR3" />
+        <Property name="Walkable" value="False" />
+        <Property name="Incomplete" value="False" />
+        <Property name="IsEntrance" value="False" />
+        <Property name="Name" value="EMPTY" />
+      </Property>
+      <Property name="Back" value="GcWFCFace.xml">
+        <Property name="Connector" value="0" />
+        <Property name="Symmetric" value="True" />
+        <Property name="Transform" value="None" />
+        <Property name="ExcludedNeighboursR0" />
+        <Property name="ExcludedNeighboursR1" />
+        <Property name="ExcludedNeighboursR2" />
+        <Property name="ExcludedNeighboursR3" />
+        <Property name="Walkable" value="True" />
+        <Property name="Incomplete" value="False" />
+        <Property name="IsEntrance" value="True" />
+        <Property name="Name" value="EMPTY" />
+      </Property>
+      <Property name="Right" value="GcWFCFace.xml">
+        <Property name="Connector" value="0" />
+        <Property name="Symmetric" value="True" />
+        <Property name="Transform" value="None" />
+        <Property name="ExcludedNeighboursR0" />
+        <Property name="ExcludedNeighboursR1" />
+        <Property name="ExcludedNeighboursR2" />
+        <Property name="ExcludedNeighboursR3" />
+        <Property name="Walkable" value="True" />
+        <Property name="Incomplete" value="False" />
+        <Property name="IsEntrance" value="True" />
+        <Property name="Name" value="EMPTY" />
+      </Property>
+      <Property name="Up" value="GcWFCFace.xml">
+        <Property name="Connector" value="0" />
+        <Property name="Symmetric" value="True" />
+        <Property name="Transform" value="None" />
+        <Property name="ExcludedNeighboursR0" />
+        <Property name="ExcludedNeighboursR1" />
+        <Property name="ExcludedNeighboursR2" />
+        <Property name="ExcludedNeighboursR3" />
+        <Property name="Walkable" value="False" />
+        <Property name="Incomplete" value="False" />
+        <Property name="IsEntrance" value="False" />
+        <Property name="Name" value="EMPTY" />
+      </Property>
+      <Property name="Forward" value="GcWFCFace.xml">
+        <Property name="Connector" value="0" />
+        <Property name="Symmetric" value="True" />
+        <Property name="Transform" value="None" />
+        <Property name="ExcludedNeighboursR0" />
+        <Property name="ExcludedNeighboursR1" />
+        <Property name="ExcludedNeighboursR2" />
+        <Property name="ExcludedNeighboursR3" />
+        <Property name="Walkable" value="True" />
+        <Property name="Incomplete" value="False" />
+        <Property name="IsEntrance" value="True" />
+        <Property name="Name" value="EMPTY" />
+      </Property>
+      <Property name="FreighterModuleType" value="None" />
+    </Property>
+  </Property>
+  <Property name="ConnectorsOnUpperBoundary">
+    <Property value="NMSString0x20.xml">
+      <Property name="Value" value="0" />
+    </Property>
+  </Property>
+  <Property name="ConnectorsOnLowerBoundary">
+    <Property value="NMSString0x20.xml">
+      <Property name="Value" value="0" />
+    </Property>
+  </Property>
+  <Property name="ConnectorsOnHorizontalBoundary">
+    <Property value="NMSString0x20.xml">
+      <Property name="Value" value="0" />
+    </Property>
+  </Property>
+  <Property name="DefaultGroups" />
+  <Property name="CompatibleConnectors" />
+  <Property name="VerticalOffset" value="0" />
+</Data>
