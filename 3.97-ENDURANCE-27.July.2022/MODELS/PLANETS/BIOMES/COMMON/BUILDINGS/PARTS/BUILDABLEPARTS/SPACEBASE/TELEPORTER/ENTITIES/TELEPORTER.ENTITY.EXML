@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.97.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="RagdollData" value="TkRagdollData.xml">
+        <Property name="Density" value="1" />
+        <Property name="Gravity" value="20" />
+        <Property name="ChainEnds" />
+        <Property name="ExcludeJoints" />
+      </Property>
+      <Property name="TriggerVolumeType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="Floor" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollide" value="False" />
+      <Property name="NoPlayerCollide" value="False" />
+      <Property name="CameraInvisible" value="False" />
+      <Property name="InvisibleForInteraction" value="False" />
+      <Property name="AllowTeleporter" value="False" />
+      <Property name="BlockTeleporter" value="False" />
+      <Property name="DisableGravity" value="False" />
+      <Property name="SpinOnCreate" value="0" />
+      <Property name="UseBasePartOptimisation" value="False" />
+      <Property name="IsTransporter" value="False" />
+    </Property>
+    <Property value="GcSimpleInteractionComponentData.xml">
+      <Property name="SimpleInteractionType" value="AbandFreighterTeleporter" />
+      <Property name="InteractDistance" value="8" />
+      <Property name="Use2dInteractDistance" value="False" />
+      <Property name="Id" value="" />
+      <Property name="Rarity" value="GcRarity.xml">
+        <Property name="Rarity" value="Common" />
+      </Property>
+      <Property name="Size" value="GcSizeIndicator.xml">
+        <Property name="SizeIndicator" value="Medium" />
+      </Property>
+      <Property name="TriggerAction" value="INACTIVE" />
+      <Property name="TriggerActionOnPrepare" value="" />
+      <Property name="TriggerActionToggle" value="" />
+      <Property name="BroadcastTriggerAction" value="False" />
+      <Property name="Delay" value="0" />
+      <Property name="HideContents" value="True" />
+      <Property name="InteractIsCrime" value="False" />
+      <Property name="InteractFiendCrimeType" value="GcFiendCrime.xml">
+        <Property name="FiendCrime" value="None" />
+      </Property>
+      <Property name="InteractFiendCrimeChance" value="1" />
+      <Property name="InteractCrimeLevel" value="0" />
+      <Property name="NotifyEncounter" value="False" />
+      <Property name="ActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="0" />
+        <Property name="Repeat" value="False" />
+        <Property name="RequiredTech" value="" />
+      </Property>
+      <Property name="StatToTrack" value="GcStatsEnum.xml">
+        <Property name="GcStatEnum" value="None" />
+      </Property>
+      <Property name="StartsBuried" value="False" />
+      <Property name="MustBeVisibleToInteract" value="False" />
+      <Property name="NeedsStorm" value="False" />
+      <Property name="Name" value="UI_FREIGHTER_TELEPORTER_NAME" />
+      <Property name="VRInteractMessage" value="" />
+      <Property name="TerminalMessage" value="" />
+      <Property name="ScanType" value="BINOC_INTERACTABLE" />
+      <Property name="ScanData" value="" />
+      <Property name="ScanIcon" value="GcDiscoveryTypes.xml">
+        <Property name="DiscoveryType" value="Unknown" />
+      </Property>
+      <Property name="ActivateLocatorsFromRarity" value="False" />
+      <Property name="RarityLocators">
+        <Property name="Common" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="Uncommon" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="Rare" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="BaseBuildingTriggerActions" />
+      <Property name="RewardOverrideTable" />
+      <Property name="PersistencyBufferOverride" />
+      <Property name="UsePersonalPersistentBuffer" value="False" />
+      <Property name="ReseedOnRewardSuccess" value="False" />
+      <Property name="CanCollectInMech" value="False" />
+    </Property>
+    <Property value="TkSketchComponentData.xml">
+      <Property name="GraphPosX" value="-653.251465" />
+      <Property name="GraphPosY" value="-320.448853" />
+      <Property name="GraphZoom" value="1.000004" />
+      <Property name="UpdateRateMultiplier" value="1" />
+      <Property name="Nodes">
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="OnVariableChanged" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="0" />
+          <Property name="PositionX" value="-622" />
+          <Property name="PositionY" value="752" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections" />
+            </Property>
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections">
+                <Property value="9" />
+              </Property>
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="80" />
+            <Property value="111" />
+            <Property value="114" />
+            <Property value="116" />
+            <Property value="97" />
+            <Property value="108" />
+            <Property value="68" />
+            <Property value="105" />
+            <Property value="115" />
+            <Property value="97" />
+            <Property value="98" />
+            <Property value="108" />
+            <Property value="101" />
+            <Property value="100" />
+            <Property value="0" />
+            <Property value="0" />
+          </Property>
+        </Property>
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="SetNodeActive" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="2" />
+          <Property name="PositionX" value="-50" />
+          <Property name="PositionY" value="794" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections" />
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="128" />
+            <Property value="53" />
+            <Property value="194" />
+            <Property value="23" />
+            <Property value="251" />
+            <Property value="1" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="79" />
+            <Property value="110" />
+            <Property value="108" />
+            <Property value="105" />
+            <Property value="110" />
+            <Property value="101" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+          </Property>
+        </Property>
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="OnSpawned" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="0" />
+          <Property name="PositionX" value="-620" />
+          <Property name="PositionY" value="351" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections">
+                <Property value="8" />
+              </Property>
+            </Property>
+          </Property>
+          <Property name="CustomData" />
+        </Property>
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="SurveyVariableValue" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="0" />
+          <Property name="PositionX" value="-21" />
+          <Property name="PositionY" value="310" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections">
+                <Property value="7" />
+              </Property>
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="80" />
+            <Property value="111" />
+            <Property value="114" />
+            <Property value="116" />
+            <Property value="97" />
+            <Property value="108" />
+            <Property value="68" />
+            <Property value="105" />
+            <Property value="115" />
+            <Property value="97" />
+            <Property value="98" />
+            <Property value="108" />
+            <Property value="101" />
+            <Property value="100" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="160" />
+            <Property value="64" />
+            <Property value="192" />
+            <Property value="11" />
+            <Property value="192" />
+            <Property value="11" />
+          </Property>
+        </Property>
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="SetVariableValue" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="1" />
+          <Property name="PositionX" value="531" />
+          <Property name="PositionY" value="309" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections" />
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="80" />
+            <Property value="111" />
+            <Property value="114" />
+            <Property value="116" />
+            <Property value="97" />
+            <Property value="108" />
+            <Property value="68" />
+            <Property value="105" />
+            <Property value="115" />
+            <Property value="97" />
+            <Property value="98" />
+            <Property value="108" />
+            <Property value="101" />
+            <Property value="100" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="78" />
+            <Property value="85" />
+            <Property value="76" />
+            <Property value="76" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="1" />
+            <Property value="249" />
+            <Property value="1" />
+            <Property value="249" />
+            <Property value="1" />
+            <Property value="249" />
+            <Property value="1" />
+          </Property>
+        </Property>
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="OnComponentEvent" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="0" />
+          <Property name="PositionX" value="-620" />
+          <Property name="PositionY" value="540" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections">
+                <Property value="6" />
+              </Property>
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="245" />
+            <Property value="154" />
+            <Property value="71" />
+            <Property value="225" />
+            <Property value="134" />
+            <Property value="108" />
+            <Property value="227" />
+            <Property value="234" />
+            <Property value="73" />
+            <Property value="110" />
+            <Property value="116" />
+            <Property value="101" />
+            <Property value="114" />
+            <Property value="97" />
+            <Property value="99" />
+            <Property value="116" />
+            <Property value="101" />
+            <Property value="100" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+          </Property>
+        </Property>
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="SetVariableValue" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="0" />
+          <Property name="PositionX" value="-239" />
+          <Property name="PositionY" value="540" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections" />
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="80" />
+            <Property value="111" />
+            <Property value="114" />
+            <Property value="116" />
+            <Property value="97" />
+            <Property value="108" />
+            <Property value="68" />
+            <Property value="105" />
+            <Property value="115" />
+            <Property value="97" />
+            <Property value="98" />
+            <Property value="108" />
+            <Property value="101" />
+            <Property value="100" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="70" />
+            <Property value="65" />
+            <Property value="76" />
+            <Property value="83" />
+            <Property value="69" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="1" />
+            <Property value="6" />
+            <Property value="139" />
+            <Property value="8" />
+            <Property value="53" />
+            <Property value="9" />
+            <Property value="126" />
+            <Property value="6" />
+          </Property>
+        </Property>
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="IfValueIs" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="0" />
+          <Property name="PositionX" value="258" />
+          <Property name="PositionY" value="309" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections">
+                <Property value="4" />
+              </Property>
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="1" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="97" />
+            <Property value="194" />
+            <Property value="192" />
+            <Property value="191" />
+            <Property value="78" />
+            <Property value="85" />
+            <Property value="76" />
+            <Property value="76" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+          </Property>
+        </Property>
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="SetVariableValue" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="0" />
+          <Property name="PositionX" value="-329" />
+          <Property name="PositionY" value="289" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections">
+                <Property value="3" />
+              </Property>
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="80" />
+            <Property value="111" />
+            <Property value="114" />
+            <Property value="116" />
+            <Property value="97" />
+            <Property value="108" />
+            <Property value="68" />
+            <Property value="105" />
+            <Property value="115" />
+            <Property value="97" />
+            <Property value="98" />
+            <Property value="108" />
+            <Property value="101" />
+            <Property value="100" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="84" />
+            <Property value="82" />
+            <Property value="85" />
+            <Property value="69" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+          </Property>
+        </Property>
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="ValueAsBool" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="0" />
+          <Property name="PositionX" value="-318" />
+          <Property name="PositionY" value="795" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections">
+                <Property value="1" />
+              </Property>
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="1" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property value="GcScannableComponentData.xml">
+      <Property name="ScanRange" value="100" />
+      <Property name="ScanName" value="UI_ABAND_TELE_LABEL" />
+      <Property name="ScanTime" value="10" />
+      <Property name="CompassRangeMultiplier" value="0.5" />
+      <Property name="AlwaysShowRange" value="0" />
+      <Property name="CanTagIcon" value="True" />
+      <Property name="ClearTagOnArrival" value="True" />
+      <Property name="DisableIfBuildingPart" value="False" />
+      <Property name="DisableIfInBase" value="False" />
+      <Property name="UseModelNode" value="True" />
+      <Property name="Icon" value="GcScannerIconTypes.xml">
+        <Property name="ScanIconType" value="FreighterTeleporter" />
+      </Property>
+      <Property name="ScannableType" value="Binoculars" />
+      <Property name="IsPlacedMarker" value="False" />
+      <Property name="ShowInFreighterBranchRoom" value="False" />
+      <Property name="TellPlayerIfFreighterObjectUsed" value="False" />
+      <Property name="FreighterObjectAlreadyUsedLocID" value="UI_ABAND_LOG_READ" />
+      <Property name="AllowedToMerge" value="True" />
+      <Property name="MarkerActiveWithNodeInactive" value="False" />
+      <Property name="MissionSurveyId" value="" />
+      <Property name="MinDisplayDistanceOverride" value="-1" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>
