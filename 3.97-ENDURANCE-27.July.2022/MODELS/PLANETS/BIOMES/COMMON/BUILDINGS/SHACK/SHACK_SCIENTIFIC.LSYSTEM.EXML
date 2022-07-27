@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (3.97.0)-->
+<Data template="TkLSystemRulesData">
+  <Property name="GlobalRestriction">
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nShieldStation" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PROPS/INTERACTIVE/SHIELDSTATION.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nWeaponTechStation" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PROPS/INTERACTIVE/WEAPONTECHSTATION.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="AtLeast" />
+        </Property>
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nStandingStation" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PROPS/INTERACTIVE/STANDINGSTATION.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nMoneyStation" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PROPS/INTERACTIVE/MONEYSTATION.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nHealthStations" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PROPS/INTERACTIVE/HEALTHSTATION.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nShack" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACK.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="AtLeast" />
+        </Property>
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="2" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nSilo" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/EXTERIORLAYOUTS/LAYOUTA_1.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nTower" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/EXTERIORLAYOUTS/LAYOUTA_2.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nTechContainer" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/DEBRIS/DEBRISLARGE_COMMON.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="GlobalVariation">
+    <Property value="TkLSystemGlobalVariation.xml">
+      <Property name="Name" value="ShackVariation" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACK.SCENE.MBIN" />
+      <Property name="Variations" value="3" />
+    </Property>
+  </Property>
+  <Property name="Rules">
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Root" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACK_SCIENTIFIC.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="SHACK_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACK.SCENE.MBIN" />
+              <Property name="Probability" value="25" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="TECHBOX_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/DEBRIS/DEBRISLARGE_COMMON.SCENE.MBIN" />
+              <Property name="Probability" value="30" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="SIGNALSCANNER_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SIGNALSCANNER/SIGNALSCANNER.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="BaseRule" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Shack" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACK.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="ANTENNA_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACKEXTERIOR/SHACKEXTERIOR_2.SCENE.MBIN" />
+              <Property name="Probability" value="15" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACKEXTERIOR/SHACKEXTERIOR_3.SCENE.MBIN" />
+              <Property name="Probability" value="15" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="LUMP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACKEXTERIOR/SHACKEXTERIOR_1.SCENE.MBIN" />
+              <Property name="Probability" value="15" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACKEXTERIOR/SHACKEXTERIOR_4.SCENE.MBIN" />
+              <Property name="Probability" value="15" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="LAYOUT_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACKLAYOUTS/LAYOUT_A.SCENE.MBIN" />
+              <Property name="Probability" value="20" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACKLAYOUTS/LAYOUT_B.SCENE.MBIN" />
+              <Property name="Probability" value="20" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACKLAYOUTS/LAYOUT_C.SCENE.MBIN" />
+              <Property name="Probability" value="15" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACKLAYOUTS/LAYOUT_D.SCENE.MBIN" />
+              <Property name="Probability" value="15" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACKLAYOUTS/LAYOUT_E.SCENE.MBIN" />
+              <Property name="Probability" value="15" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/SHACKLAYOUTS/LAYOUT_F.SCENE.MBIN" />
+              <Property name="Probability" value="15" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="EXTLAYOUTA_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/EXTERIORLAYOUTS/LAYOUTA_1.SCENE.MBIN" />
+              <Property name="Probability" value="30" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/EXTERIORLAYOUTS/LAYOUTA_2.SCENE.MBIN" />
+              <Property name="Probability" value="30" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="EXTLAYOUTB_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/EXTERIORLAYOUTS/LAYOUTB_1.SCENE.MBIN" />
+              <Property name="Probability" value="25" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/EXTERIORLAYOUTS/LAYOUTB_2.SCENE.MBIN" />
+              <Property name="Probability" value="25" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/SHACK/SHACKSCIENTIFIC_PARTS/EXTERIORLAYOUTS/LAYOUTB_3.SCENE.MBIN" />
+              <Property name="Probability" value="25" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+  </Property>
+  <Property name="Templates">
+    <Property value="TkLSystemRuleTemplate.xml">
+      <Property name="Name" value="BASE" />
+      <Property name="LSystem" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/LSYSTEM/BASECOMMON.LSYSTEM.MBIN" />
+    </Property>
+  </Property>
+</Data>
