@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.0.0)-->
+<Data template="GcCombatEffectsTable">
+  <Property name="EffectsData">
+    <Property name="None" value="GcCombatEffectData.xml">
+      <Property name="DamageId" value="" />
+      <Property name="ParticlesId" value="" />
+      <Property name="StartAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="EndAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="Stat" value="GcStatsTypes.xml">
+        <Property name="StatsType" value="Unspecified" />
+      </Property>
+      <Property name="OverrideDamageNumberData" value="False" />
+      <Property name="DamageMergeTime" value="0.2" />
+      <Property name="DamageTimeBetweenNumbers" value="0.2" />
+      <Property name="DamageMinDistance" value="5" />
+    </Property>
+    <Property name="Fire" value="GcCombatEffectData.xml">
+      <Property name="DamageId" value="FIRE_CE_DMG" />
+      <Property name="ParticlesId" value="FIREDAMAGE" />
+      <Property name="StartAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="EndAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="INVALID_EVENT" />
+      </Property>
+      <Property name="Stat" value="GcStatsTypes.xml">
+        <Property name="StatsType" value="Weapon_FireDOT" />
+      </Property>
+      <Property name="OverrideDamageNumberData" value="True" />
+      <Property name="DamageMergeTime" value="0.5" />
+      <Property name="DamageTimeBetweenNumbers" value="0.5" />
+      <Property name="DamageMinDistance" value="5" />
+    </Property>
+    <Property name="Stun" value="GcCombatEffectData.xml">
+      <Property name="DamageId" value="" />
+      <Property name="ParticlesId" value="STUN" />
+      <Property name="StartAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="EXPL_ELECTRICAL_STUN" />
+      </Property>
+      <Property name="EndAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="EXPL_ELECTRICAL_STUN_STOP" />
+      </Property>
+      <Property name="Stat" value="GcStatsTypes.xml">
+        <Property name="StatsType" value="Weapon_Stun" />
+      </Property>
+      <Property name="OverrideDamageNumberData" value="False" />
+      <Property name="DamageMergeTime" value="0.2" />
+      <Property name="DamageTimeBetweenNumbers" value="0.2" />
+      <Property name="DamageMinDistance" value="5" />
+    </Property>
+    <Property name="Slow" value="GcCombatEffectData.xml">
+      <Property name="DamageId" value="" />
+      <Property name="ParticlesId" value="SHIPSTUN" />
+      <Property name="StartAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="EXPL_ELECTRICAL_STUN" />
+      </Property>
+      <Property name="EndAudio" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="EXPL_ELECTRICAL_STUN_STOP" />
+      </Property>
+      <Property name="Stat" value="GcStatsTypes.xml">
+        <Property name="StatsType" value="Unspecified" />
+      </Property>
+      <Property name="OverrideDamageNumberData" value="False" />
+      <Property name="DamageMergeTime" value="0.2" />
+      <Property name="DamageTimeBetweenNumbers" value="0.2" />
+      <Property name="DamageMinDistance" value="5" />
+    </Property>
+  </Property>
+</Data>

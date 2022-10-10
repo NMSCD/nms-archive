@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.0.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkAnimPoseComponentData.xml">
+      <Property name="PoseAnims">
+        <Property value="TkAnimPoseData.xml">
+          <Property name="Anim" value="HEAD" />
+          <Property name="FrameStart" value="1" />
+          <Property name="FrameEnd" value="199" />
+        </Property>
+        <Property value="TkAnimPoseData.xml">
+          <Property name="Anim" value="BODY" />
+          <Property name="FrameStart" value="200" />
+          <Property name="FrameEnd" value="399" />
+        </Property>
+        <Property value="TkAnimPoseData.xml">
+          <Property name="Anim" value="TAIL" />
+          <Property name="FrameStart" value="400" />
+          <Property name="FrameEnd" value="499" />
+        </Property>
+      </Property>
+      <Property name="Filename" value="MODELS/PLANETS/CREATURES/RODENTRIG/ANIMS/RODENTPOSE.ANIM.MBIN" />
+      <Property name="Correlations" />
+      <Property name="Examples" />
+      <Property name="CorrelationMat" />
+      <Property name="AdultCorrelationValue" value="0.6" />
+      <Property name="BabyModifiers" />
+      <Property name="ShouldRandomise" value="True" />
+    </Property>
+    <Property value="GcShootableComponentData.xml">
+      <Property name="Health" value="10" />
+      <Property name="AutoAimTarget" value="False" />
+      <Property name="PlayerOnly" value="False" />
+      <Property name="IgnorePlayer" value="False" />
+      <Property name="ImpactShake" value="False" />
+      <Property name="ImpactShakeEffect" value="SHOOTABLESHAKE" />
+      <Property name="ForceImpactType" value="GcProjectileImpactType.xml">
+        <Property name="Impact" value="Default" />
+      </Property>
+      <Property name="IncreaseWanted" value="0" />
+      <Property name="IncreaseWantedThresholdTime" value="0.5" />
+      <Property name="FiendCrimeType" value="GcFiendCrime.xml">
+        <Property name="FiendCrime" value="None" />
+      </Property>
+      <Property name="FiendCrimeModifier" value="1" />
+      <Property name="RepairTime" value="8" />
+      <Property name="MinDamage" value="0" />
+      <Property name="StaticUntilShot" value="False" />
+      <Property name="IgnoreHitPush" value="True" />
+      <Property name="HitEffectEnabled" value="False" />
+      <Property name="HitEffectEntireModel" value="True" />
+      <Property name="IsArmoured" value="False" />
+      <Property name="CouldCountAsArmourForParent" value="True" />
+      <Property name="IgnoreTerrainEditKills" value="False" />
+      <Property name="NameOverride" value="" />
+      <Property name="RequiredTech" value="" />
+      <Property name="DamageMultiplier" value="OBJECT" />
+      <Property name="IsPiercable" value="False" />
+      <Property name="IsAffectedByPiercing" value="False" />
+    </Property>
+    <Property value="TkAudioComponentData.xml">
+      <Property name="Ambient" value="" />
+      <Property name="AmbientState" value="" />
+      <Property name="Shutdown" value="" />
+      <Property name="MaxDistance" value="90" />
+      <Property name="AnimTriggers">
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="" />
+          <Property name="Anim" value="WALK" />
+          <Property name="FrameStart" value="13" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="" />
+          <Property name="Anim" value="WALK" />
+          <Property name="FrameStart" value="27" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="" />
+          <Property name="Anim" value="WALK" />
+          <Property name="FrameStart" value="51" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="" />
+          <Property name="Anim" value="WALK" />
+          <Property name="FrameStart" value="67" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="" />
+          <Property name="Anim" value="RUN" />
+          <Property name="FrameStart" value="1" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="" />
+          <Property name="Anim" value="RUN" />
+          <Property name="FrameStart" value="21" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="" />
+          <Property name="Anim" value="RUN" />
+          <Property name="FrameStart" value="27" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="" />
+          <Property name="Anim" value="RUN" />
+          <Property name="FrameStart" value="32" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="" />
+          <Property name="Anim" value="RUN" />
+          <Property name="FrameStart" value="52" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="" />
+          <Property name="Anim" value="RUN" />
+          <Property name="FrameStart" value="58" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="" />
+          <Property name="Anim" value="RUN" />
+          <Property name="FrameStart" value="64" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="" />
+          <Property name="Anim" value="RUN" />
+          <Property name="FrameStart" value="85" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="" />
+          <Property name="Anim" value="RUN" />
+          <Property name="FrameStart" value="92" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="1" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="RagdollData" value="TkRagdollData.xml">
+        <Property name="Density" value="1" />
+        <Property name="Gravity" value="20" />
+        <Property name="ChainEnds">
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="joint16" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="joint19" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="joint235" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="joint222" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="joint27" />
+          </Property>
+          <Property value="NMSString0x20.xml">
+            <Property name="Value" value="joint32" />
+          </Property>
+        </Property>
+        <Property name="ExcludeJoints" />
+      </Property>
+      <Property name="TriggerVolumeType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="Floor" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollide" value="False" />
+      <Property name="NoPlayerCollide" value="False" />
+      <Property name="CameraInvisible" value="False" />
+      <Property name="InvisibleForInteraction" value="False" />
+      <Property name="AllowTeleporter" value="False" />
+      <Property name="BlockTeleporter" value="False" />
+      <Property name="DisableGravity" value="False" />
+      <Property name="SpinOnCreate" value="0" />
+      <Property name="UseBasePartOptimisation" value="False" />
+      <Property name="IsTransporter" value="False" />
+    </Property>
+    <Property value="GcCreatureComponentData.xml">
+      <Property name="Id" value="RODENT" />
+      <Property name="Axis" value="GcPrimaryAxis.xml">
+        <Property name="PrimaryAxis" value="ZNeg" />
+      </Property>
+      <Property name="Scaler" value="1.5" />
+      <Property name="PetIndoorScaler" value="1" />
+      <Property name="DeathEffect" value="" />
+      <Property name="ReplacementImpacts" />
+      <Property name="AccessoryPitchOffset" value="0" />
+      <Property name="DiscoveryFurScaler" value="0.3" />
+      <Property name="DiscoveryUIScaler" value="1" />
+      <Property name="DiscoveryUIOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="ThumbnailOverrides" />
+      <Property name="UsePetLargeUIOverride" value="False" />
+      <Property name="PetLargeUIOverrideScaler" value="1" />
+      <Property name="PetLargeUIOverrideOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+    </Property>
+    <Property value="EmptyNode.xml" />
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="IDLE" />
+        <Property name="Filename" value="MODELS/PLANETS/CREATURES/RODENTRIG/ANIMS/RODENTIDLE.ANIM.MBIN" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="Priority" value="0" />
+        <Property name="OffsetMin" value="0" />
+        <Property name="OffsetMax" value="0" />
+        <Property name="Delay" value="0" />
+        <Property name="Speed" value="1" />
+        <Property name="ActionStartFrame" value="0" />
+        <Property name="ActionFrame" value="-1" />
+        <Property name="CreatureSize" value="AllSizes" />
+        <Property name="Additive" value="False" />
+        <Property name="Mirrored" value="False" />
+        <Property name="Active" value="True" />
+        <Property name="AdditiveBaseAnim" value="" />
+        <Property name="AdditiveBaseFrame" value="0" />
+        <Property name="GameData" value="TkAnimationGameData.xml">
+          <Property name="RootMotionEnabled" value="False" />
+          <Property name="BlockPlayerMovement" value="False" />
+          <Property name="BlockPlayerWeapon" value="Unblocked" />
+        </Property>
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="WALK" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/RODENTRIG/ANIMS/RODENTWALK.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="RUN" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/RODENTRIG/ANIMS/RODENTRUN.ANIM.MBIN" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="EAT" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/RODENTRIG/ANIMS/RODENTSNIFF.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShotBlendable" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="POUNCE" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/RODENTRIG/ANIMS/RODENTPOUNCE.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShotBlendable" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="BOLT" />
+          <Property name="Filename" value="MODELS/PLANETS/CREATURES/RODENTRIG/ANIMS/RODENTBOLT.ANIM.MBIN" />
+          <Property name="AnimType" value="OneShotBlendable" />
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Trees" />
+      <Property name="NetSyncAnimations" value="False" />
+      <Property name="JointLODOverrides" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>
