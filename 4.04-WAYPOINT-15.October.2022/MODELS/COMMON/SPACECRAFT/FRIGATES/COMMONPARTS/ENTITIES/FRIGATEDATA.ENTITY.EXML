@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.3.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="BEGIN" />
+          <Property name="Triggers" />
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="TAKEOFF" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="LODNODE" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="LANDING" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Activate" />
+                  <Property name="Name" value="LODNODE" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="True" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+      <Property name="ResetShotTimeOnStateChange" value="False" />
+      <Property name="LinkStateToBaseGrid" value="False" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="0" />
+      </Property>
+      <Property name="TriggerVolumeType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="Floor" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollide" value="False" />
+      <Property name="NoPlayerCollide" value="False" />
+      <Property name="CameraInvisible" value="False" />
+      <Property name="InvisibleForInteraction" value="False" />
+      <Property name="AllowTeleporter" value="False" />
+      <Property name="BlockTeleporter" value="False" />
+      <Property name="DisableGravity" value="False" />
+      <Property name="SpinOnCreate" value="0" />
+      <Property name="UseBasePartOptimisation" value="False" />
+      <Property name="IsTransporter" value="False" />
+    </Property>
+    <Property value="GcOutpostComponentData.xml">
+      <Property name="Anomaly" value="False" />
+      <Property name="Frigate" value="True" />
+      <Property name="SpaceStation" value="False" />
+      <Property name="NexusExterior" value="False" />
+      <Property name="NexusInterior" value="False" />
+      <Property name="AIDestination" value="False" />
+      <Property name="HasDoors" value="False" />
+      <Property name="HasOwnGravity" value="True" />
+      <Property name="Door" value="HANGARDOOR" />
+      <Property name="CheckLandingAreaClear" value="False" />
+      <Property name="CircleRadius" value="200" />
+      <Property name="ApproachRange" value="100" />
+      <Property name="ApproachAngle" value="360" />
+      <Property name="ApproachSpeed" value="30" />
+      <Property name="PlayerAutoLandRange" value="300" />
+      <Property name="LandingSpeed" value="10" />
+      <Property name="LandingHeight" value="10" />
+      <Property name="RotateToDock" value="True" />
+      <Property name="TakeOffHeight" value="10" />
+      <Property name="TakeOffFwdDist" value="1" />
+      <Property name="TakeOffTime" value="1" />
+      <Property name="TakeOffAlignTime" value="1" />
+      <Property name="TakeOffSpeed" value="100" />
+      <Property name="TakeOffBoost" value="10" />
+      <Property name="TakeOffExtraAIHeight" value="7" />
+      <Property name="PostTakeOffExtraPlayerHeight" value="0" />
+      <Property name="PostTakeOffExtraPlayerSpeed" value="60" />
+      <Property name="TakeOffProgressForExtraHeight" value="1" />
+      <Property name="LSystems" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="575" />
+    <Property value="1100" />
+    <Property value="2200" />
+    <Property value="4300" />
+  </Property>
+</Data>
