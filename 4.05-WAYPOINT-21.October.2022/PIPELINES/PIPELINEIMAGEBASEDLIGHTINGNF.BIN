@@ -1,0 +1,26 @@
+<Pipeline>
+  <Setup>
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="Post">
+      <BeginTarget target="" />
+      
+      <ColourMask channels="RGBA"/>
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="Materials/ImageBasedLighting.material.mbin" context="INTEGRATE" width ="1.0" height="1.0" />
+      <!-- PS4 optimisation - don't flush here, the image based lighting faces will then run in parallel on multiple contexts, saving 1.5ms -->
+      <EndTarget flushCB="false" flushDB="false" />      
+    </Stage>
+
+    <Stage id="Reset States">
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>

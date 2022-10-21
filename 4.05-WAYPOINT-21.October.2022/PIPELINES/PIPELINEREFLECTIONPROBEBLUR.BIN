@@ -1,0 +1,205 @@
+<!-- High Dynamic Range (HDR) utf-8Shading Pipeline -->
+<Pipeline>
+  <Setup>
+    <RenderTarget id="REFL_TMP_BLUR_A"    depthBuf="false"  hasMips="true"  autoGenMips="false" numColBufs="1"  format="R11FG11FB10F"   width="6144"  height="1024" scaleMul="ReflectionProbesMultiplier" />
+    <RenderTarget id="REFL_TMP_BLUR_B"    depthBuf="false"  hasMips="true"  autoGenMips="false" numColBufs="1"  format="R11FG11FB10F"   width="6144"  height="1024" scaleMul="ReflectionProbesMultiplier" />
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+    <Stage id="Blur_Mip_1" enabled="true">
+      <BeginTarget target="REFL_TMP_BLUR_A" mipLevel="1"/>
+      <ColourMask channels="RGB"  />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gCustomParamsVec4" a="0.0" b="0.0" c="0.0" d="0.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="FLAT2RT_COPY" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="REFL_TMP_BLUR_B" mipLevel="1"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_A" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.0" b="1.0" c="3.0" d="1.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="" mipLevel="1"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_B" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="3.0" d="1.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+    
+    <Stage id="Blur_Mip_2" enabled="true">
+      <BeginTarget target="REFL_TMP_BLUR_A" mipLevel="2"/>
+      <ColourMask channels="RGB"  />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gCustomParamsVec4" a="0.0" b="1.0" c="0.0" d="0.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="FLAT2RT_COPY" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="REFL_TMP_BLUR_B" mipLevel="2"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_A" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.0" b="1.0" c="3.0" d="2.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="" mipLevel="2"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_B" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="3.0" d="2.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="Blur_Mip_3" enabled="true">
+      <BeginTarget target="REFL_TMP_BLUR_A" mipLevel="3"/>
+      <ColourMask channels="RGB"  />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gCustomParamsVec4" a="0.0" b="2.0" c="0.0" d="0.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="FLAT2RT_COPY" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="REFL_TMP_BLUR_B" mipLevel="3"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_A" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.0" b="1.0" c="3.0" d="3.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="" mipLevel="3"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_B" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="3.0" d="3.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="Blur_Mip_4" enabled="true">
+      <BeginTarget target="REFL_TMP_BLUR_A" mipLevel="4"/>
+      <ColourMask channels="RGB"  />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gCustomParamsVec4" a="0.0" b="3.0" c="0.0" d="0.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="FLAT2RT_COPY" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="REFL_TMP_BLUR_B" mipLevel="4"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_A" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.0" b="1.0" c="3.0" d="4.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="" mipLevel="4"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_B" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="3.0" d="4.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="Blur_Mip_5" enabled="true">
+      <BeginTarget target="REFL_TMP_BLUR_A" mipLevel="5"/>
+      <ColourMask channels="RGB"  />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gCustomParamsVec4" a="0.0" b="4.0" c="0.0" d="0.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="FLAT2RT_COPY" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="REFL_TMP_BLUR_B" mipLevel="5"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_A" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.0" b="1.0" c="3.0" d="5.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="" mipLevel="5"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_B" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="3.0" d="5.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="Blur_Mip_6" enabled="true">
+      <BeginTarget target="REFL_TMP_BLUR_A" mipLevel="6"/>
+      <ColourMask channels="RGB"  />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gCustomParamsVec4" a="0.0" b="5.0" c="0.0" d="0.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="FLAT2RT_COPY" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="REFL_TMP_BLUR_B" mipLevel="6"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_A" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.0" b="1.0" c="3.0" d="6.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="" mipLevel="6"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_B" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="3.0" d="6.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="Blur_Mip_7" enabled="true">
+      <BeginTarget target="REFL_TMP_BLUR_A" mipLevel="7"/>
+      <ColourMask channels="RGB"  />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gCustomParamsVec4" a="0.0" b="6.0" c="0.0" d="0.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="FLAT2RT_COPY" />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="REFL_TMP_BLUR_B" mipLevel="7"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_A" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="0.0" b="1.0" c="3.0" d="7.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="" mipLevel="7"/>
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"  sourceRT="REFL_TMP_BLUR_B" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <SetUniform material="materials/PostProcess.material.mbin" uniform="gBlurParamsVec4" a="1.0" b="0.0" c="3.0" d="7.0"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="GUASS_5_FLAT_CUBEMAP" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="Reset States">
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+  </CommandQueue>
+
+</Pipeline>
