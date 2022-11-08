@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.5.0)-->
+<Data template="TkLSystemRulesData">
+  <Property name="GlobalRestriction">
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nRooms" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_DOORWAYINTERIOR.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="2" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nExteriorDoors" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/DOORMODULE_EXTERIOR.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nTerminals" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/TERMINAL/TERMINAL_SHOP.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="0" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nWall_Doorway" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_DOORWAY.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nExtProps1" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_EXT1.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nExtProps2" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_EXT2.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nExtProps3" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_EXT3.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="GlobalVariation" />
+  <Property name="Rules">
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Floor_Ground" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/GROUNDFLOORMODULE_BASE.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALL_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_CAPBASE.SCENE.MBIN" />
+              <Property name="Probability" value="30" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_CAPBUNK.SCENE.MBIN" />
+              <Property name="Probability" value="30" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_DOORWAY.SCENE.MBIN" />
+              <Property name="Probability" value="0" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_DOORWAYINTERIOR.SCENE.MBIN" />
+              <Property name="Probability" value="40" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="ROOF_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/ROOFMODULE_BASE.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="EXTPROPS_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_EXT1.SCENE.MBIN" />
+              <Property name="Probability" value="35" />
+              <Property name="Restrictions">
+                <Property value="TkLSystemRestrictionData.xml">
+                  <Property name="Amount" value="1" />
+                  <Property name="Restriction" value="NoMoreThan" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_EXT2.SCENE.MBIN" />
+              <Property name="Probability" value="35" />
+              <Property name="Restrictions">
+                <Property value="TkLSystemRestrictionData.xml">
+                  <Property name="Amount" value="1" />
+                  <Property name="Restriction" value="NoMoreThan" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_EXT3.SCENE.MBIN" />
+              <Property name="Probability" value="30" />
+              <Property name="Restrictions">
+                <Property value="TkLSystemRestrictionData.xml">
+                  <Property name="Amount" value="1" />
+                  <Property name="Restriction" value="NoMoreThan" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Wall_Doorway" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_DOORWAY.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="DOOR_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/DOORMODULE_ANIMATEDDOOR.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="DOORWAY_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/DOORMODULE_EXTERIOR.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Wall_CapBase" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_CAPBASE.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLATTATCH_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/CAPMODULE_SILO.SCENE.MBIN" />
+              <Property name="Probability" value="50" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/CAPMODULE_TANK.SCENE.MBIN" />
+              <Property name="Probability" value="50" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="TERMINAL_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/TERMINAL/TERMINAL_SHOP.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Wall_CapBunk" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_CAPBUNK.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLATTATCH_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/CAPMODULE_SILO.SCENE.MBIN" />
+              <Property name="Probability" value="50" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/CAPMODULE_TANK.SCENE.MBIN" />
+              <Property name="Probability" value="50" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Wall_DoorwayIn" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_DOORWAYIN.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALL_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/GROUNDFLOORMODULE_BASE.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="DOOR_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/DOORMODULE_LOCKEDV2.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="DoorwayInterior" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_DOORWAYINTERIOR.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="DOORWAY_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/CAPMODULE_LANDINGPAD.SCENE.MBIN" />
+              <Property name="Probability" value="50" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/CORRIDORMODULE_STRAIGHTINTERIOR.SCENE.MBIN" />
+              <Property name="Probability" value="50" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="CorridorInterior" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/CORRIDORMODULE_STRAIGHTINTERIOR.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="DOORWAY_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_DOORWAYIN.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="LandingPad" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/CAPMODULE_LANDINGPAD.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="DOOR_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/DOORMODULE_ANIMATEDDOOR.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_NPC" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_BASE1.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_Base2" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_BASE2.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_Base2NPC" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_BASE2NPC.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_Base3" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_BASE3.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_Base3NPC" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_BASE3NPC.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Roof_Base" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/ROOFMODULE_BASE.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="LAYOUT_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_HYDROPONICSTHEMEA.SCENE.MBIN" />
+              <Property name="Probability" value="15" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_HYDROPONICSTHEMEB.SCENE.MBIN" />
+              <Property name="Probability" value="15" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_STORAGETHEME.SCENE.MBIN" />
+              <Property name="Probability" value="14" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_SERVERROOMTHEME.SCENE.MBIN" />
+              <Property name="Probability" value="14" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_HYDROPONICSGARDENB.SCENE.MBIN" />
+              <Property name="Probability" value="14" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_WORKSHOPA.SCENE.MBIN" />
+              <Property name="Probability" value="14" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_HOLOGRAMA.SCENE.MBIN" />
+              <Property name="Probability" value="14" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_HydroponicsThemeA" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_HYDROPONICSTHEMEA.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_HydroponicsThemeB" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_HYDROPONICSTHEMEB.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_StorageTheme" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_STORAGETHEME.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_MedBayTheme" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_MEDBAYTHEME.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_ServerRoom" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_SERVERROOMTHEME.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_StorageArmoury" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_ARMOURY.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_Lab" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_LAB.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_Armoury" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_ARMOURY.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="DoorDecoration" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/DOORMODULE_EXTERIOR.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="DOORDEC_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_DOOR1.SCENE.MBIN" />
+              <Property name="Probability" value="35" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_DOOR2.SCENE.MBIN" />
+              <Property name="Probability" value="35" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_DOOR3.SCENE.MBIN" />
+              <Property name="Probability" value="30" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_HydroponicsGardenB" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_HYDROPONICSGARDENB.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_WorkshopA" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_WORKSHOPA.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_HologramA" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_HOLOGRAMA.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_Shop1" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUTSHOP_1.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_Shop2" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUTSHOP_2.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_BarA" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_BARA.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_LeftRoomB" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_LEFTROOMB.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Layout_LeftRoomC" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_LEFTROOMC.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLHIGHPROP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/WALLPROPHIGHLINK.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+  </Property>
+  <Property name="Templates">
+    <Property value="TkLSystemRuleTemplate.xml">
+      <Property name="Name" value="BASE" />
+      <Property name="LSystem" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/LSYSTEM/BASECOMMON.LSYSTEM.MBIN" />
+    </Property>
+  </Property>
+</Data>
