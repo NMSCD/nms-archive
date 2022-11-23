@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.6.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="TriggerVolumeType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="Floor" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollide" value="False" />
+      <Property name="NoPlayerCollide" value="False" />
+      <Property name="CameraInvisible" value="False" />
+      <Property name="InvisibleForInteraction" value="False" />
+      <Property name="AllowTeleporter" value="False" />
+      <Property name="BlockTeleporter" value="False" />
+      <Property name="DisableGravity" value="False" />
+      <Property name="SpinOnCreate" value="0" />
+      <Property name="UseBasePartOptimisation" value="False" />
+      <Property name="IsTransporter" value="False" />
+    </Property>
+    <Property value="GcSimpleInteractionComponentData.xml">
+      <Property name="SimpleInteractionType" value="Interact" />
+      <Property name="InteractDistance" value="0" />
+      <Property name="Use2dInteractDistance" value="False" />
+      <Property name="Id" value="" />
+      <Property name="Rarity" value="GcRarity.xml">
+        <Property name="Rarity" value="Common" />
+      </Property>
+      <Property name="Size" value="GcSizeIndicator.xml">
+        <Property name="SizeIndicator" value="Medium" />
+      </Property>
+      <Property name="TriggerAction" value="UNLOCKED" />
+      <Property name="TriggerActionOnPrepare" value="" />
+      <Property name="TriggerActionToggle" value="" />
+      <Property name="BroadcastTriggerAction" value="True" />
+      <Property name="Delay" value="0" />
+      <Property name="HideContents" value="True" />
+      <Property name="InteractIsCrime" value="False" />
+      <Property name="InteractFiendCrimeType" value="GcFiendCrime.xml">
+        <Property name="FiendCrime" value="None" />
+      </Property>
+      <Property name="InteractFiendCrimeChance" value="1" />
+      <Property name="InteractCrimeLevel" value="0" />
+      <Property name="NotifyEncounter" value="False" />
+      <Property name="ActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="LOCKKEYCARD" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="1" />
+        <Property name="Repeat" value="False" />
+        <Property name="RequiredTech" value="" />
+        <Property name="OnlyChargeDuringSeasons" />
+      </Property>
+      <Property name="StatToTrack" value="GcStatsEnum.xml">
+        <Property name="StatEnum" value="None" />
+      </Property>
+      <Property name="StartsBuried" value="False" />
+      <Property name="MustBeVisibleToInteract" value="False" />
+      <Property name="NeedsStorm" value="False" />
+      <Property name="Name" value="#Locked Door" />
+      <Property name="VRInteractMessage" value="" />
+      <Property name="TerminalHeading" value="" />
+      <Property name="TerminalMessage" value="" />
+      <Property name="ScanType" value="BINOC_INTERACTABLE" />
+      <Property name="ScanData" value="" />
+      <Property name="ScanIcon" value="GcDiscoveryType.xml">
+        <Property name="DiscoveryType" value="Unknown" />
+      </Property>
+      <Property name="ActivateLocatorsFromRarity" value="False" />
+      <Property name="RarityLocators">
+        <Property name="Common" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="Uncommon" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="Rare" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="BaseBuildingTriggerActions" />
+      <Property name="RewardOverrideTable" />
+      <Property name="PersistencyBufferOverride" />
+      <Property name="UsePersonalPersistentBuffer" value="False" />
+      <Property name="ReseedOnRewardSuccess" value="False" />
+      <Property name="CanCollectInMech" value="False" />
+    </Property>
+    <Property value="TkSketchComponentData.xml">
+      <Property name="GraphPosX" value="0" />
+      <Property name="GraphPosY" value="0" />
+      <Property name="GraphZoom" value="1" />
+      <Property name="UpdateRateMultiplier" value="1" />
+      <Property name="Nodes">
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="OnComponentEvent" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="0" />
+          <Property name="PositionX" value="137" />
+          <Property name="PositionY" value="82" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections">
+                <Property value="1" />
+                <Property value="2" />
+              </Property>
+            </Property>
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections" />
+            </Property>
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections" />
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="118" />
+            <Property value="238" />
+            <Property value="10" />
+            <Property value="68" />
+            <Property value="255" />
+            <Property value="33" />
+            <Property value="142" />
+            <Property value="74" />
+            <Property value="73" />
+            <Property value="110" />
+            <Property value="116" />
+            <Property value="101" />
+            <Property value="114" />
+            <Property value="97" />
+            <Property value="99" />
+            <Property value="116" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="160" />
+            <Property value="18" />
+            <Property value="233" />
+            <Property value="141" />
+            <Property value="52" />
+            <Property value="2" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="168" />
+            <Property value="18" />
+            <Property value="233" />
+            <Property value="141" />
+            <Property value="52" />
+            <Property value="2" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="168" />
+            <Property value="18" />
+            <Property value="233" />
+            <Property value="141" />
+            <Property value="52" />
+            <Property value="2" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+          </Property>
+        </Property>
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="PlayAnim" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="0" />
+          <Property name="PositionX" value="615" />
+          <Property name="PositionY" value="196" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections" />
+            </Property>
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections" />
+            </Property>
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections" />
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="79" />
+            <Property value="80" />
+            <Property value="69" />
+            <Property value="78" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+          </Property>
+        </Property>
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="SetNodeActive" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="0" />
+          <Property name="PositionX" value="614" />
+          <Property name="PositionY" value="294" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections" />
+            </Property>
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections" />
+            </Property>
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections" />
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="73" />
+            <Property value="110" />
+            <Property value="116" />
+            <Property value="101" />
+            <Property value="114" />
+            <Property value="97" />
+            <Property value="99" />
+            <Property value="116" />
+            <Property value="105" />
+            <Property value="111" />
+            <Property value="110" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>
