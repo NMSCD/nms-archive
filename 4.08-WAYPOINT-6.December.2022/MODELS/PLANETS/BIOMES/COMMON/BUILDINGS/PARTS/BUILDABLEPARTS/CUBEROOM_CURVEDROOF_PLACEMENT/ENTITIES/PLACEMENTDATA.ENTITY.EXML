@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.6.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="TriggerVolumeType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="Floor" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollide" value="False" />
+      <Property name="NoPlayerCollide" value="False" />
+      <Property name="CameraInvisible" value="False" />
+      <Property name="InvisibleForInteraction" value="False" />
+      <Property name="AllowTeleporter" value="False" />
+      <Property name="BlockTeleporter" value="False" />
+      <Property name="DisableGravity" value="False" />
+      <Property name="SpinOnCreate" value="0" />
+      <Property name="UseBasePartOptimisation" value="False" />
+      <Property name="IsTransporter" value="False" />
+    </Property>
+    <Property value="GcBasePlacementComponentData.xml">
+      <Property name="Rules">
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Floor" />
+              <Property name="OutSocket" value="ConnectorRoof_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_RoofFloor_" />
+          <Property name="PartID" value="_CUBEROOMLADDERHATCH" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions" />
+          <Property name="PositionLocator" value="" />
+          <Property name="PartID" value="_CURVEDCUBEROOF" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcSnapPointCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Floor" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="NotSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+            </Property>
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Floor" />
+              <Property name="OutSocket" value="CubeFrameRoof_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_Floor_" />
+          <Property name="PartID" value="_CUBEROOM_FLOOR" />
+          <Property name="ORConditions" value="True" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Left" />
+              <Property name="OutSocket" value="Corridor_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallLeft_" />
+          <Property name="PartID" value="_CUBEROOM_DOORHATCH" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Right" />
+              <Property name="OutSocket" value="Corridor_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallRight_" />
+          <Property name="PartID" value="_CUBEROOM_DOORHATCH" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Back" />
+              <Property name="OutSocket" value="Corridor_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallBack_" />
+          <Property name="PartID" value="_CUBEROOM_DOORHATCH" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Left" />
+              <Property name="OutSocket" value="DoorInt_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallLeft_" />
+          <Property name="PartID" value="_CUBEROOM_DOORHATCH" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Right" />
+              <Property name="OutSocket" value="DoorInt_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallRight_" />
+          <Property name="PartID" value="_CUBEROOM_DOORHATCH" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Back" />
+              <Property name="OutSocket" value="DoorInt_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallBack_" />
+          <Property name="PartID" value="_CUBEROOM_DOORHATCH" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcSnapPointCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Left" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="NotSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallLeft_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_LEFTWALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcSnapPointCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Right" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="NotSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallRight_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_RIGHTWALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcSnapPointCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Back" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="NotSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallBack_" />
+          <Property name="PartID" value="_CUBEROOM_WALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Left" />
+              <Property name="OutSocket" value="CubeRoom_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallLeft_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_CONNECTORLEFT" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Right" />
+              <Property name="OutSocket" value="CubeRoom_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallRight_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_CONNECTORRIGHT" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Left" />
+              <Property name="OutSocket" value="InfraLadder_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallLeft_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_LEFTWALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Right" />
+              <Property name="OutSocket" value="InfraLadder_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallRight_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_RIGHTWALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Back" />
+              <Property name="OutSocket" value="InfraLadder_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallBack_" />
+          <Property name="PartID" value="_CUBEROOM_WALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Left" />
+              <Property name="OutSocket" value="CubeFrame_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallLeft_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_LEFTWALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Right" />
+              <Property name="OutSocket" value="CubeFrame_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallRight_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_RIGHTWALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Back" />
+              <Property name="OutSocket" value="CubeFrame_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallBack_" />
+          <Property name="PartID" value="_CUBEROOM_WALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Left" />
+              <Property name="OutSocket" value="Workstation_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallLeft_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_LEFTWALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Right" />
+              <Property name="OutSocket" value="Workstation_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallRight_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_RIGHTWALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Back" />
+              <Property name="OutSocket" value="Workstation_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallBack_" />
+          <Property name="PartID" value="_CUBEROOM_WALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Left" />
+              <Property name="OutSocket" value="Terminal_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallLeft_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_LEFTWALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Right" />
+              <Property name="OutSocket" value="Terminal_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallRight_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_RIGHTWALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Back" />
+              <Property name="OutSocket" value="Terminal_Out_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallBack_" />
+          <Property name="PartID" value="_CUBEROOM_WALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Left" />
+              <Property name="OutSocket" value="Pylon_Out9_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallLeft_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_LEFTWALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Right" />
+              <Property name="OutSocket" value="Pylon_Out9_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallRight_" />
+          <Property name="PartID" value="_CURVEDCUBEROOF_RIGHTWALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+        <Property value="GcBasePlacementRule.xml">
+          <Property name="Conditions">
+            <Property value="GcOutSnapSocketCondition.xml">
+              <Property name="SnapPoint" value="SnapPoint_Back" />
+              <Property name="OutSocket" value="Pylon_Out9_" />
+              <Property name="SnapState" value="GcBaseSnapState.xml">
+                <Property name="SnapState" value="IsSnapped" />
+              </Property>
+              <Property name="ObjectId" value="" />
+              <Property name="SnapPointIndex" value="0" />
+              <Property name="OutSocketIndex" value="0" />
+            </Property>
+          </Property>
+          <Property name="PositionLocator" value="Part_WallBack_" />
+          <Property name="PartID" value="_CUBEROOM_WALL" />
+          <Property name="ORConditions" value="False" />
+          <Property name="TwinCriteria" value="None" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>
