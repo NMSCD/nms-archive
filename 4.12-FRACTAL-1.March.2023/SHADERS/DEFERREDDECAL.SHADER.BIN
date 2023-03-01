@@ -1,0 +1,155 @@
+[[FX]]
+
+// Samplers
+
+sampler gDiffuseMap = sampler_state
+{
+	TexUnit = 0;
+};
+
+sampler gCausticMap = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 1;
+};
+
+
+sampler gCausticOffsetMap = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 2;
+};
+
+sampler gNormalMap = sampler_state
+{
+	TexUnit = 3;
+};
+
+sampler gDiffuse2Map = sampler_state
+{
+	TexUnit = 4;
+};
+
+//sampler gRefractionMap = sampler_state
+//{
+//	TexUnit = 5;
+//};
+
+sampler gMasksMap = sampler_state
+{
+	TexUnit = 6;
+};
+
+sampler gDetailDiffuseMap = sampler_state
+{
+	TexUnit = 7;
+};
+
+sampler gDetailNormalMap = sampler_state
+{
+	TexUnit = 8;
+};
+
+sampler gDualPMapFront = sampler_state
+{
+    TexUnit = 9;
+};
+
+sampler gDualPMapBack = sampler_state
+{
+    TexUnit = 10;
+};
+
+sampler gFadeNoiseMap = sampler_state
+{
+	DefaultTexture = SHADER/FADENOISE.DDS;
+	TexUnit = 13;
+    Address = Wrap;
+};
+
+sampler gBufferMap = sampler_state
+{
+	TexUnit = 5;
+    Address = Clamp;
+};
+
+
+sampler gCloudShadowMap = sampler_state
+{
+    TexUnit = 14;
+};
+
+sampler gShadowMap = sampler_state
+{
+    TexUnit = 15;
+};
+
+
+// Uniforms
+
+// Planet
+float4 gPlanetPositionVec4				= {0.0, -1204.0, 0.0, 1204.0};
+
+// Lighting
+float4 gMaterialParamsVec4              = {0.9, 0.5, 0.0, 0.5};
+float4 gMaterialSFXVec4                 = { 0.0, 0.0, 0.0, 0.0 };
+float4 gMaterialSFXColVec4              = { 0.0, 0.0, 0.0, 0.0 };
+
+// Texturing
+float4 gMaterialColourVec4              = {1.0, 1.0, 1.0, 1.0};
+float4 gUVScrollStepVec4                = {0.0, 0.0, 0.0, 0.0};
+float4 gCustomParams02Vec4              = {0.0, 1.0, 1.0, 0.0};
+float4 gCustomParams01Vec4              = {0.0, 0.0, 0.0, 0.0};
+
+float4 gAlphaCutoutThresholdVec4        = {0.45, 0.5, 0.0, 0.0};
+
+
+
+context LIT_DEFER
+{
+	VertexShader = compile GLSL VS_DEFER;
+	PixelShader  = compile GLSL FS_LIT_DEFER;
+}
+
+context LIT_DEFER_INSTANCE
+{
+	VertexShader = compile GLSL VS_DEFER_INSTANCE;
+	PixelShader  = compile GLSL FS_LIT_DEFER_INSTANCE;
+
+	Instanced = true;
+}
+
+
+[[VS_DEFER]]
+// =================================================================================================
+#define D_DEFER
+#define D_DEFERRED_DECAL
+
+#include "UberVertex.shader.h"
+
+
+[[FS_LIT_DEFER]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_DEFERRED_DECAL
+
+#include "UberFragment.shader.h"
+
+[[VS_DEFER_INSTANCE]]
+// =================================================================================================
+#define D_DEFER
+#define D_INSTANCE
+#define D_DEFERRED_DECAL
+
+#include "UberVertex.shader.h"
+
+[[FS_LIT_DEFER_INSTANCE]]
+// =================================================================================================
+#define D_DEFER
+#define D_INSTANCE
+#define D_ATTRIBUTES
+#define D_DEFERRED_DECAL
+
+#include "UberFragment.shader.h"
+
