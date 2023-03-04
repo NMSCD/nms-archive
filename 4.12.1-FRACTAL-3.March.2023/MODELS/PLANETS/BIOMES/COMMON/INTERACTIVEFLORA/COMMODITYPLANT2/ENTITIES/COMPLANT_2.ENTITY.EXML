@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.10.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcScannableComponentData.xml">
+      <Property name="ScanRange" value="300" />
+      <Property name="ScanName" value="UI_COMM_PLANT_NAME" />
+      <Property name="ScanTime" value="30" />
+      <Property name="CompassRangeMultiplier" value="0.25" />
+      <Property name="AlwaysShowRange" value="0" />
+      <Property name="CanTagIcon" value="True" />
+      <Property name="ClearTagOnArrival" value="True" />
+      <Property name="DisableIfBuildingPart" value="False" />
+      <Property name="DisableIfInBase" value="False" />
+      <Property name="UseModelNode" value="True" />
+      <Property name="Icon" value="GcScannerIconTypes.xml">
+        <Property name="ScanIconType" value="Sodium" />
+      </Property>
+      <Property name="ScannableType" value="Scanner" />
+      <Property name="IsPlacedMarker" value="False" />
+      <Property name="ShowInFreighterBranchRoom" value="False" />
+      <Property name="TellPlayerIfFreighterObjectUsed" value="False" />
+      <Property name="FreighterObjectAlreadyUsedLocID" value="UI_ABAND_LOG_READ" />
+      <Property name="AllowedToMerge" value="True" />
+      <Property name="MarkerActiveWithNodeInactive" value="False" />
+      <Property name="MissionSurveyId" value="" />
+      <Property name="MinDisplayDistanceOverride" value="-1" />
+    </Property>
+    <Property value="GcSimpleInteractionComponentData.xml">
+      <Property name="SimpleInteractionType" value="GenericReward" />
+      <Property name="InteractDistance" value="0" />
+      <Property name="Use2dInteractDistance" value="False" />
+      <Property name="Id" value="PLANT_COMMODITY" />
+      <Property name="Rarity" value="GcRarity.xml">
+        <Property name="Rarity" value="Common" />
+      </Property>
+      <Property name="Size" value="GcSizeIndicator.xml">
+        <Property name="SizeIndicator" value="Small" />
+      </Property>
+      <Property name="TriggerAction" value="INACTIVE" />
+      <Property name="TriggerActionOnPrepare" value="" />
+      <Property name="TriggerActionToggle" value="" />
+      <Property name="BroadcastTriggerAction" value="True" />
+      <Property name="Delay" value="0" />
+      <Property name="HideContents" value="False" />
+      <Property name="InteractIsCrime" value="False" />
+      <Property name="InteractFiendCrimeType" value="GcFiendCrime.xml">
+        <Property name="FiendCrime" value="None" />
+      </Property>
+      <Property name="InteractFiendCrimeChance" value="1" />
+      <Property name="InteractCrimeLevel" value="0" />
+      <Property name="NotifyEncounter" value="False" />
+      <Property name="ActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="0" />
+        <Property name="Repeat" value="False" />
+        <Property name="RequiredTech" value="" />
+        <Property name="OnlyChargeDuringSeasons" />
+      </Property>
+      <Property name="StatToTrack" value="GcStatsEnum.xml">
+        <Property name="StatEnum" value="None" />
+      </Property>
+      <Property name="StartsBuried" value="False" />
+      <Property name="MustBeVisibleToInteract" value="False" />
+      <Property name="NeedsStorm" value="False" />
+      <Property name="Name" value="UI_COMM_PLANT_NAME" />
+      <Property name="VRInteractMessage" value="" />
+      <Property name="TerminalHeading" value="" />
+      <Property name="TerminalMessage" value="" />
+      <Property name="ScanType" value="BINOC_INTERACTABLE" />
+      <Property name="ScanData" value="" />
+      <Property name="ScanIcon" value="GcDiscoveryType.xml">
+        <Property name="DiscoveryType" value="Unknown" />
+      </Property>
+      <Property name="ActivateLocatorsFromRarity" value="False" />
+      <Property name="RarityLocators">
+        <Property name="Common" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="Uncommon" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="Rare" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="BaseBuildingTriggerActions" />
+      <Property name="RewardOverrideTable" />
+      <Property name="PersistencyBufferOverride" />
+      <Property name="UsePersonalPersistentBuffer" value="False" />
+      <Property name="ReseedOnRewardSuccess" value="False" />
+      <Property name="CanCollectInMech" value="False" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="TriggerVolumeType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="Floor" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollide" value="True" />
+      <Property name="NoPlayerCollide" value="False" />
+      <Property name="CameraInvisible" value="False" />
+      <Property name="InvisibleForInteraction" value="False" />
+      <Property name="AllowTeleporter" value="False" />
+      <Property name="BlockTeleporter" value="False" />
+      <Property name="DisableGravity" value="False" />
+      <Property name="SpinOnCreate" value="0" />
+      <Property name="UseBasePartOptimisation" value="False" />
+      <Property name="IsTransporter" value="False" />
+    </Property>
+    <Property value="GcEncyclopediaComponentData.xml">
+      <Property name="Type" value="GcDiscoveryType.xml">
+        <Property name="DiscoveryType" value="Flora" />
+      </Property>
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="IDLE" />
+        <Property name="AdditiveBaseAnim" value="" />
+        <Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/INTERACTIVEFLORA/COMMODITYPLANT.ANIM.MBIN" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="GameData" value="TkAnimationGameData.xml">
+          <Property name="RootMotionEnabled" value="False" />
+          <Property name="BlockPlayerMovement" value="False" />
+          <Property name="BlockPlayerWeapon" value="Unblocked" />
+        </Property>
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="Priority" value="0" />
+        <Property name="OffsetMin" value="0" />
+        <Property name="OffsetMax" value="0" />
+        <Property name="Delay" value="0" />
+        <Property name="Speed" value="1" />
+        <Property name="ActionStartFrame" value="0" />
+        <Property name="ActionFrame" value="-1" />
+        <Property name="AdditiveBaseFrame" value="0" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="CreatureSize" value="AllSizes" />
+        <Property name="Additive" value="False" />
+        <Property name="Mirrored" value="False" />
+        <Property name="Active" value="True" />
+        <Property name="Has30HzFrames" value="False" />
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="POP" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/INTERACTIVEFLORA/ANIMS/COMMODITYPLANT2_OPEN.ANIM.MBIN" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="200" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="AnimType" value="OneShotBlendable" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="Has30HzFrames" value="False" />
+        </Property>
+      </Property>
+      <Property name="Trees" />
+      <Property name="NetSyncAnimations" value="False" />
+      <Property name="JointLODOverrides" />
+    </Property>
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="BOOT" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="INACTIVE" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAudioAction.xml">
+                  <Property name="Sound" value="UI_Pickup_NitrogenPlant" />
+                  <Property name="UseOcclusion" value="False" />
+                  <Property name="OcclusionRadius" value="2" />
+                </Property>
+                <Property value="GcPlayAnimAction.xml">
+                  <Property name="Anim" value="POP" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="Flower_1" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="ComPlantLight" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="10" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="Root" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+      <Property name="ResetShotTimeOnStateChange" value="False" />
+      <Property name="LinkStateToBaseGrid" value="False" />
+    </Property>
+    <Property value="TkSketchComponentData.xml">
+      <Property name="GraphPosX" value="0" />
+      <Property name="GraphPosY" value="0" />
+      <Property name="GraphZoom" value="1" />
+      <Property name="UpdateRateMultiplier" value="1" />
+      <Property name="Nodes">
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="OnAnimFrame" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="0" />
+          <Property name="PositionX" value="100" />
+          <Property name="PositionY" value="200" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections">
+                <Property value="1" />
+              </Property>
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="1" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="128" />
+            <Property value="80" />
+            <Property value="79" />
+            <Property value="80" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+          </Property>
+        </Property>
+        <Property value="TkSketchNodeData.xml">
+          <Property name="TypeName" value="SpawnParticles" />
+          <Property name="TriggerType" value="RunParallel" />
+          <Property name="SelectedVariant" value="0" />
+          <Property name="PositionX" value="451" />
+          <Property name="PositionY" value="311" />
+          <Property name="Connections">
+            <Property value="TkSketchNodeConnections.xml">
+              <Property name="Connections" />
+            </Property>
+          </Property>
+          <Property name="CustomData">
+            <Property value="80" />
+            <Property value="76" />
+            <Property value="65" />
+            <Property value="78" />
+            <Property value="84" />
+            <Property value="80" />
+            <Property value="79" />
+            <Property value="80" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="72" />
+            <Property value="97" />
+            <Property value="114" />
+            <Property value="118" />
+            <Property value="101" />
+            <Property value="115" />
+            <Property value="116" />
+            <Property value="86" />
+            <Property value="70" />
+            <Property value="88" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+            <Property value="0" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>
