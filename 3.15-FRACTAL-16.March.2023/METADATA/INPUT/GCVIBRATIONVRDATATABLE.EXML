@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.12.1)-->
+<Data template="GcVibrationDataTable">
+  <Property name="Data">
+    <Property value="GcVibrationChannelData.xml">
+      <Property name="Id" value="MINING" />
+      <Property name="Data">
+        <Property name="Left" value="GcVibrationData.xml">
+          <Property name="OutputStrength" value="0" />
+          <Property name="OutputStrengthCurve" value="TkCurveType.xml">
+            <Property name="Curve" value="Linear" />
+          </Property>
+          <Property name="DecayTime" value="1" />
+          <Property name="Variance" value="0" />
+          <Property name="VarianceContrast" value="1" />
+          <Property name="SmoothTime" value="0" />
+        </Property>
+        <Property name="Right" value="GcVibrationData.xml">
+          <Property name="OutputStrength" value="0.1" />
+          <Property name="OutputStrengthCurve" value="TkCurveType.xml">
+            <Property name="Curve" value="EaseOutElastic" />
+          </Property>
+          <Property name="DecayTime" value="1" />
+          <Property name="Variance" value="0" />
+          <Property name="VarianceContrast" value="0" />
+          <Property name="SmoothTime" value="0" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+</Data>
