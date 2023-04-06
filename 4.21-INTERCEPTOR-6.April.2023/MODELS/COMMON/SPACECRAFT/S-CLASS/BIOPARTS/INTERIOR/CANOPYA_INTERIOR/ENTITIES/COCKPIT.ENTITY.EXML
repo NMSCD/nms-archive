@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.20.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcGrabbableComponentData.xml">
+      <Property name="GrabbableDataArray">
+        <Property value="GcGrabbableData.xml">
+          <Property name="LocatorName" value="RHandRailPosition" />
+          <Property name="GrabRadius" value="0.2" />
+          <Property name="AttachTime" value="0.1" />
+          <Property name="ReleaseRadius" value="0.25" />
+          <Property name="DetachTime" value="0.1" />
+          <Property name="Hand" value="GcHand.xml">
+            <Property name="Hand" value="Right" />
+          </Property>
+          <Property name="RotationLimits" value="Vector2f.xml">
+            <Property name="x" value="-90" />
+            <Property name="y" value="90" />
+          </Property>
+          <Property name="AllowOtherWayUp" value="True" />
+          <Property name="AutoGrab" value="False" />
+          <Property name="ToggleGrabTime" value="0" />
+          <Property name="GrabType" value="EjectHandle" />
+          <Property name="HandPose" value="HND_CPIT_EJCT_R" />
+          <Property name="MovementStartLocator" value="RHandRailStartPos" />
+          <Property name="MovementEndLocator" value="RHandRailEndPos" />
+          <Property name="MovementMaxSpeed" value="0" />
+          <Property name="MovementReturnSpeed" value="0.25" />
+          <Property name="MovementRequiredForActivation" value="0.975" />
+        </Property>
+        <Property value="GcGrabbableData.xml">
+          <Property name="LocatorName" value="LHandRailPosition" />
+          <Property name="GrabRadius" value="0.2" />
+          <Property name="AttachTime" value="0.1" />
+          <Property name="ReleaseRadius" value="0.25" />
+          <Property name="DetachTime" value="0.1" />
+          <Property name="Hand" value="GcHand.xml">
+            <Property name="Hand" value="Left" />
+          </Property>
+          <Property name="RotationLimits" value="Vector2f.xml">
+            <Property name="x" value="-90" />
+            <Property name="y" value="90" />
+          </Property>
+          <Property name="AllowOtherWayUp" value="True" />
+          <Property name="AutoGrab" value="False" />
+          <Property name="ToggleGrabTime" value="0" />
+          <Property name="GrabType" value="EjectHandle" />
+          <Property name="HandPose" value="HND_CPIT_EJCT_L" />
+          <Property name="MovementStartLocator" value="LHandRailStartPos" />
+          <Property name="MovementEndLocator" value="LHandRailEndPos" />
+          <Property name="MovementMaxSpeed" value="0" />
+          <Property name="MovementReturnSpeed" value="0.25" />
+          <Property name="MovementRequiredForActivation" value="0.975" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="EXIT" />
+        <Property name="AdditiveBaseAnim" value="" />
+        <Property name="Filename" value="MODELS/COMMON/SPACECRAFT/SCIENTIFIC/INTERIORS/CANOPYA_INTERIOR/ANIMS/CANOPYA_EXIT.ANIM.MBIN" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="GameData" value="TkAnimationGameData.xml">
+          <Property name="RootMotionEnabled" value="False" />
+          <Property name="BlockPlayerMovement" value="False" />
+          <Property name="BlockPlayerWeapon" value="Unblocked" />
+        </Property>
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="Priority" value="0" />
+        <Property name="OffsetMin" value="0" />
+        <Property name="OffsetMax" value="0" />
+        <Property name="Delay" value="0" />
+        <Property name="Speed" value="1" />
+        <Property name="ActionStartFrame" value="0" />
+        <Property name="ActionFrame" value="-1" />
+        <Property name="AdditiveBaseFrame" value="0" />
+        <Property name="AnimType" value="Control" />
+        <Property name="CreatureSize" value="AllSizes" />
+        <Property name="Additive" value="False" />
+        <Property name="Mirrored" value="False" />
+        <Property name="Active" value="False" />
+        <Property name="Has30HzFrames" value="False" />
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="EJECT" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="Filename" value="MODELS/COMMON/SPACECRAFT/SCIENTIFIC/INTERIORS/CANOPYA_INTERIOR/ANIMS/CANOPYA_EXIT.ANIM.MBIN" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="AnimType" value="Control" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="Has30HzFrames" value="False" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="ENTER" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="Filename" value="MODELS/COMMON/SPACECRAFT/S-CLASS/BIOPARTS/INTERIOR/ANIMS/CANOPYA_ENTER.ANIM.MBIN" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="0" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="AnimType" value="Control" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="Has30HzFrames" value="False" />
+        </Property>
+      </Property>
+      <Property name="Trees" />
+      <Property name="NetSyncAnimations" value="False" />
+      <Property name="JointLODOverrides" />
+    </Property>
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="BOOT" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcAnimFrameEvent.xml">
+                <Property name="Anim" value="ENTER" />
+                <Property name="FrameStart" value="119" />
+                <Property name="StartFromEnd" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="Membrane" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="REBOOT" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcPlayerNearbyEvent.xml">
+                <Property name="RequirePlayerAction" value="InShip" />
+                <Property name="Distance" value="1" />
+                <Property name="Angle" value="360" />
+                <Property name="AnglePlayerRelative" value="False" />
+                <Property name="AngleOffset" value="0" />
+                <Property name="AngleReflected" value="False" />
+                <Property name="AngleMinDistance" value="1" />
+                <Property name="DistanceCheckType" value="Radius" />
+                <Property name="Inverse" value="False" />
+                <Property name="OnlyForLocalPlayer" value="False" />
+                <Property name="IncludeAllPhysics" value="False" />
+                <Property name="IncludeMobileNPCs" value="False" />
+                <Property name="TeleporterCountsAsPlayer" value="True" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="TIMER" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="TIMER" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="2" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="Membrane" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="REBOOT" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="REBOOT" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcPlayerNearbyEvent.xml">
+                <Property name="RequirePlayerAction" value="None" />
+                <Property name="Distance" value="3" />
+                <Property name="Angle" value="360" />
+                <Property name="AnglePlayerRelative" value="False" />
+                <Property name="AngleOffset" value="0" />
+                <Property name="AngleReflected" value="False" />
+                <Property name="AngleMinDistance" value="1" />
+                <Property name="DistanceCheckType" value="Radius" />
+                <Property name="Inverse" value="True" />
+                <Property name="OnlyForLocalPlayer" value="False" />
+                <Property name="IncludeAllPhysics" value="False" />
+                <Property name="IncludeMobileNPCs" value="False" />
+                <Property name="TeleporterCountsAsPlayer" value="True" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Activate" />
+                  <Property name="Name" value="Membrane" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="BOOT" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+      <Property name="ResetShotTimeOnStateChange" value="False" />
+      <Property name="LinkStateToBaseGrid" value="False" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>

@@ -1,0 +1,1431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.20.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcInteractionComponentData.xml">
+      <Property name="InteractionAction" value="PressButton" />
+      <Property name="InteractionType" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="CustomiseFreighter" />
+      </Property>
+      <Property name="UseIntermediateUI" value="True" />
+      <Property name="Renderer" value="TkModelRendererData.xml">
+        <Property name="Camera" value="TkModelRendererCameraData.xml">
+          <Property name="Distance" value="3200" />
+          <Property name="Offset" value="Vector3f.xml">
+            <Property name="x" value="-150" />
+            <Property name="y" value="120" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="Roll" value="0" />
+          <Property name="Pitch" value="5" />
+          <Property name="Rotate" value="140" />
+          <Property name="LightPitch" value="45" />
+          <Property name="LightRotate" value="45" />
+          <Property name="Wander" value="TkCameraWanderData.xml">
+            <Property name="CamWander" value="True" />
+            <Property name="CamWanderPhase" value="0.1" />
+            <Property name="CamWanderAmplitude" value="0.5" />
+          </Property>
+        </Property>
+        <Property name="Fov" value="30" />
+        <Property name="AspectRatio" value="1.7777" />
+        <Property name="ThumbnailMode" value="None" />
+        <Property name="FocusType" value="ResourceBounds" />
+        <Property name="FocusLocator" value="" />
+        <Property name="FocusOffset" value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property name="FocusInterpTime" value="0" />
+        <Property name="BlendInTime" value="0.8" />
+        <Property name="BlendInOffset" value="0.8" />
+        <Property name="Anim" value="" />
+        <Property name="HeightOffset" value="0.005" />
+        <Property name="UsePlayerCameraInHmd" value="True" />
+        <Property name="AlignUIToCameraInHmd" value="False" />
+        <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+        <Property name="LookForFocusInMasterModel" value="False" />
+      </Property>
+      <Property name="RendererAlt" value="TkModelRendererData.xml">
+        <Property name="Camera" value="TkModelRendererCameraData.xml">
+          <Property name="Distance" value="2100" />
+          <Property name="Offset" value="Vector3f.xml">
+            <Property name="x" value="-300" />
+            <Property name="y" value="120" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="Roll" value="0" />
+          <Property name="Pitch" value="0" />
+          <Property name="Rotate" value="125" />
+          <Property name="LightPitch" value="45" />
+          <Property name="LightRotate" value="45" />
+          <Property name="Wander" value="TkCameraWanderData.xml">
+            <Property name="CamWander" value="True" />
+            <Property name="CamWanderPhase" value="0.1" />
+            <Property name="CamWanderAmplitude" value="0.5" />
+          </Property>
+        </Property>
+        <Property name="Fov" value="30" />
+        <Property name="AspectRatio" value="1.7777" />
+        <Property name="ThumbnailMode" value="None" />
+        <Property name="FocusType" value="ResourceBounds" />
+        <Property name="FocusLocator" value="" />
+        <Property name="FocusOffset" value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property name="FocusInterpTime" value="0" />
+        <Property name="BlendInTime" value="0.8" />
+        <Property name="BlendInOffset" value="0" />
+        <Property name="Anim" value="" />
+        <Property name="HeightOffset" value="0.005" />
+        <Property name="UsePlayerCameraInHmd" value="True" />
+        <Property name="AlignUIToCameraInHmd" value="False" />
+        <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+        <Property name="LookForFocusInMasterModel" value="False" />
+      </Property>
+      <Property name="Race" value="GcAlienRace.xml">
+        <Property name="AlienRace" value="None" />
+      </Property>
+      <Property name="AttractDistanceSq" value="9" />
+      <Property name="SecondaryMeshAlwaysVisible" value="False" />
+      <Property name="RepeatInteraction" value="True" />
+      <Property name="UseInteractCamera" value="True" />
+      <Property name="BlendToCameraTime" value="0.5" />
+      <Property name="BlendFromCameraTime" value="-1" />
+      <Property name="ActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="0" />
+        <Property name="Repeat" value="False" />
+        <Property name="RequiredTech" value="" />
+        <Property name="UseCostID" value="" />
+        <Property name="StartMissionOnCantAfford" value="" />
+        <Property name="OnlyChargeDuringSeasons" />
+      </Property>
+      <Property name="TriggerAction" value="INTERACT" />
+      <Property name="TriggerActionOnPrepare" value="" />
+      <Property name="BroadcastTriggerAction" value="False" />
+      <Property name="InteractAngle" value="360" />
+      <Property name="InteractDistance" value="5" />
+      <Property name="InteractInvertFace" value="False" />
+      <Property name="SecondaryInteractionType" value="GcInteractionType.xml">
+        <Property name="InteractionType" value="None" />
+      </Property>
+      <Property name="SecondaryActivationCost" value="GcInteractionActivationCost.xml">
+        <Property name="SubstanceId" value="" />
+        <Property name="AltIds" />
+        <Property name="Cost" value="0" />
+        <Property name="Repeat" value="False" />
+        <Property name="RequiredTech" value="" />
+        <Property name="UseCostID" value="" />
+        <Property name="StartMissionOnCantAfford" value="" />
+        <Property name="OnlyChargeDuringSeasons" />
+      </Property>
+      <Property name="EventRenderers">
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="2100" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="-150" />
+              <Property name="y" value="120" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="5" />
+            <Property name="Rotate" value="140" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="True" />
+              <Property name="CamWanderPhase" value="0.1" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1400" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="120" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="30" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="True" />
+              <Property name="CamWanderPhase" value="0.1" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+      </Property>
+      <Property name="EventRenderersAlt">
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1.5" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="0" />
+              <Property name="y" value="0" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="0" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="False" />
+              <Property name="CamWanderPhase" value="0.003" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+        <Property value="TkModelRendererData.xml">
+          <Property name="Camera" value="TkModelRendererCameraData.xml">
+            <Property name="Distance" value="1400" />
+            <Property name="Offset" value="Vector3f.xml">
+              <Property name="x" value="-450" />
+              <Property name="y" value="120" />
+              <Property name="z" value="0" />
+            </Property>
+            <Property name="Roll" value="0" />
+            <Property name="Pitch" value="0" />
+            <Property name="Rotate" value="125" />
+            <Property name="LightPitch" value="45" />
+            <Property name="LightRotate" value="45" />
+            <Property name="Wander" value="TkCameraWanderData.xml">
+              <Property name="CamWander" value="True" />
+              <Property name="CamWanderPhase" value="0.1" />
+              <Property name="CamWanderAmplitude" value="0.5" />
+            </Property>
+          </Property>
+          <Property name="Fov" value="30" />
+          <Property name="AspectRatio" value="1.7777" />
+          <Property name="ThumbnailMode" value="None" />
+          <Property name="FocusType" value="ResourceBounds" />
+          <Property name="FocusLocator" value="" />
+          <Property name="FocusOffset" value="Vector3f.xml">
+            <Property name="x" value="0" />
+            <Property name="y" value="0" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="FocusInterpTime" value="0" />
+          <Property name="BlendInTime" value="0.8" />
+          <Property name="BlendInOffset" value="0" />
+          <Property name="Anim" value="" />
+          <Property name="HeightOffset" value="0.005" />
+          <Property name="UsePlayerCameraInHmd" value="True" />
+          <Property name="AlignUIToCameraInHmd" value="False" />
+          <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+          <Property name="LookForFocusInMasterModel" value="False" />
+        </Property>
+      </Property>
+      <Property name="SecondaryCameraTransitionTime" value="1" />
+      <Property name="DepthOfField" value="GcInteractionDof.xml">
+        <Property name="IsEnabled" value="False" />
+        <Property name="UseGlobals" value="False" />
+        <Property name="NearPlaneMin" value="2000" />
+        <Property name="NearPlaneAdjust" value="3000" />
+        <Property name="FarPlane" value="5000" />
+        <Property name="FarFadeDistance" value="3" />
+      </Property>
+      <Property name="PuzzleMissionOverrideTable" />
+      <Property name="StoryUtilityOverrideData" value="GcStoryUtilityOverride.xml">
+        <Property name="Name" value="UI_FRIG_TOKEN_TERM" />
+        <Property name="Reward" value="TREE_FRIGATE" />
+        <Property name="SpecificRewardOverrideTable" />
+      </Property>
+      <Property name="OverrideInteriorExteriorMarker" value="No" />
+      <Property name="ReseedAfterRewardSuccess" value="False" />
+      <Property name="UsePersonalPersistentBuffer" value="False" />
+      <Property name="InWorldUIScaler" value="0" />
+      <Property name="InWorldUIMinDistOverride" value="0" />
+      <Property name="InWorldUIMinDistOverrideV2" value="0" />
+      <Property name="InWorldUIForcedOffset" value="0" />
+      <Property name="InWorldUIForcedOffsetV2" value="0" />
+      <Property name="InWorldUIUseCameraUp" value="True" />
+      <Property name="StartMissionOnUse" value="" />
+      <Property name="AllowMissionUnderwater" value="True" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="TriggerVolumeType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="Floor" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollide" value="False" />
+      <Property name="NoPlayerCollide" value="False" />
+      <Property name="CameraInvisible" value="False" />
+      <Property name="InvisibleForInteraction" value="False" />
+      <Property name="AllowTeleporter" value="False" />
+      <Property name="BlockTeleporter" value="False" />
+      <Property name="DisableGravity" value="False" />
+      <Property name="SpinOnCreate" value="0" />
+      <Property name="UseBasePartOptimisation" value="False" />
+      <Property name="IsTransporter" value="False" />
+    </Property>
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="BOOT" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="Holo" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="Screen" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+                <Property value="GcPlayAnimAction.xml">
+                  <Property name="Anim" value="REVERSE" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcPlayerNearbyEvent.xml">
+                <Property name="RequirePlayerAction" value="OnFoot" />
+                <Property name="Distance" value="7" />
+                <Property name="Angle" value="360" />
+                <Property name="AnglePlayerRelative" value="False" />
+                <Property name="AngleOffset" value="0" />
+                <Property name="AngleReflected" value="False" />
+                <Property name="AngleMinDistance" value="1" />
+                <Property name="DistanceCheckType" value="Radius" />
+                <Property name="Inverse" value="False" />
+                <Property name="OnlyForLocalPlayer" value="True" />
+                <Property name="IncludeAllPhysics" value="False" />
+                <Property name="IncludeMobileNPCs" value="False" />
+                <Property name="TeleporterCountsAsPlayer" value="True" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="TERMINAL" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Action" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="TERMINAL" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0.7" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action" />
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAnimAction.xml">
+                  <Property name="Anim" value="OPEN" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcPlayerNearbyEvent.xml">
+                <Property name="RequirePlayerAction" value="OnFoot" />
+                <Property name="Distance" value="8" />
+                <Property name="Angle" value="360" />
+                <Property name="AnglePlayerRelative" value="False" />
+                <Property name="AngleOffset" value="0" />
+                <Property name="AngleReflected" value="False" />
+                <Property name="AngleMinDistance" value="1" />
+                <Property name="DistanceCheckType" value="Radius" />
+                <Property name="Inverse" value="True" />
+                <Property name="OnlyForLocalPlayer" value="True" />
+                <Property name="IncludeAllPhysics" value="False" />
+                <Property name="IncludeMobileNPCs" value="False" />
+                <Property name="TeleporterCountsAsPlayer" value="True" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="BOOT" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="INTERACT" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAnimAction.xml">
+                  <Property name="Anim" value="SCREENUP" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0.7" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Activate" />
+                  <Property name="Name" value="Screen" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcPlayerNearbyEvent.xml">
+                <Property name="RequirePlayerAction" value="OnFoot" />
+                <Property name="Distance" value="8" />
+                <Property name="Angle" value="360" />
+                <Property name="AnglePlayerRelative" value="False" />
+                <Property name="AngleOffset" value="0" />
+                <Property name="AngleReflected" value="False" />
+                <Property name="AngleMinDistance" value="1" />
+                <Property name="DistanceCheckType" value="Radius" />
+                <Property name="Inverse" value="True" />
+                <Property name="OnlyForLocalPlayer" value="True" />
+                <Property name="IncludeAllPhysics" value="False" />
+                <Property name="IncludeMobileNPCs" value="False" />
+                <Property name="TeleporterCountsAsPlayer" value="True" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="BOOT" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+      <Property name="ResetShotTimeOnStateChange" value="False" />
+      <Property name="LinkStateToBaseGrid" value="False" />
+    </Property>
+    <Property value="TkAudioComponentData.xml">
+      <Property name="Ambient" value="" />
+      <Property name="AmbientState" value="" />
+      <Property name="Shutdown" value="" />
+      <Property name="MaxDistance" value="90" />
+      <Property name="AnimTriggers">
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="BridgeTerminalScreen" />
+          <Property name="Anim" value="SCREENUP" />
+          <Property name="FrameStart" value="0" />
+          <Property name="OnlyValidWithParts" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="BridgeTerminal_Open" />
+          <Property name="Anim" value="OPEN" />
+          <Property name="FrameStart" value="0" />
+          <Property name="OnlyValidWithParts" />
+        </Property>
+        <Property value="TkAudioAnimTrigger.xml">
+          <Property name="Sound" value="BridgeTerminal_Close" />
+          <Property name="Anim" value="REVERSE" />
+          <Property name="FrameStart" value="0" />
+          <Property name="OnlyValidWithParts" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="" />
+        <Property name="AdditiveBaseAnim" value="" />
+        <Property name="Filename" value="" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="GameData" value="TkAnimationGameData.xml">
+          <Property name="RootMotionEnabled" value="False" />
+          <Property name="BlockPlayerMovement" value="False" />
+          <Property name="BlockPlayerWeapon" value="Unblocked" />
+        </Property>
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="Priority" value="0" />
+        <Property name="OffsetMin" value="0" />
+        <Property name="OffsetMax" value="0" />
+        <Property name="Delay" value="0" />
+        <Property name="Speed" value="1" />
+        <Property name="ActionStartFrame" value="0" />
+        <Property name="ActionFrame" value="-1" />
+        <Property name="AdditiveBaseFrame" value="0" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="CreatureSize" value="AllSizes" />
+        <Property name="Additive" value="False" />
+        <Property name="Mirrored" value="False" />
+        <Property name="Active" value="True" />
+        <Property name="Has30HzFrames" value="False" />
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="SCREENUP" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="Filename" value="MODELS/COMMON/SPACECRAFT/COMMONPARTS/HANGARINTERIORPARTS/ANIMATION/SCREENUP.ANIM.MBIN" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="60" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="AnimType" value="OneShotBlendable" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="Has30HzFrames" value="False" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="REVERSE" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="Filename" value="MODELS/COMMON/SPACECRAFT/COMMONPARTS/HANGARINTERIORPARTS/ANIMATION/REVERSE.ANIM.MBIN" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="60" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="AnimType" value="OneShotBlendable" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="Has30HzFrames" value="False" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="OPEN" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="Filename" value="MODELS/COMMON/SPACECRAFT/COMMONPARTS/HANGARINTERIORPARTS/ANIMATION/BRIDGETERMINAL.ANIM.MBIN" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="60" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="AnimType" value="OneShotBlendable" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="Has30HzFrames" value="False" />
+        </Property>
+      </Property>
+      <Property name="Trees" />
+      <Property name="NetSyncAnimations" value="False" />
+      <Property name="JointLODOverrides" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>
