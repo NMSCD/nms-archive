@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.25.0)-->
+<Data template="TkLSystemRulesData">
+  <Property name="GlobalRestriction" />
+  <Property name="GlobalVariation" />
+  <Property name="Rules">
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Floor" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/MODULES/GROUNDFLOORMODULE_BASE.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLLONG_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLLONGEXTERIOR_CORRIDOR.SCENE.MBIN" />
+              <Property name="Probability" value="50" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLLONGEXTERIOR_CAP.SCENE.MBIN" />
+              <Property name="Probability" value="50" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLSHORT_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLSHORTEXTERIOR_CORRIDOR.SCENE.MBIN" />
+              <Property name="Probability" value="50" />
+              <Property name="Restrictions">
+                <Property value="TkLSystemRestrictionData.xml">
+                  <Property name="Amount" value="1" />
+                  <Property name="Restriction" value="NoMoreThan" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLSHORTEXTERIOR_CAP.SCENE.MBIN" />
+              <Property name="Probability" value="50" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="ROOF_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/RADIOTOWER/WARRIORPARTS/RADIOTOWERWARRIOR_ROOF.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Wall long exterior corridor" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLLONGEXTERIOR_CORRIDOR.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="CORRIDORSTART_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/CORRIDORSTART.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="INTERIORWALL_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLLONGINTERIOR_CORRIDOR.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Corridor start" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/CORRIDORSTART.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="CORRIDOR_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/CORRIDOR.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Corridor" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/CORRIDOR.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="CORRIDOR_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/CORRIDOR.SCENE.MBIN" />
+              <Property name="Probability" value="0" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/CORRIDORSTART.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="CORRIDOREND_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/DOOR_EXTERIOR.SCENE.MBIN" />
+              <Property name="Probability" value="70" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/CORRIDORSTART.SCENE.MBIN" />
+              <Property name="Probability" value="30" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Long wall cap" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLLONGEXTERIOR_CAP.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLCAP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLEXTERIOR_CAPBLOCK.SCENE.MBIN" />
+              <Property name="Probability" value="20" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLEXTERIOR_CAPATTACHMENTBASE.SCENE.MBIN" />
+              <Property name="Probability" value="20" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Cap attachment" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLEXTERIOR_CAPATTACHMENTBASE.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="CAPATTACHMENT_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLEXTERIOR_CAPATTACHMENTSATELLITE.SCENE.MBIN" />
+              <Property name="Probability" value="35" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLEXTERIOR_CAPATTACHMENTGENERATOR.SCENE.MBIN" />
+              <Property name="Probability" value="35" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLEXTERIOR_CAPATTACHMENTSILO.SCENE.MBIN" />
+              <Property name="Probability" value="30" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Short wall cap" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLSHORTEXTERIOR_CAP.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="WALLCAP_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLEXTERIOR_CAPATTACHMENTBASE.SCENE.MBIN" />
+              <Property name="Probability" value="20" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLEXTERIOR_CAPBLOCK.SCENE.MBIN" />
+              <Property name="Probability" value="20" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Wall short exterior corridor" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLSHORTEXTERIOR_CORRIDOR.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="CORRIDORSTART_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/CORRIDORSTART.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="INTERIORWALL_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLSHORTINTERIOR_CORRIDOR.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Wall long exterior cap" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLLONGEXTERIOR_CAP.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="INTERIORWALL_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLLONGINTERIOR_CAP.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Wall short exterior cap" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLSHORTEXTERIOR_CAP.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="INTERIORWALL_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/BUILDINGS/PARTS/WARRIORPARTS/WALLSHORTINTERIOR_CAP.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+  </Property>
+  <Property name="Templates" />
+</Data>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.25.0)-->
+<Data template="TkLSystemRulesData">
+  <Property name="GlobalRestriction">
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="FactoryRoof" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/WARRIORPARTS/MODULES/ROOFMODULE_FACTORY.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="AtLeast" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nLandingPads" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/WARRIORPARTS/MODULES/DOORMODULE_LANDINGPAD.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="0" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nRooms" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/WARRIORPARTS/MODULES/WALLSHORTMODULE_INTERIOR.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="0" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nSavePoints" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/CRYOCHAMBER.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="0" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nTerminals" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/TERMINAL/TERMINAL_SHOP.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="0" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nExteriorDoors" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/WARRIORPARTS/MODULES/DOORMODULE_EXTERIOR.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="AtLeast" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nWeaponsCrate" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/CRATE/CRATE_WEAPON.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="0" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+    <Property value="TkLSystemGlobalRestriction.xml">
+      <Property name="Name" value="nWeaponTechStation" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PROPS/INTERACTIVE/WEAPONTECHSTATION.SCENE.MBIN" />
+      <Property name="Restrictions">
+        <Property value="TkLSystemRestrictionData.xml">
+          <Property name="Amount" value="1" />
+          <Property name="Restriction" value="NoMoreThan" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="GlobalVariation" />
+  <Property name="Rules">
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="GroundFloor" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/WARRIORPARTS/MODULES/GROUNDFLOORMODULE_BASE.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="ROOF_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/WARRIORPARTS/MODULES/ROOFMODULE_FACTORY.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="BaseRule" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Corridor_Exit" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/WARRIORPARTS/MODULES/CORRIDORMODULE_EXIT.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="DOOR_" />
+          <Property name="MergeProbabilityOptions" value="Prioritize" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/WARRIORPARTS/MODULES/DOORMODULE_DESTRUCTIBLEEXTERIOR.SCENE.MBIN" />
+              <Property name="Probability" value="100" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+    <Property value="TkLSystemRule.xml">
+      <Property name="Name" value="Roof_Factory" />
+      <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/WARRIORPARTS/MODULES/ROOFMODULE_FACTORY.SCENE.MBIN" />
+      <Property name="Rules">
+        <Property value="TkLSystemInnerRule.xml">
+          <Property name="LocatorType" value="LAYOUT_" />
+          <Property name="MergeProbabilityOptions" value="Balance" />
+          <Property name="Entries">
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/WARRIORPARTS/LAYOUTS/FLOORLAYOUT_BASE1.SCENE.MBIN" />
+              <Property name="Probability" value="50" />
+              <Property name="Restrictions" />
+            </Property>
+            <Property value="TkLSystemLocatorEntry.xml">
+              <Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/WARRIORPARTS/LAYOUTS/FLOORLAYOUT_BASE2.SCENE.MBIN" />
+              <Property name="Probability" value="50" />
+              <Property name="Restrictions" />
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RuleType" value="Default" />
+    </Property>
+  </Property>
+  <Property name="Templates">
+    <Property value="TkLSystemRuleTemplate.xml">
+      <Property name="Name" value="Base" />
+      <Property name="LSystem" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/WARRIORPARTS/LSYSTEM/BASEWARRIOR.LSYSTEM.MBIN" />
+    </Property>
+  </Property>
+</Data>
