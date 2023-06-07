@@ -1,0 +1,66 @@
+[[FX]]
+
+// Samplers
+sampler gDiffuseMap = sampler_state
+{
+	Address = Wrap;
+	Filter = Trilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 0;
+};
+
+sampler gDistortionMap = sampler_state
+{
+	Address = Wrap;
+	Filter = Trilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 1;
+};
+
+sampler gAlphaMap = sampler_state
+{
+	Address = Clamp;
+	Filter = Trilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 2;
+};
+
+
+// Uniforms
+float4	gMinPixelSize_Glow				= { 4.0, 0.5, 0.0, 0.0 };  
+float4	gUvScrollStep_DistortionStep	= { 0.0, 0.0, 0.0, 0.0 };  // xy = scroll step for diffuse, zw = scroll step for distortion
+float4	gDistortionScale_Unused			= { 0.0, 0.0, 0.0, 0.0 };  // x = scale for distortion. xyz = unused
+
+// Contexts
+
+context LIGHTING
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader  = compile GLSL FS_LIGHTING;
+}
+
+context LIGHTING_GLOW
+{
+	VertexShader = compile GLSL VS_GENERAL_GLOW;
+	PixelShader  = compile GLSL FS_LIGHTING_GLOW;
+}
+
+[[VS_GENERAL]]
+// =================================================================================================
+#include "Custom/TrailVertex.shader.h"
+
+
+[[VS_GENERAL_GLOW]]
+// =================================================================================================
+#define D_GLOW
+#include "Custom/TrailVertex.shader.h"
+
+[[FS_LIGHTING]]
+// =================================================================================================
+#include "Custom/TrailFragment.shader.h"
+
+[[FS_LIGHTING_GLOW]]
+// =================================================================================================
+#define D_GLOW
+#include "Custom/TrailFragment.shader.h"
+
