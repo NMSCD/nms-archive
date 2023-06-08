@@ -1,0 +1,365 @@
+[[FX]]
+
+// -----------------------------------------------------------------------------------
+// Samplers
+// -----------------------------------------------------------------------------------
+
+sampler r_input_color_jittered = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 0;
+};
+
+sampler r_motion_vectors = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 1;
+};
+
+sampler r_depth = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 2;
+};
+
+sampler r_exposure = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 3;
+};
+
+sampler r_reactive_mask = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 4;
+};
+
+sampler r_transparency_and_composition_mask = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 5;
+};
+
+sampler r_reconstructed_previous_nearest_depth = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 6;
+};
+
+sampler r_dilated_motion_vectors = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 7;
+};
+
+sampler r_dilatedDepth = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 8;
+};
+
+sampler r_internal_upscaled_color = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 9;
+};
+
+sampler r_lock_status = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 10;
+};
+
+sampler r_depth_clip = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 11;
+};
+
+sampler r_prepared_input_color = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 12;
+};
+
+sampler r_luma_history = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 13;
+};
+
+sampler r_rcas_input = sampler_state
+{
+    TexUnit = 14;
+};
+
+sampler r_lanczos_lut = sampler_state
+{
+    Address = Clamp;
+    Filter = Bilinear;	
+    TexUnit = 15;
+};
+
+sampler r_imgMips = sampler_state
+{
+    TexUnit = 16;
+};
+
+sampler r_img_mip_shading_change = sampler_state
+{
+    TexUnit = 17;
+};
+
+sampler r_img_mip_5 = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 18;
+};
+
+sampler r_upsample_maximum_bias_lut = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 19;
+};
+
+sampler r_dilated_reactive_masks = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 20;
+};
+
+sampler rw_reconstructed_previous_nearest_depth = sampler_state
+{
+    ImgUnit = 0;
+};
+
+sampler rw_dilated_motion_vectors = sampler_state
+{
+    ImgUnit = 1;
+};
+
+sampler rw_dilatedDepth = sampler_state
+{
+    ImgUnit = 2;
+};
+
+sampler rw_internal_upscaled_color = sampler_state
+{
+    ImgUnit = 3;
+};
+
+sampler rw_lock_status = sampler_state
+{
+    ImgUnit = 4;
+};
+
+sampler rw_depth_clip = sampler_state
+{
+    ImgUnit = 5;
+};
+
+sampler rw_prepared_input_color = sampler_state
+{
+    ImgUnit = 6;
+};
+
+sampler rw_luma_history = sampler_state
+{
+    ImgUnit = 7;
+};
+
+sampler rw_upscaled_output = sampler_state
+{
+    ImgUnit = 8;
+};
+
+sampler rw_img_mip_shading_change = sampler_state
+{
+    ImgUnit = 9;
+};
+
+sampler rw_img_mip_5 = sampler_state
+{
+    ImgUnit = 10;
+};
+
+sampler rw_dilated_reactive_masks = sampler_state
+{
+    ImgUnit = 11;
+};
+
+sampler rw_exposure = sampler_state
+{
+    ImgUnit = 12;
+};
+
+sampler rw_spd_global_atomic = sampler_state
+{
+    ImgUnit = 13;
+};
+
+sampler rw_reconstructed_previous_nearest_depth = sampler_state
+{
+    ImgUnit = 14;
+};
+
+
+// -----------------------------------------------------------------------------------
+// Uniforms
+// -----------------------------------------------------------------------------------
+
+// Main (cbFSR2_t)
+float4 gFSR2ParamsPosVec4               = {0.0, 0.0, 0.0, 0.0};
+
+// -----------------------------------------------------------------------------------
+// Contexts
+// -----------------------------------------------------------------------------------
+
+context FSR2CS_ComputeLuminancePyramid
+{
+    ComputeShader   = compile GLSL CS_FSR2_ComputeLuminancePyramid;
+
+    PersistShaderReflection = true;
+}
+
+context FSR2CS_PrepareInputColor
+{
+    ComputeShader   = compile GLSL CS_FSR2_PrepareInputColor;
+
+    PersistShaderReflection = true;
+}
+
+context FSR2CS_ReconstructPreviousDepth
+{
+    ComputeShader   = compile GLSL CS_FSR2_ReconstructPreviousDepth;
+
+    PersistShaderReflection = true;
+}
+
+context FSR2CS_DepthClip
+{
+    ComputeShader   = compile GLSL CS_FSR2_DepthClip;
+
+    PersistShaderReflection = true;
+}
+
+context FSR2CS_Lock
+{
+    ComputeShader   = compile GLSL CS_FSR2_Lock;
+
+    PersistShaderReflection = true;
+}
+
+context FSR2CS_Stability
+{
+    ComputeShader   = compile GLSL CS_FSR2_Stability;
+
+    PersistShaderReflection = true;
+}
+
+context FSR2CS_Accumulate
+{
+    ComputeShader   = compile GLSL CS_FSR2_Accumulate;
+ 
+    PersistShaderReflection = true;
+}
+
+context FSR2PS_Accumulate
+{
+    VertexShader = compile GLSL VS_FSR2_Quad;
+    PixelShader = compile GLSL FS_FSR2_Accumulate;
+
+    PersistShaderReflection = true;
+}
+
+context FSR2CS_AccumulSharp
+{
+    ComputeShader   = compile GLSL CS_FSR2_AccumulateSharpen;
+
+    PersistShaderReflection = true;
+}
+
+context FSR2CS_Rcas
+{
+    ComputeShader   = compile GLSL CS_FSR2_Rcas;
+
+    PersistShaderReflection = true;
+}
+
+context [ PC ] FSR2PS_QuadTest
+{
+    VertexShader    = compile GLSL VS_FSR2_Quad;
+    PixelShader     = compile GLSL FS_FSR2_QuadTestFrag;
+
+    PersistShaderReflection = true;
+}
+
+[[CS_FSR2_ComputeLuminancePyramid]]
+// =================================================================================================
+#define SPD_NO_WAVE_OPERATIONS
+#define D_FSR2_COMPUTELUMINANCEPYRAMID
+#include "Fullscreen/FidelityFXSuperRes212Fragment.shader.h"
+
+[[CS_FSR2_PrepareInputColor]]
+// =================================================================================================
+#define D_FSR2_PREPARE_INPUT_COLOR_PASS
+#include "Fullscreen/FidelityFXSuperRes212Fragment.shader.h"
+
+[[CS_FSR2_ReconstructPreviousDepth]]
+// =================================================================================================
+#define D_FSR2_RECONSTRUCT_PREVIOUS_DEPTH_PASS
+#include "Fullscreen/FidelityFXSuperRes212Fragment.shader.h"
+
+[[CS_FSR2_DepthClip]]
+// =================================================================================================
+#define FFX_FSR2_CUSTOM_OPTION_RUN_ON_FRAGMENT            0
+#define D_FSR2_DEPTH_CLIP_PASS_COMPUTE
+#include "Fullscreen/FidelityFXSuperRes212Fragment.shader.h"
+
+[[CS_FSR2_Lock]]
+// =================================================================================================
+#define D_FSR2_LOCK_PASS
+#include "Fullscreen/FidelityFXSuperRes212Fragment.shader.h"
+
+[[CS_FSR2_Stability]]
+// =================================================================================================
+#define FFX_FSR2_CUSTOM_OPTION_RUN_ON_FRAGMENT            0
+#define D_FSR2_STABILITY_PASS_COMPUTE
+#include "Fullscreen/FidelityFXSuperRes212Fragment.shader.h"
+
+[[CS_FSR2_Accumulate]]
+// =================================================================================================
+#define FFX_GPU
+#define FFX_FSR2_CUSTOM_OPTION_RUN_ON_FRAGMENT            0
+#define D_FSR2_ACCUMULATE_PASS_COMPUTE
+#include "Fullscreen/FidelityFXSuperRes212Fragment.shader.h"
+
+[[FS_FSR2_Accumulate]]
+// =================================================================================================
+#define FFX_GPU
+#define FFX_FSR2_CUSTOM_OPTION_RUN_ON_FRAGMENT            1
+#define D_FSR2_ACCUMULATE_PASS_FRAGMENT
+#include "Fullscreen/FidelityFXSuperRes212Fragment.shader.h"
+
+[[CS_FSR2_AccumulateSharpen]]
+// =================================================================================================
+#define FFX_GPU
+#define FFX_FSR2_CUSTOM_OPTION_RUN_ON_FRAGMENT            0
+#define D_FSR2_ACCUMULATE_SHARPEN_PASS_COMPUTE
+#include "Fullscreen/FidelityFXSuperRes212Fragment.shader.h"
+
+[[CS_FSR2_Rcas]]
+// =================================================================================================
+#define FFX_GPU
+#define D_FSR2_RCAS_PASS
+#include "Fullscreen/FidelityFXSuperRes212Fragment.shader.h"
+
+[[VS_FSR2_Quad]]
+// =================================================================================================
+#define D_FSR2_QUAD
+#include "Fullscreen/FidelityFXSuperRes212Fragment.shader.h"
+
+[[FS_FSR2_QuadTestFrag]]
+// =================================================================================================
+#define D_FSR2_QUAD_TEST_FRAG
+#include "Fullscreen/FidelityFXSuperRes212Fragment.shader.h"
