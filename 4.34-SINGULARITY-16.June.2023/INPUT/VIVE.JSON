@@ -1,0 +1,2633 @@
+{
+   "action_manifest_version" : 2,
+   "alias_info" : {},
+   "bindings" : {
+      "/actions/buildmenuanaloguerotate" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/buildmenuanaloguerotate/in/build_arotright"
+                  },
+                  "north" : {
+                     "output" : "/actions/buildmenuanaloguerotate/in/build_arot_left_z"
+                  },
+                  "south" : {
+                     "output" : "/actions/buildmenuanaloguerotate/in/build_arot_right_z"
+                  },
+                  "west" : {
+                     "output" : "/actions/buildmenuanaloguerotate/in/build_arotleft"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuanaloguerotate/in/build_scaleup"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuanaloguerotate/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuanaloguerotate/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuanaloguerotate/in/build_scaledown"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuanaloguerotate/in/select"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuanaloguerotate/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuanaloguerotate/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/system"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/system"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuanaloguerotate/in/build_arot1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuanaloguerotate/in/build_arot2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            }
+         ]
+      },
+      "/actions/buildmenuplacementmode" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/buildmenuplacementmode/in/build_snapping"
+                  },
+                  "east" : {
+                     "output" : "/actions/buildmenuplacementmode/in/vr_turnright"
+                  },
+                  "north" : {
+                     "output" : "/actions/buildmenuplacementmode/in/run"
+                  },
+                  "south" : {
+                     "output" : "/actions/buildmenuplacementmode/in/jump"
+                  },
+                  "west" : {
+                     "output" : "/actions/buildmenuplacementmode/in/vr_turnleft"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/system"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/system"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/buildmenuplacementmode/in/build_paint"
+                  },
+                  "east" : {
+                     "output" : "/actions/buildmenuplacementmode/in/rotate_right"
+                  },
+                  "north" : {
+                     "output" : "/actions/buildmenuplacementmode/in/build_scaleup"
+                  },
+                  "south" : {
+                     "output" : "/actions/buildmenuplacementmode/in/build_scaledown"
+                  },
+                  "west" : {
+                     "output" : "/actions/buildmenuplacementmode/in/rotate_left"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/buildmenuplacementmode/in/build_arotright"
+                  },
+                  "west" : {
+                     "output" : "/actions/buildmenuplacementmode/in/build_arotleft"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            }
+         ]
+      },
+      "/actions/buildmenuplacementmode_left" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuplacementmode_left/in/fire"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuplacementmode_left/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuplacementmode_left/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuplacementmode_left/in/build_selectionmode"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            }
+         ]
+      },
+      "/actions/buildmenuplacementmode_right" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuplacementmode_right/in/fire"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuplacementmode_right/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuplacementmode_right/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuplacementmode_right/in/build_selectionmode"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            }
+         ]
+      },
+      "/actions/buildmenuselectionmode" : {
+         "sources" : [
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/system"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/system"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/buildmenuselectionmode/in/build_paint"
+                  },
+                  "north" : {
+                     "output" : "/actions/buildmenuselectionmode/in/build_delete"
+                  },
+                  "south" : {
+                     "output" : "/actions/buildmenuselectionmode/in/build_duplicate"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "north" : {
+                     "output" : "/actions/buildmenuselectionmode/in/build_nextpart"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            }
+         ]
+      },
+      "/actions/buildmenuselectionmode_left" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuselectionmode_left/in/build_pickup"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuselectionmode_left/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuselectionmode_left/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuselectionmode_left/in/build_selectionmode"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            }
+         ]
+      },
+      "/actions/buildmenuselectionmode_right" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuselectionmode_right/in/build_pickup"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuselectionmode_right/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuselectionmode_right/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/buildmenuselectionmode_right/in/build_selectionmode"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            }
+         ]
+      },
+      "/actions/frontend" : {
+         "haptics" : [
+            {
+               "output" : "/actions/frontend/out/left_vibration",
+               "path" : "/user/hand/left/output/haptic"
+            },
+            {
+               "output" : "/actions/frontend/out/right_vibration",
+               "path" : "/user/hand/right/output/haptic"
+            }
+         ],
+         "sources" : [
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/frontend/in/confirmdelete"
+                  },
+                  "east" : {
+                     "output" : "/actions/frontend/in/right"
+                  },
+                  "north" : {
+                     "output" : "/actions/frontend/in/up"
+                  },
+                  "south" : {
+                     "output" : "/actions/frontend/in/down"
+                  },
+                  "west" : {
+                     "output" : "/actions/frontend/in/left"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/frontend/in/menu_delete"
+                  },
+                  "north" : {
+                     "output" : "/actions/frontend/in/inventory_swap"
+                  },
+                  "south" : {
+                     "output" : "/actions/frontend/in/menu_upload"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend/in/gamemode_changeuser"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/a"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/frontend/in/netretry"
+                  },
+                  "east" : {
+                     "output" : "/actions/frontend/in/alt_right"
+                  },
+                  "north" : {
+                     "output" : "/actions/frontend/in/alt_up"
+                  },
+                  "south" : {
+                     "output" : "/actions/frontend/in/alt_down"
+                  },
+                  "west" : {
+                     "output" : "/actions/frontend/in/alt_left"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend/in/quitmenu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/system"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/system"
+            },
+            {
+               "inputs" : {
+                  "north" : {
+                     "output" : "/actions/frontend/in/disc_wonder"
+                  },
+                  "south" : {
+                     "output" : "/actions/frontend/in/disc_upload"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/frontend/in/build_pinrecipe"
+                  },
+                  "north" : {
+                     "output" : "/actions/frontend/in/disc_view_up"
+                  },
+                  "south" : {
+                     "output" : "/actions/frontend/in/disc_view_down"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend/in/pause_menu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend/in/unbound"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend/in/vr_move"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend/in/vr_teleport"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/frontend/in/vr_turnright"
+                  },
+                  "north" : {
+                     "output" : "/actions/frontend/in/run"
+                  },
+                  "south" : {
+                     "output" : "/actions/frontend/in/jump"
+                  },
+                  "west" : {
+                     "output" : "/actions/frontend/in/vr_turnleft"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/frontend/in/vr_snapright"
+                  },
+                  "west" : {
+                     "output" : "/actions/frontend/in/vr_snapleft"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend/in/unbound"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/trigger"
+            }
+         ]
+      },
+      "/actions/frontend_left" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_left/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_left/in/gamemode_titlestart"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_left/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_left/in/menu_canceldelete"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_left/in/exit"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_left/in/interactleft"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_left/in/interact"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_left/in/menu_transfer"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_left/in/build_selectionmode"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_left/in/menu_altselect"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            }
+         ]
+      },
+      "/actions/frontend_right" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_right/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_right/in/gamemode_titlestart"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_right/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_right/in/menu_canceldelete"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_right/in/exit"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_right/in/interactleft"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_right/in/interact"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_right/in/menu_transfer"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_right/in/build_selectionmode"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/frontend_right/in/menu_altselect"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            }
+         ]
+      },
+      "/actions/galacticmap" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/galacticmap/in/scan"
+                  },
+                  "east" : {
+                     "output" : "/actions/galacticmap/in/fire"
+                  },
+                  "north" : {
+                     "output" : "/actions/galacticmap/in/expand"
+                  },
+                  "south" : {
+                     "output" : "/actions/galacticmap/in/back"
+                  },
+                  "west" : {
+                     "output" : "/actions/galacticmap/in/home"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/galacticmap/in/gal_base"
+                  },
+                  "east" : {
+                     "output" : "/actions/galacticmap/in/alt_down"
+                  },
+                  "north" : {
+                     "output" : "/actions/galacticmap/in/alt_right"
+                  },
+                  "south" : {
+                     "output" : "/actions/galacticmap/in/alt_left"
+                  },
+                  "west" : {
+                     "output" : "/actions/galacticmap/in/alt_up"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/galacticmap/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/galacticmap/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/galacticmap/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/galacticmap/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/system"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/system"
+            }
+         ]
+      },
+      "/actions/galacticmap_left" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/galacticmap_left/in/exit"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/galacticmap_left/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/galacticmap_left/in/map_gesture"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/galacticmap_left/in/boost"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            }
+         ]
+      },
+      "/actions/galacticmap_right" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/galacticmap_right/in/exit"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/galacticmap_right/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/galacticmap_right/in/map_gesture"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/galacticmap_right/in/boost"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            }
+         ]
+      },
+      "/actions/onfootcontrols" : {
+         "haptics" : [
+            {
+               "output" : "/actions/onfootcontrols/out/left_vibration",
+               "path" : "/user/hand/left/output/haptic"
+            },
+            {
+               "output" : "/actions/onfootcontrols/out/right_vibration",
+               "path" : "/user/hand/right/output/haptic"
+            }
+         ],
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols/in/pause_menu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/onfootcontrols/in/alt_fire"
+                  },
+                  "east" : {
+                     "output" : "/actions/onfootcontrols/in/vr_snapright"
+                  },
+                  "north" : {
+                     "output" : "/actions/onfootcontrols/in/run"
+                  },
+                  "south" : {
+                     "output" : "/actions/onfootcontrols/in/jump"
+                  },
+                  "west" : {
+                     "output" : "/actions/onfootcontrols/in/vr_snapleft"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/onfootcontrols/in/showhud"
+                  },
+                  "east" : {
+                     "output" : "/actions/onfootcontrols/in/bin_nextmode"
+                  },
+                  "north" : {
+                     "output" : "/actions/onfootcontrols/in/scan"
+                  },
+                  "south" : {
+                     "output" : "/actions/onfootcontrols/in/placemarker"
+                  },
+                  "west" : {
+                     "output" : "/actions/onfootcontrols/in/tagmarker"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/onfootcontrols/in/vr_turnright"
+                  },
+                  "north" : {
+                     "output" : "/actions/onfootcontrols/in/interactsecondary"
+                  },
+                  "west" : {
+                     "output" : "/actions/onfootcontrols/in/vr_turnleft"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "north" : {
+                     "output" : "/actions/onfootcontrols/in/deconstruct"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/system"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/system"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols/in/bin_prevmode"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "north" : {
+                     "output" : "/actions/onfootcontrols/in/swap_weapon_v"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/onfootcontrols/in/alt_up"
+                  },
+                  "south" : {
+                     "output" : "/actions/onfootcontrols/in/swap_secondary"
+                  },
+                  "west" : {
+                     "output" : "/actions/onfootcontrols/in/alt_down"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            }
+         ]
+      },
+      "/actions/onfootcontrols_left" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_left/in/fire"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_left/in/vr_teleport"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_left/in/vr_move"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_left/in/analysis"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_left/in/terrain_edit"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_left/in/interactleft"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_left/in/meleeleft"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_left/in/interact"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_left/in/melee"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_left/in/vr_holster"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_left/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            }
+         ]
+      },
+      "/actions/onfootcontrols_right" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_right/in/fire"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_right/in/vr_teleport"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_right/in/vr_move"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_right/in/analysis"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_right/in/terrain_edit"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_right/in/interactleft"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_right/in/meleeleft"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_right/in/interact"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_right/in/melee"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_right/in/vr_holster"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootcontrols_right/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            }
+         ]
+      },
+      "/actions/onfootquickmenu" : {
+         "haptics" : [
+            {
+               "output" : "/actions/onfootquickmenu/out/left_vibration",
+               "path" : "/user/hand/left/output/haptic"
+            },
+            {
+               "output" : "/actions/onfootquickmenu/out/right_vibration",
+               "path" : "/user/hand/right/output/haptic"
+            }
+         ],
+         "sources" : [
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/onfootquickmenu/in/terrain_shape"
+                  },
+                  "east" : {
+                     "output" : "/actions/onfootquickmenu/in/vr_snapright"
+                  },
+                  "north" : {
+                     "output" : "/actions/onfootquickmenu/in/run"
+                  },
+                  "south" : {
+                     "output" : "/actions/onfootquickmenu/in/jump"
+                  },
+                  "west" : {
+                     "output" : "/actions/onfootquickmenu/in/vr_snapleft"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/onfootquickmenu/in/ui_right"
+                  },
+                  "north" : {
+                     "output" : "/actions/onfootquickmenu/in/up"
+                  },
+                  "south" : {
+                     "output" : "/actions/onfootquickmenu/in/down"
+                  },
+                  "west" : {
+                     "output" : "/actions/onfootquickmenu/in/ui_left"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/onfootquickmenu/in/alt_right"
+                  },
+                  "west" : {
+                     "output" : "/actions/onfootquickmenu/in/alt_left"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/system"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/system"
+            }
+         ]
+      },
+      "/actions/onfootquickmenu_left" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootquickmenu_left/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootquickmenu_left/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootquickmenu_left/in/terrain_switch"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootquickmenu_left/in/terrain_edit"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            }
+         ]
+      },
+      "/actions/onfootquickmenu_right" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootquickmenu_right/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootquickmenu_right/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootquickmenu_right/in/terrain_switch"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/onfootquickmenu_right/in/terrain_edit"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            }
+         ]
+      },
+      "/actions/photomodemenu" : {
+         "haptics" : [
+            {
+               "output" : "/actions/photomodemenu/out/left_vibration",
+               "path" : "/user/hand/left/output/haptic"
+            },
+            {
+               "output" : "/actions/photomodemenu/out/right_vibration",
+               "path" : "/user/hand/right/output/haptic"
+            }
+         ],
+         "sources" : [
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/photomodemenu/in/ui_right"
+                  },
+                  "north" : {
+                     "output" : "/actions/photomodemenu/in/up"
+                  },
+                  "south" : {
+                     "output" : "/actions/photomodemenu/in/down"
+                  },
+                  "west" : {
+                     "output" : "/actions/photomodemenu/in/ui_left"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/photomodemenu/in/fire"
+                  },
+                  "north" : {
+                     "output" : "/actions/photomodemenu/in/alt_up"
+                  },
+                  "south" : {
+                     "output" : "/actions/photomodemenu/in/alt_down"
+                  },
+                  "west" : {
+                     "output" : "/actions/photomodemenu/in/toggle_camera"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemenu/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemenu/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemenu/in/pause_menu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemenu/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemenu/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/system"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/system"
+            }
+         ]
+      },
+      "/actions/photomodemenu_left" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemenu_left/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemenu_left/in/exit"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            }
+         ]
+      },
+      "/actions/photomodemenu_right" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemenu_right/in/exit"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemenu_right/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            }
+         ]
+      },
+      "/actions/photomodemvcam" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemvcam/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemvcam/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/photomodemvcam/in/vr_turnright"
+                  },
+                  "north" : {
+                     "output" : "/actions/photomodemvcam/in/up"
+                  },
+                  "south" : {
+                     "output" : "/actions/photomodemvcam/in/down"
+                  },
+                  "west" : {
+                     "output" : "/actions/photomodemvcam/in/vr_turnleft"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/photomodemvcam/in/fire"
+                  },
+                  "east" : {
+                     "output" : "/actions/photomodemvcam/in/hide_hud"
+                  },
+                  "north" : {
+                     "output" : "/actions/photomodemvcam/in/forward"
+                  },
+                  "south" : {
+                     "output" : "/actions/photomodemvcam/in/reverse"
+                  },
+                  "west" : {
+                     "output" : "/actions/photomodemvcam/in/toggle_camera"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemvcam/in/pause_menu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemvcam/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemvcam/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/system"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/system"
+            },
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/photomodemvcam/in/vr_snapright"
+                  },
+                  "west" : {
+                     "output" : "/actions/photomodemvcam/in/vr_snapleft"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            }
+         ]
+      },
+      "/actions/photomodemvcam_left" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemvcam_left/in/exit"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemvcam_left/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            }
+         ]
+      },
+      "/actions/photomodemvcam_right" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemvcam_right/in/exit"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/photomodemvcam_right/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            }
+         ]
+      },
+      "/actions/shipcontrols" : {
+         "haptics" : [
+            {
+               "output" : "/actions/shipcontrols/out/left_vibration",
+               "path" : "/user/hand/left/output/haptic"
+            },
+            {
+               "output" : "/actions/shipcontrols/out/right_vibration",
+               "path" : "/user/hand/right/output/haptic"
+            }
+         ],
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols/in/fire_s"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols/in/boost"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/shipcontrols/in/right"
+                  },
+                  "north" : {
+                     "output" : "/actions/shipcontrols/in/swap_weapon"
+                  },
+                  "south" : {
+                     "output" : "/actions/shipcontrols/in/land"
+                  },
+                  "west" : {
+                     "output" : "/actions/shipcontrols/in/left"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/shipcontrols/in/tagmarker"
+                  },
+                  "east" : {
+                     "output" : "/actions/shipcontrols/in/ship_targetnext"
+                  },
+                  "north" : {
+                     "output" : "/actions/shipcontrols/in/scan"
+                  },
+                  "south" : {
+                     "output" : "/actions/shipcontrols/in/pulse_jump"
+                  },
+                  "west" : {
+                     "output" : "/actions/shipcontrols/in/ship_targetprev"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols/in/pause_menu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/system"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/system"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/shipcontrols/in/targetfollow_toggle"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/shipcontrols/in/targetfollow_hold"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols/in/tagmarker"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            }
+         ]
+      },
+      "/actions/shipcontrols_left" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols_left/in/interact"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols_left/in/interactleft"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols_left/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            }
+         ]
+      },
+      "/actions/shipcontrols_right" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols_right/in/interact"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols_right/in/interactleft"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipcontrols_right/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            }
+         ]
+      },
+      "/actions/shipquickmenu" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/shipquickmenu/in/ui_right"
+                  },
+                  "north" : {
+                     "output" : "/actions/shipquickmenu/in/up"
+                  },
+                  "south" : {
+                     "output" : "/actions/shipquickmenu/in/down"
+                  },
+                  "west" : {
+                     "output" : "/actions/shipquickmenu/in/ui_left"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/system"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/system"
+            }
+         ]
+      },
+      "/actions/shipquickmenu_left" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipquickmenu_left/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipquickmenu_left/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            }
+         ]
+      },
+      "/actions/shipquickmenu_right" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipquickmenu_right/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/shipquickmenu_right/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            }
+         ]
+      },
+      "/actions/temporary" : {
+         "haptics" : [
+            {
+               "output" : "/actions/temporary/out/right_vibration",
+               "path" : "/user/hand/right/output/haptic"
+            },
+            {
+               "output" : "/actions/temporary/out/left_vibration",
+               "path" : "/user/hand/left/output/haptic"
+            }
+         ],
+         "sources" : [
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/temporary/in/primary_thumb"
+                  },
+                  "east" : {
+                     "output" : "/actions/temporary/in/b_button"
+                  },
+                  "north" : {
+                     "output" : "/actions/temporary/in/d_button"
+                  },
+                  "south" : {
+                     "output" : "/actions/temporary/in/a_button"
+                  },
+                  "west" : {
+                     "output" : "/actions/temporary/in/c_button"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "pull" : {
+                     "output" : "/actions/temporary/in/primary_trigger"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/temporary/in/secondary_menu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "value" : {
+                     "output" : "/actions/temporary/in/primary_grip_analogue"
+                  }
+               },
+               "mode" : "scalar_constant",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "pull" : {
+                     "output" : "/actions/temporary/in/secondary_trigger"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/temporary/in/secondary_thumb"
+                  },
+                  "position" : {
+                     "output" : "/actions/temporary/in/secondary_stick"
+                  }
+               },
+               "mode" : "trackpad",
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "value" : {
+                     "output" : "/actions/temporary/in/secondary_grip_analogue"
+                  }
+               },
+               "mode" : "scalar_constant",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/temporary/in/primary_menu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            }
+         ]
+      },
+      "/actions/vehiclemode" : {
+         "haptics" : [
+            {
+               "output" : "/actions/vehiclemode/out/left_vibration",
+               "path" : "/user/hand/left/output/haptic"
+            },
+            {
+               "output" : "/actions/vehiclemode/out/right_vibration",
+               "path" : "/user/hand/right/output/haptic"
+            }
+         ],
+         "sources" : [
+            {
+               "inputs" : {
+                  "pull" : {
+                     "output" : "/actions/vehiclemode/in/forward3"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "pull" : {
+                     "output" : "/actions/vehiclemode/in/reverse2"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/vehiclemode/in/alt_fire"
+                  },
+                  "north" : {
+                     "output" : "/actions/vehiclemode/in/scan"
+                  },
+                  "south" : {
+                     "output" : "/actions/vehiclemode/in/boost_v"
+                  },
+                  "west" : {
+                     "output" : "/actions/vehiclemode/in/tagmarker"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclemode/in/pause_menu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "center" : {
+                     "output" : "/actions/vehiclemode/in/fire_v"
+                  },
+                  "east" : {
+                     "output" : "/actions/vehiclemode/in/vehicle_placecheckpoint"
+                  },
+                  "north" : {
+                     "output" : "/actions/vehiclemode/in/swap_weapon_v"
+                  },
+                  "south" : {
+                     "output" : "/actions/vehiclemode/in/jump"
+                  },
+                  "west" : {
+                     "output" : "/actions/vehiclemode/in/vehicle_deletecheckpoint"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "deadzone_pct" : "50",
+                  "overlap_pct" : "0",
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclemode/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclemode/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclemode/in/vr_recentre1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclemode/in/vr_recentre2"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/system"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/system"
+            }
+         ]
+      },
+      "/actions/vehiclemode_left" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclemode_left/in/interact"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclemode_left/in/interactleft"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            }
+         ]
+      },
+      "/actions/vehiclemode_right" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclemode_right/in/interactleft"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclemode_right/in/interact"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            }
+         ]
+      },
+      "/actions/vehiclequickmenu" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "east" : {
+                     "output" : "/actions/vehiclequickmenu/in/ui_right"
+                  },
+                  "north" : {
+                     "output" : "/actions/vehiclequickmenu/in/up"
+                  },
+                  "south" : {
+                     "output" : "/actions/vehiclequickmenu/in/down"
+                  },
+                  "west" : {
+                     "output" : "/actions/vehiclequickmenu/in/ui_left"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclequickmenu/in/unbound"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclequickmenu/in/unbound"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/trigger"
+            }
+         ]
+      },
+      "/actions/vehiclequickmenu_left" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclequickmenu_left/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclequickmenu_left/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            }
+         ]
+      },
+      "/actions/vehiclequickmenu_right" : {
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclequickmenu_right/in/select"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/vehiclequickmenu_right/in/back"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            }
+         ]
+      }
+   },
+   "category" : "steamvr_input",
+   "controller_type" : "vive_controller",
+   "description" : "Official VIVE controller bindings for No Man's Sky",
+   "interaction_profile" : "",
+   "name" : "No Man's Sky configuration for Vive Controller",
+   "options" : {},
+   "simulated_actions" : []
+}

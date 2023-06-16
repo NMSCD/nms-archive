@@ -1,0 +1,72 @@
+[[FX]]
+
+// Contexts
+context UNTEXTURED
+{
+    VertexShader = compile GLSL VS_BASIC;
+    PixelShader  = compile GLSL FS_UNTEXTURED;
+
+    ZWriteEnable = false;
+}
+
+context DEPTHONLY_UNTEXTURED
+{
+    VertexShader = compile GLSL VS_DEPTHONLY_UNTEXTURED;
+    PixelShader  = compile GLSL FS_DEPTHONLY_UNTEXTURED;
+
+    ZWriteEnable = false;
+}
+
+context D_ONLY_AABB_INST
+{
+    VertexShader = compile GLSL VS_DEPTHONLY_AABB_INSTANCED;
+    PixelShader  = compile GLSL FS_DEPTHONLY_AABB_INSTANCED;
+
+    ZWriteEnable = false;
+    Instanced    = true;
+}
+
+[[VS_BASIC]]
+// =================================================================================================
+#define D_VERTEX
+#include "Basic.shader.h"
+
+[[FS_UNTEXTURED]]
+// =================================================================================================
+#define D_FRAGMENT
+#include "Basic.shader.h"
+
+
+[[VS_DEPTHONLY_UNTEXTURED]]
+// =================================================================================================
+#define D_VERTEX
+#define D_UBER
+#define D_DEPTHONLY
+#include "Basic.shader.h"
+
+[[FS_DEPTHONLY_UNTEXTURED]]
+// =================================================================================================
+#define D_FRAGMENT
+#define D_UBER
+#define D_DEPTHONLY
+#include "Basic.shader.h"
+
+[[VS_DEPTHONLY_AABB_INSTANCED]]
+// =================================================================================================
+#define D_VERTEX
+#define D_UBER
+#define D_DEPTHONLY
+#define D_AABB
+#define D_INSTANCE
+#define D_INSTANCE_BASE_INDEX
+#include "Aabbs.shader.h"
+
+[[FS_DEPTHONLY_AABB_INSTANCED]]
+// =================================================================================================
+#define D_FRAGMENT
+#define D_UBER
+#define D_DEPTHONLY
+#define D_AABB
+#define D_INSTANCE
+#define D_INSTANCE_BASE_INDEX
+#include "Aabbs.shader.h"
