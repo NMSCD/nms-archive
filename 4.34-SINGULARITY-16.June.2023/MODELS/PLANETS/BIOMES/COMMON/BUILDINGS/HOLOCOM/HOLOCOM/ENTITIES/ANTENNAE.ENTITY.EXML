@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.34.0)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="TriggerVolumeType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="Floor" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollide" value="False" />
+      <Property name="NoPlayerCollide" value="False" />
+      <Property name="CameraInvisible" value="False" />
+      <Property name="InvisibleForInteraction" value="False" />
+      <Property name="AllowTeleporter" value="False" />
+      <Property name="BlockTeleporter" value="False" />
+      <Property name="DisableGravity" value="False" />
+      <Property name="SpinOnCreate" value="0" />
+      <Property name="UseBasePartOptimisation" value="False" />
+      <Property name="IsTransporter" value="False" />
+    </Property>
+    <Property value="EmptyNode.xml" />
+    <Property value="GcTriggerActionComponentData.xml">
+      <Property name="HideModel" value="False" />
+      <Property name="StartInactive" value="False" />
+      <Property name="States">
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="BOOT" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="HoloSphere" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="HoloLight" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="ACTIVATE" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="1" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAnimAction.xml">
+                  <Property name="Anim" value="OPEN" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="4.5" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Activate" />
+                  <Property name="Name" value="HoloLight" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+                <Property value="EmptyNode.xml" />
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="5.7" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Activate" />
+                  <Property name="Name" value="HoloSphere" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="4" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="HOLONPCSPAWN" />
+                  <Property name="Joint" value="SpawnJNT1" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="HOLONPCSPAWN" />
+                  <Property name="Joint" value="SpawnJNT2" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="HOLONPCSPAWN" />
+                  <Property name="Joint" value="SpawnJNT3" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="6" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="EmptyNode.xml" />
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="ON" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="EmptyNode.xml" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="ON" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAnimAction.xml">
+                  <Property name="Anim" value="IDLE" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Action">
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="DEACTIVATE" />
+                  <Property name="Broadcast" value="True" />
+                  <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="DEACTIVATE" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="HOLONPCSPAWN" />
+                  <Property name="Joint" value="SpawnJNT1" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="HOLONPCSPAWN" />
+                  <Property name="Joint" value="SpawnJNT2" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcParticleAction.xml">
+                  <Property name="Effect" value="HOLONPCSPAWN" />
+                  <Property name="Joint" value="SpawnJNT3" />
+                  <Property name="Exact" value="True" />
+                  <Property name="FindRange" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="2.5" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcPlayAnimAction.xml">
+                  <Property name="Anim" value="CLOSE" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="HoloSphere" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+                <Property value="GcNodeActivationAction.xml">
+                  <Property name="NodeActiveState" value="Deactivate" />
+                  <Property name="Name" value="HoloLight" />
+                  <Property name="SceneToAdd" value="" />
+                  <Property name="IncludePhysics" value="False" />
+                  <Property name="IncludeChildPhysics" value="False" />
+                  <Property name="NotifyNPC" value="False" />
+                  <Property name="UseMasterModel" value="True" />
+                  <Property name="UseLocalNode" value="False" />
+                  <Property name="RestartEmitters" value="False" />
+                  <Property name="AffectModels" value="False" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcActionTriggerState.xml">
+          <Property name="StateID" value="ACTIVATE_ALL" />
+          <Property name="Triggers">
+            <Property value="GcActionTrigger.xml">
+              <Property name="Event" value="GcStateTimeEvent.xml">
+                <Property name="Seconds" value="0" />
+                <Property name="RandomSeconds" value="0" />
+                <Property name="UseMissionClock" value="False" />
+              </Property>
+              <Property name="Action">
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="APOLLO" />
+                  <Property name="Broadcast" value="True" />
+                  <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="ARTEMIS" />
+                  <Property name="Broadcast" value="True" />
+                  <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="NOONE" />
+                  <Property name="Broadcast" value="True" />
+                  <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+                <Property value="GcGoToStateAction.xml">
+                  <Property name="State" value="ACTIVATE" />
+                  <Property name="Broadcast" value="False" />
+                  <Property name="BroadcastLevel" value="GcBroadcastLevel.xml">
+                    <Property name="BroadcastLevel" value="Scene" />
+                  </Property>
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Persistent" value="False" />
+      <Property name="PersistentState" value="" />
+      <Property name="ResetShotTimeOnStateChange" value="False" />
+      <Property name="LinkStateToBaseGrid" value="False" />
+    </Property>
+    <Property value="TkAnimationComponentData.xml">
+      <Property name="Idle" value="TkAnimationData.xml">
+        <Property name="Anim" value="" />
+        <Property name="AdditiveBaseAnim" value="" />
+        <Property name="Filename" value="" />
+        <Property name="StartNode" value="" />
+        <Property name="ExtraStartNodes" />
+        <Property name="GameData" value="TkAnimationGameData.xml">
+          <Property name="RootMotionEnabled" value="False" />
+          <Property name="BlockPlayerMovement" value="False" />
+          <Property name="BlockPlayerWeapon" value="Unblocked" />
+        </Property>
+        <Property name="FrameStart" value="0" />
+        <Property name="FrameEnd" value="0" />
+        <Property name="Priority" value="0" />
+        <Property name="OffsetMin" value="0" />
+        <Property name="OffsetMax" value="0" />
+        <Property name="Delay" value="0" />
+        <Property name="Speed" value="1" />
+        <Property name="ActionStartFrame" value="0" />
+        <Property name="ActionFrame" value="-1" />
+        <Property name="AdditiveBaseFrame" value="0" />
+        <Property name="AnimType" value="Loop" />
+        <Property name="CreatureSize" value="AllSizes" />
+        <Property name="Additive" value="False" />
+        <Property name="Mirrored" value="False" />
+        <Property name="Active" value="True" />
+        <Property name="Has30HzFrames" value="False" />
+      </Property>
+      <Property name="Anims">
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="IDLE" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/HOLOCOM/ANIMATION/HOLOCOMIDLE.ANIM.MBIN" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="600" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="AnimType" value="Loop" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="Has30HzFrames" value="False" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="OPEN" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/HOLOCOM/ANIMATION/HOLOCOMOPEN.ANIM.MBIN" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="300" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="AnimType" value="OneShotBlendable" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="Has30HzFrames" value="False" />
+        </Property>
+        <Property value="TkAnimationData.xml">
+          <Property name="Anim" value="CLOSE" />
+          <Property name="AdditiveBaseAnim" value="" />
+          <Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/HOLOCOM/ANIMATION/HOLOCOMCLOSE.ANIM.MBIN" />
+          <Property name="StartNode" value="" />
+          <Property name="ExtraStartNodes" />
+          <Property name="GameData" value="TkAnimationGameData.xml">
+            <Property name="RootMotionEnabled" value="False" />
+            <Property name="BlockPlayerMovement" value="False" />
+            <Property name="BlockPlayerWeapon" value="Unblocked" />
+          </Property>
+          <Property name="FrameStart" value="0" />
+          <Property name="FrameEnd" value="180" />
+          <Property name="Priority" value="0" />
+          <Property name="OffsetMin" value="0" />
+          <Property name="OffsetMax" value="0" />
+          <Property name="Delay" value="0" />
+          <Property name="Speed" value="1" />
+          <Property name="ActionStartFrame" value="0" />
+          <Property name="ActionFrame" value="-1" />
+          <Property name="AdditiveBaseFrame" value="0" />
+          <Property name="AnimType" value="OneShotBlendable" />
+          <Property name="CreatureSize" value="AllSizes" />
+          <Property name="Additive" value="False" />
+          <Property name="Mirrored" value="False" />
+          <Property name="Active" value="True" />
+          <Property name="Has30HzFrames" value="False" />
+        </Property>
+      </Property>
+      <Property name="Trees" />
+      <Property name="NetSyncAnimations" value="False" />
+      <Property name="JointLODOverrides" />
+    </Property>
+    <Property value="EmptyNode.xml" />
+    <Property value="EmptyNode.xml" />
+    <Property value="EmptyNode.xml" />
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="150" />
+    <Property value="500" />
+  </Property>
+</Data>
