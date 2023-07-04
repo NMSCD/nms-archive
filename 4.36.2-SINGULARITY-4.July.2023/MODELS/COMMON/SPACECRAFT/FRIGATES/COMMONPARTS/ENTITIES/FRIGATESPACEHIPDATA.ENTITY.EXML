@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.36.2)-->
+<Data template="TkAttachmentData">
+  <Property name="Components">
+    <Property value="GcDistanceScaleComponentData.xml">
+      <Property name="UseGlobals" value="False" />
+      <Property name="Scale" value="2.25" />
+      <Property name="MinDistance" value="4000" />
+      <Property name="MaxDistance" value="40000" />
+      <Property name="MinHeight" value="5000" />
+      <Property name="MaxHeight" value="6000" />
+      <Property name="DisabledWhenOnFreighter" value="True" />
+    </Property>
+    <Property value="GcAISpaceshipComponentData.xml">
+      <Property name="Type" value="GcAISpaceshipTypes.xml">
+        <Property name="ShipType" value="Freighter" />
+      </Property>
+      <Property name="Class" value="GcSpaceshipClasses.xml">
+        <Property name="ShipClass" value="Freighter" />
+      </Property>
+      <Property name="Axis" value="GcPrimaryAxis.xml">
+        <Property name="PrimaryAxis" value="ZNeg" />
+      </Property>
+      <Property name="Hangar" value="TkModelResource.xml">
+        <Property name="Filename" value="" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="IsSpaceAnomaly" value="False" />
+      <Property name="IsPoliceFreighter" value="False" />
+    </Property>
+    <Property value="TkPhysicsComponentData.xml">
+      <Property name="Data" value="TkPhysicsData.xml">
+        <Property name="Mass" value="0" />
+        <Property name="Friction" value="0.5" />
+        <Property name="RollingFriction" value="0.2" />
+        <Property name="AngularDamping" value="0.2" />
+        <Property name="LinearDamping" value="0.1" />
+        <Property name="Gravity" value="20" />
+      </Property>
+      <Property name="TriggerVolumeType" value="TkVolumeTriggerType.xml">
+        <Property name="VolumeTriggerType" value="Open" />
+      </Property>
+      <Property name="SurfaceProperties" value="None" />
+      <Property name="TriggerVolume" value="False" />
+      <Property name="Climbable" value="False" />
+      <Property name="Floor" value="False" />
+      <Property name="IgnoreModelOwner" value="False" />
+      <Property name="NoVehicleCollide" value="False" />
+      <Property name="NoPlayerCollide" value="False" />
+      <Property name="CameraInvisible" value="False" />
+      <Property name="InvisibleForInteraction" value="False" />
+      <Property name="AllowTeleporter" value="False" />
+      <Property name="BlockTeleporter" value="False" />
+      <Property name="DisableGravity" value="False" />
+      <Property name="SpinOnCreate" value="0" />
+      <Property name="UseBasePartOptimisation" value="False" />
+      <Property name="IsTransporter" value="False" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="2" />
+    <Property value="20" />
+    <Property value="30" />
+    <Property value="60" />
+    <Property value="500" />
+  </Property>
+</Data>

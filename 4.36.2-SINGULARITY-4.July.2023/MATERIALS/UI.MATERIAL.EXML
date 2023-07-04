@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.36.2)-->
+<Data template="TkMaterialData">
+  <Property name="Name" value="UI" />
+  <Property name="Metamaterial" value="" />
+  <Property name="Class" value="UI" />
+  <Property name="TransparencyLayerID" value="0" />
+  <Property name="CastShadow" value="False" />
+  <Property name="DisableZTest" value="False" />
+  <Property name="CreateFur" value="False" />
+  <Property name="Link" value="" />
+  <Property name="Shader" value="SHADERS/UI.SHADER.BIN" />
+  <Property name="Flags" />
+  <Property name="Uniforms">
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gUIParamsVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0.2" />
+        <Property name="y" value="0.3" />
+        <Property name="z" value="0.9" />
+        <Property name="t" value="0.01" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gUIDeformVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gUIColourVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0.2" />
+        <Property name="y" value="0.3" />
+        <Property name="z" value="0.9" />
+        <Property name="t" value="0.01" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gVignetteVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0.2" />
+        <Property name="y" value="1" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gUILowHealthVignetteVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0.2" />
+        <Property name="y" value="1" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0.5" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gCriticalHitPointsVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gFrontendFlashColourVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gColourLUTParamsVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+    <Property value="TkMaterialUniform.xml">
+      <Property name="Name" value="gColourLUTStrengthsVec4" />
+      <Property name="Values" value="Vector4f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+        <Property name="t" value="0" />
+      </Property>
+      <Property name="ExtendedValues" />
+    </Property>
+  </Property>
+  <Property name="Samplers">
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gUIMap" />
+      <Property name="Map" value="TEXTURES/RENDERABLE/UI.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gUIMask" />
+      <Property name="Map" value="TEXTURES/RENDERABLE/UIMASK.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gUIFullscreenEffect" />
+      <Property name="Map" value="TEXTURES/RENDERABLE/UIFULLSCREEN.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gUIZoomEffect" />
+      <Property name="Map" value="TEXTURES/UI/HUD/BINOCULARS.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gUISurveyingEffect" />
+      <Property name="Map" value="TEXTURES/UI/HUD/SURVEYING.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gUIMissionSurveyingEffect" />
+      <Property name="Map" value="TEXTURES/UI/HUD/BINOCULARMISSION.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gUINoiseEffect" />
+      <Property name="Map" value="TEXTURES/EFFECTS/FULLSCREEN/HAZARDS/SPARKLE.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gUINoShieldOverlay" />
+      <Property name="Map" value="TEXTURES/RENDERABLE/UIFULLSCREENSHIELD.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gUIFullScreenRefraction" />
+      <Property name="Map" value="TEXTURES/EFFECTS/FULLSCREEN/HAZARDS/COLD.REFRACTION.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gUIFullscreenNormal" />
+      <Property name="Map" value="TEXTURES/EFFECTS/FULLSCREEN/HAZARDS/COLD.NORMAL.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gUICamoEffect" />
+      <Property name="Map" value="TEXTURES/EFFECTS/FULLSCREEN/STATES/CAMO.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="True" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gUICamoNormal" />
+      <Property name="Map" value="TEXTURES/EFFECTS/FULLSCREEN/STATES/CAMO.NORMAL.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gColourLUTBase" />
+      <Property name="Map" value="TEXTURES/COLOURLUT.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gColourLUTFar" />
+      <Property name="Map" value="TEXTURES/COLOURLUT.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gColourLUTStorm" />
+      <Property name="Map" value="TEXTURES/COLOURLUT.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+    <Property value="TkMaterialSampler.xml">
+      <Property name="Name" value="gColourLUTEffect" />
+      <Property name="Map" value="TEXTURES/COLOURLUT.DDS" />
+      <Property name="IsCube" value="False" />
+      <Property name="UseCompression" value="True" />
+      <Property name="UseMipMaps" value="True" />
+      <Property name="IsSRGB" value="False" />
+      <Property name="MaterialAlternativeId" value="" />
+      <Property name="TextureAddressMode" value="Clamp" />
+      <Property name="TextureFilterMode" value="Trilinear" />
+      <Property name="Anisotropy" value="0" />
+    </Property>
+  </Property>
+  <Property name="ShaderMillDataHash" value="0" />
+</Data>
