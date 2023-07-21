@@ -1,0 +1,289 @@
+[[FX]]
+
+// -----------------------------------------------------------------------------------
+// Samplers
+// -----------------------------------------------------------------------------------
+
+sampler gBufferMap = sampler_state
+{
+    Address = Wrap;
+	TexUnit = 0;
+};
+
+
+sampler gBuffer1Map = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 1;
+};
+
+sampler gBuffer2Map = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 2;
+};
+
+sampler gBuffer3Map = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 3;
+};
+
+sampler gBuffer4Map = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 4;
+};
+
+sampler gUIMap = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 5;
+};
+
+sampler gUIFullscreenEffect = sampler_state
+{
+    Address = Wrap;
+	TexUnit = 6;
+};
+
+sampler gUIFullscreenNormal = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 7;
+};
+
+
+sampler gUIZoomEffect = sampler_state
+{
+	Address = Clamp;
+	TexUnit = 8;
+};
+
+sampler gUIFullScreenRefraction = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 9;
+};
+
+sampler gUISurveyingEffect = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 10;
+};
+
+sampler gBlurMask = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 11;
+};
+
+
+sampler gColourLUTBase = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 12;
+};
+
+sampler gColourLUTFar = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 13;
+};
+
+sampler gColourLUTStorm = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 14;
+};
+
+sampler gColourLUTEffect = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 15;
+};
+
+sampler gUIMissionSurveyingEffect = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 16;
+};
+
+sampler gUICamoEffect = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 17;
+};
+
+sampler gUICamoNormal = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 18;
+};
+
+// -----------------------------------------------------------------------------------
+// Uniforms
+// -----------------------------------------------------------------------------------
+
+float4 gUIParamsVec4 = { 0.2, 0.3, 0.9, 0.01 };
+float4 gUIDeformVec4 = { 0.0, 0.0, 0.0, 0.0 };
+float4 gUIColourVec4 = { 0.0, 0.0, 0.0, 0.0  };
+float4 gVignetteVec4 = { 0.2, 1.0, 0.0, 0.0  };
+float4 gUILowHealthVignetteVec4 = { 0.2, 1.0, 0.0, 0.0 };
+float4 gWashParamsVec4 = { 0.0, 0.0, 0.0, 0.0  };
+float4 gCriticalHitPointsVec4 = { 0.0, 0.0, 0.0, 0.0 };
+float4 gFrontendFlashColourVec4 = { 0.0, 0.0, 0.0, 0.0 };
+float4 gColourLUTParamsVec4 = { 0.0, 0.0, 0.0, 0.0 };
+float4 gColourLUTStrengthsVec4 = { 0.0, 0.0, 0.0, 0.0 };
+
+// -----------------------------------------------------------------------------------
+// Contexts
+// -----------------------------------------------------------------------------------
+
+context SCREENEFFECT
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_SCREENEFFECT;
+    ComputeShader  = compile GLSL FS_SCREENEFFECT;
+}
+
+context SCREENEFFECT_VR
+{
+    VertexShader = compile GLSL VS_FSQUAD_VR;
+    PixelShader = compile GLSL FS_SCREENEFFECT_VR;
+    ComputeShader = compile GLSL FS_SCREENEFFECT_VR;
+}
+
+context SCREENEFFECT_LUM
+{
+    VertexShader = compile GLSL VS_FSQUAD_VR;
+    PixelShader = compile GLSL FS_SCREENEFFECT_LUM;
+    ComputeShader = compile GLSL FS_SCREENEFFECT_LUM;
+}
+
+context [ SWITCH ] SCREENEFFECT_SWITCH
+{
+    VertexShader    = compile GLSL VS_FSQUAD_VR;
+    PixelShader     = compile GLSL FS_SCREENEFFECT_SWITCH;
+    ComputeShader   = compile GLSL FS_SCREENEFFECT_SWITCH;
+}
+
+context SCRNFX_SWITCH_FSR2
+{
+    VertexShader    = compile GLSL VS_FSQUAD;
+    PixelShader     = compile GLSL FS_SCREENEFFECT_SWITCH_FSR2;
+    ComputeShader   = compile GLSL FS_SCREENEFFECT_SWITCH_FSR2;
+}
+
+context [ SWITCH ] SCRNFX_FNP_SWITCH
+{
+    VertexShader    = compile GLSL VS_FSQUAD_VR;
+    PixelShader     = compile GLSL FS_SCREENEFFECT_FLIP_AND_PACK_SWITCH;
+    ComputeShader   = compile GLSL FS_SCREENEFFECT_FLIP_AND_PACK_SWITCH;
+}
+
+context BLENDED_EFFECTS
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_BLENDED_EFFECTS;
+}
+
+context UI
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_UI;
+}
+
+context BINOCS
+{
+	VertexShader    = compile GLSL VS_FSQUAD;
+	PixelShader     = compile GLSL FS_BINOCS;
+    ComputeShader   = compile GLSL FS_BINOCS;
+}
+
+context SCREEN_FADE
+{
+    VertexShader    = compile GLSL VS_FSQUAD_FADE;
+    PixelShader     = compile GLSL FS_SCREEN_FADE;
+    ComputeShader   = compile GLSL FS_SCREEN_FADE;
+}
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#define D_TEX_QUAD
+#define D_UI
+#include "ImmediateModeVertex.shader.h"
+
+[[VS_FSQUAD_VR]]
+// =================================================================================================
+#define D_TEX_QUAD
+#define D_UI
+#define D_LUT
+#include "ImmediateModeVertex.shader.h"
+
+[[VS_FSQUAD_FADE]]
+// =================================================================================================
+#define D_SCREEN_FADE
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_UI]]
+// =================================================================================================
+#define D_UI
+#include "Fullscreen/UIFragment.shader.h"
+
+[[FS_BINOCS]]
+// =================================================================================================
+#define D_BINOCS
+#include "Fullscreen/UIFragment.shader.h"
+
+[[FS_SCREENEFFECT]]
+// =================================================================================================
+#define D_SCREENEFFECT
+#include "Fullscreen/UIFragment.shader.h"
+
+[[FS_SCREENEFFECT_VR]]
+// =================================================================================================
+#define D_SCREENEFFECT
+#define D_SCREENEFFECT_VR
+#define D_LUT
+#include "Fullscreen/UIFragment.shader.h"
+
+[[FS_SCREENEFFECT_LUM]]
+// =================================================================================================
+#define D_OUTPUT_LUMINANCE
+#define D_SCREENEFFECT
+#define D_SCREENEFFECT_VR
+#define D_LUT
+#include "Fullscreen/UIFragment.shader.h"
+
+[[FS_SCREENEFFECT_SWITCH]]
+// =================================================================================================
+#define D_SCREENEFFECT
+#define D_SCREENEFFECT_SWITCH
+#define D_LUT
+#include "Fullscreen/UIFragment.shader.h"
+
+[[FS_SCREENEFFECT_SWITCH_FSR2]]
+// =================================================================================================
+#define D_SCREENEFFECT
+#define D_SCREENEFFECT_SWITCH_FSR2
+#include "Fullscreen/UIFragment.shader.h"
+
+[[FS_SCREENEFFECT_FLIP_AND_PACK_SWITCH]]
+// =================================================================================================
+#define D_SCREENEFFECT
+#define D_SCREENEFFECT_SWITCH
+#define D_FLIP_AND_PACK
+#define D_LUT
+#include "Fullscreen/UIFragment.shader.h"
+
+[[FS_BLENDED_EFFECTS]]
+// =================================================================================================
+#define D_SCREENEFFECT
+#define D_BLENDED_EFFECTS
+#include "Fullscreen/UIFragment.shader.h"
+
+[[FS_SCREEN_FADE]]
+// =================================================================================================
+#define D_SCREEN_FADE
+#include "Fullscreen/UIFragment.shader.h"

@@ -1,0 +1,271 @@
+[[FX]]
+
+// -----------------------------------------------------------------------------------
+// Samplers
+// -----------------------------------------------------------------------------------
+
+sampler r_input_color_jittered = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 0;
+};
+
+sampler r_prepared_input_color = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 1;
+};
+
+sampler r_reconstructed_previous_nearest_depth = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 2;
+};
+
+sampler r_dilated_motion_vectors = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 3;
+};
+
+sampler r_dilatedDepth = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 4;
+};
+
+sampler r_depth_clip = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 5;
+};
+
+sampler r_internal_upscaled_color = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 6;
+};
+
+sampler r_internal_upscaled_color_weight = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 7;
+};
+
+sampler r_lock_status = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 8;
+};
+
+sampler r_edge_status = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 9;
+};
+
+sampler r_prepared_input_color_luma = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 10;
+};
+
+sampler r_prepared_input_log_luminance = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 11;
+};
+
+sampler r_luma_history = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 15;
+};
+
+sampler r_luma_stability = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 16;
+};
+
+sampler r_imgMips = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 17;
+};
+
+sampler r_reactive_mask = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 18;
+};
+
+sampler r_lanczos_sum_lut = sampler_state
+{
+    Address = Clamp;
+    Filter = Trilinear;
+    TexUnit = 19;
+};
+
+sampler rw_lock_status = sampler_state
+{
+    ImgUnit = 0;
+};
+
+sampler rw_img_mip_shading_change = sampler_state
+{
+    ImgUnit = 1;
+};
+
+// -----------------------------------------------------------------------------------
+// Uniforms
+// -----------------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------------
+// Contexts
+// -----------------------------------------------------------------------------------
+
+context [ SWITCH ] FSR2CS_ReduceLuminance
+{
+    ComputeShader   = compile GLSL CS_FSR2_ReduceLuminance;
+
+    PersistShaderReflection = true;
+}
+
+context [ PC ] FSR2CS_ReduceLuminance
+{
+    ComputeShader   = compile GLSL CS_FSR2_ReduceLuminance;
+
+    PersistShaderReflection = true;
+}
+
+context [ SWITCH ] FSR2PS_Stability
+{
+    VertexShader    = compile GLSL VS_FSR2_Quad;
+    PixelShader     = compile GLSL FS_FSR2_Stability;
+
+    PersistShaderReflection = true;
+}
+
+context [ PC ] FSR2PS_Stability
+{
+    VertexShader    = compile GLSL VS_FSR2_Quad;
+    PixelShader     = compile GLSL FS_FSR2_Stability;
+
+    PersistShaderReflection = true;
+}
+
+context [ SWITCH ] FSR2PS_DepthClip
+{
+    VertexShader    = compile GLSL VS_FSR2_Quad;
+    PixelShader     = compile GLSL FS_FSR2_DepthClip;
+
+    PersistShaderReflection = true;
+}
+
+context [ PC ] FSR2PS_DepthClip
+{
+    VertexShader    = compile GLSL VS_FSR2_Quad;
+    PixelShader     = compile GLSL FS_FSR2_DepthClip;
+
+    PersistShaderReflection = true;
+}
+
+context [ SWITCH ] FSR2CS_Lock
+{
+    ComputeShader   = compile GLSL CS_FSR2_Lock;
+
+    PersistShaderReflection = true;
+}
+
+context [ PC ] FSR2CS_Lock
+{
+    ComputeShader   = compile GLSL CS_FSR2_Lock;
+
+    PersistShaderReflection = true;
+}
+
+context [ SWITCH ] FSR2PS_Accumulate
+{
+    VertexShader    = compile GLSL VS_FSR2_Quad;
+    PixelShader     = compile GLSL FS_FSR2_Accumulate;
+
+    PersistShaderReflection = true;
+}
+
+context [ PC ] FSR2PS_Accumulate
+{
+    VertexShader    = compile GLSL VS_FSR2_Quad;
+    PixelShader     = compile GLSL FS_FSR2_Accumulate;
+
+    PersistShaderReflection = true;
+}
+
+context [ SWITCH ] FSR2PS_Debug
+{
+    VertexShader    = compile GLSL VS_FSR2_Quad;
+    PixelShader     = compile GLSL FS_FSR2_Debug;
+
+    PersistShaderReflection = true;
+}
+
+context [ PC ] FSR2PS_Debug
+{
+    VertexShader    = compile GLSL VS_FSR2_Quad;
+    PixelShader     = compile GLSL FS_FSR2_Debug;
+
+    PersistShaderReflection = true;
+}
+
+[[CS_FSR2_ReduceLuminance]]
+// =================================================================================================
+#define D_USE_CROSS_LANE
+#define D_FSR2_USE_OPT_SETTINGS
+#define D_FSR2_REDUCE_LUMINANCE
+#include "Fullscreen/FidelityFXSuperRes2Fragment.shader.h"
+
+[[FS_FSR2_Stability]]
+// =================================================================================================
+#define FFX_FSR2_CUSTOM_OPTION_RUN_ON_FRAGMENT            1
+#define D_FSR2_USE_OPT_SETTINGS
+#define D_FSR2_STABILITY_PASS_FRAGMENT
+#include "Fullscreen/FidelityFXSuperRes2Fragment.shader.h"
+
+[[FS_FSR2_DepthClip]]
+// =================================================================================================
+#define FFX_FSR2_CUSTOM_OPTION_RUN_ON_FRAGMENT            1
+#define D_FSR2_USE_OPT_SETTINGS
+#define D_FSR2_DEPTH_CLIP_PASS_FRAGMENT
+#include "Fullscreen/FidelityFXSuperRes2Fragment.shader.h"
+
+[[CS_FSR2_Lock]]
+// =================================================================================================
+#define D_FSR2_USE_OPT_SETTINGS
+#define D_FSR2_LOCK_PASS
+#include "Fullscreen/FidelityFXSuperRes2Fragment.shader.h"
+
+[[FS_FSR2_Accumulate]]
+// =================================================================================================
+#define FFX_GPU
+#define FFX_FSR2_CUSTOM_OPTION_RUN_ON_FRAGMENT            1
+#define D_FSR2_USE_OPT_SETTINGS
+#define D_FSR2_ACCUMULATE_PASS_FRAGMENT
+#include "Fullscreen/FidelityFXSuperRes2Fragment.shader.h"
+
+[[VS_FSR2_Quad]]
+// =================================================================================================
+#define D_FSR2_USE_OPT_SETTINGS
+#define D_FSR2_QUAD
+#include "Fullscreen/FidelityFXSuperRes2Fragment.shader.h"
+
+[[FS_FSR2_QuadTestFrag]]
+// =================================================================================================
+#define D_FSR2_USE_OPT_SETTINGS
+#define D_FSR2_QUAD_TEST_FRAG
+#include "Fullscreen/FidelityFXSuperRes2Fragment.shader.h"
+
+[[FS_FSR2_Debug]]
+// =================================================================================================
+#define D_FSR2_USE_OPT_SETTINGS
+#define D_FSR2_DEBUG
+#include "Fullscreen/FidelityFXSuperRes2Fragment.shader.h"
