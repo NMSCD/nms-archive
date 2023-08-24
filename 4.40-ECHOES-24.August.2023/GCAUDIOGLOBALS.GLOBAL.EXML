@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.40.0)-->
+<Data template="GcAudioGlobals">
+  <Property name="NPCEngines" value="GcAudioNPCDoppler.xml">
+    <Property name="Config">
+      <Property name="None" value="GcAudio3PointDopplerData.xml">
+        <Property name="Front" value="1" />
+        <Property name="Mid" value="1" />
+        <Property name="Rear" value="1" />
+      </Property>
+      <Property name="Pirate" value="GcAudio3PointDopplerData.xml">
+        <Property name="Front" value="0.75" />
+        <Property name="Mid" value="1" />
+        <Property name="Rear" value="0.75" />
+      </Property>
+      <Property name="Police" value="GcAudio3PointDopplerData.xml">
+        <Property name="Front" value="0.75" />
+        <Property name="Mid" value="1" />
+        <Property name="Rear" value="0.75" />
+      </Property>
+      <Property name="Trader" value="GcAudio3PointDopplerData.xml">
+        <Property name="Front" value="0.75" />
+        <Property name="Mid" value="1" />
+        <Property name="Rear" value="0.75" />
+      </Property>
+      <Property name="Freighter" value="GcAudio3PointDopplerData.xml">
+        <Property name="Front" value="0.25" />
+        <Property name="Mid" value="0.25" />
+        <Property name="Rear" value="0.25" />
+      </Property>
+      <Property name="PlayerSquadron" value="GcAudio3PointDopplerData.xml">
+        <Property name="Front" value="0.75" />
+        <Property name="Mid" value="1" />
+        <Property name="Rear" value="0.75" />
+      </Property>
+      <Property name="DefenceForce" value="GcAudio3PointDopplerData.xml">
+        <Property name="Front" value="0.75" />
+        <Property name="Mid" value="1" />
+        <Property name="Rear" value="0.75" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="DroneDoppler" value="GcAudio3PointDopplerData.xml">
+    <Property name="Front" value="1.25" />
+    <Property name="Mid" value="2" />
+    <Property name="Rear" value="1.5" />
+  </Property>
+  <Property name="AuxSendCaveRampDistance" value="15" />
+  <Property name="AuxSendOutdoorsRampDistance" value="50" />
+  <Property name="LadderStepDistance" value="1.8" />
+  <Property name="ShorelineSenseStartUp" value="1" />
+  <Property name="ShorelineSenseProbeDist" value="50" />
+  <Property name="ShorelineSenseBlend" value="0.15" />
+  <Property name="ShorelineSenseBaseU" value="0.9" />
+  <Property name="ShorelineSenseUJitter" value="Vector2f.xml">
+    <Property name="x" value="-0.01" />
+    <Property name="y" value="0.01" />
+  </Property>
+  <Property name="ShorelineSenseVJitter" value="Vector2f.xml">
+    <Property name="x" value="-0.01" />
+    <Property name="y" value="0.01" />
+  </Property>
+  <Property name="ShorelineSenseRadius" value="Vector2f.xml">
+    <Property name="x" value="10" />
+    <Property name="y" value="40" />
+  </Property>
+  <Property name="ShorelineValidityRate" value="3" />
+  <Property name="ShorelineRTPCSmoothRate" value="0.5" />
+  <Property name="ShorelineObstructionSmoothRate" value="0.3" />
+  <Property name="ShorelineObstructionMul" value="0.3" />
+  <Property name="DroneDopplerExtentsFactor" value="1" />
+  <Property name="DistanceReportMin" value="0" />
+  <Property name="DistanceReportMax" value="2000" />
+  <Property name="DistanceSquishScaleToListener" value="0.9" />
+  <Property name="DistanceSquishMaxTravel" value="180" />
+  <Property name="ByteBeatMaxGeneratingAudio" value="8" />
+  <Property name="ByteBeatCrossfadeTime" value="0.3" />
+  <Property name="ByteBeatVisualisationTime" value="0.06" />
+  <Property name="ByteBeatVisualisationMode" value="1" />
+  <Property name="ByteBeatVisualisationPixelStep" value="1" />
+  <Property name="ByteBeatVisualisationMiniPixelStep" value="1" />
+  <Property name="ByteBeatNonSilentAttempts" value="10" />
+  <Property name="ByteBeatNonSilentTime" value="0.5" />
+  <Property name="ByteBeatNonSilentAvgInterpSpeed" value="0.5" />
+  <Property name="ByteBeatNonSilentSDCutoff" value="0.03" />
+  <Property name="ByteBeatBeginAtTonicProbability" value="0.5" />
+  <Property name="ByteBeatChangeNoteProbability" value="0.5" />
+  <Property name="ByteBeatSkipNoteProbability" value="0.01" />
+  <Property name="ByteBeatScaleDegreeProbability">
+    <Property value="2" />
+    <Property value="1" />
+    <Property value="1" />
+    <Property value="1.5" />
+    <Property value="2" />
+    <Property value="1" />
+    <Property value="1" />
+  </Property>
+  <Property name="ByteBeatSpeakerVolumeInterSpeed" value="0.5" />
+  <Property name="ByteBeatSpeakerMaxAmplitude" value="Vector2f.xml">
+    <Property name="x" value="0.04" />
+    <Property name="y" value="0.01" />
+  </Property>
+  <Property name="ByteBeatSpeakerMinFrequency" value="Vector2f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="2" />
+  </Property>
+  <Property name="ByteBeatSpeakerMaxFrequency" value="Vector2f.xml">
+    <Property name="x" value="4" />
+    <Property name="y" value="5" />
+  </Property>
+  <Property name="ByteBeatPlayerNumLoops" value="4" />
+  <Property name="ByteBeatPlayerFadeOut" value="0.125" />
+  <Property name="ByteBeatDrumMixLow" value="0.3" />
+  <Property name="ByteBeatDrumMixHigh" value="1" />
+  <Property name="ByteBeatSynthMixLow" value="0.3" />
+  <Property name="ByteBeatSynthMixHigh" value="1" />
+  <Property name="AtlasStationActiveDistance" value="5000" />
+  <Property name="MiniStationActiveDistance" value="500" />
+  <Property name="PlayerDepthUnderwaterMax" value="20" />
+  <Property name="PlayerLowerOffsetEmitterMul" value="0.6" />
+  <Property name="ObstructionEnabled" value="True" />
+  <Property name="ObstructionSmoothTime" value="0.5" />
+  <Property name="ObstructionValueMax" value="0.5" />
+  <Property name="ObstructionAuxControlWhenVisible" value="1" />
+  <Property name="ObstructionAuxControlWhenHidden" value="0.35" />
+  <Property name="PulseMusicEnabled" value="True" />
+  <Property name="LockListenerMatrix" value="False" />
+  <Property name="EnableVRSpecificAudio" value="True" />
+  <Property name="ArmFoleySpeedMultiplier" value="38" />
+  <Property name="ArmWhooshFoleyValueTrigger" value="95" />
+  <Property name="MinSecondsBetweenArmWhooshes" value="1.5" />
+  <Property name="CommsChatterFalloffFreighers" value="Vector2f.xml">
+    <Property name="x" value="100" />
+    <Property name="y" value="3000" />
+  </Property>
+  <Property name="CommsChatterFalloffShips" value="Vector2f.xml">
+    <Property name="x" value="250" />
+    <Property name="y" value="3000" />
+  </Property>
+</Data>

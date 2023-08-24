@@ -1,0 +1,1566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.40.0)-->
+<Data template="GcFleetGlobals">
+  <Property name="FreighterCustomiserSunAngleAdjust" value="Vector3f.xml">
+    <Property name="x" value="0.75" />
+    <Property name="y" value="0.2" />
+    <Property name="z" value="-0.4" />
+  </Property>
+  <Property name="CivilianMPMissionGiverPuzzle" value="" />
+  <Property name="MaxPurchaseDistance" value="1000" />
+  <Property name="SingleShipFlybyDistance" value="700" />
+  <Property name="SingleShipFlybyMaxAngle" value="60" />
+  <Property name="SingleShipFlybyHeightOffset" value="-200" />
+  <Property name="DistanceForSingleShipFlybyCommsReset" value="850" />
+  <Property name="DistanceForPurchaseReset" value="2000" />
+  <Property name="CombatFrigateSpawnMinRange" value="800" />
+  <Property name="CombatFrigateSpawnAngle" value="20" />
+  <Property name="CombatNotificationTime" value="4" />
+  <Property name="CombatDefenderSpawnDelay" value="2" />
+  <Property name="PostCombatSpawnDelay" value="3" />
+  <Property name="CombatSpawnDelay" value="3" />
+  <Property name="CombatSpawnDelayIncreaseByInventoryClass">
+    <Property value="8" />
+    <Property value="6" />
+    <Property value="3" />
+    <Property value="1" />
+  </Property>
+  <Property name="ExplorationPointsRequiredForScan" value="50" />
+  <Property name="FleetInteractionDepthOfField" value="GcInteractionDof.xml">
+    <Property name="IsEnabled" value="False" />
+    <Property name="UseGlobals" value="False" />
+    <Property name="NearPlaneMin" value="2" />
+    <Property name="NearPlaneAdjust" value="1" />
+    <Property name="FarPlane" value="3" />
+    <Property name="FarFadeDistance" value="2" />
+  </Property>
+  <Property name="PercentChangeOfFrigateBeingPurchasable" value="60" />
+  <Property name="FleetCommunicationOSDMessage" value="ALL_FLEET_OSD" />
+  <Property name="MinFrigateStatValue" value="-10" />
+  <Property name="MaxFrigateStatValue" value="50" />
+  <Property name="MinFrigateDistanceFromFreighter" value="400" />
+  <Property name="MaxFrigateDistanceFromFreighter" value="1200" />
+  <Property name="FrigateDistanceMultiplierIfNoCaptialShip" value="0.66" />
+  <Property name="PercentChanceOfFrigateAdditionalSpawnedTrait" value="55" />
+  <Property name="MaximumSpeedDecrease" value="-50" />
+  <Property name="MaximumSpeedIncrease" value="50" />
+  <Property name="CameraPauseAfterStartingExpedition" value="1" />
+  <Property name="UITraitLinesAngle" value="-4" />
+  <Property name="UITraitLineLengths">
+    <Property value="GcFrigateUITraitLines.xml">
+      <Property name="Line0" value="18" />
+      <Property name="Line1" value="-10" />
+      <Property name="Line2" value="9" />
+      <Property name="Line3" value="-13" />
+      <Property name="Line4" value="-19" />
+    </Property>
+    <Property value="GcFrigateUITraitLines.xml">
+      <Property name="Line0" value="22" />
+      <Property name="Line1" value="22" />
+      <Property name="Line2" value="-25" />
+      <Property name="Line3" value="24" />
+      <Property name="Line4" value="-34" />
+    </Property>
+    <Property value="GcFrigateUITraitLines.xml">
+      <Property name="Line0" value="19" />
+      <Property name="Line1" value="-13" />
+      <Property name="Line2" value="20" />
+      <Property name="Line3" value="-14" />
+      <Property name="Line4" value="9" />
+    </Property>
+    <Property value="GcFrigateUITraitLines.xml">
+      <Property name="Line0" value="-11" />
+      <Property name="Line1" value="-24" />
+      <Property name="Line2" value="19" />
+      <Property name="Line3" value="15" />
+      <Property name="Line4" value="19" />
+    </Property>
+    <Property value="GcFrigateUITraitLines.xml">
+      <Property name="Line0" value="16" />
+      <Property name="Line1" value="19" />
+      <Property name="Line2" value="19" />
+      <Property name="Line3" value="-11" />
+      <Property name="Line4" value="-20" />
+    </Property>
+    <Property value="GcFrigateUITraitLines.xml">
+      <Property name="Line0" value="14" />
+      <Property name="Line1" value="-10" />
+      <Property name="Line2" value="19" />
+      <Property name="Line3" value="-8" />
+      <Property name="Line4" value="9" />
+    </Property>
+    <Property value="GcFrigateUITraitLines.xml">
+      <Property name="Line0" value="14" />
+      <Property name="Line1" value="-10" />
+      <Property name="Line2" value="19" />
+      <Property name="Line3" value="-8" />
+      <Property name="Line4" value="9" />
+    </Property>
+    <Property value="GcFrigateUITraitLines.xml">
+      <Property name="Line0" value="14" />
+      <Property name="Line1" value="-10" />
+      <Property name="Line2" value="19" />
+      <Property name="Line3" value="-8" />
+      <Property name="Line4" value="9" />
+    </Property>
+    <Property value="GcFrigateUITraitLines.xml">
+      <Property name="Line0" value="-19" />
+      <Property name="Line1" value="17" />
+      <Property name="Line2" value="-15" />
+      <Property name="Line3" value="15" />
+      <Property name="Line4" value="-19" />
+    </Property>
+  </Property>
+  <Property name="RacialTermForCaptain">
+    <Property name="Traders" value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_CAP_NAME_TRA" />
+    </Property>
+    <Property name="Warriors" value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_CAP_NAME_WAR" />
+    </Property>
+    <Property name="Explorers" value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_CAP_NAME_EXP" />
+    </Property>
+    <Property name="Robots" value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_CAP_NAME_TRA" />
+    </Property>
+    <Property name="Atlas" value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_CAP_NAME_TRA" />
+    </Property>
+    <Property name="Diplomats" value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_CAP_NAME_TRA" />
+    </Property>
+    <Property name="Exotics" value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_CAP_NAME_TRA" />
+    </Property>
+    <Property name="None" value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_CAP_NAME_TRA" />
+    </Property>
+    <Property name="Builders" value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_CAP_NAME_TRA" />
+    </Property>
+  </Property>
+  <Property name="TimeBeforeShowingHangar" value="0.6" />
+  <Property name="TimeBeforeHidingHangar" value="0.25" />
+  <Property name="NumberOfShipsInInitialFleet" value="1" />
+  <Property name="NewFrigatesStartDamaged" value="False" />
+  <Property name="ExpeditionsCompleteInstantly" value="False" />
+  <Property name="ShowSeeds" value="False" />
+  <Property name="DisablePlayerFleets" value="False" />
+  <Property name="DebugInterventionEvent" value="" />
+  <Property name="ForceDebriefEntryType" value="None" />
+  <Property name="ForcedSequentialEventsStartingIndex" value="0" />
+  <Property name="NextDebriefDescriptionOffset" value="0" />
+  <Property name="LevelupProgressRequiredToNotBeSadAboutDamage" value="0.95" />
+  <Property name="TimeBeforePlayerAlertedToDamagedFrigates" value="4" />
+  <Property name="DamagedListEntryPulseRate" value="1.5" />
+  <Property name="NonUrgentDamagedListEntryAlpha" value="0.35" />
+  <Property name="LowDamageNumberOfExpeditions" value="3" />
+  <Property name="RampDamageNumberOfExpeditions" value="10" />
+  <Property name="PercentChanceOfDamageOnFailedEvent" value="Vector2f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="20" />
+  </Property>
+  <Property name="PercentChanceOfGenericEventDescription" value="45" />
+  <Property name="PercentChanceOfPrimaryDescriptionForBalancedEvent" value="50" />
+  <Property name="FrigateDamageDescriptions" value="GcNumberedTextList.xml">
+    <Property name="Format" value="FLEET_DAMAGED_PART_%d" />
+    <Property name="Count" value="55" />
+  </Property>
+  <Property name="FrigateGoodMoods" value="GcNumberedTextList.xml">
+    <Property name="Format" value="FLEET_MOOD_GOOD_%d" />
+    <Property name="Count" value="88" />
+  </Property>
+  <Property name="FrigateBadMoods" value="GcNumberedTextList.xml">
+    <Property name="Format" value="FLEET_MOOD_BAD_%d" />
+    <Property name="Count" value="32" />
+  </Property>
+  <Property name="DeepSpaceFrigateMoods">
+    <Property name="Combat" value="GcNumberedTextList.xml">
+      <Property name="Format" value="UI_DEEP_SPACE_FRIG_MOOD_ATT_%d" />
+      <Property name="Count" value="10" />
+    </Property>
+    <Property name="Exploration" value="GcNumberedTextList.xml">
+      <Property name="Format" value="UI_DEEP_SPACE_FRIG_MOOD_EXP_%d" />
+      <Property name="Count" value="10" />
+    </Property>
+    <Property name="Mining" value="GcNumberedTextList.xml">
+      <Property name="Format" value="UI_DEEP_SPACE_FRIG_MOOD_IND_%d" />
+      <Property name="Count" value="10" />
+    </Property>
+    <Property name="Diplomatic" value="GcNumberedTextList.xml">
+      <Property name="Format" value="UI_DEEP_SPACE_FRIG_MOOD_TRA_%d" />
+      <Property name="Count" value="10" />
+    </Property>
+    <Property name="FuelBurnRate" value="GcNumberedTextList.xml">
+      <Property name="Format" value="UI_DEEP_SPACE_FRIG_MOOD_FUE_%d" />
+      <Property name="Count" value="10" />
+    </Property>
+    <Property name="FuelCapacity" value="GcNumberedTextList.xml">
+      <Property name="Format" value="UI_DEEP_SPACE_FRIG_MOOD_FUE_%d" />
+      <Property name="Count" value="10" />
+    </Property>
+    <Property name="Speed" value="GcNumberedTextList.xml">
+      <Property name="Format" value="UI_DEEP_SPACE_FRIG_MOOD_SPE_%d" />
+      <Property name="Count" value="10" />
+    </Property>
+    <Property name="ExtraLoot" value="GcNumberedTextList.xml">
+      <Property name="Format" value="UI_DEEP_SPACE_FRIG_MOOD_EXP_%d" />
+      <Property name="Count" value="10" />
+    </Property>
+    <Property name="Repair" value="GcNumberedTextList.xml">
+      <Property name="Format" value="UI_DEEP_SPACE_FRIG_MOOD_EXP_%d" />
+      <Property name="Count" value="10" />
+    </Property>
+    <Property name="Invulnerable" value="GcNumberedTextList.xml">
+      <Property name="Format" value="UI_DEEP_SPACE_FRIG_MOOD_EXP_%d" />
+      <Property name="Count" value="10" />
+    </Property>
+    <Property name="Stealth" value="GcNumberedTextList.xml">
+      <Property name="Format" value="UI_DEEP_SPACE_FRIG_MOOD_EXP_%d" />
+      <Property name="Count" value="10" />
+    </Property>
+  </Property>
+  <Property name="FrigateExtraNotes" value="GcNumberedTextList.xml">
+    <Property name="Format" value="FLEET_SHIP_NOTE_%d" />
+    <Property name="Count" value="100" />
+  </Property>
+  <Property name="RadiusRequiredForFrigateSpawn" value="250" />
+  <Property name="SpawnDelayForNewFrigates" value="8" />
+  <Property name="SpawnDelayForFleetFrigates" value="2.66" />
+  <Property name="SpawnDelayForReturningFrigates" value="5" />
+  <Property name="SpawnDelayRandomMin" value="0.1" />
+  <Property name="SpawnDelayRandomMax" value="7" />
+  <Property name="SpawnDelayIncreasePerFrigate" value="0.1" />
+  <Property name="DespawnDelay" value="0.5" />
+  <Property name="DespawnDelayIncreasePerFrigate" value="0.1" />
+  <Property name="FrigatesPerSecondForInstantSpawn" value="2" />
+  <Property name="HologramSwapSpeed" value="1" />
+  <Property name="TerminalNeedsAssignmentPuzzleID" value="FLEET_COMM_POST_EMPTY" />
+  <Property name="TerminalInterventionPuzzleID" value="FLEET_COMM_POST_INTERVENE" />
+  <Property name="TerminalDamagePuzzleID" value="FLEET_COMM_POST_DAMAGED" />
+  <Property name="TerminalActivePuzzleID" value="FLEET_COMM_POST_ACTIVE" />
+  <Property name="TerminalDebriefPuzzleID" value="FLEET_COMM_POST_DEBRIEF" />
+  <Property name="NormandyActivePuzzleID" value="NORMANDY_COMM_POST_ACTIVE" />
+  <Property name="NormandyDebriefPuzzleID" value="NORMANDY_COMM_POST_DEBRIEF" />
+  <Property name="DeepSpaceFrigateActivePuzzleID" value="DEEP_SPACE_COMM_POST_ACTIVE" />
+  <Property name="DeepSpaceFrigateDebriefPuzzleID" value="DEEP_SPACE_COMM_POST_DEBRIEF" />
+  <Property name="NeedFrigatesPuzzleID" value="FLEET_NAVIGATOR_NO_POST" />
+  <Property name="NewExpeditionsAvailablePuzzleID" value="FLEET_NAVIGATOR_NEW" />
+  <Property name="NeedExpeditionTerminalPuzzleID" value="FLEET_NAVIGATOR_NO_POST" />
+  <Property name="NeedAvailableExpeditionTerminalPuzzleID" value="FLEET_NAVIGATOR_FULL_POST" />
+  <Property name="SelectExpeditionPuzzleID" value="FLEET_NAVIGATOR" />
+  <Property name="NumberOfExpeditionChoices" value="5" />
+  <Property name="ExpeditionDifficultyVariance" value="5" />
+  <Property name="ExpeditionDifficultyIncreaseForEachAdditionalFrigate" value="1" />
+  <Property name="MinExpeditionStatValue" value="-10" />
+  <Property name="MaxExpeditionStatValue" value="150" />
+  <Property name="NumberOfFrigatesPurchasedToEndEasyExpeditions" value="3" />
+  <Property name="TimeTakenForExpeditionEvent_Easy" value="900" />
+  <Property name="TimeTakenForExpeditionEvent" value="5400" />
+  <Property name="LightYearsPerExpeditionEvent_Easy" value="75" />
+  <Property name="LightYearsPerExpeditionEvent" value="250" />
+  <Property name="NumberOfUAChangesPerExpeditionEvent" value="4" />
+  <Property name="TimeBetweenPassiveIncomeTicks" value="30" />
+  <Property name="FreighterTokenProductIDs">
+    <Property value="GcExpeditionPaymentToken.xml">
+      <Property name="TokenName" value="FRIGATE_FUEL_1" />
+      <Property name="TokenValue" value="50" />
+    </Property>
+    <Property value="GcExpeditionPaymentToken.xml">
+      <Property name="TokenName" value="FRIGATE_FUEL_2" />
+      <Property name="TokenValue" value="100" />
+    </Property>
+    <Property value="GcExpeditionPaymentToken.xml">
+      <Property name="TokenName" value="FRIGATE_FUEL_3" />
+      <Property name="TokenValue" value="200" />
+    </Property>
+  </Property>
+  <Property name="PassiveIncomes" value="GcPassiveFrigateIncomeArray.xml">
+    <Property name="Array">
+      <Property name="Combat" value="GcPassiveFrigateIncome.xml">
+        <Property name="IncomeId" value="" />
+        <Property name="IncomeType" value="GcInventoryType.xml">
+          <Property name="InventoryType" value="Substance" />
+        </Property>
+        <Property name="AmountOfIncomeRewarded" value="20" />
+        <Property name="ForEveryXAmountOfTheStat" value="50" />
+      </Property>
+      <Property name="Exploration" value="GcPassiveFrigateIncome.xml">
+        <Property name="IncomeId" value="" />
+        <Property name="IncomeType" value="GcInventoryType.xml">
+          <Property name="InventoryType" value="Substance" />
+        </Property>
+        <Property name="AmountOfIncomeRewarded" value="20" />
+        <Property name="ForEveryXAmountOfTheStat" value="50" />
+      </Property>
+      <Property name="Mining" value="GcPassiveFrigateIncome.xml">
+        <Property name="IncomeId" value="LAND3" />
+        <Property name="IncomeType" value="GcInventoryType.xml">
+          <Property name="InventoryType" value="Substance" />
+        </Property>
+        <Property name="AmountOfIncomeRewarded" value="5" />
+        <Property name="ForEveryXAmountOfTheStat" value="50" />
+      </Property>
+      <Property name="Diplomacy" value="GcPassiveFrigateIncome.xml">
+        <Property name="IncomeId" value="" />
+        <Property name="IncomeType" value="GcInventoryType.xml">
+          <Property name="InventoryType" value="Substance" />
+        </Property>
+        <Property name="AmountOfIncomeRewarded" value="1250" />
+        <Property name="ForEveryXAmountOfTheStat" value="50" />
+      </Property>
+      <Property name="Support" value="GcPassiveFrigateIncome.xml">
+        <Property name="IncomeId" value="FUEL2" />
+        <Property name="IncomeType" value="GcInventoryType.xml">
+          <Property name="InventoryType" value="Substance" />
+        </Property>
+        <Property name="AmountOfIncomeRewarded" value="5" />
+        <Property name="ForEveryXAmountOfTheStat" value="50" />
+      </Property>
+      <Property name="Normandy" value="GcPassiveFrigateIncome.xml">
+        <Property name="IncomeId" value="LAUNCHSUB2" />
+        <Property name="IncomeType" value="GcInventoryType.xml">
+          <Property name="InventoryType" value="Substance" />
+        </Property>
+        <Property name="AmountOfIncomeRewarded" value="5" />
+        <Property name="ForEveryXAmountOfTheStat" value="50" />
+      </Property>
+      <Property name="DeepSpace" value="GcPassiveFrigateIncome.xml">
+        <Property name="IncomeId" value="" />
+        <Property name="IncomeType" value="GcInventoryType.xml">
+          <Property name="InventoryType" value="Substance" />
+        </Property>
+        <Property name="AmountOfIncomeRewarded" value="20" />
+        <Property name="ForEveryXAmountOfTheStat" value="50" />
+      </Property>
+      <Property name="DeepSpaceCommon" value="GcPassiveFrigateIncome.xml">
+        <Property name="IncomeId" value="" />
+        <Property name="IncomeType" value="GcInventoryType.xml">
+          <Property name="InventoryType" value="Substance" />
+        </Property>
+        <Property name="AmountOfIncomeRewarded" value="20" />
+        <Property name="ForEveryXAmountOfTheStat" value="50" />
+      </Property>
+      <Property name="Pirate" value="GcPassiveFrigateIncome.xml">
+        <Property name="IncomeId" value="" />
+        <Property name="IncomeType" value="GcInventoryType.xml">
+          <Property name="InventoryType" value="Substance" />
+        </Property>
+        <Property name="AmountOfIncomeRewarded" value="20" />
+        <Property name="ForEveryXAmountOfTheStat" value="50" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="Powerups">
+    <Property value="GcExpeditionPowerup.xml">
+      <Property name="ProductId" value="FRIG_BOOST_TRA" />
+      <Property name="StatModified" value="GcFrigateStatType.xml">
+        <Property name="FrigateStatType" value="Diplomatic" />
+      </Property>
+      <Property name="ValueChange" value="10" />
+      <Property name="SelectionDescription" value="" />
+      <Property name="ModuleDescription" value="" />
+    </Property>
+    <Property value="GcExpeditionPowerup.xml">
+      <Property name="ProductId" value="FRIG_BOOST_EXP" />
+      <Property name="StatModified" value="GcFrigateStatType.xml">
+        <Property name="FrigateStatType" value="Exploration" />
+      </Property>
+      <Property name="ValueChange" value="10" />
+      <Property name="SelectionDescription" value="" />
+      <Property name="ModuleDescription" value="" />
+    </Property>
+    <Property value="GcExpeditionPowerup.xml">
+      <Property name="ProductId" value="FRIG_BOOST_MIN" />
+      <Property name="StatModified" value="GcFrigateStatType.xml">
+        <Property name="FrigateStatType" value="Mining" />
+      </Property>
+      <Property name="ValueChange" value="10" />
+      <Property name="SelectionDescription" value="" />
+      <Property name="ModuleDescription" value="" />
+    </Property>
+    <Property value="GcExpeditionPowerup.xml">
+      <Property name="ProductId" value="FRIG_BOOST_COM" />
+      <Property name="StatModified" value="GcFrigateStatType.xml">
+        <Property name="FrigateStatType" value="Combat" />
+      </Property>
+      <Property name="ValueChange" value="10" />
+      <Property name="SelectionDescription" value="" />
+      <Property name="ModuleDescription" value="" />
+    </Property>
+    <Property value="GcExpeditionPowerup.xml">
+      <Property name="ProductId" value="FRIG_BOOST_SPD" />
+      <Property name="StatModified" value="GcFrigateStatType.xml">
+        <Property name="FrigateStatType" value="Speed" />
+      </Property>
+      <Property name="ValueChange" value="10" />
+      <Property name="SelectionDescription" value="" />
+      <Property name="ModuleDescription" value="" />
+    </Property>
+  </Property>
+  <Property name="FreighterTokenMinimumSpend" value="1" />
+  <Property name="PercentChanceOfInterventionEvent" value="0" />
+  <Property name="FirstEventIndexWhichCanBeIntervention" value="4" />
+  <Property name="TimeBeforePlayerAlertedToInterventionEvent" value="5" />
+  <Property name="MaxDiceRollWhenCalculatingExpeditionEventResult" value="25" />
+  <Property name="DifficultyMultiplierForBalancedExpeditions" value="0.4" />
+  <Property name="DifficultyMultiplierForNonPrimaryEvents" value="0.25" />
+  <Property name="StatPointsAwardedForLevelUp" value="5" />
+  <Property name="MinGapBetweenExpeditionLogEntries" value="201" />
+  <Property name="MaxGapBetweenExpeditionLogEntries" value="301" />
+  <Property name="TimeBetweenDebriefLettersAppearing" value="0.033333" />
+  <Property name="TimeBetweenDebriefLogSectionsAppearing" value="0.25" />
+  <Property name="TimeBetweenDebriefLogsAppearing" value="0.45" />
+  <Property name="TimeBeforeDebriefLogsStart" value="1" />
+  <Property name="ShowMissingRewardDescriptions" value="True" />
+  <Property name="CommunicatorDamagePuzzleTableEntry" value="FLEET_DAMAGE_CALL" />
+  <Property name="FrigateDamagePuzzleTableEntry" value="FLEET_DAMAGED" />
+  <Property name="FrigatePurchasePuzzleTableEntry" value="FLEET_PURCHASE" />
+  <Property name="DifficultyModifier">
+    <Property value="0" />
+    <Property value="15" />
+    <Property value="30" />
+    <Property value="45" />
+  </Property>
+  <Property name="DebriefPunctuationList">
+    <Property value="GcExpeditionDebriefPunctuation.xml">
+      <Property name="Punctuation" value="." />
+      <Property name="Delay" value="0.5" />
+    </Property>
+    <Property value="GcExpeditionDebriefPunctuation.xml">
+      <Property name="Punctuation" value="," />
+      <Property name="Delay" value="0.2" />
+    </Property>
+    <Property value="GcExpeditionDebriefPunctuation.xml">
+      <Property name="Punctuation" value=":" />
+      <Property name="Delay" value="0.3" />
+    </Property>
+    <Property value="GcExpeditionDebriefPunctuation.xml">
+      <Property name="Punctuation" value="!" />
+      <Property name="Delay" value="0.5" />
+    </Property>
+    <Property value="GcExpeditionDebriefPunctuation.xml">
+      <Property name="Punctuation" value="-" />
+      <Property name="Delay" value="0.05" />
+    </Property>
+  </Property>
+  <Property name="ExpeditionDurations" value="GcExpeditionDurationValues.xml">
+    <Property name="Duration">
+      <Property name="VeryShort" value="4" />
+      <Property name="Short" value="6" />
+      <Property name="Medium" value="10" />
+      <Property name="Long" value="14" />
+      <Property name="VeryLong" value="18" />
+    </Property>
+  </Property>
+  <Property name="FrigateBaseCost" value="GcFrigateClassCost.xml">
+    <Property name="Cost">
+      <Property name="Combat" value="2000000" />
+      <Property name="Exploration" value="2000000" />
+      <Property name="Mining" value="2000000" />
+      <Property name="Diplomacy" value="2000000" />
+      <Property name="Support" value="2000000" />
+      <Property name="Normandy" value="200000000" />
+      <Property name="DeepSpace" value="200000000" />
+      <Property name="DeepSpaceCommon" value="10000000" />
+      <Property name="Pirate" value="5000000" />
+    </Property>
+  </Property>
+  <Property name="FrigateCostVariance" value="GcFrigateClassCost.xml">
+    <Property name="Cost">
+      <Property name="Combat" value="500000" />
+      <Property name="Exploration" value="500000" />
+      <Property name="Mining" value="500000" />
+      <Property name="Diplomacy" value="500000" />
+      <Property name="Support" value="500000" />
+      <Property name="Normandy" value="0" />
+      <Property name="DeepSpace" value="0" />
+      <Property name="DeepSpaceCommon" value="2500000" />
+      <Property name="Pirate" value="500000" />
+    </Property>
+  </Property>
+  <Property name="FrigateCostMultiplier" value="GcInventoryClassCostMultiplier.xml">
+    <Property name="Multiplier">
+      <Property name="C" value="1" />
+      <Property name="B" value="2" />
+      <Property name="A" value="3.5" />
+      <Property name="S" value="5" />
+    </Property>
+  </Property>
+  <Property name="FrigateTraitStrengths" value="GcFrigateTraitStrengthByType.xml">
+    <Property name="FrigateStatType">
+      <Property name="Combat" value="GcFrigateTraitStrengthValues.xml">
+        <Property name="StatAlteration">
+          <Property name="NegativeLarge" value="-6" />
+          <Property name="NegativeMedium" value="-4" />
+          <Property name="NegativeSmall" value="-2" />
+          <Property name="TertiarySmall" value="1" />
+          <Property name="TertiaryMedium" value="2" />
+          <Property name="TertiaryLarge" value="3" />
+          <Property name="SecondarySmall" value="2" />
+          <Property name="SecondaryMedium" value="4" />
+          <Property name="SecondaryLarge" value="6" />
+          <Property name="Primary" value="15" />
+        </Property>
+        <Property name="StatLocID" value="FLEET_TRAIT_COMBAT_NAME" />
+        <Property name="StatDisplaysPositive" value="True" />
+      </Property>
+      <Property name="Exploration" value="GcFrigateTraitStrengthValues.xml">
+        <Property name="StatAlteration">
+          <Property name="NegativeLarge" value="-6" />
+          <Property name="NegativeMedium" value="-4" />
+          <Property name="NegativeSmall" value="-2" />
+          <Property name="TertiarySmall" value="1" />
+          <Property name="TertiaryMedium" value="2" />
+          <Property name="TertiaryLarge" value="3" />
+          <Property name="SecondarySmall" value="2" />
+          <Property name="SecondaryMedium" value="4" />
+          <Property name="SecondaryLarge" value="6" />
+          <Property name="Primary" value="15" />
+        </Property>
+        <Property name="StatLocID" value="FLEET_TRAIT_EXPLORE_NAME" />
+        <Property name="StatDisplaysPositive" value="True" />
+      </Property>
+      <Property name="Mining" value="GcFrigateTraitStrengthValues.xml">
+        <Property name="StatAlteration">
+          <Property name="NegativeLarge" value="-6" />
+          <Property name="NegativeMedium" value="-4" />
+          <Property name="NegativeSmall" value="-2" />
+          <Property name="TertiarySmall" value="1" />
+          <Property name="TertiaryMedium" value="2" />
+          <Property name="TertiaryLarge" value="3" />
+          <Property name="SecondarySmall" value="2" />
+          <Property name="SecondaryMedium" value="4" />
+          <Property name="SecondaryLarge" value="6" />
+          <Property name="Primary" value="15" />
+        </Property>
+        <Property name="StatLocID" value="FLEET_TRAIT_MINING_NAME" />
+        <Property name="StatDisplaysPositive" value="True" />
+      </Property>
+      <Property name="Diplomatic" value="GcFrigateTraitStrengthValues.xml">
+        <Property name="StatAlteration">
+          <Property name="NegativeLarge" value="-6" />
+          <Property name="NegativeMedium" value="-4" />
+          <Property name="NegativeSmall" value="-2" />
+          <Property name="TertiarySmall" value="1" />
+          <Property name="TertiaryMedium" value="2" />
+          <Property name="TertiaryLarge" value="3" />
+          <Property name="SecondarySmall" value="2" />
+          <Property name="SecondaryMedium" value="4" />
+          <Property name="SecondaryLarge" value="6" />
+          <Property name="Primary" value="15" />
+        </Property>
+        <Property name="StatLocID" value="FLEET_TRAIT_TRADING_NAME" />
+        <Property name="StatDisplaysPositive" value="True" />
+      </Property>
+      <Property name="FuelBurnRate" value="GcFrigateTraitStrengthValues.xml">
+        <Property name="StatAlteration">
+          <Property name="NegativeLarge" value="4" />
+          <Property name="NegativeMedium" value="2" />
+          <Property name="NegativeSmall" value="1" />
+          <Property name="TertiarySmall" value="0" />
+          <Property name="TertiaryMedium" value="0" />
+          <Property name="TertiaryLarge" value="0" />
+          <Property name="SecondarySmall" value="0" />
+          <Property name="SecondaryMedium" value="0" />
+          <Property name="SecondaryLarge" value="0" />
+          <Property name="Primary" value="0" />
+        </Property>
+        <Property name="StatLocID" value="FLEET_TRAIT_FUEL_NAME" />
+        <Property name="StatDisplaysPositive" value="True" />
+      </Property>
+      <Property name="FuelCapacity" value="GcFrigateTraitStrengthValues.xml">
+        <Property name="StatAlteration">
+          <Property name="NegativeLarge" value="0" />
+          <Property name="NegativeMedium" value="0" />
+          <Property name="NegativeSmall" value="0" />
+          <Property name="TertiarySmall" value="2" />
+          <Property name="TertiaryMedium" value="4" />
+          <Property name="TertiaryLarge" value="6" />
+          <Property name="SecondarySmall" value="3" />
+          <Property name="SecondaryMedium" value="6" />
+          <Property name="SecondaryLarge" value="9" />
+          <Property name="Primary" value="15" />
+        </Property>
+        <Property name="StatLocID" value="FLEET_TRAIT_SUPPORT_NAME" />
+        <Property name="StatDisplaysPositive" value="False" />
+      </Property>
+      <Property name="Speed" value="GcFrigateTraitStrengthValues.xml">
+        <Property name="StatAlteration">
+          <Property name="NegativeLarge" value="0" />
+          <Property name="NegativeMedium" value="0" />
+          <Property name="NegativeSmall" value="0" />
+          <Property name="TertiarySmall" value="1" />
+          <Property name="TertiaryMedium" value="2" />
+          <Property name="TertiaryLarge" value="3" />
+          <Property name="SecondarySmall" value="1" />
+          <Property name="SecondaryMedium" value="2" />
+          <Property name="SecondaryLarge" value="3" />
+          <Property name="Primary" value="10" />
+        </Property>
+        <Property name="StatLocID" value="FLEET_TRAIT_SPEED_NAME" />
+        <Property name="StatDisplaysPositive" value="False" />
+      </Property>
+      <Property name="ExtraLoot" value="GcFrigateTraitStrengthValues.xml">
+        <Property name="StatAlteration">
+          <Property name="NegativeLarge" value="0" />
+          <Property name="NegativeMedium" value="0" />
+          <Property name="NegativeSmall" value="0" />
+          <Property name="TertiarySmall" value="1" />
+          <Property name="TertiaryMedium" value="1" />
+          <Property name="TertiaryLarge" value="1" />
+          <Property name="SecondarySmall" value="0" />
+          <Property name="SecondaryMedium" value="0" />
+          <Property name="SecondaryLarge" value="0" />
+          <Property name="Primary" value="0" />
+        </Property>
+        <Property name="StatLocID" value="FLEET_TRAIT_MORE_LOOT_NAME" />
+        <Property name="StatDisplaysPositive" value="True" />
+      </Property>
+      <Property name="Repair" value="GcFrigateTraitStrengthValues.xml">
+        <Property name="StatAlteration">
+          <Property name="NegativeLarge" value="0" />
+          <Property name="NegativeMedium" value="0" />
+          <Property name="NegativeSmall" value="0" />
+          <Property name="TertiarySmall" value="1" />
+          <Property name="TertiaryMedium" value="1" />
+          <Property name="TertiaryLarge" value="1" />
+          <Property name="SecondarySmall" value="0" />
+          <Property name="SecondaryMedium" value="0" />
+          <Property name="SecondaryLarge" value="0" />
+          <Property name="Primary" value="0" />
+        </Property>
+        <Property name="StatLocID" value="FLEET_TRAIT_REPAIR_NAME" />
+        <Property name="StatDisplaysPositive" value="True" />
+      </Property>
+      <Property name="Invulnerable" value="GcFrigateTraitStrengthValues.xml">
+        <Property name="StatAlteration">
+          <Property name="NegativeLarge" value="0" />
+          <Property name="NegativeMedium" value="0" />
+          <Property name="NegativeSmall" value="0" />
+          <Property name="TertiarySmall" value="1" />
+          <Property name="TertiaryMedium" value="1" />
+          <Property name="TertiaryLarge" value="1" />
+          <Property name="SecondarySmall" value="0" />
+          <Property name="SecondaryMedium" value="0" />
+          <Property name="SecondaryLarge" value="0" />
+          <Property name="Primary" value="0" />
+        </Property>
+        <Property name="StatLocID" value="FLEET_TRAIT_INVULNERABLE_NAME" />
+        <Property name="StatDisplaysPositive" value="True" />
+      </Property>
+      <Property name="Stealth" value="GcFrigateTraitStrengthValues.xml">
+        <Property name="StatAlteration">
+          <Property name="NegativeLarge" value="0" />
+          <Property name="NegativeMedium" value="0" />
+          <Property name="NegativeSmall" value="0" />
+          <Property name="TertiarySmall" value="1" />
+          <Property name="TertiaryMedium" value="1" />
+          <Property name="TertiaryLarge" value="1" />
+          <Property name="SecondarySmall" value="0" />
+          <Property name="SecondaryMedium" value="0" />
+          <Property name="SecondaryLarge" value="0" />
+          <Property name="Primary" value="0" />
+        </Property>
+        <Property name="StatLocID" value="UI_NORMANDY_STEALTH" />
+        <Property name="StatDisplaysPositive" value="True" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="FrigateInitialStats" value="GcFrigateStatsByClass.xml">
+    <Property name="FrigateClass">
+      <Property name="Combat" value="GcFrigateStats.xml">
+        <Property name="Stats">
+          <Property name="Combat" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="1" />
+            <Property name="Maximum" value="5" />
+          </Property>
+          <Property name="Exploration" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="2" />
+          </Property>
+          <Property name="Mining" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="4" />
+          </Property>
+          <Property name="Diplomatic" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="2" />
+          </Property>
+          <Property name="FuelBurnRate" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="8" />
+            <Property name="Maximum" value="12" />
+          </Property>
+          <Property name="FuelCapacity" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Speed" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="ExtraLoot" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Repair" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Invulnerable" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Stealth" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+        </Property>
+        <Property name="InitialTrait" value="COMBAT_PRI" />
+      </Property>
+      <Property name="Exploration" value="GcFrigateStats.xml">
+        <Property name="Stats">
+          <Property name="Combat" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="2" />
+          </Property>
+          <Property name="Exploration" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="1" />
+            <Property name="Maximum" value="5" />
+          </Property>
+          <Property name="Mining" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="2" />
+          </Property>
+          <Property name="Diplomatic" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="4" />
+          </Property>
+          <Property name="FuelBurnRate" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="8" />
+            <Property name="Maximum" value="12" />
+          </Property>
+          <Property name="FuelCapacity" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Speed" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="ExtraLoot" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Repair" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Invulnerable" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Stealth" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+        </Property>
+        <Property name="InitialTrait" value="EXPLORE_PRI" />
+      </Property>
+      <Property name="Mining" value="GcFrigateStats.xml">
+        <Property name="Stats">
+          <Property name="Combat" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="3" />
+          </Property>
+          <Property name="Exploration" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="1" />
+          </Property>
+          <Property name="Mining" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="1" />
+            <Property name="Maximum" value="5" />
+          </Property>
+          <Property name="Diplomatic" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="3" />
+          </Property>
+          <Property name="FuelBurnRate" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="8" />
+            <Property name="Maximum" value="12" />
+          </Property>
+          <Property name="FuelCapacity" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Speed" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="ExtraLoot" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Repair" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Invulnerable" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Stealth" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+        </Property>
+        <Property name="InitialTrait" value="MINING_PRI" />
+      </Property>
+      <Property name="Diplomacy" value="GcFrigateStats.xml">
+        <Property name="Stats">
+          <Property name="Combat" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="1" />
+          </Property>
+          <Property name="Exploration" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="2" />
+          </Property>
+          <Property name="Mining" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="4" />
+          </Property>
+          <Property name="Diplomatic" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="1" />
+            <Property name="Maximum" value="5" />
+          </Property>
+          <Property name="FuelBurnRate" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="8" />
+            <Property name="Maximum" value="12" />
+          </Property>
+          <Property name="FuelCapacity" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Speed" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="ExtraLoot" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Repair" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Invulnerable" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Stealth" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+        </Property>
+        <Property name="InitialTrait" value="TRADING_PRI" />
+      </Property>
+      <Property name="Support" value="GcFrigateStats.xml">
+        <Property name="Stats">
+          <Property name="Combat" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="4" />
+          </Property>
+          <Property name="Exploration" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="4" />
+          </Property>
+          <Property name="Mining" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="4" />
+          </Property>
+          <Property name="Diplomatic" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="4" />
+          </Property>
+          <Property name="FuelBurnRate" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="2" />
+            <Property name="Maximum" value="5" />
+          </Property>
+          <Property name="FuelCapacity" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="1" />
+            <Property name="Maximum" value="5" />
+          </Property>
+          <Property name="Speed" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="ExtraLoot" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Repair" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Invulnerable" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Stealth" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+        </Property>
+        <Property name="InitialTrait" value="FUEL_PRI" />
+      </Property>
+      <Property name="Normandy" value="GcFrigateStats.xml">
+        <Property name="Stats">
+          <Property name="Combat" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Exploration" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Mining" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Diplomatic" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="FuelBurnRate" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="8" />
+            <Property name="Maximum" value="8" />
+          </Property>
+          <Property name="FuelCapacity" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Speed" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="ExtraLoot" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Repair" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Invulnerable" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Stealth" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="4" />
+          </Property>
+        </Property>
+        <Property name="InitialTrait" value="NORMANDY_1" />
+      </Property>
+      <Property name="DeepSpace" value="GcFrigateStats.xml">
+        <Property name="Stats">
+          <Property name="Combat" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Exploration" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Mining" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Diplomatic" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="FuelBurnRate" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="8" />
+            <Property name="Maximum" value="8" />
+          </Property>
+          <Property name="FuelCapacity" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Speed" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="ExtraLoot" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Repair" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Invulnerable" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Stealth" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+        </Property>
+        <Property name="InitialTrait" value="DEEPSPACE_1" />
+      </Property>
+      <Property name="DeepSpaceCommon" value="GcFrigateStats.xml">
+        <Property name="Stats">
+          <Property name="Combat" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="1" />
+            <Property name="Maximum" value="3" />
+          </Property>
+          <Property name="Exploration" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="1" />
+            <Property name="Maximum" value="3" />
+          </Property>
+          <Property name="Mining" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="1" />
+            <Property name="Maximum" value="3" />
+          </Property>
+          <Property name="Diplomatic" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="1" />
+            <Property name="Maximum" value="3" />
+          </Property>
+          <Property name="FuelBurnRate" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="8" />
+            <Property name="Maximum" value="12" />
+          </Property>
+          <Property name="FuelCapacity" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Speed" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="ExtraLoot" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Repair" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Invulnerable" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Stealth" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+        </Property>
+        <Property name="InitialTrait" value="DEEPSPACE_1" />
+      </Property>
+      <Property name="Pirate" value="GcFrigateStats.xml">
+        <Property name="Stats">
+          <Property name="Combat" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="1" />
+            <Property name="Maximum" value="5" />
+          </Property>
+          <Property name="Exploration" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="2" />
+          </Property>
+          <Property name="Mining" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="4" />
+          </Property>
+          <Property name="Diplomatic" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="2" />
+          </Property>
+          <Property name="FuelBurnRate" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="8" />
+            <Property name="Maximum" value="12" />
+          </Property>
+          <Property name="FuelCapacity" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Speed" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="ExtraLoot" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Repair" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Invulnerable" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+          <Property name="Stealth" value="GcFrigateStatRange.xml">
+            <Property name="Minimum" value="0" />
+            <Property name="Maximum" value="0" />
+          </Property>
+        </Property>
+        <Property name="InitialTrait" value="PIRATE_PRI" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="TraitIcons" value="GcFrigateTraitIcons.xml">
+    <Property name="Icons">
+      <Property name="Combat" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.PRIMARY.COMBAT.PNG" />
+      </Property>
+      <Property name="Exploration" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.PRIMARY.EXPLORE.PNG" />
+      </Property>
+      <Property name="Mining" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.PRIMARY.MINING.PNG" />
+      </Property>
+      <Property name="Diplomatic" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.PRIMARY.TRADING.PNG" />
+      </Property>
+      <Property name="FuelBurnRate" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.PRIMARY.FUEL.PNG" />
+      </Property>
+      <Property name="FuelCapacity" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.PRIMARY.FUEL.PNG" />
+      </Property>
+      <Property name="Speed" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.PRIMARY.SPECIAL.PNG" />
+      </Property>
+      <Property name="ExtraLoot" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.PRIMARY.SPECIAL.PNG" />
+      </Property>
+      <Property name="Repair" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.PRIMARY.SPECIAL.PNG" />
+      </Property>
+      <Property name="Invulnerable" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.PRIMARY.SPECIAL.PNG" />
+      </Property>
+      <Property name="Stealth" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.PRIMARY.SPECIAL.PNG" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="NegativeTraitIcons" value="GcFrigateTraitIcons.xml">
+    <Property name="Icons">
+      <Property name="Combat" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.NEGATIVE.COMBAT.PNG" />
+      </Property>
+      <Property name="Exploration" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.NEGATIVE.EXPLORE.PNG" />
+      </Property>
+      <Property name="Mining" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.NEGATIVE.MINING.PNG" />
+      </Property>
+      <Property name="Diplomatic" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.NEGATIVE.TRADING.PNG" />
+      </Property>
+      <Property name="FuelBurnRate" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.NEGATIVE.FUEL.PNG" />
+      </Property>
+      <Property name="FuelCapacity" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.NEGATIVE.FUEL.PNG" />
+      </Property>
+      <Property name="Speed" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.NEGATIVE.SPECIAL.PNG" />
+      </Property>
+      <Property name="ExtraLoot" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.NEGATIVE.SPECIAL.PNG" />
+      </Property>
+      <Property name="Repair" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.NEGATIVE.SPECIAL.PNG" />
+      </Property>
+      <Property name="Invulnerable" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.NEGATIVE.SPECIAL.PNG" />
+      </Property>
+      <Property name="Stealth" value="NMSString0x80.xml">
+        <Property name="Value" value="TEXTURES/UI/FRONTEND/ICONS/FLEET/PROPERTY/PROPERTY.NEGATIVE.SPECIAL.PNG" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="FrigateScanEffect" value="GcScanEffectData.xml">
+    <Property name="Id" value="" />
+    <Property name="ScanEffectType" value="Creature" />
+    <Property name="Colour" value="Colour.xml">
+      <Property name="R" value="0.6" />
+      <Property name="G" value="1" />
+      <Property name="B" value="0.6" />
+      <Property name="A" value="1" />
+    </Property>
+    <Property name="BasecolourIntensity" value="0.8" />
+    <Property name="ScanlinesSeparation" value="1" />
+    <Property name="FresnelIntensity" value="2" />
+    <Property name="GlowIntensity" value="0" />
+    <Property name="WaveOffset" value="0" />
+    <Property name="WaveActive" value="True" />
+    <Property name="FixedUpAxis" value="False" />
+    <Property name="Transparent" value="False" />
+    <Property name="ModelFade" value="False" />
+    <Property name="FadeInTime" value="1.2" />
+    <Property name="FadeOutTime" value="1" />
+  </Property>
+  <Property name="FrigateHologramScanEffect" value="GcScanEffectData.xml">
+    <Property name="Id" value="" />
+    <Property name="ScanEffectType" value="Objects" />
+    <Property name="Colour" value="Colour.xml">
+      <Property name="R" value="0.218" />
+      <Property name="G" value="0.703" />
+      <Property name="B" value="1" />
+      <Property name="A" value="0.6" />
+    </Property>
+    <Property name="BasecolourIntensity" value="1" />
+    <Property name="ScanlinesSeparation" value="0" />
+    <Property name="FresnelIntensity" value="25" />
+    <Property name="GlowIntensity" value="1" />
+    <Property name="WaveOffset" value="0" />
+    <Property name="WaveActive" value="True" />
+    <Property name="FixedUpAxis" value="False" />
+    <Property name="Transparent" value="False" />
+    <Property name="ModelFade" value="False" />
+    <Property name="FadeInTime" value="1" />
+    <Property name="FadeOutTime" value="1" />
+  </Property>
+  <Property name="CompletedFrigateHologramScanEffect" value="GcScanEffectData.xml">
+    <Property name="Id" value="" />
+    <Property name="ScanEffectType" value="Objects" />
+    <Property name="Colour" value="Colour.xml">
+      <Property name="R" value="0.218" />
+      <Property name="G" value="1" />
+      <Property name="B" value="0.52" />
+      <Property name="A" value="0.6" />
+    </Property>
+    <Property name="BasecolourIntensity" value="1" />
+    <Property name="ScanlinesSeparation" value="0" />
+    <Property name="FresnelIntensity" value="25" />
+    <Property name="GlowIntensity" value="1" />
+    <Property name="WaveOffset" value="0" />
+    <Property name="WaveActive" value="True" />
+    <Property name="FixedUpAxis" value="False" />
+    <Property name="Transparent" value="False" />
+    <Property name="ModelFade" value="False" />
+    <Property name="FadeInTime" value="1" />
+    <Property name="FadeOutTime" value="1" />
+  </Property>
+  <Property name="DamagedFrigateHologramScanEffect" value="GcScanEffectData.xml">
+    <Property name="Id" value="" />
+    <Property name="ScanEffectType" value="Objects" />
+    <Property name="Colour" value="Colour.xml">
+      <Property name="R" value="1" />
+      <Property name="G" value="0" />
+      <Property name="B" value="0" />
+      <Property name="A" value="0.65" />
+    </Property>
+    <Property name="BasecolourIntensity" value="1" />
+    <Property name="ScanlinesSeparation" value="0" />
+    <Property name="FresnelIntensity" value="25" />
+    <Property name="GlowIntensity" value="1" />
+    <Property name="WaveOffset" value="0" />
+    <Property name="WaveActive" value="True" />
+    <Property name="FixedUpAxis" value="False" />
+    <Property name="Transparent" value="False" />
+    <Property name="ModelFade" value="False" />
+    <Property name="FadeInTime" value="1" />
+    <Property name="FadeOutTime" value="1" />
+  </Property>
+  <Property name="DestroyedFrigateHologramScanEffect" value="GcScanEffectData.xml">
+    <Property name="Id" value="" />
+    <Property name="ScanEffectType" value="Objects" />
+    <Property name="Colour" value="Colour.xml">
+      <Property name="R" value="0" />
+      <Property name="G" value="0" />
+      <Property name="B" value="0" />
+      <Property name="A" value="0.8" />
+    </Property>
+    <Property name="BasecolourIntensity" value="1" />
+    <Property name="ScanlinesSeparation" value="0" />
+    <Property name="FresnelIntensity" value="25" />
+    <Property name="GlowIntensity" value="1" />
+    <Property name="WaveOffset" value="0" />
+    <Property name="WaveActive" value="True" />
+    <Property name="FixedUpAxis" value="False" />
+    <Property name="Transparent" value="False" />
+    <Property name="ModelFade" value="False" />
+    <Property name="FadeInTime" value="1" />
+    <Property name="FadeOutTime" value="1" />
+  </Property>
+  <Property name="EventTypeOccurrenceChance" value="GcExpeditionEventOccurrenceRate.xml">
+    <Property name="ExpeditionCategory">
+      <Property name="Combat" value="GcExpeditionCategoryStrength.xml">
+        <Property name="OccurranceChance">
+          <Property name="Combat" value="80" />
+          <Property name="Exploration" value="5" />
+          <Property name="Mining" value="10" />
+          <Property name="Diplomacy" value="5" />
+          <Property name="Balanced" value="0" />
+        </Property>
+      </Property>
+      <Property name="Exploration" value="GcExpeditionCategoryStrength.xml">
+        <Property name="OccurranceChance">
+          <Property name="Combat" value="5" />
+          <Property name="Exploration" value="75" />
+          <Property name="Mining" value="10" />
+          <Property name="Diplomacy" value="10" />
+          <Property name="Balanced" value="0" />
+        </Property>
+      </Property>
+      <Property name="Mining" value="GcExpeditionCategoryStrength.xml">
+        <Property name="OccurranceChance">
+          <Property name="Combat" value="5" />
+          <Property name="Exploration" value="5" />
+          <Property name="Mining" value="75" />
+          <Property name="Diplomacy" value="15" />
+          <Property name="Balanced" value="0" />
+        </Property>
+      </Property>
+      <Property name="Diplomacy" value="GcExpeditionCategoryStrength.xml">
+        <Property name="OccurranceChance">
+          <Property name="Combat" value="5" />
+          <Property name="Exploration" value="5" />
+          <Property name="Mining" value="15" />
+          <Property name="Diplomacy" value="75" />
+          <Property name="Balanced" value="0" />
+        </Property>
+      </Property>
+      <Property name="Balanced" value="GcExpeditionCategoryStrength.xml">
+        <Property name="OccurranceChance">
+          <Property name="Combat" value="25" />
+          <Property name="Exploration" value="25" />
+          <Property name="Mining" value="25" />
+          <Property name="Diplomacy" value="25" />
+          <Property name="Balanced" value="0" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="FrigateHologramModels">
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/HOLOGRAMFRIGATES/HOLOCOMBAT.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/HOLOGRAMFRIGATES/HOLOSCIENCE.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/HOLOGRAMFRIGATES/HOLOINDUSTRIAL.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/HOLOGRAMFRIGATES/HOLODIPLOMATIC.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/HOLOGRAMFRIGATES/HOLOSUPPORT.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/HOLOGRAMFRIGATES/HOLONORMANDY.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/HOLOGRAMFRIGATES/HOLOLIVING.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/HOLOGRAMFRIGATES/HOLOLIVING.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/HOLOGRAMFRIGATES/HOLOPIRATE.SCENE.MBIN" />
+    </Property>
+  </Property>
+  <Property name="FrigatePlanetModels">
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/COMBATFRIGATELOD4.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/SCIENCEFRIGATELOD4.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/INDUSTRIALFRIGATELOD4.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/DIPLOMATICFRIGATELOD4.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/SUPPORTFRIGATELOD4.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/NORMANDYFRIGATELOD4.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/LIVINGFRIGATELOD4.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/LIVINGFRIGATELOD4.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/INDUSTRIAL/PIRATECRUISERLOD4.SCENE.MBIN" />
+    </Property>
+  </Property>
+  <Property name="ExpeditionRankBoundaries">
+    <Property value="20" />
+    <Property value="50" />
+    <Property value="80" />
+    <Property value="101" />
+  </Property>
+  <Property name="FrigateLevelVictoriesRequired">
+    <Property value="4" />
+    <Property value="8" />
+    <Property value="15" />
+    <Property value="25" />
+    <Property value="30" />
+    <Property value="35" />
+    <Property value="40" />
+    <Property value="45" />
+    <Property value="50" />
+    <Property value="55" />
+  </Property>
+  <Property name="ExpeditionDifficultyKeyframes">
+    <Property value="GcExpeditionDifficultyKeyframe.xml">
+      <Property name="EventNumber" value="0" />
+      <Property name="Difficulty" value="10" />
+    </Property>
+    <Property value="GcExpeditionDifficultyKeyframe.xml">
+      <Property name="EventNumber" value="5" />
+      <Property name="Difficulty" value="20" />
+    </Property>
+    <Property value="GcExpeditionDifficultyKeyframe.xml">
+      <Property name="EventNumber" value="10" />
+      <Property name="Difficulty" value="75" />
+    </Property>
+    <Property value="GcExpeditionDifficultyKeyframe.xml">
+      <Property name="EventNumber" value="15" />
+      <Property name="Difficulty" value="35" />
+    </Property>
+    <Property value="GcExpeditionDifficultyKeyframe.xml">
+      <Property name="EventNumber" value="30" />
+      <Property name="Difficulty" value="0" />
+    </Property>
+  </Property>
+  <Property name="FrigateInteriorsToCache">
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/COMBATLODSWITCH.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/COMBATLODNODE.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/DIPLOMATICLODSWITCH.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/DIPLOMATICLODNODE.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/INDUSTRIALLODSWITCH.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/INDUSTRIALLODNODE.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/SUPPORTLODSWITCH.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/SUPPORTLODNODE.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/SCIENCELODSWITCH.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/FRIGATES/SCIENCELODNODE.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/INDUSTRIAL/PIRATELODSWITCH.SCENE.MBIN" />
+    </Property>
+    <Property value="NMSString0x80.xml">
+      <Property name="Value" value="MODELS/COMMON/SPACECRAFT/INDUSTRIAL/PIRATELODNODE.SCENE.MBIN" />
+    </Property>
+  </Property>
+  <Property name="NormandyFailures" value="1" />
+  <Property name="NormandyDamageEvents" value="1" />
+  <Property name="NormandyTraits">
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="NORMANDY_1" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="NORMANDY_2" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="NORMANDY_3" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="NORMANDY_4" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="NORMANDY_5" />
+    </Property>
+  </Property>
+  <Property name="DeepSpaceFrigateTraits">
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="DEEPSPACE_1" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="DEEPSPACE_2" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="DEEPSPACE_3" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="DEEPSPACE_4" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="DEEPSPACE_5" />
+    </Property>
+  </Property>
+  <Property name="DeepSpaceCommonPrimaryTraits">
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="LIVING_COM_PRI" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="LIVING_EXP_PRI" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="LIVING_MIN_PRI" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="LIVING_TRA_PRI" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="LIVING_FUEL_PRI" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="LIVING_SPE_PRI" />
+    </Property>
+  </Property>
+  <Property name="FrigateCaptainPuzzleIds">
+    <Property value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_LOOT_COMBAT" />
+    </Property>
+    <Property value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_LOOT_EXPLORE" />
+    </Property>
+    <Property value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_LOOT_MINING" />
+    </Property>
+    <Property value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_LOOT_TRADE" />
+    </Property>
+    <Property value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_LOOT_FUEL" />
+    </Property>
+    <Property value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_LOOT_EXPLORE" />
+    </Property>
+    <Property value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_LOOT_EXPLORE" />
+    </Property>
+    <Property value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_LOOT_EXPLORE" />
+    </Property>
+    <Property value="NMSString0x20.xml">
+      <Property name="Value" value="FLEET_LOOT_COMBAT" />
+    </Property>
+  </Property>
+  <Property name="MaxNumberOfPlayerShipsInFreighterHangar" value="6" />
+</Data>

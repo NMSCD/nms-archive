@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.40.0)-->
+<Data template="GcFreighterBaseGlobals">
+  <Property name="MaxTotalNPCCount" value="24" />
+  <Property name="NPCStartSpawnDelayTime" value="3" />
+  <Property name="NPCSpawnIntervalTime" value="0.1" />
+  <Property name="MinTotalRoomsRequiredPerNPC" value="2" />
+  <Property name="MaxTotalCapacityOfNPCTypes">
+    <Property name="SquadronPilot" value="4" />
+    <Property name="FrigateCaptain" value="4" />
+    <Property name="WorkerBio" value="6" />
+    <Property name="WorkerTech" value="6" />
+    <Property name="WorkerIndustry" value="6" />
+  </Property>
+  <Property name="NPCTypeSpawnPriorities">
+    <Property name="SquadronPilot" value="GcFreighterNPCSpawnPriority.xml">
+      <Property name="PriorityScale">
+        <Property value="2" />
+        <Property value="1" />
+        <Property value="0.5" />
+      </Property>
+    </Property>
+    <Property name="FrigateCaptain" value="GcFreighterNPCSpawnPriority.xml">
+      <Property name="PriorityScale">
+        <Property value="2" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="0.5" />
+      </Property>
+    </Property>
+    <Property name="WorkerBio" value="GcFreighterNPCSpawnPriority.xml">
+      <Property name="PriorityScale">
+        <Property value="3" />
+        <Property value="2" />
+        <Property value="1" />
+      </Property>
+    </Property>
+    <Property name="WorkerTech" value="GcFreighterNPCSpawnPriority.xml">
+      <Property name="PriorityScale">
+        <Property value="3" />
+        <Property value="2" />
+        <Property value="1" />
+      </Property>
+    </Property>
+    <Property name="WorkerIndustry" value="GcFreighterNPCSpawnPriority.xml">
+      <Property name="PriorityScale">
+        <Property value="3" />
+        <Property value="2" />
+        <Property value="1" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="NPCNavNodeConnectivity" value="GcNPCNavSubgraphNodeTypeConnectivity.xml">
+    <Property name="InternalConnection" value="1" />
+    <Property name="ExternalConnection" value="0.75" />
+    <Property name="PathToPOI" value="3" />
+    <Property name="ConnectionToPOI" value="1" />
+  </Property>
+  <Property name="FreighterRoomNPCData">
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_BIO" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0.2" />
+        <Property name="FrigateCaptain" value="0.2" />
+        <Property name="WorkerBio" value="0.2" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0.1" />
+        <Property name="FrigateCaptain" value="0.1" />
+        <Property name="WorkerBio" value="0.25" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_PLANT0" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0.3" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="1" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_PLANT1" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0.3" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="1" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_NPCFAR" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="1" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="2" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_COOK" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="1" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0.25" />
+        <Property name="FrigateCaptain" value="0.25" />
+        <Property name="WorkerBio" value="2" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_TECH" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0.2" />
+        <Property name="FrigateCaptain" value="0.2" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0.2" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0.5" />
+        <Property name="FrigateCaptain" value="0.5" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0.25" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_SCAN" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0.5" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="1" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_TELEPO" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0.5" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="1" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_NPCSCI" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="1" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="2" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_NPCBUI" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="1" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="2" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_DRESS" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0.5" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="1" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_FLEET" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="1" />
+        <Property name="FrigateCaptain" value="1" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="1" />
+        <Property name="FrigateCaptain" value="2" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0.5" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_SHOP" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0.5" />
+        <Property name="FrigateCaptain" value="0.5" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0.5" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="2" />
+        <Property name="FrigateCaptain" value="2" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0.5" />
+        <Property name="WorkerIndustry" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_IND" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0.2" />
+        <Property name="FrigateCaptain" value="0.2" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.2" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0.5" />
+        <Property name="FrigateCaptain" value="0.5" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.25" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_REFINE" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.5" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="1" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_EXTR" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.5" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="1" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_NPCWEA" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.5" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="1" />
+        <Property name="FrigateCaptain" value="1" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="1" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_NPCVEH" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.5" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="1" />
+        <Property name="FrigateCaptain" value="1" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="1" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_VEHICL" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.5" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.5" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_STORE0" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.25" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="1" />
+        <Property name="FrigateCaptain" value="1" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.5" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_STORE1" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.25" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="1" />
+        <Property name="FrigateCaptain" value="1" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.5" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_STORE2" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.25" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="1" />
+        <Property name="FrigateCaptain" value="1" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.5" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_STORE3" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.25" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="1" />
+        <Property name="FrigateCaptain" value="1" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.5" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_STORE4" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.25" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="1" />
+        <Property name="FrigateCaptain" value="1" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.5" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_STORE5" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.25" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="1" />
+        <Property name="FrigateCaptain" value="1" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.5" />
+      </Property>
+    </Property>
+    <Property value="GcFreighterRoomNPCData.xml">
+      <Property name="RoomID" value="FRE_ROOM_STORE6" />
+      <Property name="SpawnCapacity">
+        <Property name="SquadronPilot" value="0" />
+        <Property name="FrigateCaptain" value="0" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.2" />
+      </Property>
+      <Property name="POISelectionWeight">
+        <Property name="SquadronPilot" value="1" />
+        <Property name="FrigateCaptain" value="1" />
+        <Property name="WorkerBio" value="0" />
+        <Property name="WorkerTech" value="0" />
+        <Property name="WorkerIndustry" value="0.5" />
+      </Property>
+    </Property>
+  </Property>
+</Data>

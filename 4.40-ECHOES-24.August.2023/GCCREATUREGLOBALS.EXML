@@ -1,0 +1,1772 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.40.0)-->
+<Data template="GcCreatureGlobals">
+  <Property name="NumCreaturesRequiredForDiscoveryMission" value="8" />
+  <Property name="AllCreaturesDiscoveredBonusMul" value="5" />
+  <Property name="AllCreaturesDiscoveredColour" value="Colour.xml">
+    <Property name="R" value="0.987" />
+    <Property name="G" value="0.645" />
+    <Property name="B" value="0.087" />
+    <Property name="A" value="1" />
+  </Property>
+  <Property name="PetCarePuzzleOverrideID" value="?PET_CARE" />
+  <Property name="CreatureInteractionRangeBoostHuge" value="1.5" />
+  <Property name="CreatureInteractionRangeBoostLarge" value="1.2" />
+  <Property name="CreatureInteractionRangeBoostMedium" value="1.1" />
+  <Property name="CreatureInteractionRangeBoostSmall" value="1" />
+  <Property name="CreatureInteractionRangeBoostRun" value="2" />
+  <Property name="CreatureInteractionRangeBoostSprint" value="3.5" />
+  <Property name="CreatureInteractionRangeReducePredator" value="0.3" />
+  <Property name="CreatureInteractWithoutRaycasts" value="True" />
+  <Property name="CreatureInteractBaseRange" value="5" />
+  <Property name="PetInteractBaseRange" value="8" />
+  <Property name="Temperments">
+    <Property name="None" value="NMSString0x20.xml">
+      <Property name="Value" value="GENERIC" />
+    </Property>
+    <Property name="Predator" value="NMSString0x20.xml">
+      <Property name="Value" value="TEMPERAMENT_PREDATOR" />
+    </Property>
+    <Property name="PlayerPredator" value="NMSString0x20.xml">
+      <Property name="Value" value="TEMPERAMENT_PLAYERPREDATOR" />
+    </Property>
+    <Property name="Prey" value="NMSString0x20.xml">
+      <Property name="Value" value="TEMPERAMENT_PREY" />
+    </Property>
+    <Property name="Passive" value="NMSString0x20.xml">
+      <Property name="Value" value="TEMPERAMENT_PASSIVE" />
+    </Property>
+    <Property name="Bird" value="NMSString0x20.xml">
+      <Property name="Value" value="TEMPERAMENT_BIRD" />
+    </Property>
+    <Property name="FishPrey" value="NMSString0x20.xml">
+      <Property name="Value" value="TEMPERAMENT_FISH" />
+    </Property>
+    <Property name="FishPredator" value="NMSString0x20.xml">
+      <Property name="Value" value="TEMPERAMENT_FISHPREDATOR" />
+    </Property>
+    <Property name="Butterfly" value="NMSString0x20.xml">
+      <Property name="Value" value="TEMPERAMENT_BUTTERFLY" />
+    </Property>
+    <Property name="Robot" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_TEMPERMENT_ROBOT" />
+    </Property>
+    <Property name="Pet" value="NMSString0x20.xml">
+      <Property name="Value" value="TEMPERAMENT_PET" />
+    </Property>
+  </Property>
+  <Property name="TempermentDescriptions">
+    <Property name="None" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_PASSIVE%i_" />
+    </Property>
+    <Property name="Predator" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_PREDATOR%i_" />
+    </Property>
+    <Property name="PlayerPredator" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_PLAYERPRED%i_" />
+    </Property>
+    <Property name="Prey" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_PREY%i_" />
+    </Property>
+    <Property name="Passive" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_PASSIVE%i_" />
+    </Property>
+    <Property name="Bird" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIRD%i_" />
+    </Property>
+    <Property name="FishPrey" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_FISH%i_" />
+    </Property>
+    <Property name="FishPredator" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_FISHPRED%i_" />
+    </Property>
+    <Property name="Butterfly" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BUTTERFLY%i_" />
+    </Property>
+    <Property name="Robot" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_ROBOT%i" />
+    </Property>
+    <Property name="Pet" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_PET%i" />
+    </Property>
+  </Property>
+  <Property name="Diets">
+    <Property name="Carnivore" value="NMSString0x20.xml">
+      <Property name="Value" value="CARNIVORE" />
+    </Property>
+    <Property name="Omnivore" value="NMSString0x20.xml">
+      <Property name="Value" value="OMNIVORE" />
+    </Property>
+    <Property name="Herbivore" value="NMSString0x20.xml">
+      <Property name="Value" value="HERBIVORE" />
+    </Property>
+    <Property name="Robot" value="NMSString0x20.xml">
+      <Property name="Value" value="ROBOT" />
+    </Property>
+  </Property>
+  <Property name="WaterDiets">
+    <Property name="Carnivore" value="NMSString0x20.xml">
+      <Property name="Value" value="PREDFISHDIET" />
+    </Property>
+    <Property name="Omnivore" value="NMSString0x20.xml">
+      <Property name="Value" value="FISHDIET" />
+    </Property>
+    <Property name="Herbivore" value="NMSString0x20.xml">
+      <Property name="Value" value="FISHDIET" />
+    </Property>
+    <Property name="Robot" value="NMSString0x20.xml">
+      <Property name="Value" value="ROBOT" />
+    </Property>
+  </Property>
+  <Property name="DietMeat">
+    <Property name="Lush" value="NMSString0x20.xml">
+      <Property name="Value" value="LUSH_MEAT_NAME" />
+    </Property>
+    <Property name="Toxic" value="NMSString0x20.xml">
+      <Property name="Value" value="TOXIC_MEAT_NAME" />
+    </Property>
+    <Property name="Scorched" value="NMSString0x20.xml">
+      <Property name="Value" value="HOT_MEAT_NAME" />
+    </Property>
+    <Property name="Radioactive" value="NMSString0x20.xml">
+      <Property name="Value" value="RADIO_MEAT_NAME" />
+    </Property>
+    <Property name="Frozen" value="NMSString0x20.xml">
+      <Property name="Value" value="FROZEN_MEAT_NAME" />
+    </Property>
+    <Property name="Barren" value="NMSString0x20.xml">
+      <Property name="Value" value="BARREN_MEAT_NAME" />
+    </Property>
+    <Property name="Dead" value="NMSString0x20.xml">
+      <Property name="Value" value="BARREN_MEAT_NAME" />
+    </Property>
+    <Property name="Weird" value="NMSString0x20.xml">
+      <Property name="Value" value="CARNIVORE3" />
+    </Property>
+    <Property name="Red" value="NMSString0x20.xml">
+      <Property name="Value" value="CARNIVORE5" />
+    </Property>
+    <Property name="Green" value="NMSString0x20.xml">
+      <Property name="Value" value="OMNIVORE11" />
+    </Property>
+    <Property name="Blue" value="NMSString0x20.xml">
+      <Property name="Value" value="OMNIVORE4" />
+    </Property>
+    <Property name="Test" value="NMSString0x20.xml">
+      <Property name="Value" value="BARREN_MEAT_NAME" />
+    </Property>
+    <Property name="Swamp" value="NMSString0x20.xml">
+      <Property name="Value" value="SWAMP_MEAT_NAME" />
+    </Property>
+    <Property name="Lava" value="NMSString0x20.xml">
+      <Property name="Value" value="LAVA_MEAT_NAME" />
+    </Property>
+    <Property name="Waterworld" value="NMSString0x20.xml">
+      <Property name="Value" value="LUSH_MEAT_NAME" />
+    </Property>
+    <Property name="All" value="NMSString0x20.xml">
+      <Property name="Value" value="BARREN_MEAT_NAME" />
+    </Property>
+  </Property>
+  <Property name="DietVeg">
+    <Property name="Lush" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PLANT_10_NAME_L" />
+    </Property>
+    <Property name="Toxic" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PLANT_5_NAME_L" />
+    </Property>
+    <Property name="Scorched" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PLANT_8_NAME_L" />
+    </Property>
+    <Property name="Radioactive" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PLANT_6_NAME_L" />
+    </Property>
+    <Property name="Frozen" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PLANT_7_NAME_L" />
+    </Property>
+    <Property name="Barren" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PLANT_9_NAME_L" />
+    </Property>
+    <Property name="Dead" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PLANT_1_NAME_L" />
+    </Property>
+    <Property name="Weird" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CATALYST_2_NAME_L" />
+    </Property>
+    <Property name="Red" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_RED2_NAME_L" />
+    </Property>
+    <Property name="Green" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_GREEN2_NAME_L" />
+    </Property>
+    <Property name="Blue" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_BLUE2_NAME_L" />
+    </Property>
+    <Property name="Test" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PLANTSUB_WATER_NAME_L" />
+    </Property>
+    <Property name="Swamp" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PLANTSUB_WATER_NAME_L" />
+    </Property>
+    <Property name="Lava" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_FUEL_2_NAME_L" />
+    </Property>
+    <Property name="Waterworld" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PLANTSUB_WATER_NAME_L" />
+    </Property>
+    <Property name="All" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PLANTSUB_WATER_NAME_L" />
+    </Property>
+  </Property>
+  <Property name="DietDescriptions">
+    <Property name="Carnivore" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_CARNIVORE%i_" />
+    </Property>
+    <Property name="Omnivore" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_OMNIVORE%i_" />
+    </Property>
+    <Property name="Herbivore" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_HERBIVORE%i_" />
+    </Property>
+    <Property name="Robot" value="NMSString0x20.xml">
+      <Property name="Value" value="ROBOT" />
+    </Property>
+  </Property>
+  <Property name="WaterDietDescriptions">
+    <Property name="Carnivore" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_CARNIFISH%i_" />
+    </Property>
+    <Property name="Omnivore" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_HERBIFISH%i_" />
+    </Property>
+    <Property name="Herbivore" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_HERBIFISH%i_" />
+    </Property>
+    <Property name="Robot" value="NMSString0x20.xml">
+      <Property name="Value" value="ROBOT" />
+    </Property>
+  </Property>
+  <Property name="BiomeDescriptions">
+    <Property name="Lush" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_LUSH_" />
+    </Property>
+    <Property name="Toxic" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_TOX_" />
+    </Property>
+    <Property name="Scorched" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_HOT_" />
+    </Property>
+    <Property name="Radioactive" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_RAD_" />
+    </Property>
+    <Property name="Frozen" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_COLD_" />
+    </Property>
+    <Property name="Barren" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+    <Property name="Dead" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+    <Property name="Weird" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_RGB_" />
+    </Property>
+    <Property name="Red" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_RGB_" />
+    </Property>
+    <Property name="Green" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_RGB_" />
+    </Property>
+    <Property name="Blue" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_RGB_" />
+    </Property>
+    <Property name="Test" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_RGB_" />
+    </Property>
+    <Property name="Swamp" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_SWAMP_" />
+    </Property>
+    <Property name="Lava" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_LAVA_" />
+    </Property>
+    <Property name="Waterworld" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_RGB_" />
+    </Property>
+    <Property name="All" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_RGB_" />
+    </Property>
+  </Property>
+  <Property name="BiomeWaterDescriptions">
+    <Property name="Lush" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_LUSH_" />
+    </Property>
+    <Property name="Toxic" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_TOX_" />
+    </Property>
+    <Property name="Scorched" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_HOT_" />
+    </Property>
+    <Property name="Radioactive" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_RAD_" />
+    </Property>
+    <Property name="Frozen" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_COLD_" />
+    </Property>
+    <Property name="Barren" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_DUST_" />
+    </Property>
+    <Property name="Dead" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_DUST_" />
+    </Property>
+    <Property name="Weird" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_RGB_" />
+    </Property>
+    <Property name="Red" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_RGB_" />
+    </Property>
+    <Property name="Green" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_RGB_" />
+    </Property>
+    <Property name="Blue" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_RGB_" />
+    </Property>
+    <Property name="Test" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_RGB_" />
+    </Property>
+    <Property name="Swamp" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_SWAMP_" />
+    </Property>
+    <Property name="Lava" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_LAVA_" />
+    </Property>
+    <Property name="Waterworld" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_RGB_" />
+    </Property>
+    <Property name="All" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_WATER_RGB_" />
+    </Property>
+  </Property>
+  <Property name="BiomeAirDescriptions">
+    <Property name="Lush" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_LUSH_" />
+    </Property>
+    <Property name="Toxic" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_TOX_" />
+    </Property>
+    <Property name="Scorched" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_HOT_" />
+    </Property>
+    <Property name="Radioactive" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_RAD_" />
+    </Property>
+    <Property name="Frozen" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_COLD_" />
+    </Property>
+    <Property name="Barren" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_DUST_" />
+    </Property>
+    <Property name="Dead" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_DUST_" />
+    </Property>
+    <Property name="Weird" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_RGB_" />
+    </Property>
+    <Property name="Red" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_RGB_" />
+    </Property>
+    <Property name="Green" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_RGB_" />
+    </Property>
+    <Property name="Blue" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_RGB_" />
+    </Property>
+    <Property name="Test" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_RGB_" />
+    </Property>
+    <Property name="Swamp" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_SWAMP_" />
+    </Property>
+    <Property name="Lava" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_LAVA_" />
+    </Property>
+    <Property name="Waterworld" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_RGB_" />
+    </Property>
+    <Property name="All" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_AIR_RGB_" />
+    </Property>
+  </Property>
+  <Property name="WeirdBiomeDescriptions">
+    <Property name="None" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+    <Property name="Standard" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+    <Property name="HighQuality" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+    <Property name="Structure" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_WSTRUCT_" />
+    </Property>
+    <Property name="Beam" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_WSBEAM_" />
+    </Property>
+    <Property name="Hexagon" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_WFRACT_" />
+    </Property>
+    <Property name="FractCube" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_WBUBBLE_" />
+    </Property>
+    <Property name="Bubble" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_WSHARD_" />
+    </Property>
+    <Property name="Shards" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_WCONT_" />
+    </Property>
+    <Property name="Contour" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_WSHELL_" />
+    </Property>
+    <Property name="Shell" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_WBONE_" />
+    </Property>
+    <Property name="BoneSpire" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_WWIRE_" />
+    </Property>
+    <Property name="WireCell" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_WHYDRO_" />
+    </Property>
+    <Property name="HydroGarden" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_LUSH_" />
+    </Property>
+    <Property name="HugePlant" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_LUSH_" />
+    </Property>
+    <Property name="HugeLush" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_RGB_" />
+    </Property>
+    <Property name="HugeRing" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+    <Property name="HugeRock" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_HOT_" />
+    </Property>
+    <Property name="HugeScorch" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_TOX_" />
+    </Property>
+    <Property name="HugeToxic" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+    <Property name="Variant_A" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+    <Property name="Variant_B" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+    <Property name="Variant_C" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+    <Property name="Variant_D" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+    <Property name="Infested" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+    <Property name="Swamp" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+    <Property name="Lava" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_CREA_DESC_BIOME_DUST_" />
+    </Property>
+  </Property>
+  <Property name="PetBiomeClimates">
+    <Property name="Lush" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_LUSH" />
+    </Property>
+    <Property name="Toxic" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_TOXIC" />
+    </Property>
+    <Property name="Scorched" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_HOT" />
+    </Property>
+    <Property name="Radioactive" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_RADIO" />
+    </Property>
+    <Property name="Frozen" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_FROZEN" />
+    </Property>
+    <Property name="Barren" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_DUST" />
+    </Property>
+    <Property name="Dead" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_DEAD" />
+    </Property>
+    <Property name="Weird" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_WEIRD" />
+    </Property>
+    <Property name="Red" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_WEIRD" />
+    </Property>
+    <Property name="Green" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_WEIRD" />
+    </Property>
+    <Property name="Blue" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_WEIRD" />
+    </Property>
+    <Property name="Test" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_WEIRD" />
+    </Property>
+    <Property name="Swamp" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_SWAMP" />
+    </Property>
+    <Property name="Lava" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_LAVA" />
+    </Property>
+    <Property name="Waterworld" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_WEIRD" />
+    </Property>
+    <Property name="All" value="NMSString0x20.xml">
+      <Property name="Value" value="UI_PET_CLIMATE_WEIRD" />
+    </Property>
+  </Property>
+  <Property name="IsHurtingCreaturesACrime" value="False" />
+  <Property name="EnableFlyingSnakeTails" value="False" />
+  <Property name="EnableNewStuff" value="True" />
+  <Property name="InstantCreatureRide" value="False" />
+  <Property name="EnableVRCreatureRide" value="True" />
+  <Property name="EnableMPCreatureRide" value="True" />
+  <Property name="RidingReplicationRangeMultiplier" value="10" />
+  <Property name="RidingRollAdjustMaxAngle" value="10" />
+  <Property name="RidingRollMaxAngleAt" value="30" />
+  <Property name="RidingFirstPersonOffsetFwd" value="-0.4" />
+  <Property name="RidingFirstPersonOffsetUp" value="0" />
+  <Property name="CreatureScaleMangle" value="1" />
+  <Property name="CreatureRideDirectControl" value="True" />
+  <Property name="StaticCreatureRide" value="False" />
+  <Property name="RideSpeedSlow" value="0.5" />
+  <Property name="RideSpeedFast" value="2" />
+  <Property name="RideSpeedChangeTime" value="0.2" />
+  <Property name="RiderLeanTime" value="0.3" />
+  <Property name="PostRideMoveTime" value="2" />
+  <Property name="RideIdleTime" value="4" />
+  <Property name="MinRideSize" value="2" />
+  <Property name="MaxCreatureSize" value="8" />
+  <Property name="MaxRideLeanCounterRotate" value="30" />
+  <Property name="PetMinSummonDistance" value="3" />
+  <Property name="PetMaxSummonDistance" value="20" />
+  <Property name="PetSummonRotation" value="30" />
+  <Property name="PlayerDamageTransferScale" value="40" />
+  <Property name="CreatureSeed" value="GcSeed.xml">
+    <Property name="Seed" value="0" />
+    <Property name="UseSeedValue" value="False" />
+  </Property>
+  <Property name="CreatureFilter" value="" />
+  <Property name="MaxEcosystemCreaturesNormal" value="40" />
+  <Property name="MaxEcosystemCreaturesLow" value="20" />
+  <Property name="MaxAdditionalEcosystemCreaturesForDiscovery" value="10" />
+  <Property name="LowPerfFlockReduce" value="0.5" />
+  <Property name="UncapSpawningforVideo" value="False" />
+  <Property name="AllowSpawningOnscreen" value="False" />
+  <Property name="ResourceSpawnTime" value="1" />
+  <Property name="TurnInPlaceIdleTime" value="0.3" />
+  <Property name="TurnInPlaceMaxAngle" value="60" />
+  <Property name="TurnInPlaceMinTime" value="0.05" />
+  <Property name="TurnInPlaceMaxSpeed" value="5" />
+  <Property name="TurnInPlaceMaxSpeedIndoor" value="0.1" />
+  <Property name="SceneTerrainSpawnMinDistance" value="0" />
+  <Property name="CreatureMinAlignSpeed" value="0.05" />
+  <Property name="PatrolMinDist" value="5" />
+  <Property name="PatrolMaxDist" value="12" />
+  <Property name="PatrolHeightOffset" value="1" />
+  <Property name="PatrolGradientFactor" value="1" />
+  <Property name="CreatureWaryTime" value="0.2" />
+  <Property name="CreatureMinRunTime" value="8" />
+  <Property name="CreatureHearingRange" value="10" />
+  <Property name="CreatureSightRange" value="100" />
+  <Property name="CreatureMoveIdle" value="0.1" />
+  <Property name="CreatureTurnMin" value="1" />
+  <Property name="CreatureTurnMax" value="0.1" />
+  <Property name="CreatureBrakeForce" value="10" />
+  <Property name="CreatureMinAnimMoveSpeed" value="0.1" />
+  <Property name="CreatureLookBeforeGoingTime" value="1.5" />
+  <Property name="CreatureLookBeforeFleeingTime" value="0.5" />
+  <Property name="CreatureLookBeforeFleeingIfShotTime" value="0.35" />
+  <Property name="CreatureLookScaryThingTime" value="2.5" />
+  <Property name="CreatureLookPlayerForceLookTime" value="2.5" />
+  <Property name="LookMaxYawMoving" value="90" />
+  <Property name="LookMaxYawStatic" value="140" />
+  <Property name="LookPitchAtMaxYaw" value="0.2" />
+  <Property name="LookMaxPitchWhenMoving" value="0.25" />
+  <Property name="LookRollAtMaxYaw" value="0.4" />
+  <Property name="LookRollWhenMoving" value="0.4" />
+  <Property name="FootPlantError" value="0.9" />
+  <Property name="RecoverHealthTime" value="10" />
+  <Property name="PainShake" value="GcCameraShakeData.xml">
+    <Property name="Name" value="" />
+    <Property name="TimeStart" value="0" />
+    <Property name="TotalTime" value="0.5" />
+    <Property name="DecayRate" value="1" />
+    <Property name="StrengthScale" value="1" />
+    <Property name="ThirdPersonDamp" value="1" />
+    <Property name="VRStrength" value="0" />
+    <Property name="CapturedData" value="GcCameraShakeCapturedData.xml">
+      <Property name="Active" value="True" />
+      <Property name="ShakeStrength" value="0.01" />
+      <Property name="ShakeFrequency" value="0.01" />
+      <Property name="VibrateStrength" value="0.01" />
+      <Property name="VibrateFrequency" value="0.01" />
+    </Property>
+    <Property name="MechanicalData" value="GcCameraShakeMechanicalData.xml">
+      <Property name="Active" value="False" />
+      <Property name="ShakeStrength" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="ShakeFrequency" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="ExtraShakeFrequency" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="VibrateStrength" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="VibrateFrequency" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="ExtraVibrateFrequency" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+    </Property>
+    <Property name="FovStrength" value="0" />
+    <Property name="FovFrequency" value="0" />
+  </Property>
+  <Property name="PatrolSwitchMinTime" value="0.5" />
+  <Property name="ExtraFollowStrength" value="1" />
+  <Property name="ExtraFollowFreq1" value="0.5" />
+  <Property name="ExtraFollowFreq2" value="3" />
+  <Property name="SandWormChangeDirectionTime" value="1" />
+  <Property name="SandWormSteerAdjustTime" value="2" />
+  <Property name="SandWormMaxSteer" value="0.3" />
+  <Property name="SandWormMaxHeightAdjust" value="1" />
+  <Property name="SandWormJumpHeight" value="120" />
+  <Property name="SandWormJumpTime" value="3" />
+  <Property name="SandWormSubmergeDepth" value="100" />
+  <Property name="SandWormSubmergeTime" value="3" />
+  <Property name="SandWormSurfaceTime" value="1" />
+  <Property name="SandWormMaxJumps" value="5" />
+  <Property name="SandWormDespawnDist" value="1500" />
+  <Property name="SandWormSpawnTimer" value="300" />
+  <Property name="SandWormSpawnChanceMin" value="0.01" />
+  <Property name="SandWormSpawnChanceMax" value="0.2" />
+  <Property name="SandWormSpawnChanceInfested" value="1" />
+  <Property name="GroundWormSpawnRadius" value="40" />
+  <Property name="GroundWormSpawnSpacing" value="10" />
+  <Property name="GroundWormSpawnTimeOut" value="180" />
+  <Property name="GroundWormSpawnMin" value="4" />
+  <Property name="GroundWormSpawnMax" value="7" />
+  <Property name="GroundWormSpawnerActivateRadius" value="100" />
+  <Property name="GroundWormSpawnerDestroyRadiusActive" value="150" />
+  <Property name="GroundWormSpawnerDestroyRadiusInactive" value="8000" />
+  <Property name="GroundWormSpawnChance" value="1" />
+  <Property name="GroundWormScaleMin" value="0.8" />
+  <Property name="GroundWormScaleMax" value="1.2" />
+  <Property name="ShieldFadeTime" value="1" />
+  <Property name="SharkAlongPathSpeed" value="1" />
+  <Property name="SwarmBrakingForce" value="2" />
+  <Property name="SharkToPathYDamp" value="0.5" />
+  <Property name="SharkAttackSpeed" value="10" />
+  <Property name="SharkAttackAccel" value="3" />
+  <Property name="SharkPatrolSpeed" value="50" />
+  <Property name="SharkPatrolRadius" value="1000" />
+  <Property name="SharkPatrolEnd" value="5.1" />
+  <Property name="SharkGetToPathSpeed" value="1" />
+  <Property name="SharkAlignSpeed" value="0.3" />
+  <Property name="FishBobFrequency" value="0.5" />
+  <Property name="FishBobAmplitude" value="0.3" />
+  <Property name="FreighterJellyBobFrequency" value="0.01" />
+  <Property name="FreighterJellyBobAmplitude" value="0" />
+  <Property name="InfluenceRadius" value="15" />
+  <Property name="InfluenceForce" value="20" />
+  <Property name="InfluenceThreshold" value="0.001" />
+  <Property name="InfluenceDeflect" value="0.8" />
+  <Property name="TargetSearchTimeout" value="0.5" />
+  <Property name="AttractMinDistance" value="50" />
+  <Property name="SwarmMoveYFactor" value="0.3" />
+  <Property name="DroneExplodeRadius" value="10" />
+  <Property name="WeaponRepelRange" value="18" />
+  <Property name="WeaponRepelAmount" value="2" />
+  <Property name="VelocityAlignStrength" value="3" />
+  <Property name="VelocityAlignSpeed" value="8" />
+  <Property name="HeightLookAhead" value="2" />
+  <Property name="MaxHeightTime" value="3" />
+  <Property name="PlayerBirdDistance" value="100" />
+  <Property name="FishSpeedMin" value="0.5" />
+  <Property name="FishSpeedMax" value="5" />
+  <Property name="FishSwimMaxAcceleration" value="0.3" />
+  <Property name="AlertDistance" value="50" />
+  <Property name="RepelRange" value="5" />
+  <Property name="RepelAmount" value="1" />
+  <Property name="FishTurn" value="2.5" />
+  <Property name="TargetReachedDistance" value="3" />
+  <Property name="MaxSpeed" value="30" />
+  <Property name="MaxForce" value="500" />
+  <Property name="MaxTorque" value="50" />
+  <Property name="MinWaterSpawnDepth" value="0.1" />
+  <Property name="WaterSpawnOffset" value="1" />
+  <Property name="SpawnDistanceModifierForUnderwater" value="0.1" />
+  <Property name="FootDustGroundTintStrength" value="0.3" />
+  <Property name="StickToGroundSpeed" value="0.5" />
+  <Property name="StickToGroundCastBegin" value="2" />
+  <Property name="StickToGroundCastEnd" value="-2" />
+  <Property name="AnimationStickToGroundSpeed" value="0.5" />
+  <Property name="FlyingSnakeData" value="GcFlyingSnakeData.xml">
+    <Property name="CircleSpeed" value="8" />
+    <Property name="ApproachBaitSpeed" value="30" />
+    <Property name="DefaultCircleDistance" value="100" />
+    <Property name="BarrelRollSpawnDelay" value="1.5" />
+    <Property name="BarrelRollCount" value="1" />
+    <Property name="BarrelRollSpeed" value="4" />
+    <Property name="RiseDelay" value="8" />
+    <Property name="RiseHeight" value="0" />
+    <Property name="RiseTime" value="2" />
+    <Property name="AirThickness" value="16" />
+    <Property name="WindForce" value="15" />
+    <Property name="TailStiffness" value="0" />
+    <Property name="TwistLimit" value="5" />
+    <Property name="AltitudeSinPeriod" value="6" />
+    <Property name="AltitudeSinAmp" value="3" />
+    <Property name="AscendDescendSpeed" value="14" />
+  </Property>
+  <Property name="AlertTable">
+    <Property value="GcCreatureAlertData.xml">
+      <Property name="AlertTarget" value="GcCreatureTypes.xml">
+        <Property name="CreatureType" value="Prey" />
+      </Property>
+      <Property name="AlertInitiator" value="GcCreatureTypes.xml">
+        <Property name="CreatureType" value="Predator" />
+      </Property>
+      <Property name="HearingRange" value="30" />
+      <Property name="SightRange" value="30" />
+      <Property name="SightAngle" value="60" />
+      <Property name="FleeRange" value="15" />
+    </Property>
+    <Property value="GcCreatureAlertData.xml">
+      <Property name="AlertTarget" value="GcCreatureTypes.xml">
+        <Property name="CreatureType" value="FishPrey" />
+      </Property>
+      <Property name="AlertInitiator" value="GcCreatureTypes.xml">
+        <Property name="CreatureType" value="FishPredator" />
+      </Property>
+      <Property name="HearingRange" value="30" />
+      <Property name="SightRange" value="30" />
+      <Property name="SightAngle" value="60" />
+      <Property name="FleeRange" value="15" />
+    </Property>
+    <Property value="GcCreatureAlertData.xml">
+      <Property name="AlertTarget" value="GcCreatureTypes.xml">
+        <Property name="CreatureType" value="Prey" />
+      </Property>
+      <Property name="AlertInitiator" value="GcCreatureTypes.xml">
+        <Property name="CreatureType" value="Drone" />
+      </Property>
+      <Property name="HearingRange" value="15" />
+      <Property name="SightRange" value="15" />
+      <Property name="SightAngle" value="60" />
+      <Property name="FleeRange" value="10" />
+    </Property>
+    <Property value="GcCreatureAlertData.xml">
+      <Property name="AlertTarget" value="GcCreatureTypes.xml">
+        <Property name="CreatureType" value="Passive" />
+      </Property>
+      <Property name="AlertInitiator" value="GcCreatureTypes.xml">
+        <Property name="CreatureType" value="Drone" />
+      </Property>
+      <Property name="HearingRange" value="15" />
+      <Property name="SightRange" value="15" />
+      <Property name="SightAngle" value="60" />
+      <Property name="FleeRange" value="10" />
+    </Property>
+  </Property>
+  <Property name="ShowScale" value="False" />
+  <Property name="PetFootShakeModifier" value="0.5" />
+  <Property name="CreatureMedMinSize" value="1.2" />
+  <Property name="CreatureLargeMinSize" value="2.5" />
+  <Property name="CreatureHugeMinSize" value="4.5" />
+  <Property name="CreatureRidingMedMinSize" value="5" />
+  <Property name="CreatureRidingLargeMinSize" value="12" />
+  <Property name="CreatureRidingHugeMinSize" value="20" />
+  <Property name="CreatureBlobRidingMedMinSize" value="3" />
+  <Property name="CreatureBlobRidingLargeMinSize" value="5" />
+  <Property name="CreatureBlobRidingHugeMinSize" value="8" />
+  <Property name="CreatureSmallHealth" value="200" />
+  <Property name="CreatureMedHealth" value="1400" />
+  <Property name="CreatureLargeHealth" value="2800" />
+  <Property name="CreatureHugeHealth" value="3600" />
+  <Property name="CreatureLargeWalkShake" value="LARGECREATUREWA" />
+  <Property name="CreatureLargeWalkMaxShakeDist" value="2" />
+  <Property name="CreatureLargeRunShake" value="LARGECREATUREWA" />
+  <Property name="CreatureLargeRunMaxShakeDist" value="3" />
+  <Property name="CreatureHugeWalkShake" value="LARGECREATUREWA" />
+  <Property name="CreatureHugeWalkMaxShakeDist" value="10" />
+  <Property name="CreatureHugeRunShake" value="LARGECREATUREWA" />
+  <Property name="CreatureHugeRunMaxShakeDist" value="15" />
+  <Property name="SmallCreaturePerceptionDistance" value="30" />
+  <Property name="largeCreaturePerceptionDistance" value="70" />
+  <Property name="SmallCreatureFleePlayerDistance" value="5" />
+  <Property name="LargeCreatureFleePlayerDistance" value="15" />
+  <Property name="SmallCreatureAvoidPlayerDistance" value="3" />
+  <Property name="LargeCreatureAvoidPlayerDistance" value="30" />
+  <Property name="PredatorPerceptionDistance" value="40" />
+  <Property name="PredatorFishPerceptionDistance" value="60" />
+  <Property name="PassiveFleePlayerDistance" value="10" />
+  <Property name="AdultBabyKilledNoticeDistance" value="70" />
+  <Property name="PercentagePlayerPredators" value="0.5" />
+  <Property name="PredatorSmallHealth" value="400" />
+  <Property name="PredatorMedHealth" value="1400" />
+  <Property name="PredatorLargeHealth" value="3000" />
+  <Property name="PredatorHugeHealth" value="3500" />
+  <Property name="PlayerPredatorHealthModifier" value="1.3" />
+  <Property name="PredatorApproachTime" value="4" />
+  <Property name="PredatorNoticePauseTime" value="1.5" />
+  <Property name="PredatorStealthDist" value="11" />
+  <Property name="PredatorChargeDist" value="7" />
+  <Property name="PredatorChargeDistScale" value="0.3" />
+  <Property name="FishPredatorChargeDist" value="7" />
+  <Property name="FishPredatorChargeDistScale" value="0.3" />
+  <Property name="PredatorBoredomDistance" value="80" />
+  <Property name="PlayerPredatorBoredomDistance" value="80" />
+  <Property name="PredatorRegainInterestTime" value="30" />
+  <Property name="PlayerPredatorRegainInterestTime" value="30" />
+  <Property name="PredatorRunAwayDist" value="5" />
+  <Property name="PredatorRoarProbAfterHit" value="0.6" />
+  <Property name="PredatorRoarProbAfterMiss" value="0.7" />
+  <Property name="PredatorRunAwayHealthPercent" value="40" />
+  <Property name="PredatorEnergyRecoverRate" value="0.1" />
+  <Property name="PredatorEnergyUseChasing" value="-0.1" />
+  <Property name="AggressiveSharks" value="False" />
+  <Property name="DelayAfterRespawnBeforeAttackable" value="10" />
+  <Property name="IndoorTurnTime" value="0.5" />
+  <Property name="IndoorObstacleAvoidStrength" value="12" />
+  <Property name="IndoorSteeringRayLength" value="3" />
+  <Property name="IndoorSteeringRaySphereSize" value="0.3" />
+  <Property name="IndoorSteeringRaySpread" value="0.3" />
+  <Property name="FreighterSpawnDist" value="30" />
+  <Property name="FreighterDespawnDist" value="50" />
+  <Property name="ScuttlersCanAttack" value="True" />
+  <Property name="ScuttlerHealth" value="600" />
+  <Property name="ScuttlerInitialNoAttackTime" value="3.5" />
+  <Property name="ScuttlerMoveTimeMin" value="0.8" />
+  <Property name="ScuttlerMoveTimeMax" value="3" />
+  <Property name="ScuttlerIdleTimeMin" value="0.3" />
+  <Property name="ScuttlerIdleTimeMax" value="1.8" />
+  <Property name="ScuttlerZigZagTimeMin" value="0.3" />
+  <Property name="ScuttlerZigZagTimeMax" value="1" />
+  <Property name="ScuttlerZigZagStrength" value="0.1" />
+  <Property name="ScuttlerSpitDelay" value="0.05" />
+  <Property name="ScuttlerSpitChargeTime" value="0.4" />
+  <Property name="MiniDroneEnergyRecoverRate" value="0.5" />
+  <Property name="MiniDroneEnergyUsePerShot" value="0.33" />
+  <Property name="MiniDroneShotDelay" value="0.35" />
+  <Property name="MiniDroneShotMaxAngle" value="10" />
+  <Property name="FiendsCanAttack" value="True" />
+  <Property name="FiendOnscreenMarkers" value="True" />
+  <Property name="FiendPounceDistanceModifier" value="1.7" />
+  <Property name="FiendHealth" value="1000" />
+  <Property name="FiendPerceptionDistance" value="60" />
+  <Property name="FiendSpawnDistance" value="70" />
+  <Property name="FiendDespawnDistance" value="150" />
+  <Property name="FiendReplicateStartDistance" value="500" />
+  <Property name="FiendReplicateEndDistance" value="750" />
+  <Property name="FiendAggroTime" value="45" />
+  <Property name="FiendMaxEngaged" value="6" />
+  <Property name="FiendMaxAttackers" value="2" />
+  <Property name="FiendMaxVerticalForPounce" value="0.3" />
+  <Property name="FiendZigZagSpeed" value="0" />
+  <Property name="FiendZigZagStrength" value="0" />
+  <Property name="FiendEggsToUnlockSpit" value="0" />
+  <Property name="MaxFiendsToSpawn" value="6" />
+  <Property name="FiendMinSpawnTime" value="0.25" />
+  <Property name="FiendMaxSpawnTime" value="3" />
+  <Property name="FiendAggroIncreaseDamageEgg" value="1" />
+  <Property name="FiendAggroIncreaseDestroyEgg" value="1" />
+  <Property name="FiendAggroDecreasePerSpawn" value="0.1" />
+  <Property name="FiendCritAreaSize" value="0.15" />
+  <Property name="FiendDistToConsiderTargetSwtich" value="10" />
+  <Property name="FiendDistReduceForBeingShot" value="70" />
+  <Property name="FiendBeingShotMemoryTime" value="10" />
+  <Property name="MaxFishFiends" value="10" />
+  <Property name="FishFiendSmallHealth" value="400" />
+  <Property name="FishFiendBigHealth" value="9000" />
+  <Property name="FishFiendSmallBoostStrength" value="10" />
+  <Property name="FishFiendSmallBoostTime" value="0.5" />
+  <Property name="FishFiendSmallScale" value="0.3" />
+  <Property name="FishFiendBigBoostStrength" value="4" />
+  <Property name="FishFiendBigBoostTime" value="1" />
+  <Property name="FishFiendBigScale" value="3" />
+  <Property name="AsteroidCreatureSpawnPercentOverride" value="-1" />
+  <Property name="AsteroidCreatureRichSystemSpawnPercent" value="50" />
+  <Property name="RoutineSpeed" value="1" />
+  <Property name="RoutineOffset" value="4242" />
+  <Property name="RagdollTau" value="0.6" />
+  <Property name="RagdollDamping" value="0.9" />
+  <Property name="RagdollConeLimit" value="35" />
+  <Property name="RagdollTwistLimit" value="20" />
+  <Property name="RagdollMotorFadeStart" value="0.8" />
+  <Property name="RagdollMotorFadeEnd" value="2" />
+  <Property name="MaxRagdollsBeforeDespawnOffscreen" value="12" />
+  <Property name="MaxRagdollsBeforeDespawnOnscreen" value="18" />
+  <Property name="TurnRadiusMultiplier" value="1" />
+  <Property name="MaxTurnRadius" value="5" />
+  <Property name="TurnSlowAreaCos" value="0.75" />
+  <Property name="BadTurnPercent" value="0.7" />
+  <Property name="BadTurnWeight" value="0" />
+  <Property name="MinScaleForNavMap" value="1" />
+  <Property name="ImpassabilityBrakeTime" value="0.2" />
+  <Property name="ImpassabilityUnbrakeTime" value="0.4" />
+  <Property name="ImpassabilityTurnSpeedMultiplier" value="4" />
+  <Property name="NavMapLookAhead" value="1.5" />
+  <Property name="VelocityAlignYFactorMin" value="0.2" />
+  <Property name="VelocityAlignYFactorMax" value="0.6" />
+  <Property name="BrakingForce" value="15" />
+  <Property name="BrakingForceY" value="16" />
+  <Property name="FlowFieldWeight" value="0.7" />
+  <Property name="FollowWeight" value="5" />
+  <Property name="RidingSteerWeight" value="2" />
+  <Property name="AvoidCreaturesWeight" value="6" />
+  <Property name="AvoidImpassableWeight" value="10" />
+  <Property name="BaseAndTerrainModImpassableStrength" value="1" />
+  <Property name="FollowLeaderAlignWeight" value="1" />
+  <Property name="FollowLeaderCohereWeight" value="0.1" />
+  <Property name="SoftenAvoidanceRadiusMod" value="0.2" />
+  <Property name="FreighterJellySwimSpeed" value="0.6" />
+  <Property name="LandJellySwimSpeed" value="0.6" />
+  <Property name="SpaceJellySwimSpeed" value="20" />
+  <Property name="DefaultSwimSpeed" value="1" />
+  <Property name="FastSwimSpeed" value="2.5" />
+  <Property name="DefaultWalkMoveSpeed" value="1" />
+  <Property name="DefaultTrotMoveSpeed" value="2.5" />
+  <Property name="DefaultRunMoveSpeed" value="5" />
+  <Property name="PredatorWalkMoveSpeed" value="1" />
+  <Property name="PredatorTrotMoveSpeed" value="3" />
+  <Property name="PredatorRunMoveSpeed" value="6" />
+  <Property name="HeightDiffPenalty" value="3" />
+  <Property name="EdgeClosenessPenalty" value="6" />
+  <Property name="PelvisIkStrength" value="0.25" />
+  <Property name="SteeringUpdateRate" value="0.25" />
+  <Property name="PathOverestimate" value="6" />
+  <Property name="FishWaterSurfaceAnticipate" value="3" />
+  <Property name="FishWaterSurfaceAvoidStrength" value="6" />
+  <Property name="FishDesiredDepth" value="1" />
+  <Property name="FishMinHeightAboveSeaBed" value="1.5" />
+  <Property name="FishSeaBedAvoidStrength" value="1.5" />
+  <Property name="FishObstacleAvoidStrength" value="2" />
+  <Property name="FishPlayerAttractionFrontDist" value="40" />
+  <Property name="FishPlayerAttractionAhead" value="8" />
+  <Property name="FishPlayerAttractionMinDist" value="5" />
+  <Property name="FishPlayerAttractionMaxDist" value="35" />
+  <Property name="FishPlayerAttractionStrength" value="1" />
+  <Property name="AttackPlayerDistance" value="1" />
+  <Property name="SpawnCameraAngleCos" value="-0.8" />
+  <Property name="SpawnMinDistPercentage" value="0.25" />
+  <Property name="SpawnOnscreenDist" value="0.7" />
+  <Property name="FadeScaleMultiplier" value="45" />
+  <Property name="FadeScalePower" value="1" />
+  <Property name="FadeDistance" value="10" />
+  <Property name="SpawnDistAtMinSize" value="40" />
+  <Property name="SpawnDistAtMaxSize" value="350" />
+  <Property name="DespawnDistFactor" value="1.5" />
+  <Property name="MinFade" value="30" />
+  <Property name="MaxFade" value="500" />
+  <Property name="ProcessPendingSpawnRequests" value="True" />
+  <Property name="SpawnsAvoidBaseMultiplier" value="3" />
+  <Property name="PerceptionUpdateRate" value="4" />
+  <Property name="AllowSleeping" value="False" />
+  <Property name="DebugDrawTrails" value="False" />
+  <Property name="TrailHalfLife" value="80" />
+  <Property name="EnableTrailIk" value="True" />
+  <Property name="DetailAnimBlendInTime" value="1" />
+  <Property name="DetailAnimBlendOutTime" value="1" />
+  <Property name="DetailAnimMinPauseTime" value="0.4" />
+  <Property name="DetailAnimMaxPauseTime" value="1.2" />
+  <Property name="DetailAnimPlayWhileWalking" value="True" />
+  <Property name="CreatureDeathEffectSmall" value="DEATHBLOODSMALL" />
+  <Property name="CreatureDeathEffectMedium" value="DEATHBLOODMED" />
+  <Property name="CreatureDeathEffectBig" value="DEATHBLOODBIG" />
+  <Property name="FishDeathEffect" value="DEATHBLOODBIG" />
+  <Property name="FootParticleTime" value="0.3" />
+  <Property name="PiedPiper" value="False" />
+  <Property name="PetInteractTurnToFaceMinAngle" value="15" />
+  <Property name="FollowPlayerDistance" value="8" />
+  <Property name="FollowRunPlayerDistance" value="15" />
+  <Property name="FollowRange" value="5" />
+  <Property name="PetPlayerSpeedSmoothTime" value="0.5" />
+  <Property name="PetStickySideBiasAngle" value="-15" />
+  <Property name="PetWalkAtHeelChanceDevoted" value="0.9" />
+  <Property name="PetWalkAtHeelChanceIndependent" value="0.1" />
+  <Property name="PetWalkAtHeelDistMin" value="0" />
+  <Property name="PetWalkAtHeelDistMax" value="4" />
+  <Property name="PetRunAtHeelDistMin" value="11" />
+  <Property name="PetRunAtHeelDistMax" value="20" />
+  <Property name="PetHeelDistSwitchTimeMin" value="4" />
+  <Property name="PetHeelDistSwitchTimeMax" value="7" />
+  <Property name="PetRunAtHeelLateralShiftMin" value="0.7" />
+  <Property name="PetRunAtHeelLateralShiftMax" value="2.000001" />
+  <Property name="PetHeelLateralShiftTimeMin" value="3" />
+  <Property name="PetHeelLateralShiftTimeMax" value="6" />
+  <Property name="PetWalkAtHeelLateralShift" value="1.6" />
+  <Property name="PetHeelPosSpringTime" value="3" />
+  <Property name="PetScan" value="PET" />
+  <Property name="PetRadialCentre" value="0" />
+  <Property name="PetRadialRadius" value="36.625" />
+  <Property name="PetRadialWidth" value="7.5" />
+  <Property name="PetRadialPulseMul" value="1.15" />
+  <Property name="PetRadialPulseTime" value="0.66" />
+  <Property name="PetHeartMaxSize" value="100" />
+  <Property name="PetHeartChangePerLayer" value="0.2" />
+  <Property name="PetHeartResponseLoopTime" value="2" />
+  <Property name="PetHeartResponseTotalTime" value="2" />
+  <Property name="PetLastActionReportTime" value="4" />
+  <Property name="PetMoodSmoothTime" value="1" />
+  <Property name="PetFollowRunPlayerDistance" value="4" />
+  <Property name="PetFollowRange" value="2" />
+  <Property name="PetRadialBadColour" value="Colour.xml">
+    <Property name="R" value="1" />
+    <Property name="G" value="0.141" />
+    <Property name="B" value="0.141" />
+    <Property name="A" value="0.8" />
+  </Property>
+  <Property name="PetRadialNeutralColour" value="Colour.xml">
+    <Property name="R" value="1" />
+    <Property name="G" value="0.737" />
+    <Property name="B" value="0.145" />
+    <Property name="A" value="1" />
+  </Property>
+  <Property name="PetRadialGoodColour" value="Colour.xml">
+    <Property name="R" value="0.014" />
+    <Property name="G" value="0.777" />
+    <Property name="B" value="0.029" />
+    <Property name="A" value="1" />
+  </Property>
+  <Property name="PetRadialBoostColour" value="Colour.xml">
+    <Property name="R" value="1" />
+    <Property name="G" value="1" />
+    <Property name="B" value="1" />
+    <Property name="A" value="1" />
+  </Property>
+  <Property name="PetChatCooldown" value="5" />
+  <Property name="PetChatUseTraitTemplateChance" value="0.1" />
+  <Property name="PetEffectSpawnOffsetSmall" value="0.2" />
+  <Property name="PetEffectSpawnOffsetMed" value="0.3" />
+  <Property name="PetEffectSpawnOffsetLarge" value="0.5" />
+  <Property name="PetEffectSpawnOffsetHuge" value="1" />
+  <Property name="PetTickleChatChance" value="0.33" />
+  <Property name="PetTreatChatChance" value="1" />
+  <Property name="UseCreatureAdoptOSD" value="True" />
+  <Property name="SearchItemDistance" value="45" />
+  <Property name="SearchItemFrequency" value="20" />
+  <Property name="SearchItemGiveUpDistance" value="70" />
+  <Property name="SearchItemGiveUpTime" value="20" />
+  <Property name="SearchItemNotifyTime" value="10" />
+  <Property name="SearchSpawnRandomItemProbability" value="0.5" />
+  <Property name="MiningRandomProbability" value="0" />
+  <Property name="DebugSearch" value="False" />
+  <Property name="FriendlyCreatureLimit" value="4" />
+  <Property name="FeedingTaskAmount" value="2" />
+  <Property name="FeedingFollowTime" value="30" />
+  <Property name="FeedingNoticeTime" value="3" />
+  <Property name="FeedingNoticeDistance" value="30" />
+  <Property name="AttractedMinAvoidCreaturesStrength" value="0" />
+  <Property name="AttractedMinAvoidCreaturesDist" value="3" />
+  <Property name="AttractedMaxAvoidCreaturesStrength" value="0.120661" />
+  <Property name="AttractedMaxAvoidCreaturesDist" value="7" />
+  <Property name="PetsShowTraitClassesAsWords" value="True" />
+  <Property name="PetSlotsUnlockedByDefault" value="2" />
+  <Property name="PetGrowthTime" value="1209600" />
+  <Property name="PetIncubationTime" value="86400" />
+  <Property name="PetTrustChangeInterval" value="86400" />
+  <Property name="PetTrustOnAdoption" value="0.6" />
+  <Property name="PetTrustOnHatch" value="0.7" />
+  <Property name="PetTrustIncreaseStep" value="0.05" />
+  <Property name="PetTrustDecreaseStep" value="0.02" />
+  <Property name="PetTrustIncreaseThreshold" value="0.05" />
+  <Property name="PetTrustDecreaseThreshold" value="0.95" />
+  <Property name="PetMinTrust" value="0.2" />
+  <Property name="PetEggLayingDuration" value="0.7" />
+  <Property name="PetEggLayingInterval" value="86400" />
+  <Property name="PetEggFirstEggDelay" value="86400" />
+  <Property name="PetEggModificationTime" value="5" />
+  <Property name="PetEggModificationItemLimit" value="999" />
+  <Property name="PetEggMaxChangeProduct" value="SACVENOM" />
+  <Property name="PetEggSubstanceModifier" value="2.5" />
+  <Property name="PetEggScaleRangeModifier" value="0.5" />
+  <Property name="PetEggScaleRangeMax" value="0.5" />
+  <Property name="PetEggTraitRangeModifier" value="0.1" />
+  <Property name="PetEggTraitRangeMax" value="0.2" />
+  <Property name="PetEggMinDistStep" value="1" />
+  <Property name="PetEggMaxDistStep" value="5" />
+  <Property name="PetEggOverdosageModifier" value="0.1" />
+  <Property name="PetEggMaxOverdosage" value="0.5" />
+  <Property name="PetEggMaxTopDescriptorChangeChance" value="0.5" />
+  <Property name="PetEggAccessoryChanceModifier" value="4" />
+  <Property name="PetEggMaxAccessoriesChangeChance" value="1" />
+  <Property name="PetEggColourChanceModifier" value="4" />
+  <Property name="PetEggMaxColourChangeChance" value="1" />
+  <Property name="PetEggHatchScaleChange" value="0.1" />
+  <Property name="PetEggHatchTraitChange" value="0.1" />
+  <Property name="PetEggHatchColourChangeChance" value="0.3" />
+  <Property name="PetForceBehaviour" value="GcPetBehaviours.xml">
+    <Property name="PetBehaviour" value="None" />
+  </Property>
+  <Property name="PetMaxSizeOffPlanet" value="1" />
+  <Property name="PetTeleportDistOffPlanet" value="30" />
+  <Property name="PetTeleportDistOnPlanet" value="150" />
+  <Property name="PetCanSummonOnFreighter" value="True" />
+  <Property name="PetAnimSpeedBoostSmallerThan" value="1.2" />
+  <Property name="PetAnimSpeedBoostStrength" value="1" />
+  <Property name="PetAnimSpeedMax" value="1.5" />
+  <Property name="PetAnimSpeedMin" value="0.2" />
+  <Property name="PetNavRadForMinTurn" value="0.5" />
+  <Property name="PetNavRadForMaxTurn" value="3" />
+  <Property name="PetMinTurnRad" value="0.2" />
+  <Property name="PetMaxTurnRad" value="1" />
+  <Property name="PetMoodCurvePower" value="0.7" />
+  <Property name="PetOffPlanetEffect" value="GcScanEffectData.xml">
+    <Property name="Id" value="" />
+    <Property name="ScanEffectType" value="Creature" />
+    <Property name="Colour" value="Colour.xml">
+      <Property name="R" value="1" />
+      <Property name="G" value="1" />
+      <Property name="B" value="1" />
+      <Property name="A" value="1" />
+    </Property>
+    <Property name="BasecolourIntensity" value="0.1" />
+    <Property name="ScanlinesSeparation" value="0.5" />
+    <Property name="FresnelIntensity" value="-2" />
+    <Property name="GlowIntensity" value="0" />
+    <Property name="WaveOffset" value="0" />
+    <Property name="WaveActive" value="True" />
+    <Property name="FixedUpAxis" value="False" />
+    <Property name="Transparent" value="False" />
+    <Property name="ModelFade" value="False" />
+    <Property name="FadeInTime" value="1.2" />
+    <Property name="FadeOutTime" value="1" />
+  </Property>
+  <Property name="PetEggResourceFile" value="MODELS/PLANETS/BIOMES/COMMON/INTERACTIVE/PET_EGG.SCENE.MBIN" />
+  <Property name="PetEggHatchResourceFile" value="MODELS/PLANETS/BIOMES/COMMON/INTERACTIVE/PETEGGDESTRUCTIBLE.SCENE.MBIN" />
+  <Property name="PetEggHatchScale" value="2.5" />
+  <Property name="PetEggHatchOffset" value="0.2" />
+  <Property name="PetEggMaxLonely" value="0.1" />
+  <Property name="PetEggMaxHungry" value="0.1" />
+  <Property name="PetEggMinGrowthToLay" value="0.25" />
+  <Property name="PetForceSummonFromEgg" value="False" />
+  <Property name="PetEggsplosionEffect" value="EGGSHELLDEBRIS" />
+  <Property name="RidingPositionTest" value="False" />
+  <Property name="PetAnimTest" value="False" />
+  <Property name="UsePetTeleportEffect" value="True" />
+  <Property name="PetTeleportEffectTime" value="1" />
+  <Property name="PetThrowArcRange" value="70" />
+  <Property name="PetThrowArcColour" value="Colour.xml">
+    <Property name="R" value="1" />
+    <Property name="G" value="0.964" />
+    <Property name="B" value="0.102" />
+    <Property name="A" value="1" />
+  </Property>
+  <Property name="PetOrderMinRange" value="25" />
+  <Property name="PetOrderMaxRange" value="60" />
+  <Property name="PetAccessoryMoodDisplayThreshold" value="0.5" />
+  <Property name="PetAccessoryStateInterval" value="10" />
+  <Property name="PetInteractionLightHeight" value="0.4" />
+  <Property name="PetInteractionLightIntensityMin" value="1" />
+  <Property name="PetInteractionLightIntensityMax" value="6" />
+  <Property name="PetInteractionLightColour" value="Colour.xml">
+    <Property name="R" value="1" />
+    <Property name="G" value="0.923" />
+    <Property name="B" value="0.574" />
+    <Property name="A" value="1" />
+  </Property>
+  <Property name="AnimChangeCoolDown" value="0.25" />
+  <Property name="GroupRunProbability" value="0.8" />
+  <Property name="GroupBabyRunProbability" value="0.8" />
+  <Property name="GroupRunStormProbability" value="0.95" />
+  <Property name="GroupLookAtProbability" value="0.1" />
+  <Property name="GroupLookAtDurationMin" value="1" />
+  <Property name="GroupLookAtDurationMax" value="2" />
+  <Property name="GroupRunDurationMin" value="7" />
+  <Property name="GroupRunDurationMax" value="10" />
+  <Property name="GroupFemaleProportion" value="0.6" />
+  <Property name="GroupBabyProportion" value="0.3" />
+  <Property name="GroupBabyScale" value="0.5" />
+  <Property name="GroupBabyHealthMultiplier" value="0.8" />
+  <Property name="MaxBirdsProportion" value="0.15" />
+  <Property name="HerdGroupSizeMultiplier" value="4" />
+  <Property name="DrawRoutineFollowDebug" value="False" />
+  <Property name="DrawRoutineInfo" value="False" />
+  <Property name="AdultCorrelationValue" value="0.7" />
+  <Property name="GrassPushRadius" value="5.5" />
+  <Property name="GrassPushMaxSize" value="2" />
+  <Property name="DrawGrassPushRadius" value="False" />
+  <Property name="CreatureIndoorSpeedMultiplier" value="0.7" />
+  <Property name="CreatureSpeedMultiplier" value="1.2" />
+  <Property name="PredatorSpeedMultiplier" value="1.1" />
+  <Property name="DefaultKillingSubstance" value="CREATURE1" />
+  <Property name="AlienShipQuestKillingSubstance" value="SOULFRAG" />
+  <Property name="AlienShipQuestCreatureWeapon" value="SOUL_LASER" />
+  <Property name="KillingSubstances">
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="CREATURE1" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="CREATURE1" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="CREATURE1" />
+    </Property>
+  </Property>
+  <Property name="CreatureKillRewardAmountSmall" value="5" />
+  <Property name="CreatureKillRewardAmountMed" value="8" />
+  <Property name="CreatureKillRewardAmountLarge" value="12" />
+  <Property name="CreatureKillRewardAmountHuge" value="20" />
+  <Property name="KillingProducts">
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="FISH" />
+      <Property name="Item" value="FOOD_M_FISH" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="ANTELOPE" />
+      <Property name="Item" value="FOOD_M_MEAT" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="BIRD" />
+      <Property name="Item" value="FOOD_M_FLYER" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="BUTTERFLY" />
+      <Property name="Item" value="FOOD_M_FLYER" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="FLYINGSNAKE" />
+      <Property name="Item" value="FOOD_M_FLYER" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="FLYINGLIZARD" />
+      <Property name="Item" value="FOOD_M_FLYER" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="DIPLO" />
+      <Property name="Item" value="FOOD_M_DIPLO" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="TRICERATOPS" />
+      <Property name="Item" value="FOOD_M_MEAT" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="RODENT" />
+      <Property name="Item" value="FOOD_M_MEAT" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="COW" />
+      <Property name="Item" value="FOOD_M_COW" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="CAT" />
+      <Property name="Item" value="FOOD_M_CAT" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="STRIDER" />
+      <Property name="Item" value="FOOD_M_STRIDER" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="TREX" />
+      <Property name="Item" value="FOOD_M_REX" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="SHARK" />
+      <Property name="Item" value="FOOD_M_FISH" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="TWOLEGANTELOPE" />
+      <Property name="Item" value="FOOD_M_MEAT" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="SIXLEGCAT" />
+      <Property name="Item" value="FOOD_M_CAT" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="SIXLEGCOW" />
+      <Property name="Item" value="FOOD_M_COW" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="GRUNT" />
+      <Property name="Item" value="FOOD_M_GEK" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="BLOB" />
+      <Property name="Item" value="FOOD_M_BLOB" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="SPIDER" />
+      <Property name="Item" value="FOOD_M_CRAB" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="FLOATSPIDER" />
+      <Property name="Item" value="FOOD_M_CRAB" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="SWIMCOW" />
+      <Property name="Item" value="FOOD_M_MEAT" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="SWIMRODENT" />
+      <Property name="Item" value="FOOD_M_MEAT" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="JELLYFISH" />
+      <Property name="Item" value="FOOD_M_MEAT" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="CRAB" />
+      <Property name="Item" value="FOOD_M_CRAB" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="ROCKCREATURE" />
+      <Property name="Item" value="FOOD_M_MEAT" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="FLYINGBEETLE" />
+      <Property name="Item" value="FOOD_M_BEETLE" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="LARGEBUTTERFLY" />
+      <Property name="Item" value="FOOD_M_FLYER" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="DRILL" />
+      <Property name="Item" value="FOOD_M_DRILL" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="PLOUGH" />
+      <Property name="Item" value="FOOD_M_DIGGER" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="MOLE" />
+      <Property name="Item" value="FOOD_M_MOLE" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="PROTODIGGER" />
+      <Property name="Item" value="FOOD_M_DIGGER" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="PROTOROLLER" />
+      <Property name="Item" value="FOOD_M_BALL" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="PROTOFLYER" />
+      <Property name="Item" value="FOOD_M_BEETLE" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="ROBOTANTELOPE" />
+      <Property name="Item" value="TECHFRAG" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="BONECAT" />
+      <Property name="Item" value="FOOD_M_BONE" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="WEIRDCRYSTAL" />
+      <Property name="Item" value="FOOD_M_DRILL" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="WEIRDFLOAT" />
+      <Property name="Item" value="FOOD_M_BALL" />
+    </Property>
+    <Property value="GcCreatureSubstanceList.xml">
+      <Property name="CreatureType" value="WEIRDROLL" />
+      <Property name="Item" value="FOOD_M_BALL" />
+    </Property>
+  </Property>
+  <Property name="HarvestingProducts">
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="FISH" />
+      <Property name="Item" value="FOOD_V_FISH" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_FISH" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="ANTELOPE" />
+      <Property name="Item" value="FOOD_V_MILK" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_MILK" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="BIRD" />
+      <Property name="Item" value="FOOD_V_FLYER" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_FLYER" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="BUTTERFLY" />
+      <Property name="Item" value="FOOD_V_FLYER" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_FLYER" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="FLYINGSNAKE" />
+      <Property name="Item" value="FOOD_V_FLYER" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_FLYER" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="FLYINGLIZARD" />
+      <Property name="Item" value="FOOD_V_FLYER" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_FLYER" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="DIPLO" />
+      <Property name="Item" value="FOOD_V_DIPLO" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_DIPLO" />
+      <Property name="MinBlobs" value="5" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="TRICERATOPS" />
+      <Property name="Item" value="FOOD_V_EGG" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_DIPLO" />
+      <Property name="MinBlobs" value="5" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="RODENT" />
+      <Property name="Item" value="FOOD_V_MILK" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_MILK" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="COW" />
+      <Property name="Item" value="FOOD_V_COW" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_COW" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="CAT" />
+      <Property name="Item" value="FOOD_V_CAT" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_CAT" />
+      <Property name="MinBlobs" value="5" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="STRIDER" />
+      <Property name="Item" value="FOOD_V_STRIDER" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_STRIDER" />
+      <Property name="MinBlobs" value="5" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="TREX" />
+      <Property name="Item" value="FOOD_V_REX" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_REX" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="SHARK" />
+      <Property name="Item" value="FOOD_V_MILK" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_FISH" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="TWOLEGANTELOPE" />
+      <Property name="Item" value="FOOD_V_MILK" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_MILK" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="SIXLEGCAT" />
+      <Property name="Item" value="FOOD_V_CAT" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_CAT" />
+      <Property name="MinBlobs" value="5" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="SIXLEGCOW" />
+      <Property name="Item" value="FOOD_V_COW" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_COW" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="GRUNT" />
+      <Property name="Item" value="FOOD_V_GEK" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_GRUNT" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="BLOB" />
+      <Property name="Item" value="FOOD_V_BLOB" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_BLOB" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="SPIDER" />
+      <Property name="Item" value="FOOD_V_CRAB" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_SPIDER" />
+      <Property name="MinBlobs" value="5" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="FLOATSPIDER" />
+      <Property name="Item" value="FOOD_V_CRAB" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_SPIDER" />
+      <Property name="MinBlobs" value="5" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="SWIMCOW" />
+      <Property name="Item" value="FOOD_V_MILK" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_MILK" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="SWIMRODENT" />
+      <Property name="Item" value="FOOD_V_MILK" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_MILK" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="JELLYFISH" />
+      <Property name="Item" value="FOOD_V_MILK" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_MILK" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="CRAB" />
+      <Property name="Item" value="FOOD_V_CRAB" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_SPIDER" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="ROCKCREATURE" />
+      <Property name="Item" value="FOOD_V_CRAB" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_SPIDER" />
+      <Property name="MinBlobs" value="5" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="MOLE" />
+      <Property name="Item" value="FOOD_V_MOLE" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_MOLE" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="ROBOTANTELOPE" />
+      <Property name="Item" value="FOOD_V_ROBOT" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_ROBOT" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="BONECAT" />
+      <Property name="Item" value="FOOD_V_BONE" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_BONE" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="PROTOFLYER" />
+      <Property name="Item" value="FOOD_V_FLYER" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_GRUNT" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="PROTOROLLER" />
+      <Property name="Item" value="FOOD_V_BONE" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_BONE" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="WEIRDROLL" />
+      <Property name="Item" value="FOOD_M_FIEND" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_SPIDER" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="WEIRDFLOAT" />
+      <Property name="Item" value="FOOD_P_GLITCH" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_CAT" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="LARGEBUTTERFLY" />
+      <Property name="Item" value="FOOD_V_FLYER" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_GRUNT" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+    <Property value="GcCreatureHarvestSubstanceList.xml">
+      <Property name="CreatureType" value="FLYINGBEETLE" />
+      <Property name="Item" value="FOOD_V_FLYER" />
+      <Property name="Desc" value="UI_LABEL_HARVEST_GRUNT" />
+      <Property name="MinBlobs" value="10" />
+    </Property>
+  </Property>
+  <Property name="CreatureHarvestAmountSmall" value="1" />
+  <Property name="CreatureHarvestAmountMed" value="1" />
+  <Property name="CreatureHarvestAmountLarge" value="2" />
+  <Property name="CreatureHarvestAmountHuge" value="3" />
+  <Property name="HarvestCooldownMin" value="30" />
+  <Property name="HarvestCooldownMax" value="60" />
+  <Property name="BasicFeedingProduct" value="BAIT_BASIC" />
+  <Property name="RobotFeedingProduct" value="POWERCELL" />
+  <Property name="AllBaitIsBasic" value="True" />
+  <Property name="CanAlwaysLayEgg" value="False" />
+  <Property name="HerbivoreFeedingProducts">
+    <Property value="GcCreatureFoodList.xml">
+      <Property name="FoodProduct" value="BAIT_VEG_1" />
+      <Property name="ResourceFile" value="MODELS/PLANETS/BIOMES/COMMON/COOKING/SCENTEDHERBS.SCENE.MBIN" />
+      <Property name="DebrisEffect" value="SCENTEDHERBS" />
+    </Property>
+    <Property value="GcCreatureFoodList.xml">
+      <Property name="FoodProduct" value="BAIT_VEG_2" />
+      <Property name="ResourceFile" value="MODELS/PLANETS/BIOMES/COMMON/COOKING/ENZYMEFLUID.SCENE.MBIN" />
+      <Property name="DebrisEffect" value="ENZYMEFLUID" />
+    </Property>
+    <Property value="GcCreatureFoodList.xml">
+      <Property name="FoodProduct" value="BAIT_VEG_3" />
+      <Property name="ResourceFile" value="MODELS/PLANETS/BIOMES/COMMON/COOKING/FERMENTEDFRUIT.SCENE.MBIN" />
+      <Property name="DebrisEffect" value="FERMENTEDFRUIT" />
+    </Property>
+    <Property value="GcCreatureFoodList.xml">
+      <Property name="FoodProduct" value="BAIT_VEG_4" />
+      <Property name="ResourceFile" value="MODELS/PLANETS/BIOMES/COMMON/COOKING/SWEETENEDCOMPOST.SCENE.MBIN" />
+      <Property name="DebrisEffect" value="SWEETENEDCOMPOS" />
+    </Property>
+  </Property>
+  <Property name="CarnivoreFeedingProducts">
+    <Property value="GcCreatureFoodList.xml">
+      <Property name="FoodProduct" value="BAIT_MEAT_1" />
+      <Property name="ResourceFile" value="MODELS/PLANETS/BIOMES/COMMON/COOKING/SYNTHETICWORMS.SCENE.MBIN" />
+      <Property name="DebrisEffect" value="SYNTHETICWORMS" />
+    </Property>
+    <Property value="GcCreatureFoodList.xml">
+      <Property name="FoodProduct" value="BAIT_MEAT_2" />
+      <Property name="ResourceFile" value="MODELS/PLANETS/BIOMES/COMMON/COOKING/FOODGROUNDMEAT.SCENE.MBIN" />
+      <Property name="DebrisEffect" value="GROUNDMEAT" />
+    </Property>
+    <Property value="GcCreatureFoodList.xml">
+      <Property name="FoodProduct" value="BAIT_MEAT_3" />
+      <Property name="ResourceFile" value="MODELS/PLANETS/BIOMES/COMMON/COOKING/PHEROMONESACK.SCENE.MBIN" />
+      <Property name="DebrisEffect" value="PHEROMONESACK" />
+    </Property>
+    <Property value="GcCreatureFoodList.xml">
+      <Property name="FoodProduct" value="BAIT_MEAT_4" />
+      <Property name="ResourceFile" value="MODELS/PLANETS/BIOMES/COMMON/COOKING/BLOODYORGAN.SCENE.MBIN" />
+      <Property name="DebrisEffect" value="BLOODYORGAN" />
+    </Property>
+  </Property>
+  <Property name="WeirdKillingRewards" value="GcWeirdCreatureRewardList.xml">
+    <Property name="Rewards">
+      <Property name="None" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="Standard" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="HighQuality" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="Structure" value="NMSString0x10.xml">
+        <Property name="Value" value="CRT_WEIRD" />
+      </Property>
+      <Property name="Beam" value="NMSString0x10.xml">
+        <Property name="Value" value="CRT_WEIRD" />
+      </Property>
+      <Property name="Hexagon" value="NMSString0x10.xml">
+        <Property name="Value" value="CRT_WEIRD" />
+      </Property>
+      <Property name="FractCube" value="NMSString0x10.xml">
+        <Property name="Value" value="CRT_WEIRD" />
+      </Property>
+      <Property name="Bubble" value="NMSString0x10.xml">
+        <Property name="Value" value="CRT_WEIRD" />
+      </Property>
+      <Property name="Shards" value="NMSString0x10.xml">
+        <Property name="Value" value="CRT_WEIRD" />
+      </Property>
+      <Property name="Contour" value="NMSString0x10.xml">
+        <Property name="Value" value="CRT_WEIRD" />
+      </Property>
+      <Property name="Shell" value="NMSString0x10.xml">
+        <Property name="Value" value="CRT_WEIRD" />
+      </Property>
+      <Property name="BoneSpire" value="NMSString0x10.xml">
+        <Property name="Value" value="CRT_WEIRD" />
+      </Property>
+      <Property name="WireCell" value="NMSString0x10.xml">
+        <Property name="Value" value="CRT_WEIRD" />
+      </Property>
+      <Property name="HydroGarden" value="NMSString0x10.xml">
+        <Property name="Value" value="CRT_WEIRD" />
+      </Property>
+      <Property name="HugePlant" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="HugeLush" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="HugeRing" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="HugeRock" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="HugeScorch" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="HugeToxic" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="Variant_A" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="Variant_B" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="Variant_C" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="Variant_D" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="Infested" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="Swamp" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+      <Property name="Lava" value="NMSString0x10.xml">
+        <Property name="Value" value="" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="LootItems">
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="CREATURELOOT" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="CREATURELOOT" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="CREATURELOOT" />
+    </Property>
+  </Property>
+  <Property name="RockTransformGlobalChance" value="0.008" />
+  <Property name="RockTransformChanceModifiers">
+    <Property value="0" />
+    <Property value="0.1" />
+    <Property value="0.5" />
+    <Property value="1" />
+  </Property>
+  <Property name="AngryRockProportionNormal" value="0.2" />
+  <Property name="AngryRockProportionSurvival" value="0.5" />
+  <Property name="PauseBetweenCreatureSpawnRequests" value="5000" />
+  <Property name="CreatureUpdateRateMultiplier" value="1" />
+</Data>

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.40.0)-->
+<Data template="GcBuildingGlobals">
+  <Property name="BuildingPartPreviewOffset" value="Vector3f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="0.08" />
+    <Property name="z" value="-0.04" />
+  </Property>
+  <Property name="BuildingPlacementEffectInterpRate" value="0.5" />
+  <Property name="BuildingPlacementEffectInterpRateSlow" value="0.1" />
+  <Property name="BuildingPlacementEffectPreviewInterpTime" value="0.15" />
+  <Property name="BuildingPlacementEffectPostPreviewInterpTime" value="0.3" />
+  <Property name="BuildingPlacementEffectSpringSlow" value="1.2" />
+  <Property name="BuildingPlacementEffectSpringFast" value="0.2" />
+  <Property name="BuildingPartPreviewRadius" value="0.05" />
+  <Property name="BuildingPartPreviewPitch" value="20" />
+  <Property name="BuildingPartPreviewRotateSpeed" value="0.1" />
+  <Property name="ActiveLodDistances">
+    <Property name="Low" value="TkLODDistances.xml">
+      <Property name="Distances">
+        <Property value="0" />
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="40" />
+        <Property value="100" />
+      </Property>
+    </Property>
+    <Property name="Medium" value="TkLODDistances.xml">
+      <Property name="Distances">
+        <Property value="0" />
+        <Property value="10" />
+        <Property value="25" />
+        <Property value="80" />
+        <Property value="100" />
+      </Property>
+    </Property>
+    <Property name="High" value="TkLODDistances.xml">
+      <Property name="Distances">
+        <Property value="0" />
+        <Property value="15" />
+        <Property value="40" />
+        <Property value="100" />
+        <Property value="200" />
+      </Property>
+    </Property>
+    <Property name="Ultra" value="TkLODDistances.xml">
+      <Property name="Distances">
+        <Property value="0" />
+        <Property value="15" />
+        <Property value="50" />
+        <Property value="100" />
+        <Property value="200" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="InactiveLodDistances">
+    <Property name="Low" value="TkLODDistances.xml">
+      <Property name="Distances">
+        <Property value="0" />
+        <Property value="20" />
+        <Property value="50" />
+        <Property value="80" />
+        <Property value="100" />
+      </Property>
+    </Property>
+    <Property name="Medium" value="TkLODDistances.xml">
+      <Property name="Distances">
+        <Property value="0" />
+        <Property value="40" />
+        <Property value="80" />
+        <Property value="100" />
+        <Property value="150" />
+      </Property>
+    </Property>
+    <Property name="High" value="TkLODDistances.xml">
+      <Property name="Distances">
+        <Property value="0" />
+        <Property value="60" />
+        <Property value="100" />
+        <Property value="150" />
+        <Property value="200" />
+      </Property>
+    </Property>
+    <Property name="Ultra" value="TkLODDistances.xml">
+      <Property name="Distances">
+        <Property value="0" />
+        <Property value="100" />
+        <Property value="150" />
+        <Property value="200" />
+        <Property value="250" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="ScreenSpaceRotationIcon" value="TkTextureResource.xml">
+    <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/ROTATECAM.DDS" />
+    <Property name="ResHandle" value="GcResource.xml">
+      <Property name="ResourceID" value="0" />
+    </Property>
+  </Property>
+  <Property name="ScreenSpaceRotationGlow" value="TkTextureResource.xml">
+    <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/ROTATECAM_GLOW.DDS" />
+    <Property name="ResHandle" value="GcResource.xml">
+      <Property name="ResourceID" value="0" />
+    </Property>
+  </Property>
+  <Property name="Icons">
+    <Property name="Place" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/PUTDOWN.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/PUTDOWN_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="ChangeColour" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/RECOLOUR.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/RECOLOUR_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="FreeRotate" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/ROTATEY.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/ROTATEY_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Scale" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/SCALE.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/SCALE_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="SnapRotate" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/ROTATE.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/ROTATE_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Move" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/PICKUP.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/PICKUP_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Duplicate" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/DUPLICATE.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/DUPLICATE_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Delete" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/DELETE.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/DELETE_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="ToggleBuildCam" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/CAM.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/CAM_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="ToggleSnappingAndCollision" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/SNAPPING.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/SNAPPING_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="ToggleSelectionMode" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/SELECTION.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/SELECTION_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="ToggleWiringMode" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/WIRING.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/WIRING_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="ViewRelatives" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/CYCLE.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/CYCLE_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="CyclePart" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/CYCLE.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/CYCLE_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="PlaceWire" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/WIRE.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/WIRE_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="CycleRotateMode" value="GcBuildMenuIconSet.xml">
+      <Property name="Normal" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/ROTATE.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+      <Property name="Glow" value="TkTextureResource.xml">
+        <Property name="Filename" value="TEXTURES/UI/FRONTEND/ICONS/BUILDMENU/ROTATE_GLOW.DDS" />
+        <Property name="ResHandle" value="GcResource.xml">
+          <Property name="ResourceID" value="0" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="PowerlineSnapDistance" value="0.5" />
+  <Property name="HologramDistanceMultiplier" value="1" />
+  <Property name="HologramDistanceMultiplierAlt" value="1" />
+  <Property name="AllowBuildingUsingIntermediates" value="False" />
+  <Property name="BuildingWaterMargin" value="1" />
+  <Property name="BuildingLineAlphaEnd0" value="-10" />
+  <Property name="BuildingLineAlphaEnd1" value="-1" />
+  <Property name="BuildingLineAlphaStart" value="0.6" />
+  <Property name="BuildingLineWidth" value="3" />
+  <Property name="BuildingLineMoveSpeed" value="3" />
+  <Property name="BuildingLineResetTime" value="0.1" />
+  <Property name="BuildingLineOBBShrink" value="1" />
+  <Property name="BuildingLineProjectorWidth" value="0.02" />
+  <Property name="BuildingLineProjectorLength" value="0.01" />
+  <Property name="BuildingLineCount" value="24" />
+  <Property name="IconSpringTime" value="0.2" />
+  <Property name="HoverFadeAlpha" value="0" />
+  <Property name="HoverTime" value="0.2" />
+  <Property name="HoverVisibilityTime" value="0.3" />
+  <Property name="HoverFadeTime" value="0.4" />
+  <Property name="HoverMinToStayActiveTime" value="0.4" />
+  <Property name="HoverStayActiveTime" value="0.5" />
+  <Property name="HoverLockedInitTime" value="0.4" />
+  <Property name="HoverLockedActiveTime" value="20" />
+  <Property name="HoverLockedIconScale" value="1.2" />
+  <Property name="HoverInactiveSize" value="0.5" />
+  <Property name="HoverFadeAlphaHmd" value="0" />
+  <Property name="HoverTimeHmd" value="0.2" />
+  <Property name="HoverVisibilityTimeHmd" value="0.3" />
+  <Property name="HoverFadeTimeHmd" value="0.4" />
+  <Property name="HoverMinToStayActiveTimeHmd" value="0.4" />
+  <Property name="HoverStayActiveTimeHmd" value="0.5" />
+  <Property name="HoverLockedInitTimeHmd" value="0.4" />
+  <Property name="HoverLockedActiveTimeHmd" value="20" />
+  <Property name="HoverLockedIconScaleHmd" value="1.2" />
+  <Property name="HoverInactiveSizeHmd" value="0.5" />
+  <Property name="LineMinDistance" value="40" />
+  <Property name="LineDistanceRange" value="200" />
+  <Property name="MaxLineLength" value="30" />
+  <Property name="MinLineLength" value="0" />
+  <Property name="MinLineLengthShip" value="15" />
+  <Property name="HeightDiffLineAdjustMin" value="10" />
+  <Property name="HeightDiffLineAdjustMax" value="50" />
+  <Property name="HeightDiffLineAdjustFactor" value="0.33" />
+  <Property name="LineCurve" value="TkCurveType.xml">
+    <Property name="Curve" value="SmoothInOut" />
+  </Property>
+  <Property name="BuildingYOffset" value="3" />
+  <Property name="InteractMarkerYOffset" value="0.5" />
+  <Property name="MinRadius" value="10" />
+  <Property name="RadiusMultiplier_DoNotPlace" value="1" />
+  <Property name="RadiusMultiplier_DoNotPlaceClose" value="2" />
+  <Property name="RadiusMultiplier_DoNotPlaceAnywhereNear" value="2.5" />
+  <Property name="RadiusMultiplier_OnlyPlaceAround" value="3" />
+  <Property name="ObjectFadeRadius" value="20" />
+  <Property name="AddToRadius_DoNotPlaceClose" value="5" />
+  <Property name="Radius_DoNotPlaceAnywhereNear" value="200" />
+  <Property name="ChanceOfAddingShelter" value="0.75" />
+  <Property name="SectorMessageReshowDistance" value="150" />
+  <Property name="SectorMessageCenterDistance" value="400" />
+  <Property name="SectorMessageMinTime" value="20" />
+  <Property name="MinTimeBetweenBuildingEntryMessage" value="20" />
+  <Property name="MinTimeBetweenBuildingEntryMessageBase" value="60" />
+  <Property name="FadeStart" value="50" />
+  <Property name="FadeDistance" value="650" />
+  <Property name="NearMinAlpha" value="1" />
+  <Property name="MinAlpha" value="0" />
+  <Property name="LineScaleFactor" value="0.25" />
+  <Property name="BuildingNearDistance" value="200" />
+  <Property name="BuildingNearArcDistance" value="80" />
+  <Property name="BuildingVisitDistance" value="15" />
+  <Property name="NearMaxLineLength" value="50" />
+  <Property name="NearMinLineLength" value="1" />
+  <Property name="NearLineScaleFactor" value="0.25" />
+  <Property name="MinElevatedHeight" value="300" />
+  <Property name="MaxLowHeight" value="100" />
+  <Property name="TextStringXOffset" value="30" />
+  <Property name="TextTagXOffset" value="0" />
+  <Property name="TextTagYOffset" value="24" />
+  <Property name="TextTagWidthOffset" value="40" />
+  <Property name="DistanceTextXOffset" value="30" />
+  <Property name="DistanceTagXOffset" value="6" />
+  <Property name="TextTagLength" value="220" />
+  <Property name="DistanceForVisited" value="2" />
+  <Property name="DistanceForTooltip" value="40" />
+  <Property name="SmallIconSize" value="32" />
+  <Property name="LargeIconSize" value="48" />
+  <Property name="LargeIconArrowOffset" value="36" />
+  <Property name="CompassIconSize" value="48" />
+  <Property name="SmallIconArrowOffset" value="18" />
+  <Property name="SpaceMarkerOffset" value="10000" />
+  <Property name="SpaceMarkerOffsetPlanet" value="250" />
+  <Property name="SpaceMarkerOffsetSamePlanet" value="150" />
+  <Property name="MarkerLineWidth" value="4" />
+  <Property name="MarkerLineColour" value="Colour.xml">
+    <Property name="R" value="0.613" />
+    <Property name="G" value="0.628" />
+    <Property name="B" value="0.717" />
+    <Property name="A" value="0.467" />
+  </Property>
+  <Property name="AmountToMoveMarkerRoundSphere" value="1.4" />
+  <Property name="MarkerTransitionDistance" value="10000" />
+  <Property name="SpaceMarkerMinHeight" value="500" />
+  <Property name="SpaceMarkerMaxHeight" value="10000" />
+  <Property name="MaxTimeBetweenEvents" value="240" />
+  <Property name="ShowTimeNotDistance" value="0" />
+  <Property name="UnknownBuildingRange" value="600" />
+  <Property name="MaxIconRange" value="1200" />
+  <Property name="MarkerTimeIncrease" value="1.05" />
+  <Property name="FlyingBuildingIconTime" value="30" />
+  <Property name="MinShipScanBuildings" value="0" />
+  <Property name="MaxShipScanBuildings" value="2" />
+  <Property name="TestDistanceForSettlementBaseBufferAlignment" value="150" />
+  <Property name="MinRadiusForBases" value="300" />
+  <Property name="BaseRadiusExtension" value="50" />
+  <Property name="MaxRadiusForPlanetBases" value="1000" />
+  <Property name="MaxRadiusForSpaceBases" value="400" />
+  <Property name="MinRadiusFromFeaturedBases" value="2000" />
+  <Property name="BuildingPlacementMaxConnectionLength" value="200" />
+  <Property name="BuildingPlacementMaxDistance" value="50" />
+  <Property name="BuildingPlacementMaxDistanceNoHit" value="12.5" />
+  <Property name="BuildingPlacementMaxDistanceNoHitExtra" value="10" />
+  <Property name="BuildingPlacementMaxDistanceScaleExtraMinSize" value="5" />
+  <Property name="BuildingPlacementMaxDistanceScaleExtraMaxSize" value="250" />
+  <Property name="BuildingPlacementMaxDistanceScaleExtra" value="50" />
+  <Property name="BuildingPlacementCursorOffset" value="0" />
+  <Property name="BuildingPlacementMinDotProductRequiredToSnap" value="0" />
+  <Property name="BuildingPlacementDefaultMinDistance" value="3" />
+  <Property name="BuildingPlacementMinDistanceScaleIncrease" value="0.03" />
+  <Property name="BuildingPlacementDefaultMaxMinDistanceVR" value="3" />
+  <Property name="BuildingPlacementDefaultMinMinDistanceVR" value="0.5" />
+  <Property name="BuildingPlacementMinDistanceScaleIncreaseVR" value="0" />
+  <Property name="BuildingPlacementGhostReductionMaxSize" value="40" />
+  <Property name="BuildingPlacementNumGhostsVRMultiplier" value="4" />
+  <Property name="BuildingPlacementNumGhostsVRMultiplierEyeTracking" value="2.5" />
+  <Property name="BuildingPlacementNumGhostsMinOffset" value="1.8" />
+  <Property name="BuildingPlacementNumGhostsVolume" value="80" />
+  <Property name="BuildingPlacementGhostHearScaleDistanceMod" value="1.15" />
+  <Property name="BuildingPlacementGhostHeartSizeScaleMin" value="0.5" />
+  <Property name="BuildingPlacementGhostHeartSizeScale" value="0.9" />
+  <Property name="BuildingPlacementGhostHeartSizeSelected" value="1.1" />
+  <Property name="BuildingPlacementGhostHeartSizeCurve" value="TkCurveType.xml">
+    <Property name="Curve" value="EaseInSine" />
+  </Property>
+  <Property name="BuildingPlacementGhostHeartWiringSizeOtherSnapped" value="0" />
+  <Property name="BuildingPlacementGhostHeartWiringSizeScaleMin" value="0.7" />
+  <Property name="BuildingPlacementGhostHeartWiringSizeScale" value="1" />
+  <Property name="BuildingPlacementTwistScale" value="0.001" />
+  <Property name="BuildingPlacementConeStartRadius" value="30" />
+  <Property name="BuildingPlacementConeEndRadius" value="1" />
+  <Property name="BuildingPlacementConeEndDistance" value="40" />
+  <Property name="BuildingPlacementConeStartRadiusIndoors" value="30" />
+  <Property name="BuildingPlacementConeEndRadiusIndoors" value="1" />
+  <Property name="BuildingPlacementConeEndDistanceIndoors" value="40" />
+  <Property name="BuildingPlacementEffectEnabled" value="True" />
+  <Property name="BuildingPlacementEffectDissolveSpeed" value="5" />
+  <Property name="BuildingPlacementEffectFadeWaitTime" value="0.4" />
+  <Property name="BuildingPlacementEffectCrossFadeTime" value="0.25" />
+  <Property name="BuildingPlacementEffectHidePlaceholderFadeTime" value="1" />
+  <Property name="BuildingPlacementEffectHidePlaceholderDistance" value="2" />
+  <Property name="BuildingPlacementScaleMinMax" value="Vector2f.xml">
+    <Property name="x" value="0.25" />
+    <Property name="y" value="3" />
+  </Property>
+  <Property name="InactiveVisibleComplexityFactor" value="0.8" />
+  <Property name="DebugForceShowInactives" value="False" />
+  <Property name="TotalPlanetFrameTimeForComplexity">
+    <Property name="Low" value="15" />
+    <Property name="Medium" value="50" />
+    <Property name="High" value="150" />
+    <Property name="Ultra" value="300" />
+  </Property>
+  <Property name="TotalSpaceFrameTimeForComplexity">
+    <Property name="Low" value="24" />
+    <Property name="Medium" value="50" />
+    <Property name="High" value="150" />
+    <Property name="Ultra" value="360" />
+  </Property>
+  <Property name="MinPercentageNodesBufferFree" value="25" />
+  <Property name="MinLoadingPercentageNodesBufferFree" value="60" />
+  <Property name="PercentagePhysicsComponentsForComplexity" value="70" />
+  <Property name="MaximumComplexityDensity" value="0.02" />
+  <Property name="ComplexityDensityTestRange" value="40" />
+  <Property name="ComplexityDensitySigmaSquared" value="140" />
+  <Property name="StartCrashSiteMinDistance" value="500" />
+  <Property name="StartCrashSiteMaxDistance" value="600" />
+  <Property name="StartShelterMinDistance" value="800" />
+  <Property name="StartShelterMaxDistance" value="1000" />
+  <Property name="FreighterBaseSpawnOverride" value="" />
+  <Property name="BaseBuildingTerrainEditBoundsOverride" value="False" />
+  <Property name="BaseBuildingTerrainEditBaseYOffset" value="0" />
+  <Property name="BaseBuildingTerrainEditTopYOffset" value="0" />
+  <Property name="BaseBuildingTerrainEditBoundsScalar" value="1" />
+  <Property name="BaseBuildingCamEnabled" value="True" />
+  <Property name="BaseBuildingWiringSnappingScaleFactorEasy" value="1.2" />
+  <Property name="BaseBuildingWiringSnappingScaleFactorHard" value="0.5" />
+</Data>

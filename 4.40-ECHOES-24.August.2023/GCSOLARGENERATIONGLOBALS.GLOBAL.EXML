@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.40.0)-->
+<Data template="GcSolarGenerationGlobals">
+  <Property name="CorruptSentinelBuildingCheckDifficulty" value="GcCombatTimerDifficultyOption.xml">
+    <Property name="CombatTimerDifficultyOption" value="Normal" />
+  </Property>
+  <Property name="UseCorruptSentinelLUT" value="True" />
+  <Property name="MassiveSolarSystems" value="True" />
+  <Property name="SolarSystemSize" value="Vector3f.xml">
+    <Property name="x" value="8388608" />
+    <Property name="y" value="524288" />
+    <Property name="z" value="8388608" />
+  </Property>
+  <Property name="SolarSystemMaximumRadius" value="500000" />
+  <Property name="SolarSystemMaximumRadiusMassive" value="1000000" />
+  <Property name="GenerateMaximumSolarSystem" value="False" />
+  <Property name="GenerateForcedNumberPlanets" value="0" />
+  <Property name="UseSingleRacePerSystem" value="True" />
+  <Property name="PerPlanetGenerationAngleChangeDegreesRange" value="Vector2f.xml">
+    <Property name="x" value="60" />
+    <Property name="y" value="80" />
+  </Property>
+  <Property name="PerPlanetGenerationElevationChangeDegreesRange" value="Vector2f.xml">
+    <Property name="x" value="-30" />
+    <Property name="y" value="30" />
+  </Property>
+  <Property name="SpawnPointStationToPlanetInterpRange" value="Vector2f.xml">
+    <Property name="x" value="0.05" />
+    <Property name="y" value="0.1" />
+  </Property>
+  <Property name="ExtremePlanetChance">
+    <Property name="Yellow" value="0.2" />
+    <Property name="Green" value="0.2" />
+    <Property name="Blue" value="0.6" />
+    <Property name="Red" value="0.25" />
+  </Property>
+  <Property name="StationSpawnAvoidRadius" value="3000" />
+  <Property name="LocatorScatterMinCount" value="30" />
+  <Property name="LocatorScatterMaxCount" value="65" />
+  <Property name="LocatorScatterMaxDistanceFromPlanet" value="40000" />
+  <Property name="LocatorScatterChanceOfCapitalShips" value="5" />
+  <Property name="LocatorScatterChanceOfPirates" value="20" />
+  <Property name="PlanetInvalidAsteroidZone" value="10000" />
+  <Property name="AsteroidsEnabled" value="True" />
+  <Property name="SparseAsteroidSpread" value="-7" />
+  <Property name="AsteroidSettings">
+    <Property value="GcAsteroidSystemGenerationData.xml">
+      <Property name="CommonAsteroidData" value="GcAsteroidGenerationData.xml">
+        <Property name="Scale" value="0.28" />
+        <Property name="ScaleVariance" value="Vector2f.xml">
+          <Property name="x" value="0.25" />
+          <Property name="y" value="1.6" />
+        </Property>
+        <Property name="Health" value="1000" />
+        <Property name="Spacing" value="645" />
+        <Property name="NoiseRange" value="Vector2f.xml">
+          <Property name="x" value="0.78" />
+          <Property name="y" value="0.92" />
+        </Property>
+        <Property name="FadeRange" value="9000" />
+        <Property name="NoiseScale" value="50000" />
+      </Property>
+      <Property name="RingAsteroidData" value="GcAsteroidGenerationData.xml">
+        <Property name="Scale" value="0.15" />
+        <Property name="ScaleVariance" value="Vector2f.xml">
+          <Property name="x" value="0.25" />
+          <Property name="y" value="1.6" />
+        </Property>
+        <Property name="Health" value="700" />
+        <Property name="Spacing" value="200" />
+        <Property name="NoiseRange" value="Vector2f.xml">
+          <Property name="x" value="-1" />
+          <Property name="y" value="-1" />
+        </Property>
+        <Property name="FadeRange" value="3000" />
+        <Property name="NoiseScale" value="120000" />
+      </Property>
+      <Property name="LargeAsteroidData" value="GcAsteroidGenerationData.xml">
+        <Property name="Scale" value="2" />
+        <Property name="ScaleVariance" value="Vector2f.xml">
+          <Property name="x" value="0.25" />
+          <Property name="y" value="1.6" />
+        </Property>
+        <Property name="Health" value="400" />
+        <Property name="Spacing" value="9000" />
+        <Property name="NoiseRange" value="Vector2f.xml">
+          <Property name="x" value="0.3" />
+          <Property name="y" value="0.6" />
+        </Property>
+        <Property name="FadeRange" value="9000" />
+        <Property name="NoiseScale" value="120000" />
+      </Property>
+      <Property name="RareAsteroidData" value="GcAsteroidGenerationData.xml">
+        <Property name="Scale" value="1.6" />
+        <Property name="ScaleVariance" value="Vector2f.xml">
+          <Property name="x" value="0.25" />
+          <Property name="y" value="1.6" />
+        </Property>
+        <Property name="Health" value="1400" />
+        <Property name="Spacing" value="850" />
+        <Property name="NoiseRange" value="Vector2f.xml">
+          <Property name="x" value="0.86" />
+          <Property name="y" value="0.9" />
+        </Property>
+        <Property name="FadeRange" value="9000" />
+        <Property name="NoiseScale" value="50000" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="RareAsteroidNoiseRangeSomeRares" value="Vector2f.xml">
+    <Property name="x" value="0.518" />
+    <Property name="y" value="0.52" />
+  </Property>
+  <Property name="RareAsteroidNoiseRangeLotsOfRares" value="Vector2f.xml">
+    <Property name="x" value="0.516" />
+    <Property name="y" value="0.52" />
+  </Property>
+  <Property name="RareAsteroidSystemOddsYellow" value="0.01" />
+  <Property name="RareAsteroidSystemOddsGreen" value="0.05" />
+  <Property name="RareAsteroidSystemOddsBlue" value="0.1" />
+  <Property name="RareAsteroidSystemOddsRed" value="0.12" />
+  <Property name="AsteroidsCheckNoise" value="True" />
+  <Property name="AsteroidNoiseOctaves" value="2" />
+  <Property name="AsteroidScaleVarianceCurve" value="TkCurveType.xml">
+    <Property name="Curve" value="EaseInQuint" />
+  </Property>
+  <Property name="AsteroidSomeRaresOdds" value="0.2" />
+  <Property name="AsteroidLotsOfRaresOdds" value="0.9" />
+  <Property name="RareAsteroidMinResources" value="5" />
+  <Property name="RareAsteroidMaxResources" value="10" />
+  <Property name="RareAsteroidResource" value="ASTEROID3" />
+  <Property name="CommonAsteroidMinResources" value="3" />
+  <Property name="CommonAsteroidMaxResources" value="5" />
+  <Property name="FuelAsteroidMultiplier" value="10" />
+  <Property name="CommonAsteroidResourceFuelMultiplier" value="5" />
+  <Property name="CommonAsteroidResourceFuel" value="ROCKETSUB" />
+  <Property name="RareAsteroidResourceFuel" value="GEODE_SPACE" />
+  <Property name="CommonAsteroidResourceProduct" value="GEODE_ASTEROID" />
+  <Property name="CommonAsteroidResourceMain" value="ASTEROID1" />
+  <Property name="CommonAsteroidResourceSecondary" value="ASTEROID2" />
+  <Property name="RareAsteroidDataProduct" value="POI_LOCATOR" />
+  <Property name="CommonAsteroidResourceFuelOdds" value="0.5" />
+  <Property name="RareAsteroidResourceFuelOdds" value="0.2" />
+  <Property name="CommonAsteroidResourceProductOdds" value="0.2" />
+  <Property name="RareAsteroidDataProductOdds" value="0.005" />
+  <Property name="CommonAsteroidResourceSecondaryOdds" value="0.2" />
+  <Property name="LargeAsteroidFadeTime" value="0.1" />
+  <Property name="AsteroidSpaceStationAvoidRadius" value="5000" />
+  <Property name="AsteroidAnomalyAvoidRadius" value="5000" />
+  <Property name="AsteroidWarpInAreaAvoidRadius" value="5000" />
+  <Property name="AsteroidCreatureRichSystemProbability" value="0.005" />
+  <Property name="AbandonedSystemProbability">
+    <Property name="Yellow" value="0" />
+    <Property name="Green" value="0.1" />
+    <Property name="Blue" value="0.1" />
+    <Property name="Red" value="0" />
+  </Property>
+  <Property name="EmptySystemProbability">
+    <Property name="Yellow" value="0" />
+    <Property name="Green" value="0.4" />
+    <Property name="Blue" value="0.4" />
+    <Property name="Red" value="0.95" />
+  </Property>
+  <Property name="PirateSystemProbability">
+    <Property name="Yellow" value="0.25" />
+    <Property name="Green" value="0.15" />
+    <Property name="Blue" value="0.15" />
+    <Property name="Red" value="0.5" />
+  </Property>
+  <Property name="CivilianTraderSpaceshipsCacheCount" value="20" />
+  <Property name="SpaceshipSpawnFreqMultipliers">
+    <Property value="0.5" />
+    <Property value="2" />
+    <Property value="5" />
+    <Property value="2" />
+  </Property>
+  <Property name="SpaceshipWeightings">
+    <Property value="GcAISpaceshipWeightingData.xml">
+      <Property name="CivilianClassWeightings">
+        <Property name="Freighter" value="0" />
+        <Property name="Dropship" value="100" />
+        <Property name="Fighter" value="50" />
+        <Property name="Scientific" value="50" />
+        <Property name="Shuttle" value="100" />
+        <Property name="PlayerFreighter" value="0" />
+        <Property name="Royal" value="1" />
+        <Property name="Alien" value="0" />
+        <Property name="Sail" value="0" />
+        <Property name="Robot" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcAISpaceshipWeightingData.xml">
+      <Property name="CivilianClassWeightings">
+        <Property name="Freighter" value="0" />
+        <Property name="Dropship" value="50" />
+        <Property name="Fighter" value="100" />
+        <Property name="Scientific" value="50" />
+        <Property name="Shuttle" value="100" />
+        <Property name="PlayerFreighter" value="0" />
+        <Property name="Royal" value="1" />
+        <Property name="Alien" value="0" />
+        <Property name="Sail" value="0" />
+        <Property name="Robot" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcAISpaceshipWeightingData.xml">
+      <Property name="CivilianClassWeightings">
+        <Property name="Freighter" value="0" />
+        <Property name="Dropship" value="50" />
+        <Property name="Fighter" value="50" />
+        <Property name="Scientific" value="100" />
+        <Property name="Shuttle" value="100" />
+        <Property name="PlayerFreighter" value="0" />
+        <Property name="Royal" value="1" />
+        <Property name="Alien" value="0" />
+        <Property name="Sail" value="0" />
+        <Property name="Robot" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcAISpaceshipWeightingData.xml">
+      <Property name="CivilianClassWeightings">
+        <Property name="Freighter" value="0" />
+        <Property name="Dropship" value="100" />
+        <Property name="Fighter" value="100" />
+        <Property name="Scientific" value="100" />
+        <Property name="Shuttle" value="100" />
+        <Property name="PlayerFreighter" value="0" />
+        <Property name="Royal" value="1" />
+        <Property name="Alien" value="0" />
+        <Property name="Sail" value="0" />
+        <Property name="Robot" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcAISpaceshipWeightingData.xml">
+      <Property name="CivilianClassWeightings">
+        <Property name="Freighter" value="0" />
+        <Property name="Dropship" value="100" />
+        <Property name="Fighter" value="100" />
+        <Property name="Scientific" value="100" />
+        <Property name="Shuttle" value="100" />
+        <Property name="PlayerFreighter" value="0" />
+        <Property name="Royal" value="1" />
+        <Property name="Alien" value="0" />
+        <Property name="Sail" value="0" />
+        <Property name="Robot" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcAISpaceshipWeightingData.xml">
+      <Property name="CivilianClassWeightings">
+        <Property name="Freighter" value="0" />
+        <Property name="Dropship" value="100" />
+        <Property name="Fighter" value="100" />
+        <Property name="Scientific" value="100" />
+        <Property name="Shuttle" value="100" />
+        <Property name="PlayerFreighter" value="0" />
+        <Property name="Royal" value="1" />
+        <Property name="Alien" value="0" />
+        <Property name="Sail" value="0" />
+        <Property name="Robot" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcAISpaceshipWeightingData.xml">
+      <Property name="CivilianClassWeightings">
+        <Property name="Freighter" value="0" />
+        <Property name="Dropship" value="100" />
+        <Property name="Fighter" value="100" />
+        <Property name="Scientific" value="100" />
+        <Property name="Shuttle" value="100" />
+        <Property name="PlayerFreighter" value="0" />
+        <Property name="Royal" value="1" />
+        <Property name="Alien" value="0" />
+        <Property name="Sail" value="0" />
+        <Property name="Robot" value="0" />
+      </Property>
+    </Property>
+    <Property value="GcAISpaceshipWeightingData.xml">
+      <Property name="CivilianClassWeightings">
+        <Property name="Freighter" value="0" />
+        <Property name="Dropship" value="100" />
+        <Property name="Fighter" value="100" />
+        <Property name="Scientific" value="100" />
+        <Property name="Shuttle" value="100" />
+        <Property name="PlayerFreighter" value="0" />
+        <Property name="Royal" value="1" />
+        <Property name="Alien" value="0" />
+        <Property name="Sail" value="0" />
+        <Property name="Robot" value="0" />
+      </Property>
+    </Property>
+  </Property>
+  <Property name="PirateClassShipOverrideProbability" value="0.1" />
+  <Property name="PirateClassShipOverrideProbabilityPirateSystem" value="0.85" />
+  <Property name="PlanetRingProbability" value="0.3" />
+  <Property name="PlanetRingsMin" value="GcPlanetRingData.xml">
+    <Property name="HasRings" value="False" />
+    <Property name="Up" value="Vector3f.xml">
+      <Property name="x" value="0" />
+      <Property name="y" value="0" />
+      <Property name="z" value="0" />
+    </Property>
+    <Property name="Colour1" value="Colour.xml">
+      <Property name="R" value="1" />
+      <Property name="G" value="1" />
+      <Property name="B" value="1" />
+      <Property name="A" value="1" />
+    </Property>
+    <Property name="Colour2" value="Colour.xml">
+      <Property name="R" value="1" />
+      <Property name="G" value="1" />
+      <Property name="B" value="1" />
+      <Property name="A" value="1" />
+    </Property>
+    <Property name="LargeScale1" value="2" />
+    <Property name="LargeScale2" value="3" />
+    <Property name="MidScale" value="41" />
+    <Property name="SmallScale" value="300" />
+    <Property name="MidStrength" value="0" />
+    <Property name="Offset" value="0" />
+    <Property name="Depth" value="800" />
+    <Property name="AlphaMultiplier" value="5" />
+  </Property>
+  <Property name="PlanetRingsMax" value="GcPlanetRingData.xml">
+    <Property name="HasRings" value="False" />
+    <Property name="Up" value="Vector3f.xml">
+      <Property name="x" value="0" />
+      <Property name="y" value="0" />
+      <Property name="z" value="0" />
+    </Property>
+    <Property name="Colour1" value="Colour.xml">
+      <Property name="R" value="1" />
+      <Property name="G" value="1" />
+      <Property name="B" value="1" />
+      <Property name="A" value="1" />
+    </Property>
+    <Property name="Colour2" value="Colour.xml">
+      <Property name="R" value="1" />
+      <Property name="G" value="1" />
+      <Property name="B" value="1" />
+      <Property name="A" value="1" />
+    </Property>
+    <Property name="LargeScale1" value="2" />
+    <Property name="LargeScale2" value="3" />
+    <Property name="MidScale" value="73" />
+    <Property name="SmallScale" value="300" />
+    <Property name="MidStrength" value="0.8" />
+    <Property name="Offset" value="0" />
+    <Property name="Depth" value="800" />
+    <Property name="AlphaMultiplier" value="5" />
+  </Property>
+  <Property name="PercentChanceExtraPrime" value="33" />
+</Data>

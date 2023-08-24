@@ -1,0 +1,3766 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.40.0)-->
+<Data template="GcVehicleGlobals">
+  <Property name="UnderwaterScannerIconRangeBoost" value="2.5" />
+  <Property name="VehicleSolarRegenFactor" value="0.1" />
+  <Property name="VehicleStrongLaser" value="VEHICLE_LASER1" />
+  <Property name="MechStrongLaser" value="MECH_LASER1" />
+  <Property name="SentinelRightArmTech" value="MECH_SENT_R_ARM" />
+  <Property name="SentinelLeftArmTech" value="MECH_SENT_L_ARM" />
+  <Property name="SentinelRightArmTechNameOverride" value="UI_MECH_RIGHT_ARM_GUN_NAME" />
+  <Property name="SentinelRightLeftArmLaserData" value="VEHICLE_ARM" />
+  <Property name="UseFirstPersonCamera" value="False" />
+  <Property name="LevelVehicleCameraFactor" value="0.5" />
+  <Property name="ShowAllCheckpoints" value="False" />
+  <Property name="ControlStickRecenterSpeedDegPerSec" value="100" />
+  <Property name="SteeringWheelPushRange" value="0.1" />
+  <Property name="SteeringWheelPitchAngle" value="30" />
+  <Property name="SteeringWheelSpringBothHands" value="0.1" />
+  <Property name="SteeringWheelSpringOneHand" value="0.2" />
+  <Property name="SteeringWheelCentreOffset" value="0.115" />
+  <Property name="SteeringWheelOutputCurve" value="TkCurveType.xml">
+    <Property name="Curve" value="EaseInSine" />
+  </Property>
+  <Property name="RemoteBoostingEffectTimeout" value="2" />
+  <Property name="TestFrictionStat" value="0" />
+  <Property name="TestSkidFrictionStat" value="0" />
+  <Property name="TestAnims" value="False" />
+  <Property name="TestAnimThrust" value="0" />
+  <Property name="TestAnimBoost" value="0" />
+  <Property name="TestAnimTurn" value="0" />
+  <Property name="VisualTurnUnderwaterSpring" value="0.8" />
+  <Property name="VisualTurnSpring" value="0.2" />
+  <Property name="DefaultBoosterColour" value="Colour.xml">
+    <Property name="R" value="0.148" />
+    <Property name="G" value="0.625" />
+    <Property name="B" value="1" />
+    <Property name="A" value="1" />
+  </Property>
+  <Property name="WheelDustColourLightFactor" value="0.4" />
+  <Property name="MechMovementStickSpeedLimit" value="Vector2f.xml">
+    <Property name="x" value="3" />
+    <Property name="y" value="1.5" />
+  </Property>
+  <Property name="MechLookStickSpeedLimit" value="Vector2f.xml">
+    <Property name="x" value="1" />
+    <Property name="y" value="1" />
+  </Property>
+  <Property name="DamageTechNumHitsRequired" value="20" />
+  <Property name="DamageTechMinHitIntervalSeconds" value="1" />
+  <Property name="MechAIResummonTriggerDistance" value="100" />
+  <Property name="MechAIResummonMinSpawnDistance" value="10" />
+  <Property name="MechAIResummonMinSpeedForVelBasedSpawnPos" value="1" />
+  <Property name="MechAIResummonVelBasedSpawnSpeedMultiplier" value="4" />
+  <Property name="MechStrafeEnabled" value="True" />
+  <Property name="MechAltJumpMode" value="False" />
+  <Property name="MechContrailAlpha" value="0.6" />
+  <Property name="MechJetpackJetScaleTime" value="0.2" />
+  <Property name="MechLandingImpactEffect" value="MECHLANDDUST" />
+  <Property name="MechJetpackEffect" value="MECHJETFX" />
+  <Property name="MechJetpackLaunchEffect" value="JUMPJET" />
+  <Property name="MechJetpackLaunchGroundEffect" value="MECHTAKEOFFDUST" />
+  <Property name="MechPlayerGroundTurnSpeed" value="0.5" />
+  <Property name="MechAIGroundTurnSpeed" value="1" />
+  <Property name="MechJetpackTurnSpeed" value="3" />
+  <Property name="MechArmPitchAngleMin" value="-30" />
+  <Property name="MechArmPitchAngleMax" value="60" />
+  <Property name="MechArmPitchLerpSpeed" value="3" />
+  <Property name="MechArmPitchAnimLeft" value="ARML_PITCH" />
+  <Property name="MechArmPitchAnimRight" value="ARMR_PITCH" />
+  <Property name="MechMaxTurnAngleWhileStationary" value="140" />
+  <Property name="MechTurretTurnTimeGround" value="0.5" />
+  <Property name="MechTurretMaxAngleGround" value="150" />
+  <Property name="MechTurretTurnTimeGroundPlayerCombat" value="0.15" />
+  <Property name="MechTurretTurnTimeAir" value="0.7" />
+  <Property name="MechTurretMaxAngleAir" value="90" />
+  <Property name="MechTurretTimeVRModifier" value="1.5" />
+  <Property name="MechCrouchOffset" value="Vector3f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="-4" />
+    <Property name="z" value="-1" />
+  </Property>
+  <Property name="MechWalkBackwardsCoGOffset" value="Vector3f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="0.3" />
+    <Property name="z" value="-1" />
+  </Property>
+  <Property name="MechCoGAdjustTimeWindUp" value="0.2" />
+  <Property name="MechCoGAdjustTimeAir" value="0.7" />
+  <Property name="MechCoGAdjustTimeLand" value="0.2" />
+  <Property name="MechCrouchTime" value="0.5" />
+  <Property name="MechWalkToRunTimeIdle" value="2" />
+  <Property name="MechWalkToRunTimeSkid" value="0.2" />
+  <Property name="MechArmSwingAngleWalk" value="30" />
+  <Property name="MechArmSwingPhaseWalk" value="-0.05" />
+  <Property name="MechArmSwingCurveWalk" value="TkCurveType.xml">
+    <Property name="Curve" value="EaseInQuart" />
+  </Property>
+  <Property name="MechArmSwingAngleFastWalk" value="40" />
+  <Property name="MechArmSwingPhaseFastWalk" value="0" />
+  <Property name="MechArmSwingCurveFastWalk" value="TkCurveType.xml">
+    <Property name="Curve" value="EaseInQuart" />
+  </Property>
+  <Property name="MechLandBrake" value="4" />
+  <Property name="MechJetpackStrafeStrength" value="0.5" />
+  <Property name="MechJetpackLandTime" value="0.6" />
+  <Property name="MechJetpackForce" value="70" />
+  <Property name="MechJetpackBrake" value="0.2" />
+  <Property name="MechJetpackMaxSpeed" value="20" />
+  <Property name="MechJetpackMaxUpSpeed" value="20" />
+  <Property name="MechJetpackUpForce" value="100" />
+  <Property name="MechJetpackAvoidGroundForce" value="120" />
+  <Property name="MechJetpackFallForce" value="80" />
+  <Property name="MechJetpackAvoidGroundProbeLength" value="6" />
+  <Property name="MechJetpackIgnitionForce" value="120" />
+  <Property name="MechJetpackIgnitionTime" value="0.4" />
+  <Property name="MechJetpackMaxCoGAdjustX" value="3" />
+  <Property name="MechCameraOffsetTime" value="0.2" />
+  <Property name="MechCameraOffsetAmount" value="10" />
+  <Property name="MechJetpackDrainRate" value="0.5" />
+  <Property name="MechJetpackFillRate" value="0.5" />
+  <Property name="MechDefaultBlendTime" value="0.3" />
+  <Property name="MechSpeedBlendTime" value="1" />
+  <Property name="MechLandBlendTime" value="0.1" />
+  <Property name="MechJumpBlendTime" value="0.3" />
+  <Property name="MechJumpFlyBlendTime" value="1" />
+  <Property name="MechJumpDownBlendTime" value="0.3" />
+  <Property name="MechIdleLowBlendTime" value="1.7" />
+  <Property name="MechIdleLowDelay" value="0.1" />
+  <Property name="MechIdleStopDelay" value="0.6" />
+  <Property name="MechFirstPersonTurretTurnModerator" value="0.2" />
+  <Property name="MechFirstPersonTurretPitchModerator" value="0.5" />
+  <Property name="MechFirstPersonTurretTweaksEnabled" value="True" />
+  <Property name="MechFirstPersonTurretShootTimer" value="0" />
+  <Property name="MechFirstPersonTurretBaseThrottleThreshold" value="2" />
+  <Property name="MechFirstPersonIgnoreReverseThreshold" value="-0.35" />
+  <Property name="MechFirstPersonTurretThrottleLookThreshold" value="0.8" />
+  <Property name="MechFirstPersonTurretBaseTurnThreshold" value="0.2" />
+  <Property name="MechFirstPersonTurretAngleThrottleThreshold" value="0.13" />
+  <Property name="MechFirstPersonTurretAngleThrottleStrength" value="2" />
+  <Property name="MechFirstPersonDamping" value="0.5" />
+  <Property name="MechFirstPersonStickXModerator" value="0.5" />
+  <Property name="MechFirstPersonMaxTurnTurret" value="20" />
+  <Property name="MechFirstPersonMaxLookTurret" value="2" />
+  <Property name="MechFirstPersonCrouchAmount" value="-0.2" />
+  <Property name="MechPowerUpTime" value="3.5" />
+  <Property name="MechCockPitBobX" value="-0.1" />
+  <Property name="MechCockPitBobY" value="-0.2" />
+  <Property name="MechCockPitBobPitch" value="0" />
+  <Property name="MechCockPitBobRoll" value="2" />
+  <Property name="MechCockPitBobYaw" value="0" />
+  <Property name="MechCockPowerDownY" value="-3" />
+  <Property name="MechTitanFallHeight" value="30" />
+  <Property name="MechTitanFallTerrainEditEnabled" value="True" />
+  <Property name="MechTitanFallTerrainEditSize" value="2" />
+  <Property name="MechTitanFallTerrainEditOffset" value="0.45" />
+  <Property name="MechTitanFallLandIdleTime" value="1" />
+  <Property name="MechTitanFallLandIntroTime" value="4.5" />
+  <Property name="MechTitanFallCameraShakeDist" value="80" />
+  <Property name="MechLandCameraShakeDist" value="40" />
+  <Property name="MechFootprintFadeTime" value="1" />
+  <Property name="MechFootprintFadeDist" value="20" />
+  <Property name="MechAudioEventTable" value="GcMechAudioEventTable.xml">
+    <Property name="MechEnter" value="GcMechAudioEvent.xml">
+      <Property name="DefaultEvent" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="MECH_JETPACK_STARTUP" />
+      </Property>
+      <Property name="MeshPartOverrides" />
+    </Property>
+    <Property name="MechExit" value="GcMechAudioEvent.xml">
+      <Property name="DefaultEvent" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="MECH_EXIT" />
+      </Property>
+      <Property name="MeshPartOverrides" />
+    </Property>
+    <Property name="StepWalk" value="GcMechAudioEvent.xml">
+      <Property name="DefaultEvent" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="MECH_STEP_WALK" />
+      </Property>
+      <Property name="MeshPartOverrides">
+        <Property value="GcMechPartAudioEventOverride.xml">
+          <Property name="MeshPart" value="GcMechMeshPart.xml">
+            <Property name="MechMeshPart" value="Legs" />
+          </Property>
+          <Property name="MeshType" value="GcMechMeshType.xml">
+            <Property name="MechMeshType" value="Sentinel" />
+          </Property>
+          <Property name="OverrideEvent" value="GcAudioWwiseEvents.xml">
+            <Property name="AkEvent" value="MECH_SENTINEL_STEP_WALK" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property name="StepRun" value="GcMechAudioEvent.xml">
+      <Property name="DefaultEvent" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="MECH_STEP_RUN" />
+      </Property>
+      <Property name="MeshPartOverrides">
+        <Property value="GcMechPartAudioEventOverride.xml">
+          <Property name="MeshPart" value="GcMechMeshPart.xml">
+            <Property name="MechMeshPart" value="Legs" />
+          </Property>
+          <Property name="MeshType" value="GcMechMeshType.xml">
+            <Property name="MechMeshType" value="Sentinel" />
+          </Property>
+          <Property name="OverrideEvent" value="GcAudioWwiseEvents.xml">
+            <Property name="AkEvent" value="MECH_SENTINEL_STEP_RUN" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property name="TitanFallLanding" value="GcMechAudioEvent.xml">
+      <Property name="DefaultEvent" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="MECH_JETPACK_LANDING" />
+      </Property>
+      <Property name="MeshPartOverrides">
+        <Property value="GcMechPartAudioEventOverride.xml">
+          <Property name="MeshPart" value="GcMechMeshPart.xml">
+            <Property name="MechMeshPart" value="Legs" />
+          </Property>
+          <Property name="MeshType" value="GcMechMeshType.xml">
+            <Property name="MechMeshType" value="Sentinel" />
+          </Property>
+          <Property name="OverrideEvent" value="GcAudioWwiseEvents.xml">
+            <Property name="AkEvent" value="SENTINEL_MECH_LAND" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property name="JumpLanding" value="GcMechAudioEvent.xml">
+      <Property name="DefaultEvent" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="MECH_JETPACK_LANDING" />
+      </Property>
+      <Property name="MeshPartOverrides">
+        <Property value="GcMechPartAudioEventOverride.xml">
+          <Property name="MeshPart" value="GcMechMeshPart.xml">
+            <Property name="MechMeshPart" value="Legs" />
+          </Property>
+          <Property name="MeshType" value="GcMechMeshType.xml">
+            <Property name="MechMeshType" value="Sentinel" />
+          </Property>
+          <Property name="OverrideEvent" value="GcAudioWwiseEvents.xml">
+            <Property name="AkEvent" value="SENTINEL_MECH_LAND" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property name="JumpLandingSkid" value="GcMechAudioEvent.xml">
+      <Property name="DefaultEvent" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="MECH_JETPACK_LANDING_SKID" />
+      </Property>
+      <Property name="MeshPartOverrides" />
+    </Property>
+    <Property name="TitanFallPoseIntro" value="GcMechAudioEvent.xml">
+      <Property name="DefaultEvent" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="MECH_JETPACK_LANDING_INTRO" />
+      </Property>
+      <Property name="MeshPartOverrides" />
+    </Property>
+    <Property name="JetpackTrigger" value="GcMechAudioEvent.xml">
+      <Property name="DefaultEvent" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="MECH_JETPACK_TRIGGER" />
+      </Property>
+      <Property name="MeshPartOverrides">
+        <Property value="GcMechPartAudioEventOverride.xml">
+          <Property name="MeshPart" value="GcMechMeshPart.xml">
+            <Property name="MechMeshPart" value="Body" />
+          </Property>
+          <Property name="MeshType" value="GcMechMeshType.xml">
+            <Property name="MechMeshType" value="Sentinel" />
+          </Property>
+          <Property name="OverrideEvent" value="GcAudioWwiseEvents.xml">
+            <Property name="AkEvent" value="SENTINEL_MECH_JUMP" />
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property name="JetpackRetrigger" value="GcMechAudioEvent.xml">
+      <Property name="DefaultEvent" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="MECH_JETPACK_RETRIGGER" />
+      </Property>
+      <Property name="MeshPartOverrides" />
+    </Property>
+    <Property name="JetpackLP" value="GcMechAudioEvent.xml">
+      <Property name="DefaultEvent" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="MECH_JETPACK_LP" />
+      </Property>
+      <Property name="MeshPartOverrides" />
+    </Property>
+    <Property name="JetpackLPEnd" value="GcMechAudioEvent.xml">
+      <Property name="DefaultEvent" value="GcAudioWwiseEvents.xml">
+        <Property name="AkEvent" value="MECH_JETPACK_LP_END" />
+      </Property>
+      <Property name="MeshPartOverrides" />
+    </Property>
+  </Property>
+  <Property name="AIMechLaserFireDurationMin" value="3" />
+  <Property name="AIMechLaserFireDurationMax" value="5" />
+  <Property name="AIMechGunFireInterval" value="0.5" />
+  <Property name="AIMechGunNumShotsMin" value="3" />
+  <Property name="AIMechGunNumShotsMax" value="5" />
+  <Property name="AIMechStunGunFireInterval" value="1" />
+  <Property name="AIMechStunGunNumShotsMin" value="1" />
+  <Property name="AIMechStunGunNumShotsMax" value="1" />
+  <Property name="AIMechGunExplosionRadius" value="0" />
+  <Property name="AIMechGunInheritVelocity" value="1" />
+  <Property name="MechWeaponInterpSpeed" value="4" />
+  <Property name="MechWeaponLocatorNames">
+    <Property name="TurretExocraft" value="NMSString0x20.xml">
+      <Property name="Value" value="SHOOT" />
+    </Property>
+    <Property name="TurretSentinel" value="NMSString0x20.xml">
+      <Property name="Value" value="SHOOT" />
+    </Property>
+    <Property name="ArmLeft" value="NMSString0x20.xml">
+      <Property name="Value" value="SHOOT_ARML" />
+    </Property>
+    <Property name="ArmRight" value="NMSString0x20.xml">
+      <Property name="Value" value="SHOOT_ARMR" />
+    </Property>
+  </Property>
+  <Property name="MechWeaponData">
+    <Property name="Laser" value="GcExoMechWeaponData.xml">
+      <Property name="LocationPriority">
+        <Property value="GcMechWeaponLocation.xml">
+          <Property name="MechWeaponLocation" value="ArmLeft" />
+        </Property>
+        <Property value="GcMechWeaponLocation.xml">
+          <Property name="MechWeaponLocation" value="TurretSentinel" />
+        </Property>
+        <Property value="GcMechWeaponLocation.xml">
+          <Property name="MechWeaponLocation" value="TurretExocraft" />
+        </Property>
+      </Property>
+      <Property name="MaintainFireLocationMinTime" value="1.5" />
+      <Property name="MuzzleFlashDataID">
+        <Property name="TurretExocraft" value="NMSString0x10.xml">
+          <Property name="Value" value="PLAYER_LASER" />
+        </Property>
+        <Property name="TurretSentinel" value="NMSString0x10.xml">
+          <Property name="Value" value="PLAYER_LASER" />
+        </Property>
+        <Property name="ArmLeft" value="NMSString0x10.xml">
+          <Property name="Value" value="PLAYER_LASER" />
+        </Property>
+        <Property name="ArmRight" value="NMSString0x10.xml">
+          <Property name="Value" value="PLAYER_LASER" />
+        </Property>
+      </Property>
+      <Property name="AngleToleranceForArmAiming" value="30" />
+      <Property name="CooldownTimeMin" value="2" />
+      <Property name="CooldownTimeMax" value="4" />
+      <Property name="SelectionWeight" value="1" />
+      <Property name="MinRange" value="3" />
+      <Property name="MaxRange" value="30" />
+      <Property name="AttackAngle" value="30" />
+    </Property>
+    <Property name="Gun" value="GcExoMechWeaponData.xml">
+      <Property name="LocationPriority">
+        <Property value="GcMechWeaponLocation.xml">
+          <Property name="MechWeaponLocation" value="ArmRight" />
+        </Property>
+        <Property value="GcMechWeaponLocation.xml">
+          <Property name="MechWeaponLocation" value="TurretSentinel" />
+        </Property>
+        <Property value="GcMechWeaponLocation.xml">
+          <Property name="MechWeaponLocation" value="TurretExocraft" />
+        </Property>
+      </Property>
+      <Property name="MaintainFireLocationMinTime" value="1.5" />
+      <Property name="MuzzleFlashDataID">
+        <Property name="TurretExocraft" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_TURRET" />
+        </Property>
+        <Property name="TurretSentinel" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_TURRET" />
+        </Property>
+        <Property name="ArmLeft" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_ARM" />
+        </Property>
+        <Property name="ArmRight" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_ARM" />
+        </Property>
+      </Property>
+      <Property name="AngleToleranceForArmAiming" value="60" />
+      <Property name="CooldownTimeMin" value="3" />
+      <Property name="CooldownTimeMax" value="5" />
+      <Property name="SelectionWeight" value="1.5" />
+      <Property name="MinRange" value="6" />
+      <Property name="MaxRange" value="60" />
+      <Property name="AttackAngle" value="50" />
+    </Property>
+    <Property name="TerrainEdit" value="GcExoMechWeaponData.xml">
+      <Property name="LocationPriority">
+        <Property value="GcMechWeaponLocation.xml">
+          <Property name="MechWeaponLocation" value="ArmLeft" />
+        </Property>
+        <Property value="GcMechWeaponLocation.xml">
+          <Property name="MechWeaponLocation" value="TurretSentinel" />
+        </Property>
+        <Property value="GcMechWeaponLocation.xml">
+          <Property name="MechWeaponLocation" value="TurretExocraft" />
+        </Property>
+      </Property>
+      <Property name="MaintainFireLocationMinTime" value="1.5" />
+      <Property name="MuzzleFlashDataID">
+        <Property name="TurretExocraft" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="TurretSentinel" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="ArmLeft" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="ArmRight" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="AngleToleranceForArmAiming" value="30" />
+      <Property name="CooldownTimeMin" value="4.5" />
+      <Property name="CooldownTimeMax" value="7" />
+      <Property name="SelectionWeight" value="0" />
+      <Property name="MinRange" value="10" />
+      <Property name="MaxRange" value="40" />
+      <Property name="AttackAngle" value="60" />
+    </Property>
+    <Property name="StunGun" value="GcExoMechWeaponData.xml">
+      <Property name="LocationPriority">
+        <Property value="GcMechWeaponLocation.xml">
+          <Property name="MechWeaponLocation" value="ArmRight" />
+        </Property>
+        <Property value="GcMechWeaponLocation.xml">
+          <Property name="MechWeaponLocation" value="TurretSentinel" />
+        </Property>
+        <Property value="GcMechWeaponLocation.xml">
+          <Property name="MechWeaponLocation" value="TurretExocraft" />
+        </Property>
+      </Property>
+      <Property name="MaintainFireLocationMinTime" value="1.5" />
+      <Property name="MuzzleFlashDataID">
+        <Property name="TurretExocraft" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_TURRET" />
+        </Property>
+        <Property name="TurretSentinel" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_TURRET" />
+        </Property>
+        <Property name="ArmLeft" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_ARM" />
+        </Property>
+        <Property name="ArmRight" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_ARM" />
+        </Property>
+      </Property>
+      <Property name="AngleToleranceForArmAiming" value="60" />
+      <Property name="CooldownTimeMin" value="5" />
+      <Property name="CooldownTimeMax" value="8" />
+      <Property name="SelectionWeight" value="0.5" />
+      <Property name="MinRange" value="6" />
+      <Property name="MaxRange" value="60" />
+      <Property name="AttackAngle" value="50" />
+    </Property>
+  </Property>
+  <Property name="MechMeshPartsTable" value="GcMechMeshPartTable.xml">
+    <Property name="Parts">
+      <Property name="Scanner" value="GcMechMeshPartData.xml">
+        <Property name="MeshTypes">
+          <Property name="Exocraft" value="GcMechMeshPartTypeData.xml">
+            <Property name="LocatorNodeName" value="Scanner_EXOCRAFT" />
+            <Property name="RequiredTechs" />
+          </Property>
+          <Property name="Sentinel" value="GcMechMeshPartTypeData.xml">
+            <Property name="LocatorNodeName" value="Scanner_SENTINEL" />
+            <Property name="RequiredTechs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="MECH_PILOT" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Body" value="GcMechMeshPartData.xml">
+        <Property name="MeshTypes">
+          <Property name="Exocraft" value="GcMechMeshPartTypeData.xml">
+            <Property name="LocatorNodeName" value="Body_EXOCRAFT" />
+            <Property name="RequiredTechs" />
+          </Property>
+          <Property name="Sentinel" value="GcMechMeshPartTypeData.xml">
+            <Property name="LocatorNodeName" value="Body_SENTINEL" />
+            <Property name="RequiredTechs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="MECH_SENT_HEAD" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="Legs" value="GcMechMeshPartData.xml">
+        <Property name="MeshTypes">
+          <Property name="Exocraft" value="GcMechMeshPartTypeData.xml">
+            <Property name="LocatorNodeName" value="Legs_EXOCRAFT" />
+            <Property name="RequiredTechs" />
+          </Property>
+          <Property name="Sentinel" value="GcMechMeshPartTypeData.xml">
+            <Property name="LocatorNodeName" value="Legs_SENTINEL" />
+            <Property name="RequiredTechs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="MECH_SENT_LEGS" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="LeftArm" value="GcMechMeshPartData.xml">
+        <Property name="MeshTypes">
+          <Property name="Exocraft" value="GcMechMeshPartTypeData.xml">
+            <Property name="LocatorNodeName" value="LeftArm_EXOCRAFT" />
+            <Property name="RequiredTechs" />
+          </Property>
+          <Property name="Sentinel" value="GcMechMeshPartTypeData.xml">
+            <Property name="LocatorNodeName" value="LeftArm_SENTINEL" />
+            <Property name="RequiredTechs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="MECH_SENT_L_ARM" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+      <Property name="RightArm" value="GcMechMeshPartData.xml">
+        <Property name="MeshTypes">
+          <Property name="Exocraft" value="GcMechMeshPartTypeData.xml">
+            <Property name="LocatorNodeName" value="RightArm_EXOCRAFT" />
+            <Property name="RequiredTechs" />
+          </Property>
+          <Property name="Sentinel" value="GcMechMeshPartTypeData.xml">
+            <Property name="LocatorNodeName" value="RightArm_SENTINEL" />
+            <Property name="RequiredTechs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="MECH_SENT_R_ARM" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="WeaponInterpSpeed" value="5" />
+  <Property name="SubmarineMinSummonDepth" value="1.5" />
+  <Property name="SubmarineEjectRadius" value="1.8" />
+  <Property name="SubmarineEjectDownOffset" value="-2" />
+  <Property name="SubmarineFirstPersonSteeringSensitivity" value="0.25" />
+  <Property name="FirstPersonSteeringAdditionalForward" value="1" />
+  <Property name="FirstPersonSteeringAdditionalForwardThreshold" value="0.15" />
+  <Property name="FirstPersonSteeringAdditionalReverseThreshold" value="-0.5" />
+  <Property name="FirstPersonSteeringMinThrottleHardLeftRight" value="0.1" />
+  <Property name="FirstPersonSteeringLowSpeedTurnDamping" value="0.1" />
+  <Property name="FirstPersonNonVRCameraOffset" value="Vector3f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="0" />
+    <Property name="z" value="-0.35" />
+  </Property>
+  <Property name="FirstPersonNonVRCameraOffsetMech" value="Vector3f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="-0.05" />
+    <Property name="z" value="-0.45" />
+  </Property>
+  <Property name="UnderwaterBuoyancySurfaceOffset" value="-1" />
+  <Property name="UnderwaterBuoyancyRange" value="5" />
+  <Property name="UnderwaterSummonSurfaceOffset" value="-1" />
+  <Property name="UnderwaterSurfaceTension" value="0.5" />
+  <Property name="UnderwaterSurfaceOffset" value="0.5" />
+  <Property name="UnderwaterSurfaceGravity" value="10" />
+  <Property name="UnderwaterFlattenMinDepth" value="1" />
+  <Property name="UnderwaterFlattenRange" value="5" />
+  <Property name="UnderwaterSurfaceForceFlatteningAngleMin" value="15" />
+  <Property name="UnderwaterSurfaceForceFlatteningAngleRange" value="25" />
+  <Property name="UnderwaterSurfaceSplashdownForce" value="600" />
+  <Property name="UnderwaterSurfaceSplashdownMinSpeed" value="2" />
+  <Property name="UnderwaterJumpForce" value="5" />
+  <Property name="UnderwaterAvoidance" value="GcSpaceshipAvoidanceData.xml">
+    <Property name="NumRays" value="12" />
+    <Property name="RayMinRange" value="1" />
+    <Property name="RaySpeedTime" value="6" />
+    <Property name="Force" value="200" />
+    <Property name="StartRadiusMultiplier" value="2" />
+    <Property name="EndRadiusMultiplier" value="3" />
+    <Property name="SpeedInterp" value="0.6" />
+    <Property name="SpeedInterpMinSpeed" value="5" />
+    <Property name="SpeedInterpRange" value="15" />
+  </Property>
+  <Property name="UnderwaterBubbleOffset">
+    <Property value="Vector3f.xml">
+      <Property name="x" value="0.4" />
+      <Property name="y" value="1.8" />
+      <Property name="z" value="-0.5" />
+    </Property>
+    <Property value="Vector3f.xml">
+      <Property name="x" value="-0.4" />
+      <Property name="y" value="1.3" />
+      <Property name="z" value="-0.5" />
+    </Property>
+    <Property value="Vector3f.xml">
+      <Property name="x" value="0.4" />
+      <Property name="y" value="1.3" />
+      <Property name="z" value="-0.5" />
+    </Property>
+    <Property value="Vector3f.xml">
+      <Property name="x" value="-0.4" />
+      <Property name="y" value="1.8" />
+      <Property name="z" value="-0.5" />
+    </Property>
+  </Property>
+  <Property name="HeadlightIntensitySpringTime" value="0.3" />
+  <Property name="VehicleAltControlScheme" value="False" />
+  <Property name="VehicleAltControlStickSmoothInTime" value="1" />
+  <Property name="VehicleAltControlStickSmoothOutTime" value="0.2" />
+  <Property name="VehicleBoostSpeedMultiplierPercent" value="20" />
+  <Property name="VehicleGarageHologramMinFadeRange" value="6" />
+  <Property name="VehicleGarageHologramFadeRange" value="3" />
+  <Property name="CheckpointPlacementOffset" value="20" />
+  <Property name="CheckpointPlacementRayLength" value="10" />
+  <Property name="CheckpointDeleteDistance" value="50" />
+  <Property name="CheckpointDeleteAngle" value="40" />
+  <Property name="BoostPadTime" value="2.2" />
+  <Property name="BoostPadStrength" value="22" />
+  <Property name="DisablePhysicsRange" value="500" />
+  <Property name="RaceMultipleStartOffset" value="-10" />
+  <Property name="RaceMultipleStartCaptureRange" value="500" />
+  <Property name="MiningLaserDrainSpeed" value="1.5" />
+  <Property name="ProjectileDrainPerShot" value="1.5" />
+  <Property name="RaceStartSpawnUpOffset" value="0" />
+  <Property name="RaceInteractRespawnOffset" value="1.9" />
+  <Property name="RaceInteractRespawnUpOffset" value="1" />
+  <Property name="StickTurnReducer" value="0" />
+  <Property name="StickTurnReducerVR" value="0.6" />
+  <Property name="StickTurnReducerAlt" value="1" />
+  <Property name="TravelSpeedReportReducer" value="0.9" />
+  <Property name="HornScareRadius" value="50" />
+  <Property name="HornScareFleeRadius" value="30" />
+  <Property name="HornScareTime" value="2" />
+  <Property name="AttractAmount" value="4" />
+  <Property name="AttractMaxSpeed" value="10" />
+  <Property name="AttractAlign" value="5" />
+  <Property name="AttractDirectionBrakeThresholdSq" value="1" />
+  <Property name="ExitStopTime" value="0.5" />
+  <Property name="ExitStopForce" value="50" />
+  <Property name="GunFireRate" value="0.5" />
+  <Property name="SummoningRange" value="755" />
+  <Property name="CheckpointRadius" value="8" />
+  <Property name="RaceCooldown" value="2" />
+  <Property name="RaceFinishAtStart" value="True" />
+  <Property name="RaceResetFlashDuration" value="0.8" />
+  <Property name="RaceResetFlashIntensity" value="1" />
+  <Property name="CheckpointFlashDuration" value="0.5" />
+  <Property name="CheckpointFlashIntensity" value="0.5" />
+  <Property name="CheckpointBeamColourActive" value="Colour.xml">
+    <Property name="R" value="1" />
+    <Property name="G" value="1" />
+    <Property name="B" value="1" />
+    <Property name="A" value="1" />
+  </Property>
+  <Property name="CheckpointBeamColourNormal" value="Colour.xml">
+    <Property name="R" value="1" />
+    <Property name="G" value="1" />
+    <Property name="B" value="1" />
+    <Property name="A" value="1" />
+  </Property>
+  <Property name="DefaultBuggyLoadout">
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="VEHICLE_ENGINE" />
+    </Property>
+  </Property>
+  <Property name="DefaultBikeLoadout">
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="VEHICLE_ENGINE" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="VEHICLE_BOOST" />
+    </Property>
+  </Property>
+  <Property name="DefaultTruckLoadout">
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="VEHICLE_ENGINE" />
+    </Property>
+    <Property value="NMSString0x10.xml">
+      <Property name="Value" value="VEHICLE_LASER" />
+    </Property>
+  </Property>
+  <Property name="CheckpointBeamSizeNormal" value="1" />
+  <Property name="CheckpointBeamSizeActive" value="5" />
+  <Property name="CheckpointBeamOffset" value="2.4" />
+  <Property name="SpawnRotation" value="10" />
+  <Property name="MechSpawnRotation" value="190" />
+  <Property name="MiningLaserRadius" value="1.3" />
+  <Property name="MiningLaserMiningDamage" value="10" />
+  <Property name="MiningLaserDamage" value="2" />
+  <Property name="MiningLaserSpeed" value="0.6" />
+  <Property name="GunBaseDamage" value="40" />
+  <Property name="StunGunBaseDamage" value="40" />
+  <Property name="StunGunFireRate" value="0.8" />
+  <Property name="GunBaseMiningDamage" value="5" />
+  <Property name="ResourceCollectOffset" value="0.1" />
+  <Property name="VehicleWheelNoise" value="0.08" />
+  <Property name="VehicleWheelNoiseScale" value="0.3" />
+  <Property name="WheelSideVerticalFactor" value="0" />
+  <Property name="SuspensionDamping" value="1" />
+  <Property name="SuspensionDampingAngularFactor" value="1" />
+  <Property name="ShowTempVehicleMesh" value="False" />
+  <Property name="ShowVehicleDebugging" value="False" />
+  <Property name="ShowVehicleWheelGuards" value="False" />
+  <Property name="ShowVehicleText" value="False" />
+  <Property name="VehicleTextSize" value="0.8" />
+  <Property name="ShowVehicleParticleDebug" value="False" />
+  <Property name="VehicleDrawAudioDebug" value="False" />
+  <Property name="VehicleSuspensionAudioSpacing" value="0.5" />
+  <Property name="VehicleSuspensionAudioDelay" value="0.08" />
+  <Property name="VehicleSuspensionAudioScale" value="3" />
+  <Property name="VehicleSuspensionAudioTrigger" value="3" />
+  <Property name="VehicleFadeTime" value="0.8" />
+  <Property name="VehicleMinSummonDistance" value="3" />
+  <Property name="VehicleMaxSummonDistance" value="50" />
+  <Property name="VehicleMaxSummonDistanceUnderwater" value="10" />
+  <Property name="VehicleDeactivateRange" value="400" />
+  <Property name="VehicleBoostFuelRate" value="2" />
+  <Property name="VehicleBoostFuelRateSurvival" value="4" />
+  <Property name="VehicleFuelRate" value="0.4" />
+  <Property name="VehicleFuelRateTruckMultiplier" value="0.5" />
+  <Property name="VehicleJumpTimeMin" value="0.125" />
+  <Property name="VehicleJumpTimeMax" value="0.175" />
+  <Property name="VehicleJumpCooldown" value="1.2" />
+  <Property name="VehicleMotionDeadZone" value="0.2" />
+  <Property name="WheelForceHalflife" value="0.1" />
+  <Property name="ThrottleButtonCamRelative" value="True" />
+  <Property name="StickReverseTurnThreshold" value="-0.4" />
+  <Property name="StickReverseTurnStiffness" value="3" />
+  <Property name="VehicleScan" value="VEHICLE" />
+  <Property name="VehicleLocalScan" value="VEHICLE_LOCAL" />
+  <Property name="VehicleWeaponMuzzleFlash">
+    <Property name="Buggy" value="GcVehicleMuzzleData.xml">
+      <Property name="MuzzleFlashDataID">
+        <Property name="Laser" value="NMSString0x10.xml">
+          <Property name="Value" value="PLAYER_LASER" />
+        </Property>
+        <Property name="Gun" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_TURRET" />
+        </Property>
+        <Property name="TerrainEdit" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="StunGun" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Bike" value="GcVehicleMuzzleData.xml">
+      <Property name="MuzzleFlashDataID">
+        <Property name="Laser" value="NMSString0x10.xml">
+          <Property name="Value" value="PLAYER_LASER" />
+        </Property>
+        <Property name="Gun" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_TURRET" />
+        </Property>
+        <Property name="TerrainEdit" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="StunGun" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Truck" value="GcVehicleMuzzleData.xml">
+      <Property name="MuzzleFlashDataID">
+        <Property name="Laser" value="NMSString0x10.xml">
+          <Property name="Value" value="PLAYER_LASER" />
+        </Property>
+        <Property name="Gun" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_TURRET" />
+        </Property>
+        <Property name="TerrainEdit" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="StunGun" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="WheeledBike" value="GcVehicleMuzzleData.xml">
+      <Property name="MuzzleFlashDataID">
+        <Property name="Laser" value="NMSString0x10.xml">
+          <Property name="Value" value="PLAYER_LASER" />
+        </Property>
+        <Property name="Gun" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_TURRET" />
+        </Property>
+        <Property name="TerrainEdit" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="StunGun" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Hovercraft" value="GcVehicleMuzzleData.xml">
+      <Property name="MuzzleFlashDataID">
+        <Property name="Laser" value="NMSString0x10.xml">
+          <Property name="Value" value="PLAYER_LASER" />
+        </Property>
+        <Property name="Gun" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_TURRET" />
+        </Property>
+        <Property name="TerrainEdit" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="StunGun" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Submarine" value="GcVehicleMuzzleData.xml">
+      <Property name="MuzzleFlashDataID">
+        <Property name="Laser" value="NMSString0x10.xml">
+          <Property name="Value" value="PLAYER_LASER" />
+        </Property>
+        <Property name="Gun" value="NMSString0x10.xml">
+          <Property name="Value" value="MECH_GUN_TURRET" />
+        </Property>
+        <Property name="TerrainEdit" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="StunGun" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Mech" value="GcVehicleMuzzleData.xml">
+      <Property name="MuzzleFlashDataID">
+        <Property name="Laser" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="Gun" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="TerrainEdit" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property name="StunGun" value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="VehicleWeaponMuzzleDataTable">
+    <Property value="GcVehicleWeaponMuzzleData.xml">
+      <Property name="ID" value="MECH_GUN_TURRET" />
+      <Property name="MuzzleFlashEffect" value="MECHGRENMUZ" />
+    </Property>
+    <Property value="GcVehicleWeaponMuzzleData.xml">
+      <Property name="ID" value="MECH_GUN_ARM" />
+      <Property name="MuzzleFlashEffect" value="SENTGUNMUZ" />
+    </Property>
+    <Property value="GcVehicleWeaponMuzzleData.xml">
+      <Property name="ID" value="PLAYER_LASER" />
+      <Property name="MuzzleFlashEffect" value="VEHICLELAZERMUZ" />
+    </Property>
+  </Property>
+  <Property name="VehicleDataTable">
+    <Property value="GcVehicleData.xml">
+      <Property name="Name" value="BIKE" />
+      <Property name="NumWheels" value="4" />
+      <Property name="WheelRadius" value="0.9" />
+      <Property name="WheelGuardExtraRadius" value="0.25" />
+      <Property name="WheelGuardExtraHeight" value="-0.6" />
+      <Property name="WheelGuardAdjustUpwards" value="0.85" />
+      <Property name="UnderwaterEnginePower" value="0" />
+      <Property name="UnderwaterEngineMaxSpeed" value="15" />
+      <Property name="UnderwaterEngineFalloff" value="0.7" />
+      <Property name="UnderwaterEngineDirectionBrake" value="2" />
+      <Property name="UnderwaterEngineDirectionBrakeVertical" value="1" />
+      <Property name="UnderwaterAlignDir" value="2" />
+      <Property name="UnderwaterAlignUp" value="1" />
+      <Property name="VisualRollAmount" value="0" />
+      <Property name="VisualRollOffsetY" value="1.5" />
+      <Property name="SteeringWheelSpringMultiplier" value="1" />
+      <Property name="SteeringWheelPushRange" value="0" />
+      <Property name="WheelLocs">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="1.5" />
+          <Property name="y" value="0" />
+          <Property name="z" value="2.25" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-1.5" />
+          <Property name="y" value="0" />
+          <Property name="z" value="2.25" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="1.5" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-2.25" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-1.5" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-2.25" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="WheelNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FL_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FR_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RL_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RR_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelSuspensionNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FL_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FR_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RR_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RL_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelRayFakeWidthFactor">
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="WheelRadiusMultiplier">
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="SuspensionAnimNames">
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="FL_SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="FR_SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="RR_SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="RL_SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="CustomCollision" value="True" />
+      <Property name="CollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="1.15" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="ExtraCollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="CollDimensions" value="Vector3f.xml">
+        <Property name="x" value="1.5" />
+        <Property name="y" value="0.75" />
+        <Property name="z" value="2.8125" />
+      </Property>
+      <Property name="InertiaDimensions" value="Vector3f.xml">
+        <Property name="x" value="1.875" />
+        <Property name="y" value="0.375" />
+        <Property name="z" value="1.875" />
+      </Property>
+      <Property name="CollRadius" value="0.5" />
+      <Property name="InertiaMul" value="1.5" />
+      <Property name="WheelSuspensionlength" value="1.5" />
+      <Property name="WheelSuspensionForce" value="10" />
+      <Property name="WheelSuspensionDamping" value="0" />
+      <Property name="WheelSuspensionAnimMin" value="-0.35" />
+      <Property name="WheelSuspensionAnimMax" value="0.25" />
+      <Property name="TopSpeedForward" value="18" />
+      <Property name="TopSpeedReverse" value="10" />
+      <Property name="WheelMaxAccelForceForward" value="9" />
+      <Property name="WheelMaxAccelForceReverse" value="5.5" />
+      <Property name="WheelMaxDecelForceNonBraking" value="1" />
+      <Property name="WheelMaxDecelForceBraking" value="5.5" />
+      <Property name="WheelSpinniness" value="1" />
+      <Property name="WheelDragginess" value="5" />
+      <Property name="HardStopSpeedThreshold" value="0.05" />
+      <Property name="WheelFrontFrictionOmega" value="1" />
+      <Property name="WheelFrontFrictionDynamic" value="4" />
+      <Property name="WheelFrontFrictionDynamicThreshold" value="1" />
+      <Property name="WheelFrontFrictionStatic" value="8" />
+      <Property name="WheelFrontFrictionStaticThreshold" value="0.25" />
+      <Property name="WheelSideFrictionOmega" value="1" />
+      <Property name="WheelSideFrictionDynamic" value="3" />
+      <Property name="WheelSideFrictionDynamicThreshold" value="1" />
+      <Property name="WheelSideFrictionStatic" value="8" />
+      <Property name="WheelSideFrictionStaticThreshold" value="0.25" />
+      <Property name="LockVehicleAxis" value="False" />
+      <Property name="TurningWheelForce" value="-3" />
+      <Property name="TurningWheelForceDamperVR" value="0.4" />
+      <Property name="TurningWheelFrictionOmega" value="0.8" />
+      <Property name="TurningWheelFrictionNonBraking" value="6" />
+      <Property name="TurningWheelFrictionBraking" value="10" />
+      <Property name="WheelForwardAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="WheelTurnAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="1" />
+        <Property name="y" value="1" />
+        <Property name="z" value="1" />
+      </Property>
+      <Property name="WheelSuspensionAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="1.5" />
+        <Property name="y" value="2" />
+        <Property name="z" value="1.5" />
+      </Property>
+      <Property name="WheelSideAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="VehicleGravity" value="17.5" />
+      <Property name="VehicleGravityWater" value="17.5" />
+      <Property name="VehicleJumpForce" value="475" />
+      <Property name="VehicleJumpAirControlForce" value="100" />
+      <Property name="VehicleBoostForce" value="400" />
+      <Property name="VehicleBoostMaxSpeed" value="32" />
+      <Property name="VehicleBoostExtraMaxSpeedAir" value="40" />
+      <Property name="VehicleBoostSpeedFalloff" value="7.5" />
+      <Property name="VehicleBoostTime" value="0.5" />
+      <Property name="VehicleBoostRechargeTime" value="2" />
+      <Property name="VehicleJumpAirRotateXAmount" value="40" />
+      <Property name="VehicleJumpAirRotateZAmount" value="40" />
+      <Property name="VehicleJumpAirRotateTimeMin" value="10" />
+      <Property name="VehicleJumpAirRotateTimeMax" value="0.5" />
+      <Property name="VehicleJumpAirMaxTorque" value="1000" />
+      <Property name="UseBuggySuspensionHack" value="False" />
+      <Property name="UseRoverWheelHack" value="False" />
+      <Property name="SideSkidParticle" value="WHEELSKIDDUST" />
+      <Property name="SideSkidParticleMinRate" value="5" />
+      <Property name="SideSkidParticleMaxRate" value="10" />
+      <Property name="SideSkidParticleMinThresh" value="10" />
+      <Property name="SideSkidParticleMaxThresh" value="15" />
+      <Property name="WheelSpinParticle" value="WHEELDUST" />
+      <Property name="WheelSpinParticleMinRate" value="5" />
+      <Property name="WheelSpinParticleMaxRate" value="10" />
+      <Property name="WheelSpinParticleMinThresh" value="0.1" />
+      <Property name="WheelSpinParticleMaxThresh" value="3" />
+      <Property name="WheelGuardVerticalResponseMin" value="-10" />
+      <Property name="WheelGuardVerticalResponseMax" value="1" />
+      <Property name="WheelGuardPenetrationScaleMin" value="0.0025" />
+      <Property name="WheelGuardPenetrationScaleMax" value="0.0025" />
+      <Property name="WheelGuardPenetrationScaleMinClamp" value="0.0025" />
+      <Property name="WheelGuardMassScaleMin" value="0.005" />
+      <Property name="WheelGuardMassScaleMax" value="0.005" />
+      <Property name="WheelGuardMassScaleMinClamp" value="0.005" />
+      <Property name="VehicleLinearDampingGround" value="0.5" />
+      <Property name="VehicleAngularDampingGround" value="10" />
+      <Property name="VehicleLinearDampingAerial" value="0.05" />
+      <Property name="VehicleAngularDampingAerial" value="1" />
+      <Property name="VehicleLinearDampingWater" value="0.5" />
+      <Property name="VehicleAngularDampingWater" value="10" />
+      <Property name="WheelStartHeight" value="-0.5" />
+      <Property name="WheelEndHeight" value="-2" />
+      <Property name="VehicleComCheat" value="0" />
+      <Property name="VehicleAudioSpeedMul" value="6" />
+      <Property name="VehicleAudioTorqueMul" value="14" />
+      <Property name="VehicleAudioSideSkidMul" value="8" />
+      <Property name="VehicleAudioSideSkidThreshold" value="8" />
+      <Property name="VehicleAudioSpinSkidMul" value="0" />
+      <Property name="VehicleAudioSpinSkidThreshold" value="0" />
+      <Property name="AudioImpactSpeedThreshold" value="2" />
+      <Property name="AudioImpactSpeedMul" value="10" />
+      <Property name="VehicleAudioSwapSkidAndSpeed" value="False" />
+      <Property name="AudioBoostStart" value="Hovercraft_Boost_Start" />
+      <Property name="AudioBoostStop" value="Hovercraft_Boost_Stop" />
+      <Property name="AudioHornStart" value="Hovercraft_Horn_Start" />
+      <Property name="AudioHornStop" value="Hovercraft_Horn_Stop" />
+      <Property name="AudioIdleExterior" value="Hovercraft_Idle_Exterior" />
+      <Property name="AudioImpacts" value="Hovercraft_Impacts" />
+      <Property name="AudioStart" value="Hovercraft_Start" />
+      <Property name="AudioStop" value="Hovercraft_Stop" />
+      <Property name="AudioSuspension" value="Hovercraft_Suspension" />
+      <Property name="AudioJump" value="Hovercraft_Jump" />
+      <Property name="DriveOnTopOfWater" value="True" />
+      <Property name="VehicleUnderwaterRotateTime" value="0.5" />
+      <Property name="VehicleAudioSuspensionThreshold" value="1" />
+      <Property name="VehicleAudioSuspensionScale" value="15" />
+      <Property name="NumGrassPushers" value="5" />
+      <Property name="WheelGrassPusherStrength" value="3" />
+      <Property name="WheelGrassPusherWobble" value="0.75" />
+      <Property name="WheelGrassPusherFrequency" value="300" />
+      <Property name="WheelGrassPusherReduce" value="1" />
+      <Property name="WheelGrassPushers">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="CreatureMassScale" value="0.005" />
+      <Property name="HeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="Lights_spotLight1" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="Lights_spotLight2" />
+        </Property>
+      </Property>
+      <Property name="VolumetricHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="CockpitHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="HeadlightIntensity" value="6" />
+    </Property>
+    <Property value="GcVehicleData.xml">
+      <Property name="Name" value="MED_BUGGY" />
+      <Property name="NumWheels" value="4" />
+      <Property name="WheelRadius" value="0.9" />
+      <Property name="WheelGuardExtraRadius" value="0.25" />
+      <Property name="WheelGuardExtraHeight" value="-0.4" />
+      <Property name="WheelGuardAdjustUpwards" value="0.3" />
+      <Property name="UnderwaterEnginePower" value="0" />
+      <Property name="UnderwaterEngineMaxSpeed" value="15" />
+      <Property name="UnderwaterEngineFalloff" value="0.7" />
+      <Property name="UnderwaterEngineDirectionBrake" value="2" />
+      <Property name="UnderwaterEngineDirectionBrakeVertical" value="1" />
+      <Property name="UnderwaterAlignDir" value="2" />
+      <Property name="UnderwaterAlignUp" value="1" />
+      <Property name="VisualRollAmount" value="0" />
+      <Property name="VisualRollOffsetY" value="1.5" />
+      <Property name="SteeringWheelSpringMultiplier" value="1" />
+      <Property name="SteeringWheelPushRange" value="0" />
+      <Property name="WheelLocs">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="2.325" />
+          <Property name="y" value="0" />
+          <Property name="z" value="2.25" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-2.325" />
+          <Property name="y" value="0" />
+          <Property name="z" value="2.25" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="2.4" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-2.25" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-2.4" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-2.25" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="WheelNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FL_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FR_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RL_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RR_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelSuspensionNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FL_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FR_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RR_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RL_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelRayFakeWidthFactor">
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="WheelRadiusMultiplier">
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="SuspensionAnimNames">
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="FL_SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="FR_SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="RR_SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="RL_SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="CustomCollision" value="True" />
+      <Property name="CollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="2" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="ExtraCollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="-0.75" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="CollDimensions" value="Vector3f.xml">
+        <Property name="x" value="2.8125" />
+        <Property name="y" value="0.5625" />
+        <Property name="z" value="4.8" />
+      </Property>
+      <Property name="InertiaDimensions" value="Vector3f.xml">
+        <Property name="x" value="1.875" />
+        <Property name="y" value="0.375" />
+        <Property name="z" value="1.875" />
+      </Property>
+      <Property name="CollRadius" value="0.5" />
+      <Property name="InertiaMul" value="1.5" />
+      <Property name="WheelSuspensionlength" value="1.05" />
+      <Property name="WheelSuspensionForce" value="10" />
+      <Property name="WheelSuspensionDamping" value="1" />
+      <Property name="WheelSuspensionAnimMin" value="-0.35" />
+      <Property name="WheelSuspensionAnimMax" value="0.4" />
+      <Property name="TopSpeedForward" value="16" />
+      <Property name="TopSpeedReverse" value="8" />
+      <Property name="WheelMaxAccelForceForward" value="5.5" />
+      <Property name="WheelMaxAccelForceReverse" value="5.5" />
+      <Property name="WheelMaxDecelForceNonBraking" value="2" />
+      <Property name="WheelMaxDecelForceBraking" value="8" />
+      <Property name="WheelSpinniness" value="1" />
+      <Property name="WheelDragginess" value="5" />
+      <Property name="HardStopSpeedThreshold" value="0.05" />
+      <Property name="WheelFrontFrictionOmega" value="1" />
+      <Property name="WheelFrontFrictionDynamic" value="5" />
+      <Property name="WheelFrontFrictionDynamicThreshold" value="1" />
+      <Property name="WheelFrontFrictionStatic" value="8" />
+      <Property name="WheelFrontFrictionStaticThreshold" value="0.25" />
+      <Property name="WheelSideFrictionOmega" value="1" />
+      <Property name="WheelSideFrictionDynamic" value="4" />
+      <Property name="WheelSideFrictionDynamicThreshold" value="1" />
+      <Property name="WheelSideFrictionStatic" value="5" />
+      <Property name="WheelSideFrictionStaticThreshold" value="0.25" />
+      <Property name="LockVehicleAxis" value="False" />
+      <Property name="TurningWheelForce" value="-1" />
+      <Property name="TurningWheelForceDamperVR" value="0.4" />
+      <Property name="TurningWheelFrictionOmega" value="0.8" />
+      <Property name="TurningWheelFrictionNonBraking" value="3" />
+      <Property name="TurningWheelFrictionBraking" value="5" />
+      <Property name="WheelForwardAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="4" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="WheelTurnAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="1" />
+        <Property name="y" value="1" />
+        <Property name="z" value="1" />
+      </Property>
+      <Property name="WheelSuspensionAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="10" />
+        <Property name="y" value="10" />
+        <Property name="z" value="10" />
+      </Property>
+      <Property name="WheelSideAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="4" />
+      </Property>
+      <Property name="VehicleGravity" value="20" />
+      <Property name="VehicleGravityWater" value="8" />
+      <Property name="VehicleJumpForce" value="420" />
+      <Property name="VehicleJumpAirControlForce" value="75" />
+      <Property name="VehicleBoostForce" value="300" />
+      <Property name="VehicleBoostMaxSpeed" value="30" />
+      <Property name="VehicleBoostExtraMaxSpeedAir" value="40" />
+      <Property name="VehicleBoostSpeedFalloff" value="10" />
+      <Property name="VehicleBoostTime" value="1.5" />
+      <Property name="VehicleBoostRechargeTime" value="3" />
+      <Property name="VehicleJumpAirRotateXAmount" value="40" />
+      <Property name="VehicleJumpAirRotateZAmount" value="40" />
+      <Property name="VehicleJumpAirRotateTimeMin" value="10" />
+      <Property name="VehicleJumpAirRotateTimeMax" value="1" />
+      <Property name="VehicleJumpAirMaxTorque" value="1000" />
+      <Property name="UseBuggySuspensionHack" value="False" />
+      <Property name="UseRoverWheelHack" value="False" />
+      <Property name="SideSkidParticle" value="WHEELSKIDDUST" />
+      <Property name="SideSkidParticleMinRate" value="5" />
+      <Property name="SideSkidParticleMaxRate" value="10" />
+      <Property name="SideSkidParticleMinThresh" value="10" />
+      <Property name="SideSkidParticleMaxThresh" value="20" />
+      <Property name="WheelSpinParticle" value="WHEELDUST" />
+      <Property name="WheelSpinParticleMinRate" value="5" />
+      <Property name="WheelSpinParticleMaxRate" value="10" />
+      <Property name="WheelSpinParticleMinThresh" value="0.5" />
+      <Property name="WheelSpinParticleMaxThresh" value="3" />
+      <Property name="WheelGuardVerticalResponseMin" value="-0.3" />
+      <Property name="WheelGuardVerticalResponseMax" value="1" />
+      <Property name="WheelGuardPenetrationScaleMin" value="0.025" />
+      <Property name="WheelGuardPenetrationScaleMax" value="0.025" />
+      <Property name="WheelGuardPenetrationScaleMinClamp" value="0.025" />
+      <Property name="WheelGuardMassScaleMin" value="0.001" />
+      <Property name="WheelGuardMassScaleMax" value="0.025" />
+      <Property name="WheelGuardMassScaleMinClamp" value="0.001" />
+      <Property name="VehicleLinearDampingGround" value="0.1" />
+      <Property name="VehicleAngularDampingGround" value="7" />
+      <Property name="VehicleLinearDampingAerial" value="0.05" />
+      <Property name="VehicleAngularDampingAerial" value="1" />
+      <Property name="VehicleLinearDampingWater" value="3.5" />
+      <Property name="VehicleAngularDampingWater" value="20" />
+      <Property name="WheelStartHeight" value="-0.5" />
+      <Property name="WheelEndHeight" value="-2" />
+      <Property name="VehicleComCheat" value="0" />
+      <Property name="VehicleAudioSpeedMul" value="5" />
+      <Property name="VehicleAudioTorqueMul" value="17" />
+      <Property name="VehicleAudioSideSkidMul" value="4" />
+      <Property name="VehicleAudioSideSkidThreshold" value="20" />
+      <Property name="VehicleAudioSpinSkidMul" value="8" />
+      <Property name="VehicleAudioSpinSkidThreshold" value="0" />
+      <Property name="AudioImpactSpeedThreshold" value="2" />
+      <Property name="AudioImpactSpeedMul" value="10" />
+      <Property name="VehicleAudioSwapSkidAndSpeed" value="False" />
+      <Property name="AudioBoostStart" value="Buggy_Boost_Start" />
+      <Property name="AudioBoostStop" value="Buggy_Boost_Stop" />
+      <Property name="AudioHornStart" value="Buggy_Horn_Start" />
+      <Property name="AudioHornStop" value="Buggy_Horn_Stop" />
+      <Property name="AudioIdleExterior" value="Buggy_Idle_Exterior" />
+      <Property name="AudioImpacts" value="Buggy_Impacts" />
+      <Property name="AudioStart" value="Buggy_Start" />
+      <Property name="AudioStop" value="Buggy_Stop" />
+      <Property name="AudioSuspension" value="Buggy_Suspension" />
+      <Property name="AudioJump" value="Buggy_Jump" />
+      <Property name="DriveOnTopOfWater" value="False" />
+      <Property name="VehicleUnderwaterRotateTime" value="1" />
+      <Property name="VehicleAudioSuspensionThreshold" value="1" />
+      <Property name="VehicleAudioSuspensionScale" value="15" />
+      <Property name="NumGrassPushers" value="4" />
+      <Property name="WheelGrassPusherStrength" value="3" />
+      <Property name="WheelGrassPusherWobble" value="0" />
+      <Property name="WheelGrassPusherFrequency" value="0" />
+      <Property name="WheelGrassPusherReduce" value="1" />
+      <Property name="WheelGrassPushers">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="1.5" />
+          <Property name="y" value="0" />
+          <Property name="z" value="1.5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-1.5" />
+          <Property name="y" value="0" />
+          <Property name="z" value="1.5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="1.5" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-1.5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-1.5" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-1.5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="CreatureMassScale" value="0.005" />
+      <Property name="HeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="spotLight1" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="spotLight2" />
+        </Property>
+      </Property>
+      <Property name="VolumetricHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="spotLight3" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="spotLight4" />
+        </Property>
+      </Property>
+      <Property name="CockpitHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="HeadlightIntensity" value="6" />
+    </Property>
+    <Property value="GcVehicleData.xml">
+      <Property name="Name" value="TRUCK" />
+      <Property name="NumWheels" value="8" />
+      <Property name="WheelRadius" value="1.2" />
+      <Property name="WheelGuardExtraRadius" value="0.25" />
+      <Property name="WheelGuardExtraHeight" value="-0.4" />
+      <Property name="WheelGuardAdjustUpwards" value="0.3" />
+      <Property name="UnderwaterEnginePower" value="0" />
+      <Property name="UnderwaterEngineMaxSpeed" value="15" />
+      <Property name="UnderwaterEngineFalloff" value="0.7" />
+      <Property name="UnderwaterEngineDirectionBrake" value="2" />
+      <Property name="UnderwaterEngineDirectionBrakeVertical" value="1" />
+      <Property name="UnderwaterAlignDir" value="2" />
+      <Property name="UnderwaterAlignUp" value="1" />
+      <Property name="VisualRollAmount" value="0" />
+      <Property name="VisualRollOffsetY" value="1.5" />
+      <Property name="SteeringWheelSpringMultiplier" value="1" />
+      <Property name="SteeringWheelPushRange" value="0" />
+      <Property name="WheelLocs">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="2.35" />
+          <Property name="y" value="0" />
+          <Property name="z" value="1" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="2.35" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-1" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="2.35" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-3" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="2.35" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-2.35" />
+          <Property name="y" value="0" />
+          <Property name="z" value="1" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-2.35" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-1" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-2.35" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-3" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-2.35" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="WheelNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="L1_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="L2_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="L3_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="L4_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="R1_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="R2_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="R3_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="R4_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelSuspensionNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="L1_SuspJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="L2_SuspJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="L3_SuspJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="L4_SuspJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="R1_SuspJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="R2_SuspJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="R3_SuspJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="R4_SuspJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelRayFakeWidthFactor">
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="WheelRadiusMultiplier">
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="SuspensionAnimNames">
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="L1SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="L2SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="L3SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="L4SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="R1SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="R2SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="R3SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="R4SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="CustomCollision" value="True" />
+      <Property name="CollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="2.8" />
+        <Property name="z" value="1" />
+      </Property>
+      <Property name="ExtraCollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="-1" />
+      </Property>
+      <Property name="CollDimensions" value="Vector3f.xml">
+        <Property name="x" value="2.5" />
+        <Property name="y" value="2.2" />
+        <Property name="z" value="9" />
+      </Property>
+      <Property name="InertiaDimensions" value="Vector3f.xml">
+        <Property name="x" value="1.875" />
+        <Property name="y" value="0.375" />
+        <Property name="z" value="1.875" />
+      </Property>
+      <Property name="CollRadius" value="0.5" />
+      <Property name="InertiaMul" value="1.5" />
+      <Property name="WheelSuspensionlength" value="0.75" />
+      <Property name="WheelSuspensionForce" value="10" />
+      <Property name="WheelSuspensionDamping" value="2" />
+      <Property name="WheelSuspensionAnimMin" value="-0.2" />
+      <Property name="WheelSuspensionAnimMax" value="0.6" />
+      <Property name="TopSpeedForward" value="12" />
+      <Property name="TopSpeedReverse" value="8" />
+      <Property name="WheelMaxAccelForceForward" value="5" />
+      <Property name="WheelMaxAccelForceReverse" value="0.8" />
+      <Property name="WheelMaxDecelForceNonBraking" value="0.2" />
+      <Property name="WheelMaxDecelForceBraking" value="2" />
+      <Property name="WheelSpinniness" value="1" />
+      <Property name="WheelDragginess" value="25" />
+      <Property name="HardStopSpeedThreshold" value="0.05" />
+      <Property name="WheelFrontFrictionOmega" value="1" />
+      <Property name="WheelFrontFrictionDynamic" value="3" />
+      <Property name="WheelFrontFrictionDynamicThreshold" value="1" />
+      <Property name="WheelFrontFrictionStatic" value="4" />
+      <Property name="WheelFrontFrictionStaticThreshold" value="0.25" />
+      <Property name="WheelSideFrictionOmega" value="1" />
+      <Property name="WheelSideFrictionDynamic" value="5" />
+      <Property name="WheelSideFrictionDynamicThreshold" value="1" />
+      <Property name="WheelSideFrictionStatic" value="10" />
+      <Property name="WheelSideFrictionStaticThreshold" value="0.25" />
+      <Property name="LockVehicleAxis" value="False" />
+      <Property name="TurningWheelForce" value="-0.175" />
+      <Property name="TurningWheelForceDamperVR" value="0.4" />
+      <Property name="TurningWheelFrictionOmega" value="0.8" />
+      <Property name="TurningWheelFrictionNonBraking" value="0.75" />
+      <Property name="TurningWheelFrictionBraking" value="1" />
+      <Property name="WheelForwardAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="0.3" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="WheelTurnAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="1" />
+        <Property name="y" value="1" />
+        <Property name="z" value="1" />
+      </Property>
+      <Property name="WheelSuspensionAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="3" />
+        <Property name="y" value="3" />
+        <Property name="z" value="3" />
+      </Property>
+      <Property name="WheelSideAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="1" />
+      </Property>
+      <Property name="VehicleGravity" value="20" />
+      <Property name="VehicleGravityWater" value="8" />
+      <Property name="VehicleJumpForce" value="400" />
+      <Property name="VehicleJumpAirControlForce" value="50" />
+      <Property name="VehicleBoostForce" value="220" />
+      <Property name="VehicleBoostMaxSpeed" value="30" />
+      <Property name="VehicleBoostExtraMaxSpeedAir" value="40" />
+      <Property name="VehicleBoostSpeedFalloff" value="5" />
+      <Property name="VehicleBoostTime" value="1.25" />
+      <Property name="VehicleBoostRechargeTime" value="5.5" />
+      <Property name="VehicleJumpAirRotateXAmount" value="40" />
+      <Property name="VehicleJumpAirRotateZAmount" value="40" />
+      <Property name="VehicleJumpAirRotateTimeMin" value="10" />
+      <Property name="VehicleJumpAirRotateTimeMax" value="1" />
+      <Property name="VehicleJumpAirMaxTorque" value="1000" />
+      <Property name="UseBuggySuspensionHack" value="False" />
+      <Property name="UseRoverWheelHack" value="False" />
+      <Property name="SideSkidParticle" value="WHEELSKIDDUST" />
+      <Property name="SideSkidParticleMinRate" value="5" />
+      <Property name="SideSkidParticleMaxRate" value="10" />
+      <Property name="SideSkidParticleMinThresh" value="10" />
+      <Property name="SideSkidParticleMaxThresh" value="15" />
+      <Property name="WheelSpinParticle" value="WHEELDUST" />
+      <Property name="WheelSpinParticleMinRate" value="5" />
+      <Property name="WheelSpinParticleMaxRate" value="10" />
+      <Property name="WheelSpinParticleMinThresh" value="0.5" />
+      <Property name="WheelSpinParticleMaxThresh" value="3" />
+      <Property name="WheelGuardVerticalResponseMin" value="-0.3" />
+      <Property name="WheelGuardVerticalResponseMax" value="1" />
+      <Property name="WheelGuardPenetrationScaleMin" value="0.025" />
+      <Property name="WheelGuardPenetrationScaleMax" value="0.025" />
+      <Property name="WheelGuardPenetrationScaleMinClamp" value="0.025" />
+      <Property name="WheelGuardMassScaleMin" value="0.001" />
+      <Property name="WheelGuardMassScaleMax" value="0.025" />
+      <Property name="WheelGuardMassScaleMinClamp" value="0.001" />
+      <Property name="VehicleLinearDampingGround" value="0.5" />
+      <Property name="VehicleAngularDampingGround" value="10" />
+      <Property name="VehicleLinearDampingAerial" value="0.5" />
+      <Property name="VehicleAngularDampingAerial" value="10" />
+      <Property name="VehicleLinearDampingWater" value="3.5" />
+      <Property name="VehicleAngularDampingWater" value="20" />
+      <Property name="WheelStartHeight" value="-0.5" />
+      <Property name="WheelEndHeight" value="-2" />
+      <Property name="VehicleComCheat" value="0" />
+      <Property name="VehicleAudioSpeedMul" value="20" />
+      <Property name="VehicleAudioTorqueMul" value="50" />
+      <Property name="VehicleAudioSideSkidMul" value="8" />
+      <Property name="VehicleAudioSideSkidThreshold" value="8" />
+      <Property name="VehicleAudioSpinSkidMul" value="0" />
+      <Property name="VehicleAudioSpinSkidThreshold" value="0" />
+      <Property name="AudioImpactSpeedThreshold" value="1.5" />
+      <Property name="AudioImpactSpeedMul" value="20" />
+      <Property name="VehicleAudioSwapSkidAndSpeed" value="False" />
+      <Property name="AudioBoostStart" value="Rover_Boost_Start" />
+      <Property name="AudioBoostStop" value="Rover_Boost_Stop" />
+      <Property name="AudioHornStart" value="Rover_Horn_Start" />
+      <Property name="AudioHornStop" value="Rover_Horn_Stop" />
+      <Property name="AudioIdleExterior" value="Rover_Idle_Exterior" />
+      <Property name="AudioImpacts" value="Rover_Impacts" />
+      <Property name="AudioStart" value="Rover_Start" />
+      <Property name="AudioStop" value="Rover_Stop" />
+      <Property name="AudioSuspension" value="Rover_Suspension" />
+      <Property name="AudioJump" value="Rover_Jump" />
+      <Property name="DriveOnTopOfWater" value="False" />
+      <Property name="VehicleUnderwaterRotateTime" value="1" />
+      <Property name="VehicleAudioSuspensionThreshold" value="1" />
+      <Property name="VehicleAudioSuspensionScale" value="15" />
+      <Property name="NumGrassPushers" value="8" />
+      <Property name="WheelGrassPusherStrength" value="2" />
+      <Property name="WheelGrassPusherWobble" value="0" />
+      <Property name="WheelGrassPusherFrequency" value="0" />
+      <Property name="WheelGrassPusherReduce" value="1" />
+      <Property name="WheelGrassPushers">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-2.4" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-2.4" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-3" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-2.4" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-1" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-2.4" />
+          <Property name="y" value="0" />
+          <Property name="z" value="1" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="2.4" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="2.4" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-3" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="2.4" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-1" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="2.4" />
+          <Property name="y" value="0" />
+          <Property name="z" value="1" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="CreatureMassScale" value="0.005" />
+      <Property name="HeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="spotLight1" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="spotLight3" />
+        </Property>
+      </Property>
+      <Property name="VolumetricHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="CockpitHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="HeadlightIntensity" value="6" />
+    </Property>
+    <Property value="GcVehicleData.xml">
+      <Property name="Name" value="WHEELEDBIKE" />
+      <Property name="NumWheels" value="4" />
+      <Property name="WheelRadius" value="1.125" />
+      <Property name="WheelGuardExtraRadius" value="0.15" />
+      <Property name="WheelGuardExtraHeight" value="-0.4" />
+      <Property name="WheelGuardAdjustUpwards" value="0.3" />
+      <Property name="UnderwaterEnginePower" value="0" />
+      <Property name="UnderwaterEngineMaxSpeed" value="15" />
+      <Property name="UnderwaterEngineFalloff" value="0.7" />
+      <Property name="UnderwaterEngineDirectionBrake" value="2" />
+      <Property name="UnderwaterEngineDirectionBrakeVertical" value="1" />
+      <Property name="UnderwaterAlignDir" value="2" />
+      <Property name="UnderwaterAlignUp" value="1" />
+      <Property name="VisualRollAmount" value="0" />
+      <Property name="VisualRollOffsetY" value="1.5" />
+      <Property name="SteeringWheelSpringMultiplier" value="1" />
+      <Property name="SteeringWheelPushRange" value="0" />
+      <Property name="WheelLocs">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0.75" />
+          <Property name="y" value="0" />
+          <Property name="z" value="2.85" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-0.75" />
+          <Property name="y" value="0" />
+          <Property name="z" value="2.85" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0.75" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-2.85" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-0.9" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-2.85" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="WheelNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FL_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FR_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RL_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RR_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelSuspensionNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FL_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FR_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RL_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RR_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelRayFakeWidthFactor">
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="WheelRadiusMultiplier">
+        <Property value="1.03" />
+        <Property value="1.03" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="SuspensionAnimNames">
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="FR_SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="RR_SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="RR_SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="RL_SUSPENSION" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="CustomCollision" value="True" />
+      <Property name="CollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="2" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="ExtraCollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="-0.75" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="CollDimensions" value="Vector3f.xml">
+        <Property name="x" value="2.8125" />
+        <Property name="y" value="0.5625" />
+        <Property name="z" value="4.8" />
+      </Property>
+      <Property name="InertiaDimensions" value="Vector3f.xml">
+        <Property name="x" value="1.875" />
+        <Property name="y" value="0.375" />
+        <Property name="z" value="1.875" />
+      </Property>
+      <Property name="CollRadius" value="0.6" />
+      <Property name="InertiaMul" value="1.5" />
+      <Property name="WheelSuspensionlength" value="0.75" />
+      <Property name="WheelSuspensionForce" value="8" />
+      <Property name="WheelSuspensionDamping" value="3" />
+      <Property name="WheelSuspensionAnimMin" value="0.1" />
+      <Property name="WheelSuspensionAnimMax" value="-0.4" />
+      <Property name="TopSpeedForward" value="19" />
+      <Property name="TopSpeedReverse" value="8" />
+      <Property name="WheelMaxAccelForceForward" value="5.5" />
+      <Property name="WheelMaxAccelForceReverse" value="5.5" />
+      <Property name="WheelMaxDecelForceNonBraking" value="2" />
+      <Property name="WheelMaxDecelForceBraking" value="8" />
+      <Property name="WheelSpinniness" value="2" />
+      <Property name="WheelDragginess" value="5" />
+      <Property name="HardStopSpeedThreshold" value="0.05" />
+      <Property name="WheelFrontFrictionOmega" value="1" />
+      <Property name="WheelFrontFrictionDynamic" value="5" />
+      <Property name="WheelFrontFrictionDynamicThreshold" value="1" />
+      <Property name="WheelFrontFrictionStatic" value="8" />
+      <Property name="WheelFrontFrictionStaticThreshold" value="0.25" />
+      <Property name="WheelSideFrictionOmega" value="1" />
+      <Property name="WheelSideFrictionDynamic" value="3.1" />
+      <Property name="WheelSideFrictionDynamicThreshold" value="1" />
+      <Property name="WheelSideFrictionStatic" value="5" />
+      <Property name="WheelSideFrictionStaticThreshold" value="0.15" />
+      <Property name="LockVehicleAxis" value="False" />
+      <Property name="TurningWheelForce" value="-3" />
+      <Property name="TurningWheelForceDamperVR" value="0.4" />
+      <Property name="TurningWheelFrictionOmega" value="0.8" />
+      <Property name="TurningWheelFrictionNonBraking" value="8" />
+      <Property name="TurningWheelFrictionBraking" value="2" />
+      <Property name="WheelForwardAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="4" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="WheelTurnAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="1" />
+        <Property name="y" value="1" />
+        <Property name="z" value="1" />
+      </Property>
+      <Property name="WheelSuspensionAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="10" />
+        <Property name="y" value="10" />
+        <Property name="z" value="10" />
+      </Property>
+      <Property name="WheelSideAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="4" />
+      </Property>
+      <Property name="VehicleGravity" value="20" />
+      <Property name="VehicleGravityWater" value="8" />
+      <Property name="VehicleJumpForce" value="450" />
+      <Property name="VehicleJumpAirControlForce" value="75" />
+      <Property name="VehicleBoostForce" value="600" />
+      <Property name="VehicleBoostMaxSpeed" value="35" />
+      <Property name="VehicleBoostExtraMaxSpeedAir" value="40" />
+      <Property name="VehicleBoostSpeedFalloff" value="10" />
+      <Property name="VehicleBoostTime" value="0.6" />
+      <Property name="VehicleBoostRechargeTime" value="1.5" />
+      <Property name="VehicleJumpAirRotateXAmount" value="10" />
+      <Property name="VehicleJumpAirRotateZAmount" value="40" />
+      <Property name="VehicleJumpAirRotateTimeMin" value="3" />
+      <Property name="VehicleJumpAirRotateTimeMax" value="1" />
+      <Property name="VehicleJumpAirMaxTorque" value="1000" />
+      <Property name="UseBuggySuspensionHack" value="False" />
+      <Property name="UseRoverWheelHack" value="False" />
+      <Property name="SideSkidParticle" value="WHEELSKIDDUST" />
+      <Property name="SideSkidParticleMinRate" value="5" />
+      <Property name="SideSkidParticleMaxRate" value="10" />
+      <Property name="SideSkidParticleMinThresh" value="10" />
+      <Property name="SideSkidParticleMaxThresh" value="20" />
+      <Property name="WheelSpinParticle" value="WHEELDUST" />
+      <Property name="WheelSpinParticleMinRate" value="5" />
+      <Property name="WheelSpinParticleMaxRate" value="10" />
+      <Property name="WheelSpinParticleMinThresh" value="0.5" />
+      <Property name="WheelSpinParticleMaxThresh" value="3" />
+      <Property name="WheelGuardVerticalResponseMin" value="-0.3" />
+      <Property name="WheelGuardVerticalResponseMax" value="1" />
+      <Property name="WheelGuardPenetrationScaleMin" value="0.025" />
+      <Property name="WheelGuardPenetrationScaleMax" value="0.025" />
+      <Property name="WheelGuardPenetrationScaleMinClamp" value="0.025" />
+      <Property name="WheelGuardMassScaleMin" value="0.001" />
+      <Property name="WheelGuardMassScaleMax" value="0.025" />
+      <Property name="WheelGuardMassScaleMinClamp" value="0.001" />
+      <Property name="VehicleLinearDampingGround" value="0.1" />
+      <Property name="VehicleAngularDampingGround" value="7" />
+      <Property name="VehicleLinearDampingAerial" value="0.05" />
+      <Property name="VehicleAngularDampingAerial" value="1" />
+      <Property name="VehicleLinearDampingWater" value="3.5" />
+      <Property name="VehicleAngularDampingWater" value="20" />
+      <Property name="WheelStartHeight" value="-0.5" />
+      <Property name="WheelEndHeight" value="-2" />
+      <Property name="VehicleComCheat" value="0" />
+      <Property name="VehicleAudioSpeedMul" value="5" />
+      <Property name="VehicleAudioTorqueMul" value="17" />
+      <Property name="VehicleAudioSideSkidMul" value="5" />
+      <Property name="VehicleAudioSideSkidThreshold" value="20" />
+      <Property name="VehicleAudioSpinSkidMul" value="8" />
+      <Property name="VehicleAudioSpinSkidThreshold" value="0" />
+      <Property name="AudioImpactSpeedThreshold" value="2" />
+      <Property name="AudioImpactSpeedMul" value="10" />
+      <Property name="VehicleAudioSwapSkidAndSpeed" value="False" />
+      <Property name="AudioBoostStart" value="Pilgrim_Boost_Start" />
+      <Property name="AudioBoostStop" value="Pilgrim_Boost_Stop" />
+      <Property name="AudioHornStart" value="Pilgrim_Horn_Start" />
+      <Property name="AudioHornStop" value="Pilgrim_Horn_Stop" />
+      <Property name="AudioIdleExterior" value="Pilgrim_Idle_Exterior" />
+      <Property name="AudioImpacts" value="Pilgrim_Impacts" />
+      <Property name="AudioStart" value="Pilgrim_Start" />
+      <Property name="AudioStop" value="Pilgrim_Stop" />
+      <Property name="AudioSuspension" value="Pilgrim_Suspension" />
+      <Property name="AudioJump" value="Pilgrim_Jump" />
+      <Property name="DriveOnTopOfWater" value="False" />
+      <Property name="VehicleUnderwaterRotateTime" value="1" />
+      <Property name="VehicleAudioSuspensionThreshold" value="1" />
+      <Property name="VehicleAudioSuspensionScale" value="15" />
+      <Property name="NumGrassPushers" value="4" />
+      <Property name="WheelGrassPusherStrength" value="3" />
+      <Property name="WheelGrassPusherWobble" value="0" />
+      <Property name="WheelGrassPusherFrequency" value="0" />
+      <Property name="WheelGrassPusherReduce" value="1" />
+      <Property name="WheelGrassPushers">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="CreatureMassScale" value="0.005" />
+      <Property name="HeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="spotLight2" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="spotLight3" />
+        </Property>
+      </Property>
+      <Property name="VolumetricHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="CockpitHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="HeadlightIntensity" value="6" />
+    </Property>
+    <Property value="GcVehicleData.xml">
+      <Property name="Name" value="HOVERCRAFT" />
+      <Property name="NumWheels" value="4" />
+      <Property name="WheelRadius" value="0.6" />
+      <Property name="WheelGuardExtraRadius" value="0.25" />
+      <Property name="WheelGuardExtraHeight" value="-0.6" />
+      <Property name="WheelGuardAdjustUpwards" value="0.85" />
+      <Property name="UnderwaterEnginePower" value="0" />
+      <Property name="UnderwaterEngineMaxSpeed" value="15" />
+      <Property name="UnderwaterEngineFalloff" value="0.7" />
+      <Property name="UnderwaterEngineDirectionBrake" value="2" />
+      <Property name="UnderwaterEngineDirectionBrakeVertical" value="1" />
+      <Property name="UnderwaterAlignDir" value="2" />
+      <Property name="UnderwaterAlignUp" value="1" />
+      <Property name="VisualRollAmount" value="0" />
+      <Property name="VisualRollOffsetY" value="1.5" />
+      <Property name="SteeringWheelSpringMultiplier" value="1" />
+      <Property name="SteeringWheelPushRange" value="0" />
+      <Property name="WheelLocs">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="1" />
+          <Property name="y" value="0" />
+          <Property name="z" value="1.5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-1" />
+          <Property name="y" value="0" />
+          <Property name="z" value="1.5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="1" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-1.5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-1" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-1.5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="WheelNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FL_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FR_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RL_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RR_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelSuspensionNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FL_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FR_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RR_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RL_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelRayFakeWidthFactor">
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="WheelRadiusMultiplier">
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="SuspensionAnimNames">
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="CustomCollision" value="True" />
+      <Property name="CollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="1.15" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="ExtraCollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="CollDimensions" value="Vector3f.xml">
+        <Property name="x" value="1" />
+        <Property name="y" value="0.5" />
+        <Property name="z" value="1.875" />
+      </Property>
+      <Property name="InertiaDimensions" value="Vector3f.xml">
+        <Property name="x" value="1.875" />
+        <Property name="y" value="0.375" />
+        <Property name="z" value="1.875" />
+      </Property>
+      <Property name="CollRadius" value="0.5" />
+      <Property name="InertiaMul" value="1.5" />
+      <Property name="WheelSuspensionlength" value="1.5" />
+      <Property name="WheelSuspensionForce" value="25" />
+      <Property name="WheelSuspensionDamping" value="1" />
+      <Property name="WheelSuspensionAnimMin" value="-0.35" />
+      <Property name="WheelSuspensionAnimMax" value="0.25" />
+      <Property name="TopSpeedForward" value="15" />
+      <Property name="TopSpeedReverse" value="15" />
+      <Property name="WheelMaxAccelForceForward" value="9" />
+      <Property name="WheelMaxAccelForceReverse" value="5.5" />
+      <Property name="WheelMaxDecelForceNonBraking" value="1" />
+      <Property name="WheelMaxDecelForceBraking" value="5.5" />
+      <Property name="WheelSpinniness" value="1" />
+      <Property name="WheelDragginess" value="1" />
+      <Property name="HardStopSpeedThreshold" value="0.05" />
+      <Property name="WheelFrontFrictionOmega" value="1" />
+      <Property name="WheelFrontFrictionDynamic" value="12" />
+      <Property name="WheelFrontFrictionDynamicThreshold" value="1" />
+      <Property name="WheelFrontFrictionStatic" value="12" />
+      <Property name="WheelFrontFrictionStaticThreshold" value="0.25" />
+      <Property name="WheelSideFrictionOmega" value="1" />
+      <Property name="WheelSideFrictionDynamic" value="12" />
+      <Property name="WheelSideFrictionDynamicThreshold" value="1" />
+      <Property name="WheelSideFrictionStatic" value="12" />
+      <Property name="WheelSideFrictionStaticThreshold" value="0.25" />
+      <Property name="LockVehicleAxis" value="False" />
+      <Property name="TurningWheelForce" value="-4" />
+      <Property name="TurningWheelForceDamperVR" value="0.4" />
+      <Property name="TurningWheelFrictionOmega" value="0.8" />
+      <Property name="TurningWheelFrictionNonBraking" value="12" />
+      <Property name="TurningWheelFrictionBraking" value="12" />
+      <Property name="WheelForwardAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="WheelTurnAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="1" />
+        <Property name="y" value="1" />
+        <Property name="z" value="1" />
+      </Property>
+      <Property name="WheelSuspensionAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="1.5" />
+        <Property name="y" value="2" />
+        <Property name="z" value="1.5" />
+      </Property>
+      <Property name="WheelSideAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="VehicleGravity" value="30" />
+      <Property name="VehicleGravityWater" value="17.5" />
+      <Property name="VehicleJumpForce" value="1200" />
+      <Property name="VehicleJumpAirControlForce" value="180" />
+      <Property name="VehicleBoostForce" value="900" />
+      <Property name="VehicleBoostMaxSpeed" value="25" />
+      <Property name="VehicleBoostExtraMaxSpeedAir" value="10" />
+      <Property name="VehicleBoostSpeedFalloff" value="7.5" />
+      <Property name="VehicleBoostTime" value="1.5" />
+      <Property name="VehicleBoostRechargeTime" value="2.5" />
+      <Property name="VehicleJumpAirRotateXAmount" value="5" />
+      <Property name="VehicleJumpAirRotateZAmount" value="5" />
+      <Property name="VehicleJumpAirRotateTimeMin" value="10" />
+      <Property name="VehicleJumpAirRotateTimeMax" value="3" />
+      <Property name="VehicleJumpAirMaxTorque" value="1000" />
+      <Property name="UseBuggySuspensionHack" value="False" />
+      <Property name="UseRoverWheelHack" value="False" />
+      <Property name="SideSkidParticle" value="WHEELSKIDDUST" />
+      <Property name="SideSkidParticleMinRate" value="5" />
+      <Property name="SideSkidParticleMaxRate" value="10" />
+      <Property name="SideSkidParticleMinThresh" value="10" />
+      <Property name="SideSkidParticleMaxThresh" value="15" />
+      <Property name="WheelSpinParticle" value="WHEELDUST" />
+      <Property name="WheelSpinParticleMinRate" value="5" />
+      <Property name="WheelSpinParticleMaxRate" value="11" />
+      <Property name="WheelSpinParticleMinThresh" value="0.1" />
+      <Property name="WheelSpinParticleMaxThresh" value="3" />
+      <Property name="WheelGuardVerticalResponseMin" value="-10" />
+      <Property name="WheelGuardVerticalResponseMax" value="1" />
+      <Property name="WheelGuardPenetrationScaleMin" value="0.0025" />
+      <Property name="WheelGuardPenetrationScaleMax" value="0.0025" />
+      <Property name="WheelGuardPenetrationScaleMinClamp" value="0.0025" />
+      <Property name="WheelGuardMassScaleMin" value="0.005" />
+      <Property name="WheelGuardMassScaleMax" value="0.005" />
+      <Property name="WheelGuardMassScaleMinClamp" value="0.005" />
+      <Property name="VehicleLinearDampingGround" value="0.5" />
+      <Property name="VehicleAngularDampingGround" value="10" />
+      <Property name="VehicleLinearDampingAerial" value="0.05" />
+      <Property name="VehicleAngularDampingAerial" value="1" />
+      <Property name="VehicleLinearDampingWater" value="0.5" />
+      <Property name="VehicleAngularDampingWater" value="10" />
+      <Property name="WheelStartHeight" value="-0.5" />
+      <Property name="WheelEndHeight" value="-2" />
+      <Property name="VehicleComCheat" value="0" />
+      <Property name="VehicleAudioSpeedMul" value="6" />
+      <Property name="VehicleAudioTorqueMul" value="14" />
+      <Property name="VehicleAudioSideSkidMul" value="8" />
+      <Property name="VehicleAudioSideSkidThreshold" value="8" />
+      <Property name="VehicleAudioSpinSkidMul" value="0" />
+      <Property name="VehicleAudioSpinSkidThreshold" value="0" />
+      <Property name="AudioImpactSpeedThreshold" value="2" />
+      <Property name="AudioImpactSpeedMul" value="10" />
+      <Property name="VehicleAudioSwapSkidAndSpeed" value="False" />
+      <Property name="AudioBoostStart" value="DragonFly_Boost_Start" />
+      <Property name="AudioBoostStop" value="DragonFly_Boost_Stop" />
+      <Property name="AudioHornStart" value="DragonFly_Horn_Start" />
+      <Property name="AudioHornStop" value="DragonFly_Horn_Stop" />
+      <Property name="AudioIdleExterior" value="DragonFly_Idle_Exterior" />
+      <Property name="AudioImpacts" value="DragonFly_Impacts" />
+      <Property name="AudioStart" value="DragonFly_Start" />
+      <Property name="AudioStop" value="DragonFly_Stop" />
+      <Property name="AudioSuspension" value="DragonFly_Suspension" />
+      <Property name="AudioJump" value="DragonFly_Jump" />
+      <Property name="DriveOnTopOfWater" value="True" />
+      <Property name="VehicleUnderwaterRotateTime" value="0.5" />
+      <Property name="VehicleAudioSuspensionThreshold" value="1" />
+      <Property name="VehicleAudioSuspensionScale" value="15" />
+      <Property name="NumGrassPushers" value="5" />
+      <Property name="WheelGrassPusherStrength" value="3" />
+      <Property name="WheelGrassPusherWobble" value="0.75" />
+      <Property name="WheelGrassPusherFrequency" value="300" />
+      <Property name="WheelGrassPusherReduce" value="1" />
+      <Property name="WheelGrassPushers">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="CreatureMassScale" value="0.005" />
+      <Property name="HeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="VolumetricHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="CockpitHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="HeadlightIntensity" value="6" />
+    </Property>
+    <Property value="GcVehicleData.xml">
+      <Property name="Name" value="SUBMARINE" />
+      <Property name="NumWheels" value="0" />
+      <Property name="WheelRadius" value="0.9" />
+      <Property name="WheelGuardExtraRadius" value="0.25" />
+      <Property name="WheelGuardExtraHeight" value="-0.6" />
+      <Property name="WheelGuardAdjustUpwards" value="0.85" />
+      <Property name="UnderwaterEnginePower" value="10" />
+      <Property name="UnderwaterEngineMaxSpeed" value="18" />
+      <Property name="UnderwaterEngineFalloff" value="0.7" />
+      <Property name="UnderwaterEngineDirectionBrake" value="1.8" />
+      <Property name="UnderwaterEngineDirectionBrakeVertical" value="0.2" />
+      <Property name="UnderwaterAlignDir" value="1.4" />
+      <Property name="UnderwaterAlignUp" value="2.5" />
+      <Property name="VisualRollAmount" value="0.5" />
+      <Property name="VisualRollOffsetY" value="2" />
+      <Property name="SteeringWheelSpringMultiplier" value="1" />
+      <Property name="SteeringWheelPushRange" value="0" />
+      <Property name="WheelLocs">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="1" />
+          <Property name="y" value="0" />
+          <Property name="z" value="1.5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-1" />
+          <Property name="y" value="0" />
+          <Property name="z" value="1.5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="1" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-1.5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="-1" />
+          <Property name="y" value="0" />
+          <Property name="z" value="-1.5" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="WheelNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FL_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FR_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RL_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RR_WheelJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelSuspensionNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FL_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="FR_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RR_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="RL_SuspensionMountJNT" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelRayFakeWidthFactor">
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="WheelRadiusMultiplier">
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="SuspensionAnimNames">
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="CustomCollision" value="False" />
+      <Property name="CollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="2.15" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="ExtraCollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="CollDimensions" value="Vector3f.xml">
+        <Property name="x" value="1" />
+        <Property name="y" value="0.5" />
+        <Property name="z" value="1.875" />
+      </Property>
+      <Property name="InertiaDimensions" value="Vector3f.xml">
+        <Property name="x" value="1.875" />
+        <Property name="y" value="0.375" />
+        <Property name="z" value="1.875" />
+      </Property>
+      <Property name="CollRadius" value="0.5" />
+      <Property name="InertiaMul" value="1.5" />
+      <Property name="WheelSuspensionlength" value="1.5" />
+      <Property name="WheelSuspensionForce" value="25" />
+      <Property name="WheelSuspensionDamping" value="1" />
+      <Property name="WheelSuspensionAnimMin" value="-0.35" />
+      <Property name="WheelSuspensionAnimMax" value="0.25" />
+      <Property name="TopSpeedForward" value="15" />
+      <Property name="TopSpeedReverse" value="15" />
+      <Property name="WheelMaxAccelForceForward" value="9" />
+      <Property name="WheelMaxAccelForceReverse" value="5.5" />
+      <Property name="WheelMaxDecelForceNonBraking" value="1" />
+      <Property name="WheelMaxDecelForceBraking" value="5.5" />
+      <Property name="WheelSpinniness" value="1" />
+      <Property name="WheelDragginess" value="1" />
+      <Property name="HardStopSpeedThreshold" value="0.05" />
+      <Property name="WheelFrontFrictionOmega" value="1" />
+      <Property name="WheelFrontFrictionDynamic" value="12" />
+      <Property name="WheelFrontFrictionDynamicThreshold" value="1" />
+      <Property name="WheelFrontFrictionStatic" value="12" />
+      <Property name="WheelFrontFrictionStaticThreshold" value="0.25" />
+      <Property name="WheelSideFrictionOmega" value="1" />
+      <Property name="WheelSideFrictionDynamic" value="12" />
+      <Property name="WheelSideFrictionDynamicThreshold" value="1" />
+      <Property name="WheelSideFrictionStatic" value="12" />
+      <Property name="WheelSideFrictionStaticThreshold" value="0.25" />
+      <Property name="LockVehicleAxis" value="False" />
+      <Property name="TurningWheelForce" value="-4" />
+      <Property name="TurningWheelForceDamperVR" value="0.4" />
+      <Property name="TurningWheelFrictionOmega" value="0.8" />
+      <Property name="TurningWheelFrictionNonBraking" value="12" />
+      <Property name="TurningWheelFrictionBraking" value="12" />
+      <Property name="WheelForwardAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="WheelTurnAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="1" />
+        <Property name="y" value="1" />
+        <Property name="z" value="1" />
+      </Property>
+      <Property name="WheelSuspensionAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="1.5" />
+        <Property name="y" value="2" />
+        <Property name="z" value="1.5" />
+      </Property>
+      <Property name="WheelSideAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="VehicleGravity" value="30" />
+      <Property name="VehicleGravityWater" value="17.5" />
+      <Property name="VehicleJumpForce" value="1200" />
+      <Property name="VehicleJumpAirControlForce" value="180" />
+      <Property name="VehicleBoostForce" value="900" />
+      <Property name="VehicleBoostMaxSpeed" value="25" />
+      <Property name="VehicleBoostExtraMaxSpeedAir" value="10" />
+      <Property name="VehicleBoostSpeedFalloff" value="7.5" />
+      <Property name="VehicleBoostTime" value="2.5" />
+      <Property name="VehicleBoostRechargeTime" value="2.5" />
+      <Property name="VehicleJumpAirRotateXAmount" value="5" />
+      <Property name="VehicleJumpAirRotateZAmount" value="5" />
+      <Property name="VehicleJumpAirRotateTimeMin" value="10" />
+      <Property name="VehicleJumpAirRotateTimeMax" value="3" />
+      <Property name="VehicleJumpAirMaxTorque" value="1000" />
+      <Property name="UseBuggySuspensionHack" value="False" />
+      <Property name="UseRoverWheelHack" value="False" />
+      <Property name="SideSkidParticle" value="WHEELSKIDDUST" />
+      <Property name="SideSkidParticleMinRate" value="5" />
+      <Property name="SideSkidParticleMaxRate" value="10" />
+      <Property name="SideSkidParticleMinThresh" value="10" />
+      <Property name="SideSkidParticleMaxThresh" value="15" />
+      <Property name="WheelSpinParticle" value="WHEELDUST" />
+      <Property name="WheelSpinParticleMinRate" value="5" />
+      <Property name="WheelSpinParticleMaxRate" value="11" />
+      <Property name="WheelSpinParticleMinThresh" value="0.1" />
+      <Property name="WheelSpinParticleMaxThresh" value="3" />
+      <Property name="WheelGuardVerticalResponseMin" value="-10" />
+      <Property name="WheelGuardVerticalResponseMax" value="1" />
+      <Property name="WheelGuardPenetrationScaleMin" value="0.0025" />
+      <Property name="WheelGuardPenetrationScaleMax" value="0.0025" />
+      <Property name="WheelGuardPenetrationScaleMinClamp" value="0.0025" />
+      <Property name="WheelGuardMassScaleMin" value="0.005" />
+      <Property name="WheelGuardMassScaleMax" value="0.005" />
+      <Property name="WheelGuardMassScaleMinClamp" value="0.005" />
+      <Property name="VehicleLinearDampingGround" value="0.5" />
+      <Property name="VehicleAngularDampingGround" value="10" />
+      <Property name="VehicleLinearDampingAerial" value="0.05" />
+      <Property name="VehicleAngularDampingAerial" value="1" />
+      <Property name="VehicleLinearDampingWater" value="0.5" />
+      <Property name="VehicleAngularDampingWater" value="10" />
+      <Property name="WheelStartHeight" value="-0.5" />
+      <Property name="WheelEndHeight" value="-2" />
+      <Property name="VehicleComCheat" value="0" />
+      <Property name="VehicleAudioSpeedMul" value="6" />
+      <Property name="VehicleAudioTorqueMul" value="14" />
+      <Property name="VehicleAudioSideSkidMul" value="8" />
+      <Property name="VehicleAudioSideSkidThreshold" value="8" />
+      <Property name="VehicleAudioSpinSkidMul" value="0" />
+      <Property name="VehicleAudioSpinSkidThreshold" value="0" />
+      <Property name="AudioImpactSpeedThreshold" value="2" />
+      <Property name="AudioImpactSpeedMul" value="10" />
+      <Property name="VehicleAudioSwapSkidAndSpeed" value="False" />
+      <Property name="AudioBoostStart" value="Submarine_Boost_Start" />
+      <Property name="AudioBoostStop" value="Submarine_Boost_Stop" />
+      <Property name="AudioHornStart" value="Submarine_Horn_Start" />
+      <Property name="AudioHornStop" value="Submarine_Horn_Stop" />
+      <Property name="AudioIdleExterior" value="Submarine_Idle_Exterior" />
+      <Property name="AudioImpacts" value="Submarine_Impacts" />
+      <Property name="AudioStart" value="Submarine_Start" />
+      <Property name="AudioStop" value="Submarine_Stop" />
+      <Property name="AudioSuspension" value="Submarine_Suspension" />
+      <Property name="AudioJump" value="Submarine_Jump" />
+      <Property name="DriveOnTopOfWater" value="True" />
+      <Property name="VehicleUnderwaterRotateTime" value="0.5" />
+      <Property name="VehicleAudioSuspensionThreshold" value="1" />
+      <Property name="VehicleAudioSuspensionScale" value="15" />
+      <Property name="NumGrassPushers" value="5" />
+      <Property name="WheelGrassPusherStrength" value="3" />
+      <Property name="WheelGrassPusherWobble" value="0.75" />
+      <Property name="WheelGrassPusherFrequency" value="300" />
+      <Property name="WheelGrassPusherReduce" value="1" />
+      <Property name="WheelGrassPushers">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="CreatureMassScale" value="0.005" />
+      <Property name="HeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="VolumetricHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="CockpitHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="HeadlightIntensity" value="6" />
+    </Property>
+    <Property value="GcVehicleData.xml">
+      <Property name="Name" value="MECH" />
+      <Property name="NumWheels" value="0" />
+      <Property name="WheelRadius" value="0.9" />
+      <Property name="WheelGuardExtraRadius" value="0.25" />
+      <Property name="WheelGuardExtraHeight" value="-0.6" />
+      <Property name="WheelGuardAdjustUpwards" value="0.85" />
+      <Property name="UnderwaterEnginePower" value="0" />
+      <Property name="UnderwaterEngineMaxSpeed" value="15" />
+      <Property name="UnderwaterEngineFalloff" value="0.7" />
+      <Property name="UnderwaterEngineDirectionBrake" value="1.8" />
+      <Property name="UnderwaterEngineDirectionBrakeVertical" value="0.2" />
+      <Property name="UnderwaterAlignDir" value="1.4" />
+      <Property name="UnderwaterAlignUp" value="2.5" />
+      <Property name="VisualRollAmount" value="0.5" />
+      <Property name="VisualRollOffsetY" value="2" />
+      <Property name="SteeringWheelSpringMultiplier" value="1" />
+      <Property name="SteeringWheelPushRange" value="0" />
+      <Property name="WheelLocs">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="WheelNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelSuspensionNames">
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x20.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="WheelRayFakeWidthFactor">
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="WheelRadiusMultiplier">
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+        <Property value="1" />
+      </Property>
+      <Property name="SuspensionAnimNames">
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x10.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="CustomCollision" value="True" />
+      <Property name="CollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="2.15" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="ExtraCollOffset" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="CollDimensions" value="Vector3f.xml">
+        <Property name="x" value="1" />
+        <Property name="y" value="2" />
+        <Property name="z" value="1" />
+      </Property>
+      <Property name="InertiaDimensions" value="Vector3f.xml">
+        <Property name="x" value="1.875" />
+        <Property name="y" value="0.375" />
+        <Property name="z" value="1.875" />
+      </Property>
+      <Property name="CollRadius" value="0.5" />
+      <Property name="InertiaMul" value="1.5" />
+      <Property name="WheelSuspensionlength" value="1.5" />
+      <Property name="WheelSuspensionForce" value="25" />
+      <Property name="WheelSuspensionDamping" value="1" />
+      <Property name="WheelSuspensionAnimMin" value="-0.35" />
+      <Property name="WheelSuspensionAnimMax" value="0.25" />
+      <Property name="TopSpeedForward" value="2" />
+      <Property name="TopSpeedReverse" value="15" />
+      <Property name="WheelMaxAccelForceForward" value="9" />
+      <Property name="WheelMaxAccelForceReverse" value="5.5" />
+      <Property name="WheelMaxDecelForceNonBraking" value="1" />
+      <Property name="WheelMaxDecelForceBraking" value="5.5" />
+      <Property name="WheelSpinniness" value="1" />
+      <Property name="WheelDragginess" value="1" />
+      <Property name="HardStopSpeedThreshold" value="0.05" />
+      <Property name="WheelFrontFrictionOmega" value="1" />
+      <Property name="WheelFrontFrictionDynamic" value="12" />
+      <Property name="WheelFrontFrictionDynamicThreshold" value="1" />
+      <Property name="WheelFrontFrictionStatic" value="12" />
+      <Property name="WheelFrontFrictionStaticThreshold" value="0.25" />
+      <Property name="WheelSideFrictionOmega" value="1" />
+      <Property name="WheelSideFrictionDynamic" value="12" />
+      <Property name="WheelSideFrictionDynamicThreshold" value="1" />
+      <Property name="WheelSideFrictionStatic" value="12" />
+      <Property name="WheelSideFrictionStaticThreshold" value="0.25" />
+      <Property name="LockVehicleAxis" value="False" />
+      <Property name="TurningWheelForce" value="-4" />
+      <Property name="TurningWheelForceDamperVR" value="0.4" />
+      <Property name="TurningWheelFrictionOmega" value="0.8" />
+      <Property name="TurningWheelFrictionNonBraking" value="12" />
+      <Property name="TurningWheelFrictionBraking" value="12" />
+      <Property name="WheelForwardAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="WheelTurnAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="1" />
+        <Property name="y" value="1" />
+        <Property name="z" value="1" />
+      </Property>
+      <Property name="WheelSuspensionAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="1.5" />
+        <Property name="y" value="2" />
+        <Property name="z" value="1.5" />
+      </Property>
+      <Property name="WheelSideAngularFactor" value="Vector3f.xml">
+        <Property name="x" value="0" />
+        <Property name="y" value="0" />
+        <Property name="z" value="0" />
+      </Property>
+      <Property name="VehicleGravity" value="70" />
+      <Property name="VehicleGravityWater" value="17.5" />
+      <Property name="VehicleJumpForce" value="1200" />
+      <Property name="VehicleJumpAirControlForce" value="180" />
+      <Property name="VehicleBoostForce" value="900" />
+      <Property name="VehicleBoostMaxSpeed" value="25" />
+      <Property name="VehicleBoostExtraMaxSpeedAir" value="10" />
+      <Property name="VehicleBoostSpeedFalloff" value="7.5" />
+      <Property name="VehicleBoostTime" value="2.5" />
+      <Property name="VehicleBoostRechargeTime" value="2.5" />
+      <Property name="VehicleJumpAirRotateXAmount" value="5" />
+      <Property name="VehicleJumpAirRotateZAmount" value="5" />
+      <Property name="VehicleJumpAirRotateTimeMin" value="10" />
+      <Property name="VehicleJumpAirRotateTimeMax" value="3" />
+      <Property name="VehicleJumpAirMaxTorque" value="1000" />
+      <Property name="UseBuggySuspensionHack" value="False" />
+      <Property name="UseRoverWheelHack" value="False" />
+      <Property name="SideSkidParticle" value="WHEELSKIDDUST" />
+      <Property name="SideSkidParticleMinRate" value="5" />
+      <Property name="SideSkidParticleMaxRate" value="10" />
+      <Property name="SideSkidParticleMinThresh" value="10" />
+      <Property name="SideSkidParticleMaxThresh" value="15" />
+      <Property name="WheelSpinParticle" value="WHEELDUST" />
+      <Property name="WheelSpinParticleMinRate" value="5" />
+      <Property name="WheelSpinParticleMaxRate" value="11" />
+      <Property name="WheelSpinParticleMinThresh" value="0.1" />
+      <Property name="WheelSpinParticleMaxThresh" value="3" />
+      <Property name="WheelGuardVerticalResponseMin" value="-10" />
+      <Property name="WheelGuardVerticalResponseMax" value="1" />
+      <Property name="WheelGuardPenetrationScaleMin" value="0.0025" />
+      <Property name="WheelGuardPenetrationScaleMax" value="0.0025" />
+      <Property name="WheelGuardPenetrationScaleMinClamp" value="0.0025" />
+      <Property name="WheelGuardMassScaleMin" value="0.005" />
+      <Property name="WheelGuardMassScaleMax" value="0.005" />
+      <Property name="WheelGuardMassScaleMinClamp" value="0.005" />
+      <Property name="VehicleLinearDampingGround" value="0.5" />
+      <Property name="VehicleAngularDampingGround" value="10" />
+      <Property name="VehicleLinearDampingAerial" value="0.05" />
+      <Property name="VehicleAngularDampingAerial" value="1" />
+      <Property name="VehicleLinearDampingWater" value="0.5" />
+      <Property name="VehicleAngularDampingWater" value="10" />
+      <Property name="WheelStartHeight" value="-0.5" />
+      <Property name="WheelEndHeight" value="-2" />
+      <Property name="VehicleComCheat" value="0" />
+      <Property name="VehicleAudioSpeedMul" value="6" />
+      <Property name="VehicleAudioTorqueMul" value="14" />
+      <Property name="VehicleAudioSideSkidMul" value="8" />
+      <Property name="VehicleAudioSideSkidThreshold" value="8" />
+      <Property name="VehicleAudioSpinSkidMul" value="0" />
+      <Property name="VehicleAudioSpinSkidThreshold" value="0" />
+      <Property name="AudioImpactSpeedThreshold" value="2" />
+      <Property name="AudioImpactSpeedMul" value="10" />
+      <Property name="VehicleAudioSwapSkidAndSpeed" value="False" />
+      <Property name="AudioBoostStart" value="" />
+      <Property name="AudioBoostStop" value="" />
+      <Property name="AudioHornStart" value="" />
+      <Property name="AudioHornStop" value="" />
+      <Property name="AudioIdleExterior" value="MECH_IDLE" />
+      <Property name="AudioImpacts" value="Buggy_Impacts" />
+      <Property name="AudioStart" value="" />
+      <Property name="AudioStop" value="" />
+      <Property name="AudioSuspension" value="" />
+      <Property name="AudioJump" value="" />
+      <Property name="DriveOnTopOfWater" value="True" />
+      <Property name="VehicleUnderwaterRotateTime" value="0.5" />
+      <Property name="VehicleAudioSuspensionThreshold" value="1" />
+      <Property name="VehicleAudioSuspensionScale" value="15" />
+      <Property name="NumGrassPushers" value="5" />
+      <Property name="WheelGrassPusherStrength" value="3" />
+      <Property name="WheelGrassPusherWobble" value="0.75" />
+      <Property name="WheelGrassPusherFrequency" value="300" />
+      <Property name="WheelGrassPusherReduce" value="1" />
+      <Property name="WheelGrassPushers">
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+      </Property>
+      <Property name="CreatureMassScale" value="0.005" />
+      <Property name="HeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="spotLight2" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="spotLight3" />
+        </Property>
+      </Property>
+      <Property name="VolumetricHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="" />
+        </Property>
+      </Property>
+      <Property name="CockpitHeadlightNames">
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="cockpitSpotLight1" />
+        </Property>
+        <Property value="NMSString0x100.xml">
+          <Property name="Value" value="cockpitSpotLight2" />
+        </Property>
+      </Property>
+      <Property name="HeadlightIntensity" value="8" />
+    </Property>
+  </Property>
+</Data>
