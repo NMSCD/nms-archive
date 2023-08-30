@@ -1,0 +1,379 @@
+<!-- High Dynamic Range (HDR) utf-8Shading Pipeline -->
+<Pipeline>
+  <Setup>
+    <RenderTarget id="SHADOWBUF"          depthBuf="true"   numColBufs="0"  format="RGBA8"  depthFormat="DEPTH16" scale="1.0" width="4" height="4"  shadow="true" hasMips="false" numUniformBuffers="3" />
+    <RenderTarget id="CLOUDSHADOWS"       depthBuf="false"  numColBufs="1"  format="RED8"                         scale="1.0" width="4" height="4"  allowDcc="false" />
+        
+    <RenderTarget id="GBUFFER"            depthBuf="false"  numColBufs="4"  format0="RGBA8"        format1="RG8"  format2="RGB10A2" format3="RGBA8" scale="1.0"  pointSampleColBuf1="true" pointSampleColBuf2="true" pointSampleColBuf3="true"        width="256"  height="256" />
+    <RenderTarget id="SUNOUT_0"           depthBuf="false"  numColBufs="2"  format0="R11FG11FB10F" format1="R11FG11FB10F"                           scale="1.0"  shareTarget0="HDRBUF_0"  shareBuffer0="0" shareTarget1="HDRBUF_1"  shareBuffer1="0"  width="256"  height="256" />
+
+    <RenderTarget id="HDRBUF_0"           depthBuf="false"  numColBufs="1"  format="R11FG11FB10F"   scale="1.0"                         width="256"  height="256"/>
+    <RenderTarget id="HDRBUF_1"           depthBuf="false"  numColBufs="1"  format="R11FG11FB10F"   scale="1.0"                         width="256"  height="256" />
+    
+    <RenderTarget id="DUMMY_RGB"          depthBuf="false"  numColBufs="1"  format="R11FG11FB10F"   scale="0.125"                       width="256"  height="256" />
+    <RenderTarget id="DUMMY_AO"           depthBuf="false"  numColBufs="1"  format="RED8"           scale="0.125"                       width="256"  height="256" />
+    
+    <RenderTarget id="DEPTH"              depthBuf="true"   numColBufs="0"  format="RGBA8"  scale="1.0"  stencilBuf="true"          width="256"  height="256" />
+    <RenderTarget id="DEPTH_LINEAR"       depthBuf="false"  numColBufs="1"  format="RED32F" scale="1.0"  pointSampleColBuf0="true"  width="256"  height="256" />
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="Attributes">
+      <BeginTarget target="GBUFFER" depthTarget="DEPTH" />
+
+      <ColourMask channels="RGBA"/>
+      <!-- Clear targets, colbuf1 is cleared separately to max depth -->
+      <ClearTarget colBuf0="true"  colBuf1="true" colBuf2="true"  colBuf3="true" colBuf4="true" depthBuf="true"   stencilBuf="true" />
+      <ColourMask channels="RGBA"/>
+      <!--Enable all attached RTs, since ClearTarget only (re-)enables RT0 on PS4-->
+
+      <BindBuffer sampler="gShadowMap"       sourceRT="SHADOWBUF"       bufIndex="32" />
+      <BindBuffer sampler="gCloudShadowMap"  sourceRT="CLOUDSHADOWS"    bufIndex="0" addressMode="wrap" />
+
+      <!-- Z Pre-Pass for Cutout (grass etc) -->
+      <SetContext zwrite="true" colourWrite="false" cullMode="none" blendMode="replace" depthTest="less" stencilMode="disabled" />
+      <DrawGeometry type="InstanceMesh" class="DoubleSided"    context="DEPTHONLY_DEFER_INSTANCE"    order="FRONT_TO_BACK" />
+      <SetContext zwrite="true" colourWrite="false" cullMode="front" blendMode="replace" depthTest="less" stencilMode="disabled" />
+      <DrawGeometry type="InstanceMesh" class="Cutout"         context="DEPTHONLY_DEFER_INSTANCE"    order="FRONT_TO_BACK" />
+      <SetContext zwrite="true" colourWrite="false" cullMode="front" blendMode="replace" depthTest="less" stencilMode="maskWrite"  stencilRef="8" />
+      <DrawGeometry type="Terrain"      class="LOD0"           context="DEPTHONLY_DEFER"             order="" />
+      <DrawGeometry type="Terrain"      class="LOD1"           context="DEPTHONLY_DEFER"             order="" />
+      <DrawGeometry type="Terrain"      class="LOD2"           context="DEPTHONLY_DEFER"             order="" />
+      <!-- Opaques-->
+
+      <ColourMask channels="RGBA"/>
+      <!--Enable all attached RTs, since ClearTarget only (re-)enables RT0 on PS4-->
+      <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" stencilMode="maskWrite"/>
+      <DrawGeometry type="Mesh"         class="Opaque"          context="LIT_DEFER"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="Highlight"       context="LIT_DEFER"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="Cutout"          context="LIT_DEFER"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="OpaqueBeforeUI"  context="LIT_DEFER"             order="STATECHANGES" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" stencilMode="maskWrite" stencilRef="65" />
+      <DrawGeometry type="Mesh"         class="ScreenSpaceReflections"          context="LIT_DEFER"             order="STATECHANGES" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" stencilMode="maskWrite"/>
+      <DrawGeometry type="Mesh"         class="DoubleSided"             context="LIT_DEFER"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="HighlightDoubleSided"    context="LIT_DEFER"             order="STATECHANGES" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="lessEqual" stencilMode="maskWrite"  stencilRef="8" />
+      <DrawGeometry type="Terrain"      class="LOD0"      context="LIT_DF_CACHE_FB"       order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD0"      context="LIT_TESS_FB"           order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD0"      context="LIT_DEFER_CACHE"       order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD0"      context="LIT_DEFER_TESS"        order="FRONT_TO_BACK" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" stencilMode="maskWrite"/>
+      <DrawGeometry type="InstanceMesh" class="Opaque"    context="LIT_DEFER_INSTANCE"    order="FRONT_TO_BACK" />
+
+      <DrawGeometry type="Mesh"         class="Glow"      context="LIT_DEFER"             order="STATECHANGES" />
+      <DrawGeometry type="InstanceMesh" class="Glow"      context="LIT_DEFER_INSTANCE"    order="BACK_TO_FRONT" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="replace" depthTest="equal" stencilMode="disabled" />
+
+      <SetShaderControl psWaveLimit="0" />
+
+      <DrawGeometry type="Terrain"      class="LOD0"      context="LIT_DEFER_STC_T_SPLIT"    order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD1"      context="LIT_DEFER_STC_T_SPLIT"    order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD2"      context="LIT_DEFER_STC_T_SPLIT"    order="FRONT_TO_BACK" />
+
+      <SetShaderControl psWaveLimit="7" />
+
+      <DrawGeometry type="Terrain"      class="LOD0"      context="LIT_DEFER_N_FACING"    order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD1"      context="LIT_DEFER_N_FACING"    order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD2"      context="LIT_DEFER_N_FACING"    order="FRONT_TO_BACK" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="lessEqual" stencilMode="maskWrite" stencilRef="8"/>
+      <SetShaderControl vsLateAllocMax="22" psWaveLimit="0" />
+
+      <DrawGeometry type="Terrain"      class="LOD3"      context="LIT_DEFER_STC_T_SPLIT_FADE"    order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="LOD3"      context="LIT_DEFER"          order="FRONT_TO_BACK" />
+
+      <DrawGeometry type="Terrain"      class="LOD3"      context="LIT_DEFER"             order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="PLANET"    context="LIT_DEFER_LOW"         order="FRONT_TO_BACK" />
+      <DrawGeometry type="Terrain"      class="ASTEROID"  context="LIT_DEFER_ASTEROID"    order="FRONT_TO_BACK" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="replace" depthTest="equal" stencilMode="maskWrite"/>
+      <DrawGeometry type="InstanceMesh" class="Cutout"      context="LIT_DEFER_ZE_INSTANCE" order="FRONT_TO_BACK" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="replace" depthTest="equal" stencilMode="maskWrite" />
+      <DrawGeometry type="InstanceMesh" class="DoubleSided" context="LIT_DEFER_ZE_INSTANCE" order="FRONT_TO_BACK" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="lessEqual" stencilMode="maskReadWriteInvert" stencilRef="0" stencilMaskRead="9" stencilMaskWrite="8"/>
+      <DrawGeometry type="Mesh"         class="AtmosphereNear" context="PLANET_NEAR"      order="STATECHANGES"  />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="lessEqual" stencilMode="maskWrite" stencilRef="8"/>
+      <DrawGeometry type="Mesh"         class="Atmosphere"     context="PLANET"           order="STATECHANGES" />
+
+      <SetContext zwrite="true" colourWrite="false" cullMode="front" blendMode="replace" depthTest="always" />
+      <DrawGeometry type="Mesh"         class="GunOpaque"    context="DEPTH_CLEAR"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="GunGlow"      context="DEPTH_CLEAR"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="GunDecal"     context="DEPTH_CLEAR"             order="STATECHANGES"  />
+      <!-- These aren't real decals, they are just meshes with 2 UV sets which is why they are still rendered here. -->
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" stencilMode="maskWrite" stencilRef="3"/>
+      <DrawGeometry type="Mesh"         class="GunOpaque"    context="LIT_DEFER"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="GunGlow"      context="LIT_DEFER"             order="STATECHANGES" />
+      <DrawGeometry type="Mesh"         class="GunDecal"     context="LIT_DEFER"             order="STATECHANGES"  />
+
+      <UnbindBuffers />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" stencilMode="maskRead" depthTest="always" />
+      <DoForwardLightLoop type="Mesh" class="Sky" context="CLEAR" order="BACK_TO_FRONT" />
+
+      <EndTarget flushCB="true" flushDB="true" />
+    </Stage>
+
+    <Stage id="CopyDepth">
+      <BeginTarget target="DEPTH_LINEAR" />
+      <ColourMask channels="RGBA"/>
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <BindBuffer sampler="gBufferMap"  sourceRT="DEPTH" bufIndex="32" />
+      <DrawQuadMT material="materials/PostProcess.material.mbin" context="DEPTH_REV2LIN" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="ClearDummies">
+      <BeginTarget target="DUMMY_AO" />
+      <ColourMask channels="R"/>
+      <ClearTarget depthBuf="false" colBuf0="true"  col_R="1.0" col_G="1.0" col_B="1.0" col_A="1.0" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <BeginTarget target="DUMMY_RGB" />
+      <ColourMask channels="RGBA"/>
+      <ClearTarget depthBuf="false" colBuf0="true"  col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="CloudsShadows">
+      <BeginTarget target="CLOUDSHADOWS" />
+      <ColourMask channels="RGBA"/>
+      <ClearTarget depthBuf="false" colBuf0="true"  col_R="1.0" col_G="1.0" col_B="1.0" col_A="1.0" />>
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="Shadow_All_Clear">
+      <BeginTarget target="SHADOWBUF" />
+      <SetShadowMap index="-1" />
+      <ColourMask channels="RGBA"/>
+      <ClearTarget depthBuf="true" colBuf0="false"  col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+
+    <Stage id="Shadow_End">
+      <BeginTarget target="SHADOWBUF" />
+      <SetShadowMap index="-1" />
+
+      <SetDepthBufferControl allowCompression="true" />
+      <EndTarget flushCB="false" flushDB="true" />
+    </Stage>
+    
+    <Stage id="Sunlight">
+      <BeginTarget target="SUNOUT_0" depthTarget="DEPTH" />
+      <ClearTarget colBuf0="true"  colBuf1="true" colBuf2="false"  colBuf3="false" colBuf4="true" depthBuf="false"   stencilBuf="false" />
+
+      <ColourMask channels="RGB"  />
+      <BindBuffer sampler="gBufferMap"      sourceRT="GBUFFER"        bufIndex="0"  />
+      <BindBuffer sampler="gBuffer1Map"     sourceRT="DEPTH_LINEAR"   bufIndex="0"  />
+      <BindBuffer sampler="gBuffer2Map"     sourceRT="GBUFFER"        bufIndex="2"  />
+      <BindBuffer sampler="gBuffer3Map"     sourceRT="GBUFFER"        bufIndex="3"  />
+      <BindBuffer sampler="gShadowMap"      sourceRT="SHADOWBUF"      bufIndex="32" />
+      <BindBuffer sampler="gBuffer4Map"     sourceRT="DUMMY_AO"       bufIndex="0" addressMode="clamp" />
+      <BindBuffer sampler="gCloudShadowMap" sourceRT="CLOUDSHADOWS"   bufIndex="0" addressMode="wrap"  />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="always" stencilMode="maskReadInvert" stencilMask="9" stencilRef="0"/>
+      <DrawQuadMT material="materials/Light.material.mbin" context="SUNLIGHT_SPLIT" />
+
+      <SetContext stencilMode="disabled" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+    </Stage>
+
+    <Stage id="ShadowApply" >
+
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH" />
+
+      <ColourMask channels="RGB"  colBuf1="false"  colBuf2="false"  />
+      <BindBuffer sampler="gBufferMap"        sourceRT="SUNOUT_0"       bufIndex="1"  />
+      <BindBuffer sampler="gBuffer1Map"       sourceRT="DEPTH_LINEAR"   bufIndex="0"  />
+      <BindBuffer sampler="gBuffer2Map"       sourceRT="GBUFFER"        bufIndex="2"  />
+      <BindBuffer sampler="gBuffer3Map"       sourceRT="GBUFFER"        bufIndex="0"  />
+      <BindBuffer sampler="gShadowMap"        sourceRT="SHADOWBUF"      bufIndex="32" />
+      <BindBuffer sampler="gCloudShadowMap"   sourceRT="CLOUDSHADOWS"   bufIndex="0" addressMode="wrap" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="always" stencilMode="maskReadInvert" stencilMask="9" stencilRef="0"/>
+      <DrawQuadMT material="materials/Light.material.mbin" context="SHADOW_APPLY"/>
+
+      <UnbindBuffers />
+      <EndTarget flushCB="false" flushDB="true" />
+    </Stage>
+
+    <Stage id="Spotlights">
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH" />
+
+      <ColourMask channels="RGB"  colBuf1="false"  colBuf2="false" />
+      <BindBuffer sampler="gBufferMap"      sourceRT="GBUFFER"       bufIndex="0"  />
+      <BindBuffer sampler="gBuffer1Map"     sourceRT="DEPTH_LINEAR"  bufIndex="0"  />
+      <BindBuffer sampler="gBuffer2Map"     sourceRT="GBUFFER"       bufIndex="2"  />
+      <BindBuffer sampler="gBuffer3Map"     sourceRT="GBUFFER"       bufIndex="3"  />
+      <BindBuffer sampler="gBuffer4Map"     sourceRT="DUMMY_AO"      bufIndex="0" addressMode="clamp" />
+      <BindBuffer sampler="gShadowMap"      sourceRT="SHADOWBUF"     bufIndex="32" />
+      <BindBuffer sampler="gCloudShadowMap" sourceRT="CLOUDSHADOWS"  bufIndex="0" addressMode="wrap" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="add"    stencilMode="maskReadInvert" depthTest="greaterEqual" depthBounds="true" />
+      <DoDeferredLightLoop context="SPOTLIGHT_INNER" inner="true"/>
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add"    stencilMode="maskReadInvert" depthTest="less" depthBounds="true" />
+      <DoDeferredLightLoop context="SPOTLIGHT_OUTER" inner="false"/>
+      <SetContext stencilMode="disabled" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="true" />
+    </Stage>
+
+    <Stage id="BlendedAbove">
+      <BeginTarget target="HDRBUF_0" depthTarget="DEPTH"/>
+
+      <ColourMask channels="RGBA" colBuf1="false" />
+      <BindBuffer sampler="gShadowMap"       sourceRT="SHADOWBUF"       bufIndex="32" />
+      <BindBuffer sampler="gCloudShadowMap"  sourceRT="CLOUDSHADOWS"    bufIndex="0" addressMode="wrap" />
+
+      <!-- Quads -->
+      <SetContext zwrite="true" colourWrite="true" cullMode="front"  blendMode="blend" depthTest="less" stencilMode="maskWrite" stencilRef="4"  stencilMask="4" />
+      <DoForwardLightLoop type="QUAD"     class="Opaque"  context="LIGHTING"  order="" />
+      <SetContext zwrite="true" colourWrite="true" cullMode="back"  blendMode="blend" depthTest="less" stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="QUAD"     class="Opaque"  context="LIGHTING"  order="" />
+
+      <!-- Lines -->
+      <ColourMask channels="RGB" colBuf1="false" />
+      <!--a = alpha offset, b = noise threshold, c = is underground, d = alpha noise factor-->
+      <BindBuffer sampler="gBufferMap" sourceRT="DEPTH_LINEAR" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none"  blendMode="add" depthTest="always" stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="LINE"     class="Opaque"  context="SUBSTANCES"  order="" />
+
+      <ColourMask channels="RGB" colBuf1="false" />
+      <!-- player gun additive. has to be rendered before the laser so it can lay down the stencil.-->
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="less" stencilMode="maskWrite" stencilRef="7" stencilMask="7" />
+      <DrawGeometry type="Mesh"         class="GunAdditive"    context="LIT_FORWARD"             order="STATECHANGES" />
+
+      <!-- Transparent Objects -->
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="Mesh"     class="Additive"    context="LIT_FORWARD" order="BACK_TO_FRONT" />
+
+      <ColourMask channels="RGBA" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="Mesh"     class="Translucent" context="LIT_FORWARD" order="BACK_TO_FRONT" />
+      <DoForwardLightLoop type="Mesh"     class="WarpInShip"  context="LIT_FORWARD" order="BACK_TO_FRONT" />
+      <DoForwardLightLoop type="Mesh"     class="Rainbow"     context="RAINBOW"     order="BACK_TO_FRONT" />
+
+      <!-- PlaneSpotlight Object -->
+      <ColourMask channels="RGB" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="add" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="Mesh"     class="PlaneSpot"    context="LIT_FORWARD"  contextVariant="1" order="BACK_TO_FRONT" />
+
+      <!--<ClearTarget colBuf0="false" depthBuf="false" stencilBuf="true" />-->
+      <ColourMask channels="RGB" colBuf1="true" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="lessEqual" stencilMode="maskWrite"  stencilRef="36"  stencilMask="36"/>
+      <DoForwardLightLoop type="Mesh"     class="Highlight"            context="LIT_FORWARD" order="BACK_TO_FRONT" />
+      <SetContext stencilMode="disabled" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="blend" depthTest="lessEqual" stencilMode="maskWrite"  stencilRef="36"  stencilMask="36"/>
+      <DoForwardLightLoop type="Mesh"     class="HighlightDoubleSided" context="LIT_FORWARD" order="BACK_TO_FRONT" />
+      <SetContext stencilMode="disabled" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="blend" depthTest="lessEqual" stencilMode="maskWrite"   stencilRef="36"  stencilMask="36"/>
+      <DoForwardLightLoop type="Mesh"     class="HighlightTrans"            context="LIT_FORWARD" order="BACK_TO_FRONT" />
+      <SetContext stencilMode="disabled" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="blend" depthTest="lessEqual" stencilMode="maskWrite"  stencilRef="36"  stencilMask="36"/>
+      <DoForwardLightLoop type="Mesh"     class="HighlightTransDoubleSided" context="LIT_FORWARD" order="BACK_TO_FRONT" />
+      <SetContext stencilMode="disabled" />
+
+      <!-- Trails -->
+      <ColourMask channels="RGB" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="blend" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="Trail" class="Translucent" context="LIGHTING" order="BACK_TO_FRONT" />
+
+      <ColourMask channels="RGB" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="add"   depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="Trail" class="Additive"    context="LIGHTING" order="BACK_TO_FRONT" />
+
+      <!--Single Lines-->
+      <ColourMask channels="RGBA" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none"  blendMode="blend" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4" />
+      <DoForwardLightLoop type="SingleLine" class="Opaque" context="LIGHTING" order="" />
+
+      <!--Single Lines-->
+      <ColourMask channels="RGB" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="add" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4" />
+      <DoForwardLightLoop type="SingleLine" class="Additive" context="LIGHTING" order="" />
+      <SetContext stencilMode="disabled" />
+
+      <!-- Markers -->
+      <ColourMask channels="RGBA" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4" />
+      <DoForwardLightLoop type="Mesh" class="Map" context="SCREEN_MAP" order="BACK_TO_FRONT" />
+
+      <!-- Glow Translucent RGB -->
+      <ColourMask channels="RGB" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="less"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4" />
+      <DoForwardLightLoop type="Mesh"  class="GlowTranslucent" context="LIT_FORWARD" order="BACK_TO_FRONT" />
+
+      <SetContext zwrite="false" colourWrite="false" cullMode="none" blendMode="add" depthTest="less" stencilMode="maskWrite" stencilRef="4"  stencilMask="7" />
+
+      <!-- render the player laser stencil-only, to mask it in the TAA -->
+      <!-- results in some overzealous clipping in AA but should be hard to see, the gun moves a lot -->
+      <DoForwardLightLoop type="SingleLine" class="PlayerGunLaser" context="LIGHTING" order="" />
+      <DoForwardLightLoop type="SingleLine" class="PlayerGunLaserCore" context="LIGHTING" order="" />
+
+      <ColourMask channels="RGB" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="add" depthTest="less" stencilMode="maskReadInvert" stencilRef="3" stencilMask="7" />
+
+      <!-- player laser. actual colour rendering masked by the gun -->
+      <DoForwardLightLoop type="SingleLine" class="PlayerGunLaser" context="LIGHTING" order="" />
+      <DoForwardLightLoop type="SingleLine" class="PlayerGunLaserCore" context="LIGHTING" order="" />
+
+      <ColourMask channels="RGBA" colBuf1="false" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always"  stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="Mesh"     class="WarpOnFoot" context="LIT_FORWARD" order="BACK_TO_FRONT" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="invSourceAlpha" depthTest="lessEqual" stencilMode="maskWrite" stencilRef="4"  stencilMask="4"/>
+      <DoForwardLightLoop type="Mesh"         class="UIScreen"         context="LIT_FORWARD"            order="BACK_TO_FRONT" />
+
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+
+      <!-- Glow Translucent Alpha -->
+      <BeginTarget target="GBUFFER" depthTarget="DEPTH" />
+      <ColourMask channels="A" colBuf1="false" colBuf2="false" colBuf3="false" />
+      <BindBuffer sampler="gShadowMap"       sourceRT="SHADOWBUF"       bufIndex="32" />
+      <BindBuffer sampler="gCloudShadowMap"  sourceRT="CLOUDSHADOWS"    bufIndex="0" addressMode="wrap" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="Blend_OutputAlpha" depthTest="less" />
+      <DoForwardLightLoop type="Mesh"  class="GlowTranslucent" context="LIT_FORWARD"    order="BACK_TO_FRONT" />
+      <DoForwardLightLoop type="Trail" class="Translucent"     context="LIGHTING_GLOW"  order="BACK_TO_FRONT"  />
+      <DoForwardLightLoop type="Trail" class="Additive"        context="LIGHTING_GLOW"  order="BACK_TO_FRONT" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="true" />
+    </Stage>
+
+    <Stage id="CopyTo">
+      <BeginTarget target="" />
+      <ColourMask channels="RGB"/>
+      <BindBuffer sampler="gBufferMap" sourceRT="HDRBUF_0" bufIndex="0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" stencilMode="disabled" />
+      <DrawQuad material="materials/PostProcess.material.mbin" context="COPY" />
+      <UnbindBuffers />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+    
+    <Stage id="Reset States">
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+  </CommandQueue>
+
+</Pipeline>
