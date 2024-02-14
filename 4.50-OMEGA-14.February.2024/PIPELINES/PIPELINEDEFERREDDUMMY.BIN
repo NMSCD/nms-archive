@@ -1,0 +1,400 @@
+<!-- High Dynamic Range (HDR) utf-8Shading Pipeline -->
+<Pipeline>
+  <Setup>
+    <ScaleInfo resScalingDefault="true" />
+    
+    <RenderTarget id="SHADOWBUF"   depthBuf="true"  numColBufs="0"  format="RGBA8" depthFormat="DEPTH16" scale="1.0" width="5760" height="1920" maxSamples="0" shadow="true" hasMips="false" numUniformBuffers="3" crossPipeShareId="SHADOW_SHARED" />
+    <RenderTarget id="SHADOWBUF_DS"   depthBuf="true"  numColBufs="0"  format="RED16F" depthFormat="DEPTH16" scale="1.0" width="2880" height="960" maxSamples="0" shadow="true" hasMips="false" numUniformBuffers="1" esramPageDepthBuf="215" />
+
+    <RenderTarget id="GBUFFER"     depthBuf="false" numColBufs="4"  format0="RGBA8" format1="RG8" format2="RGB10A2" format3="RGBA8" scale="1.0" maxSamples="0" pointSampleColBuf1="true" pointSampleColBuf2="true" pointSampleColBuf3="true"  esramPageColBuf2="215" crossPipeShareId="GBUFFER_SHARED" />
+
+    <RenderTarget id="TAA_FRONT"    depthBuf="false" numColBufs="3"  format0="R11FG11FB10F" format1="R11FG11FB10F" format2="RGBA8" bilinear="true" scale="1.0" maxSamples="0"  shareTarget0="HDRBUF_1"  shareBuffer0="0" shareTarget1="LENSFINAL_OR_UI_COMBINE_BUF"  shareBuffer1="0" shareBuffer2="-1"  allowDcc="false"  />
+
+    <RenderTarget id="TAA_BACK"    depthBuf="false" numColBufs="3"  format0="R11FG11FB10F" format1="R11FG11FB10F" format2="RGBA8" bilinear="true" scale="1.0" maxSamples="0"  shareTarget0="HDRBUF_1"  shareBuffer0="0" shareTarget1="BACK_LENSFINAL_OR_UI_COMBINE_BUF" shareBuffer1="0" shareBuffer2="-1"  allowDcc="false"  />
+
+    <RenderTarget id="FINAL"            depthBuf="false" numColBufs="2"  format0="R11FG11FB10F" format1="RED8"         bilinear="true" scale="1.0"                                    shareTarget0="HDRBUF_1"  shareBuffer0="0"  shareTarget1="LUT_MASK_FINAL" shareBuffer1="0"   allowDcc="false"  esramPageColBuf0="215"   />
+
+    <RenderTarget id="SUNOUT_0"         depthBuf="false" numColBufs="2"  format0="R11FG11FB10F" format1="R11FG11FB10F" bilinear="true" scale="1.0" maxSamples="0"   shareTarget0="HDRBUF_0"  shareBuffer0="0"  shareTarget1="HDRBUF_1"       shareBuffer1="0" />
+   
+    <RenderTarget id="BLENDED_ABOVE"    depthBuf="false" numColBufs="2"  format0="R11FG11FB10F" format1="RED8"         bilinear="true" scale="1.0" maxSamples="0"   shareTarget0="HDRBUF_0"  shareBuffer0="0"  shareTarget1="HBAOBUF"        shareBuffer1="0" />   
+    
+    <RenderTarget id="HDRBUF_0"    depthBuf="false" numColBufs="1"  format="R11FG11FB10F" bilinear="true" scale="1.0" maxSamples="0"   esramPageColBuf0="306" />
+
+    <RenderTarget id="HDRBUF_1"    depthBuf="false" numColBufs="1"  format="R11FG11FB10F" bilinear="true" scale="1.0" maxSamples="0"   esramPageColBuf0="397" allowDcc="false" />
+
+    <RenderTarget id="LUT_MASK"                        depthBuf="false"  numColBufs="1"  format="RED8" bilinear="true" scale="1.0"  allowDcc="false" shareTarget0="HBAOBUF"  shareBuffer0="0" />
+
+    <RenderTarget id="LUT_MASK_FINAL"                  depthBuf="false"  numColBufs="1"  format="RED8" bilinear="true" scale="1.0"  allowDcc="false" />
+    
+    <RenderTarget id="HBAOBUF"                         depthBuf="false"  numColBufs="1"  format="RED8" bilinear="true" scale="1.0"  allowDcc="false"  />
+    <RenderTarget id="HBAO"                            depthBuf="false"  numColBufs="1"  format="RED16F" scale="0.5" maxSamples="0" pointSampleColBuf0="true"  allowDcc="false"  />
+    
+    <RenderTarget id="LIGHTSHAFT"                      depthBuf="false"  numColBufs="1"  format="RED16F" scale="0.5" maxSamples="0" pointSampleColBuf0="true" shareTarget0="VOLUME" shareBuffer0="1"  />
+    <RenderTarget id="BLUR1_REDONLY"                   depthBuf="false"  numColBufs="1"  format="RED16F" scale="0.5" maxSamples="0" pointSampleColBuf0="true"  allowDcc="false" />
+
+    <RenderTarget id="VOLUME"      depthBuf="false" numColBufs="2"  format0="RGBA16F" format1="RED16F" scale="0.5" maxSamples="0" pointSampleColBuf0="true" pointSampleColBuf1="true"   />
+    <RenderTarget id="BLUR1"       depthBuf="false"  numColBufs="1"  format="RGBA16F" scale="0.5" maxSamples="0" pointSampleColBuf0="true"  esramPageColBuf0="215" />
+
+    <RenderTarget id="DEPTH"       depthBuf="true"   depthBufUsesBB="true" numColBufs="0"  format="RGBA8" scale="1.0" maxSamples="0" stencilBuf="true"   esramPageDepthBuf="0" crossPipeShareId="DEPTH_SHARED" />
+    <RenderTarget id="DEPTH_DOWN"  depthBuf="false"  numColBufs="1"  format="RED32F"   scale="0.5" maxSamples="0" pointSampleColBuf0="true"  allowDcc="false"   esramPageColBuf0="488"  />
+    <RenderTarget id="DEPTH_PART"  depthBuf="false"  numColBufs="1"  format="RED32F"   scale="0.5" maxSamples="0" pointSampleColBuf0="true"   />
+    <RenderTarget id="DEPTH_LINEAR"  depthBuf="false"  numColBufs="1"  format="RED32F"   scale="1.0" maxSamples="0" pointSampleColBuf0="true"  esramPageColBuf0="124"  crossPipeShareId="DEPTH_LINEAR_SHARED" />
+    <RenderTarget id="DEPTH_ASYNC"  depthBuf="false"  numColBufs="1"  format="RED32F"   scale="1.0" maxSamples="0" pointSampleColBuf0="true"   esramPageColBuf0="124"  />
+
+    <!--<RenderTarget id="CLOUDS_DEPTH"     depthBuf="true"  numColBufs="1" format="RED8" bilinear="true" scale="0.125" />
+    <RenderTarget id="CLOUDS_LOW"     depthBuf="false"  numColBufs="2" format0="RGBA8"  format1="RED32F" bilinear="true" scale="0.125" />
+    <RenderTarget id="CLOUDS_MED"     depthBuf="false"  numColBufs="2" format0="RGBA8"  format1="RED32F" bilinear="true" scale="0.125" />-->
+    <RenderTarget id="CLOUDS_HIGH"    depthBuf="false"  numColBufs="2" format0="RGBA8"  format1="RED32F" bilinear="true" scale="0.25"  allowDcc="false"  />
+    <RenderTarget id="CLOUDSHADOWS"   depthBuf="false" numColBufs="1" format="RED8" bilinear="true" scale="0.5" allowDcc="false" />
+    
+    <RenderTarget id="CLOUD_BLURBUF1" depthBuf="false" numColBufs="1" format="RGBA8" bilinear="true" scale="0.25" allowDcc="false" />
+    <RenderTarget id="CLOUD_BLURBUF2" depthBuf="false" numColBufs="1" format="RGBA8" bilinear="true" scale="0.25" allowDcc="false" />
+
+    <RenderTarget id="WATER"          depthBuf="false" numColBufs="1" format="RGBA16F" bilinear="true" scale="0.5"   esramPageColBuf0="215" shareTarget0="PARTICLES" />
+    <RenderTarget id="PARTICLES"      depthBuf="false" numColBufs="1" format="RGBA16F" bilinear="true" scale="0.5"   esramPageColBuf0="124" />
+    <RenderTarget id="PARTICLES_DEPTH" depthBuf="true" numColBufs="0" format="RGBA8" scale="0.5" maxSamples="0" pointSampleColBuf0="true"   />
+
+    <RenderTarget id="DOF_DOWNSAMPLE" depthBuf="false" numColBufs="2" format0="R11FG11FB10F" format1="RED8" bilinear="true" scale="0.5" allowDcc="false"  />
+       
+    <RenderTarget id="DOF_BLURBUF1"   depthBuf="false" numColBufs="2" format0="R11FG11FB10F" format1="RED8" bilinear="true" scale="0.5" allowDcc="false" />
+
+    <RenderTarget id="BLOOM_BLURBUF1" depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.25"  allowDcc="false" />
+    <RenderTarget id="BLOOM_BLURBUF2" depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.25"  allowDcc="false" esramPageColBuf0="488" />
+    <RenderTarget id="BLOOM_BLURBUF2DG" depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.25" allowDcc="false" esramPageColBuf0="488" />
+    <RenderTarget id="BLOOM_BLURBUF3" depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.25"  allowDcc="false" />
+    <RenderTarget id="BLOOM_BLURBUF4" depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.25"  allowDcc="false" esramPageColBuf0="500"  />
+    
+    <RenderTarget id="MOTION_MAXBUF_H" depthBuf="false" numColBufs="1" format="RGBA8" bilinear="true" scaleX="0.125" scaleY="1.0"   crossPipeShareId="MOTION_HORZ" />
+    <RenderTarget id="MOTION_MAXBUF" depthBuf="false" numColBufs="1" format="RGBA8" bilinear="true" scale="0.125"   />
+    
+    <RenderTarget id="DOF_MAXBUF_H" depthBuf="false" numColBufs="1" format="RGBA8" bilinear="true" scaleX="0.0625" scaleY="1.0"   allowDcc="false" />
+    <RenderTarget id="DOF_MAXBUF" depthBuf="false" numColBufs="1" format="RGBA8" bilinear="true" scale="0.0625"   allowDcc="false" />
+
+    <RenderTarget id="LENS_BLURBUF"   depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.25" allowDcc="false" />
+    <RenderTarget id="LENSFLAREBUF"   depthBuf="false" numColBufs="1" format="R11FG11FB10F" bilinear="true" scale="0.25" allowDcc="false" />
+
+    <RenderTarget id="MOTIONRESOLVE"    depthBuf="false" numColBufs="1" format="R11FG11FB10F" scale="1.0" maxSamples="0"  esramPageColBuf0="215"   />
+
+    <RenderTarget id="FINAL_OR_DOF_TONEMAP"    depthBuf="false" numColBufs="1" format="R11FG11FB10F" scale="1.0" maxSamples="0"   allowDcc="false" />
+
+    <RenderTarget id="BACK_LENSFINAL_OR_UI_COMBINE_BUF"     depthBuf="false" numColBufs="1" format="R11FG11FB10F"  bilinear="true" scale="1.0"  allowDcc="false" />
+
+    <RenderTarget id="LENSFINAL_OR_UI_COMBINE_BUF"     depthBuf="false" numColBufs="1" format="R11FG11FB10F"  bilinear="true" scale="1.0"  allowDcc="false" />
+    
+    <!--<RenderTarget id="SUNOUT_1"    depthBuf="false" numColBufs="1"  format0="R11FG11FB10F" bilinear="true" scale="1.0" maxSamples="0"  crossPipeShareId="MOTION_SUN_SHARE_ID" />-->
+  
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+   
+    <Stage id="Attributes">
+     
+      
+    </Stage>
+
+    <Stage id="CopyDepth">
+    
+    </Stage>
+    
+   
+    <Stage id="CloudsHigh">
+     
+
+    </Stage>
+    
+    <Stage id="CloudsBlur">
+      
+    </Stage>
+
+    <Stage id="CloudsShadows">      
+      
+    </Stage>
+    
+    <Stage id="Shadow_All_Clear">
+    
+    </Stage>
+
+    <Stage id="HBAO" enabled="true">
+
+     
+    </Stage>
+    
+    <Stage id="NO_HBAO" enabled="false">
+     
+    </Stage>
+
+    <Stage id="Decals">
+
+      
+    </Stage>
+
+    <Stage id="Shadow_0_Clear" enabled="false">
+     
+    </Stage>
+
+    <Stage id="Shadow_0">
+      
+  
+    </Stage>
+
+    <Stage id="Shadow_1_Clear" enabled="false">
+     
+    </Stage>
+
+    <Stage id="Shadow_1">
+      
+     
+    </Stage>
+
+    <Stage id="Shadow_2_Clear" enabled="false">
+      
+    </Stage>
+
+    <Stage id="Shadow_2">
+      
+    </Stage>
+
+    <Stage id="Shadow_End">
+     
+    </Stage>
+         
+    <Stage id="SkyScratchPad" enabled="false" >
+    
+
+    </Stage>
+    
+    <Stage id="Sky">
+
+
+    </Stage>
+    
+      
+    <Stage id="Sunlight">
+
+   
+
+    </Stage>
+    <Stage id="ShadowApply" >
+
+    
+    </Stage>
+
+
+    <Stage id="Spotlights">
+      
+    </Stage>
+
+      
+    <Stage id="WaterFromAbove"  >   
+    
+
+    </Stage>
+
+    <Stage id="Shadow_DS">
+     
+    </Stage>         
+      
+    <Stage id="Volumetrics">
+
+    </Stage>
+
+    <Stage id="PlanetCloud">
+      
+    
+      
+    </Stage>
+          
+    <Stage id="VolumetricsUPS">
+  
+
+    </Stage>
+
+    <Stage id="BlackHole">
+     
+
+    </Stage>
+
+    <Stage id="CloudsCopy">     
+     
+    </Stage>
+
+    <Stage id="WaterFromBelow">
+
+    
+    </Stage>
+    
+    <Stage id="BlendedAbove">
+      
+    
+
+    </Stage>
+      
+    <Stage id="3dLines">
+     
+    </Stage>
+    
+    <Stage id="LUTMaskClear" enabled="false" >
+    
+    </Stage>
+
+    <Stage id="LightShafts" enabled="false">
+
+    </Stage>
+    <Stage id="LightShaftsBlur" enabled="false">      
+    
+
+    </Stage>
+
+    <Stage id="BloomCopy">
+                       
+     
+    </Stage>
+
+    <Stage id="MOTIONRESOLVE">
+     
+    </Stage> 
+
+    <Stage id="MOTIONDILATE">
+      
+    </Stage> 
+
+   <Stage id="TAA_NONE" enabled="false">
+      
+    </Stage> 
+
+   <Stage id="TAA_APPLY" enabled="false">
+     
+    </Stage> 
+
+   <Stage id="TAA_APPLY_CLIP" enabled="false">
+    
+    </Stage> 
+
+   <Stage id="TAA_APPLY_TEST" enabled="false">
+     
+    </Stage> 
+
+    <Stage id="Particles">
+
+      
+
+    </Stage>
+
+    <Stage id="SpeedLines">
+     
+    </Stage>
+
+    <Stage id="ApplyPostTaa" enabled="true" >
+
+    
+
+    </Stage>
+
+    <Stage id="CopyDepth2">
+
+     
+
+    </Stage>
+
+
+    <Stage id="MotionblurNormal" enabled="false">
+    
+    </Stage> 
+
+    <Stage id="Motionblur" enabled="false">
+   
+    </Stage> 
+
+    <Stage id="MotionblurUltra" enabled="false">
+     
+    </Stage> 
+
+    <Stage id="DepthOfFieldBokeh">
+    
+     
+    </Stage>
+
+    <Stage id="DepthOfFieldBlur_ToneMap">
+      
+   </Stage>
+
+    <Stage id="DepthOfFieldBlur_ToneMap_4x"  enabled="false" >
+   
+   </Stage>
+
+    <Stage id="DepthOfFieldBlur_ToneMap_16x"  enabled="false" >
+   
+   </Stage>
+    
+   <Stage id="DepthOfFieldBlur">
+    
+     
+    </Stage>
+    
+    <Stage id="Bloom">
+                       
+    
+    </Stage>
+
+
+    <Stage id="LensFlare">
+    
+
+    </Stage>
+
+    <Stage id="SCREENEFFECT">      
+     
+    </Stage>
+
+    <Stage id="LUTMaskSwap" enabled="false" >
+      
+    </Stage> 
+      
+    <Stage id="CombineNoAA_Async"  enabled="false">
+     
+    </Stage>
+    
+    <Stage id="CombineHDRNoAA_Async"  enabled="false">
+     
+    </Stage>
+              
+    <Stage id="Combine">
+    
+    </Stage>
+    
+    <Stage id="CombineNoAA"  enabled="false">
+    
+    </Stage>
+
+    <Stage id="CombineHDRNoAA"  enabled="false">
+     
+    </Stage>
+
+    <Stage id="LUTMaskSwapBack" enabled="false" >
+      
+    </Stage> 
+      
+    <Stage id="FXAA" enabled="false">
+   
+    </Stage>
+      
+    <Stage id="LUTMaskCopy" enabled="false" >
+ 
+    </Stage>
+
+    <Stage id="UI">
+    </Stage>
+
+    <Stage id="Debug" enabled="false">
+    </Stage>
+    
+   <Stage id="TAA_NONE_RESET" enabled="false">
+    </Stage> 
+
+    <Stage id="Reset States">
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>
