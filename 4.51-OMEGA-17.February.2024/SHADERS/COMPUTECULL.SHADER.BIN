@@ -1,0 +1,24 @@
+[[FX]]
+
+// Contexts
+context BUILD_INST_BUFF
+{
+    ComputeShader = compile GLSL CS_BUILD_INSTANCE_BUFFER;
+}
+
+// Contexts
+context CLEAR_DRAW_COUNTS
+{
+    ComputeShader = compile GLSL CS_CLEAR_DRAW_COUNTS;
+}
+
+[[CS_BUILD_INSTANCE_BUFFER]]
+// =================================================================================================
+#define D_BUILD_INSTANCE_BUFFER
+#define D_USE_CROSS_LANE
+#include "Custom/ComputeCull.shader.h"
+
+[[CS_CLEAR_DRAW_COUNTS]]
+// =================================================================================================
+#define D_CLEAR_DRAW_COUNTS
+#include "Custom/ComputeCull.shader.h"
