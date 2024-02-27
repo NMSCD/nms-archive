@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (4.52.0)-->
+<Data template="GcModularCustomisationDataTable">
+  <Property name="ModularCustomisationConfigs">
+    <Property name="MultiToolStaff" value="GcModularCustomisationConfig.xml">
+      <Property name="TitleLocId" value="UI_MULTITOOL_STAFF_BUILDER" />
+      <Property name="BaseResource" value="GcExactResource.xml">
+        <Property name="Filename" value="MODELS/COMMON/WEAPONS/MULTITOOL/STAFFMULTITOOL.SCENE.MBIN" />
+        <Property name="GenerationSeed" value="GcSeed.xml">
+          <Property name="Seed" value="0" />
+          <Property name="UseSeedValue" value="True" />
+        </Property>
+      </Property>
+      <Property name="ModelRenderData" value="TkModelRendererData.xml">
+        <Property name="Camera" value="TkModelRendererCameraData.xml">
+          <Property name="Distance" value="0.95" />
+          <Property name="Offset" value="Vector3f.xml">
+            <Property name="x" value="-0.02" />
+            <Property name="y" value="-0.105" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="Roll" value="-10" />
+          <Property name="Pitch" value="30" />
+          <Property name="Rotate" value="-45" />
+          <Property name="LightPitch" value="45" />
+          <Property name="LightRotate" value="-45" />
+          <Property name="Wander" value="TkCameraWanderData.xml">
+            <Property name="CamWander" value="False" />
+            <Property name="CamWanderPhase" value="0.003" />
+            <Property name="CamWanderAmplitude" value="0.5" />
+          </Property>
+        </Property>
+        <Property name="Fov" value="20" />
+        <Property name="AspectRatio" value="1" />
+        <Property name="LightIntensityMultiplier" value="2.5" />
+        <Property name="ThumbnailMode" value="None" />
+        <Property name="FocusType" value="ResourceBounds" />
+        <Property name="FocusLocator" value="" />
+        <Property name="FocusOffset" value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property name="FocusInterpTime" value="0" />
+        <Property name="BlendInTime" value="0.8" />
+        <Property name="BlendInOffset" value="0" />
+        <Property name="Anim" value="" />
+        <Property name="HeightOffset" value="0.005" />
+        <Property name="UsePlayerCameraInHmd" value="True" />
+        <Property name="AlignUIToCameraInHmd" value="False" />
+        <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+        <Property name="LookForFocusInMasterModel" value="False" />
+        <Property name="FlipRotationIfNecessary" value="False" />
+      </Property>
+      <Property name="InteractionCameraData" value="TkModelRendererData.xml">
+        <Property name="Camera" value="TkModelRendererCameraData.xml">
+          <Property name="Distance" value="1.6" />
+          <Property name="Offset" value="Vector3f.xml">
+            <Property name="x" value="-0.42" />
+            <Property name="y" value="-0.22" />
+            <Property name="z" value="0" />
+          </Property>
+          <Property name="Roll" value="0" />
+          <Property name="Pitch" value="15" />
+          <Property name="Rotate" value="-8" />
+          <Property name="LightPitch" value="45" />
+          <Property name="LightRotate" value="45" />
+          <Property name="Wander" value="TkCameraWanderData.xml">
+            <Property name="CamWander" value="False" />
+            <Property name="CamWanderPhase" value="0.003" />
+            <Property name="CamWanderAmplitude" value="0.5" />
+          </Property>
+        </Property>
+        <Property name="Fov" value="30" />
+        <Property name="AspectRatio" value="1.7777" />
+        <Property name="LightIntensityMultiplier" value="1" />
+        <Property name="ThumbnailMode" value="None" />
+        <Property name="FocusType" value="ResourceBounds" />
+        <Property name="FocusLocator" value="" />
+        <Property name="FocusOffset" value="Vector3f.xml">
+          <Property name="x" value="0" />
+          <Property name="y" value="0" />
+          <Property name="z" value="0" />
+        </Property>
+        <Property name="FocusInterpTime" value="0" />
+        <Property name="BlendInTime" value="0.8" />
+        <Property name="BlendInOffset" value="0" />
+        <Property name="Anim" value="" />
+        <Property name="HeightOffset" value="0.005" />
+        <Property name="UsePlayerCameraInHmd" value="True" />
+        <Property name="AlignUIToCameraInHmd" value="False" />
+        <Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="False" />
+        <Property name="LookForFocusInMasterModel" value="False" />
+        <Property name="FlipRotationIfNecessary" value="False" />
+      </Property>
+      <Property name="Slots">
+        <Property value="GcModularCustomisationSlotConfig.xml">
+          <Property name="SlotID" value="STAFF_HEAD" />
+          <Property name="LabelLocID" value="UI_STAFF_INPUT_HEAD" />
+          <Property name="IncludeInSeed" value="True" />
+          <Property name="SlotEmptyCustomisation" value="GcModularCustomisationSlotItemData.xml">
+            <Property name="ItemID" value="" />
+            <Property name="ActivatedDescriptorGroupIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="STAFF_HEAD_NULL" />
+              </Property>
+            </Property>
+          </Property>
+          <Property name="SlottableItems">
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_PART_C" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_HEAD_1" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_HEAD1" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_HEAD_2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_HEAD2" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_HEAD_3" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_HEAD4A" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_HEAD_5" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_HEAD4B" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_HEAD_5A" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_HEAD5" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_HEAD_6" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_HEAD6" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_HEAD_7" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcModularCustomisationSlotConfig.xml">
+          <Property name="SlotID" value="STAFF_CORE" />
+          <Property name="LabelLocID" value="UI_STAFF_INPUT_CORE" />
+          <Property name="IncludeInSeed" value="False" />
+          <Property name="SlotEmptyCustomisation" value="GcModularCustomisationSlotItemData.xml">
+            <Property name="ItemID" value="" />
+            <Property name="ActivatedDescriptorGroupIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="STAFF_CORE_NULL" />
+              </Property>
+            </Property>
+          </Property>
+          <Property name="SlottableItems">
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_PART_B" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_CORE_1" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_CORE1" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_CORE_2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_CORE2" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_CORE_3" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_CORE4" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_CORE_5" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_CORE5" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_CORE_6" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_CORE6" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_CORE_7" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+        <Property value="GcModularCustomisationSlotConfig.xml">
+          <Property name="SlotID" value="STAFF_POLE" />
+          <Property name="LabelLocID" value="UI_STAFF_INPUT_POLE" />
+          <Property name="IncludeInSeed" value="False" />
+          <Property name="SlotEmptyCustomisation" value="GcModularCustomisationSlotItemData.xml">
+            <Property name="ItemID" value="" />
+            <Property name="ActivatedDescriptorGroupIDs">
+              <Property value="NMSString0x10.xml">
+                <Property name="Value" value="STAFF_POLE_NULL" />
+              </Property>
+            </Property>
+          </Property>
+          <Property name="SlottableItems">
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_PART_A" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_POLE_1" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_POLE1" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_POLE_2" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_POLE2" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_POLE_3" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_POLE4" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_POLE_5" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_POLE5" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_POLE_6" />
+                </Property>
+              </Property>
+            </Property>
+            <Property value="GcModularCustomisationSlotItemData.xml">
+              <Property name="ItemID" value="STAFF_POLE6" />
+              <Property name="ActivatedDescriptorGroupIDs">
+                <Property value="NMSString0x10.xml">
+                  <Property name="Value" value="STAFF_POLE_7" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+</Data>
