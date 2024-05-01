@@ -1,0 +1,65 @@
+[[FX]]
+
+// Samplers
+sampler gDualPMapFront = sampler_state
+{
+	TexUnit = 10;
+};
+
+sampler gDualPMapBack = sampler_state
+{
+	TexUnit = 11;
+};
+
+// Samplers
+sampler gIBLIndoorMapFront = sampler_state
+{
+	TexUnit = 12;
+};
+
+sampler gIBLIndoorMapBack = sampler_state
+{
+	TexUnit = 13;
+};
+
+
+// Uniforms
+float4 gGenericParam0Vec4 = { 1.0, 0.0, 0.0, 0.0 };
+float4 gGenericParam1Vec4 = { 1.0, 0.0, 0.0, 0.0 };
+
+
+// Contexts
+
+context BLEND_INDOORS
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_BLEND_INDOORS;
+}
+
+context INTEGRATE
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_INTEGRATE;
+}
+
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#define D_IBL
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_BLEND_INDOORS]]
+// =================================================================================================
+#define D_IBL
+#define D_BLEND_INDOORS
+#include "Fullscreen/ImageBasedLightingFragment.shader.h"
+
+[[FS_INTEGRATE]]
+// =================================================================================================
+#define D_IBL
+#define D_INTEGRATE
+#include "Fullscreen/ImageBasedLightingFragment.shader.h"
+ 
+
+
+
