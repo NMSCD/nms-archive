@@ -1,0 +1,199 @@
+[[FX]]
+
+// Samplers
+sampler gBufferMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 0;
+};
+
+sampler gBuffer1Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 1;
+};
+
+sampler gBuffer2Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 2;
+};
+
+sampler gBuffer3Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 3;
+};
+
+sampler gBuffer4Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 4;
+};
+
+sampler gBuffer5Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 5;
+};
+
+sampler gColourLUTBase = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 6;
+};
+
+sampler gColourLUTFar = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 7;
+};
+
+sampler gColourLUTStorm = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 8;
+};
+
+sampler gColourLUTEffect = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 9;
+};
+
+sampler gDualPMapFront = sampler_state
+{
+    TexUnit = 10;
+};
+
+sampler gDualPMapBack = sampler_state
+{
+    TexUnit = 11;
+};
+
+
+
+// Uniforms
+float4 gTextureSizeMipLevelVec4 = { 0.0, 0.0, 0.0, 0.0 };
+
+// Contexts
+
+context GENMIPMAP
+{
+	VertexShader = compile GLSL VS_FSQUAD;
+	PixelShader  = compile GLSL FS_GENMIPMAP;
+}
+
+context COMPRESSMIP
+{
+	VertexShader  = compile GLSL VS_FSQUAD;
+	PixelShader   = compile GLSL FS_COMPRESSMIP;
+    ComputeShader = compile GLSL CS_COMPRESSBC3;
+}
+
+
+context COMPRESSBC1
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_COMPRESSMIPBC1;
+    ComputeShader = compile GLSL CS_COMPRESSBC1;
+}
+
+
+context COMPRESSBC5
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_COMPRESSMIPBC5;
+    ComputeShader = compile GLSL CS_COMPRESSBC5;
+}
+
+
+context COMPRESSBC7
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_COMPRESSMIPBC7;
+    ComputeShader = compile GLSL CS_COMPRESSBC7;
+}
+
+context COMPRESSBC7_TER
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_COMPRESSBC7_TERR;
+    ComputeShader = compile GLSL CS_COMPRESSBC7_TERR;
+}
+
+
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_GENMIPMAP]]
+// =================================================================================================
+#define D_GENMIPMAP
+#include "Fullscreen/MipDownsampleFragment.shader.h"
+ 
+[[FS_COMPRESSMIP]]
+// =================================================================================================
+#define D_COMPRESSMIP
+#include "Fullscreen/CompressFragment.shader.h"
+
+[[FS_COMPRESSMIPBC1]]
+// =================================================================================================
+#define D_COMPRESSMIP
+#define D_DXT1
+#include "Fullscreen/CompressFragment.shader.h"
+ 
+[[FS_COMPRESSMIPBC5]]
+// =================================================================================================
+#define D_COMPRESSMIP
+#define D_BC5
+#include "Fullscreen/CompressFragment.shader.h"
+ 
+[[FS_COMPRESSMIPBC7]]
+// =================================================================================================
+#define D_COMPRESSMIP
+#define D_BC7
+#include "Fullscreen/CompressFragment.shader.h"
+ 
+[[FS_COMPRESSBC7_TERR]]
+// =================================================================================================
+#define D_COMPRESSMIP
+#define D_BC7
+#define D_HEIGHTFIELD_MODE
+#include "Fullscreen/CompressFragment.shader.h"
+
+[[CS_COMPRESSBC1]]
+// =================================================================================================
+#define D_COMPRESSMIP
+#define D_COMPUTECOMPRESS
+#define D_DXT1
+#include "Fullscreen/CompressFragment.shader.h"
+
+[[CS_COMPRESSBC3]]
+// =================================================================================================
+#define D_COMPRESSMIP
+#define D_COMPUTECOMPRESS
+#include "Fullscreen/CompressFragment.shader.h"
+
+[[CS_COMPRESSBC5]]
+// =================================================================================================
+#define D_COMPRESSMIP
+#define D_BC5
+#define D_COMPUTECOMPRESS
+#include "Fullscreen/CompressFragment.shader.h"
+
+[[CS_COMPRESSBC7]]
+// =================================================================================================
+#define D_COMPRESSMIP
+#define D_BC7
+#define D_COMPUTECOMPRESS
+#include "Fullscreen/CompressFragment.shader.h"
+
+[[CS_COMPRESSBC7_TERR]]
+// =================================================================================================
+#define D_COMPRESSMIP
+#define D_BC7
+#define D_COMPUTECOMPRESS
+#define D_HEIGHTFIELD_MODE
+#include "Fullscreen/CompressFragment.shader.h"
