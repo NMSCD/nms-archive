@@ -1,0 +1,57 @@
+<Pipeline>
+  <Setup>
+    <!-- Pipeline Variables -->    
+    <!-- enum:eWaterState - in code! -->
+    <PipelineVariable id="WaterState" defaultValue="0" />
+    <PipelineVariable id="WaterState_NoWater"       defaultValue="0" />
+    <PipelineVariable id="WaterState_AboveWater"    defaultValue="1" />
+    <PipelineVariable id="WaterState_BelowWater"    defaultValue="2" />
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="FROMBELOW">
+      <If conditionType="variable" id="WaterState"  test="equal" sourceType="variable" source="WaterState_BelowWater" />
+        <BeginTarget target="" />
+        <ClearTarget depthBuf="true" colBuf0="true" excludeX360="false" col_R="0.0" col_G="0.0" col_B="0.0" />
+        <ColourMask channels="RGB"/>
+      
+        <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+        <DrawGeometry type="Mesh"     class="Sky"     context="REFLECT_WATER"    order="STATECHANGES" />
+      
+        <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="less" alphaToCoverage="false"/>
+        <DoForwardLightLoop type="Mesh" class="AtmosphereNear" context="REFLECT_WATER" order="BACK_TO_FRONT" />
+      
+        <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+        <DoForwardLightLoop type="Terrain"  class="LOD3"      context="REFLECT_WATER_UP"        order="STATECHANGES" />
+        <EndTarget flushCB="true" flushDB="true" />
+      <EndIf />
+    </Stage>
+
+    <Stage id="FROMABOVE">
+      <If conditionType="variable" id="WaterState"  test="equal" sourceType="variable" source="WaterState_AboveWater" />
+        <BeginTarget target="" />
+        <ClearTarget depthBuf="true" colBuf0="false" excludeX360="false" col_R="0.0" col_G="0.0" col_B="0.0" />
+        <ColourMask channels="RGB"/>
+
+        <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+        <DrawGeometry type="Mesh"     class="Sky"     context="REFLECT_WATER"    order="STATECHANGES" />
+
+        <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="less" alphaToCoverage="false"/>
+        <DoForwardLightLoop type="Mesh" class="AtmosphereNear" context="REFLECT_WATER" order="BACK_TO_FRONT" />
+  
+        <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+        <DoForwardLightLoop type="Terrain"  class="LOD3"      context="REFLECT_WATER"        order="STATECHANGES" />
+        <EndTarget flushCB="true" flushDB="true" />
+      <EndIf />
+    </Stage>
+
+    <Stage id="Reset States">
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>
