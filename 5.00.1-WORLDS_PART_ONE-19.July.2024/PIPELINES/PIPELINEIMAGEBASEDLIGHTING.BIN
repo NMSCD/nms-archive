@@ -1,0 +1,95 @@
+<Pipeline>
+  <Setup>
+    <PipelineVariable id="MipIdxSrc" />
+    <PipelineVariable id="MipIdxDst" />
+    <PipelineVariable id="MipLevel"  />
+    <PipelineVariable id="MipCount"  />
+    
+    <RenderTarget id="DUALP_COLOUR" platforms="PC|PROSPERO|SCARLETT|XB1X|MACOS" depthBuf="false"                        numColBufs="1"  format="R11FG11FB10F" scale="1.0"  allowDcc="true"    width="512" height="256" hasMips="true" autoGenMips="false" mipsSRVs="true"  />
+    <RenderTarget id="DUALP_DEPTH"  platforms="PC|PROSPERO|SCARLETT|XB1X|MACOS" depthBuf="true"  depthBufUsesBB="false" numColBufs="0"  format="RGBA8"        scale="1.0"  stencilBuf="false" width="512" height="256" />
+
+    <RenderTarget id="DUALP_COLOUR" platforms="HHELD|IOS|PS4BASE|NEO|XB1S"              depthBuf="false"                        numColBufs="1"  format="R11FG11FB10F" scale="1.0"  allowDcc="true"    width="128" height="64" hasMips="true" autoGenMips="false" mipsSRVs="true"  />
+    <RenderTarget id="DUALP_DEPTH"  platforms="HHELD|IOS|PS4BASE|NEO|XB1S"              depthBuf="true"  depthBufUsesBB="false" numColBufs="0"  format="RGBA8"        scale="1.0"  stencilBuf="false" width="128" height="64" />
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="Lighting" deferrable="false">
+      <BeginTarget target="DUALP_COLOUR" depthTarget="DUALP_DEPTH" mipLevel="0"/>
+      <RenderPass ColorActions="Load/Store" ClearColor="0/0/0/0" DepthStencilActions="Load/Store"/>
+      <ColourMask channels="RGB"/>
+      <SetDualPViewport/>
+      <SetContext zwrite="true" colourWrite="false" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="DEPTH_CLEAR"  width ="1.0" height="1.0" />
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="materials/PostProcess.material.mbin" context="CLEAR_ZERO"   width ="1.0" height="1.0" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="back" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Terrain"  class="LOD3"        context="REFLECT_DUALP" order="STATECHANGES" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Mesh"     class="Sky"         context="REFLECT"       order="STATECHANGES" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="blend" depthTest="less" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Mesh" class="AtmosphereNear"  context="REFLECT"       order="BACK_TO_FRONT" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="blend" depthTest="less" alphaToCoverage="false"/>
+      <SetUniform material="materials/Cloud.material.mbin" uniform="gCloudParamsVec4" a="0.2" />
+      <DrawQuad material="Materials/Cloud.material.mbin"      context="RENDER_REFLECTIONS" width ="1.0" height="1.0" />
+
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad material="Materials/ImageBasedLighting.material.mbin" context="BLEND_INDOORS" width ="1.0" height="1.0" />
+      <EndTarget flushCB="true" flushDB="false" />
+    </Stage>
+
+    <Stage id="DualpMips" deferrable="false">
+      <UpdateVariable id="MipIdxSrc" operation="set" value="0"/>
+      <UpdateVariable id="MipIdxDst" operation="set" value="1"/>
+      <While conditionType="variable" id="MipIdxDst" test="less" sourceType="rtMipCount" source="DUALP_COLOUR"/>
+        <BeginTarget target="DUALP_COLOUR" mipLevelFromVar="MipIdxDst"/>
+        <ColourMask channels="RGBA"/>
+        <RenderPass ColorActions="DontCare/Store" ClearColor="0/0/0/0" DepthStencilActions="DontCare/DontCare"/>
+        <BindBuffer sampler="gDualPMap"  sourceRT="DUALP_COLOUR"  bufIndex="0" mipLevelFromVar="MipIdxSrc" addressMode="wrapUclampV"/>
+        <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+        <DrawQuad   material="Materials/ImageBasedLighting.material.mbin" context="DUALP_DOWN" width="1.0" height="1.0"/>
+        <EndTarget flushCB="true" flushDB="false" />
+        <UpdateVariable id="MipIdxSrc" operation="add" value="1"/>
+        <UpdateVariable id="MipIdxDst" operation="add" value="1"/>
+      <EndWhile />
+    </Stage>
+
+    <Stage id="IntegrateDiffuse" deferrable="false">
+      <BeginTarget target="0"/>
+      <ColourMask channels="RGBA"/>
+      <RenderPass ColorActions="DontCare/Store" ClearColor="0/0/0/0" DepthStencilActions="DontCare/DontCare"/>
+      <BindBuffer sampler="gDualPMap"  sourceRT="DUALP_COLOUR"  bufIndex="0" addressMode="wrapUclampV"/>
+      <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+      <DrawQuad   material="Materials/ImageBasedLighting.material.mbin" context="INTEGRATE_DIFFUSE" width="1.0" height="1.0" />
+      <EndTarget flushCB="false" flushDB="false" />
+    </Stage>
+    
+    <Stage id="IntegrateSpecular" deferrable="false">
+      <UpdateVariable id="MipLevel" operation="set" value="0" />
+      <UpdateVariable id="MipCount" operation="set" sourceType="otMipCount" outIdx="1" />
+      <While conditionType="variable" id="MipLevel" test="less" sourceType="otMipCount" outIdx="1" />
+        <BeginTarget target="1" mipLevelFromVar="MipLevel" />
+        <ColourMask channels="RGBA"/>
+        <RenderPass ColorActions="DontCare/Store" ClearColor="0/0/0/0" DepthStencilActions="DontCare/DontCare"/>
+        <BindBuffer sampler="gDualPMap"  sourceRT="DUALP_COLOUR"  bufIndex="0" addressMode="wrapUclampV"/>
+        <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="replace" depthTest="always" alphaToCoverage="false"/>
+        <SetUniform material="Materials/ImageBasedLighting.material.mbin" uniform="gGenericParam0Vec4" a="MipLevel" b="MipCount" c="0" d="0" />
+        <DrawQuad   material="Materials/ImageBasedLighting.material.mbin" context="INTEGRATE_SPECULAR" width="1.0" height="1.0" />
+        <EndTarget flushCB="false" flushDB="false" />
+        <UpdateVariable id="MipLevel" operation="add" value="1" />
+      <EndWhile />
+    </Stage>
+
+    <Stage id="Reset States">
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>
