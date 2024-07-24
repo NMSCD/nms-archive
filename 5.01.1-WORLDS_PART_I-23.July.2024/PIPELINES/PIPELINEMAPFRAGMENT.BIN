@@ -1,0 +1,27 @@
+<!-- Map Fragment Pipeline -->
+<Pipeline>
+
+  <CommandQueue>
+
+    <Stage id="ClearSamplesTarget" >
+      <BeginTarget target="" />
+
+      <ColourMask channels="RGBA"/>
+      <ClearTarget depthBuf="true" colBuf0="true" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+
+      <EndTarget flushCB="true" flushDB="true" />
+    </Stage>
+    
+    <Stage id="RenderSamples">
+      <BeginTarget target="" />
+  
+      <ColourMask channels="RGBA"/>
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+      <DoForwardLightLoop type="Mesh" class="Translucent" context="MAP_SAMPLES" order="STATECHANGES" />
+     
+      <EndTarget flushCB="true" flushDB="true" />
+    </Stage>
+  
+  </CommandQueue>
+
+</Pipeline>
