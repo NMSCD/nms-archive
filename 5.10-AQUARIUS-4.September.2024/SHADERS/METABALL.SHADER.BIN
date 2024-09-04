@@ -1,0 +1,29 @@
+[[FX]]
+
+// Samplers
+sampler gDiffuseMap = sampler_state
+{
+	Filter = Trilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 0;
+};
+
+
+// Uniforms
+
+// Contexts
+
+context LIGHTING
+{
+	VertexShader = compile GLSL VS_GENERAL;
+	PixelShader = compile GLSL FS_LIGHTING;
+}
+
+
+[[VS_GENERAL]]
+// =================================================================================================
+#include "Custom/MetaBallVertex.shader.h"
+
+[[FS_LIGHTING]]
+// =================================================================================================
+#include "Custom/MetaBallFragment.shader.h"
