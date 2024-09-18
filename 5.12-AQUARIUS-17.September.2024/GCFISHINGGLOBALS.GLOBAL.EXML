@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.12.0.1)-->
+<Data template="GcFishingGlobals">
+  <Property name="FirstPersonMaxTurnAngle" value="30" />
+  <Property name="EnableFirstPersonYawTurnSpeedScaling" value="True" />
+  <Property name="FirstPersonTurnSpeedBaseScaling" value="1" />
+  <Property name="FirstPersonTurnSpeedCurve" value="TkCurveType.xml">
+    <Property name="Curve" value="EaseInOutSine" />
+  </Property>
+  <Property name="EnableFirstPersonYawPullback" value="True" />
+  <Property name="FirstPersonPullBackAngle" value="5" />
+  <Property name="FirstPersonPullBackSpeedScaling" value="0.5" />
+  <Property name="FirstPersonPullBackSpeedCurve" value="TkCurveType.xml">
+    <Property name="Curve" value="EaseInOutSine" />
+  </Property>
+  <Property name="EnableFirstPersonPitchSpeedScaling" value="True" />
+  <Property name="FirstPersonPitchMinSpeedYawAngle" value="0.1" />
+  <Property name="FirstPersonPitchMaxSpeedYawAngle" value="5" />
+  <Property name="FirstPersonPitchMinSpeedScaling" value="0.6" />
+  <Property name="FirstPersonPitchMaxSpeedScaling" value="0.8" />
+  <Property name="FirstPersonPitchSpeedCurve" value="TkCurveType.xml">
+    <Property name="Curve" value="EaseInOutSine" />
+  </Property>
+  <Property name="LeanCausesBobThreshold" value="0.45" />
+  <Property name="ThirdPersonLeanTime" value="0.3" />
+  <Property name="ThirdPersonLeanMaxAngle" value="60" />
+  <Property name="ThirdPersonLeanMidpointAngle" value="45" />
+  <Property name="FloatTiltThreshold" value="30" />
+  <Property name="FloatTiltAmount" value="5" />
+  <Property name="FloatTiltIntoTime" value="0.4" />
+  <Property name="FloatTiltOutOfTime" value="0.8" />
+  <Property name="BaitRarityBoostTotalScoreQualityScaling">
+    <Property name="Junk" value="-1" />
+    <Property name="Common" value="-0.1" />
+    <Property name="Rare" value="1.5" />
+    <Property name="Epic" value="2" />
+    <Property name="Legendary" value="2.5" />
+  </Property>
+  <Property name="BaitRarityBoostTotalScoreMin" value="5" />
+  <Property name="BaitRarityBoostTotalScoreMax" value="18" />
+  <Property name="BaitSizeBoostTotalScoreQualityScaling">
+    <Property name="Small" value="-0.5" />
+    <Property name="Medium" value="1.5" />
+    <Property name="Large" value="2" />
+    <Property name="ExtraLarge" value="2.5" />
+  </Property>
+  <Property name="BaitSizeBoostTotalScoreMin" value="5" />
+  <Property name="BaitSizeBoostTotalScoreMax" value="25" />
+  <Property name="BaitWeatherBoostScoreThresholdForNotes" value="1.55" />
+  <Property name="BaitRandScoreCookingValueFactor" value="0.8" />
+  <Property name="BaitCookingValueMin" value="0.05" />
+  <Property name="RodFirstPersonOffset" value="Vector3f.xml">
+    <Property name="x" value="0.3" />
+    <Property name="y" value="-1.55" />
+    <Property name="z" value="-0.8" />
+  </Property>
+  <Property name="RodFirstPersonOffsetReelIn" value="Vector3f.xml">
+    <Property name="x" value="0.3" />
+    <Property name="y" value="-1.55" />
+    <Property name="z" value="-1.6" />
+  </Property>
+  <Property name="LandTimeBegin" value="0.1" />
+  <Property name="LandTimeEnd" value="0.4" />
+  <Property name="CastLaunchDelayTime" value="1" />
+  <Property name="CastLaunchOffset" value="Vector3f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="2" />
+    <Property name="z" value="-1" />
+  </Property>
+  <Property name="MinVelocityToCast" value="0.75" />
+  <Property name="VRRodRotation" value="Vector3f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="0" />
+    <Property name="z" value="0.2" />
+  </Property>
+  <Property name="VRRodOffset" value="Vector3f.xml">
+    <Property name="x" value="0" />
+    <Property name="y" value="-0.05" />
+    <Property name="z" value="0" />
+  </Property>
+  <Property name="CastVelocityBlendFactor" value="0.875" />
+  <Property name="RequiredBackCastAngleDegrees" value="15" />
+  <Property name="RequiredCastAngleDegrees" value="5" />
+  <Property name="VRCastStrength" value="2.75" />
+  <Property name="FishingRangeVRMultiplier" value="1.5" />
+  <Property name="CastLaunchAngle" value="25" />
+  <Property name="CastGravity" value="20" />
+  <Property name="ReelHoldTime" value="0.6" />
+  <Property name="BaitFlickBobHeight" value="0.5" />
+  <Property name="BaitFlickBobTimeOffset" value="0.25" />
+  <Property name="BaitFlickBobTime" value="0.8" />
+  <Property name="BaitFlickBobTimeLean" value="0.15" />
+  <Property name="BaitFlickBobHeightLean" value="0.15" />
+  <Property name="BaitFlickEffectTime" value="0.4" />
+  <Property name="BaitFlickBobCurve" value="GcCompositeCurveData.xml">
+    <Property name="StartValue" value="0" />
+    <Property name="Elements">
+      <Property value="GcCompositeCurveElementData.xml">
+        <Property name="EndValue" value="0.969813" />
+        <Property name="Duration" value="0.456" />
+        <Property name="CurveType" value="TkCurveType.xml">
+          <Property name="Curve" value="EaseOutQuad" />
+        </Property>
+      </Property>
+      <Property value="GcCompositeCurveElementData.xml">
+        <Property name="EndValue" value="-0.278003" />
+        <Property name="Duration" value="1.233624" />
+        <Property name="CurveType" value="TkCurveType.xml">
+          <Property name="Curve" value="EaseInOutQuad" />
+        </Property>
+      </Property>
+      <Property value="GcCompositeCurveElementData.xml">
+        <Property name="EndValue" value="0.139342" />
+        <Property name="Duration" value="0.948081" />
+        <Property name="CurveType" value="TkCurveType.xml">
+          <Property name="Curve" value="EaseInOutQuad" />
+        </Property>
+      </Property>
+      <Property value="GcCompositeCurveElementData.xml">
+        <Property name="EndValue" value="0.007843" />
+        <Property name="Duration" value="1.018359" />
+        <Property name="CurveType" value="TkCurveType.xml">
+          <Property name="Curve" value="EaseInOutSine" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="BaitFlickLineCurve" value="GcCompositeCurveData.xml">
+    <Property name="StartValue" value="0" />
+    <Property name="Elements">
+      <Property value="GcCompositeCurveElementData.xml">
+        <Property name="EndValue" value="0.949635" />
+        <Property name="Duration" value="0.402" />
+        <Property name="CurveType" value="TkCurveType.xml">
+          <Property name="Curve" value="EaseOutQuad" />
+        </Property>
+      </Property>
+      <Property value="GcCompositeCurveElementData.xml">
+        <Property name="EndValue" value="0" />
+        <Property name="Duration" value="1.797993" />
+        <Property name="CurveType" value="TkCurveType.xml">
+          <Property name="Curve" value="EaseInOutSine" />
+        </Property>
+      </Property>
+      <Property value="GcCompositeCurveElementData.xml">
+        <Property name="EndValue" value="0" />
+        <Property name="Duration" value="1" />
+        <Property name="CurveType" value="TkCurveType.xml">
+          <Property name="Curve" value="Linear" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+  <Property name="FishCatchAfterBiteTime" value="2" />
+  <Property name="FishingRange" value="25" />
+  <Property name="FishMouthOffset" value="0.5" />
+  <Property name="FishWaterDisplacementSmoothTime" value="0.2" />
+  <Property name="FishNibbleOffset" value="0.4" />
+  <Property name="MinWaitTime" value="6.5" />
+  <Property name="MaxWaitTime" value="13.5" />
+  <Property name="ChaseTimes">
+    <Property name="Small" value="1.66" />
+    <Property name="Medium" value="3" />
+    <Property name="Large" value="5" />
+    <Property name="ExtraLarge" value="6.5" />
+  </Property>
+  <Property name="MysteryFishScales">
+    <Property name="Small" value="0.1" />
+    <Property name="Medium" value="0.2" />
+    <Property name="Large" value="0.275" />
+    <Property name="ExtraLarge" value="0.35" />
+  </Property>
+  <Property name="SizeWeights">
+    <Property name="Small" value="GcFishSizeProbability.xml">
+      <Property name="BaseWeight" value="50" />
+      <Property name="DepthRangeMin" value="0" />
+      <Property name="DepthRangeMax" value="1" />
+      <Property name="DepthModifier" value="1" />
+    </Property>
+    <Property name="Medium" value="GcFishSizeProbability.xml">
+      <Property name="BaseWeight" value="10" />
+      <Property name="DepthRangeMin" value="5" />
+      <Property name="DepthRangeMax" value="15" />
+      <Property name="DepthModifier" value="40" />
+    </Property>
+    <Property name="Large" value="GcFishSizeProbability.xml">
+      <Property name="BaseWeight" value="1" />
+      <Property name="DepthRangeMin" value="30" />
+      <Property name="DepthRangeMax" value="65" />
+      <Property name="DepthModifier" value="80" />
+    </Property>
+    <Property name="ExtraLarge" value="GcFishSizeProbability.xml">
+      <Property name="BaseWeight" value="0" />
+      <Property name="DepthRangeMin" value="45" />
+      <Property name="DepthRangeMax" value="90" />
+      <Property name="DepthModifier" value="100" />
+    </Property>
+  </Property>
+  <Property name="QualityWeights">
+    <Property name="Junk" value="20" />
+    <Property name="Common" value="57" />
+    <Property name="Rare" value="25" />
+    <Property name="Epic" value="3" />
+    <Property name="Legendary" value="1" />
+  </Property>
+  <Property name="FishMass">
+    <Property name="Small" value="GcGaussianCurveData.xml">
+      <Property name="Mean" value="2" />
+      <Property name="StdDev" value="0.4" />
+    </Property>
+    <Property name="Medium" value="GcGaussianCurveData.xml">
+      <Property name="Mean" value="6" />
+      <Property name="StdDev" value="0.8" />
+    </Property>
+    <Property name="Large" value="GcGaussianCurveData.xml">
+      <Property name="Mean" value="12" />
+      <Property name="StdDev" value="2.2" />
+    </Property>
+    <Property name="ExtraLarge" value="GcGaussianCurveData.xml">
+      <Property name="Mean" value="20" />
+      <Property name="StdDev" value="3.7" />
+    </Property>
+  </Property>
+  <Property name="StormThreshold" value="0.5" />
+  <Property name="LineAttachmentOffset" value="0.16" />
+  <Property name="LineBrightness" value="1.2" />
+  <Property name="LineUsesLineRenderer" value="True" />
+  <Property name="LineWidth" value="3.5" />
+  <Property name="LineWaitSag" value="1" />
+  <Property name="LineNibbleSag" value="0.4" />
+  <Property name="LineFlickSag" value="0.1" />
+  <Property name="LineBiteSag" value="0" />
+  <Property name="LineColourChangeRate" value="20" />
+  <Property name="LineColourChangeRateNibble" value="5" />
+  <Property name="LineColourChangeRateBite" value="10" />
+  <Property name="LineSagCurve" value="TkCurveType.xml">
+    <Property name="Curve" value="EaseOutQuad" />
+  </Property>
+  <Property name="LineColourDefault" value="Colour.xml">
+    <Property name="R" value="0.48" />
+    <Property name="G" value="0.78" />
+    <Property name="B" value="0.98" />
+    <Property name="A" value="0.9" />
+  </Property>
+  <Property name="LineColourNibble" value="Colour.xml">
+    <Property name="R" value="0.983" />
+    <Property name="G" value="0.761" />
+    <Property name="B" value="0.059" />
+    <Property name="A" value="0.9" />
+  </Property>
+  <Property name="LineColourBite" value="Colour.xml">
+    <Property name="R" value="0.154" />
+    <Property name="G" value="0.933" />
+    <Property name="B" value="0.201" />
+    <Property name="A" value="0.9" />
+  </Property>
+  <Property name="LineColourChase" value="Colour.xml">
+    <Property name="R" value="0.48" />
+    <Property name="G" value="0.78" />
+    <Property name="B" value="0.98" />
+    <Property name="A" value="0.9" />
+  </Property>
+  <Property name="LineColourLand" value="Colour.xml">
+    <Property name="R" value="0.48" />
+    <Property name="G" value="0.78" />
+    <Property name="B" value="0.98" />
+    <Property name="A" value="0.9" />
+  </Property>
+  <Property name="LineColourFail" value="Colour.xml">
+    <Property name="R" value="0.933086" />
+    <Property name="G" value="0.138358" />
+    <Property name="B" value="0.184703" />
+    <Property name="A" value="0.9" />
+  </Property>
+  <Property name="SeaHarvesterAverageCatchTimeSeconds" value="3600" />
+  <Property name="MaxSeaHarvesterCaughtFish">
+    <Property name="Junk" value="10" />
+    <Property name="Common" value="20" />
+    <Property name="Rare" value="6" />
+    <Property name="Epic" value="1" />
+    <Property name="Legendary" value="1" />
+  </Property>
+  <Property name="DebugSceneFlicktimeMin" value="2" />
+  <Property name="DebugSceneFlicktimeMax" value="4" />
+  <Property name="DebugSceneCastDist" value="30" />
+</Data>

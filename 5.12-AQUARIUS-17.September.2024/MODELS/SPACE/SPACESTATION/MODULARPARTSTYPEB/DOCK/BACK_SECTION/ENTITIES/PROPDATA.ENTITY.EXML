@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.12.0.1)-->
+<Data template="TkAttachmentData">
+  <Property name="AdditionalData" />
+  <Property name="Components">
+    <Property value="LinkableNMSTemplate.xml">
+      <Property name="Template" value="TkStaticPhysicsComponentData.xml">
+        <Property name="Data" value="TkPhysicsData.xml">
+          <Property name="Mass" value="0" />
+          <Property name="Friction" value="0.5" />
+          <Property name="RollingFriction" value="0.2" />
+          <Property name="AngularDamping" value="0.2" />
+          <Property name="LinearDamping" value="0.1" />
+          <Property name="Gravity" value="20" />
+        </Property>
+        <Property name="NavMeshInclusion" value="TkNavMeshInclusionParams.xml">
+          <Property name="InclusionType" value="TkNavMeshInclusionType.xml">
+            <Property name="NavMeshInclusionType" value="Auto" />
+          </Property>
+          <Property name="InclusionMinSize" value="0" />
+          <Property name="AreaType" value="TkNavMeshAreaType.xml">
+            <Property name="NavMeshAreaType" value="Auto" />
+          </Property>
+        </Property>
+        <Property name="AddToWorldOnPrepare" value="True" />
+        <Property name="AddToWorldImmediately" value="False" />
+        <Property name="TriggerVolumeType" value="TkVolumeTriggerType.xml">
+          <Property name="VolumeTriggerType" value="Open" />
+        </Property>
+        <Property name="TriggerVolume" value="False" />
+        <Property name="Climbable" value="False" />
+        <Property name="NoVehicleCollide" value="False" />
+        <Property name="NoPlayerCollide" value="False" />
+        <Property name="CameraInvisible" value="False" />
+      </Property>
+      <Property name="Linked" value="" />
+    </Property>
+  </Property>
+  <Property name="LodDistances">
+    <Property value="0" />
+    <Property value="30" />
+    <Property value="60" />
+    <Property value="90" />
+    <Property value="120" />
+  </Property>
+</Data>
