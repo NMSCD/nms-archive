@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.52.0.1)-->
+<Data template="GcPlayerHazardTable">
+	<Property name="Table">
+		<Property name="None" value="GcPlayerHazardData">
+			<Property name="ProtectionInitialTime" value="0.000000" />
+			<Property name="ProtectionTime" value="Vector2f">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="0.000000" />
+			</Property>
+			<Property name="DamageRate" value="Vector2f">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="0.000000" />
+			</Property>
+			<Property name="WoundRate" value="Vector2f">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="0.000000" />
+			</Property>
+			<Property name="RechargeInitialTime" value="0.000000" />
+			<Property name="RechargeTime" value="0.000000" />
+			<Property name="Damage" value="" />
+			<Property name="Increases" value="true" />
+			<Property name="DisplayCurve" value="TkCurveType">
+				<Property name="Curve" value="Linear" />
+			</Property>
+			<Property name="TriggerValue" value="100.000000" />
+			<Property name="CapValue" value="100.000000" />
+			<Property name="CriticalValue" value="100.000000" />
+			<Property name="OutputMultiplier" value="1.000000" />
+			<Property name="OutputMinAddition" value="0.000000" />
+			<Property name="OutputMaxAddition" value="0.000000" />
+		</Property>
+		<Property name="NoOxygen" value="GcPlayerHazardData">
+			<Property name="ProtectionInitialTime" value="20.000000" />
+			<Property name="ProtectionTime" value="Vector2f">
+				<Property name="X" value="180.000000" />
+				<Property name="Y" value="180.000000" />
+			</Property>
+			<Property name="DamageRate" value="Vector2f">
+				<Property name="X" value="10.000000" />
+				<Property name="Y" value="10.000000" />
+			</Property>
+			<Property name="WoundRate" value="Vector2f">
+				<Property name="X" value="10.000000" />
+				<Property name="Y" value="10.000000" />
+			</Property>
+			<Property name="RechargeInitialTime" value="1.000000" />
+			<Property name="RechargeTime" value="10.000000" />
+			<Property name="Damage" value="NOOXYDAMAGE" />
+			<Property name="Increases" value="false" />
+			<Property name="DisplayCurve" value="TkCurveType">
+				<Property name="Curve" value="Linear" />
+			</Property>
+			<Property name="TriggerValue" value="0.500000" />
+			<Property name="CapValue" value="1.000000" />
+			<Property name="CriticalValue" value="1.000000" />
+			<Property name="OutputMultiplier" value="1.000000" />
+			<Property name="OutputMinAddition" value="0.000000" />
+			<Property name="OutputMaxAddition" value="0.000000" />
+		</Property>
+		<Property name="ExtremeHeat" value="GcPlayerHazardData">
+			<Property name="ProtectionInitialTime" value="2.000000" />
+			<Property name="ProtectionTime" value="Vector2f">
+				<Property name="X" value="540.000000" />
+				<Property name="Y" value="40.000000" />
+			</Property>
+			<Property name="DamageRate" value="Vector2f">
+				<Property name="X" value="50.000000" />
+				<Property name="Y" value="20.000000" />
+			</Property>
+			<Property name="WoundRate" value="Vector2f">
+				<Property name="X" value="50.000000" />
+				<Property name="Y" value="20.000000" />
+			</Property>
+			<Property name="RechargeInitialTime" value="1.000000" />
+			<Property name="RechargeTime" value="15.000000" />
+			<Property name="Damage" value="EXTREMEHEATDMG" />
+			<Property name="Increases" value="false" />
+			<Property name="DisplayCurve" value="TkCurveType">
+				<Property name="Curve" value="Linear" />
+			</Property>
+			<Property name="TriggerValue" value="49.000000" />
+			<Property name="CapValue" value="100.000000" />
+			<Property name="CriticalValue" value="70.000000" />
+			<Property name="OutputMultiplier" value="1.000000" />
+			<Property name="OutputMinAddition" value="0.000000" />
+			<Property name="OutputMaxAddition" value="30.000000" />
+		</Property>
+		<Property name="ExtremeCold" value="GcPlayerHazardData">
+			<Property name="ProtectionInitialTime" value="2.000000" />
+			<Property name="ProtectionTime" value="Vector2f">
+				<Property name="X" value="540.000000" />
+				<Property name="Y" value="40.000000" />
+			</Property>
+			<Property name="DamageRate" value="Vector2f">
+				<Property name="X" value="50.000000" />
+				<Property name="Y" value="20.000000" />
+			</Property>
+			<Property name="WoundRate" value="Vector2f">
+				<Property name="X" value="50.000000" />
+				<Property name="Y" value="20.000000" />
+			</Property>
+			<Property name="RechargeInitialTime" value="1.000000" />
+			<Property name="RechargeTime" value="15.000000" />
+			<Property name="Damage" value="EXTREMECOLDDMG" />
+			<Property name="Increases" value="false" />
+			<Property name="DisplayCurve" value="TkCurveType">
+				<Property name="Curve" value="Linear" />
+			</Property>
+			<Property name="TriggerValue" value="-49.000000" />
+			<Property name="CapValue" value="-100.000000" />
+			<Property name="CriticalValue" value="-70.000000" />
+			<Property name="OutputMultiplier" value="1.000000" />
+			<Property name="OutputMinAddition" value="-20.000000" />
+			<Property name="OutputMaxAddition" value="0.000000" />
+		</Property>
+		<Property name="ToxicGas" value="GcPlayerHazardData">
+			<Property name="ProtectionInitialTime" value="2.000000" />
+			<Property name="ProtectionTime" value="Vector2f">
+				<Property name="X" value="540.000000" />
+				<Property name="Y" value="40.000000" />
+			</Property>
+			<Property name="DamageRate" value="Vector2f">
+				<Property name="X" value="50.000000" />
+				<Property name="Y" value="20.000000" />
+			</Property>
+			<Property name="WoundRate" value="Vector2f">
+				<Property name="X" value="50.000000" />
+				<Property name="Y" value="20.000000" />
+			</Property>
+			<Property name="RechargeInitialTime" value="1.000000" />
+			<Property name="RechargeTime" value="15.000000" />
+			<Property name="Damage" value="TOXICGASDMG" />
+			<Property name="Increases" value="false" />
+			<Property name="DisplayCurve" value="TkCurveType">
+				<Property name="Curve" value="Linear" />
+			</Property>
+			<Property name="TriggerValue" value="49.000000" />
+			<Property name="CapValue" value="100.000000" />
+			<Property name="CriticalValue" value="70.000000" />
+			<Property name="OutputMultiplier" value="1.000000" />
+			<Property name="OutputMinAddition" value="0.000000" />
+			<Property name="OutputMaxAddition" value="20.000000" />
+		</Property>
+		<Property name="Radiation" value="GcPlayerHazardData">
+			<Property name="ProtectionInitialTime" value="2.000000" />
+			<Property name="ProtectionTime" value="Vector2f">
+				<Property name="X" value="540.000000" />
+				<Property name="Y" value="40.000000" />
+			</Property>
+			<Property name="DamageRate" value="Vector2f">
+				<Property name="X" value="50.000000" />
+				<Property name="Y" value="20.000000" />
+			</Property>
+			<Property name="WoundRate" value="Vector2f">
+				<Property name="X" value="50.000000" />
+				<Property name="Y" value="20.000000" />
+			</Property>
+			<Property name="RechargeInitialTime" value="1.000000" />
+			<Property name="RechargeTime" value="15.000000" />
+			<Property name="Damage" value="RADIATIONDMG" />
+			<Property name="Increases" value="false" />
+			<Property name="DisplayCurve" value="TkCurveType">
+				<Property name="Curve" value="Linear" />
+			</Property>
+			<Property name="TriggerValue" value="49.000000" />
+			<Property name="CapValue" value="100.000000" />
+			<Property name="CriticalValue" value="70.000000" />
+			<Property name="OutputMultiplier" value="0.100000" />
+			<Property name="OutputMinAddition" value="0.000000" />
+			<Property name="OutputMaxAddition" value="2.000000" />
+		</Property>
+		<Property name="Spook" value="GcPlayerHazardData">
+			<Property name="ProtectionInitialTime" value="20.000000" />
+			<Property name="ProtectionTime" value="Vector2f">
+				<Property name="X" value="540.000000" />
+				<Property name="Y" value="40.000000" />
+			</Property>
+			<Property name="DamageRate" value="Vector2f">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="0.000000" />
+			</Property>
+			<Property name="WoundRate" value="Vector2f">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="0.000000" />
+			</Property>
+			<Property name="RechargeInitialTime" value="1.000000" />
+			<Property name="RechargeTime" value="0.000000" />
+			<Property name="Damage" value="" />
+			<Property name="Increases" value="false" />
+			<Property name="DisplayCurve" value="TkCurveType">
+				<Property name="Curve" value="Linear" />
+			</Property>
+			<Property name="TriggerValue" value="1.000000" />
+			<Property name="CapValue" value="16.000000" />
+			<Property name="CriticalValue" value="16.000000" />
+			<Property name="OutputMultiplier" value="1.000000" />
+			<Property name="OutputMinAddition" value="0.600000" />
+			<Property name="OutputMaxAddition" value="1.600000" />
+		</Property>
+	</Property>
+</Data>
