@@ -1,0 +1,480 @@
+[[FX]]
+
+// Samplers 
+sampler gBufferMap = sampler_state
+{
+    Filter = Bilinear;
+    MaxAnisotropy = 0;
+    TexUnit = 0;
+};
+
+sampler gNormalMap = sampler_state
+{
+    Filter = Trilinear;
+    MaxAnisotropy = 0;
+    TexUnit = 1;
+};
+
+sampler gDepthMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 2;
+};
+
+sampler gReflectionMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 3;
+};
+
+sampler gReflectionDepthMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 4;
+};  
+
+sampler gReflBlendedMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 5;
+};  
+
+sampler gReflBlendedPrevMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 6;
+};  
+
+sampler gDiffEnvMap = sampler_state
+{
+    TexUnit = 7;
+};
+
+sampler gSpecEnvMap = sampler_state
+{
+    TexUnit = 8;
+};
+
+sampler gDfgMap = sampler_state
+{
+    DefaultTexture  = SHADER/DFG.DDS;
+    SamplingOptions = On;
+    Filter  = Bilinear;
+    Address = Clamp;
+    TexUnit = 9;
+};
+
+sampler gFoam1Map = sampler_state
+{
+    TexUnit = 10;
+};
+
+sampler gFoam2Map = sampler_state
+{
+    TexUnit = 11;
+};
+
+sampler gRainMap = sampler_state
+{
+    TexUnit = 12;
+};
+
+sampler gCloudShadowMap = sampler_state
+{
+    TexUnit = 13;
+};
+
+sampler gShadowMap = sampler_state
+{
+    TexUnit = 14;
+};
+
+sampler gTerrainDepthMap = sampler_state
+{
+    TexUnit = 15;
+};
+
+sampler gWaterDepth = sampler_state
+{
+    TexUnit = 16;
+};
+
+sampler gWaterMask = sampler_state
+{
+    TexUnit = 17;
+};
+
+sampler gWaterPlanePosition = sampler_state
+{
+    TexUnit = 18;
+};
+
+sampler gWaveBuffer = sampler_state
+{
+    TexUnit = 19;
+};
+
+sampler gWavePrevBuffer = sampler_state
+{
+    TexUnit = 20;
+};
+
+sampler gFoamBuffer = sampler_state
+{
+    TexUnit = 21;
+};
+
+sampler gCausticMap = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 22;
+};
+
+sampler gCausticOffsetMap = sampler_state
+{
+    Address = Wrap;
+    TexUnit = 23;
+};
+
+sampler [ PROSPERO ] gFSRLutL_U = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 24;
+};
+
+sampler [ PROSPERO ] gFSRLutL_V = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 25;
+};
+
+sampler [ PROSPERO ] gFSRLutR_U = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 26;
+};
+
+sampler [ PROSPERO ] gFSRLutR_V = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 27;
+};
+
+sampler gScatteringVolume3D = sampler_state
+{
+    TexUnit = 28;
+    Address = Clamp;
+};
+
+sampler gMeshWaterScatterAdd = sampler_state
+{
+    TexUnit = 29;
+    Address = Clamp;
+};
+
+sampler gMeshWaterScatterAddDepth = sampler_state
+{
+    TexUnit = 30;
+    Address = Clamp;
+};
+
+buffer gaCascadeParametersBuffer = buffer_state
+{
+    BufferIdx = 0;
+};
+
+buffer gaCascadeParametersPrevBuffer = buffer_state
+{
+    BufferIdx = 1;
+};
+
+// Uniforms
+float4 gSettingBitsX_LodAlphaFadesYZ_RadiusW; // x = bitfield, y = ....
+float4 gGridOffsetXY_SnapModulusZ_CalmnessW = {0.0, 0.0, 0.0, 0.0};
+float4 gTextureSampleOffsetXY_TextureSampleModulusZ_GeometryDownSampleOffsetW = {0.0, 0.0, 0.0, 0.0};
+float4 gWaterGOChangeXY_TerrainDepthGOZW = {0.0, 0.0, 0.0, 0.0};
+float4 gRainStrengthX = {0.0, 0.0, 0.0, 0.0};
+
+// Copied from old water implementation - not all of these will be used necessarily
+// Water
+float4 gWaveScaleVec4                    = {0.0, 0.0, 0.0, 0.0};
+float4 gWaveSpeedVec4                    = {0.0, 0.0, 0.0, 0.0};
+float4 gWindDirectionVec4                = {0.0, 0.0, 0.0, 0.0};
+float4 gWaterSurfaceParamsVec4           = {0.0, 0.0, 0.0, 0.0};
+float4 gFresnelParamsVec4                = {0.0, 0.0, 0.0, 0.0};
+float4 gFoamParamsVec4                   = {0.0, 0.0, 0.0, 0.0};
+float4 gFoamColourVec4                   = {0.0, 0.0, 0.0, 0.0};
+float4 gFoamEmissionVec4                 = {0.0, 0.0, 0.0, 0.0};
+float4 gUnderwaterReflectedColour        = {0.3, 0.3, 0.6, 0.0};
+float4 gNormalsScale                     = {1.0, 0.0, 1.0, 0.0};
+
+// Planet
+float4 gPlanetPositionVec4               = {0.0,  0.0, 0.0, 0.0};
+float4 gLightOriginVec4                  = {0.0, 0.0, 0.0, 0.0}; 
+
+// Lighting
+float4 gMaterialParamsVec4              = {0.0, 1.0, 1.0, 0.0};
+
+// Fog
+float4 gSkyColourVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gHorizonColourVec4      = {1.0, 0.0, 1.0, 0.0};
+float4 gSunColourVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterColourBaseVec4    = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterColourAddVec4     = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogColourNearVec4 = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterAlbedoVec4  = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterAbsorptionVec4    = { 1.0, 0.0, 1.0, 0.0 };
+float4 gWaterScatterVec4       = { 1.0, 0.0, 1.0, 0.0 };
+float4 gWaterKFunctionVec4     = { 1.0, 0.0, 1.0, 0.0 };
+float4 gWaterEmissionVec4      = { 1.0, 0.0, 1.0, 0.0 };
+float4 gWaterCausticsColourVec4         = { 1.0, 0.0, 1.0, 0.0 };
+float4 gWaterFogVec4           = {1.0, 0.0, 1.0, 0.0};
+float4 gFogColourVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceHorizonColourVec4 = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogColourVec4    = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogParamsVec4    = {1.0, 0.0, 1.0, 0.0};
+float4 gFogParamsVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gScatteringParamsVec4   = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceFogParamsVec4     = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColourVec4     = {1.0, 0.0, 1.0, 0.0};
+float4 gSunPositionVec4        = {1.0, 0.0, 1.0, 0.0};
+
+float4 gWaterWorldNormal0      = {0.0, 0.0, 0.0, 0.0};
+float4 gWaterWorldNormal1      = {0.0, 0.0, 0.0, 0.0};
+float4 gWaterWorldNormal2      = {0.0, 0.0, 0.0, 0.0};
+float4 gWaterWorldNormal3      = {0.0, 0.0, 0.0, 0.0};
+
+float4 gInverseWaterWorld0     = {0.0, 0.0, 0.0, 0.0};
+float4 gInverseWaterWorld1     = {0.0, 0.0, 0.0, 0.0};
+float4 gInverseWaterWorld2     = {0.0, 0.0, 0.0, 0.0};
+float4 gInverseWaterWorld3     = {0.0, 0.0, 0.0, 0.0};
+ 
+// Contexts
+
+context MESH_WATER
+{
+    VertexShader = compile GLSL VS_WATER;
+    PixelShader  = compile GLSL FS_WATER;
+}
+
+context MESH_WATER_MASK
+{
+    VertexShader = compile GLSL VS_WATER;
+    PixelShader  = compile GLSL FS_WATER_MASK;
+}
+
+context MESH_WATER_ERASE
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_ERASE;
+}
+
+context MESH_WATER_ST_FRONT
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_ST_FRONT;
+}
+
+context MESH_WATER_ST_BACK
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_ST_BACK;
+}
+
+context M_ABOVE_WATER
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_ABOVE_POST;
+}
+
+context M_BELOW_WATER
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_BELOW_POST;
+}
+
+context [ !MACOS !IOS !SWITCH ] M_BLW_WTR_SMPL
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_BELOW_POST_SAMPLE_ADDITIVE_COMPONENT;
+}
+
+context M_ABVE_WTR_BLND
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_ABOVE_POST_BLEND;
+}
+
+context M_BLW_WTR_BLND
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_BELOW_POST_BLEND;
+}
+
+context M_SCATTER
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_SCATTER;
+}
+
+context [ !MACOS !IOS !SWITCH ] M_SCTTR_SMPL
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_SCATTER_SAMPLE_ADDITVE_COMPONENT;
+}
+
+context [ !MACOS !IOS !SWITCH ] M_SCTTR_ADD
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_SCATTER_ADD;
+}
+
+context [ !MACOS !IOS !SWITCH ] M_GD_SCTTR_ADD
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_SCATTER_ADD_WITH_GOD_RAYS;
+}
+
+context [ !IOS !SWITCH ] M_WATER_REFL
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_REFLECTION;
+}
+
+context [ !IOS !SWITCH ] M_WATER_REFL_TEMP
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_REFLECTION_TEMPORAL;
+}
+
+context [ !IOS !SWITCH ] M_WATER_REFL_COPY
+{
+    VertexShader = compile GLSL VS_FSQUAD;
+    PixelShader  = compile GLSL FS_WATER_REFLECTION_COPY;
+}
+
+context [ PC ] MESH_WATER_DEBUG
+{
+    VertexShader = compile GLSL VS_WATER;
+    PixelShader  = compile GLSL FS_WATER_DEBUG;
+}
+
+[[VS_FSQUAD]] 
+// =================================================================================================
+#define D_MESH_WATER
+#include "ImmediateModeVertex.shader.h"
+
+[[VS_WATER]]
+// =================================================================================================
+#include "../Code/Custom/MeshWater/MeshWaterVertex.shader.h"
+
+[[FS_WATER]]
+// =================================================================================================
+#define D_WATER_FORWARD
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_MASK]]
+// =================================================================================================
+#define D_WATER_MASK
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_ST_FRONT]]
+// =================================================================================================
+#define D_WATER_STENCIL
+#define D_WATER_ABOVE
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_ST_BACK]]
+// =================================================================================================
+#define D_WATER_STENCIL
+#define D_WATER_BELOW
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_ABOVE_POST]]
+// =================================================================================================
+#define D_WATER_POST
+#define D_WATER_ABOVE
+// A workaround to disable shader stripping on Switch, fixes linking errors with shaders that access the cascade parameters buffer!
+#define D_TESS_SHADERS_PRESENT
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_BELOW_POST]]
+// =================================================================================================
+#define D_WATER_POST
+#define D_WATER_BELOW
+// A workaround to disable shader stripping on Switch, fixes linking errors with shaders that access the cascade parameters buffer!
+#define D_TESS_SHADERS_PRESENT
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_BELOW_POST_SAMPLE_ADDITIVE_COMPONENT]]
+// =================================================================================================
+#define D_WATER_POST
+#define D_WATER_BELOW
+#define D_SAMPLE_ADDITIVE_COMPONENT
+// A workaround to disable shader stripping on Switch, fixes linking errors with shaders that access the cascade parameters buffer!
+#define D_TESS_SHADERS_PRESENT
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_ABOVE_POST_BLEND]]
+// =================================================================================================
+#define D_WATER_POST
+#define D_WATER_ABOVE
+#define D_BLEND
+// A workaround to disable shader stripping on Switch, fixes linking errors with shaders that access the cascade parameters buffer!
+#define D_TESS_SHADERS_PRESENT
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_BELOW_POST_BLEND]]
+// =================================================================================================
+#define D_WATER_POST
+#define D_WATER_BELOW
+#define D_BLEND
+// A workaround to disable shader stripping on Switch, fixes linking errors with shaders that access the cascade parameters buffer!
+#define D_TESS_SHADERS_PRESENT
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_SCATTER]]
+// =================================================================================================
+#define D_WATER_SCATTER
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_SCATTER_SAMPLE_ADDITVE_COMPONENT]]
+#define D_WATER_SCATTER
+#define D_SAMPLE_ADDITIVE_COMPONENT
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_SCATTER_ADD]]
+// =================================================================================================
+#define D_WATER_SCATTER_ADD
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_SCATTER_ADD_WITH_GOD_RAYS]]
+// =================================================================================================
+#define D_WATER_SCATTER_ADD
+#define D_GOD_RAYS
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_ERASE]]
+// =================================================================================================
+#define D_WATER_PROXY_EXCLUSION
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_REFLECTION]]
+// =================================================================================================
+#define D_WATER_REFLECTION
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_REFLECTION_TEMPORAL]]
+// =================================================================================================
+#define D_WATER_REFLECTION_TEMPORAL
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_REFLECTION_COPY]]
+// =================================================================================================
+#define D_WATER_REFLECTION_COPY
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"
+
+[[FS_WATER_DEBUG]]
+// =================================================================================================
+#define D_WATER_DEBUG
+#include "../Code/Custom/MeshWater/MeshWaterFragment.shader.h"

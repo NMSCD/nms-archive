@@ -1,0 +1,33 @@
+[[FX]]
+
+sampler gDiffuseMap = sampler_state
+{
+	Filter = Bilinear;
+	MaxAnisotropy = 0;
+	TexUnit = 0;
+};
+
+// Contexts
+context LINE3D 
+{
+	VertexShader = compile GLSL VS_LINE3D;
+	PixelShader = compile GLSL FS_LINE3D;
+	
+	ZWriteEnable = false;
+}
+
+// -----------------------------------------------------------------------------------
+// Uniforms
+// -----------------------------------------------------------------------------------
+float4 gColour				= {0.0, 1.0, 0.0, 1.0}; 
+
+
+[[VS_LINE3D]]
+// =================================================================================================
+#define D_VERTEX
+#include "Custom/Line3d.shader.h"
+
+[[FS_LINE3D]]
+// =================================================================================================
+#define D_FRAGMENT
+#include "Custom/Line3d.shader.h"
