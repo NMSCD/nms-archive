@@ -1,0 +1,1453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.54.0.1)-->
+<Data template="TkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="TkPhysicsComponentData">
+			<Property name="TkPhysicsComponentData">
+				<Property name="Data" value="TkPhysicsData">
+					<Property name="Mass" value="1.000000" />
+					<Property name="Friction" value="0.500000" />
+					<Property name="RollingFriction" value="0.200000" />
+					<Property name="AngularDamping" value="0.200000" />
+					<Property name="LinearDamping" value="0.100000" />
+					<Property name="Gravity" value="20.000000" />
+				</Property>
+				<Property name="NavMeshInclusion" value="TkNavMeshInclusionParams">
+					<Property name="InclusionType" value="TkNavMeshInclusionType">
+						<Property name="NavMeshInclusionType" value="Auto" />
+					</Property>
+					<Property name="InclusionMinSize" value="0.000000" />
+					<Property name="AreaType" value="TkNavMeshAreaType">
+						<Property name="NavMeshAreaType" value="Auto" />
+					</Property>
+				</Property>
+				<Property name="TriggerVolume" value="false" />
+				<Property name="TriggerVolumeType" value="TkVolumeTriggerType">
+					<Property name="VolumeTriggerType" value="Open" />
+				</Property>
+				<Property name="SurfaceProperties" value="None" />
+				<Property name="ModelOwnership" value="Model" />
+				<Property name="Climbable" value="false" />
+				<Property name="Walkable" value="true" />
+				<Property name="Floor" value="false" />
+				<Property name="IgnoreModelOwner" value="false" />
+				<Property name="NoVehicleCollide" value="false" />
+				<Property name="NoPlayerCollide" value="false" />
+				<Property name="NoFireCollide" value="false" />
+				<Property name="NoFallDamage" value="false" />
+				<Property name="IgnoreAllCollisions" value="false" />
+				<Property name="BlocksInteract" value="true" />
+				<Property name="CameraInvisible" value="false" />
+				<Property name="InvisibleForInteraction" value="false" />
+				<Property name="AllowTeleporter" value="false" />
+				<Property name="BlockTeleporter" value="false" />
+				<Property name="DisableGravity" value="false" />
+				<Property name="SpinOnCreate" value="0.000000" />
+				<Property name="ScaleAffectsMass" value="false" />
+				<Property name="AllowedDefaultCollision" value="true" />
+				<Property name="Animated" value="false" />
+				<Property name="UseBasePartOptimisation" value="false" />
+				<Property name="IsTransporter" value="false" />
+				<Property name="UseSimpleCharacterCollision" value="false" />
+				<Property name="RotateSimpleCharacterCollisionCapsule" value="false" />
+				<Property name="SimpleCharacterCollisionRadius" value="0.500000" />
+				<Property name="SimpleCharacterCollisionHeight" value="2.000000" />
+				<Property name="SimpleCharacterCollisionHeightOffset" value="0.000000" />
+				<Property name="SimpleCharacterCollisionFwdOffset" value="0.000000" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcBasePlacementComponentData">
+			<Property name="GcBasePlacementComponentData">
+				<Property name="Rules">
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions" />
+						<Property name="PositionLocator" value="" />
+						<Property name="PartID" value="_FRE_FACE_DOOR" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="CUBEROOM_SPACE" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="CUBEROOMB_SPACE" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="CUBEROOMC_SPACE" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE0_" />
+						<Property name="PartID" value="_CUBEROOM_SPACE_CORRIDORHATCH" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="CUBEROOM_SPACE" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="CUBEROOMB_SPACE" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="CUBEROOMC_SPACE" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE1_" />
+						<Property name="PartID" value="_CUBEROOM_SPACE_CORRIDORHATCH" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_BIO" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_PLANT0" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_PLANT1" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_COOK" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_NPCFAR" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE0_" />
+						<Property name="PartID" value="_FRE_ROOM_BIO_WALLDOORWAYBB0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_BIO" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_PLANT0" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_PLANT1" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_COOK" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_NPCFAR" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE1_" />
+						<Property name="PartID" value="_FRE_ROOM_BIO_WALLDOORWAYBB0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_BIO" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_PLANT0" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_PLANT1" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_COOK" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_NPCFAR" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE0_" />
+						<Property name="PartID" value="_FRE_ROOM_BIO_WALLDOORWAYBB0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_BIO" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_PLANT0" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_PLANT1" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_COOK" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_NPCFAR" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE1_" />
+						<Property name="PartID" value="_FRE_ROOM_BIO_WALLDOORWAYBB0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_IND" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_IND1" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_VEHICL" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_REFINE" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_EXTR" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE0" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE1" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE2" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE3" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE4" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE5" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE6" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE7" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE8" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE9" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_NPCWEA" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_NPCVEH" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE0_" />
+						<Property name="PartID" value="_FRE_ROOM_INDUST_WALLDOORWAYBB0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_IND" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_IND1" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_VEHICL" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_REFINE" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_EXTR" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE0" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE1" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE2" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE3" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE4" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE5" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE6" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE7" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE8" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_STORE9" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_NPCWEA" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_NPCVEH" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE1_" />
+						<Property name="PartID" value="_FRE_ROOM_INDUST_WALLDOORWAYBB0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_TECH" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_SHOP" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_SCAN" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_ROCLOC" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_FLEET" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_NPCSCI" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_NPCBUI" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_TELEPO" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_DRESS" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE0_" />
+						<Property name="PartID" value="_FRE_ROOM_TECH_WALLDOORWAYBB0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_TECH" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_SHOP" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_SCAN" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_ROCLOC" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_FLEET" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_NPCSCI" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_NPCBUI" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_TELEPO" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_ROOM_DRESS" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE1_" />
+						<Property name="PartID" value="_FRE_ROOM_TECH_WALLDOORWAYBB0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcOutSnapSocketCondition">
+								<Property name="GcOutSnapSocketCondition">
+									<Property name="SnapPoint" value="SnapPoint_Face" />
+									<Property name="OutSocket" value="FaceRoom_Out_" />
+									<Property name="SnapState" value="GcBaseSnapState">
+										<Property name="SnapState" value="IsSnapped" />
+									</Property>
+									<Property name="ObjectId" value="" />
+									<Property name="SnapPointIndex" value="0" />
+									<Property name="OutSocketIndex" value="0" />
+								</Property>
+							</Property>
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="NotSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_EXT_PLATFOR" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_EXT_W_STA" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_EXT_WALKWAY" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE0_" />
+						<Property name="PartID" value="_FRE_FACE_EXT_DOORROOM" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcOutSnapSocketCondition">
+								<Property name="GcOutSnapSocketCondition">
+									<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+									<Property name="OutSocket" value="FaceRoom_Out_" />
+									<Property name="SnapState" value="GcBaseSnapState">
+										<Property name="SnapState" value="IsSnapped" />
+									</Property>
+									<Property name="ObjectId" value="" />
+									<Property name="SnapPointIndex" value="0" />
+									<Property name="OutSocketIndex" value="0" />
+								</Property>
+							</Property>
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="NotSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_EXT_PLATFOR" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_EXT_W_STA" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_EXT_WALKWAY" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE1_" />
+						<Property name="PartID" value="_FRE_FACE_EXT_DOORROOM" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcOutSnapSocketCondition">
+											<Property name="GcOutSnapSocketCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="OutSocket" value="FaceCorridor_Out_" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+												<Property name="OutSocketIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="false" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE0COR_" />
+						<Property name="PartID" value="_FRE_CORR_A_DOORWAY0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcOutSnapSocketCondition">
+											<Property name="GcOutSnapSocketCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="OutSocket" value="FaceCorridor_Out_" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+												<Property name="OutSocketIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="false" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE1COR_" />
+						<Property name="PartID" value="_FRE_CORR_A_DOORWAY0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcOutSnapSocketCondition">
+								<Property name="GcOutSnapSocketCondition">
+									<Property name="SnapPoint" value="SnapPoint_Face" />
+									<Property name="OutSocket" value="FaceCorridor_Out_" />
+									<Property name="SnapState" value="GcBaseSnapState">
+										<Property name="SnapState" value="IsSnapped" />
+									</Property>
+									<Property name="ObjectId" value="" />
+									<Property name="SnapPointIndex" value="0" />
+									<Property name="OutSocketIndex" value="0" />
+								</Property>
+							</Property>
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="NotSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_EXT_PLATFOR" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_EXT_W_STA" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_EXT_WALKWAY" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE0_" />
+						<Property name="PartID" value="_FRE_FACE_EXT_DOORCORRIDOR" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcOutSnapSocketCondition">
+								<Property name="GcOutSnapSocketCondition">
+									<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+									<Property name="OutSocket" value="FaceCorridor_Out_" />
+									<Property name="SnapState" value="GcBaseSnapState">
+										<Property name="SnapState" value="IsSnapped" />
+									</Property>
+									<Property name="ObjectId" value="" />
+									<Property name="SnapPointIndex" value="0" />
+									<Property name="OutSocketIndex" value="0" />
+								</Property>
+							</Property>
+							<Property name="Conditions" value="GcGroupCondition">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="NotSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_EXT_PLATFOR" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_EXT_W_STA" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+										<Property name="Conditions" value="GcSnapPointCondition">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_Face" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="FRE_EXT_WALKWAY" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="true" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE1_" />
+						<Property name="PartID" value="_FRE_FACE_EXT_DOORCORRIDOR" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcOutSnapSocketCondition">
+								<Property name="GcOutSnapSocketCondition">
+									<Property name="SnapPoint" value="SnapPoint_Face" />
+									<Property name="OutSocket" value="FaceRoom_Out_" />
+									<Property name="SnapState" value="GcBaseSnapState">
+										<Property name="SnapState" value="IsSnapped" />
+									</Property>
+									<Property name="ObjectId" value="" />
+									<Property name="SnapPointIndex" value="0" />
+									<Property name="OutSocketIndex" value="0" />
+								</Property>
+							</Property>
+							<Property name="Conditions" value="GcSnapPointCondition">
+								<Property name="GcSnapPointCondition">
+									<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+									<Property name="SnapState" value="GcBaseSnapState">
+										<Property name="SnapState" value="NotSnapped" />
+									</Property>
+									<Property name="ObjectId" value="" />
+									<Property name="SnapPointIndex" value="0" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE0WALKWAYCAP_" />
+						<Property name="PartID" value="_FRE_WALK_A_CAP0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcOutSnapSocketCondition">
+								<Property name="GcOutSnapSocketCondition">
+									<Property name="SnapPoint" value="SnapPoint_Face" />
+									<Property name="OutSocket" value="FaceRoom_Out_" />
+									<Property name="SnapState" value="GcBaseSnapState">
+										<Property name="SnapState" value="IsSnapped" />
+									</Property>
+									<Property name="ObjectId" value="" />
+									<Property name="SnapPointIndex" value="0" />
+									<Property name="OutSocketIndex" value="0" />
+								</Property>
+							</Property>
+							<Property name="Conditions" value="GcSnapPointCondition">
+								<Property name="GcSnapPointCondition">
+									<Property name="SnapPoint" value="SnapPoint_Face" />
+									<Property name="SnapState" value="GcBaseSnapState">
+										<Property name="SnapState" value="NotSnapped" />
+									</Property>
+									<Property name="ObjectId" value="" />
+									<Property name="SnapPointIndex" value="0" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE1WALKWAYCAP_" />
+						<Property name="PartID" value="_FRE_WALK_A_CAP0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcOutSnapSocketCondition">
+								<Property name="GcOutSnapSocketCondition">
+									<Property name="SnapPoint" value="SnapPoint_Face" />
+									<Property name="OutSocket" value="FaceCorridor_Out_" />
+									<Property name="SnapState" value="GcBaseSnapState">
+										<Property name="SnapState" value="IsSnapped" />
+									</Property>
+									<Property name="ObjectId" value="" />
+									<Property name="SnapPointIndex" value="0" />
+									<Property name="OutSocketIndex" value="0" />
+								</Property>
+							</Property>
+							<Property name="Conditions" value="GcSnapPointCondition">
+								<Property name="GcSnapPointCondition">
+									<Property name="SnapPoint" value="SnapPoint_SPIGN_Face1" />
+									<Property name="SnapState" value="GcBaseSnapState">
+										<Property name="SnapState" value="NotSnapped" />
+									</Property>
+									<Property name="ObjectId" value="" />
+									<Property name="SnapPointIndex" value="0" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE0WALKWAYCORCAP_" />
+						<Property name="PartID" value="_FRE_WALK_A_CAP0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcOutSnapSocketCondition">
+								<Property name="GcOutSnapSocketCondition">
+									<Property name="SnapPoint" value="SnapPoint_Face" />
+									<Property name="OutSocket" value="FaceCorridor_Out_" />
+									<Property name="SnapState" value="GcBaseSnapState">
+										<Property name="SnapState" value="IsSnapped" />
+									</Property>
+									<Property name="ObjectId" value="" />
+									<Property name="SnapPointIndex" value="0" />
+									<Property name="OutSocketIndex" value="0" />
+								</Property>
+							</Property>
+							<Property name="Conditions" value="GcSnapPointCondition">
+								<Property name="GcSnapPointCondition">
+									<Property name="SnapPoint" value="SnapPoint_Face" />
+									<Property name="SnapState" value="GcBaseSnapState">
+										<Property name="SnapState" value="NotSnapped" />
+									</Property>
+									<Property name="ObjectId" value="" />
+									<Property name="SnapPointIndex" value="0" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FACE1WALKWAYCORCAP_" />
+						<Property name="PartID" value="_FRE_WALK_A_CAP0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances">
+		<Property name="LodDistances" value="0.000000" />
+		<Property name="LodDistances" value="50.000000" />
+		<Property name="LodDistances" value="80.000000" />
+		<Property name="LodDistances" value="150.000000" />
+		<Property name="LodDistances" value="500.000000" />
+	</Property>
+</Data>

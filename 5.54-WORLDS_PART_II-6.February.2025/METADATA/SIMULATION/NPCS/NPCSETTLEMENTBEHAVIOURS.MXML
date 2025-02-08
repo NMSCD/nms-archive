@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.54.0.1)-->
+<Data template="GcNPCSettlementBehaviourData">
+	<Property name="BaseBehaviour" value="GcNPCSettlementBehaviourEntry">
+		<Property name="RunWhenOutdoorsProbability" value="0.200000" />
+		<Property name="OnlyUseIndoorPOIs" value="false" />
+		<Property name="BuildingClassCapacities">
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="None" />
+				</Property>
+				<Property name="Capacity" value="100" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Hub" />
+				</Property>
+				<Property name="Capacity" value="3" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_LandingZone" />
+				</Property>
+				<Property name="Capacity" value="2" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Bar" />
+				</Property>
+				<Property name="Capacity" value="8" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Tower" />
+				</Property>
+				<Property name="Capacity" value="2" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Market" />
+				</Property>
+				<Property name="Capacity" value="4" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Small" />
+				</Property>
+				<Property name="Capacity" value="1" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Medium" />
+				</Property>
+				<Property name="Capacity" value="3" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Large" />
+				</Property>
+				<Property name="Capacity" value="6" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Monument" />
+				</Property>
+				<Property name="Capacity" value="3" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_SheriffsOffice" />
+				</Property>
+				<Property name="Capacity" value="3" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Double" />
+				</Property>
+				<Property name="Capacity" value="4" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Farm" />
+				</Property>
+				<Property name="Capacity" value="6" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Factory" />
+				</Property>
+				<Property name="Capacity" value="5" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_SmallIndustrial" />
+				</Property>
+				<Property name="Capacity" value="1" />
+			</Property>
+			<Property name="BuildingClassCapacities" value="GcNPCSettlementBehaviourBuildingClassCapacityEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Clump" />
+				</Property>
+				<Property name="Capacity" value="1" />
+			</Property>
+		</Property>
+		<Property name="AreaPropertyWeights">
+			<Property name="AreaPropertyWeights" value="GcNPCSettlementBehaviourAreaPropertyWeightEntry">
+				<Property name="AreaProperty" value="GcNPCSettlementBehaviourAreaProperty">
+					<Property name="NPCSettlementBehaviourAreaProperty" value="ContainsPlayer" />
+				</Property>
+				<Property name="EntryWeight" value="1.500000" />
+				<Property name="ExitWeight" value="0.750000" />
+			</Property>
+			<Property name="AreaPropertyWeights" value="GcNPCSettlementBehaviourAreaPropertyWeightEntry">
+				<Property name="AreaProperty" value="GcNPCSettlementBehaviourAreaProperty">
+					<Property name="NPCSettlementBehaviourAreaProperty" value="ContainsNPCs" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+		</Property>
+		<Property name="BuildingClassWeights">
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="None" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Hub" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_LandingZone" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Bar" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Tower" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Market" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Small" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Medium" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Large" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Monument" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_SheriffsOffice" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Double" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Farm" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Clump" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_SmallIndustrial" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+			<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+				<Property name="BuildingClass" value="GcBuildingClassification">
+					<Property name="BuildingClass" value="Settlement_Factory" />
+				</Property>
+				<Property name="EntryWeight" value="1.000000" />
+				<Property name="ExitWeight" value="1.000000" />
+			</Property>
+		</Property>
+		<Property name="ObjectTypeWeights">
+			<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+				<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+					<Property name="NPCInteractiveObjectType" value="Generic" />
+				</Property>
+				<Property name="Weight" value="1.000000" />
+			</Property>
+			<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+				<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+					<Property name="NPCInteractiveObjectType" value="Idle" />
+				</Property>
+				<Property name="Weight" value="1.000000" />
+			</Property>
+			<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+				<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+					<Property name="NPCInteractiveObjectType" value="Chair" />
+				</Property>
+				<Property name="Weight" value="1.000000" />
+			</Property>
+			<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+				<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+					<Property name="NPCInteractiveObjectType" value="Conversation" />
+				</Property>
+				<Property name="Weight" value="1.000000" />
+			</Property>
+			<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+				<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+					<Property name="NPCInteractiveObjectType" value="WatchShip" />
+				</Property>
+				<Property name="Weight" value="1.000000" />
+			</Property>
+			<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+				<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+					<Property name="NPCInteractiveObjectType" value="Shop" />
+				</Property>
+				<Property name="Weight" value="1.000000" />
+			</Property>
+			<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+				<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+					<Property name="NPCInteractiveObjectType" value="Dance" />
+				</Property>
+				<Property name="Weight" value="1.000000" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="BehaviourOverrides">
+		<Property name="Generic" value="GcNPCSettlementBehaviourEntry">
+			<Property name="RunWhenOutdoorsProbability" value="0.200000" />
+			<Property name="OnlyUseIndoorPOIs" value="false" />
+			<Property name="BuildingClassCapacities" />
+			<Property name="AreaPropertyWeights" />
+			<Property name="BuildingClassWeights" />
+			<Property name="ObjectTypeWeights" />
+		</Property>
+		<Property name="Sociable" value="GcNPCSettlementBehaviourEntry">
+			<Property name="RunWhenOutdoorsProbability" value="0.200000" />
+			<Property name="OnlyUseIndoorPOIs" value="false" />
+			<Property name="BuildingClassCapacities" />
+			<Property name="AreaPropertyWeights">
+				<Property name="AreaPropertyWeights" value="GcNPCSettlementBehaviourAreaPropertyWeightEntry">
+					<Property name="AreaProperty" value="GcNPCSettlementBehaviourAreaProperty">
+						<Property name="NPCSettlementBehaviourAreaProperty" value="ContainsPlayer" />
+					</Property>
+					<Property name="EntryWeight" value="2.500000" />
+					<Property name="ExitWeight" value="0.500000" />
+				</Property>
+				<Property name="AreaPropertyWeights" value="GcNPCSettlementBehaviourAreaPropertyWeightEntry">
+					<Property name="AreaProperty" value="GcNPCSettlementBehaviourAreaProperty">
+						<Property name="NPCSettlementBehaviourAreaProperty" value="ContainsNPCs" />
+					</Property>
+					<Property name="EntryWeight" value="1.500000" />
+					<Property name="ExitWeight" value="0.750000" />
+				</Property>
+			</Property>
+			<Property name="BuildingClassWeights">
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Bar" />
+					</Property>
+					<Property name="EntryWeight" value="3.000000" />
+					<Property name="ExitWeight" value="0.250000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Market" />
+					</Property>
+					<Property name="EntryWeight" value="2.000000" />
+					<Property name="ExitWeight" value="1.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Small" />
+					</Property>
+					<Property name="EntryWeight" value="0.500000" />
+					<Property name="ExitWeight" value="2.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Medium" />
+					</Property>
+					<Property name="EntryWeight" value="0.500000" />
+					<Property name="ExitWeight" value="2.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Large" />
+					</Property>
+					<Property name="EntryWeight" value="1.000000" />
+					<Property name="ExitWeight" value="1.500000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Farm" />
+					</Property>
+					<Property name="EntryWeight" value="0.000000" />
+					<Property name="ExitWeight" value="10.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_SmallIndustrial" />
+					</Property>
+					<Property name="EntryWeight" value="0.000000" />
+					<Property name="ExitWeight" value="10.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Factory" />
+					</Property>
+					<Property name="EntryWeight" value="0.000000" />
+					<Property name="ExitWeight" value="10.000000" />
+				</Property>
+			</Property>
+			<Property name="ObjectTypeWeights">
+				<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+					<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+						<Property name="NPCInteractiveObjectType" value="Conversation" />
+					</Property>
+					<Property name="Weight" value="2.000000" />
+				</Property>
+				<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+					<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+						<Property name="NPCInteractiveObjectType" value="Dance" />
+					</Property>
+					<Property name="Weight" value="2.000000" />
+				</Property>
+				<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+					<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+						<Property name="NPCInteractiveObjectType" value="Idle" />
+					</Property>
+					<Property name="Weight" value="2.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Productive" value="GcNPCSettlementBehaviourEntry">
+			<Property name="RunWhenOutdoorsProbability" value="0.333000" />
+			<Property name="OnlyUseIndoorPOIs" value="false" />
+			<Property name="BuildingClassCapacities" />
+			<Property name="AreaPropertyWeights" />
+			<Property name="BuildingClassWeights">
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Farm" />
+					</Property>
+					<Property name="EntryWeight" value="3.000000" />
+					<Property name="ExitWeight" value="0.300000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Market" />
+					</Property>
+					<Property name="EntryWeight" value="2.000000" />
+					<Property name="ExitWeight" value="1.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Bar" />
+					</Property>
+					<Property name="EntryWeight" value="0.200000" />
+					<Property name="ExitWeight" value="2.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Small" />
+					</Property>
+					<Property name="EntryWeight" value="0.100000" />
+					<Property name="ExitWeight" value="5.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Medium" />
+					</Property>
+					<Property name="EntryWeight" value="0.100000" />
+					<Property name="ExitWeight" value="5.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Large" />
+					</Property>
+					<Property name="EntryWeight" value="0.100000" />
+					<Property name="ExitWeight" value="5.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_SmallIndustrial" />
+					</Property>
+					<Property name="EntryWeight" value="2.000000" />
+					<Property name="ExitWeight" value="1.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Factory" />
+					</Property>
+					<Property name="EntryWeight" value="3.000000" />
+					<Property name="ExitWeight" value="0.300000" />
+				</Property>
+			</Property>
+			<Property name="ObjectTypeWeights">
+				<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+					<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+						<Property name="NPCInteractiveObjectType" value="Chair" />
+					</Property>
+					<Property name="Weight" value="0.500000" />
+				</Property>
+				<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+					<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+						<Property name="NPCInteractiveObjectType" value="Dance" />
+					</Property>
+					<Property name="Weight" value="0.100000" />
+				</Property>
+				<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+					<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+						<Property name="NPCInteractiveObjectType" value="Idle" />
+					</Property>
+					<Property name="Weight" value="2.000000" />
+				</Property>
+				<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+					<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+						<Property name="NPCInteractiveObjectType" value="None" />
+					</Property>
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Tired" value="GcNPCSettlementBehaviourEntry">
+			<Property name="RunWhenOutdoorsProbability" value="0.000000" />
+			<Property name="OnlyUseIndoorPOIs" value="false" />
+			<Property name="BuildingClassCapacities" />
+			<Property name="AreaPropertyWeights">
+				<Property name="AreaPropertyWeights" value="GcNPCSettlementBehaviourAreaPropertyWeightEntry">
+					<Property name="AreaProperty" value="GcNPCSettlementBehaviourAreaProperty">
+						<Property name="NPCSettlementBehaviourAreaProperty" value="ContainsNPCs" />
+					</Property>
+					<Property name="EntryWeight" value="1.500000" />
+					<Property name="ExitWeight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="BuildingClassWeights">
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Small" />
+					</Property>
+					<Property name="EntryWeight" value="3.000000" />
+					<Property name="ExitWeight" value="0.100000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Medium" />
+					</Property>
+					<Property name="EntryWeight" value="4.000000" />
+					<Property name="ExitWeight" value="0.100000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Large" />
+					</Property>
+					<Property name="EntryWeight" value="5.000000" />
+					<Property name="ExitWeight" value="0.100000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Double" />
+					</Property>
+					<Property name="EntryWeight" value="3.000000" />
+					<Property name="ExitWeight" value="0.100000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Bar" />
+					</Property>
+					<Property name="EntryWeight" value="0.500000" />
+					<Property name="ExitWeight" value="1.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Market" />
+					</Property>
+					<Property name="EntryWeight" value="0.500000" />
+					<Property name="ExitWeight" value="1.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Farm" />
+					</Property>
+					<Property name="EntryWeight" value="0.000000" />
+					<Property name="ExitWeight" value="5.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_SmallIndustrial" />
+					</Property>
+					<Property name="EntryWeight" value="0.000000" />
+					<Property name="ExitWeight" value="5.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Factory" />
+					</Property>
+					<Property name="EntryWeight" value="0.000000" />
+					<Property name="ExitWeight" value="5.000000" />
+				</Property>
+			</Property>
+			<Property name="ObjectTypeWeights" />
+		</Property>
+		<Property name="Afraid" value="GcNPCSettlementBehaviourEntry">
+			<Property name="RunWhenOutdoorsProbability" value="1.000000" />
+			<Property name="OnlyUseIndoorPOIs" value="true" />
+			<Property name="BuildingClassCapacities" />
+			<Property name="AreaPropertyWeights" />
+			<Property name="BuildingClassWeights">
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="None" />
+					</Property>
+					<Property name="EntryWeight" value="0.100000" />
+					<Property name="ExitWeight" value="100.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Market" />
+					</Property>
+					<Property name="EntryWeight" value="0.000000" />
+					<Property name="ExitWeight" value="100.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_LandingZone" />
+					</Property>
+					<Property name="EntryWeight" value="0.000000" />
+					<Property name="ExitWeight" value="100.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Monument" />
+					</Property>
+					<Property name="EntryWeight" value="0.000000" />
+					<Property name="ExitWeight" value="100.000000" />
+				</Property>
+				<Property name="BuildingClassWeights" value="GcNPCSettlementBehaviourBuildingClassWeightEntry">
+					<Property name="BuildingClass" value="GcBuildingClassification">
+						<Property name="BuildingClass" value="Settlement_Clump" />
+					</Property>
+					<Property name="EntryWeight" value="0.000000" />
+					<Property name="ExitWeight" value="100.000000" />
+				</Property>
+			</Property>
+			<Property name="ObjectTypeWeights">
+				<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+					<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+						<Property name="NPCInteractiveObjectType" value="Chair" />
+					</Property>
+					<Property name="Weight" value="10.000000" />
+				</Property>
+				<Property name="ObjectTypeWeights" value="GcNPCSettlementBehaviourObjectTypeWeightEntry">
+					<Property name="ObjectType" value="GcNPCInteractiveObjectType">
+						<Property name="NPCInteractiveObjectType" value="Dance" />
+					</Property>
+					<Property name="Weight" value="0.000000" />
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+</Data>
