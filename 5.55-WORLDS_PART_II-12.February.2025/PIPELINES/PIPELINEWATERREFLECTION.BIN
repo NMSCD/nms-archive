@@ -1,0 +1,84 @@
+<Pipeline>
+  <Setup>
+    <!-- Pipeline Variables -->    
+    <!-- enum:eWaterState - in code! -->
+    <PipelineVariable id="WaterState"                     defaultValue="0" />
+    <PipelineVariable id="WaterState_NoWater"             defaultValue="0" />
+    <PipelineVariable id="WaterState_AboveWater"          defaultValue="1" />
+    <PipelineVariable id="WaterState_BelowWater"          defaultValue="2" />
+    <PipelineVariable id="WaterState_NearWaterSurface"    defaultValue="3" />
+
+    <RenderTarget id="WATER_PLANAR_REFL_COL"    platforms="!TRINITY|PC|NEXT|XBOX|PS4|MACOS|IOS" depthBuf="false" numColBufs="1" format="R11FG11FB10F" scaleX="0.25"  scaleY="0.5"  applyDrs="true" allowDcc="true" crossPipeShareId="WATER_PLANAR_REFL_COL" /> 
+    <RenderTarget id="WATER_PLANAR_REFL_COL"    platforms="TRINITY"                             depthBuf="false" numColBufs="1" format="R11FG11FB10F" width="960"   height="1080" applyDrs="true" allowDcc="true" crossPipeShareId="WATER_PLANAR_REFL_COL" /> 
+    <RenderTarget id="WATER_PLANAR_REFL_DEPTH"  platforms="!TRINITY|PC|NEXT|XBOX|PS4|MACOS|IOS" depthBuf="true"  numColBufs="0"                       scaleX="0.25"  scaleY="0.5"  applyDrs="true"                 crossPipeShareId="WATER_PLANAR_REFL_DEPTH" />
+    <RenderTarget id="WATER_PLANAR_REFL_DEPTH"  platforms="TRINITY"                             depthBuf="true"  numColBufs="0"                       width="960"   height="1080" applyDrs="true"                 crossPipeShareId="WATER_PLANAR_REFL_DEPTH" />
+    
+    <RenderTarget id="SHADOWBUF"      depthFormat="DEPTH16" depthBuf="true"  numColBufs="0"  format="RGBA8" scale="1.0" width="120" height="40" shadow="true" hasMips="false" numUniformBuffers="3" />
+
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="Shadow">
+      <BeginTarget target="SHADOWBUF" />
+      <RenderPass ColorAction0="Clear/Store" ClearColor="0/0/0/0" DepthAction="DontCare/DontCare" StencilAction="DontCare/DontCare"/>
+      
+      <SetShadowMap index="-1" />
+      <UpdateShadowMap />
+
+      <ColourMask channels="RGBA"/>
+      <ClearTarget depthBuf="true" colBuf0="false" excludeX360="false" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+
+      <EndTarget flushCB="false" flushDB="true" />
+    </Stage>
+
+    <Stage id="FROMABOVE">
+      <If conditionType="variable" id="WaterState"  test="equal" sourceType="variable" source="WaterState_AboveWater" />
+        <BeginTarget target="WATER_PLANAR_REFL_COL" depthTarget="WATER_PLANAR_REFL_DEPTH" />
+        <RenderPass ColorAction0="Clear/Store" ClearColor="0/0/0/0" DepthAction="Clear/Store" StencilAction="Clear/Store" ClearDepthStencil="0/0"/>   
+        <BindBuffer sampler="gShadowMap"   sourceRT="SHADOWBUF"  bufIndex="32" />
+        <ClearTarget depthBuf="true" colBuf0="false" excludeX360="false" col_R="0.0" col_G="0.0" col_B="0.0" />
+        <ColourMask channels="RGB"/>
+
+        <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+        <DrawGeometry type="Mesh"     class="Sky"     context="REFLECT_WATER"    order="STATECHANGES" />
+
+        <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="add" depthTest="less" alphaToCoverage="false"/>
+        <DoForwardLightLoop type="Mesh" class="AtmosphereNear" context="REFLECT_WATER" order="BACK_TO_FRONT" />
+  
+        <SetContext zwrite="true" colourWrite="true" cullMode="front" blendMode="replace" depthTest="less" alphaToCoverage="false"/>
+        <DoForwardLightLoop type="Terrain"  class="LOD3"        context="RFLCT_STC_T_S"      order="FRONT_TO_BACK" />
+        <DoForwardLightLoop type="Terrain"  class="LOD3"        context="RFLCT_FW_TIL"       order="FRONT_TO_BACK" />
+        <DoForwardLightLoop type="Mesh"     class="Atmosphere"  context="PLANET_RFL"         order="STATECHANGES" />
+
+        <UnbindBuffers />
+        <EndTarget flushCB="false" flushDB="true" />
+
+        
+        <BeginTarget target="WATER_PLANAR_REFL_COL" depthTarget="WATER_PLANAR_REFL_DEPTH" onlyStencil="true" />
+        <RenderPass ColorAction0="Load/Store" ClearColor="0/0/0/0"/>  
+        <BindBuffer sampler="gBufferMap" sourceRT="WATER_PLANAR_REFL_DEPTH" bufIndex="32" />
+        
+        <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="less"   />
+        <DoForwardLightLoop type="Mesh"    class="RingsBelow"         context="RNGS_BLW_RFLCTD"  order="BACK_TO_FRONT" />
+        <SetContext zwrite="false" colourWrite="true" cullMode="back"  blendMode="blend" depthTest="less"   />
+        <DoForwardLightLoop type="Mesh"    class="RingsAbove"         context="RNGS_ABVE_RFLCTD"  order="BACK_TO_FRONT" />
+
+        <SetContext zwrite="false" colourWrite="true" cullMode="none" blendMode="blend" depthTest="always" alphaToCoverage="false" />
+        <DrawQuad material="Materials/NewCloud.material.mbin" context="REFLECTED_CLOUDS"  width ="1.0" height="1.0" />
+        
+        <SetContext zwrite="false" colourWrite="true" cullMode="front" blendMode="Blend_PostMultAlpha" depthTest="always" />
+        <DoForwardLightLoop type="Mesh"     class="Rainbow"     context="RNBW_RFLCTD"     order="BACK_TO_FRONT" />
+        <EndTarget flushCB="true" flushDB="true" />
+      <EndIf />
+    </Stage>
+
+    <Stage id="Reset States">
+      <SetContext zwrite="false" colourWrite="true" cullMode="back" blendMode="blend" depthTest="always" alphaToCoverage="false"/>
+      <ColourMask channels="RGBA"/>
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>
