@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.55.0.1)-->
+<Data template="cTkMeshWaterQualitySettings">
+	<Property name="MeshWaterQualitySettings">
+		<Property name="Low" value="TkMeshWaterQualitySettingData">
+			<Property name="WaterMeshConfig" value="TkWaterMeshConfig">
+				<Property name="BaseScale" value="4.000000" />
+				<Property name="GeometryDownSampleFactor" value="1" />
+				<Property name="LodCount" value="8" />
+				<Property name="LodDataResolution" value="128" />
+				<Property name="FoamScale" value="1" />
+				<Property name="DynamicWaveScale" value="1" />
+				<Property name="DisableSkirtGeneration" value="false" />
+				<Property name="MaxHorizontalScaleMultiplier" value="5" />
+				<Property name="MinHorizontalScaleMultiplier" value="1" />
+			</Property>
+			<Property name="EnableFoam" value="false" />
+			<Property name="EnableLocalTerrain" value="false" />
+			<Property name="PostProcessWater" value="true" />
+			<Property name="RainDropEffect" value="true" />
+			<Property name="EnableDetailNormals" value="true" />
+			<Property name="EnableDynamicWaves" value="false" />
+		</Property>
+		<Property name="Medium" value="TkMeshWaterQualitySettingData">
+			<Property name="WaterMeshConfig" value="TkWaterMeshConfig">
+				<Property name="BaseScale" value="2.000000" />
+				<Property name="GeometryDownSampleFactor" value="2" />
+				<Property name="LodCount" value="8" />
+				<Property name="LodDataResolution" value="256" />
+				<Property name="FoamScale" value="1" />
+				<Property name="DynamicWaveScale" value="1" />
+				<Property name="DisableSkirtGeneration" value="false" />
+				<Property name="MaxHorizontalScaleMultiplier" value="6" />
+				<Property name="MinHorizontalScaleMultiplier" value="1" />
+			</Property>
+			<Property name="EnableFoam" value="true" />
+			<Property name="EnableLocalTerrain" value="true" />
+			<Property name="PostProcessWater" value="true" />
+			<Property name="RainDropEffect" value="true" />
+			<Property name="EnableDetailNormals" value="true" />
+			<Property name="EnableDynamicWaves" value="false" />
+		</Property>
+		<Property name="High" value="TkMeshWaterQualitySettingData">
+			<Property name="WaterMeshConfig" value="TkWaterMeshConfig">
+				<Property name="BaseScale" value="2.000000" />
+				<Property name="GeometryDownSampleFactor" value="2" />
+				<Property name="LodCount" value="8" />
+				<Property name="LodDataResolution" value="512" />
+				<Property name="FoamScale" value="1" />
+				<Property name="DynamicWaveScale" value="1" />
+				<Property name="DisableSkirtGeneration" value="false" />
+				<Property name="MaxHorizontalScaleMultiplier" value="7" />
+				<Property name="MinHorizontalScaleMultiplier" value="1" />
+			</Property>
+			<Property name="EnableFoam" value="true" />
+			<Property name="EnableLocalTerrain" value="true" />
+			<Property name="PostProcessWater" value="true" />
+			<Property name="RainDropEffect" value="true" />
+			<Property name="EnableDetailNormals" value="false" />
+			<Property name="EnableDynamicWaves" value="true" />
+		</Property>
+		<Property name="Ultra" value="TkMeshWaterQualitySettingData">
+			<Property name="WaterMeshConfig" value="TkWaterMeshConfig">
+				<Property name="BaseScale" value="2.000000" />
+				<Property name="GeometryDownSampleFactor" value="2" />
+				<Property name="LodCount" value="8" />
+				<Property name="LodDataResolution" value="1024" />
+				<Property name="FoamScale" value="2" />
+				<Property name="DynamicWaveScale" value="1" />
+				<Property name="DisableSkirtGeneration" value="false" />
+				<Property name="MaxHorizontalScaleMultiplier" value="8" />
+				<Property name="MinHorizontalScaleMultiplier" value="1" />
+			</Property>
+			<Property name="EnableFoam" value="true" />
+			<Property name="EnableLocalTerrain" value="true" />
+			<Property name="PostProcessWater" value="true" />
+			<Property name="RainDropEffect" value="true" />
+			<Property name="EnableDetailNormals" value="false" />
+			<Property name="EnableDynamicWaves" value="true" />
+		</Property>
+	</Property>
+	<Property name="MeshWaterReflectionQualitySettings">
+		<Property name="Low" value="TkMeshWaterReflectionQualitySettingData">
+			<Property name="ScreenSpaceReflections" value="Off" />
+			<Property name="PlanarReflections" value="Off" />
+		</Property>
+		<Property name="Medium" value="TkMeshWaterReflectionQualitySettingData">
+			<Property name="ScreenSpaceReflections" value="Off" />
+			<Property name="PlanarReflections" value="TerrainOnly" />
+		</Property>
+		<Property name="High" value="TkMeshWaterReflectionQualitySettingData">
+			<Property name="ScreenSpaceReflections" value="Off" />
+			<Property name="PlanarReflections" value="TerrainAndScreenspace" />
+		</Property>
+		<Property name="Ultra" value="TkMeshWaterReflectionQualitySettingData">
+			<Property name="ScreenSpaceReflections" value="On" />
+			<Property name="PlanarReflections" value="TerrainAndScreenspace" />
+		</Property>
+	</Property>
+</Data>

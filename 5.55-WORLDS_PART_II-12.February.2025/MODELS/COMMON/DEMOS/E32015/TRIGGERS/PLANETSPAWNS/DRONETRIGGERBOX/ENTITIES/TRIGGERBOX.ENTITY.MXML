@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.55.0.1)-->
+<Data template="cTkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="GcTriggerActionComponentData">
+			<Property name="GcTriggerActionComponentData">
+				<Property name="HideModel" value="true" />
+				<Property name="StartInactive" value="false" />
+				<Property name="States">
+					<Property name="States" value="GcActionTriggerState">
+						<Property name="StateID" value="ACTIVE" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger">
+								<Property name="Event" value="GcPlayerNearbyEvent">
+									<Property name="GcPlayerNearbyEvent">
+										<Property name="RequirePlayerAction" value="None" />
+										<Property name="Distance" value="30.000000" />
+										<Property name="Angle" value="360.000000" />
+										<Property name="AnglePlayerRelative" value="false" />
+										<Property name="AngleOffset" value="0.000000" />
+										<Property name="AngleReflected" value="false" />
+										<Property name="AngleMinDistance" value="1.000000" />
+										<Property name="MustAffordCostID" value="" />
+										<Property name="DistanceCheckType" value="Radius" />
+										<Property name="Inverse" value="false" />
+										<Property name="OnlyForLocalPlayer" value="false" />
+										<Property name="IncludeAllPhysics" value="false" />
+										<Property name="IncludeMobileNPCs" value="false" />
+										<Property name="TeleporterCountsAsPlayer" value="true" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcSpawnAction">
+										<Property name="GcSpawnAction">
+											<Property name="Event" value="ATTACKDRONE" />
+										</Property>
+									</Property>
+									<Property name="Action" value="GcGoToStateAction">
+										<Property name="GcGoToStateAction">
+											<Property name="State" value="INACTIVE" />
+											<Property name="Broadcast" value="false" />
+											<Property name="BroadcastLevel" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState">
+						<Property name="StateID" value="INACTIVE" />
+						<Property name="Triggers" />
+					</Property>
+				</Property>
+				<Property name="Persistent" value="false" />
+				<Property name="PersistentState" value="" />
+				<Property name="ResetShotTimeOnStateChange" value="false" />
+				<Property name="LinkStateToBaseGrid" value="false" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances">
+		<Property name="LodDistances" value="0.000000" />
+		<Property name="LodDistances" value="50.000000" />
+		<Property name="LodDistances" value="80.000000" />
+		<Property name="LodDistances" value="150.000000" />
+		<Property name="LodDistances" value="500.000000" />
+	</Property>
+</Data>

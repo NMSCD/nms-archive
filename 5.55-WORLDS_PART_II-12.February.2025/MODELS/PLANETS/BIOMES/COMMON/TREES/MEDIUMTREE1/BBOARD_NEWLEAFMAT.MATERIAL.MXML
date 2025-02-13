@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.55.0.1)-->
+<Data template="cTkMaterialData">
+	<Property name="Name" value="bboard_NewLeafMat" />
+	<Property name="Metamaterial" value="Models/Planets/Biomes/Common/Trees/MediumTree1/Materials/NewLeafMat.metamaterial.mXml" />
+	<Property name="Class" value="Cutout" />
+	<Property name="TransparencyLayerID" value="0" />
+	<Property name="CastShadow" value="true" />
+	<Property name="DisableZTest" value="false" />
+	<Property name="CreateFur" value="false" />
+	<Property name="EnableLodFade" value="true" />
+	<Property name="Link" value="" />
+	<Property name="Shader" value="SHADERS/UBERSHADER.SHADER.BIN" />
+	<Property name="Flags">
+		<Property name="Flags" value="TkMaterialFlags">
+			<Property name="MaterialFlag" value="_F01_DIFFUSEMAP" />
+		</Property>
+		<Property name="Flags" value="TkMaterialFlags">
+			<Property name="MaterialFlag" value="_F03_NORMALMAP" />
+		</Property>
+		<Property name="Flags" value="TkMaterialFlags">
+			<Property name="MaterialFlag" value="_F11_ALPHACUTOUT" />
+		</Property>
+		<Property name="Flags" value="TkMaterialFlags">
+			<Property name="MaterialFlag" value="_F12_BATCHED_BILLBOARD" />
+		</Property>
+		<Property name="Flags" value="TkMaterialFlags">
+			<Property name="MaterialFlag" value="_F18_UVTILES" />
+		</Property>
+		<Property name="Flags" value="TkMaterialFlags">
+			<Property name="MaterialFlag" value="_F19_BILLBOARD" />
+		</Property>
+		<Property name="Flags" value="TkMaterialFlags">
+			<Property name="MaterialFlag" value="_F25_ROUGHNESS_MASK" />
+		</Property>
+		<Property name="Flags" value="TkMaterialFlags">
+			<Property name="MaterialFlag" value="_F40_SUBSURFACE_MASK" />
+		</Property>
+	</Property>
+	<Property name="Uniforms">
+		<Property name="Uniforms" value="TkMaterialUniform">
+			<Property name="Name" value="gMaterialColourVec4" />
+			<Property name="Values">
+				<Property name="X" value="1.000000" />
+				<Property name="Y" value="1.000000" />
+				<Property name="Z" value="1.000000" />
+				<Property name="W" value="1.000000" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+		<Property name="Uniforms" value="TkMaterialUniform">
+			<Property name="Name" value="gMaterialParamsVec4" />
+			<Property name="Values">
+				<Property name="X" value="1.000000" />
+				<Property name="Y" value="0.500000" />
+				<Property name="Z" value="0.000000" />
+				<Property name="W" value="1.000000" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+		<Property name="Uniforms" value="TkMaterialUniform">
+			<Property name="Name" value="gMaterialParams2Vec4" />
+			<Property name="Values">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="1.000000" />
+				<Property name="Z" value="0.000000" />
+				<Property name="W" value="0.000000" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+		<Property name="Uniforms" value="TkMaterialUniform">
+			<Property name="Name" value="gMaterialSFXVec4" />
+			<Property name="Values">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="0.000000" />
+				<Property name="Z" value="0.000000" />
+				<Property name="W" value="0.000000" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+		<Property name="Uniforms" value="TkMaterialUniform">
+			<Property name="Name" value="gMaterialSFXColVec4" />
+			<Property name="Values">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="0.000000" />
+				<Property name="Z" value="0.000000" />
+				<Property name="W" value="0.000000" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+		<Property name="Uniforms" value="TkMaterialUniform">
+			<Property name="Name" value="gUVScrollStepVec4" />
+			<Property name="Values">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="0.000000" />
+				<Property name="Z" value="2.000000" />
+				<Property name="W" value="1.000000" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+		<Property name="Uniforms" value="TkMaterialUniform">
+			<Property name="Name" value="gCustomParams01Vec4" />
+			<Property name="Values">
+				<Property name="X" value="1.000000" />
+				<Property name="Y" value="0.000000" />
+				<Property name="Z" value="0.000000" />
+				<Property name="W" value="0.040000" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+	</Property>
+	<Property name="Samplers">
+		<Property name="Samplers" value="TkMaterialSampler">
+			<Property name="Name" value="gDiffuseMap" />
+			<Property name="Map" value="TEXTURES/PLANETS/BIOMES/COMMON/LEAVES/LEAVES/SINGLELEAF.BASE.1.DDS" />
+			<Property name="IsCube" value="false" />
+			<Property name="UseCompression" value="true" />
+			<Property name="UseMipMaps" value="true" />
+			<Property name="IsSRGB" value="true" />
+			<Property name="MaterialAlternativeId" value="" />
+			<Property name="TextureAddressMode" value="Wrap" />
+			<Property name="TextureFilterMode" value="Trilinear" />
+			<Property name="Anisotropy" value="0" />
+		</Property>
+		<Property name="Samplers" value="TkMaterialSampler">
+			<Property name="Name" value="gMasksMap" />
+			<Property name="Map" value="TEXTURES/PLANETS/BIOMES/COMMON/LEAVES/LEAVES/SINGLELEAF.BASE.1.MASKS.DDS" />
+			<Property name="IsCube" value="false" />
+			<Property name="UseCompression" value="true" />
+			<Property name="UseMipMaps" value="true" />
+			<Property name="IsSRGB" value="false" />
+			<Property name="MaterialAlternativeId" value="" />
+			<Property name="TextureAddressMode" value="Wrap" />
+			<Property name="TextureFilterMode" value="Trilinear" />
+			<Property name="Anisotropy" value="0" />
+		</Property>
+		<Property name="Samplers" value="TkMaterialSampler">
+			<Property name="Name" value="gNormalMap" />
+			<Property name="Map" value="TEXTURES/PLANETS/BIOMES/COMMON/LEAVES/LEAVES/SINGLELEAF.BASE.1.NORMAL.DDS" />
+			<Property name="IsCube" value="false" />
+			<Property name="UseCompression" value="true" />
+			<Property name="UseMipMaps" value="true" />
+			<Property name="IsSRGB" value="false" />
+			<Property name="MaterialAlternativeId" value="" />
+			<Property name="TextureAddressMode" value="Wrap" />
+			<Property name="TextureFilterMode" value="Trilinear" />
+			<Property name="Anisotropy" value="0" />
+		</Property>
+	</Property>
+	<Property name="ShaderMillDataHash" value="0" />
+</Data>

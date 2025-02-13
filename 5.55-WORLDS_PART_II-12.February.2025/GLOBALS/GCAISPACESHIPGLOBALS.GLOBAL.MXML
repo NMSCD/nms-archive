@@ -1,0 +1,1207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.55.0.1)-->
+<Data template="cGcAISpaceshipGlobals">
+	<Property name="PlayerSquadronConfig" value="GcPlayerSquadronConfig">
+		<Property name="SquadName" value="PLAYER_SQUADRON" />
+		<Property name="PilotRankTraitRanges">
+			<Property name="C">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="0.700000" />
+			</Property>
+			<Property name="B">
+				<Property name="X" value="0.200000" />
+				<Property name="Y" value="0.800000" />
+			</Property>
+			<Property name="A">
+				<Property name="X" value="0.400000" />
+				<Property name="Y" value="0.900000" />
+			</Property>
+			<Property name="S">
+				<Property name="X" value="0.500000" />
+				<Property name="Y" value="1.000000" />
+			</Property>
+		</Property>
+		<Property name="PilotRankAttackDefinitions">
+			<Property name="C" value="SQUADRON_C" />
+			<Property name="B" value="SQUADRON_B" />
+			<Property name="A" value="SQUADRON_A" />
+			<Property name="S" value="SQUADRON_S" />
+		</Property>
+		<Property name="SummonArriveTime" value="1.000000" />
+		<Property name="SummonArriveTimeIntervalMin" value="0.750000" />
+		<Property name="SummonArriveTimeIntervalMax" value="1.500000" />
+		<Property name="SummonStartSpeed" value="150.000000" />
+		<Property name="SummonLimitTurningTime" value="1.000000" />
+		<Property name="MinSpeedForSummonInMoveDir" value="100.000000" />
+		<Property name="SummonSpaceSpawnRangeMin" value="500.000000" />
+		<Property name="SummonSpaceSpawnRangeMax" value="800.000000" />
+		<Property name="SummonSpaceSpawnAngleMin" value="5.000000" />
+		<Property name="SummonSpaceSpawnAngleMax" value="20.000000" />
+		<Property name="SummonPlanetPitchMin" value="5.000000" />
+		<Property name="SummonPlanetPitchMax" value="20.000000" />
+		<Property name="SummonPlanetYawMin" value="5.000000" />
+		<Property name="SummonPlanetYawMax" value="20.000000" />
+		<Property name="SummonPlanetDistance" value="2000.000000" />
+		<Property name="SummonInFormation" value="false" />
+		<Property name="SummonInFormationFwdOffset" value="-300.000000" />
+		<Property name="LeavingForceScaleDistMin" value="100.000000" />
+		<Property name="LeavingForceScaleDistMax" value="1000.000000" />
+		<Property name="LeavingMaxForceMultiplier" value="5.000000" />
+		<Property name="LeavingFromPlanetOrbitWarpDist" value="1500.000000" />
+		<Property name="LeavingFromPlanetOrbitMinIncline" value="20.000000" />
+		<Property name="LeavingFromPlanetOrbitMaxSpeed" value="300.000000" />
+		<Property name="LeavingFromSpaceWarpDist" value="2000.000000" />
+		<Property name="LeavingFromSpaceAngleFromFwdMin" value="25.000000" />
+		<Property name="LeavingFromSpaceAngleFromFwdMax" value="80.000000" />
+		<Property name="FormationOffsetRotationPeriod" value="160.000000" />
+		<Property name="FormationOffsetRotationMaxSpeed" value="0.050000" />
+		<Property name="FormationOffsetZOffsetVarianceMinSpeedScale" value="20.000000" />
+		<Property name="FormationOffsetZOffsetVarianceMaxSpeedScale" value="150.000000" />
+		<Property name="FormationOffsetZOffsetVariancePeriod" value="8.000000" />
+		<Property name="FormationOffsetZOffsetVarianceMin" value="0.900000" />
+		<Property name="FormationOffsetZOffsetVarianceMax" value="1.300000" />
+		<Property name="FormationOffset">
+			<Property name="X" value="0.000000" />
+			<Property name="Y" value="10.000000" />
+			<Property name="Z" value="140.000000" />
+		</Property>
+		<Property name="FormationOffsetCylinderWidth" value="80.000000" />
+		<Property name="FormationOffsetCylinderHeight" value="40.000000" />
+		<Property name="FormationOffsetCylinderLength" value="10.000000" />
+		<Property name="FormationOffsetThirdPerson">
+			<Property name="X" value="0.000000" />
+			<Property name="Y" value="10.000000" />
+			<Property name="Z" value="110.000000" />
+		</Property>
+		<Property name="FormationOffsetCylinderWidthThirdPerson" value="100.000000" />
+		<Property name="FormationOffsetCylinderHeightThirdPerson" value="60.000000" />
+		<Property name="FormationOffsetCylinderLengthThirdPerson" value="10.000000" />
+		<Property name="CombatFormationOffset">
+			<Property name="X" value="0.000000" />
+			<Property name="Y" value="0.000000" />
+			<Property name="Z" value="120.000000" />
+		</Property>
+		<Property name="CombatFormationOffsetCylinderWidth" value="80.000000" />
+		<Property name="CombatFormationOffsetCylinderHeight" value="40.000000" />
+		<Property name="CombatFormationOffsetCylinderLength" value="10.000000" />
+		<Property name="CombatFormationOffsetThirdPerson">
+			<Property name="X" value="0.000000" />
+			<Property name="Y" value="0.000000" />
+			<Property name="Z" value="80.000000" />
+		</Property>
+		<Property name="CombatFormationOffsetCylinderWidthThirdPerson" value="75.000000" />
+		<Property name="CombatFormationOffsetCylinderHeightThirdPerson" value="40.000000" />
+		<Property name="CombatFormationOffsetCylinderLengthThirdPerson" value="5.000000" />
+		<Property name="MaintainFormationStrengthVariance" value="0.500000" />
+		<Property name="MaintainFormationInCombatMinTime" value="10.000000" />
+		<Property name="MaintainFormationInCombatMaxTime" value="20.000000" />
+		<Property name="MaintainFormationStartSmoothTime" value="5.000000" />
+		<Property name="MaintainFormationMaxForce" value="2000.000000" />
+		<Property name="MaintainFormationLockStrength" value="4.500000" />
+		<Property name="MaintainFormationLockStrengthCombat" value="4.500000" />
+		<Property name="MaintainFormationLockStrengthBoosting" value="6.000000" />
+		<Property name="MaintainFormationPostBoostSmoothTime" value="3.000000" />
+		<Property name="MaintainFormationLockAlignStrength" value="12.000000" />
+		<Property name="MaintainFormationLockRollAlignStrength" value="3.000000" />
+		<Property name="MaintainFormationAlignMinDist" value="100.000000" />
+		<Property name="MaintainFormationAlignMaxDist" value="200.000000" />
+		<Property name="MaintainFormationAlignMinSpeed" value="10.000000" />
+		<Property name="MaintainFormationAlignMaxSpeed" value="30.000000" />
+		<Property name="MaintainFormationSharpTurnMinSpeed" value="200.000000" />
+		<Property name="MaintainFormationSharpTurnMinSpeedForce" value="100.000000" />
+		<Property name="JoinFormationMaxForce" value="2500.000000" />
+		<Property name="JoinFormationOffset" value="-300.000000" />
+		<Property name="JoinFormationArrivalTolerance" value="100.000000" />
+		<Property name="JoinFormationBoostMaxSpeed" value="1900.000000" />
+		<Property name="JoinFormationBoostMinDist" value="500.000000" />
+		<Property name="JoinFormationBoostMaxDist" value="1500.000000" />
+		<Property name="JoinFormationBoostAlignStrength" value="4.000000" />
+		<Property name="JoinFormationBrakeAlignStrength" value="5.000000" />
+		<Property name="JoinFormationBrakeDist" value="400.000000" />
+		<Property name="JoinFormationMinSpeed" value="50.000000" />
+		<Property name="JoinFormationMaxSpeedBrake" value="50.000000" />
+		<Property name="BreakFormationTime" value="1.000000" />
+		<Property name="BreakFormationMaxForce" value="400.000000" />
+		<Property name="BreakFormationMinTurnAngle" value="5.000000" />
+		<Property name="BreakFormationMaxTurnAngle" value="45.000000" />
+		<Property name="MinTimeBetweenFormationBreaks" value="1.000000" />
+		<Property name="MinShipsInFormationDuringCombat" value="0" />
+		<Property name="MaxShipsInFormationDuringCombat" value="3" />
+		<Property name="OutOfFormationMinTime" value="8.000000" />
+		<Property name="OutOfFormationMaxTime" value="16.000000" />
+		<Property name="RandomSpaceshipResources">
+			<Property name="RandomSpaceshipResources" value="GcAISpaceshipModelData">
+				<Property name="Filename" value="MODELS/COMMON/SPACECRAFT/FIGHTERS/FIGHTER_PROC.SCENE.MBIN" />
+				<Property name="Class" value="GcSpaceshipClasses">
+					<Property name="ShipClass" value="Fighter" />
+				</Property>
+				<Property name="AIRole" value="GcAISpaceshipRoles">
+					<Property name="AIShipRole" value="PlayerSquadron" />
+				</Property>
+				<Property name="FrigateClass" value="GcFrigateClass">
+					<Property name="FrigateClass" value="Combat" />
+				</Property>
+			</Property>
+			<Property name="RandomSpaceshipResources" value="GcAISpaceshipModelData">
+				<Property name="Filename" value="MODELS/COMMON/SPACECRAFT/SCIENTIFIC/SCIENTIFIC_PROC.SCENE.MBIN" />
+				<Property name="Class" value="GcSpaceshipClasses">
+					<Property name="ShipClass" value="Scientific" />
+				</Property>
+				<Property name="AIRole" value="GcAISpaceshipRoles">
+					<Property name="AIShipRole" value="PlayerSquadron" />
+				</Property>
+				<Property name="FrigateClass" value="GcFrigateClass">
+					<Property name="FrigateClass" value="Combat" />
+				</Property>
+			</Property>
+			<Property name="RandomSpaceshipResources" value="GcAISpaceshipModelData">
+				<Property name="Filename" value="MODELS/COMMON/SPACECRAFT/SAILSHIP/SAILSHIP_PROC.SCENE.MBIN" />
+				<Property name="Class" value="GcSpaceshipClasses">
+					<Property name="ShipClass" value="Sail" />
+				</Property>
+				<Property name="AIRole" value="GcAISpaceshipRoles">
+					<Property name="AIShipRole" value="PlayerSquadron" />
+				</Property>
+				<Property name="FrigateClass" value="GcFrigateClass">
+					<Property name="FrigateClass" value="Combat" />
+				</Property>
+			</Property>
+			<Property name="RandomSpaceshipResources" value="GcAISpaceshipModelData">
+				<Property name="Filename" value="MODELS/COMMON/SPACECRAFT/S-CLASS/BIOPARTS/BIOSHIP_PROC.SCENE.MBIN" />
+				<Property name="Class" value="GcSpaceshipClasses">
+					<Property name="ShipClass" value="Alien" />
+				</Property>
+				<Property name="AIRole" value="GcAISpaceshipRoles">
+					<Property name="AIShipRole" value="PlayerSquadron" />
+				</Property>
+				<Property name="FrigateClass" value="GcFrigateClass">
+					<Property name="FrigateClass" value="Combat" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="RandomPilotNPCResources">
+			<Property name="RandomPilotNPCResources" value="MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCGEK.SCENE.MBIN" />
+			<Property name="RandomPilotNPCResources" value="MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCVYKEEN.SCENE.MBIN" />
+			<Property name="RandomPilotNPCResources" value="MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCKORVAX.SCENE.MBIN" />
+			<Property name="RandomPilotNPCResources" value="MODELS/COMMON/PLAYER/PLAYERCHARACTER/NPCFOURTH.SCENE.MBIN" />
+		</Property>
+	</Property>
+	<Property name="FreighterEngineGlowDefaultColour">
+		<Property name="R" value="0.539000" />
+		<Property name="G" value="0.769000" />
+		<Property name="B" value="1.000000" />
+		<Property name="A" value="1.000000" />
+	</Property>
+	<Property name="PoliceFreighterLaserRange" value="2000.000000" />
+	<Property name="PoliceFreighterLaserShootTime" value="1.200000" />
+	<Property name="PoliceFreighterLaserRandomExtraPauseMax" value="3.500000" />
+	<Property name="PoliceFreighterLaserActiveTime" value="1.200000" />
+	<Property name="PoliceFreighterProjectileRange" value="6000.000000" />
+	<Property name="PoliceFreighterProjectileBurstCount" value="10" />
+	<Property name="PoliceFreighterProjectileBurstTime" value="0.150000" />
+	<Property name="PoliceFreighterProjectilePauseTime" value="1.500000" />
+	<Property name="PoliceFreighterProjectileRandomExtraPauseMax" value="4.000000" />
+	<Property name="PoliceFreighterProjectileModulo" value="3" />
+	<Property name="DisplayShipAttackTypes" value="false" />
+	<Property name="MaxDifficultySpaceCombatTurnExtra" value="1.600000" />
+	<Property name="MaxDifficultySpaceCombatSpeedExtra" value="55.000000" />
+	<Property name="MinimumCircleTimeBeforeLanding" value="5.000000" />
+	<Property name="MinimumTimeBetweenOutpostLandings" value="3.000000" />
+	<Property name="VisibleDistance" value="3500.000000" />
+	<Property name="TradersAttackPirates" value="true" />
+	<Property name="FreightersAlwaysAttackPlayer" value="false" />
+	<Property name="GroundEffectEnabled" value="true" />
+	<Property name="AtmosphereEffectEnabled" value="false" />
+	<Property name="FillUpOutposts" value="false" />
+	<Property name="SalvageTime" value="0.400000" />
+	<Property name="SalvageRemovalTime" value="5.000000" />
+	<Property name="SalvageValueMultiplier" value="0.600000" />
+	<Property name="DockingWaitDistance" value="10.000000" />
+	<Property name="MaxNumActiveTraders" value="15" />
+	<Property name="MaxNumActiveTraderRadius" value="10000.000000" />
+	<Property name="MaxNumActivePolice" value="15" />
+	<Property name="MaxNumActivePoliceRadius" value="10000.000000" />
+	<Property name="MinAggroDamage" value="100" />
+	<Property name="TrailLandingFadeTime" value="0.500000" />
+	<Property name="EnergyShieldsEnabled" value="true" />
+	<Property name="EnergyShield" value="MODELS/EFFECTS/SPACECRAFT/SHIELDSPHERE.SCENE.MBIN" />
+	<Property name="EnergyShieldDepletedEffect" value="SHIPSHIELDBREAK" />
+	<Property name="EnergyShieldStartRechargeEffect" value="SHIPSHIELDRECHA" />
+	<Property name="EnergyShieldStartRechargeFromDepletedEffect" value="SHIPSHIELDRECHA" />
+	<Property name="EnergyShieldAlwaysVisible" value="false" />
+	<Property name="EnergyShieldFadeMinOpacityInCombat" value="0.000000" />
+	<Property name="EnergyShieldFreighterFadeMinOpacityInCombat" value="0.400000" />
+	<Property name="EnergyShieldFadeNonPlayerHitOpacity" value="0.500000" />
+	<Property name="EnergyShieldFadeInRate" value="5.000000" />
+	<Property name="EnergyShieldFadeOutRate" value="2.000000" />
+	<Property name="MinLaserFireTime" value="1.000000" />
+	<Property name="ShipAlertPirateRange" value="10000.000000" />
+	<Property name="PlanetaryPirateHostileShipPerceptionRange" value="5000.000000" />
+	<Property name="PlanetaryPirateRaidFocusBuildingsTime" value="40.000000" />
+	<Property name="PlanetaryPirateRaidTradersEngageTime" value="30.000000" />
+	<Property name="PlanetaryPirateRaidMaxTradersJoinCombat" value="4" />
+	<Property name="EscapeRollTimePlanet" value="0.800000" />
+	<Property name="EscapeRollTime" value="0.500000" />
+	<Property name="EscapeRollPlanet" value="0.100000" />
+	<Property name="EscapeRoll" value="0.200000" />
+	<Property name="CrashedShipMinNonBrokenSlots" value="3" />
+	<Property name="SentinelGunBrokenSlotChance" value="0.500000" />
+	<Property name="CrashedShipBrokenSlotChance" value="0.750000" />
+	<Property name="CrashedShipBrokenTechChance" value="0.700000" />
+	<Property name="CrashedShipRepairSlotCostIncreaseFactor" value="1.300000" />
+	<Property name="CrashedShipGeneralCostDiscount" value="0.700000" />
+	<Property name="CrashedShipTechSlotsCostDiscount" value="0.100000" />
+	<Property name="PirateSpawnSpacing" value="70.000000" />
+	<Property name="DistanceFlareMinDistance" value="250.000000" />
+	<Property name="DistanceFlareRange" value="1501.000000" />
+	<Property name="DistanceFlareMinScale" value="0.001000" />
+	<Property name="DistanceFlareMaxScale" value="6.000000" />
+	<Property name="DistanceFlareMinSpeed" value="5.000000" />
+	<Property name="DistanceFlareSpeedRange" value="10.000000" />
+	<Property name="DistanceFlareFlickerFreq" value="13.000000" />
+	<Property name="DistanceFlareFlickerAmp" value="0.200000" />
+	<Property name="AttackRepositionBoost" value="true" />
+	<Property name="AttackShipsFollowLeader" value="false" />
+	<Property name="AttackTooCloseMinRelSpeed" value="41.000000" />
+	<Property name="ProjectileWeaponMuzzleFlashes">
+		<Property name="None" value="" />
+		<Property name="Pirate" value="PIRATESHIPMUZ" />
+		<Property name="Police" value="POLICESHIPMUZ" />
+		<Property name="Trader" value="SHIPMUZZLE" />
+		<Property name="Freighter" value="TURRETGUN" />
+		<Property name="PlayerSquadron" value="SQUADSHIPMUZ" />
+		<Property name="DefenceForce" value="SHIPMUZZLE" />
+	</Property>
+	<Property name="RewardLootOffset" value="2.500000" />
+	<Property name="RewardLootOffsetSpeed" value="2.500000" />
+	<Property name="RewardLootAngularSpeed" value="15.000000" />
+	<Property name="FlybyPlanetLandingProbability" value="0.020000" />
+	<Property name="CombatEffectsComponentData" value="GcCombatEffectsComponentData">
+		<Property name="EffectsProperties">
+			<Property name="None" value="GcCombatEffectsProperties">
+				<Property name="IsAffected" value="true" />
+				<Property name="IgnoreFromOtherPlayers" value="false" />
+				<Property name="IgnoreFromSelf" value="true" />
+				<Property name="DurationMultiplier" value="1.000000" />
+				<Property name="DamageMultiplier" value="1.000000" />
+			</Property>
+			<Property name="Fire" value="GcCombatEffectsProperties">
+				<Property name="IsAffected" value="false" />
+				<Property name="IgnoreFromOtherPlayers" value="false" />
+				<Property name="IgnoreFromSelf" value="true" />
+				<Property name="DurationMultiplier" value="1.000000" />
+				<Property name="DamageMultiplier" value="1.000000" />
+			</Property>
+			<Property name="Stun" value="GcCombatEffectsProperties">
+				<Property name="IsAffected" value="false" />
+				<Property name="IgnoreFromOtherPlayers" value="false" />
+				<Property name="IgnoreFromSelf" value="true" />
+				<Property name="DurationMultiplier" value="1.000000" />
+				<Property name="DamageMultiplier" value="1.000000" />
+			</Property>
+			<Property name="Slow" value="GcCombatEffectsProperties">
+				<Property name="IsAffected" value="true" />
+				<Property name="IgnoreFromOtherPlayers" value="false" />
+				<Property name="IgnoreFromSelf" value="true" />
+				<Property name="DurationMultiplier" value="1.000000" />
+				<Property name="DamageMultiplier" value="1.000000" />
+			</Property>
+			<Property name="ElectricDOT" value="GcCombatEffectsProperties">
+				<Property name="IsAffected" value="false" />
+				<Property name="IgnoreFromOtherPlayers" value="false" />
+				<Property name="IgnoreFromSelf" value="true" />
+				<Property name="DurationMultiplier" value="1.000000" />
+				<Property name="DamageMultiplier" value="1.000000" />
+			</Property>
+			<Property name="SpookyLight" value="GcCombatEffectsProperties">
+				<Property name="IsAffected" value="false" />
+				<Property name="IgnoreFromOtherPlayers" value="false" />
+				<Property name="IgnoreFromSelf" value="true" />
+				<Property name="DurationMultiplier" value="1.000000" />
+				<Property name="DamageMultiplier" value="1.000000" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="FallbackTravelData" value="GcSpaceshipTravelData">
+		<Property name="Id" value="" />
+		<Property name="MinSpeed" value="80.000000" />
+		<Property name="MaxSpeed" value="80.000000" />
+		<Property name="BoostSpeed" value="1000.000000" />
+		<Property name="Force" value="50.000000" />
+		<Property name="MinSpeedForce" value="5.000000" />
+		<Property name="TurnMin" value="0.400000" />
+		<Property name="TurnMax" value="1.200000" />
+		<Property name="DirectionBrake" value="0.700000" />
+		<Property name="MaxSpeedBrake" value="0.000000" />
+		<Property name="Falloff" value="0.800000" />
+		<Property name="Roll" value="1.000000" />
+		<Property name="MinHeight" value="50.000000" />
+		<Property name="AvoidTime" value="3.000000" />
+		<Property name="Hovering" value="false" />
+	</Property>
+	<Property name="SlowCombatEffectAttackTravel" value="GcSpaceshipTravelData">
+		<Property name="Id" value="" />
+		<Property name="MinSpeed" value="0.000000" />
+		<Property name="MaxSpeed" value="40.000000" />
+		<Property name="BoostSpeed" value="80.000000" />
+		<Property name="Force" value="50.000000" />
+		<Property name="MinSpeedForce" value="5.000000" />
+		<Property name="TurnMin" value="0.600000" />
+		<Property name="TurnMax" value="1.000000" />
+		<Property name="DirectionBrake" value="20.000000" />
+		<Property name="MaxSpeedBrake" value="30.000000" />
+		<Property name="Falloff" value="0.800000" />
+		<Property name="Roll" value="0.000000" />
+		<Property name="MinHeight" value="20.000000" />
+		<Property name="AvoidTime" value="0.000000" />
+		<Property name="Hovering" value="false" />
+	</Property>
+	<Property name="AsteroidMiningPositioningTravelData" value="GcSpaceshipTravelData">
+		<Property name="Id" value="" />
+		<Property name="MinSpeed" value="0.000000" />
+		<Property name="MaxSpeed" value="150.000000" />
+		<Property name="BoostSpeed" value="200.000000" />
+		<Property name="Force" value="50.000000" />
+		<Property name="MinSpeedForce" value="5.000000" />
+		<Property name="TurnMin" value="0.600000" />
+		<Property name="TurnMax" value="1.000000" />
+		<Property name="DirectionBrake" value="20.000000" />
+		<Property name="MaxSpeedBrake" value="30.000000" />
+		<Property name="Falloff" value="0.800000" />
+		<Property name="Roll" value="0.100000" />
+		<Property name="MinHeight" value="20.000000" />
+		<Property name="AvoidTime" value="0.000000" />
+		<Property name="Hovering" value="false" />
+	</Property>
+	<Property name="AsteroidMiningTravelData" value="GcSpaceshipTravelData">
+		<Property name="Id" value="" />
+		<Property name="MinSpeed" value="0.000000" />
+		<Property name="MaxSpeed" value="1.000000" />
+		<Property name="BoostSpeed" value="1.000000" />
+		<Property name="Force" value="50.000000" />
+		<Property name="MinSpeedForce" value="5.000000" />
+		<Property name="TurnMin" value="1.500000" />
+		<Property name="TurnMax" value="3.000000" />
+		<Property name="DirectionBrake" value="10.000000" />
+		<Property name="MaxSpeedBrake" value="5.000000" />
+		<Property name="Falloff" value="0.800000" />
+		<Property name="Roll" value="0.000000" />
+		<Property name="MinHeight" value="20.000000" />
+		<Property name="AvoidTime" value="0.000000" />
+		<Property name="Hovering" value="false" />
+	</Property>
+	<Property name="AsteroidMiningSearchRadius" value="2500.000000" />
+	<Property name="AsteroidMiningMaxAsteroidRadius" value="120.000000" />
+	<Property name="AsteroidMiningMaxViewAngleYaw" value="40.000000" />
+	<Property name="AsteroidMiningMinViewAnglePitch" value="-10.000000" />
+	<Property name="AsteroidMiningMaxViewAnglePitch" value="25.000000" />
+	<Property name="AsteroidMiningMinDistFromPlayer" value="50.000000" />
+	<Property name="AsteroidMiningMinMiningAngle" value="25.000000" />
+	<Property name="AsteroidMiningMaxMiningTime" value="10.000000" />
+	<Property name="AttackShipAvoidStartTime" value="2.500000" />
+	<Property name="AttackMinimumTimeBeforeTargetSwitch" value="2.500000" />
+	<Property name="PirateExtraDamage" value="1.500000" />
+	<Property name="PirateAttackableBuildingClasses">
+		<Property name="None" value="false" />
+		<Property name="TerrainResource" value="false" />
+		<Property name="Shelter" value="true" />
+		<Property name="Abandoned" value="false" />
+		<Property name="Terminal" value="false" />
+		<Property name="Shop" value="true" />
+		<Property name="Outpost" value="true" />
+		<Property name="Waypoint" value="false" />
+		<Property name="Beacon" value="false" />
+		<Property name="RadioTower" value="true" />
+		<Property name="Observatory" value="true" />
+		<Property name="Depot" value="true" />
+		<Property name="Factory" value="true" />
+		<Property name="Harvester" value="true" />
+		<Property name="Plaque" value="false" />
+		<Property name="Monolith" value="false" />
+		<Property name="Portal" value="false" />
+		<Property name="Ruin" value="false" />
+		<Property name="Debris" value="false" />
+		<Property name="DamagedMachine" value="false" />
+		<Property name="DistressSignal" value="false" />
+		<Property name="LandingPad" value="false" />
+		<Property name="Base" value="false" />
+		<Property name="MissionTower" value="false" />
+		<Property name="CrashedFreighter" value="false" />
+		<Property name="GraveInCave" value="false" />
+		<Property name="StoryGlitch" value="false" />
+		<Property name="TreasureRuins" value="false" />
+		<Property name="GameStartSpawn" value="false" />
+		<Property name="WaterCrashedFreighter" value="false" />
+		<Property name="WaterTreasureRuins" value="false" />
+		<Property name="WaterAbandoned" value="false" />
+		<Property name="WaterDistressSignal" value="false" />
+		<Property name="NPCDistressSignal" value="false" />
+		<Property name="NPCDebris" value="false" />
+		<Property name="LargeBuilding" value="true" />
+		<Property name="Settlement_Hub" value="true" />
+		<Property name="Settlement_LandingZone" value="true" />
+		<Property name="Settlement_Bar" value="true" />
+		<Property name="Settlement_Tower" value="true" />
+		<Property name="Settlement_Market" value="true" />
+		<Property name="Settlement_Small" value="true" />
+		<Property name="Settlement_SmallIndustrial" value="true" />
+		<Property name="Settlement_Medium" value="true" />
+		<Property name="Settlement_Large" value="true" />
+		<Property name="Settlement_Monument" value="true" />
+		<Property name="Settlement_SheriffsOffice" value="true" />
+		<Property name="Settlement_Double" value="true" />
+		<Property name="Settlement_Farm" value="true" />
+		<Property name="Settlement_Factory" value="true" />
+		<Property name="Settlement_Clump" value="false" />
+		<Property name="DroneHive" value="false" />
+		<Property name="SentinelDistressSignal" value="false" />
+		<Property name="AbandonedRobotCamp" value="false" />
+		<Property name="RobotHead" value="false" />
+	</Property>
+	<Property name="PirateMaintainBuildingTargetTime" value="10.000000" />
+	<Property name="ShieldCollisionRadiusMultiplier" value="1.300000" />
+	<Property name="CollisionRayLengthMin" value="100.000000" />
+	<Property name="CollisionRayLengthMax" value="2000.000000" />
+	<Property name="OutpostLanding" value="GcSpaceshipTravelData">
+		<Property name="Id" value="" />
+		<Property name="MinSpeed" value="80.000000" />
+		<Property name="MaxSpeed" value="80.000000" />
+		<Property name="BoostSpeed" value="1000.000000" />
+		<Property name="Force" value="300.000000" />
+		<Property name="MinSpeedForce" value="5.000000" />
+		<Property name="TurnMin" value="1.000000" />
+		<Property name="TurnMax" value="1.000000" />
+		<Property name="DirectionBrake" value="10.000000" />
+		<Property name="MaxSpeedBrake" value="0.000000" />
+		<Property name="Falloff" value="0.800000" />
+		<Property name="Roll" value="1.250000" />
+		<Property name="MinHeight" value="15.000000" />
+		<Property name="AvoidTime" value="0.000000" />
+		<Property name="Hovering" value="false" />
+	</Property>
+	<Property name="PlanetLanding" value="GcSpaceshipTravelData">
+		<Property name="Id" value="" />
+		<Property name="MinSpeed" value="15.000000" />
+		<Property name="MaxSpeed" value="20.000000" />
+		<Property name="BoostSpeed" value="1000.000000" />
+		<Property name="Force" value="200.000000" />
+		<Property name="MinSpeedForce" value="5.000000" />
+		<Property name="TurnMin" value="2.000000" />
+		<Property name="TurnMax" value="2.000000" />
+		<Property name="DirectionBrake" value="10.000000" />
+		<Property name="MaxSpeedBrake" value="0.000000" />
+		<Property name="Falloff" value="0.800000" />
+		<Property name="Roll" value="2.000000" />
+		<Property name="MinHeight" value="15.000000" />
+		<Property name="AvoidTime" value="0.000000" />
+		<Property name="Hovering" value="false" />
+	</Property>
+	<Property name="OutpostLandingNoiseFreq" value="0.010001" />
+	<Property name="OutpostLandingNoiseAmp" value="20.000000" />
+	<Property name="OutpostLandingNoiseOffset" value="110.000000" />
+	<Property name="OutpostDockUpAlignMaxAngleFirstPerson" value="90.000000" />
+	<Property name="OutpostDockUpAlignMaxAngle" value="30.000000" />
+	<Property name="OutpostDockMaxApproachSpeed" value="3000.000000" />
+	<Property name="OutpostDockOverspeedBrake" value="0.000000" />
+	<Property name="OutpostDockGetToApproachForce" value="2.000000" />
+	<Property name="OutpostDockGetToApproachBrakeForce" value="5.000000" />
+	<Property name="OutpostDockGetToApproachExtraBrakeForce" value="15.000000" />
+	<Property name="OutpostDockApproachSpeedForce" value="5.000000" />
+	<Property name="OutpostDockApproachDistance" value="1000.000000" />
+	<Property name="OutpostDockApproachSpeedUpDamper" value="0.300000" />
+	<Property name="OutpostDockAIGetToApproachForce" value="0.500000" />
+	<Property name="OutpostDockAIGetToApproachBrakeForce" value="1.000000" />
+	<Property name="OutpostDockAIApproachSpeedForce" value="5.000000" />
+	<Property name="OutpostDockMaxForce" value="400.000000" />
+	<Property name="OutpostDockMinTipLength" value="5.000000" />
+	<Property name="OutpostDockMaxTipLength" value="10.000000" />
+	<Property name="OutpostDockApproachUpAmount" value="0.100000" />
+	<Property name="OutpostDockApproachRenderRadius" value="0.300000" />
+	<Property name="OutpostDockApproachRenderFlickerOffset" value="-0.020000" />
+	<Property name="LandingTipAngle" value="25.000000" />
+	<Property name="LandingLongTipAngle" value="10.000000" />
+	<Property name="SpaceBattleSpawnAngle">
+		<Property name="SpaceBattleSpawnAngle">
+			<Property name="X" value="10.000000" />
+			<Property name="Y" value="30.000000" />
+		</Property>
+		<Property name="SpaceBattleSpawnAngle">
+			<Property name="X" value="10.000000" />
+			<Property name="Y" value="30.000000" />
+		</Property>
+		<Property name="SpaceBattleSpawnAngle">
+			<Property name="X" value="10.000000" />
+			<Property name="Y" value="30.000000" />
+		</Property>
+		<Property name="SpaceBattleSpawnAngle">
+			<Property name="X" value="15.000000" />
+			<Property name="Y" value="15.000000" />
+		</Property>
+	</Property>
+	<Property name="SpaceBattleSpawnPitch">
+		<Property name="SpaceBattleSpawnPitch">
+			<Property name="X" value="10.000000" />
+			<Property name="Y" value="10.000000" />
+		</Property>
+		<Property name="SpaceBattleSpawnPitch">
+			<Property name="X" value="10.000000" />
+			<Property name="Y" value="10.000000" />
+		</Property>
+		<Property name="SpaceBattleSpawnPitch">
+			<Property name="X" value="10.000000" />
+			<Property name="Y" value="10.000000" />
+		</Property>
+		<Property name="SpaceBattleSpawnPitch">
+			<Property name="X" value="10.000000" />
+			<Property name="Y" value="10.000000" />
+		</Property>
+	</Property>
+	<Property name="SpaceBattleSpawnOffset">
+		<Property name="SpaceBattleSpawnOffset">
+			<Property name="X" value="15000.000000" />
+			<Property name="Y" value="20000.000000" />
+		</Property>
+		<Property name="SpaceBattleSpawnOffset">
+			<Property name="X" value="15000.000000" />
+			<Property name="Y" value="20000.000000" />
+		</Property>
+		<Property name="SpaceBattleSpawnOffset">
+			<Property name="X" value="15000.000000" />
+			<Property name="Y" value="20000.000000" />
+		</Property>
+		<Property name="SpaceBattleSpawnOffset">
+			<Property name="X" value="10000.000000" />
+			<Property name="Y" value="10000.000000" />
+		</Property>
+	</Property>
+	<Property name="SpaceBattleSunHeightAngle">
+		<Property name="SpaceBattleSunHeightAngle">
+			<Property name="X" value="40.000000" />
+			<Property name="Y" value="40.000000" />
+		</Property>
+		<Property name="SpaceBattleSunHeightAngle">
+			<Property name="X" value="40.000000" />
+			<Property name="Y" value="40.000000" />
+		</Property>
+		<Property name="SpaceBattleSunHeightAngle">
+			<Property name="X" value="40.000000" />
+			<Property name="Y" value="40.000000" />
+		</Property>
+		<Property name="SpaceBattleSunHeightAngle">
+			<Property name="X" value="40.000000" />
+			<Property name="Y" value="40.000000" />
+		</Property>
+	</Property>
+	<Property name="SpaceBattleSunAroundAngle">
+		<Property name="SpaceBattleSunAroundAngle">
+			<Property name="X" value="40.000000" />
+			<Property name="Y" value="40.000000" />
+		</Property>
+		<Property name="SpaceBattleSunAroundAngle">
+			<Property name="X" value="40.000000" />
+			<Property name="Y" value="40.000000" />
+		</Property>
+		<Property name="SpaceBattleSunAroundAngle">
+			<Property name="X" value="40.000000" />
+			<Property name="Y" value="40.000000" />
+		</Property>
+		<Property name="SpaceBattleSunAroundAngle">
+			<Property name="X" value="40.000000" />
+			<Property name="Y" value="40.000000" />
+		</Property>
+	</Property>
+	<Property name="SpaceBattleSpawnRange">
+		<Property name="SpaceBattleSpawnRange">
+			<Property name="X" value="8000.000000" />
+			<Property name="Y" value="9000.000000" />
+		</Property>
+		<Property name="SpaceBattleSpawnRange">
+			<Property name="X" value="8000.000000" />
+			<Property name="Y" value="9000.000000" />
+		</Property>
+		<Property name="SpaceBattleSpawnRange">
+			<Property name="X" value="8000.000000" />
+			<Property name="Y" value="9000.000000" />
+		</Property>
+		<Property name="SpaceBattleSpawnRange">
+			<Property name="X" value="-500.000000" />
+			<Property name="Y" value="-500.000000" />
+		</Property>
+	</Property>
+	<Property name="SpaceBattlePirateRange">
+		<Property name="SpaceBattlePirateRange">
+			<Property name="X" value="2.000000" />
+			<Property name="Y" value="2.000000" />
+		</Property>
+		<Property name="SpaceBattlePirateRange">
+			<Property name="X" value="3.000000" />
+			<Property name="Y" value="3.000000" />
+		</Property>
+		<Property name="SpaceBattlePirateRange">
+			<Property name="X" value="4.000000" />
+			<Property name="Y" value="4.000000" />
+		</Property>
+		<Property name="SpaceBattlePirateRange">
+			<Property name="X" value="1.000000" />
+			<Property name="Y" value="1.000000" />
+		</Property>
+	</Property>
+	<Property name="SpaceBattleGuardsRange">
+		<Property name="SpaceBattleGuardsRange">
+			<Property name="X" value="1.000000" />
+			<Property name="Y" value="1.000000" />
+		</Property>
+		<Property name="SpaceBattleGuardsRange">
+			<Property name="X" value="1.000000" />
+			<Property name="Y" value="1.000000" />
+		</Property>
+		<Property name="SpaceBattleGuardsRange">
+			<Property name="X" value="1.000000" />
+			<Property name="Y" value="1.000000" />
+		</Property>
+		<Property name="SpaceBattleGuardsRange">
+			<Property name="X" value="1.000000" />
+			<Property name="Y" value="1.000000" />
+		</Property>
+	</Property>
+	<Property name="SpaceBattleGuardOffset" value="100.000000" />
+	<Property name="SpaceBattleGuardUpOffset" value="500.000000" />
+	<Property name="SpaceBattleInitialPirateUpOffset" value="500.000000" />
+	<Property name="SpaceBattleInitialPirateOffset" value="5000.000000" />
+	<Property name="SpaceBattleObstructionRadius" value="10000.000000" />
+	<Property name="SpaceBattleFlybyTime" value="4.000000" />
+	<Property name="ConeSpawnOffsetFactor">
+		<Property name="X" value="2.000000" />
+		<Property name="Y" value="0.400000" />
+	</Property>
+	<Property name="ConeSpawnFlattenUp" value="0.400000" />
+	<Property name="ConeSpawnFlattenDown" value="0.200000" />
+	<Property name="FreighterAlertLights" value="true" />
+	<Property name="FreighterAlertLightCapitalSize" value="2.000000" />
+	<Property name="LegacyHangarFilename" value="MODELS/COMMON/SPACECRAFT/INDUSTRIAL/ACCESSORIES/HANGARA.SCENE.MBIN" />
+	<Property name="HangarFilename" value="MODELS/COMMON/SPACECRAFT/COMMONPARTS/HANGARINTERIORPARTS/HANGAR.SCENE.MBIN" />
+	<Property name="PoliceFreighterWarpOutRange" value="8000.000000" />
+	<Property name="MissileRange" value="2000.000000" />
+	<Property name="FreighterDoorColourActive">
+		<Property name="R" value="0.437000" />
+		<Property name="G" value="0.696000" />
+		<Property name="B" value="1.000000" />
+		<Property name="A" value="1.000000" />
+	</Property>
+	<Property name="FreighterDoorColourInactive">
+		<Property name="R" value="1.000000" />
+		<Property name="G" value="0.315000" />
+		<Property name="B" value="0.074000" />
+		<Property name="A" value="1.000000" />
+	</Property>
+	<Property name="AlertLightColour">
+		<Property name="R" value="1.000000" />
+		<Property name="G" value="0.000000" />
+		<Property name="B" value="0.000000" />
+		<Property name="A" value="1.000000" />
+	</Property>
+	<Property name="FreighterLightHitCurve" value="TkHitCurveData">
+		<Property name="Time" value="1.000000" />
+		<Property name="Curve" value="TkInOutCurve">
+			<Property name="Midpoint" value="0.500000" />
+			<Property name="InCurve" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuad" />
+			</Property>
+			<Property name="OutCurve" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuad" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="FreighterAlertLightTime" value="1.500000" />
+	<Property name="FreighterAlertLightIntensity" value="25.000000" />
+	<Property name="MaxNumTurretMissiles" value="0" />
+	<Property name="TurretOriginOffset" value="15.000000" />
+	<Property name="TurretAlertLightIntensity" value="10.000000" />
+	<Property name="TurretAlertLightOffset">
+		<Property name="X" value="0.000000" />
+		<Property name="Y" value="15.000000" />
+		<Property name="Z" value="0.000000" />
+	</Property>
+	<Property name="DisableTradeRoutes" value="false" />
+	<Property name="AttackFreighterGetThereBoost" value="4.000000" />
+	<Property name="AttackFreighterApproach" value="5000.000000" />
+	<Property name="AttackFreighterWingmanAlignMinDist" value="500.000000" />
+	<Property name="AttackFreighterWingmanAlignRange" value="500.000000" />
+	<Property name="AttackFreighterApproachDistance" value="500.000000" />
+	<Property name="AttackFreighterAttackRunStartDistance" value="100.000000" />
+	<Property name="AttackFreighterBugOutDistance" value="100.000000" />
+	<Property name="AttackFreighterButOutTurnUp" value="2.000000" />
+	<Property name="AttackFreighterButOutSpeedUp" value="2.000000" />
+	<Property name="AttackFreighterWingmanRadius" value="20.000000" />
+	<Property name="AttackFreighterWingmanOffset" value="30.000000" />
+	<Property name="AttackFreighterWingmanLockAlign" value="2.000000" />
+	<Property name="AttackFreighterWingmanLock" value="2.000000" />
+	<Property name="AttackFreighterWingmanMaxForce" value="200.000000" />
+	<Property name="AttackFreighterAngle" value="10.000000" />
+	<Property name="AttackFreighterRunOffset" value="300.000000" />
+	<Property name="AttackFreighterWingmanStart" value="4.000000" />
+	<Property name="PirateFreighterWarpOffset" value="2000.000000" />
+	<Property name="PirateFreighterAttackRange">
+		<Property name="X" value="3.000000" />
+		<Property name="Y" value="4.000000" />
+	</Property>
+	<Property name="MissileLaunchSpeed" value="120.000000" />
+	<Property name="AttackAfterSpawnTime" value="1.000000" />
+	<Property name="FreighterMiniSpeeds">
+		<Property name="X" value="5.000000" />
+		<Property name="Y" value="20.000000" />
+	</Property>
+	<Property name="AttackBuildingGetThereBoost" value="4.000000" />
+	<Property name="AttackBuildingApproachDistance" value="500.000000" />
+	<Property name="AttackBuildingRunStartDistance" value="250.000000" />
+	<Property name="AttackBuildingAttackRunDistTolerance" value="30.000000" />
+	<Property name="AttackBuildingFiringAngleTolerance" value="20.000000" />
+	<Property name="AttackBuildingBugOutDistance" value="20.000000" />
+	<Property name="AttackBuildingBugOutTurnUp" value="2.000000" />
+	<Property name="AttackBuildingBugOutSpeedUp" value="2.000000" />
+	<Property name="AttackBuildingRunAngleMin" value="20.000000" />
+	<Property name="AttackBuildingRunAngleMax" value="60.000000" />
+	<Property name="AttackBuildingNextRunAngleDeltaMin" value="30.000000" />
+	<Property name="AttackBuildingNextRunAngleDeltaMax" value="45.000000" />
+	<Property name="AttackBuildingTargetGroundOffsetScaleStart" value="2.000000" />
+	<Property name="AttackBuildingTargetGroundOffsetScaleEnd" value="2.000000" />
+	<Property name="AsteroidShootAngle" value="5.000000" />
+	<Property name="TraderWantedTime" value="20.000000" />
+	<Property name="TraderRequestTime" value="5.000000" />
+	<Property name="TraderPostCombatRequestTime" value="15.000000" />
+	<Property name="TradingPostTraderRequestTime" value="5.000000" />
+	<Property name="TradingPostTraderRange" value="500.000000" />
+	<Property name="TradingPostTraderRangeSpace" value="3000.000000" />
+	<Property name="SpaceStationTraderRequestTime" value="20.000000" />
+	<Property name="AbandonedSystemShipSpawnProbablity" value="0.000000" />
+	<Property name="FlybyCloseOdds" value="20" />
+	<Property name="BountySpawnAngle" value="80.000000" />
+	<Property name="PoliceLaunchSpeed" value="500.000000" />
+	<Property name="PoliceLaunchTime" value="3.000000" />
+	<Property name="PolicePauseTime" value="3.000000" />
+	<Property name="PolicePauseTimeSpaceBattle" value="30.000000" />
+	<Property name="PoliceEscapeTime" value="10.000000" />
+	<Property name="PoliceEscapeMinTime" value="5.000000" />
+	<Property name="PoliceStationWaveTimer" value="5.000000" />
+	<Property name="PoliceStationEngageRange" value="10000.000000" />
+	<Property name="PoliceStationNumToLaunch" value="9" />
+	<Property name="TraderIgnoreHits" value="6" />
+	<Property name="PirateFreighterSpawnAttackAngle" value="30.000000" />
+	<Property name="PirateFreighterSpawnAttackOffset" value="1000.000000" />
+	<Property name="PirateFreighterSpawnAttackSpread" value="300.000000" />
+	<Property name="PirateSpawnAngle" value="20.000000" />
+	<Property name="PirateBattleMaxTime" value="20.000000" />
+	<Property name="PirateArriveTime" value="3.000000" />
+	<Property name="PirateStartSpeed" value="100.000000" />
+	<Property name="PirateBattleStartSpeed" value="300.000000" />
+	<Property name="PirateInterestTime" value="30.000000" />
+	<Property name="PirateBattleInterestTime" value="40.000000" />
+	<Property name="PirateFreighterBattleDistance" value="8000.000000" />
+	<Property name="TraderArriveSpeed" value="300.000000" />
+	<Property name="TraderArriveTime" value="3.000000" />
+	<Property name="HeightTestSampleDistance" value="40.000000" />
+	<Property name="HeightTestSampleTime" value="4.000000" />
+	<Property name="OutpostToLandingDistance" value="50.000000" />
+	<Property name="FreightersSamePalette" value="true" />
+	<Property name="PlanetUpAlignTime" value="1.000000" />
+	<Property name="CollisionReactionTime" value="1.000000" />
+	<Property name="FreighterScale" value="5.000000" />
+	<Property name="PoliceSpawnEffect" value="true" />
+	<Property name="MaxNumFreighters" value="12" />
+	<Property name="ShipSpawnStationRadius" value="2000.000000" />
+	<Property name="ShipSpawnAnomalyRadius" value="2000.000000" />
+	<Property name="BattleSpawnStationMinDistance" value="3500.000000" />
+	<Property name="PoliceSpawnViewAngle" value="5.000000" />
+	<Property name="PoliceEntranceStartTime" value="1.000000" />
+	<Property name="PoliceEntranceProbe" value="5.000000" />
+	<Property name="PoliceEntranceEscalateProbingTime" value="3.000000" />
+	<Property name="PoliceEntranceEscalateIncomingTime" value="4.000000" />
+	<Property name="PoliceEntranceCargoScanStartTime" value="1.000000" />
+	<Property name="PoliceEntranceCargoProbingTime" value="7.500000" />
+	<Property name="PoliceEntranceCargoOpenCommsWaitTime" value="2.500000" />
+	<Property name="PoliceEntranceCargoAttackWaitTime" value="3.000000" />
+	<Property name="PoliceEntranceCargoScanHailNotificationWaitTime" value="1.000000" />
+	<Property name="PoliceArriveTime" value="5.000000" />
+	<Property name="PoliceAbortRange" value="3000.000000" />
+	<Property name="PoliceWarnBeaconPulseTime" value="2.000000" />
+	<Property name="ArrivalStaggerOffset" value="0.800000" />
+	<Property name="TrailScaleMinDistance" value="200.000000" />
+	<Property name="TrailScale" value="1.000000" />
+	<Property name="TrailScaleRange" value="20000.000000" />
+	<Property name="TrailScaleMaxScale" value="2.000000" />
+	<Property name="TrailScaleFreighterMaxScale" value="2.000000" />
+	<Property name="TrailScaleCurve" value="TkCurveType">
+		<Property name="Curve" value="Squared" />
+	</Property>
+	<Property name="TradeRouteSeekOutpostRange" value="5000.000000" />
+	<Property name="TradeRouteFollowOffset" value="2000.000000" />
+	<Property name="TradeRouteIcon" value="TEXTURES\\UI\\HUD\\CROSSHAIRDOT.DDS" />
+	<Property name="TradeRouteSpawnDistance" value="5000.000000" />
+	<Property name="TradeRouteTrailDrawDistance" value="70000.000000" />
+	<Property name="TradeRouteTrailFadeTime" value="1.750000" />
+	<Property name="TradeRouteTrailTimeOffset" value="0.300000" />
+	<Property name="TradeRouteStationRadius" value="4000.000000" />
+	<Property name="TradeRouteSpeed" value="800.000000" />
+	<Property name="TradeRouteSlowRange" value="2000.000000" />
+	<Property name="TradeRouteSlowSpeed" value="10.000000" />
+	<Property name="TradeRouteDivisions" value="200" />
+	<Property name="TradeRouteFlickerFreq" value="10.000000" />
+	<Property name="TradeRouteFlickerAmp" value="0.010000" />
+	<Property name="TradeRouteMaxNum" value="15" />
+	<Property name="TradeRouteColours">
+		<Property name="TradeRouteColours">
+			<Property name="R" value="1.000000" />
+			<Property name="G" value="0.451000" />
+			<Property name="B" value="0.451000" />
+			<Property name="A" value="0.020000" />
+		</Property>
+		<Property name="TradeRouteColours">
+			<Property name="R" value="0.761000" />
+			<Property name="G" value="0.904000" />
+			<Property name="B" value="1.000000" />
+			<Property name="A" value="0.020000" />
+		</Property>
+		<Property name="TradeRouteColours">
+			<Property name="R" value="0.947000" />
+			<Property name="G" value="1.000000" />
+			<Property name="B" value="0.574000" />
+			<Property name="A" value="0.020000" />
+		</Property>
+		<Property name="TradeRouteColours">
+			<Property name="R" value="0.838000" />
+			<Property name="G" value="0.599000" />
+			<Property name="B" value="1.000000" />
+			<Property name="A" value="0.020000" />
+		</Property>
+		<Property name="TradeRouteColours">
+			<Property name="R" value="0.832000" />
+			<Property name="G" value="1.000000" />
+			<Property name="B" value="0.768000" />
+			<Property name="A" value="0.020000" />
+		</Property>
+	</Property>
+	<Property name="EnableLoot" value="true" />
+	<Property name="LaserHitOffset" value="1.000000" />
+	<Property name="DirectionBrakeThresholdSq" value="1.000000" />
+	<Property name="PoliceNumPerTarget" value="3" />
+	<Property name="PoliceSideOffset">
+		<Property name="X" value="400.000000" />
+		<Property name="Y" value="1000.000000" />
+	</Property>
+	<Property name="PoliceUpOffset">
+		<Property name="X" value="100.000000" />
+		<Property name="Y" value="500.000000" />
+	</Property>
+	<Property name="WitnessHearingRange" value="600.000000" />
+	<Property name="WitnessSightRange" value="3000.000000" />
+	<Property name="WitnessSightAngle" value="45.000000" />
+	<Property name="FreighterImpactScale" value="5.000000" />
+	<Property name="FreighterAlertThreshold" value="10.000000" />
+	<Property name="FreighterAttackDisengageDistance" value="3000.000000" />
+	<Property name="FreighterAttackAlertThreshold" value="8.000000" />
+	<Property name="FreighterAlertTimeOutRate" value="0.000000" />
+	<Property name="FreighterAlertTimeOutMinTime" value="0.000000" />
+	<Property name="FreighterShipLaunchSpeed" value="200.000000" />
+	<Property name="FreighterLaunchTime" value="8.000000" />
+	<Property name="FreighterLaunchStartTime" value="0.500000" />
+	<Property name="FreighterIgnorePlayer" value="false" />
+	<Property name="FreighterRegisterHitCooldown" value="0.500000" />
+	<Property name="FreighterMaxNumLaunchedShips" value="9" />
+	<Property name="FreighterSpawnMargin" value="2000.000000" />
+	<Property name="FreighterSpawnRadius" value="35000.000000" />
+	<Property name="FreighterSpawnRate" value="40.000000" />
+	<Property name="FreighterSpawnViewAngle" value="30.000000" />
+	<Property name="FreighterSpawnVisibleFreightersDistance" value="7000.000000" />
+	<Property name="FrigateSpawnMargin" value="500.000000" />
+	<Property name="EngineFlareAccelMin" value="0.100000" />
+	<Property name="EngineFlareAccelMax" value="300.000000" />
+	<Property name="EngineFlareSizeMin" value="1.000000" />
+	<Property name="EngineFlareSizeMax" value="10.000000" />
+	<Property name="EngineFlareVibrateAmp" value="0.200000" />
+	<Property name="EngineFlareVibrateFreq" value="50.000000" />
+	<Property name="EngineFlareOffset" value="3.000000" />
+	<Property name="EngineFireSize" value="3.000000" />
+	<Property name="PitchFlip" value="0.700000" />
+	<Property name="AttackAimTime" value="0.700000" />
+	<Property name="AttackRunSlowdown" value="0.200000" />
+	<Property name="PiratePlayerAttackRange" value="1500.000000" />
+	<Property name="MoveHeightAdjust" value="2.000000" />
+	<Property name="MoveAvoidRange" value="1.100000" />
+	<Property name="MoveHeightNumSamples" value="5" />
+	<Property name="MoveHeightSampleSectionSize" value="5.000000" />
+	<Property name="MoveHeightCheckTime" value="2.000000" />
+	<Property name="TurretRandomOffset" value="1.000000" />
+	<Property name="TurretRandomAIShipOffset" value="0.000000" />
+	<Property name="PoliceLaunchDistance" value="8000.000000" />
+	<Property name="Scaler" value="2.000000" />
+	<Property name="ScaleTime" value="5.000000" />
+	<Property name="ScalerMinDist" value="300.000000" />
+	<Property name="ScalerMaxDist" value="700.000000" />
+	<Property name="ScaleHeightMin" value="5000.000000" />
+	<Property name="ScaleHeightMax" value="6000.000000" />
+	<Property name="ScaleDisabledWhenOnFreighter" value="false" />
+	<Property name="WarpInPlayerLocatorTime" value="5.000000" />
+	<Property name="WarpInPlayerLocatorMinOffset" value="3000.000000" />
+	<Property name="WarpInTime" value="0.500000" />
+	<Property name="WarpFadeInTime" value="2.000000" />
+	<Property name="WarpInTimeFreighter" value="0.600000" />
+	<Property name="WarpInCurve" value="TkCurveType">
+		<Property name="Curve" value="FastInSlowOut" />
+	</Property>
+	<Property name="WarpInVariance" value="0.300000" />
+	<Property name="WarpInDistance" value="80000.000000" />
+	<Property name="WarpInPostSpeed" value="400.000000" />
+	<Property name="WarpInPostSpeedFreighter" value="10.000000" />
+	<Property name="WarpInAudioFXDelay" value="0.700000" />
+	<Property name="WarpOutDistance" value="200000.000000" />
+	<Property name="WarpStartEffectIDs">
+		<Property name="None" value="" />
+		<Property name="Pirate" value="REDWARPSTART" />
+		<Property name="Police" value="REDWARPSTART" />
+		<Property name="Trader" value="" />
+		<Property name="Freighter" value="" />
+		<Property name="PlayerSquadron" value="GOLDWARPSTART" />
+		<Property name="DefenceForce" value="" />
+	</Property>
+	<Property name="WarpArriveEffectIDs">
+		<Property name="None" value="" />
+		<Property name="Pirate" value="REDWARPARRIVE" />
+		<Property name="Police" value="REDWARPARRIVE" />
+		<Property name="Trader" value="" />
+		<Property name="Freighter" value="" />
+		<Property name="PlayerSquadron" value="GOLDWARPARRIVE" />
+		<Property name="DefenceForce" value="" />
+	</Property>
+	<Property name="ShipEscapeTimeBeforeWarpOut" value="10.000000" />
+	<Property name="ShipEscortLockOnDistance" value="500.000000" />
+	<Property name="ShipEscortVelocityBand" value="2.000000" />
+	<Property name="ShipEscortVelocityBandForce" value="15.000000" />
+	<Property name="ShipEscortFwdForceTime" value="0.400000" />
+	<Property name="ShipEscortBackForceTime" value="0.800000" />
+	<Property name="ShipEscortPerpForceTime" value="0.600000" />
+	<Property name="ShipEscortRadialOffsetScaleMin" value="1.200000" />
+	<Property name="ShipEscortRadialOffsetScaleMax" value="1.800000" />
+	<Property name="ShipEscortForwardOffsetScaleMin" value="-2.000000" />
+	<Property name="ShipEscortForwardOffsetScaleMax" value="2.000000" />
+	<Property name="PirateFlybyLength" value="1800.000000" />
+	<Property name="FlybyLength" value="2000.000000" />
+	<Property name="FlybyHeight" value="120.000000" />
+	<Property name="FlybyOffset" value="320.000000" />
+	<Property name="ShipBullet" value="GcProjectileLineData">
+		<Property name="BulletLength" value="20.000000" />
+		<Property name="BulletGlowWidthTime" value="0.000000" />
+		<Property name="BulletGlowWidthMax" value="5.000000" />
+		<Property name="BulletGlowWidthMin" value="5.000000" />
+		<Property name="BulletGlowWidthCurve" value="TkCurveType">
+			<Property name="Curve" value="Cubed" />
+		</Property>
+		<Property name="BulletScaler" value="5.000000" />
+		<Property name="BulletScalerMinDist" value="5.000000" />
+		<Property name="BulletScalerMaxDist" value="6.000000" />
+		<Property name="BulletMinScaleDistance" value="200.000000" />
+		<Property name="BulletMaxScaleDistance" value="2000.000000" />
+	</Property>
+	<Property name="WingmanLockDistance" value="500.000000" />
+	<Property name="WingmanLockBetweenTime" value="1000.000000" />
+	<Property name="WingmanLockArriveTime" value="0.500000" />
+	<Property name="WingmanMinHeight" value="15.000000" />
+	<Property name="WingmanHeightAdjust" value="1.800000" />
+	<Property name="WingmanStartTime" value="2.000000" />
+	<Property name="WingmanOffsetStart" value="200.000000" />
+	<Property name="WingmanOffset" value="10.000000" />
+	<Property name="WingmanSideOffset" value="10.000000" />
+	<Property name="WingmanRotate" value="0.010000" />
+	<Property name="WingmanAtTime" value="0.500000" />
+	<Property name="WingmanAtTimeBack" value="1.000000" />
+	<Property name="WingmanPerpTime" value="0.700000" />
+	<Property name="WingmanVelocityBand" value="0.000000" />
+	<Property name="WingmanVelocityBandForce" value="10.000000" />
+	<Property name="TraderAtTime" value="0.400000" />
+	<Property name="TraderAtTimeBack" value="0.800000" />
+	<Property name="TraderPerpTime" value="0.660000" />
+	<Property name="TraderVelocityBand" value="0.000000" />
+	<Property name="TraderVelocityBandForce" value="15.000000" />
+	<Property name="WingmanAlign" value="50.000000" />
+	<Property name="WarpSpeed" value="600000.000000" />
+	<Property name="WarpForce" value="600000.000000" />
+	<Property name="TrailSpeedFadeMinSpeed" value="10.000000" />
+	<Property name="TrailSpeedFadeFalloff" value="20.000000" />
+	<Property name="DockingLandingTime" value="1.600000" />
+	<Property name="DockingLandingTimeDirectional" value="1.000000" />
+	<Property name="DockingSpringTime" value="6.000000" />
+	<Property name="DockingLandingBounceTime" value="0.800000" />
+	<Property name="DockingLandingBounceHeight" value="0.500000" />
+	<Property name="DockingRotateStartTime" value="1.000000" />
+	<Property name="DockingRotateSpeed" value="0.500000" />
+	<Property name="DockWaitMinTime" value="20.000000" />
+	<Property name="DockWaitMaxTime" value="60.000000" />
+	<Property name="TakeOffHoverPointReachedDistance" value="1.000000" />
+	<Property name="TakeOffExitHeightOffset" value="10.000000" />
+	<Property name="TakeOffExtraAIHeight" value="7.000000" />
+	<Property name="LandingManuevreTime" value="1.000000" />
+	<Property name="LandingManeuvreAlignTime" value="1.000000" />
+	<Property name="LandingHoverPointReachedDistance" value="4.000000" />
+	<Property name="LandingDirectionalHoverPointReachedDistance" value="2.000000" />
+	<Property name="AtmosphereTerminalSpeed" value="30.000000" />
+	<Property name="CircleApproachDistance" value="500.000000" />
+	<Property name="TravelMinBoostTime" value="8.000000" />
+	<Property name="GroundCircleHeight" value="60.000000" />
+	<Property name="GroundCircleHeightMax" value="120.000000" />
+	<Property name="OrbitHeight" value="1000.000000" />
+	<Property name="AtmosphereEffectMin" value="500.000000" />
+	<Property name="AtmosphereEffectMax" value="3000.000000" />
+	<Property name="MaxTorque" value="50.000000" />
+	<Property name="ShipAngularFactor" value="0.100000" />
+	<Property name="RollAmount" value="45.000000" />
+	<Property name="RollMinTurnAngle" value="5.000000" />
+	<Property name="FinalDeathExplosionScale" value="2.000000" />
+	<Property name="FinalDeathExplosionTime" value="0.400000" />
+	<Property name="FinalDeathFadeTime" value="0.800000" />
+	<Property name="Death" value="GcShipAIDeathData">
+		<Property name="DroneDeathTime" value="0.400000" />
+		<Property name="DroneDeathForce" value="8.000000" />
+		<Property name="DroneDeathBoomTotalTime" value="2.500000" />
+		<Property name="DroneDeathOffset" value="20.000000" />
+		<Property name="DroneNumDeathBooms" value="7" />
+		<Property name="DroneDeathTimeout" value="2.000000" />
+		<Property name="BrakeForce" value="1.000000" />
+	</Property>
+	<Property name="WingmanPathData" value="GcShipAIPlanetPatrolData">
+		<Property name="Squad" value="GOODIES" />
+		<Property name="PlayerOffset" value="60.000000" />
+		<Property name="PlayerFalloff" value="50.000000" />
+		<Property name="PathOffset" value="1.000000" />
+		<Property name="WaypointDistance" value="200.000000" />
+		<Property name="PathSpeed" value="200.000000" />
+		<Property name="AlongPathForce" value="1.300000" />
+		<Property name="ToPathForce" value="0.300000" />
+		<Property name="BrakeForce" value="0.500000" />
+		<Property name="AlignForce" value="5.000000" />
+	</Property>
+	<Property name="DebugShipSpawns">
+		<Property name="DebugShipSpawns" value="GcAIShipDebugSpawnData">
+			<Property name="Position">
+				<Property name="X" value="-921929.200000" />
+				<Property name="Y" value="60968.250000" />
+				<Property name="Z" value="394782.200000" />
+			</Property>
+			<Property name="Facing">
+				<Property name="X" value="0.014710" />
+				<Property name="Y" value="-0.941322" />
+				<Property name="Z" value="0.902784" />
+			</Property>
+			<Property name="Up">
+				<Property name="X" value="1.302395" />
+				<Property name="Y" value="-0.037728" />
+				<Property name="Z" value="-0.060560" />
+			</Property>
+			<Property name="FlightDir">
+				<Property name="X" value="0.500000" />
+				<Property name="Y" value="1.000000" />
+				<Property name="Z" value="1.000000" />
+			</Property>
+			<Property name="Speed" value="5.000000" />
+			<Property name="IgnitionDelay" value="1.000000" />
+			<Property name="TakeOffDelay" value="1.000000" />
+			<Property name="HoverTime" value="0.800000" />
+			<Property name="HoverHeight" value="60.000000" />
+			<Property name="WarpOutTime" value="9999.000000" />
+			<Property name="Wingman" value="false" />
+			<Property name="SpecificModel" value="MODELS/COMMON/SPACECRAFT/S-CLASS/BIOPARTS/BIOSHIP_PROC.SCENE.MBIN" />
+			<Property name="Seed" value="9302749108421899312" />
+		</Property>
+		<Property name="DebugShipSpawns" value="GcAIShipDebugSpawnData">
+			<Property name="Position">
+				<Property name="X" value="-921928.300000" />
+				<Property name="Y" value="60988.450000" />
+				<Property name="Z" value="394808.300000" />
+			</Property>
+			<Property name="Facing">
+				<Property name="X" value="0.105348" />
+				<Property name="Y" value="-1.215184" />
+				<Property name="Z" value="0.462116" />
+			</Property>
+			<Property name="Up">
+				<Property name="X" value="1.290577" />
+				<Property name="Y" value="0.041772" />
+				<Property name="Z" value="-0.184367" />
+			</Property>
+			<Property name="FlightDir">
+				<Property name="X" value="-0.756727" />
+				<Property name="Y" value="0.508068" />
+				<Property name="Z" value="-0.411378" />
+			</Property>
+			<Property name="Speed" value="5.000000" />
+			<Property name="IgnitionDelay" value="1.000000" />
+			<Property name="TakeOffDelay" value="1.000000" />
+			<Property name="HoverTime" value="0.800000" />
+			<Property name="HoverHeight" value="60.000000" />
+			<Property name="WarpOutTime" value="9999.000000" />
+			<Property name="Wingman" value="false" />
+			<Property name="SpecificModel" value="" />
+			<Property name="Seed" value="0" />
+		</Property>
+		<Property name="DebugShipSpawns" value="GcAIShipDebugSpawnData">
+			<Property name="Position">
+				<Property name="X" value="-921928.300000" />
+				<Property name="Y" value="60988.450000" />
+				<Property name="Z" value="394808.300000" />
+			</Property>
+			<Property name="Facing">
+				<Property name="X" value="0.105348" />
+				<Property name="Y" value="-1.215184" />
+				<Property name="Z" value="0.462116" />
+			</Property>
+			<Property name="Up">
+				<Property name="X" value="1.290577" />
+				<Property name="Y" value="0.041772" />
+				<Property name="Z" value="-0.184367" />
+			</Property>
+			<Property name="FlightDir">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="0.000000" />
+				<Property name="Z" value="0.000000" />
+			</Property>
+			<Property name="Speed" value="5.000000" />
+			<Property name="IgnitionDelay" value="1.000000" />
+			<Property name="TakeOffDelay" value="1.000000" />
+			<Property name="HoverTime" value="0.800000" />
+			<Property name="HoverHeight" value="60.000000" />
+			<Property name="WarpOutTime" value="9999.000000" />
+			<Property name="Wingman" value="false" />
+			<Property name="SpecificModel" value="" />
+			<Property name="Seed" value="0" />
+		</Property>
+		<Property name="DebugShipSpawns" value="GcAIShipDebugSpawnData">
+			<Property name="Position">
+				<Property name="X" value="-921928.300000" />
+				<Property name="Y" value="60988.450000" />
+				<Property name="Z" value="394808.300000" />
+			</Property>
+			<Property name="Facing">
+				<Property name="X" value="0.105348" />
+				<Property name="Y" value="-1.215184" />
+				<Property name="Z" value="0.462116" />
+			</Property>
+			<Property name="Up">
+				<Property name="X" value="1.290577" />
+				<Property name="Y" value="0.041772" />
+				<Property name="Z" value="-0.184367" />
+			</Property>
+			<Property name="FlightDir">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="0.000000" />
+				<Property name="Z" value="0.000000" />
+			</Property>
+			<Property name="Speed" value="5.000000" />
+			<Property name="IgnitionDelay" value="1.000000" />
+			<Property name="TakeOffDelay" value="1.000000" />
+			<Property name="HoverTime" value="0.800000" />
+			<Property name="HoverHeight" value="60.000000" />
+			<Property name="WarpOutTime" value="9999.000000" />
+			<Property name="Wingman" value="false" />
+			<Property name="SpecificModel" value="" />
+			<Property name="Seed" value="0" />
+		</Property>
+	</Property>
+</Data>
