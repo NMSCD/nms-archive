@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.57.0.1)-->
+<Data template="cTkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="TkAudioComponentData">
+			<Property name="TkAudioComponentData">
+				<Property name="Ambient" value="" />
+				<Property name="AmbientState" value="" />
+				<Property name="Shutdown" value="" />
+				<Property name="MaxDistance" value="90" />
+				<Property name="OcclusionRadius" value="0.000000" />
+				<Property name="OcclusionRange" value="0.000000" />
+				<Property name="LocalOnly" value="false" />
+				<Property name="AnimTriggers" />
+				<Property name="Emitters" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcBaseMiniPortalComponentData">
+			<Property name="GcBaseMiniPortalComponentData">
+				<Property name="AllowVehicles" value="false" />
+				<Property name="AllowSpawnedObjects" value="true" />
+				<Property name="FlipFacingDirection" value="false" />
+				<Property name="SnapFacingDirection" value="true" />
+				<Property name="SnapFacingAngle" value="180.000000" />
+				<Property name="DoPlayerEffects" value="true" />
+				<Property name="TeleportCamera" value="true" />
+				<Property name="PowerCost" value="0" />
+				<Property name="GroupID" value="BRIDGE" />
+				<Property name="DestinationGroupID" value="HANGAR" />
+				<Property name="DestinationSortType" value="PortalNearestPlayerShip" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkPhysicsComponentData">
+			<Property name="TkPhysicsComponentData">
+				<Property name="Data" value="TkPhysicsData">
+					<Property name="Mass" value="1.000000" />
+					<Property name="Friction" value="0.500000" />
+					<Property name="RollingFriction" value="0.200000" />
+					<Property name="AngularDamping" value="0.200000" />
+					<Property name="LinearDamping" value="0.100000" />
+					<Property name="Gravity" value="20.000000" />
+				</Property>
+				<Property name="NavMeshInclusion" value="TkNavMeshInclusionParams">
+					<Property name="InclusionType" value="TkNavMeshInclusionType">
+						<Property name="NavMeshInclusionType" value="Auto" />
+					</Property>
+					<Property name="InclusionMinSize" value="0.000000" />
+					<Property name="AreaType" value="TkNavMeshAreaType">
+						<Property name="NavMeshAreaType" value="Auto" />
+					</Property>
+				</Property>
+				<Property name="TriggerVolume" value="true" />
+				<Property name="TriggerVolumeType" value="TkVolumeTriggerType">
+					<Property name="VolumeTriggerType" value="Portal" />
+				</Property>
+				<Property name="SurfaceProperties" value="None" />
+				<Property name="ModelOwnership" value="Model" />
+				<Property name="Climbable" value="false" />
+				<Property name="Walkable" value="true" />
+				<Property name="Floor" value="false" />
+				<Property name="IgnoreModelOwner" value="false" />
+				<Property name="NoVehicleCollide" value="false" />
+				<Property name="NoPlayerCollide" value="false" />
+				<Property name="NoTerrainCollide" value="false" />
+				<Property name="NoFireCollide" value="false" />
+				<Property name="NoFallDamage" value="false" />
+				<Property name="IgnoreAllCollisions" value="false" />
+				<Property name="BlocksInteract" value="true" />
+				<Property name="CameraInvisible" value="false" />
+				<Property name="InvisibleForInteraction" value="false" />
+				<Property name="AllowTeleporter" value="false" />
+				<Property name="BlockTeleporter" value="false" />
+				<Property name="DisableGravity" value="false" />
+				<Property name="SpinOnCreate" value="0.000000" />
+				<Property name="ScaleAffectsMass" value="false" />
+				<Property name="AllowedDefaultCollision" value="true" />
+				<Property name="Animated" value="false" />
+				<Property name="UseBasePartOptimisation" value="false" />
+				<Property name="IsTransporter" value="false" />
+				<Property name="UseSimpleCharacterCollision" value="false" />
+				<Property name="RotateSimpleCharacterCollisionCapsule" value="false" />
+				<Property name="SimpleCharacterCollisionRadius" value="0.500000" />
+				<Property name="SimpleCharacterCollisionHeight" value="2.000000" />
+				<Property name="SimpleCharacterCollisionHeightOffset" value="0.000000" />
+				<Property name="SimpleCharacterCollisionFwdOffset" value="0.000000" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkSketchComponentData">
+			<Property name="TkSketchComponentData">
+				<Property name="GraphPosX" value="-189.174200" />
+				<Property name="GraphPosY" value="-1162.913000" />
+				<Property name="GraphZoom" value="1.216566" />
+				<Property name="UpdateRateMultiplier" value="1.000000" />
+				<Property name="Nodes">
+					<Property name="Nodes" value="TkSketchNodeData">
+						<Property name="TypeName" value="OnTriggerVolume" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="-73" />
+						<Property name="PositionY" value="-791" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections">
+								<Property name="Connections">
+									<Property name="Connections" value="2" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData" />
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData">
+						<Property name="TypeName" value="SpawnParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="475" />
+						<Property name="PositionY" value="-812" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="84" />
+							<Property name="CustomData" value="69" />
+							<Property name="CustomData" value="76" />
+							<Property name="CustomData" value="69" />
+							<Property name="CustomData" value="80" />
+							<Property name="CustomData" value="79" />
+							<Property name="CustomData" value="82" />
+							<Property name="CustomData" value="84" />
+							<Property name="CustomData" value="84" />
+							<Property name="CustomData" value="82" />
+							<Property name="CustomData" value="73" />
+							<Property name="CustomData" value="71" />
+							<Property name="CustomData" value="71" />
+							<Property name="CustomData" value="69" />
+							<Property name="CustomData" value="82" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="84" />
+							<Property name="CustomData" value="114" />
+							<Property name="CustomData" value="105" />
+							<Property name="CustomData" value="103" />
+							<Property name="CustomData" value="103" />
+							<Property name="CustomData" value="101" />
+							<Property name="CustomData" value="114" />
+							<Property name="CustomData" value="86" />
+							<Property name="CustomData" value="70" />
+							<Property name="CustomData" value="88" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="128" />
+							<Property name="CustomData" value="63" />
+							<Property name="CustomData" value="1" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData">
+						<Property name="TypeName" value="IfValueIs" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="183" />
+						<Property name="PositionY" value="-812" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections">
+								<Property name="Connections">
+									<Property name="Connections" value="1" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="4" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="128" />
+							<Property name="CustomData" value="49" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+							<Property name="CustomData" value="0" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances">
+		<Property name="LodDistances" value="0.000000" />
+		<Property name="LodDistances" value="50.000000" />
+		<Property name="LodDistances" value="80.000000" />
+		<Property name="LodDistances" value="150.000000" />
+		<Property name="LodDistances" value="500.000000" />
+	</Property>
+</Data>
