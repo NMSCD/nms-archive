@@ -1,0 +1,112 @@
+[[FX]]
+
+sampler gOcclusionTexture = sampler_state
+{
+    TexUnit = 0;
+    Address = Clamp;
+    Filter = None;
+};
+
+// Contexts
+context [ SWITCH ] BUILD_INST_BUFF
+{
+    ComputeShader = compile GLSL CS_BUILD_INSTANCE_BUFFER;
+}
+
+context [ !SWITCH ] CLEAR_DRAW_COUNTS
+{
+    ComputeShader = compile GLSL CS_CLEAR_DRAW_COUNTS;
+}
+
+context CULL_INST
+{
+    ComputeShader = compile GLSL CS_CULL_INSTANCED_MODELS;
+}
+
+context CULL_INST_OCCL
+{
+    ComputeShader = compile GLSL CS_CULL_INSTANCED_MODELS_OCCLUSION_CULLING;
+}
+
+context CULL_INST_STATS
+{
+    ComputeShader = compile GLSL CS_CULL_INSTANCED_MODELS_WITH_STATS;
+}
+
+context CULL_INST_OCCL_STATS
+{
+    ComputeShader = compile GLSL CS_CULL_INSTANCED_MODELS_OCCLUSION_CULLING_WITH_STATS;
+}
+
+context GEN_DRAW_CMDS
+{
+    ComputeShader = compile GLSL CS_GENERATE_DRAW_COMMANDS;
+}
+
+context GEN_DRAW_CMDS_DBG
+{
+    ComputeShader = compile GLSL CS_GENERATE_DRAW_COMMANDS_DEBUG;
+}
+
+[[CS_BUILD_INSTANCE_BUFFER]]
+// =================================================================================================
+#define D_BUILD_INSTANCE_BUFFER
+#define D_USE_CROSS_LANE
+#include "Custom/ComputeCull.shader.h"
+
+[[CS_CLEAR_DRAW_COUNTS]]
+// =================================================================================================
+#define D_CLEAR_DRAW_COUNTS
+#include "Custom/ComputeCull.shader.h"
+
+[[CS_CULL_INSTANCED_MODELS]]
+// =================================================================================================
+#define D_CULL_INSTANCED_MODELS
+#define D_USE_CROSS_LANE
+#define D_VIEW_COUNT 4
+#include "Custom/ComputeCull.shader.h"
+
+[[CS_CULL_INSTANCED_MODELS_WITH_STATS]]
+// =================================================================================================
+#define D_CULL_INSTANCED_MODELS
+#define D_USE_CROSS_LANE
+#define D_VIEW_COUNT 4
+#define D_WITH_CULLING_STATS
+#include "Custom/ComputeCull.shader.h"
+
+[[CS_CULL_INSTANCED_MODELS_OCCLUSION_CULLING]]
+// =================================================================================================
+#define D_CULL_INSTANCED_MODELS
+#define D_USE_CROSS_LANE
+#define D_VIEW_COUNT 4
+#define D_WITH_OCCLUSION_CULLING
+#include "Custom/ComputeCull.shader.h"
+
+[[CS_CULL_INSTANCED_MODELS_OCCLUSION_CULLING_WITH_STATS]]
+// =================================================================================================
+#define D_CULL_INSTANCED_MODELS
+#define D_USE_CROSS_LANE
+#define D_VIEW_COUNT 4
+#define D_WITH_OCCLUSION_CULLING
+#define D_WITH_CULLING_STATS
+#include "Custom/ComputeCull.shader.h"
+
+[[CS_GENERATE_DRAW_COMMANDS]]
+// =================================================================================================
+#define D_GENERATE_DRAW_COMMANDS
+#define D_UPDATE_LOD_STATE
+#define D_LOD_FADING
+#define D_USE_CROSS_LANE
+#define D_VIEW_COUNT 4
+#include "Custom/ComputeCull.shader.h"
+
+[[CS_GENERATE_DRAW_COMMANDS_DEBUG]]
+// =================================================================================================
+#define D_GENERATE_DRAW_COMMANDS
+#define D_UPDATE_LOD_STATE
+#define D_LOD_FADING
+#define D_USE_CROSS_LANE
+#define D_VIEW_COUNT 4
+#define D_DEBUG_HIGHLIGHTING
+#include "Custom/ComputeCull.shader.h"
+
