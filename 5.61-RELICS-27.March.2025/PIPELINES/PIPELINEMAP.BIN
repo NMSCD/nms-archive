@@ -1,0 +1,50 @@
+<!-- Map Pipeline -->
+<Pipeline>
+
+  <Setup>
+    <RenderTarget id="MAP"      depthBuf="true"  numColBufs="1" format="RGBA8" scaleX="0.5333333" scaleY="0.9481481" pointSampleColBuf0="true" />
+    <RenderTarget id="COVERAGE" depthBuf="false" numColBufs="1" format="RGBA8" scaleX="0.5333333" scaleY="0.9481481" />
+  </Setup>
+
+  <CommandQueue>
+
+    <Stage id="Fragments" >
+      <ColourMask channels="RGBA"/>
+      <BeginTarget target="MAP" />
+
+      <ClearTarget depthBuf="true" colBuf0="true" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+
+      <SetContext zwrite="true" colourWrite="true" cullMode="none" blendMode="replace" depthTest="less" />
+      <DoForwardLightLoop type="Mesh" class="Opaque" context="MAP_PASSTHROUGH" order="STATECHANGES" />
+
+      <EndTarget flushCB="true" flushDB="true" />
+    </Stage>
+
+    <Stage id="Coverage" >
+      <ColourMask channels="RGBA"/>
+      <BeginTarget target="COVERAGE" />
+
+      <ClearTarget depthBuf="false" colBuf0="true" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+
+      <SetContext colourWrite="true" cullMode="none" blendMode="add" depthTest="always" />
+      <DoForwardLightLoop type="Mesh" class="Opaque" context="MAP_COVERAGE" order="STATECHANGES" />
+
+      <EndTarget flushCB="true" flushDB="true" />
+    </Stage>
+
+    <Stage id="PostProcess" >
+      <ColourMask channels="RGBA"/>
+      <BeginTarget target="" />
+      <ClearTarget depthBuf="true" colBuf0="true" col_R="0.0" col_G="0.0" col_B="0.0" col_A="0.0" />
+
+      <BindBuffer sampler="gDiffuseMap"  sourceRT="MAP"      bufIndex="0" />
+      <BindBuffer sampler="gCoverageMap" sourceRT="COVERAGE" bufIndex="0" />
+      <DrawQuad material="materials/MapPostProcess.material.mbin" context="MAP_POSTPROCESS" />
+      <UnbindBuffers />
+
+      <EndTarget flushCB="true" flushDB="true" />
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>

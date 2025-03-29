@@ -1,0 +1,767 @@
+[[FX]]
+// -----------------------------------------------------------------------------------
+// Samplers
+// -----------------------------------------------------------------------------------
+
+sampler gBuffer0Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 0;
+};
+
+sampler gBuffer1Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 1;
+};
+
+sampler gBuffer2Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 2;
+};
+
+sampler gBuffer3Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 3;
+};
+
+sampler gBuffer4Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 4;
+};
+
+sampler gBuffer5Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 5;
+};
+
+sampler gBuffer6Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 6;
+};
+
+sampler gBuffer7Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 7;
+};
+
+sampler gBuffer0uMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 8;
+};
+
+sampler gBuffer1uMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 9;
+};
+
+sampler gBuffer2uMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 10;
+};
+
+sampler gBuffer3uMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 11;
+};
+
+sampler gBlueNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/BLUENOISERG256.DDS;
+    Address = Clamp;
+    TexUnit = 12;
+};
+
+sampler gInvEllipticCdf = sampler_state
+{
+    DefaultTexture = SHADER/INVERSEELLIPTICCDF.DDS;
+    Address = Clamp;
+    TexUnit = 13;
+};
+
+// -----------------------------------------------------------------------------------
+// Uniforms
+// -----------------------------------------------------------------------------------
+
+// custom
+float4 gCustomParamsVec4    = { 0, 0, 0, 0 };
+float4 gHBAOParamsVec4;
+
+// -----------------------------------------------------------------------------------
+// Contexts
+// -----------------------------------------------------------------------------------
+
+context [ !MACOS !IOS !SWITCH ] HBAO
+{
+    VertexShader    = compile GLSL VS_HBAO;
+    PixelShader     = compile GLSL FS_HBAO;
+    ComputeShader   = compile GLSL FS_HBAO;
+}
+
+context [ !MACOS !IOS !SWITCH ] HBAO_LITE
+{
+    VertexShader    = compile GLSL VS_HBAO;
+    PixelShader     = compile GLSL FS_HBAO_LITE;
+    ComputeShader   = compile GLSL FS_HBAO_LITE;
+}
+
+context [ !IOS !SWITCH ] GTAO_PACK_PARAMS
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_PACK_PARAMS;
+    ComputeShader   = compile GLSL CS_GTAO_PACK_PARAMS;
+}
+
+context [ !IOS !SWITCH ] GTAO_GEN_LOW
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_GEN_LOW;
+    ComputeShader   = compile GLSL CS_GTAO_GEN_LOW;
+}
+
+context [ !IOS !SWITCH ] GTAO_GEN_MEDIUM
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_GEN_MEDIUM;
+    ComputeShader   = compile GLSL CS_GTAO_GEN_MEDIUM;
+}
+
+context [ !IOS !SWITCH ] GTAO_GEN_HIGH
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_GEN_HIGH;
+    ComputeShader   = compile GLSL CS_GTAO_GEN_HIGH;
+}
+
+context [ !IOS !SWITCH ] GTAO_GEN_ULTRA
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_GEN_ULTRA;
+    ComputeShader   = compile GLSL CS_GTAO_GEN_ULTRA;
+}
+
+context [ !IOS !SWITCH ] GTAO_GEN_L_L
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_GEN_LOW_LEGACY;
+    ComputeShader   = compile GLSL CS_GTAO_GEN_LOW_LEGACY;
+}
+
+context [ !IOS !SWITCH ] GTAO_GEN_M_L
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_GEN_MEDIUM_LEGACY;
+    ComputeShader   = compile GLSL CS_GTAO_GEN_MEDIUM_LEGACY;
+}
+
+context [ !IOS !SWITCH ] GTAO_GEN_H_L
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_GEN_HIGH_LEGACY;
+    ComputeShader   = compile GLSL CS_GTAO_GEN_HIGH_LEGACY;
+}
+
+context [ !IOS !SWITCH ] GTAO_GEN_U_L
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_GEN_HIGH_LEGACY;
+    ComputeShader   = compile GLSL CS_GTAO_GEN_HIGH_LEGACY;
+}
+
+context [ !IOS !SWITCH ] GTAO_SPATIAL_H_DENOISE
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_SPATIAL_DENOISE_H;
+    ComputeShader   = compile GLSL CS_GTAO_SPATIAL_DENOISE_H;
+}
+
+context [ !IOS !SWITCH ] GTAO_SPATIAL_V_DENOISE
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_SPATIAL_DENOISE_V;
+    ComputeShader   = compile GLSL CS_GTAO_SPATIAL_DENOISE_V;
+}
+
+context [ !IOS !SWITCH ] GTAO_SPATIAL_0_DENOISE
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_SPATIAL_DENOISE_0;
+    ComputeShader   = compile GLSL CS_GTAO_SPATIAL_DENOISE_0;
+}
+
+context [ !IOS !SWITCH ] GTAO_SPATIAL_1_DENOISE
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_SPATIAL_DENOISE_1;
+    ComputeShader   = compile GLSL CS_GTAO_SPATIAL_DENOISE_1;
+}
+
+context [ !IOS !SWITCH ] GTAO_TEMPORAL_FILTER
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_TEMPORAL_FILTER;
+    ComputeShader   = compile GLSL CS_GTAO_TEMPORAL_FILTER;
+}
+
+context [ !IOS !SWITCH ] GTAO_TEMPORAL_MASK
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_TEMPORAL_MASK;
+    ComputeShader   = compile GLSL CS_GTAO_TEMPORAL_MASK;
+}
+
+context [ !IOS !SWITCH ] GTAO_DECODE
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_DECODE;
+}
+
+context [ !IOS !SWITCH ] GTAO_COPY_IN
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_COPY_IN;
+}
+
+context [ !IOS !SWITCH ] GTAO_COPY_OUT
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_COPY_OUT;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_GEN_LOW
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_GEN_LOW;
+    ComputeShader   = compile GLSL CS_GTAO_BENT_NORMALS_GEN_LOW;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_GEN_MEDIUM
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_GEN_MEDIUM;
+    ComputeShader   = compile GLSL CS_GTAO_BENT_NORMALS_GEN_MEDIUM;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_GEN_HIGH
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_GEN_HIGH;
+    ComputeShader   = compile GLSL CS_GTAO_BENT_NORMALS_GEN_HIGH;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_GEN_ULTRA
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_GEN_ULTRA;
+    ComputeShader   = compile GLSL CS_GTAO_BENT_NORMALS_GEN_ULTRA;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_G_L_L
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_GEN_LOW_LEGACY;
+    ComputeShader   = compile GLSL CS_GTAO_BENT_NORMALS_GEN_LOW_LEGACY;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_G_M_L
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_GEN_MEDIUM_LEGACY;
+    ComputeShader   = compile GLSL CS_GTAO_BENT_NORMALS_GEN_MEDIUM_LEGACY;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_G_H_L
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_GEN_HIGH_LEGACY;
+    ComputeShader   = compile GLSL CS_GTAO_BENT_NORMALS_GEN_HIGH_LEGACY;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_G_U_L
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_GEN_HIGH_LEGACY;
+    ComputeShader   = compile GLSL CS_GTAO_BENT_NORMALS_GEN_HIGH_LEGACY;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_SPTL_H_DENOISE
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_H;
+    ComputeShader   = compile GLSL CS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_H;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_SPTL_V_DENOISE
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_V;
+    ComputeShader   = compile GLSL CS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_V;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_SPTL_0_DENOISE
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_0;
+    ComputeShader   = compile GLSL CS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_0;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_SPTL_1_DENOISE
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_1;
+    ComputeShader   = compile GLSL CS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_1;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_TEMPORAL_FILTER
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_TEMPORAL_FILTER;
+    ComputeShader   = compile GLSL CS_GTAO_BENT_NORMALS_TEMPORAL_FILTER;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_DECODE
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_DECODE;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_COPY_IN
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_COPY_IN;
+}
+
+context [ !IOS !SWITCH ] GTAO_BN_COPY_OUT
+{
+    VertexShader    = compile GLSL VS_GTAO;
+    PixelShader     = compile GLSL FS_GTAO_BENT_NORMALS_COPY_OUT;
+}
+
+[[VS_GTAO]]
+// =================================================================================================
+#define D_TEX_QUAD
+#define D_AO_COMMON
+#include "ImmediateModeVertex.shader.h"
+
+[[VS_HBAO]]
+// =================================================================================================
+#define D_TEX_QUAD
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_HBAO]]
+// =================================================================================================
+#include "Fullscreen/HBAOFragment.shader.h"
+
+[[FS_HBAO_LITE]]
+// =================================================================================================
+#define D_HBAO_LITE
+#include "Fullscreen/HBAOFragment.shader.h"
+
+[[FS_GTAO_PACK_PARAMS]]
+// =================================================================================================
+#define D_GTAO_PACK_PARAMS
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_PACK_PARAMS]]
+// =================================================================================================
+#define D_GTAO_PACK_PARAMS
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_GEN_LOW]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_LOW
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_GEN_LOW]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_LOW
+#define D_OUT_TYPE_0    r8ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_GEN_MEDIUM]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_MEDIUM
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_GEN_MEDIUM]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_MEDIUM
+#define D_OUT_TYPE_0    r8ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_GEN_HIGH]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_HIGH
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_GEN_HIGH]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_HIGH
+#define D_OUT_TYPE_0    r8ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_GEN_ULTRA]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_ULTRA
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_GEN_ULTRA]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_ULTRA
+#define D_OUT_TYPE_0    r8ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_GEN_LOW_LEGACY]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_LOW
+#define D_GTAO_LEGACY
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_GEN_LOW_LEGACY]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_LOW
+#define D_GTAO_LEGACY
+#define D_OUT_TYPE_0    r8ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_GEN_MEDIUM_LEGACY]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_MEDIUM
+#define D_GTAO_LEGACY
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_GEN_MEDIUM_LEGACY]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_MEDIUM
+#define D_GTAO_LEGACY
+#define D_OUT_TYPE_0    r8ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_GEN_HIGH_LEGACY]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_HIGH
+#define D_GTAO_LEGACY
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_GEN_HIGH_LEGACY]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_HIGH
+#define D_GTAO_LEGACY
+#define D_OUT_TYPE_0    r8ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_SPATIAL_DENOISE_H]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_DENOISE_H
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_SPATIAL_DENOISE_H]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_DENOISE_H
+#define D_OUT_TYPE_0    r8ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_SPATIAL_DENOISE_V]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_DENOISE_V
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_SPATIAL_DENOISE_V]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_DENOISE_V
+#define D_OUT_TYPE_0    r8ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_SPATIAL_DENOISE_0]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_DENOISE_0
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_SPATIAL_DENOISE_0]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_DENOISE_0
+#define D_OUT_TYPE_0    r8ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_SPATIAL_DENOISE_1]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_DENOISE_1
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_SPATIAL_DENOISE_1]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_DENOISE_1
+#define D_OUT_TYPE_0    r8ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_TEMPORAL_FILTER]]
+// =================================================================================================
+#define D_GTAO_TEMPORAL_FILTER
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_TEMPORAL_FILTER]]
+// =================================================================================================
+#define D_GTAO_TEMPORAL_FILTER
+#define D_OUT_TYPE_0    r8ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_TEMPORAL_MASK]]
+// =================================================================================================
+#define D_GTAO_TEMPORAL_MASK
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_TEMPORAL_MASK]]
+// =================================================================================================
+#define D_GTAO_TEMPORAL_MASK
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_DECODE]]
+// =================================================================================================
+#define D_GTAO_DECODE
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_COPY_IN]]
+// =================================================================================================
+#define D_GTAO_COPY_IN
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_COPY_OUT]]
+// =================================================================================================
+#define D_GTAO_COPY_OUT
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_GEN_LOW]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_LOW
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_BENT_NORMALS_GEN_LOW]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_LOW
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_GEN_MEDIUM]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_MEDIUM
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_BENT_NORMALS_GEN_MEDIUM]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_MEDIUM
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_GEN_HIGH]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_HIGH
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_BENT_NORMALS_GEN_HIGH]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_HIGH
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_GEN_ULTRA]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_ULTRA
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_BENT_NORMALS_GEN_ULTRA]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_ULTRA
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_GEN_LOW_LEGACY]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_LOW
+#define D_GTAO_LEGACY
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_BENT_NORMALS_GEN_LOW_LEGACY]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_LOW
+#define D_GTAO_LEGACY
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_GEN_MEDIUM_LEGACY]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_MEDIUM
+#define D_GTAO_LEGACY
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_BENT_NORMALS_GEN_MEDIUM_LEGACY]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_MEDIUM
+#define D_GTAO_LEGACY
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_GEN_HIGH_LEGACY]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_HIGH
+#define D_GTAO_LEGACY
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_BENT_NORMALS_GEN_HIGH_LEGACY]]
+// =================================================================================================
+#define D_GTAO_APPLY
+#define D_GTAO_BENT_NORMALS
+#define D_GTAO_HIGH
+#define D_GTAO_LEGACY
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_H]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_GTAO_BENT_NORMALS
+#define D_DENOISE_H
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_H]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_GTAO_BENT_NORMALS
+#define D_DENOISE_H
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_V]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_GTAO_BENT_NORMALS
+#define D_DENOISE_V
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_V]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_GTAO_BENT_NORMALS
+#define D_DENOISE_V
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_0]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_GTAO_BENT_NORMALS
+#define D_DENOISE_0
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_0]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_GTAO_BENT_NORMALS
+#define D_DENOISE_0
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_1]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_GTAO_BENT_NORMALS
+#define D_DENOISE_1
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_BENT_NORMALS_SPATIAL_DENOISE_1]]
+// =================================================================================================
+#define D_GTAO_SPATIAL_DENOISE
+#define D_GTAO_BENT_NORMALS
+#define D_DENOISE_1
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_TEMPORAL_FILTER]]
+// =================================================================================================
+#define D_GTAO_TEMPORAL_FILTER
+#define D_GTAO_BENT_NORMALS
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[CS_GTAO_BENT_NORMALS_TEMPORAL_FILTER]]
+// =================================================================================================
+#define D_GTAO_TEMPORAL_FILTER
+#define D_GTAO_BENT_NORMALS
+#define D_OUT_TYPE_0    r32ui
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_DECODE]]
+// =================================================================================================
+#define D_GTAO_DECODE
+#define D_GTAO_BENT_NORMALS
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_COPY_IN]]
+// =================================================================================================
+#define D_GTAO_COPY_IN
+#define D_GTAO_BENT_NORMALS
+#include "Fullscreen/GTAOFragment.shader.h"
+
+[[FS_GTAO_BENT_NORMALS_COPY_OUT]]
+// =================================================================================================
+#define D_GTAO_COPY_OUT
+#define D_GTAO_BENT_NORMALS
+#include "Fullscreen/GTAOFragment.shader.h"
