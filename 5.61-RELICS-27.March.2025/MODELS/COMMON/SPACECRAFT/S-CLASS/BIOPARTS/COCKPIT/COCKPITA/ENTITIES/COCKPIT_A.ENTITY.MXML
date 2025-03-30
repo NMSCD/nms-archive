@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.61.0.1)-->
+<Data template="cTkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="GcDistanceScaleComponentData" _index="0">
+			<Property name="GcDistanceScaleComponentData">
+				<Property name="UseGlobals" value="true" />
+				<Property name="Scale" value="1.000000" />
+				<Property name="MinDistance" value="75.000000" />
+				<Property name="MaxDistance" value="10000.000000" />
+				<Property name="MinHeight" value="5000.000000" />
+				<Property name="MaxHeight" value="6000.000000" />
+				<Property name="DisabledWhenOnFreighter" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkAudioComponentData" _index="1">
+			<Property name="TkAudioComponentData">
+				<Property name="Ambient" value="" />
+				<Property name="AmbientState" value="" />
+				<Property name="Shutdown" value="" />
+				<Property name="MaxDistance" value="90" />
+				<Property name="OcclusionRadius" value="0.000000" />
+				<Property name="OcclusionRange" value="0.000000" />
+				<Property name="LocalOnly" value="false" />
+				<Property name="AnimTriggers">
+					<Property name="AnimTriggers" value="TkAudioAnimTrigger" _index="0">
+						<Property name="Sound" value="Ship_Alien_TakeOff" />
+						<Property name="Anim" value="COCKPITTAKEOFF" />
+						<Property name="FrameStart" value="0" />
+						<Property name="OnlyValidWithParts" />
+					</Property>
+					<Property name="AnimTriggers" value="TkAudioAnimTrigger" _index="1">
+						<Property name="Sound" value="Ship_Alien_Landing" />
+						<Property name="Anim" value="COCKPITLANDING" />
+						<Property name="FrameStart" value="0" />
+						<Property name="OnlyValidWithParts" />
+					</Property>
+				</Property>
+				<Property name="Emitters" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkAnimationComponentData" _index="2">
+			<Property name="TkAnimationComponentData">
+				<Property name="NetSyncAnimations" value="false" />
+				<Property name="Idle" value="TkAnimationData">
+					<Property name="Anim" value="IDLE" />
+					<Property name="Filename" value="MODELS/COMMON/SPACECRAFT/S-CLASS/BIOPARTS/ANIMS/BIOSHIPFLYINGIDLE.ANIM.MBIN" />
+					<Property name="AnimType" value="Loop" />
+					<Property name="AnimGroupOverride" value="false" />
+					<Property name="Priority" value="0" />
+					<Property name="FrameStart" value="0" />
+					<Property name="FrameEnd" value="0" />
+					<Property name="FrameEndGame" value="0" />
+					<Property name="StartNode" value="" />
+					<Property name="ExtraStartNodes" />
+					<Property name="AdditiveBaseAnim" value="" />
+					<Property name="AdditiveBaseFrame" value="0.000000" />
+					<Property name="Mask" value="" />
+					<Property name="OffsetMin" value="0.000000" />
+					<Property name="OffsetMax" value="0.000000" />
+					<Property name="Delay" value="0.000000" />
+					<Property name="Speed" value="1.000000" />
+					<Property name="ActionStartFrame" value="0.000000" />
+					<Property name="ActionFrame" value="-1.000000" />
+					<Property name="Actions" />
+					<Property name="CreatureSize" value="AllSizes" />
+					<Property name="Notifies" />
+					<Property name="Additive" value="false" />
+					<Property name="Mirrored" value="false" />
+					<Property name="Active" value="true" />
+					<Property name="Has30HzFrames" value="false" />
+					<Property name="GameData" value="TkAnimationGameData">
+						<Property name="RootMotion" value="None" />
+						<Property name="BlockPlayerMovement" value="false" />
+						<Property name="BlockPlayerWeapon" value="Unblocked" />
+					</Property>
+				</Property>
+				<Property name="RandomOneShots" />
+				<Property name="AnimGroup" value="" />
+				<Property name="Anims">
+					<Property name="Anims" value="TkAnimationData" _index="0">
+						<Property name="Anim" value="FLYINGIDLE" />
+						<Property name="Filename" value="MODELS/COMMON/SPACECRAFT/S-CLASS/BIOPARTS/ANIMS/BIOSHIPFLYINGIDLE.ANIM.MBIN" />
+						<Property name="AnimType" value="Loop" />
+						<Property name="AnimGroupOverride" value="false" />
+						<Property name="Priority" value="0" />
+						<Property name="FrameStart" value="0" />
+						<Property name="FrameEnd" value="0" />
+						<Property name="FrameEndGame" value="0" />
+						<Property name="StartNode" value="" />
+						<Property name="ExtraStartNodes" />
+						<Property name="AdditiveBaseAnim" value="" />
+						<Property name="AdditiveBaseFrame" value="0.000000" />
+						<Property name="Mask" value="" />
+						<Property name="OffsetMin" value="0.000000" />
+						<Property name="OffsetMax" value="0.000000" />
+						<Property name="Delay" value="0.000000" />
+						<Property name="Speed" value="1.000000" />
+						<Property name="ActionStartFrame" value="0.000000" />
+						<Property name="ActionFrame" value="-1.000000" />
+						<Property name="Actions" />
+						<Property name="CreatureSize" value="AllSizes" />
+						<Property name="Notifies" />
+						<Property name="Additive" value="false" />
+						<Property name="Mirrored" value="false" />
+						<Property name="Active" value="true" />
+						<Property name="Has30HzFrames" value="false" />
+						<Property name="GameData" value="TkAnimationGameData">
+							<Property name="RootMotion" value="None" />
+							<Property name="BlockPlayerMovement" value="false" />
+							<Property name="BlockPlayerWeapon" value="Unblocked" />
+						</Property>
+					</Property>
+					<Property name="Anims" value="TkAnimationData" _index="1">
+						<Property name="Anim" value="COCKPITIDLE" />
+						<Property name="Filename" value="MODELS/COMMON/SPACECRAFT/S-CLASS/BIOPARTS/ANIMS/BIOSHIPIDLE.ANIM.MBIN" />
+						<Property name="AnimType" value="Loop" />
+						<Property name="AnimGroupOverride" value="false" />
+						<Property name="Priority" value="0" />
+						<Property name="FrameStart" value="0" />
+						<Property name="FrameEnd" value="0" />
+						<Property name="FrameEndGame" value="0" />
+						<Property name="StartNode" value="" />
+						<Property name="ExtraStartNodes" />
+						<Property name="AdditiveBaseAnim" value="" />
+						<Property name="AdditiveBaseFrame" value="0.000000" />
+						<Property name="Mask" value="" />
+						<Property name="OffsetMin" value="0.000000" />
+						<Property name="OffsetMax" value="0.000000" />
+						<Property name="Delay" value="0.000000" />
+						<Property name="Speed" value="1.000000" />
+						<Property name="ActionStartFrame" value="0.000000" />
+						<Property name="ActionFrame" value="-1.000000" />
+						<Property name="Actions" />
+						<Property name="CreatureSize" value="AllSizes" />
+						<Property name="Notifies" />
+						<Property name="Additive" value="false" />
+						<Property name="Mirrored" value="false" />
+						<Property name="Active" value="true" />
+						<Property name="Has30HzFrames" value="false" />
+						<Property name="GameData" value="TkAnimationGameData">
+							<Property name="RootMotion" value="None" />
+							<Property name="BlockPlayerMovement" value="false" />
+							<Property name="BlockPlayerWeapon" value="Unblocked" />
+						</Property>
+					</Property>
+					<Property name="Anims" value="TkAnimationData" _index="2">
+						<Property name="Anim" value="COCKPITTAKEOFF" />
+						<Property name="Filename" value="MODELS/COMMON/SPACECRAFT/S-CLASS/BIOPARTS/ANIMS/BIOSHIPTAKEOFF.ANIM.MBIN" />
+						<Property name="AnimType" value="OneShotBlendable" />
+						<Property name="AnimGroupOverride" value="false" />
+						<Property name="Priority" value="0" />
+						<Property name="FrameStart" value="0" />
+						<Property name="FrameEnd" value="150" />
+						<Property name="FrameEndGame" value="0" />
+						<Property name="StartNode" value="" />
+						<Property name="ExtraStartNodes" />
+						<Property name="AdditiveBaseAnim" value="" />
+						<Property name="AdditiveBaseFrame" value="0.000000" />
+						<Property name="Mask" value="" />
+						<Property name="OffsetMin" value="0.000000" />
+						<Property name="OffsetMax" value="0.000000" />
+						<Property name="Delay" value="0.000000" />
+						<Property name="Speed" value="1.000000" />
+						<Property name="ActionStartFrame" value="0.000000" />
+						<Property name="ActionFrame" value="-1.000000" />
+						<Property name="Actions" />
+						<Property name="CreatureSize" value="AllSizes" />
+						<Property name="Notifies" />
+						<Property name="Additive" value="false" />
+						<Property name="Mirrored" value="false" />
+						<Property name="Active" value="true" />
+						<Property name="Has30HzFrames" value="false" />
+						<Property name="GameData" value="TkAnimationGameData">
+							<Property name="RootMotion" value="None" />
+							<Property name="BlockPlayerMovement" value="false" />
+							<Property name="BlockPlayerWeapon" value="Unblocked" />
+						</Property>
+					</Property>
+					<Property name="Anims" value="TkAnimationData" _index="3">
+						<Property name="Anim" value="COCKPITLANDING" />
+						<Property name="Filename" value="MODELS/COMMON/SPACECRAFT/S-CLASS/BIOPARTS/ANIMS/BIOSHIPTAKEOFF.ANIM.MBIN" />
+						<Property name="AnimType" value="OneShotBlendable" />
+						<Property name="AnimGroupOverride" value="false" />
+						<Property name="Priority" value="0" />
+						<Property name="FrameStart" value="250" />
+						<Property name="FrameEnd" value="400" />
+						<Property name="FrameEndGame" value="0" />
+						<Property name="StartNode" value="" />
+						<Property name="ExtraStartNodes" />
+						<Property name="AdditiveBaseAnim" value="" />
+						<Property name="AdditiveBaseFrame" value="0.000000" />
+						<Property name="Mask" value="" />
+						<Property name="OffsetMin" value="0.000000" />
+						<Property name="OffsetMax" value="0.000000" />
+						<Property name="Delay" value="0.000000" />
+						<Property name="Speed" value="1.000000" />
+						<Property name="ActionStartFrame" value="0.000000" />
+						<Property name="ActionFrame" value="-1.000000" />
+						<Property name="Actions" />
+						<Property name="CreatureSize" value="AllSizes" />
+						<Property name="Notifies" />
+						<Property name="Additive" value="false" />
+						<Property name="Mirrored" value="false" />
+						<Property name="Active" value="true" />
+						<Property name="Has30HzFrames" value="false" />
+						<Property name="GameData" value="TkAnimationGameData">
+							<Property name="RootMotion" value="None" />
+							<Property name="BlockPlayerMovement" value="false" />
+							<Property name="BlockPlayerWeapon" value="Unblocked" />
+						</Property>
+					</Property>
+				</Property>
+				<Property name="AnimLibraries" />
+				<Property name="Trees" />
+				<Property name="JointLODOverrides" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcTriggerActionComponentData" _index="3">
+			<Property name="GcTriggerActionComponentData">
+				<Property name="HideModel" value="false" />
+				<Property name="StartInactive" value="false" />
+				<Property name="States">
+					<Property name="States" value="GcActionTriggerState" _index="0">
+						<Property name="StateID" value="BOOT" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcBeenShotEvent">
+									<Property name="GcBeenShotEvent">
+										<Property name="ShotBy" value="Anything" />
+										<Property name="DamageThreshold" value="1" />
+										<Property name="HealthThreshold" value="75.000000" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcParticleAction" _index="0">
+										<Property name="GcParticleAction">
+											<Property name="Effect" value="AISHIPDAMAGED" />
+											<Property name="Joint" value="ROOT" />
+											<Property name="Exact" value="true" />
+											<Property name="FindRange" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="Action" value="GcGoToStateAction" _index="1">
+										<Property name="GcGoToStateAction">
+											<Property name="State" value="DAMAGED" />
+											<Property name="Broadcast" value="false" />
+											<Property name="BroadcastLevel" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Triggers" value="GcActionTrigger" _index="1">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="0.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcPlayAnimAction" _index="0">
+										<Property name="GcPlayAnimAction">
+											<Property name="Anim" value="COCKPITIDLE" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState" _index="1">
+						<Property name="StateID" value="DAMAGED" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcBeenShotEvent">
+									<Property name="GcBeenShotEvent">
+										<Property name="ShotBy" value="Anything" />
+										<Property name="DamageThreshold" value="1" />
+										<Property name="HealthThreshold" value="40.000000" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcParticleAction" _index="0">
+										<Property name="GcParticleAction">
+											<Property name="Effect" value="AISHIPSMOKE" />
+											<Property name="Joint" value="ROOT" />
+											<Property name="Exact" value="true" />
+											<Property name="FindRange" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState" _index="2">
+						<Property name="StateID" value="TAKEOFF" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="0.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcNodeActivationAction" _index="0">
+										<Property name="GcNodeActivationAction">
+											<Property name="NodeActiveState" value="Deactivate" />
+											<Property name="Name" value="LandEffect" />
+											<Property name="SceneToAdd" value="" />
+											<Property name="IncludePhysics" value="false" />
+											<Property name="IncludeChildPhysics" value="false" />
+											<Property name="NotifyNPC" value="false" />
+											<Property name="UseMasterModel" value="true" />
+											<Property name="UseLocalNode" value="false" />
+											<Property name="RestartEmitters" value="false" />
+											<Property name="AffectModels" value="false" />
+										</Property>
+									</Property>
+									<Property name="Action" value="GcPlayAnimAction" _index="1">
+										<Property name="GcPlayAnimAction">
+											<Property name="Anim" value="COCKPITTAKEOFF" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Triggers" value="GcActionTrigger" _index="1">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="2.500000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcGoToStateAction" _index="0">
+										<Property name="GcGoToStateAction">
+											<Property name="State" value="FLYINGIDLE" />
+											<Property name="Broadcast" value="false" />
+											<Property name="BroadcastLevel" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState" _index="3">
+						<Property name="StateID" value="LANDING" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="0.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcPlayAnimAction" _index="0">
+										<Property name="GcPlayAnimAction">
+											<Property name="Anim" value="COCKPITLANDING" />
+										</Property>
+									</Property>
+									<Property name="Action" value="GcNodeActivationAction" _index="1">
+										<Property name="GcNodeActivationAction">
+											<Property name="NodeActiveState" value="Activate" />
+											<Property name="Name" value="LandEffect" />
+											<Property name="SceneToAdd" value="" />
+											<Property name="IncludePhysics" value="false" />
+											<Property name="IncludeChildPhysics" value="false" />
+											<Property name="NotifyNPC" value="false" />
+											<Property name="UseMasterModel" value="true" />
+											<Property name="UseLocalNode" value="false" />
+											<Property name="RestartEmitters" value="false" />
+											<Property name="AffectModels" value="false" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Triggers" value="GcActionTrigger" _index="1">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="2.500000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcGoToStateAction" _index="0">
+										<Property name="GcGoToStateAction">
+											<Property name="State" value="LANDINGIDLE" />
+											<Property name="Broadcast" value="false" />
+											<Property name="BroadcastLevel" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState" _index="4">
+						<Property name="StateID" value="LANDINGIDLE" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="0.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcPlayAnimAction" _index="0">
+										<Property name="GcPlayAnimAction">
+											<Property name="Anim" value="COCKPITIDLE" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState" _index="5">
+						<Property name="StateID" value="FLYINGIDLE" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="0.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcPlayAnimAction" _index="0">
+										<Property name="GcPlayAnimAction">
+											<Property name="Anim" value="FLYINGIDLE" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+				<Property name="Persistent" value="false" />
+				<Property name="PersistentState" value="" />
+				<Property name="ResetShotTimeOnStateChange" value="false" />
+				<Property name="LinkStateToBaseGrid" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcInteractionComponentData" _index="4">
+			<Property name="GcInteractionComponentData">
+				<Property name="InteractionAction" value="PressButton" />
+				<Property name="InteractionType" value="GcInteractionType">
+					<Property name="InteractionType" value="Ship" />
+				</Property>
+				<Property name="UseIntermediateUI" value="false" />
+				<Property name="Renderer" value="TkModelRendererData">
+					<Property name="Camera" value="TkModelRendererCameraData">
+						<Property name="Distance" value="18.000010" />
+						<Property name="Offset">
+							<Property name="X" value="-5.829999" />
+							<Property name="Y" value="1.650002" />
+							<Property name="Z" value="0.000000" />
+						</Property>
+						<Property name="Roll" value="0.000000" />
+						<Property name="Pitch" value="13.199990" />
+						<Property name="Rotate" value="-54.999980" />
+						<Property name="LightPitch" value="45.000000" />
+						<Property name="LightRotate" value="45.000000" />
+						<Property name="Wander" value="TkCameraWanderData">
+							<Property name="CamWander" value="false" />
+							<Property name="CamWanderPhase" value="0.003000" />
+							<Property name="CamWanderAmplitude" value="0.500000" />
+						</Property>
+					</Property>
+					<Property name="Fov" value="30.000000" />
+					<Property name="AspectRatio" value="1.777700" />
+					<Property name="LightIntensityMultiplier" value="1.000000" />
+					<Property name="ThumbnailMode" value="None" />
+					<Property name="FocusType" value="ResourceBounds" />
+					<Property name="FocusLocator" value="" />
+					<Property name="FocusOffset">
+						<Property name="X" value="0.000000" />
+						<Property name="Y" value="0.000000" />
+						<Property name="Z" value="0.000000" />
+					</Property>
+					<Property name="FocusInterpTime" value="0.000000" />
+					<Property name="BlendInTime" value="0.800000" />
+					<Property name="BlendInOffset" value="0.000000" />
+					<Property name="Anim" value="" />
+					<Property name="HeightOffset" value="0.005000" />
+					<Property name="UsePlayerCameraInHmd" value="true" />
+					<Property name="AlignUIToCameraInHmd" value="false" />
+					<Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="false" />
+					<Property name="LookForFocusInMasterModel" value="false" />
+					<Property name="FlipRotationIfNecessary" value="false" />
+				</Property>
+				<Property name="RendererAlt" value="TkModelRendererData">
+					<Property name="Camera" value="TkModelRendererCameraData">
+						<Property name="Distance" value="36.000000" />
+						<Property name="Offset">
+							<Property name="X" value="-5.829999" />
+							<Property name="Y" value="1.650002" />
+							<Property name="Z" value="0.000000" />
+						</Property>
+						<Property name="Roll" value="0.000000" />
+						<Property name="Pitch" value="13.199990" />
+						<Property name="Rotate" value="-54.999980" />
+						<Property name="LightPitch" value="45.000000" />
+						<Property name="LightRotate" value="45.000000" />
+						<Property name="Wander" value="TkCameraWanderData">
+							<Property name="CamWander" value="false" />
+							<Property name="CamWanderPhase" value="0.003000" />
+							<Property name="CamWanderAmplitude" value="0.500000" />
+						</Property>
+					</Property>
+					<Property name="Fov" value="30.000000" />
+					<Property name="AspectRatio" value="1.777700" />
+					<Property name="LightIntensityMultiplier" value="1.000000" />
+					<Property name="ThumbnailMode" value="None" />
+					<Property name="FocusType" value="ResourceBounds" />
+					<Property name="FocusLocator" value="" />
+					<Property name="FocusOffset">
+						<Property name="X" value="0.000000" />
+						<Property name="Y" value="0.000000" />
+						<Property name="Z" value="0.000000" />
+					</Property>
+					<Property name="FocusInterpTime" value="0.000000" />
+					<Property name="BlendInTime" value="0.800000" />
+					<Property name="BlendInOffset" value="0.000000" />
+					<Property name="Anim" value="" />
+					<Property name="HeightOffset" value="0.005000" />
+					<Property name="UsePlayerCameraInHmd" value="false" />
+					<Property name="AlignUIToCameraInHmd" value="true" />
+					<Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="false" />
+					<Property name="LookForFocusInMasterModel" value="false" />
+					<Property name="FlipRotationIfNecessary" value="false" />
+				</Property>
+				<Property name="Race" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="AttractDistanceSq" value="9.000000" />
+				<Property name="SecondaryMeshAlwaysVisible" value="false" />
+				<Property name="RepeatInteraction" value="false" />
+				<Property name="UseInteractCamera" value="true" />
+				<Property name="BlendToCameraTime" value="1.000000" />
+				<Property name="BlendFromCameraTime" value="1.000000" />
+				<Property name="ActivationCost" value="GcInteractionActivationCost">
+					<Property name="SubstanceId" value="" />
+					<Property name="AltIds" />
+					<Property name="Cost" value="0" />
+					<Property name="Repeat" value="false" />
+					<Property name="RequiredTech" value="" />
+					<Property name="UseCostID" value="" />
+					<Property name="StartMissionOnCantAfford" value="" />
+					<Property name="OnlyChargeDuringSeasons" />
+				</Property>
+				<Property name="TriggerAction" value="ENTER" />
+				<Property name="TriggerActionOnPrepare" value="" />
+				<Property name="BroadcastTriggerAction" value="false" />
+				<Property name="InteractAngle" value="360.000000" />
+				<Property name="InteractDistance" value="15.000000" />
+				<Property name="InteractInvertFace" value="false" />
+				<Property name="SecondaryInteractionType" value="GcInteractionType">
+					<Property name="InteractionType" value="None" />
+				</Property>
+				<Property name="SecondaryActivationCost" value="GcInteractionActivationCost">
+					<Property name="SubstanceId" value="" />
+					<Property name="AltIds" />
+					<Property name="Cost" value="0" />
+					<Property name="Repeat" value="false" />
+					<Property name="RequiredTech" value="" />
+					<Property name="UseCostID" value="" />
+					<Property name="StartMissionOnCantAfford" value="" />
+					<Property name="OnlyChargeDuringSeasons" />
+				</Property>
+				<Property name="EventRenderers">
+					<Property name="EventRenderers" value="TkModelRendererData" _index="0">
+						<Property name="Camera" value="TkModelRendererCameraData">
+							<Property name="Distance" value="0.500000" />
+							<Property name="Offset">
+								<Property name="X" value="0.080000" />
+								<Property name="Y" value="-0.290000" />
+								<Property name="Z" value="0.000000" />
+							</Property>
+							<Property name="Roll" value="0.000000" />
+							<Property name="Pitch" value="1.200000" />
+							<Property name="Rotate" value="-161.200000" />
+							<Property name="LightPitch" value="45.000000" />
+							<Property name="LightRotate" value="45.000000" />
+							<Property name="Wander" value="TkCameraWanderData">
+								<Property name="CamWander" value="false" />
+								<Property name="CamWanderPhase" value="0.003000" />
+								<Property name="CamWanderAmplitude" value="0.500000" />
+							</Property>
+						</Property>
+						<Property name="Fov" value="30.000000" />
+						<Property name="AspectRatio" value="1.777700" />
+						<Property name="LightIntensityMultiplier" value="1.000000" />
+						<Property name="ThumbnailMode" value="None" />
+						<Property name="FocusType" value="ResourceBounds" />
+						<Property name="FocusLocator" value="" />
+						<Property name="FocusOffset">
+							<Property name="X" value="0.000000" />
+							<Property name="Y" value="0.000000" />
+							<Property name="Z" value="0.000000" />
+						</Property>
+						<Property name="FocusInterpTime" value="0.000000" />
+						<Property name="BlendInTime" value="0.800000" />
+						<Property name="BlendInOffset" value="0.000000" />
+						<Property name="Anim" value="" />
+						<Property name="HeightOffset" value="0.005000" />
+						<Property name="UsePlayerCameraInHmd" value="true" />
+						<Property name="AlignUIToCameraInHmd" value="false" />
+						<Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="false" />
+						<Property name="LookForFocusInMasterModel" value="false" />
+						<Property name="FlipRotationIfNecessary" value="false" />
+					</Property>
+				</Property>
+				<Property name="EventRenderersAlt" />
+				<Property name="EventRenderersDoF" />
+				<Property name="SecondaryCameraTransitionTime" value="1.000000" />
+				<Property name="DepthOfField" value="GcInteractionDof">
+					<Property name="IsEnabled" value="true" />
+					<Property name="UseGlobals" value="true" />
+					<Property name="NearPlaneMin" value="2.000000" />
+					<Property name="NearPlaneAdjust" value="1.000000" />
+					<Property name="FarPlane" value="3.000000" />
+					<Property name="FarFadeDistance" value="2.000000" />
+				</Property>
+				<Property name="PuzzleMissionOverrideTable" />
+				<Property name="AdditionalOptionsOverrideTable" />
+				<Property name="StoryUtilityOverrideData" value="GcStoryUtilityOverride">
+					<Property name="Name" value="" />
+					<Property name="Reward" value="" />
+					<Property name="SpecificRewardOverrideTable" />
+				</Property>
+				<Property name="OverrideInteriorExteriorMarker" value="No" />
+				<Property name="ReseedAfterRewardSuccess" value="false" />
+				<Property name="UsePersonalPersistentBuffer" value="false" />
+				<Property name="InWorldUIScaler" value="0.000000" />
+				<Property name="InWorldUIMinDistOverride" value="3.000000" />
+				<Property name="InWorldUIMinDistOverrideV2" value="4.000000" />
+				<Property name="InWorldUIForcedOffset" value="0.000000" />
+				<Property name="InWorldUIForcedOffsetV2" value="0.000000" />
+				<Property name="InWorldUIUseCameraUp" value="true" />
+				<Property name="StartMissionOnUse" value="" />
+				<Property name="AllowMissionUnderwater" value="true" />
+				<Property name="OnlyAvailableInAbandonedMode" value="false" />
+				<Property name="UseUnlockedInteractionIfMaintDone" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkPhysicsComponentData" _index="5">
+			<Property name="TkPhysicsComponentData">
+				<Property name="Data" value="TkPhysicsData">
+					<Property name="Mass" value="10.000000" />
+					<Property name="Friction" value="0.500000" />
+					<Property name="RollingFriction" value="0.200000" />
+					<Property name="AngularDamping" value="0.200000" />
+					<Property name="LinearDamping" value="0.100000" />
+					<Property name="Gravity" value="20.000000" />
+				</Property>
+				<Property name="NavMeshInclusion" value="TkNavMeshInclusionParams">
+					<Property name="InclusionType" value="TkNavMeshInclusionType">
+						<Property name="NavMeshInclusionType" value="Auto" />
+					</Property>
+					<Property name="InclusionMinSize" value="0.000000" />
+					<Property name="AreaType" value="TkNavMeshAreaType">
+						<Property name="NavMeshAreaType" value="Auto" />
+					</Property>
+				</Property>
+				<Property name="TriggerVolume" value="false" />
+				<Property name="TriggerVolumeType" value="TkVolumeTriggerType">
+					<Property name="VolumeTriggerType" value="Open" />
+				</Property>
+				<Property name="SurfaceProperties" value="None" />
+				<Property name="ModelOwnership" value="Model" />
+				<Property name="Climbable" value="false" />
+				<Property name="Walkable" value="true" />
+				<Property name="Floor" value="false" />
+				<Property name="IgnoreModelOwner" value="false" />
+				<Property name="NoVehicleCollide" value="false" />
+				<Property name="NoPlayerCollide" value="false" />
+				<Property name="NoTerrainCollide" value="false" />
+				<Property name="NoFireCollide" value="false" />
+				<Property name="NoFallDamage" value="false" />
+				<Property name="IgnoreAllCollisions" value="false" />
+				<Property name="BlocksInteract" value="true" />
+				<Property name="CameraInvisible" value="false" />
+				<Property name="InvisibleForInteraction" value="false" />
+				<Property name="AllowTeleporter" value="false" />
+				<Property name="BlockTeleporter" value="false" />
+				<Property name="DisableGravity" value="false" />
+				<Property name="SpinOnCreate" value="0.000000" />
+				<Property name="ScaleAffectsMass" value="false" />
+				<Property name="AllowedDefaultCollision" value="true" />
+				<Property name="Animated" value="false" />
+				<Property name="UseBasePartOptimisation" value="false" />
+				<Property name="IsTransporter" value="false" />
+				<Property name="UseSimpleCharacterCollision" value="false" />
+				<Property name="RotateSimpleCharacterCollisionCapsule" value="false" />
+				<Property name="SimpleCharacterCollisionRadius" value="0.500000" />
+				<Property name="SimpleCharacterCollisionHeight" value="2.000000" />
+				<Property name="SimpleCharacterCollisionHeightOffset" value="0.000000" />
+				<Property name="SimpleCharacterCollisionFwdOffset" value="0.000000" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcShipOwnershipComponentData" _index="6">
+			<Property name="GcShipOwnershipComponentData">
+				<Property name="Data" value="GcSpaceshipComponentData">
+					<Property name="Class" value="GcSpaceshipClasses">
+						<Property name="ShipClass" value="Alien" />
+					</Property>
+					<Property name="Cockpit" value="MODELS/COMMON/SPACECRAFT/S-CLASS/BIOPARTS/INTERIOR/CANOPYA_INTERIOR.SCENE.MBIN" />
+					<Property name="MaxHeadTurn" value="55.000000" />
+					<Property name="MaxHeadPitchUp" value="35.000000" />
+					<Property name="MaxHeadPitchDown" value="25.000000" />
+					<Property name="DefaultHealth" value="500" />
+					<Property name="FoVFixedDistance" value="1.500000" />
+					<Property name="Renderer" value="TkModelRendererData">
+						<Property name="Camera" value="TkModelRendererCameraData">
+							<Property name="Distance" value="1.500000" />
+							<Property name="Offset">
+								<Property name="X" value="0.000000" />
+								<Property name="Y" value="0.000000" />
+								<Property name="Z" value="0.000000" />
+							</Property>
+							<Property name="Roll" value="0.000000" />
+							<Property name="Pitch" value="0.000000" />
+							<Property name="Rotate" value="0.000000" />
+							<Property name="LightPitch" value="45.000000" />
+							<Property name="LightRotate" value="45.000000" />
+							<Property name="Wander" value="TkCameraWanderData">
+								<Property name="CamWander" value="false" />
+								<Property name="CamWanderPhase" value="0.003000" />
+								<Property name="CamWanderAmplitude" value="0.500000" />
+							</Property>
+						</Property>
+						<Property name="Fov" value="30.000000" />
+						<Property name="AspectRatio" value="1.777700" />
+						<Property name="LightIntensityMultiplier" value="1.000000" />
+						<Property name="ThumbnailMode" value="None" />
+						<Property name="FocusType" value="ResourceBounds" />
+						<Property name="FocusLocator" value="" />
+						<Property name="FocusOffset">
+							<Property name="X" value="0.000000" />
+							<Property name="Y" value="0.000000" />
+							<Property name="Z" value="0.000000" />
+						</Property>
+						<Property name="FocusInterpTime" value="0.000000" />
+						<Property name="BlendInTime" value="0.800000" />
+						<Property name="BlendInOffset" value="0.000000" />
+						<Property name="Anim" value="" />
+						<Property name="HeightOffset" value="0.005000" />
+						<Property name="UsePlayerCameraInHmd" value="true" />
+						<Property name="AlignUIToCameraInHmd" value="false" />
+						<Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="false" />
+						<Property name="LookForFocusInMasterModel" value="false" />
+						<Property name="FlipRotationIfNecessary" value="false" />
+					</Property>
+					<Property name="Buildable" value="false" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Components" value="TkNetReplicatedEntityComponentData" _index="7">
+			<Property name="TkNetReplicatedEntityComponentData">
+				<Property name="ReplicaComponentMask" />
+				<Property name="ReplicationRange" value="System" />
+				<Property name="SpawnType" value="Basic" />
+				<Property name="IgnoreComponents" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcNetworkInterpolationComponentData" _index="8">
+			<Property name="GcNetworkInterpolationComponentData">
+				<Property name="SynchroniseScale" value="Once" />
+				<Property name="SupportTeleportation" value="false" />
+				<Property name="UpdateWhileInactive" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcNPCInteractiveObjectComponentData" linked="models/planets/biomes/common/buildings/parts/entities/poiship.data.mxml" _index="9">
+			<Property name="GcNPCInteractiveObjectComponentData">
+				<Property name="InteractiveObjectType" value="GcNPCInteractiveObjectType">
+					<Property name="NPCInteractiveObjectType" value="Idle" />
+				</Property>
+				<Property name="MaxCapacity" value="1" />
+				<Property name="DurationMin" value="30.000000" />
+				<Property name="DurationMax" value="60.000000" />
+				<Property name="States">
+					<Property name="States" value="GcNPCInteractiveObjectState" _index="0">
+						<Property name="Name" value="ENTER" />
+						<Property name="FaceSpawnDir" value="false" />
+						<Property name="FaceNodeDir" value="false" />
+						<Property name="FaceInvNodeDir" value="false" />
+						<Property name="LookAtModel" value="true" />
+						<Property name="LookAtNode" value="" />
+						<Property name="FaceLookAt" value="true" />
+						<Property name="MaintainLookAt" value="false" />
+						<Property name="PlayIdles" value="false" />
+						<Property name="CanConverse" value="false" />
+						<Property name="Prop" value="GcNPCPropType">
+							<Property name="NPCProp" value="DontCare" />
+						</Property>
+						<Property name="SeatedPosture" value="GcNPCSeatedPosture">
+							<Property name="NPCSeatedPosture" value="Sofa" />
+						</Property>
+						<Property name="BlendTime" value="0.300000" />
+						<Property name="EarlyOutTime" value="0.000000" />
+						<Property name="Animations" />
+						<Property name="SpineAdjustAmount" value="0.000000" />
+						<Property name="MinAnims" value="1" />
+						<Property name="MaxAnims" value="1" />
+						<Property name="MinTime" value="0.000000" />
+						<Property name="MaxTime" value="0.000000" />
+						<Property name="Transitions">
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="0">
+								<Property name="NewState" value="TAP" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcNPCInteractiveObjectState" _index="1">
+						<Property name="Name" value="IDLE" />
+						<Property name="FaceSpawnDir" value="false" />
+						<Property name="FaceNodeDir" value="false" />
+						<Property name="FaceInvNodeDir" value="true" />
+						<Property name="LookAtModel" value="false" />
+						<Property name="LookAtNode" value="" />
+						<Property name="FaceLookAt" value="false" />
+						<Property name="MaintainLookAt" value="false" />
+						<Property name="PlayIdles" value="false" />
+						<Property name="CanConverse" value="false" />
+						<Property name="Prop" value="GcNPCPropType">
+							<Property name="NPCProp" value="IPad" />
+						</Property>
+						<Property name="SeatedPosture" value="GcNPCSeatedPosture">
+							<Property name="NPCSeatedPosture" value="Sofa" />
+						</Property>
+						<Property name="BlendTime" value="0.300000" />
+						<Property name="EarlyOutTime" value="0.000000" />
+						<Property name="Animations" />
+						<Property name="SpineAdjustAmount" value="0.000000" />
+						<Property name="MinAnims" value="1" />
+						<Property name="MaxAnims" value="1" />
+						<Property name="MinTime" value="2.000000" />
+						<Property name="MaxTime" value="4.000000" />
+						<Property name="Transitions">
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="0">
+								<Property name="NewState" value="TAP" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="1">
+								<Property name="NewState" value="LOOK" />
+								<Property name="Probability" value="0.500000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcNPCInteractiveObjectState" _index="2">
+						<Property name="Name" value="TAP" />
+						<Property name="FaceSpawnDir" value="false" />
+						<Property name="FaceNodeDir" value="false" />
+						<Property name="FaceInvNodeDir" value="false" />
+						<Property name="LookAtModel" value="false" />
+						<Property name="LookAtNode" value="" />
+						<Property name="FaceLookAt" value="false" />
+						<Property name="MaintainLookAt" value="false" />
+						<Property name="PlayIdles" value="false" />
+						<Property name="CanConverse" value="false" />
+						<Property name="Prop" value="GcNPCPropType">
+							<Property name="NPCProp" value="IPad" />
+						</Property>
+						<Property name="SeatedPosture" value="GcNPCSeatedPosture">
+							<Property name="NPCSeatedPosture" value="Sofa" />
+						</Property>
+						<Property name="BlendTime" value="0.600000" />
+						<Property name="EarlyOutTime" value="1.000000" />
+						<Property name="Animations">
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="0">
+								<Property name="Name" value="1H_INT_IPD_01" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="1">
+								<Property name="Name" value="1H_INT_IPD_02" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+						</Property>
+						<Property name="SpineAdjustAmount" value="0.000000" />
+						<Property name="MinAnims" value="2" />
+						<Property name="MaxAnims" value="4" />
+						<Property name="MinTime" value="0.000000" />
+						<Property name="MaxTime" value="0.000000" />
+						<Property name="Transitions">
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="0">
+								<Property name="NewState" value="TAP" />
+								<Property name="Probability" value="0.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="1">
+								<Property name="NewState" value="LOOK" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="2">
+								<Property name="NewState" value="IDLE" />
+								<Property name="Probability" value="0.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcNPCInteractiveObjectState" _index="3">
+						<Property name="Name" value="LOOK" />
+						<Property name="FaceSpawnDir" value="false" />
+						<Property name="FaceNodeDir" value="false" />
+						<Property name="FaceInvNodeDir" value="false" />
+						<Property name="LookAtModel" value="true" />
+						<Property name="LookAtNode" value="" />
+						<Property name="FaceLookAt" value="false" />
+						<Property name="MaintainLookAt" value="false" />
+						<Property name="PlayIdles" value="false" />
+						<Property name="CanConverse" value="false" />
+						<Property name="Prop" value="GcNPCPropType">
+							<Property name="NPCProp" value="IPad" />
+						</Property>
+						<Property name="SeatedPosture" value="GcNPCSeatedPosture">
+							<Property name="NPCSeatedPosture" value="Sofa" />
+						</Property>
+						<Property name="BlendTime" value="0.600000" />
+						<Property name="EarlyOutTime" value="1.000000" />
+						<Property name="Animations">
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="0">
+								<Property name="Name" value="1H_INT_IPD_03" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="1">
+								<Property name="Name" value="1H_INT_IPD_04" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="2">
+								<Property name="Name" value="1H_INT_IPD_05" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+						</Property>
+						<Property name="SpineAdjustAmount" value="0.000000" />
+						<Property name="MinAnims" value="1" />
+						<Property name="MaxAnims" value="1" />
+						<Property name="MinTime" value="0.000000" />
+						<Property name="MaxTime" value="0.000000" />
+						<Property name="Transitions">
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="0">
+								<Property name="NewState" value="TAP" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="1">
+								<Property name="NewState" value="IDLE" />
+								<Property name="Probability" value="0.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances">
+		<Property name="LodDistances" value="0.000000" _index="0" />
+		<Property name="LodDistances" value="50.000000" _index="1" />
+		<Property name="LodDistances" value="80.000000" _index="2" />
+		<Property name="LodDistances" value="150.000000" _index="3" />
+		<Property name="LodDistances" value="500.000000" _index="4" />
+	</Property>
+</Data>

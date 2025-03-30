@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.61.0.1)-->
+<Data template="cTkLSystemRulesData">
+	<Property name="GlobalRestriction">
+		<Property name="GlobalRestriction" value="TkLSystemGlobalRestriction" _index="0">
+			<Property name="Name" value="nRuINS" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/RUINPARTS/STANDINGSTONE.SCENE.MBIN" />
+			<Property name="Restrictions">
+				<Property name="Restrictions" value="TkLSystemRestrictionData" _index="0">
+					<Property name="Amount" value="8" />
+					<Property name="Restriction" value="NoMoreThan" />
+				</Property>
+				<Property name="Restrictions" value="TkLSystemRestrictionData" _index="1">
+					<Property name="Amount" value="2" />
+					<Property name="Restriction" value="AtLeast" />
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="GlobalVariation">
+		<Property name="GlobalVariation" value="TkLSystemGlobalVariation" _index="0">
+			<Property name="Name" value="StoneVariation" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/RUINPARTS/STANDINGSTONE.SCENE.MBIN" />
+			<Property name="Variations" value="10" />
+		</Property>
+		<Property name="GlobalVariation" value="TkLSystemGlobalVariation" _index="1">
+			<Property name="Name" value="Variation" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/RUINPARTS/STANDINGSTONE.SCENE.MBIN" />
+			<Property name="Variations" value="10" />
+		</Property>
+	</Property>
+	<Property name="Rules">
+		<Property name="Rules" value="TkLSystemRule" _index="0">
+			<Property name="Name" value="Root" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/RUINPARTS/MONOLITH.SCENE.MBIN" />
+			<Property name="Rules">
+				<Property name="Rules" value="TkLSystemInnerRule" _index="0">
+					<Property name="LocatorType" value="STONE_" />
+					<Property name="MergeProbabilityOptions" value="Balance" />
+					<Property name="Entries">
+						<Property name="Entries" value="TkLSystemLocatorEntry" _index="0">
+							<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/RUINPARTS/STANDINGSTONE.SCENE.MBIN" />
+							<Property name="Probability" value="50.000000" />
+							<Property name="Restrictions" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+			<Property name="RuleType" value="Default" />
+		</Property>
+	</Property>
+	<Property name="Templates" />
+</Data>
