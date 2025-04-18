@@ -1,0 +1,1481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.63.0.1)-->
+<Data template="cGcWFCModuleSet">
+	<Property name="Name" value="Freighter Base" />
+	<Property name="BlockSize">
+		<Property name="X" value="8.000000" />
+		<Property name="Y" value="8.000000" />
+		<Property name="Z" value="8.000000" />
+	</Property>
+	<Property name="ApplyWallThemes" value="false" />
+	<Property name="ModulePrototypes">
+		<Property name="ModulePrototypes" value="GcWFCModulePrototype" _id="EMPTY">
+			<Property name="Name" value="Empty" />
+			<Property name="Id" value="EMPTY" />
+			<Property name="Group" value="" />
+			<Property name="Relative Probability" value="4.000000" />
+			<Property name="Include" value="true" />
+			<Property name="Exclude On Ground" value="false" />
+			<Property name="Exclude On Top" value="false" />
+			<Property name="Indoors" value="false" />
+			<Property name="Limit To One Per Level" value="false" />
+			<Property name="Exclude Rotated Variants" value="false" />
+			<Property name="Dont Rotate Model" value="false" />
+			<Property name="Layout Group" value="" />
+			<Property name="Scenes" />
+			<Property name="TerrainEdits" value="None" />
+			<Property name="TerrainConstraints" />
+			<Property name="Left" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Down" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Back" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Right" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Up" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Forward" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="FreighterModuleType" value="None" />
+		</Property>
+		<Property name="ModulePrototypes" value="GcWFCModulePrototype" _id="FREIGHTERCORE">
+			<Property name="Name" value="Freighter Core" />
+			<Property name="Id" value="FREIGHTERCORE" />
+			<Property name="Group" value="" />
+			<Property name="Relative Probability" value="0.000000" />
+			<Property name="Include" value="true" />
+			<Property name="Exclude On Ground" value="false" />
+			<Property name="Exclude On Top" value="false" />
+			<Property name="Indoors" value="false" />
+			<Property name="Limit To One Per Level" value="false" />
+			<Property name="Exclude Rotated Variants" value="false" />
+			<Property name="Dont Rotate Model" value="true" />
+			<Property name="Layout Group" value="" />
+			<Property name="Scenes">
+				<Property name="Scenes" value="GcWeightedResource" _index="0">
+					<Property name="Relative Probability" value="1.000000" />
+					<Property name="Geometry" value="TkModelResource">
+						<Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/WFC/FREIGHTER/BLOCKS/CUBEROOM_A_CORE.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+				</Property>
+			</Property>
+			<Property name="TerrainEdits" value="None" />
+			<Property name="TerrainConstraints" />
+			<Property name="Left" value="GcWFCFace">
+				<Property name="Connector" value="ROOM,EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Down" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Back" value="GcWFCFace">
+				<Property name="Connector" value="ROOM,EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0">
+					<Property name="ExcludedNeighboursR0" value="CORR_L" _index="0" />
+					<Property name="ExcludedNeighboursR0" value="CORR_S" _index="1" />
+					<Property name="ExcludedNeighboursR0" value="NEW_CORR_S" _index="2" />
+				</Property>
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Right" value="GcWFCFace">
+				<Property name="Connector" value="ROOM,EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0">
+					<Property name="ExcludedNeighboursR0" value="CORR_L" _index="0" />
+				</Property>
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Up" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Forward" value="GcWFCFace">
+				<Property name="Connector" value="ROOM,EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0">
+					<Property name="ExcludedNeighboursR0" value="CORR_S" _index="0" />
+				</Property>
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="true" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="FreighterModuleType" value="Room" />
+		</Property>
+		<Property name="ModulePrototypes" value="GcWFCModulePrototype" _id="ROOM">
+			<Property name="Name" value="Cuberoom" />
+			<Property name="Id" value="ROOM" />
+			<Property name="Group" value="" />
+			<Property name="Relative Probability" value="4.000000" />
+			<Property name="Include" value="false" />
+			<Property name="Exclude On Ground" value="false" />
+			<Property name="Exclude On Top" value="false" />
+			<Property name="Indoors" value="false" />
+			<Property name="Limit To One Per Level" value="false" />
+			<Property name="Exclude Rotated Variants" value="false" />
+			<Property name="Dont Rotate Model" value="true" />
+			<Property name="Layout Group" value="" />
+			<Property name="Scenes">
+				<Property name="Scenes" value="GcWeightedResource" _index="0">
+					<Property name="Relative Probability" value="1.000000" />
+					<Property name="Geometry" value="TkModelResource">
+						<Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/WFC/FREIGHTER/BLOCKS/CUBEROOM_A.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+				</Property>
+			</Property>
+			<Property name="TerrainEdits" value="None" />
+			<Property name="TerrainConstraints" />
+			<Property name="Left" value="GcWFCFace">
+				<Property name="Connector" value="ROOM_INNER" />
+				<Property name="Symmetric" value="false" />
+				<Property name="Transform" value="FlippedHorizontally" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Down" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Back" value="GcWFCFace">
+				<Property name="Connector" value="ROOM_INNER" />
+				<Property name="Symmetric" value="false" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Right" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY,CORR" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0">
+					<Property name="ExcludedNeighboursR0" value="CORR_L" _index="0" />
+				</Property>
+				<Property name="ExcludedNeighboursR1">
+					<Property name="ExcludedNeighboursR1" value="CORR_S" _index="0" />
+				</Property>
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3">
+					<Property name="ExcludedNeighboursR3" value="CORR_L" _index="0" />
+					<Property name="ExcludedNeighboursR3" value="CORR_S" _index="1" />
+					<Property name="ExcludedNeighboursR3" value="NEW_CORR_S" _index="2" />
+				</Property>
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Up" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Forward" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY,CORR" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0">
+					<Property name="ExcludedNeighboursR0" value="CORR_S" _index="0" />
+				</Property>
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2">
+					<Property name="ExcludedNeighboursR2" value="CORR_L" _index="0" />
+					<Property name="ExcludedNeighboursR2" value="CORR_S" _index="1" />
+					<Property name="ExcludedNeighboursR2" value="NEW_CORR_S" _index="2" />
+				</Property>
+				<Property name="ExcludedNeighboursR3">
+					<Property name="ExcludedNeighboursR3" value="CORR_L" _index="0" />
+				</Property>
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="FreighterModuleType" value="Room" />
+		</Property>
+		<Property name="ModulePrototypes" value="GcWFCModulePrototype" _id="CORR_S">
+			<Property name="Name" value="Corridor Straight" />
+			<Property name="Id" value="CORR_S" />
+			<Property name="Group" value="" />
+			<Property name="Relative Probability" value="0.000100" />
+			<Property name="Include" value="true" />
+			<Property name="Exclude On Ground" value="false" />
+			<Property name="Exclude On Top" value="false" />
+			<Property name="Indoors" value="false" />
+			<Property name="Limit To One Per Level" value="false" />
+			<Property name="Exclude Rotated Variants" value="false" />
+			<Property name="Dont Rotate Model" value="true" />
+			<Property name="Layout Group" value="" />
+			<Property name="Scenes">
+				<Property name="Scenes" value="GcWeightedResource" _index="0">
+					<Property name="Relative Probability" value="1.000000" />
+					<Property name="Geometry" value="TkModelResource">
+						<Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/WFC/FREIGHTER/BLOCKS/CORRIDOR_A.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+				</Property>
+			</Property>
+			<Property name="TerrainEdits" value="None" />
+			<Property name="TerrainConstraints" />
+			<Property name="Left" value="GcWFCFace">
+				<Property name="Connector" value="CORR,ROOM" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Down" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Back" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0">
+					<Property name="ExcludedNeighboursR0" value="FREIGHTERCORE" _index="0" />
+					<Property name="ExcludedNeighboursR0" value="ROOM" _index="1" />
+					<Property name="ExcludedNeighboursR0" value="ROOM_EDGE" _index="2" />
+					<Property name="ExcludedNeighboursR0" value="ROOM_SINGLE" _index="3" />
+					<Property name="ExcludedNeighboursR0" value="CORR_S" _index="4" />
+				</Property>
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3">
+					<Property name="ExcludedNeighboursR3" value="ROOM" _index="0" />
+				</Property>
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Right" value="GcWFCFace">
+				<Property name="Connector" value="CORR,ROOM" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Up" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Forward" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0">
+					<Property name="ExcludedNeighboursR0" value="FREIGHTERCORE" _index="0" />
+					<Property name="ExcludedNeighboursR0" value="ROOM_SINGLE" _index="1" />
+					<Property name="ExcludedNeighboursR0" value="CORR_S" _index="2" />
+				</Property>
+				<Property name="ExcludedNeighboursR1">
+					<Property name="ExcludedNeighboursR1" value="ROOM" _index="0" />
+				</Property>
+				<Property name="ExcludedNeighboursR2">
+					<Property name="ExcludedNeighboursR2" value="ROOM" _index="0" />
+					<Property name="ExcludedNeighboursR2" value="ROOM_EDGE" _index="1" />
+				</Property>
+				<Property name="ExcludedNeighboursR3">
+					<Property name="ExcludedNeighboursR3" value="CORR_L" _index="0" />
+				</Property>
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="FreighterModuleType" value="Corridor" />
+		</Property>
+		<Property name="ModulePrototypes" value="GcWFCModulePrototype" _id="CORR_L">
+			<Property name="Name" value="Corridor L" />
+			<Property name="Id" value="CORR_L" />
+			<Property name="Group" value="" />
+			<Property name="Relative Probability" value="0.200000" />
+			<Property name="Include" value="false" />
+			<Property name="Exclude On Ground" value="false" />
+			<Property name="Exclude On Top" value="false" />
+			<Property name="Indoors" value="false" />
+			<Property name="Limit To One Per Level" value="false" />
+			<Property name="Exclude Rotated Variants" value="false" />
+			<Property name="Dont Rotate Model" value="true" />
+			<Property name="Layout Group" value="" />
+			<Property name="Scenes">
+				<Property name="Scenes" value="GcWeightedResource" _index="0">
+					<Property name="Relative Probability" value="1.000000" />
+					<Property name="Geometry" value="TkModelResource">
+						<Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/WFC/FREIGHTER/BLOCKS/CORRIDOR_A.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+				</Property>
+			</Property>
+			<Property name="TerrainEdits" value="None" />
+			<Property name="TerrainConstraints" />
+			<Property name="Left" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0">
+					<Property name="ExcludedNeighboursR0" value="ROOM" _index="0" />
+					<Property name="ExcludedNeighboursR0" value="FREIGHTERCORE" _index="1" />
+				</Property>
+				<Property name="ExcludedNeighboursR1">
+					<Property name="ExcludedNeighboursR1" value="CORR_L" _index="0" />
+					<Property name="ExcludedNeighboursR1" value="NEW_CORR_S" _index="1" />
+					<Property name="ExcludedNeighboursR1" value="CORR_S" _index="2" />
+					<Property name="ExcludedNeighboursR1" value="ROOM" _index="3" />
+				</Property>
+				<Property name="ExcludedNeighboursR2">
+					<Property name="ExcludedNeighboursR2" value="CORR_L" _index="0" />
+				</Property>
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Down" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Back" value="GcWFCFace">
+				<Property name="Connector" value="CORR,ROOM" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Right" value="GcWFCFace">
+				<Property name="Connector" value="CORR,ROOM" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Up" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Forward" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0">
+					<Property name="ExcludedNeighboursR0" value="FREIGHTERCORE" _index="0" />
+					<Property name="ExcludedNeighboursR0" value="ROOM_SINGLE" _index="1" />
+				</Property>
+				<Property name="ExcludedNeighboursR1">
+					<Property name="ExcludedNeighboursR1" value="ROOM" _index="0" />
+				</Property>
+				<Property name="ExcludedNeighboursR2">
+					<Property name="ExcludedNeighboursR2" value="NEW_CORR_S" _index="0" />
+					<Property name="ExcludedNeighboursR2" value="ROOM" _index="1" />
+					<Property name="ExcludedNeighboursR2" value="ROOM_EDGE" _index="2" />
+				</Property>
+				<Property name="ExcludedNeighboursR3">
+					<Property name="ExcludedNeighboursR3" value="CORR_L" _index="0" />
+				</Property>
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="FreighterModuleType" value="Corridor" />
+		</Property>
+		<Property name="ModulePrototypes" value="GcWFCModulePrototype" _id="NEW_CORR_S">
+			<Property name="Name" value="Corridor Straight" />
+			<Property name="Id" value="NEW_CORR_S" />
+			<Property name="Group" value="" />
+			<Property name="Relative Probability" value="0.200000" />
+			<Property name="Include" value="false" />
+			<Property name="Exclude On Ground" value="false" />
+			<Property name="Exclude On Top" value="false" />
+			<Property name="Indoors" value="false" />
+			<Property name="Limit To One Per Level" value="false" />
+			<Property name="Exclude Rotated Variants" value="false" />
+			<Property name="Dont Rotate Model" value="true" />
+			<Property name="Layout Group" value="" />
+			<Property name="Scenes">
+				<Property name="Scenes" value="GcWeightedResource" _index="0">
+					<Property name="Relative Probability" value="1.000000" />
+					<Property name="Geometry" value="TkModelResource">
+						<Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/WFC/FREIGHTER/BLOCKS/CORRIDOR_A.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+				</Property>
+			</Property>
+			<Property name="TerrainEdits" value="None" />
+			<Property name="TerrainConstraints" />
+			<Property name="Left" value="GcWFCFace">
+				<Property name="Connector" value="CORR,ROOM" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Down" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Back" value="GcWFCFace">
+				<Property name="Connector" value="CORR,ROOM" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Right" value="GcWFCFace">
+				<Property name="Connector" value="CORR,ROOM" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Up" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Forward" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0">
+					<Property name="ExcludedNeighboursR0" value="FREIGHTERCORE" _index="0" />
+					<Property name="ExcludedNeighboursR0" value="ROOM_SINGLE" _index="1" />
+				</Property>
+				<Property name="ExcludedNeighboursR1">
+					<Property name="ExcludedNeighboursR1" value="ROOM" _index="0" />
+				</Property>
+				<Property name="ExcludedNeighboursR2">
+					<Property name="ExcludedNeighboursR2" value="CORR_L" _index="0" />
+					<Property name="ExcludedNeighboursR2" value="ROOM" _index="1" />
+					<Property name="ExcludedNeighboursR2" value="ROOM_EDGE" _index="2" />
+				</Property>
+				<Property name="ExcludedNeighboursR3">
+					<Property name="ExcludedNeighboursR3" value="CORR_L" _index="0" />
+				</Property>
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="FreighterModuleType" value="Corridor" />
+		</Property>
+		<Property name="ModulePrototypes" value="GcWFCModulePrototype" _id="NEW_NEW_CORR_S">
+			<Property name="Name" value="Corridor Straight" />
+			<Property name="Id" value="NEW_NEW_CORR_S" />
+			<Property name="Group" value="" />
+			<Property name="Relative Probability" value="0.200000" />
+			<Property name="Include" value="false" />
+			<Property name="Exclude On Ground" value="false" />
+			<Property name="Exclude On Top" value="false" />
+			<Property name="Indoors" value="false" />
+			<Property name="Limit To One Per Level" value="false" />
+			<Property name="Exclude Rotated Variants" value="false" />
+			<Property name="Dont Rotate Model" value="true" />
+			<Property name="Layout Group" value="" />
+			<Property name="Scenes">
+				<Property name="Scenes" value="GcWeightedResource" _index="0">
+					<Property name="Relative Probability" value="1.000000" />
+					<Property name="Geometry" value="TkModelResource">
+						<Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/WFC/FREIGHTER/BLOCKS/CORRIDOR_A.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+				</Property>
+			</Property>
+			<Property name="TerrainEdits" value="None" />
+			<Property name="TerrainConstraints" />
+			<Property name="Left" value="GcWFCFace">
+				<Property name="Connector" value="CORR,ROOM" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Down" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Back" value="GcWFCFace">
+				<Property name="Connector" value="CORR,ROOM" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Right" value="GcWFCFace">
+				<Property name="Connector" value="CORR,ROOM" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Up" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Forward" value="GcWFCFace">
+				<Property name="Connector" value="CORR,ROOM" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="FreighterModuleType" value="Corridor" />
+		</Property>
+		<Property name="ModulePrototypes" value="GcWFCModulePrototype" _id="STAIRS">
+			<Property name="Name" value="Stairs Lower" />
+			<Property name="Id" value="STAIRS" />
+			<Property name="Group" value="" />
+			<Property name="Relative Probability" value="1.000000" />
+			<Property name="Include" value="false" />
+			<Property name="Exclude On Ground" value="false" />
+			<Property name="Exclude On Top" value="true" />
+			<Property name="Indoors" value="false" />
+			<Property name="Limit To One Per Level" value="false" />
+			<Property name="Exclude Rotated Variants" value="false" />
+			<Property name="Dont Rotate Model" value="false" />
+			<Property name="Layout Group" value="" />
+			<Property name="Scenes">
+				<Property name="Scenes" value="GcWeightedResource" _index="0">
+					<Property name="Relative Probability" value="1.000000" />
+					<Property name="Geometry" value="TkModelResource">
+						<Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/WFC/FREIGHTER/BLOCKS/CORRIDOR_STAIRS.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+				</Property>
+			</Property>
+			<Property name="TerrainEdits" value="None" />
+			<Property name="TerrainConstraints" />
+			<Property name="Left" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Down" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Back" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Right" value="GcWFCFace">
+				<Property name="Connector" value="ROOM,CORR" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Up" value="GcWFCFace">
+				<Property name="Connector" value="STAIRS" />
+				<Property name="Symmetric" value="false" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Forward" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="FreighterModuleType" value="Corridor" />
+		</Property>
+		<Property name="ModulePrototypes" value="GcWFCModulePrototype" _id="STAIRS_UPPER">
+			<Property name="Name" value="Stairs Upper" />
+			<Property name="Id" value="STAIRS_UPPER" />
+			<Property name="Group" value="" />
+			<Property name="Relative Probability" value="1.000000" />
+			<Property name="Include" value="false" />
+			<Property name="Exclude On Ground" value="true" />
+			<Property name="Exclude On Top" value="false" />
+			<Property name="Indoors" value="false" />
+			<Property name="Limit To One Per Level" value="false" />
+			<Property name="Exclude Rotated Variants" value="false" />
+			<Property name="Dont Rotate Model" value="false" />
+			<Property name="Layout Group" value="" />
+			<Property name="Scenes" />
+			<Property name="TerrainEdits" value="None" />
+			<Property name="TerrainConstraints" />
+			<Property name="Left" value="GcWFCFace">
+				<Property name="Connector" value="ROOM,CORR" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Down" value="GcWFCFace">
+				<Property name="Connector" value="STAIRS" />
+				<Property name="Symmetric" value="false" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Back" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Right" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Up" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Forward" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="FreighterModuleType" value="Corridor" />
+		</Property>
+		<Property name="ModulePrototypes" value="GcWFCModulePrototype" _id="ROOM_SINGLE">
+			<Property name="Name" value="Room Single" />
+			<Property name="Id" value="ROOM_SINGLE" />
+			<Property name="Group" value="" />
+			<Property name="Relative Probability" value="0.000100" />
+			<Property name="Include" value="false" />
+			<Property name="Exclude On Ground" value="false" />
+			<Property name="Exclude On Top" value="false" />
+			<Property name="Indoors" value="false" />
+			<Property name="Limit To One Per Level" value="false" />
+			<Property name="Exclude Rotated Variants" value="false" />
+			<Property name="Dont Rotate Model" value="true" />
+			<Property name="Layout Group" value="" />
+			<Property name="Scenes">
+				<Property name="Scenes" value="GcWeightedResource" _index="0">
+					<Property name="Relative Probability" value="1.000000" />
+					<Property name="Geometry" value="TkModelResource">
+						<Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/WFC/FREIGHTER/BLOCKS/CUBEROOM_A.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+				</Property>
+			</Property>
+			<Property name="TerrainEdits" value="None" />
+			<Property name="TerrainConstraints" />
+			<Property name="Left" value="GcWFCFace">
+				<Property name="Connector" value="ROOM,EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Down" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Back" value="GcWFCFace">
+				<Property name="Connector" value="ROOM,EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0">
+					<Property name="ExcludedNeighboursR0" value="CORR_L" _index="0" />
+					<Property name="ExcludedNeighboursR0" value="CORR_S" _index="1" />
+					<Property name="ExcludedNeighboursR0" value="NEW_CORR_S" _index="2" />
+				</Property>
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Right" value="GcWFCFace">
+				<Property name="Connector" value="ROOM,EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Up" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Forward" value="GcWFCFace">
+				<Property name="Connector" value="ROOM,EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0">
+					<Property name="ExcludedNeighboursR0" value="CORR_S" _index="0" />
+				</Property>
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="FreighterModuleType" value="Room" />
+		</Property>
+		<Property name="ModulePrototypes" value="GcWFCModulePrototype" _id="ROOM_EDGE">
+			<Property name="Name" value="Cuberoom Edge" />
+			<Property name="Id" value="ROOM_EDGE" />
+			<Property name="Group" value="" />
+			<Property name="Relative Probability" value="2.000000" />
+			<Property name="Include" value="false" />
+			<Property name="Exclude On Ground" value="false" />
+			<Property name="Exclude On Top" value="false" />
+			<Property name="Indoors" value="false" />
+			<Property name="Limit To One Per Level" value="false" />
+			<Property name="Exclude Rotated Variants" value="false" />
+			<Property name="Dont Rotate Model" value="true" />
+			<Property name="Layout Group" value="" />
+			<Property name="Scenes">
+				<Property name="Scenes" value="GcWeightedResource" _index="0">
+					<Property name="Relative Probability" value="1.000000" />
+					<Property name="Geometry" value="TkModelResource">
+						<Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/WFC/FREIGHTER/BLOCKS/CUBEROOM_A.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+				</Property>
+			</Property>
+			<Property name="TerrainEdits" value="None" />
+			<Property name="TerrainConstraints" />
+			<Property name="Left" value="GcWFCFace">
+				<Property name="Connector" value="ROOM_INNER" />
+				<Property name="Symmetric" value="false" />
+				<Property name="Transform" value="FlippedHorizontally" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Down" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Back" value="GcWFCFace">
+				<Property name="Connector" value="ROOM_S" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Right" value="GcWFCFace">
+				<Property name="Connector" value="ROOM_INNER" />
+				<Property name="Symmetric" value="false" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Up" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Forward" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY,CORR" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0">
+					<Property name="ExcludedNeighboursR0" value="CORR_S" _index="0" />
+				</Property>
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2">
+					<Property name="ExcludedNeighboursR2" value="CORR_L" _index="0" />
+					<Property name="ExcludedNeighboursR2" value="CORR_S" _index="1" />
+					<Property name="ExcludedNeighboursR2" value="NEW_CORR_S" _index="2" />
+				</Property>
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="true" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="FreighterModuleType" value="Room" />
+		</Property>
+		<Property name="ModulePrototypes" value="GcWFCModulePrototype" _id="ROOM_INNER">
+			<Property name="Name" value="Cuberoom Inner" />
+			<Property name="Id" value="ROOM_INNER" />
+			<Property name="Group" value="" />
+			<Property name="Relative Probability" value="0.200000" />
+			<Property name="Include" value="false" />
+			<Property name="Exclude On Ground" value="false" />
+			<Property name="Exclude On Top" value="false" />
+			<Property name="Indoors" value="false" />
+			<Property name="Limit To One Per Level" value="false" />
+			<Property name="Exclude Rotated Variants" value="false" />
+			<Property name="Dont Rotate Model" value="true" />
+			<Property name="Layout Group" value="" />
+			<Property name="Scenes">
+				<Property name="Scenes" value="GcWeightedResource" _index="0">
+					<Property name="Relative Probability" value="1.000000" />
+					<Property name="Geometry" value="TkModelResource">
+						<Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/WFC/FREIGHTER/BLOCKS/CUBEROOM_A.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+				</Property>
+			</Property>
+			<Property name="TerrainEdits" value="None" />
+			<Property name="TerrainConstraints" />
+			<Property name="Left" value="GcWFCFace">
+				<Property name="Connector" value="ROOM_S" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Down" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Back" value="GcWFCFace">
+				<Property name="Connector" value="ROOM_S" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Right" value="GcWFCFace">
+				<Property name="Connector" value="ROOM_S" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Up" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Forward" value="GcWFCFace">
+				<Property name="Connector" value="ROOM_S" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="FreighterModuleType" value="Room" />
+		</Property>
+		<Property name="ModulePrototypes" value="GcWFCModulePrototype" _id="ROOM_CORNER_I">
+			<Property name="Name" value="Cuberoom Corner Inverted" />
+			<Property name="Id" value="ROOM_CORNER_I" />
+			<Property name="Group" value="" />
+			<Property name="Relative Probability" value="0.200000" />
+			<Property name="Include" value="false" />
+			<Property name="Exclude On Ground" value="false" />
+			<Property name="Exclude On Top" value="false" />
+			<Property name="Indoors" value="false" />
+			<Property name="Limit To One Per Level" value="false" />
+			<Property name="Exclude Rotated Variants" value="false" />
+			<Property name="Dont Rotate Model" value="true" />
+			<Property name="Layout Group" value="" />
+			<Property name="Scenes">
+				<Property name="Scenes" value="GcWeightedResource" _index="0">
+					<Property name="Relative Probability" value="1.000000" />
+					<Property name="Geometry" value="TkModelResource">
+						<Property name="Filename" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/WFC/FREIGHTER/BLOCKS/CUBEROOM_A.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+				</Property>
+			</Property>
+			<Property name="TerrainEdits" value="None" />
+			<Property name="TerrainConstraints" />
+			<Property name="Left" value="GcWFCFace">
+				<Property name="Connector" value="ROOM_S" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Down" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Back" value="GcWFCFace">
+				<Property name="Connector" value="ROOM_S" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Right" value="GcWFCFace">
+				<Property name="Connector" value="ROOM_INNER" />
+				<Property name="Symmetric" value="false" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Up" value="GcWFCFace">
+				<Property name="Connector" value="EMPTY" />
+				<Property name="Symmetric" value="true" />
+				<Property name="Transform" value="None" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="false" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="Forward" value="GcWFCFace">
+				<Property name="Connector" value="ROOM_INNER" />
+				<Property name="Symmetric" value="false" />
+				<Property name="Transform" value="FlippedHorizontally" />
+				<Property name="ExcludedNeighboursR0" />
+				<Property name="ExcludedNeighboursR1" />
+				<Property name="ExcludedNeighboursR2" />
+				<Property name="ExcludedNeighboursR3" />
+				<Property name="Walkable" value="true" />
+				<Property name="Incomplete" value="false" />
+				<Property name="IsEntrance" value="false" />
+				<Property name="Name" value="EMPTY" />
+			</Property>
+			<Property name="FreighterModuleType" value="Room" />
+		</Property>
+	</Property>
+	<Property name="ConnectorsOnUpperBoundary">
+		<Property name="ConnectorsOnUpperBoundary" value="EMPTY" _index="0" />
+	</Property>
+	<Property name="ConnectorsOnLowerBoundary">
+		<Property name="ConnectorsOnLowerBoundary" value="EMPTY" _index="0" />
+	</Property>
+	<Property name="ConnectorsOnHorizontalBoundary">
+		<Property name="ConnectorsOnHorizontalBoundary" value="EMPTY" _index="0" />
+	</Property>
+	<Property name="DefaultGroups" />
+	<Property name="CompatibleConnectors" />
+	<Property name="VerticalOffset" value="0.000000" />
+</Data>

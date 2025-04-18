@@ -1,0 +1,1327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.63.0.1)-->
+<Data template="cGcPlayerFullBodyIKComponentData">
+	<Property name="Enabled" value="true" />
+	<Property name="EnableFootRaycasts" value="false" />
+	<Property name="HeadConstraints">
+		<Property name="HeadConstraints" value="GcIKConstraint" _id="HEAD_GEK">
+			<Property name="Id" value="HEAD_GEK" />
+			<Property name="JointName" value="Gek_HeadJNT" />
+			<Property name="Type" value="GcCreatureIkType">
+				<Property name="CreatureIkType" value="Head" />
+			</Property>
+			<Property name="DefaultState" value="GcPlayerCharacterIKOverrideData">
+				<Property name="Enabled" value="true" />
+				<Property name="Strength" value="1.000000" />
+				<Property name="RotStrengths">
+					<Property name="X" value="1.000000" />
+					<Property name="Y" value="1.000000" />
+					<Property name="Z" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="States">
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="0">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="FullBodyOverride" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="true" />
+						<Property name="Strength" value="0.010000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="1">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogDownhill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="2">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogUphill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="3">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Sliding" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="4">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Run" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="5">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Death" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="6">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Swimming" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="HeadConstraints" value="GcIKConstraint" _id="HEAD_VYK">
+			<Property name="Id" value="HEAD_VYK" />
+			<Property name="JointName" value="Vyk_HeadJNT" />
+			<Property name="Type" value="GcCreatureIkType">
+				<Property name="CreatureIkType" value="Head" />
+			</Property>
+			<Property name="DefaultState" value="GcPlayerCharacterIKOverrideData">
+				<Property name="Enabled" value="true" />
+				<Property name="Strength" value="1.000000" />
+				<Property name="RotStrengths">
+					<Property name="X" value="1.000000" />
+					<Property name="Y" value="1.000000" />
+					<Property name="Z" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="States">
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="0">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="FullBodyOverride" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="true" />
+						<Property name="Strength" value="0.010000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="1">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogDownhill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="2">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogUphill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="3">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Sliding" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="4">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Run" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="5">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Death" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="6">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Swimming" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="HeadConstraints" value="GcIKConstraint" _id="HEAD_KOR">
+			<Property name="Id" value="HEAD_KOR" />
+			<Property name="JointName" value="Kor_HeadJNT" />
+			<Property name="Type" value="GcCreatureIkType">
+				<Property name="CreatureIkType" value="Head" />
+			</Property>
+			<Property name="DefaultState" value="GcPlayerCharacterIKOverrideData">
+				<Property name="Enabled" value="true" />
+				<Property name="Strength" value="1.000000" />
+				<Property name="RotStrengths">
+					<Property name="X" value="1.000000" />
+					<Property name="Y" value="1.000000" />
+					<Property name="Z" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="States">
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="0">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="FullBodyOverride" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="true" />
+						<Property name="Strength" value="0.010000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="1">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogDownhill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="2">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogUphill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="3">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Sliding" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="4">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Run" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="5">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Death" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="6">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Swimming" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="HeadConstraints" value="GcIKConstraint" _id="HEAD_FOURTH">
+			<Property name="Id" value="HEAD_FOURTH" />
+			<Property name="JointName" value="Fourth_HeadJNT" />
+			<Property name="Type" value="GcCreatureIkType">
+				<Property name="CreatureIkType" value="Head" />
+			</Property>
+			<Property name="DefaultState" value="GcPlayerCharacterIKOverrideData">
+				<Property name="Enabled" value="true" />
+				<Property name="Strength" value="1.000000" />
+				<Property name="RotStrengths">
+					<Property name="X" value="1.000000" />
+					<Property name="Y" value="1.000000" />
+					<Property name="Z" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="States">
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="0">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="FullBodyOverride" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="true" />
+						<Property name="Strength" value="0.010000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="1">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogDownhill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="2">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogUphill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="3">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Sliding" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="4">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Run" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="5">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Death" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="6">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Swimming" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="HeadConstraints" value="GcIKConstraint" _id="HEAD_FOURTH_ALT">
+			<Property name="Id" value="HEAD_FOURTH_ALT" />
+			<Property name="JointName" value="Fourth_HeadAltJNT" />
+			<Property name="Type" value="GcCreatureIkType">
+				<Property name="CreatureIkType" value="Head" />
+			</Property>
+			<Property name="DefaultState" value="GcPlayerCharacterIKOverrideData">
+				<Property name="Enabled" value="true" />
+				<Property name="Strength" value="1.000000" />
+				<Property name="RotStrengths">
+					<Property name="X" value="1.000000" />
+					<Property name="Y" value="1.000000" />
+					<Property name="Z" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="States">
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="0">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="FullBodyOverride" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="true" />
+						<Property name="Strength" value="0.010000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="1">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogDownhill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="2">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogUphill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="3">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Sliding" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="4">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Run" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="5">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Death" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="6">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Swimming" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="HeadConstraints" value="GcIKConstraint" _id="HEAD_DPLMT">
+			<Property name="Id" value="HEAD_DPLMT" />
+			<Property name="JointName" value="player01_head_TopSHJnt" />
+			<Property name="Type" value="GcCreatureIkType">
+				<Property name="CreatureIkType" value="Head" />
+			</Property>
+			<Property name="DefaultState" value="GcPlayerCharacterIKOverrideData">
+				<Property name="Enabled" value="true" />
+				<Property name="Strength" value="1.000000" />
+				<Property name="RotStrengths">
+					<Property name="X" value="1.000000" />
+					<Property name="Y" value="1.000000" />
+					<Property name="Z" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="States">
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="0">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="FullBodyOverride" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="true" />
+						<Property name="Strength" value="0.010000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="1">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogDownhill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="2">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogUphill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="3">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Sliding" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="4">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Run" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="5">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Death" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="6">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Swimming" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="HeadConstraints" value="GcIKConstraint" _id="HEAD_EXOTIC">
+			<Property name="Id" value="HEAD_EXOTIC" />
+			<Property name="JointName" value="player01_head_TopSHJnt" />
+			<Property name="Type" value="GcCreatureIkType">
+				<Property name="CreatureIkType" value="Head" />
+			</Property>
+			<Property name="DefaultState" value="GcPlayerCharacterIKOverrideData">
+				<Property name="Enabled" value="true" />
+				<Property name="Strength" value="1.000000" />
+				<Property name="RotStrengths">
+					<Property name="X" value="1.000000" />
+					<Property name="Y" value="1.000000" />
+					<Property name="Z" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="States">
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="0">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="FullBodyOverride" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="true" />
+						<Property name="Strength" value="0.010000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="1">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogDownhill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="2">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogUphill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="3">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Sliding" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="4">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Run" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="5">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Death" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="6">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Swimming" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="HeadConstraints" value="GcIKConstraint" _id="HEAD_BUI">
+			<Property name="Id" value="HEAD_BUI" />
+			<Property name="JointName" value="Fourth_NeckJNT" />
+			<Property name="Type" value="GcCreatureIkType">
+				<Property name="CreatureIkType" value="Head" />
+			</Property>
+			<Property name="DefaultState" value="GcPlayerCharacterIKOverrideData">
+				<Property name="Enabled" value="true" />
+				<Property name="Strength" value="1.000000" />
+				<Property name="RotStrengths">
+					<Property name="X" value="1.000000" />
+					<Property name="Y" value="1.000000" />
+					<Property name="Z" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="States">
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="0">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="FullBodyOverride" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="true" />
+						<Property name="Strength" value="0.010000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="1">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogDownhill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="2">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogUphill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="3">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Sliding" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="4">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Run" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="5">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Death" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="6">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Swimming" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="HeadConstraints" value="GcIKConstraint" _id="HEAD_ASTRO">
+			<Property name="Id" value="HEAD_ASTRO" />
+			<Property name="JointName" value="player01_head_TopSHJnt" />
+			<Property name="Type" value="GcCreatureIkType">
+				<Property name="CreatureIkType" value="Head" />
+			</Property>
+			<Property name="DefaultState" value="GcPlayerCharacterIKOverrideData">
+				<Property name="Enabled" value="true" />
+				<Property name="Strength" value="1.000000" />
+				<Property name="RotStrengths">
+					<Property name="X" value="1.000000" />
+					<Property name="Y" value="1.000000" />
+					<Property name="Z" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="States">
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="0">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="FullBodyOverride" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="true" />
+						<Property name="Strength" value="0.010000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="1">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogDownhill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="2">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="JogUphill" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="3">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Sliding" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="0.200000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="4">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Run" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="5">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Death" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+				<Property name="States" value="GcPlayerCharacterIKStateData" _index="6">
+					<Property name="State" value="GcPlayerCharacterStateType">
+						<Property name="CharacterState" value="Swimming" />
+					</Property>
+					<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+						<Property name="Enabled" value="false" />
+						<Property name="Strength" value="1.000000" />
+						<Property name="RotStrengths">
+							<Property name="X" value="1.000000" />
+							<Property name="Y" value="1.000000" />
+							<Property name="Z" value="1.000000" />
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" />
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LegConstraints" />
+	<Property name="COGConstraint" value="GcIKConstraint">
+		<Property name="Id" value="COG" />
+		<Property name="JointName" value="" />
+		<Property name="Type" value="GcCreatureIkType">
+			<Property name="CreatureIkType" value="Foot" />
+		</Property>
+		<Property name="DefaultState" value="GcPlayerCharacterIKOverrideData">
+			<Property name="Enabled" value="false" />
+			<Property name="Strength" value="0.900000" />
+			<Property name="RotStrengths">
+				<Property name="X" value="1.000000" />
+				<Property name="Y" value="1.000000" />
+				<Property name="Z" value="1.000000" />
+			</Property>
+		</Property>
+		<Property name="States">
+			<Property name="States" value="GcPlayerCharacterIKStateData" _index="0">
+				<Property name="State" value="GcPlayerCharacterStateType">
+					<Property name="CharacterState" value="JogDownhill" />
+				</Property>
+				<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+					<Property name="Enabled" value="true" />
+					<Property name="Strength" value="0.300000" />
+					<Property name="RotStrengths">
+						<Property name="X" value="1.000000" />
+						<Property name="Y" value="1.000000" />
+						<Property name="Z" value="1.000000" />
+					</Property>
+				</Property>
+				<Property name="AnimOverrides" />
+			</Property>
+			<Property name="States" value="GcPlayerCharacterIKStateData" _index="1">
+				<Property name="State" value="GcPlayerCharacterStateType">
+					<Property name="CharacterState" value="JogUphill" />
+				</Property>
+				<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+					<Property name="Enabled" value="true" />
+					<Property name="Strength" value="0.500000" />
+					<Property name="RotStrengths">
+						<Property name="X" value="1.000000" />
+						<Property name="Y" value="1.000000" />
+						<Property name="Z" value="1.000000" />
+					</Property>
+				</Property>
+				<Property name="AnimOverrides" />
+			</Property>
+			<Property name="States" value="GcPlayerCharacterIKStateData" _index="2">
+				<Property name="State" value="GcPlayerCharacterStateType">
+					<Property name="CharacterState" value="Sliding" />
+				</Property>
+				<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+					<Property name="Enabled" value="true" />
+					<Property name="Strength" value="0.500000" />
+					<Property name="RotStrengths">
+						<Property name="X" value="1.000000" />
+						<Property name="Y" value="1.000000" />
+						<Property name="Z" value="1.000000" />
+					</Property>
+				</Property>
+				<Property name="AnimOverrides" />
+			</Property>
+			<Property name="States" value="GcPlayerCharacterIKStateData" _index="3">
+				<Property name="State" value="GcPlayerCharacterStateType">
+					<Property name="CharacterState" value="Death" />
+				</Property>
+				<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+					<Property name="Enabled" value="false" />
+					<Property name="Strength" value="1.000000" />
+					<Property name="RotStrengths">
+						<Property name="X" value="1.000000" />
+						<Property name="Y" value="1.000000" />
+						<Property name="Z" value="1.000000" />
+					</Property>
+				</Property>
+				<Property name="AnimOverrides" />
+			</Property>
+			<Property name="States" value="GcPlayerCharacterIKStateData" _index="4">
+				<Property name="State" value="GcPlayerCharacterStateType">
+					<Property name="CharacterState" value="Swimming" />
+				</Property>
+				<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+					<Property name="Enabled" value="false" />
+					<Property name="Strength" value="1.000000" />
+					<Property name="RotStrengths">
+						<Property name="X" value="1.000000" />
+						<Property name="Y" value="1.000000" />
+						<Property name="Z" value="1.000000" />
+					</Property>
+				</Property>
+				<Property name="AnimOverrides" />
+			</Property>
+			<Property name="States" value="GcPlayerCharacterIKStateData" _index="5">
+				<Property name="State" value="GcPlayerCharacterStateType">
+					<Property name="CharacterState" value="FullBodyOverride" />
+				</Property>
+				<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+					<Property name="Enabled" value="true" />
+					<Property name="Strength" value="0.000000" />
+					<Property name="RotStrengths">
+						<Property name="X" value="1.000000" />
+						<Property name="Y" value="1.000000" />
+						<Property name="Z" value="1.000000" />
+					</Property>
+				</Property>
+				<Property name="AnimOverrides" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="RestrictConstraints" />
+	<Property name="HandBones" />
+	<Property name="CameraNeckBones" />
+	<Property name="SitConstraint" value="GcIKConstraint">
+		<Property name="Id" value="SIT" />
+		<Property name="JointName" value="player01_ROOTSHJnt" />
+		<Property name="Type" value="GcCreatureIkType">
+			<Property name="CreatureIkType" value="Foot" />
+		</Property>
+		<Property name="DefaultState" value="GcPlayerCharacterIKOverrideData">
+			<Property name="Enabled" value="false" />
+			<Property name="Strength" value="0.000000" />
+			<Property name="RotStrengths">
+				<Property name="X" value="1.000000" />
+				<Property name="Y" value="1.000000" />
+				<Property name="Z" value="1.000000" />
+			</Property>
+		</Property>
+		<Property name="States">
+			<Property name="States" value="GcPlayerCharacterIKStateData" _index="0">
+				<Property name="State" value="GcPlayerCharacterStateType">
+					<Property name="CharacterState" value="FullBodyOverride" />
+				</Property>
+				<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+					<Property name="Enabled" value="false" />
+					<Property name="Strength" value="0.000000" />
+					<Property name="RotStrengths">
+						<Property name="X" value="1.000000" />
+						<Property name="Y" value="1.000000" />
+						<Property name="Z" value="1.000000" />
+					</Property>
+				</Property>
+				<Property name="AnimOverrides">
+					<Property name="AnimOverrides" value="GcPlayerCharacterAnimationOverrideData" _index="0">
+						<Property name="AnimName" value="0H_SOFA_IN" />
+						<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+							<Property name="Enabled" value="true" />
+							<Property name="Strength" value="5.000000" />
+							<Property name="RotStrengths">
+								<Property name="X" value="1.000000" />
+								<Property name="Y" value="1.000000" />
+								<Property name="Z" value="1.000000" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" value="GcPlayerCharacterAnimationOverrideData" _index="1">
+						<Property name="AnimName" value="0H_SOFA_LP" />
+						<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+							<Property name="Enabled" value="true" />
+							<Property name="Strength" value="5.000000" />
+							<Property name="RotStrengths">
+								<Property name="X" value="1.000000" />
+								<Property name="Y" value="1.000000" />
+								<Property name="Z" value="1.000000" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" value="GcPlayerCharacterAnimationOverrideData" _index="2">
+						<Property name="AnimName" value="0H_SOFA_OUT" />
+						<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+							<Property name="Enabled" value="true" />
+							<Property name="Strength" value="5.000000" />
+							<Property name="RotStrengths">
+								<Property name="X" value="1.000000" />
+								<Property name="Y" value="1.000000" />
+								<Property name="Z" value="1.000000" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="AnimOverrides" value="GcPlayerCharacterAnimationOverrideData" _index="3">
+						<Property name="AnimName" value="0H_SOFA_IDLE_01" />
+						<Property name="Data" value="GcPlayerCharacterIKOverrideData">
+							<Property name="Enabled" value="true" />
+							<Property name="Strength" value="5.000000" />
+							<Property name="RotStrengths">
+								<Property name="X" value="1.000000" />
+								<Property name="Y" value="1.000000" />
+								<Property name="Z" value="1.000000" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="PlayerHeadUpAxis" value="Z" />
+	<Property name="JointDataDeprecated" />
+	<Property name="UseFootGlue" value="false" />
+	<Property name="LookAtSettings" value="GcCharacterLookAtData">
+		<Property name="InteractionLookAtRadius" value="3.000000" />
+		<Property name="CreatureLookAtRadius" value="20.000000" />
+		<Property name="SpaceshipLookAtRadius" value="700.000000" />
+		<Property name="LookAtRunGlanceMinTime" value="0.200000" />
+		<Property name="LookAtRunGlanceMaxTime" value="1.000000" />
+		<Property name="LookAtRunMinTime" value="5.000000" />
+		<Property name="LookAtRunMaxTime" value="8.000000" />
+		<Property name="LookAtTargetGlanceMinTime" value="1.000000" />
+		<Property name="LookAtTargetGlanceMaxTime" value="3.000000" />
+		<Property name="LookAtTargetWaitMinTime" value="2.000000" />
+		<Property name="LookAtTargetWaitMaxTime" value="9.000000" />
+		<Property name="LookAtMaxYaw" value="120.000000" />
+		<Property name="LookAtMaxPitch" value="40.000000" />
+	</Property>
+</Data>
