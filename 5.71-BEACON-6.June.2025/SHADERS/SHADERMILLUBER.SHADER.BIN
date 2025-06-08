@@ -1,0 +1,861 @@
+[[FX]]
+
+// Samplers
+
+sampler gDiffuseMap = sampler_state
+{
+    TexUnit = 0;
+};
+
+sampler gNormalMap = sampler_state
+{
+    TexUnit = 1;
+};
+
+sampler gNormal2Map = sampler_state
+{
+    TexUnit = 2;
+};
+
+sampler gDiffuse2Map = sampler_state
+{
+    TexUnit = 3;
+};
+
+sampler gMasksMap = sampler_state
+{
+    TexUnit = 4;
+};
+
+sampler gMasks2Map = sampler_state
+{
+    TexUnit = 5;
+};
+
+sampler gOcclusionMap = sampler_state
+{
+    TexUnit = 6;
+};
+
+sampler gOcclusion2Map = sampler_state
+{
+    TexUnit = 7;
+};
+
+sampler gRefractionMap = sampler_state
+{
+    TexUnit = 8;
+};
+
+sampler gColouriseMaskMap = sampler_state
+{
+    TexUnit = 9;
+};
+
+sampler gFeaturesMap = sampler_state
+{
+    TexUnit = 10;
+};
+
+sampler gCausticMap = sampler_state
+{
+    TexUnit = 11;
+};
+
+sampler gCausticOffsetMap = sampler_state
+{
+    TexUnit = 12;
+};
+
+sampler gShadowMap = sampler_state
+{
+    TexUnit = 13;
+};
+
+sampler gCloudShadowMap = sampler_state
+{
+    TexUnit = 14;
+};
+
+sampler gDiffEnvMap = sampler_state
+{
+    TexUnit = 15;
+};
+
+sampler gSpecEnvMap = sampler_state
+{
+    TexUnit = 16;
+};
+
+sampler gPerlin3D = sampler_state
+{
+    DefaultTexture = SHADER/NOISEHALF.DDS;
+    TexUnit = 17;
+    Address = Wrap;
+};
+
+sampler gFadeNoiseMap = sampler_state
+{
+    DefaultTexture = SHADER/BLUENOISE.DDS;
+    TexUnit = 18;
+    Address = Wrap;
+};
+
+sampler gDepthBuffer = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 19;
+};
+
+sampler gBufferMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 20;
+};
+
+sampler gScatteringVolume3D = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 21;
+};
+
+//TF_BEGIN
+sampler gLightCluster = sampler_state
+{
+	ImgUnit = 0;
+};
+
+sampler gLightCookiesMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 22;
+};
+//TF_END
+
+sampler gBuffer1Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 23;
+};
+
+sampler gBuffer2Map = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 24;
+};
+
+smcode TEST
+{
+    Flag         "Reduce_AA_Blur"        = D_CLAMP_AA;
+    Flag         "AlphaCutout"           = _F11_ALPHACUTOUT;
+    Flag         "DisregardVertexColour" = D_DISREGARD_VERTCOLOUR;
+    Flag         "DisregardDisplacement" = D_DISREGARD_DISPLACEMENT;
+
+    InputColour  "Colour"               = vec4  lColourVec4;
+    InputColour  "TangentNormal"        = vec3  lSkInNormal;
+    InputColour  "WorldNormal1"         = vec3  lSkInWorldNormal1;
+    InputColour  "WorldNormal2"         = vec3  lSkInWorldNormal2;
+    InputColour  "WorldNormalBlended"   = vec3  lSkInWorldNormal;
+    InputVector  "Metallic"             = float lfMetallic;
+    InputVector  "Roughness"            = float lfRoughness;
+    InputVector  "Subsurface"           = float lfSubsurface;
+    InputVector  "GlobalTime"           = float lfSkGlobalTime;
+    InputVector  "Glow"                 = float lfGlow;
+    InputVector  "UV_1"                 = vec2  lSkUv1;
+    InputVector  "UV_2"                 = vec2  lSkUv2;
+    InputVector  "UV_SCREEN"            = vec2  lSkUvScreen;
+    InputVector  "UserData"             = vec4  lSkUserData;
+    InputVector  "Features"             = vec4  lSkFeaturesVec4;
+    InputVector  "LocalPosition"        = vec3  lSkLocalPositionVec3;
+    InputVector  "WorldPosition"        = vec3  lSkWorldPositionVec3;
+    InputVector  "NodePosition"         = vec3  lSkNodePositionVec3;
+    InputVector  "PlanetPosition"       = vec3  lSkPlanetPositionVec3;
+    InputVector  "CameraPosition"       = vec3  lSkCameraPositionVec3;
+    InputVector  "CameraDirection"      = vec3  lSkCameraDirectionVec3;
+    InputVector  "SunPosition"          = vec3  lSkSunPositionVec3;
+    InputVector  "OverlayIndex"         = float lfSkOverlayIndex;
+    InputBiome   "BiomeData"            = vec2  lSkBiomeDataVec2;
+    InputColour  "VertexColour"         = vec4  lSkVertexColour;
+    InputVector  "ShellHeight"          = float lfShellHeight;
+    InputVector  "PositionDisplacement" = vec3  lSkPositionDisplacement;
+    InputVector  "NormalDisplacement"   = vec3  lSkNormalDisplacement;
+    InputVector  "TargetAspectRatio"    = float lfSkTargetAspectRatio;
+ 
+    InputTexture "Diffuse_1"        = sampler gDiffuseMap;
+    InputTexture "Diffuse_2"        = sampler gDiffuse2Map;
+    InputTexture "Normal"           = sampler gNormalMap;
+    InputTexture "Noise"            = sampler gFadeNoiseMap;
+    InputMaskTex "Masks"            = sampler gMasksMap;
+    InputMaskTex "Masks_2"          = sampler gMasks2Map;
+    InputTexture "Features"         = sampler gFeaturesMap;
+    InputTexture "Normal_2"         = sampler gNormal2Map;
+
+    OutputColour "Colour"           = vec4  lfOutColour;
+    OutputColour "TangentNormal"    = vec3  lOutNormal;
+    OutputVector "Metallic"         = float lfOutMetallic;
+    OutputVector "Roughness"        = float lfOutRoughness;
+    OutputVector "Subsurface"       = float lfOutSubsurface;
+    OutputVector "Glow"             = float lfOutGlow;
+    OutputVector "LocalPosition"    = vec3  lfOutLocalPosition;
+    OutputVector "ShellsOffset"     = vec3  lvOutShellsOffset;
+
+    NeededFlag = gFadeNoiseMap        D_NOISE_MAP;
+    NeededFlag = lSkLocalPositionVec3 D_SK_USE_LOCAL_POSITION;
+    NeededFlag = lSkNodePositionVec3  D_SM_USE_NODE_POSITION;
+    NeededFlag = gDiffuse2Map         D_SM_DIFFUSE2;
+    NeededFlag = gNormal2Map          D_SM_NORMAL2;
+
+    InputTexture "DiffEnvMap" = sampler gDiffEnvMap;
+    InputTexture "SpecEnvMap" = sampler gSpecEnvMap;
+
+    NeededFlag = gDiffEnvMap        D_SM_LIGHT_MAPS;
+    NeededFlag = gSpecEnvMap        D_SM_LIGHT_MAPS;
+
+    NeededFlag = gFeaturesMap       D_SM_FEATURES_MAP;
+    NeededFlag = lSkFeaturesVec4    D_SM_FEATURES_MAP;
+
+    NeededFlag = lSkTangentSpaceMat D_SM_TRANSFORMS_NORMAL;
+    NeededFlag = lSkInvTangentSpaceMat D_SM_TRANSFORMS_NORMAL;
+
+    NeededFlag = lSkLocalBoundsMin  D_SM_OBJECT_DATA;
+    NeededFlag = lSkLocalBoundsMax  D_SM_OBJECT_DATA;
+    NeededFlag = lSkBoundsSize      D_SM_OBJECT_DATA;
+}
+
+
+// Uniforms
+uint4 gDynamicFlags = {0, 0, 0, 0};
+
+// Planet
+float4 gPlanetPositionVec4 = {0.0, -1204.0, 0.0, 1204.0};
+float4 gLightOriginVec4    = {0.0, 0.0, 0.0, 0.0}; 
+
+// Lighting
+float4 gMaterialParamsVec4              = {0.9, 0.5, 0.0, 0.5};
+float4 gMaterialParams2Vec4             = {0.0, 1.0, 0.0, 0.0};
+float4 gMaterialSFXVec4                 = { 0.0, 0.0, 0.0, 0.0 };
+float4 gMaterialSFXColVec4              = { 0.0, 0.0, 0.0, 0.0 };
+float4 gInverseWorldUpMatVec4           = { 0.0, 0.0, 0.0, 0.0 };
+
+// Texturing
+float4 gMaterialColourVec4              = {1.0, 1.0, 1.0, 1.0};
+float4 gUVScrollStepVec4                = {0.0, 0.0, 0.0, 0.0};
+float4 gCustomParams01Vec4              = {0.0, 0.0, 0.0, 0.0};
+float4 gCustomParams02Vec4              = {0.0, 1.0, 1.0, 0.0};
+float4 gRecolourVec4                    = { 0.0, 0.0, 0.0, 0.0 };
+float4 gAverageColourVec4               = { 0.0, 0.0, 0.0, 0.0 };
+
+// Vertex Displacement
+float4 gWaveOneAmpAndPosOffsetVec4 = {0.0, 0.0, 0.0, 0.0};
+float4 gWaveOneFrequencyVec4                     = {0.0, 0.0, 0.0, 0.0};
+float4 gWaveOneFallOffAndSpeedVec4               = {0.0, 0.0, 0.0, 0.0};
+float4 gWaveTwoAmplitudeVec4                     = {0.0, 0.0, 0.0, 0.0};
+float4 gWaveTwoFrequencyVec4                     = {0.0, 0.0, 0.0, 0.0};
+float4 gWaveTwoFallOffAndSpeedVec4               = {0.0, 0.0, 0.0, 0.0};
+
+// Fog
+float4 gSkyColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gHorizonColourVec4               = {1.0, 0.0, 1.0, 0.0};
+float4 gSunColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogColourNearVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterAlbedoVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gWaterFogVec4                    = {1.0, 0.0, 1.0, 0.0};
+float4 gFogColourVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceHorizonColourVec4          = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogColourVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gHeightFogParamsVec4             = {1.0, 0.0, 1.0, 0.0};
+float4 gFogParamsVec4                   = {1.0, 0.0, 1.0, 0.0};
+float4 gScatteringParamsVec4            = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceFogParamsVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gSpaceSkyColourVec4              = {1.0, 0.0, 1.0, 0.0};
+float4 gSunPositionVec4                 = {1.0, 0.0, 1.0, 0.0};
+float4 gBiomeDataVec4                   = {0.0, 0.0, 0.0, 0.0};
+float4 gSpaceScatteringParamsVec4       = {1.0, 0.0, 1.0, 0.0};
+float4 gLightTopColourVec4              = {1.0, 1.0, 1.0, 1.0};
+float4 gPlaneSpotPositionVec4           = {0.0, 0.0, 0.0, 0.0};
+
+// Scan
+float4 gScanParamsPosVec4               = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg1Vec4              = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg2Vec4              = {0.0, 0.0, 0.0, 0.0};
+float4 gScanParamsCfg3Vec4              = {0.0, 0.0, 0.0, 0.0};
+float4 gScanColourVec4                  = {0.0, 0.0, 0.0, 0.0};
+
+float4 gImposterDataVec4				= {16.0, 0.0, 0.0, 0.0};
+float4 gAlphaCutoutThresholdVec4        = {0.45, 0.5, 0.0, 0.0};
+
+float4 gTileBlendScalesVec4         = {8.0, 0.5, 2.0, 2.0};
+float4 gImposterDebug                   = {0.0, 0.0, 1.0, 0.0};
+
+float4 gTerrainColour1Vec4;
+float4 gTerrainColour2Vec4;
+
+// For Everest
+float4 gTerrainColourControlsVec4;
+float4 gaTerrainColours0Vec4;
+float4 gaTerrainColours1Vec4;
+float4 gaTerrainColours2Vec4;
+float4 gTerrainIndexVec4 = { 0.0, 0.0, 0.0, 0.0 };
+
+float4 gUserDataVec4                    = {0.0, 0.0, 0.0, 0.0};
+
+// Dissolve
+float4 gDissolveDataVec4                = { 0.0, 0.0, 0.0, 0.0 };
+float4 gParallaxMapDataVec4             = { 0.0, 0.0, 0.0, 0.0 };
+float4 gRefractionParamsVec4            = { 0.0, 0.0, 0.0, 0.0 };
+float4 gUISettingsVec4                  = { 0.0, 0.0, 0.0, 0.0 };
+
+float4 gTextureColourParamsVec4     = { 0.0, 0.0, 0.0, 0.0 };
+float4 gTextureColourParams2Vec4    = { 0.0, 0.0, 0.0, 0.0 };
+
+float4 gWindDirParamsVec4               = { 0.0, 0.0, 0.0, 0.0 }; // xyz = Wind DIr, w = Tree Swing Frequency
+float4 gWindTreeFreqVec4                = { 0.0, 0.0, 0.0, 0.0 }; // x= Leaf frequency, y = Branch swing V Swing, z = Branch swing H Swing 
+float4 gTreeWindParams0Vec4             = { 0.0, 0.0, 0.0, 0.0 }; // x = Branch Vertical Swing, y = Branch Horizontal Swing, z = Branch animation around trunk, w = Height Scale
+float4 gTreeWindParams1Vec4             = { 0.0, 0.0, 0.0, 0.0 }; // x = Trunk Bend, y = Leaf Noise, z = Leaf Swing
+float4 gPrevWindDirParamsVec4           = { 0.0, 0.0, 0.0, 0.0 }; 
+float4 gPrevWindTreeFreqVec4            = { 0.0, 0.0, 0.0, 0.0 };
+
+//TF_BEGIN
+float4 gHDRParamsVec4 = { 0.0, 0.0, 0.0, 0.0 };
+float4 gDoFParamsVec4 = { 0.0, 0.0, 0.0, 0.0 };
+float4 gRainParametersVec4 = { 0.0, 0.0, 0.0, 0.0 };
+//TF_END
+
+// Contexts
+
+context SHADOW_FADE
+{
+    VertexShader = compile GLSL VS_SHADOW_FADE;
+    PixelShader = compile GLSL FS_SHADOW_FADE;
+    ShaderMillContext = TEST;
+}
+
+context LIT_FORWARD
+{
+    VertexShader = compile GLSL VS_LIT_FORWARD;
+    PixelShader  = compile GLSL FS_LIT_FORWARD;
+    ShaderMillContext = TEST;
+    GeometryShader [ _F33_SHELLS ]   = compile GLSL GS_LIT_FORWARD;
+}
+
+context [ NONE ] MBOIT_LIT_FWD
+{
+    VertexShader = compile GLSL VS_LIT_FORWARD;
+    GeometryShader [ _F33_SHELLS ]   = compile GLSL GS_LIT_FORWARD;
+    PixelShader  = compile GLSL FS_MBOIT_LIT_FORWARD;
+    ShaderMillContext = TEST;
+}
+
+context [ NONE ] MBOIT_ACM_LIT_FWD
+{
+    VertexShader = compile GLSL VS_LIT_FORWARD;
+    GeometryShader [ _F33_SHELLS ]   = compile GLSL GS_LIT_FORWARD;
+    PixelShader  = compile GLSL FS_MBOIT_ACCUMULATE_LIT_FORWARD;
+    ShaderMillContext = TEST;
+}
+
+context [ NONE ] MBOIT_ACM_FWD_R
+{
+    VertexShader = compile GLSL VS_LIT_FORWARD;
+    GeometryShader [ _F33_SHELLS ]   = compile GLSL GS_LIT_FORWARD;
+    PixelShader  = compile GLSL FS_MBOIT_ACCUMULATE_LIT_FORWARD_REFRACT;
+    ShaderMillContext = TEST;
+}
+
+context [ SWITCH ] LIT_FORWARD_R
+{
+    VertexShader = compile GLSL VS_LIT_FORWARD_REACTIVE;
+    PixelShader  = compile GLSL FS_LIT_FORWARD_REACTIVE;
+    ShaderMillContext = TEST;
+}
+
+context [ PC DX12 ORBIS PROSPERO XBOXGDK SCARLETT OUNCE ] LIT_FRWD_OCCLUDED
+{
+    VertexShader = compile GLSL VS_GENERAL_OCCLUDED;
+    PixelShader  = compile GLSL FS_LIT_FORWARD_OCCLUDED;
+    ShaderMillContext = TEST;
+}
+
+context [ PC MACOS DX12 ORBIS PROSPERO XBOXGDK SCARLETT OUNCE ] LIT_FRWD_REFR
+{
+    VertexShader = compile GLSL VS_GENERAL_REFRACT;
+    PixelShader  = compile GLSL FS_LIT_FORWARD_REFRACT;
+    ShaderMillContext = TEST;
+}
+
+// VR UI - PC, PS4, PS5 only
+context [ PC DX12 ORBIS PROSPERO SCARLETT OUNCE ] UI_FORWARD
+{
+    VertexShader = compile GLSL VS_UI_FORWARD;
+    PixelShader  = compile GLSL FS_UI_FORWARD;
+    ShaderMillContext = TEST;
+}
+
+context DEPTHONLY_FRWRD
+{
+    VertexShader = compile GLSL VS_DEPTHONLY_FRWRD;
+    PixelShader  = compile GLSL FS_DEPTHONLY_FRWRD;
+    ShaderMillContext = TEST;
+}
+
+context [ PC IOS MACOS DX12 ORBIS PROSPERO XBOXGDK SCARLETT OUNCE ] LIT_FORWARD_WITH_MASK
+{
+    VertexShader = compile GLSL VS_LIT_FORWARD;
+    GeometryShader [ _F33_SHELLS ]   = compile GLSL GS_LIT_FORWARD_WITH_MASK;
+    PixelShader  = compile GLSL FS_LIT_FORWARD_WITH_MASK;
+    ShaderMillContext = TEST;
+}
+
+context [ SWITCH ] LIT_FORWARD_M_R
+{
+    VertexShader = compile GLSL VS_LIT_FORWARD_WITH_MASK_REACTIVE;
+    PixelShader  = compile GLSL FS_LIT_FORWARD_WITH_MASK_REACTIVE;
+    ShaderMillContext = TEST;
+}
+
+context ICON_FORWARD_NS
+{
+    VertexShader = compile GLSL VS_ICON_FORWARD_NS;
+    GeometryShader [ _F33_SHELLS ] = compile GLSL GS_ICON_FORWARD_NS;
+    PixelShader = compile GLSL FS_ICON_FORWARD_NS;
+    ShaderMillContext = TEST;
+}
+
+context LIT_DEFER
+{
+    VertexShader = compile GLSL VS_DEFER;
+    PixelShader  = compile GLSL FS_LIT_DEFER;
+    ShaderMillContext = TEST;
+    GeometryShader [ _F33_SHELLS ] = compile GLSL GS_DEFER;
+}
+
+context SHADOW_INSTANCE_FADE
+{
+    VertexShader = compile GLSL VS_SHADOW_INSTANCE_FADE;
+    PixelShader = compile GLSL FS_SHADOW_INSTANCE_FADE;
+    ShaderMillContext = TEST;
+
+    Instanced = true;
+}
+
+context [ IOS ] LIT_FORWARD_INSTANCE
+{
+    VertexShader = compile GLSL VS_INSTANCE;
+    PixelShader  = compile GLSL FS_LIT_FORWARD_INSTANCE;
+    ShaderMillContext = TEST;
+
+    Instanced = true;
+}
+
+context LIT_DEFER_INSTANCE
+{
+    VertexShader = compile GLSL VS_DEFER_INSTANCE;
+    PixelShader  = compile GLSL FS_LIT_DEFER_INSTANCE;
+    ShaderMillContext = TEST;
+
+    Instanced = true;
+}
+
+context [ !MACOS !IOS ] LIT_DEFER_ZE_INSTANCE
+{
+    VertexShader = compile GLSL VS_DEFER_ZE_INSTANCE;
+    PixelShader  = compile GLSL FS_LIT_DEFER_ZE_INSTANCE;
+    ShaderMillContext = TEST;
+
+    Instanced = true;
+}
+
+context [ SWITCH ] LIT_DEFER_ZE
+{
+    VertexShader = compile GLSL VS_DEFER_ZE;
+    PixelShader = compile GLSL FS_LIT_DEFER_ZE;
+    ShaderMillContext = TEST;
+}
+
+context DEPTHONLY_DEFER_INSTANCE
+{
+    VertexShader = compile GLSL VS_DEPTHONLY_DEFER_INSTANCE;
+    PixelShader = compile GLSL FS_DEPTHONLY_DEFER_INSTANCE;
+    ShaderMillContext = TEST;
+
+    Instanced = true;
+}
+
+context IMPOSTER
+{
+    VertexShader = compile GLSL VS_DEFER_IMPOSTER;
+    PixelShader  = compile GLSL FS_DEFER_IMPOSTER;
+    ShaderMillContext = TEST;
+}
+
+context [ PC ] MATERIAL_PREVIEW
+{
+    VertexShader                   = compile GLSL VS_MATERIAL_PREVIEW;
+    GeometryShader [ _F33_SHELLS ] = compile GLSL GS_MATERIAL_PREVIEW;
+    PixelShader                    = compile GLSL FS_MATERIAL_PREVIEW;
+    ShaderMillContext              = TEST;
+}
+
+[[VS_LIT_FORWARD]]
+// =================================================================================================
+#define D_LIT_FORWARD
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[VS_LIT_FORWARD_REACTIVE]]
+// =================================================================================================
+#define D_LIT_FORWARD
+#define D_LIT_REACTIVE
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[VS_LIT_FORWARD_WITH_MASK_REACTIVE]]
+// =================================================================================================
+#define D_LIT_FORWARD
+#define D_LIT_REACTIVE
+#define D_LIT_WITH_MASK
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[VS_GENERAL_OCCLUDED]]
+// =================================================================================================
+#define D_OCCLUDED
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[VS_ICON_FORWARD_NS]]
+// =================================================================================================
+#define D_NO_SHADOWS
+#define D_NO_POSTPROCESS
+#define D_ICON
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[VS_DEFER]]
+// =================================================================================================
+#define D_DEFER
+#define D_OUTPUT_MOTION_VECTORS
+
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[GS_DEFER]]
+// =================================================================================================
+#define D_DEFER
+#define D_OUTPUT_MOTION_VECTORS
+
+#emit_smcode TEST
+#include "UberGeometry.shader.h"
+
+[[VS_DEFER_IMPOSTER]]
+// =================================================================================================
+#define D_DEFER
+#define D_IMPOSTER_VERTEX
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[VS_GENERAL_REFRACT]]
+// =================================================================================================
+#define D_REFRACT
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[FS_LIT_FORWARD]]
+// =================================================================================================
+#define D_LIT_FORWARD
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[FS_MBOIT_LIT_FORWARD]]
+// =================================================================================================
+#define D_LIT_FORWARD
+#define D_MBOIT_PREPARE
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[FS_MBOIT_ACCUMULATE_LIT_FORWARD]]
+// =================================================================================================
+#define D_LIT_FORWARD
+#define D_MBOIT_ACCUMULATE
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[FS_MBOIT_ACCUMULATE_LIT_FORWARD_REFRACT]]
+// =================================================================================================
+#define D_LIT_FORWARD
+#define D_MBOIT_ACCUMULATE
+#define D_REFRACT
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[GS_LIT_FORWARD]]
+// =================================================================================================
+#define D_LIT_FORWARD
+#emit_smcode TEST
+#include "UberGeometry.shader.h"
+
+[[FS_LIT_FORWARD_REACTIVE]]
+// =================================================================================================
+#define D_LIT_FORWARD
+#define D_LIT_REACTIVE
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[FS_LIT_FORWARD_OCCLUDED]]
+// =================================================================================================
+#define D_OCCLUDED
+#define D_LIT_WITH_MASK
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[FS_LIT_FORWARD_REFRACT]]
+// =================================================================================================
+#define D_REFRACT
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[FS_LIT_FORWARD_WITH_MASK]]
+// =================================================================================================
+#define D_LIT_FORWARD
+#define D_LIT_WITH_MASK
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[FS_LIT_FORWARD_WITH_MASK_REACTIVE]]
+// =================================================================================================
+#define D_LIT_FORWARD
+#define D_LIT_WITH_MASK
+#define D_LIT_REACTIVE
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[GS_LIT_FORWARD_WITH_MASK]]
+// =================================================================================================
+#define D_LIT_FORWARD
+#define D_LIT_WITH_MASK
+#emit_smcode TEST
+#include "UberGeometry.shader.h"
+
+[[GS_ICON_FORWARD_NS]]
+// =================================================================================================
+#define D_NO_SHADOWS
+#define D_NO_POSTPROCESS
+#define D_NO_GLOW
+#define D_ICON
+#emit_smcode TEST
+#include "UberGeometry.shader.h"
+
+[[FS_ICON_FORWARD_NS]]
+// =================================================================================================
+#define D_NO_SHADOWS
+#define D_NO_POSTPROCESS
+#define D_NO_GLOW
+#define D_ICON
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[FS_LIT_DEFER]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_OUTPUT_MOTION_VECTORS
+
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[VS_SHADOW_INSTANCE]]
+// =================================================================================================
+#define D_FADE
+#define D_INSTANCE
+#include "ShadowVertex.shader.h"
+
+[[FS_SHADOW_INSTANCE]]
+// =================================================================================================
+#define D_FADE
+#define D_INSTANCE
+#include "ShadowFragment.shader.h"
+
+[[VS_SHADOW_FADE]]
+// =================================================================================================
+#define D_FADE
+#include "ShadowVertex.shader.h"
+
+[[FS_SHADOW_FADE]]
+// =================================================================================================
+#define D_FADE
+#include "ShadowFragment.shader.h"
+
+[[VS_SHADOW_INSTANCE_FADE]]
+// =================================================================================================
+#define D_FADE
+#define D_INSTANCE
+#include "ShadowVertex.shader.h"
+
+[[FS_SHADOW_INSTANCE_FADE]]
+// =================================================================================================
+#define D_FADE
+#define D_INSTANCE
+#include "ShadowFragment.shader.h"
+
+[[VS_DEFER_INSTANCE]]
+// =================================================================================================
+#define D_DEFER
+#define D_INSTANCE
+#define D_OUTPUT_MOTION_VECTORS
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[VS_DEFER_ZE_INSTANCE]]
+// =================================================================================================
+#define D_DEFER
+#define D_INSTANCE
+#define D_OUTPUT_MOTION_VECTORS
+#define D_ZEQUALS
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[VS_DEPTHONLY_DEFER_INSTANCE]]
+// =================================================================================================
+#define D_DEFER
+#define D_INSTANCE
+#define D_DEPTHONLY
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[VS_INSTANCE]]
+// =================================================================================================
+#define D_INSTANCE
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[VS_DEFER_ZE]]
+// =================================================================================================
+#define D_DEFER
+#define D_OUTPUT_MOTION_VECTORS
+#define D_ZEQUALS
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+
+[[FS_LIT_FORWARD_INSTANCE]]
+// =================================================================================================
+#define D_INSTANCE
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[FS_LIT_DEFER_INSTANCE]]
+// =================================================================================================
+#define D_INSTANCE
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_OUTPUT_MOTION_VECTORS
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[FS_LIT_DEFER_ZE_INSTANCE]]
+// =================================================================================================
+#define D_INSTANCE
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_OUTPUT_MOTION_VECTORS
+#define D_ZEQUALS
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[FS_DEPTHONLY_DEFER_INSTANCE]]
+// =================================================================================================
+#define D_INSTANCE
+#define D_DEFER
+#define D_DEPTHONLY
+#include "UberFragment.shader.h"
+
+[[FS_DEFER_IMPOSTER]]
+// =================================================================================================
+#define D_WRITE_IMPOSTER
+#define D_DEFER
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[VS_UI_FORWARD]]
+// =================================================================================================
+#define D_NO_SHADOWS
+#define D_NO_POSTPROCESS
+#define D_NO_GLOW
+#define D_REMOVE_TAA_JITTER
+#define D_UI_OVERLAY
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[FS_UI_FORWARD]]
+// =================================================================================================
+#define D_NO_SHADOWS
+#define D_NO_POSTPROCESS
+#define D_NO_GLOW
+#define D_REMOVE_TAA_JITTER
+#define D_UI_OVERLAY
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[VS_DEPTHONLY_FRWRD]]
+// =================================================================================================
+#define D_NO_SHADOWS
+#define D_DEPTHONLY
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+
+//[[VS_DEPTHONLY_ZE_FRWRD]]
+// =================================================================================================
+//#define D_NO_SHADOWS
+//#define D_DEPTHONLY
+//#define D_ZEQUALS
+//#emit_smcode TEST
+//#include "UberVertex.shader.h"
+
+[[FS_DEPTHONLY_FRWRD]]
+// =================================================================================================
+#define D_DEPTHONLY
+#define D_NO_POSTPROCESS
+#define D_NO_SHADOWS
+#include "UberFragment.shader.h"
+
+//[[FS_DEPTHONLY_ZE_FRWRD]]
+// =================================================================================================
+//#define D_DEPTHONLY
+//#define D_NO_POSTPROCESS
+//#define D_NO_SHADOWS
+//#define D_ZEQUALS
+//#include "UberFragment.shader.h"
+
+[[FS_LIT_DEFER_ZE]]
+// =================================================================================================
+#define D_DEFER
+#define D_ATTRIBUTES
+#define D_OUTPUT_MOTION_VECTORS
+#define D_ZEQUALS
+#emit_smcode TEST
+#include "UberFragment.shader.h"
+
+[[VS_MATERIAL_PREVIEW]]
+// =================================================================================================
+#define D_NO_SHADOWS
+#define D_NO_POSTPROCESS
+#define D_MATERIAL_PREVIEW
+#emit_smcode TEST
+#include "UberVertex.shader.h"
+
+[[GS_MATERIAL_PREVIEW]]
+// =================================================================================================
+#define D_NO_SHADOWS
+#define D_NO_POSTPROCESS
+#define D_MATERIAL_PREVIEW
+#emit_smcode TEST
+#include "UberGeometry.shader.h"
+
+[[FS_MATERIAL_PREVIEW]]
+// =================================================================================================
+#define D_NO_SHADOWS
+#define D_NO_POSTPROCESS
+#define D_MATERIAL_PREVIEW
+#emit_smcode TEST
+#include "UberFragment.shader.h"
