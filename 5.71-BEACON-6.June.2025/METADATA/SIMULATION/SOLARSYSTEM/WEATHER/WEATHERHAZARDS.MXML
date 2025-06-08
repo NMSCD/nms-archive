@@ -1,0 +1,1499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.71.0.1)-->
+<Data template="cGcWeatherEffectTable">
+	<Property name="Effects">
+		<Property name="Effects" value="GcWeatherEffect" _id="METEOR">
+			<Property name="Id" value="METEOR" />
+			<Property name="OSDMessage" value="UI_METEOR_WARNING_OSD" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/METEORSTORM.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="AtNightNotInStorm" />
+			<Property name="MaxHazardsOfThisTypeActive" value="1" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="false" />
+			<Property name="WeatherEffectBehaviour" value="Static" />
+			<Property name="WeatherEffectSpawnType" value="Cluster" />
+			<Property name="RandomRotationAroundUp" value="true" />
+			<Property name="MinSpawnScale" value="1.000000" />
+			<Property name="MaxSpawnScale" value="1.000000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="1.000000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+			<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+			<Property name="MinSpawnDistance" value="0.000000" />
+			<Property name="MaxSpawnDistance" value="0.000000" />
+			<Property name="MinLifetime" value="15.000000" />
+			<Property name="MaxLifetime" value="15.000000" />
+			<Property name="FadeoutStart" value="1.000000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="METEORITE_INCOMING" />
+			</Property>
+			<Property name="ImpactGift" value="MODELS/PLANETS/BIOMES/COMMON/RARERESOURCE/CRYSTALS/METEORROCK.SCENE.MBIN" />
+			<Property name="ImpactGiftChance" value="0.050000" />
+			<Property name="ClusterSpawnChance" value="0.000075" />
+			<Property name="ClusterMinLifetime" value="30.000000" />
+			<Property name="ClusterMaxLifetime" value="52.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="10.000000" />
+			<Property name="PatchMaxRadius" value="10.000000" />
+			<Property name="PatchMinSpawns" value="1" />
+			<Property name="PatchMaxSpawns" value="10" />
+			<Property name="PatchScaling" value="0.000000" />
+			<Property name="MoveSpeed" value="10.000000" />
+			<Property name="WanderMinRadius" value="10.000000" />
+			<Property name="WanderMaxRadius" value="30.000000" />
+			<Property name="WanderMinArcDeg" value="0.000000" />
+			<Property name="WanderMaxArcDeg" value="90.000000" />
+			<Property name="EffectData" value="GcWeatherHazardMeteorData">
+				<Property name="GcWeatherHazardMeteorData">
+					<Property name="IndicatorDecal" value="TkModelResource">
+						<Property name="Filename" value="MODELS/EFFECTS/WEATHER/METEORDECAL.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+					<Property name="StaticDecal" value="TkModelResource">
+						<Property name="Filename" value="MODELS/EFFECTS/WEATHER/METEORDECALSTATIC.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+					<Property name="Meteor" value="TkModelResource">
+						<Property name="Filename" value="MODELS/EFFECTS/WEATHER/METEORSTORM.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+					<Property name="ImpactEffect" value="TkModelResource">
+						<Property name="Filename" value="MODELS/EFFECTS/WEATHER/METEORIMPACTFX.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+					<Property name="ImpactExplode" value="TkModelResource">
+						<Property name="Filename" value="MODELS/EFFECTS/WEATHER/METEOREXPLODEFX.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+					<Property name="MinRadius" value="18.000000" />
+					<Property name="MaxRadius" value="28.000000" />
+					<Property name="DecalFullGrowthProgress" value="0.900000" />
+					<Property name="NumFlashes" value="4.000000" />
+					<Property name="FlashStartProgress" value="0.900000" />
+					<Property name="EarliestImpact" value="3.500000" />
+					<Property name="EarliestImpactFirstInstance" value="8.000000" />
+					<Property name="StormDuration" value="14.000000" />
+					<Property name="Speed" value="50.000000" />
+					<Property name="MinMeteors" value="4" />
+					<Property name="MaxMeteors" value="6" />
+					<Property name="ShakeID" value="LIGHTNINGSTRIKE" />
+					<Property name="ImpactParticle" value="METEORIMPACT" />
+					<Property name="DamageID" value="METEOR" />
+					<Property name="FullDamageRadius" value="3.000000" />
+					<Property name="DamageRadius" value="3.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="LIGHTNING">
+			<Property name="Id" value="LIGHTNING" />
+			<Property name="OSDMessage" value="UI_LIGHTNING_WARNING_OSD" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/LIGHTNINGHAZARD.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="DuringStorm" />
+			<Property name="MaxHazardsOfThisTypeActive" value="1" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="false" />
+			<Property name="WeatherEffectBehaviour" value="Static" />
+			<Property name="WeatherEffectSpawnType" value="Cluster" />
+			<Property name="RandomRotationAroundUp" value="true" />
+			<Property name="MinSpawnScale" value="1.000000" />
+			<Property name="MaxSpawnScale" value="1.000000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="0.500000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+			<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+			<Property name="MinSpawnDistance" value="0.000000" />
+			<Property name="MaxSpawnDistance" value="0.000000" />
+			<Property name="MinLifetime" value="11.000000" />
+			<Property name="MaxLifetime" value="11.000000" />
+			<Property name="FadeoutStart" value="0.950000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="LIGHTNING" />
+			</Property>
+			<Property name="ImpactGift" value="MODELS/PLANETS/BIOMES/COMMON/RARERESOURCE/CRYSTALS/LIGHTNINGROCK.SCENE.MBIN" />
+			<Property name="ImpactGiftChance" value="0.100000" />
+			<Property name="ClusterSpawnChance" value="0.000600" />
+			<Property name="ClusterMinLifetime" value="30.000000" />
+			<Property name="ClusterMaxLifetime" value="60.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="10.000000" />
+			<Property name="PatchMaxRadius" value="10.000000" />
+			<Property name="PatchMinSpawns" value="1" />
+			<Property name="PatchMaxSpawns" value="10" />
+			<Property name="PatchScaling" value="0.000000" />
+			<Property name="MoveSpeed" value="10.000000" />
+			<Property name="WanderMinRadius" value="10.000000" />
+			<Property name="WanderMaxRadius" value="30.000000" />
+			<Property name="WanderMinArcDeg" value="0.000000" />
+			<Property name="WanderMaxArcDeg" value="90.000000" />
+			<Property name="EffectData" value="GcWeatherHazardLightningData">
+				<Property name="GcWeatherHazardLightningData">
+					<Property name="IndicatorDecal" value="TkModelResource">
+						<Property name="Filename" value="MODELS/EFFECTS/WEATHER/METEORDECAL.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+					<Property name="StaticDecal" value="TkModelResource">
+						<Property name="Filename" value="MODELS/EFFECTS/WEATHER/METEORDECALSTATIC.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+					<Property name="MinRadius" value="25.000000" />
+					<Property name="MaxRadius" value="50.000000" />
+					<Property name="DecalFullGrowthProgress" value="0.900000" />
+					<Property name="NumFlashes" value="4.000000" />
+					<Property name="FlashStartProgress" value="0.900000" />
+					<Property name="EarliestImpact" value="3.000000" />
+					<Property name="EarliestImpactFirstInstance" value="8.000000" />
+					<Property name="StormDuration" value="10.000000" />
+					<Property name="MinStrikes" value="4" />
+					<Property name="MaxStrikes" value="8" />
+					<Property name="ShakeID" value="LIGHTNINGSTRIKE" />
+					<Property name="ImpactParticle" value="LIGHTNINGBOLTFX" />
+					<Property name="DamageID" value="LIGHTNING" />
+					<Property name="FullDamageRadius" value="2.500000" />
+					<Property name="DamageRadius" value="2.500000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="LIGHTNING_GAS">
+			<Property name="Id" value="LIGHTNING_GAS" />
+			<Property name="OSDMessage" value="UI_LIGHTNING_WARNING_OSD" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/LIGHTNINGHAZARD.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="Anytime" />
+			<Property name="MaxHazardsOfThisTypeActive" value="1" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="false" />
+			<Property name="WeatherEffectBehaviour" value="Static" />
+			<Property name="WeatherEffectSpawnType" value="Cluster" />
+			<Property name="RandomRotationAroundUp" value="true" />
+			<Property name="MinSpawnScale" value="1.000000" />
+			<Property name="MaxSpawnScale" value="1.000000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="0.500000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+			<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+			<Property name="MinSpawnDistance" value="0.000000" />
+			<Property name="MaxSpawnDistance" value="0.000000" />
+			<Property name="MinLifetime" value="11.000000" />
+			<Property name="MaxLifetime" value="11.000000" />
+			<Property name="FadeoutStart" value="0.950000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="LIGHTNING" />
+			</Property>
+			<Property name="ImpactGift" value="MODELS/PLANETS/BIOMES/COMMON/RARERESOURCE/CRYSTALS/LIGHTNINGROCK.SCENE.MBIN" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.002000" />
+			<Property name="ClusterMinLifetime" value="30.000000" />
+			<Property name="ClusterMaxLifetime" value="60.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="10.000000" />
+			<Property name="PatchMaxRadius" value="10.000000" />
+			<Property name="PatchMinSpawns" value="1" />
+			<Property name="PatchMaxSpawns" value="10" />
+			<Property name="PatchScaling" value="0.000000" />
+			<Property name="MoveSpeed" value="10.000000" />
+			<Property name="WanderMinRadius" value="10.000000" />
+			<Property name="WanderMaxRadius" value="30.000000" />
+			<Property name="WanderMinArcDeg" value="0.000000" />
+			<Property name="WanderMaxArcDeg" value="90.000000" />
+			<Property name="EffectData" value="GcWeatherHazardLightningData">
+				<Property name="GcWeatherHazardLightningData">
+					<Property name="IndicatorDecal" value="TkModelResource">
+						<Property name="Filename" value="MODELS/EFFECTS/WEATHER/METEORDECAL.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+					<Property name="StaticDecal" value="TkModelResource">
+						<Property name="Filename" value="MODELS/EFFECTS/WEATHER/METEORDECALSTATIC.SCENE.MBIN" />
+						<Property name="ResHandle" value="GcResource">
+							<Property name="ResourceID" value="0" />
+						</Property>
+						<Property name="Seed" value="0" />
+					</Property>
+					<Property name="MinRadius" value="5.000000" />
+					<Property name="MaxRadius" value="25.000000" />
+					<Property name="DecalFullGrowthProgress" value="0.900000" />
+					<Property name="NumFlashes" value="4.000000" />
+					<Property name="FlashStartProgress" value="0.900000" />
+					<Property name="EarliestImpact" value="3.000000" />
+					<Property name="EarliestImpactFirstInstance" value="8.000000" />
+					<Property name="StormDuration" value="10.000000" />
+					<Property name="MinStrikes" value="2" />
+					<Property name="MaxStrikes" value="4" />
+					<Property name="ShakeID" value="LIGHTNINGSTRIKE" />
+					<Property name="ImpactParticle" value="LIGHTNINGBOLTFX" />
+					<Property name="DamageID" value="LIGHTNING" />
+					<Property name="FullDamageRadius" value="2.500000" />
+					<Property name="DamageRadius" value="2.500000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="TORNADO">
+			<Property name="Id" value="TORNADO" />
+			<Property name="OSDMessage" value="UI_TORNADO_WARNING_OSD" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/TORNADO.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="DuringStorm" />
+			<Property name="MaxHazardsOfThisTypeActive" value="5" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="true" />
+			<Property name="WeatherEffectBehaviour" value="Wander" />
+			<Property name="WeatherEffectSpawnType" value="Single" />
+			<Property name="RandomRotationAroundUp" value="true" />
+			<Property name="MinSpawnScale" value="1.000000" />
+			<Property name="MaxSpawnScale" value="1.000000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="0.000300" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.150000" />
+			<Property name="SpawnChancePerSecondExtreme" value="0.200000" />
+			<Property name="MinSpawnDistance" value="50.000000" />
+			<Property name="MaxSpawnDistance" value="250.000000" />
+			<Property name="MinLifetime" value="50.000000" />
+			<Property name="MaxLifetime" value="100.000000" />
+			<Property name="FadeoutStart" value="0.925000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="TORNADO" />
+			</Property>
+			<Property name="ImpactGift" value="" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.500000" />
+			<Property name="ClusterMinLifetime" value="10.000000" />
+			<Property name="ClusterMaxLifetime" value="10.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="10.000000" />
+			<Property name="PatchMaxRadius" value="10.000000" />
+			<Property name="PatchMinSpawns" value="1" />
+			<Property name="PatchMaxSpawns" value="10" />
+			<Property name="PatchScaling" value="0.000000" />
+			<Property name="MoveSpeed" value="5.000000" />
+			<Property name="WanderMinRadius" value="10.000000" />
+			<Property name="WanderMaxRadius" value="30.000000" />
+			<Property name="WanderMinArcDeg" value="0.000000" />
+			<Property name="WanderMaxArcDeg" value="90.000000" />
+			<Property name="EffectData" value="GcWeatherHazardTornadoData">
+				<Property name="GcWeatherHazardTornadoData">
+					<Property name="SuckInRadius" value="40.000000" />
+					<Property name="SuckInStrength" value="5.000000" />
+					<Property name="SuckUpRadius" value="7.000000" />
+					<Property name="SuckUpStrength" value="2.000000" />
+					<Property name="SuckUpHeight" value="100.000000" />
+					<Property name="SuckUpHeightCutoff" value="80.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="TORNADO_GAS">
+			<Property name="Id" value="TORNADO_GAS" />
+			<Property name="OSDMessage" value="" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/GASGIANTTORNADO.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="Anytime" />
+			<Property name="MaxHazardsOfThisTypeActive" value="1" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="true" />
+			<Property name="WeatherEffectBehaviour" value="Wander" />
+			<Property name="WeatherEffectSpawnType" value="Single" />
+			<Property name="RandomRotationAroundUp" value="true" />
+			<Property name="MinSpawnScale" value="1.000000" />
+			<Property name="MaxSpawnScale" value="1.000000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="0.020000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+			<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+			<Property name="MinSpawnDistance" value="50.000000" />
+			<Property name="MaxSpawnDistance" value="200.000000" />
+			<Property name="MinLifetime" value="50.000000" />
+			<Property name="MaxLifetime" value="100.000000" />
+			<Property name="FadeoutStart" value="0.925000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="TORNADO" />
+			</Property>
+			<Property name="ImpactGift" value="" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.500000" />
+			<Property name="ClusterMinLifetime" value="10.000000" />
+			<Property name="ClusterMaxLifetime" value="10.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="10.000000" />
+			<Property name="PatchMaxRadius" value="10.000000" />
+			<Property name="PatchMinSpawns" value="1" />
+			<Property name="PatchMaxSpawns" value="10" />
+			<Property name="PatchScaling" value="0.000000" />
+			<Property name="MoveSpeed" value="5.000000" />
+			<Property name="WanderMinRadius" value="10.000000" />
+			<Property name="WanderMaxRadius" value="30.000000" />
+			<Property name="WanderMinArcDeg" value="0.000000" />
+			<Property name="WanderMaxArcDeg" value="90.000000" />
+			<Property name="EffectData" value="GcWeatherHazardTornadoData">
+				<Property name="GcWeatherHazardTornadoData">
+					<Property name="SuckInRadius" value="35.000000" />
+					<Property name="SuckInStrength" value="5.000000" />
+					<Property name="SuckUpRadius" value="7.000000" />
+					<Property name="SuckUpStrength" value="2.000000" />
+					<Property name="SuckUpHeight" value="100.000000" />
+					<Property name="SuckUpHeightCutoff" value="80.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="GRAV_HAZ">
+			<Property name="Id" value="GRAV_HAZ" />
+			<Property name="OSDMessage" value="" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/DEBRIS/LARGEROCK.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+				<Property name="Effects" value="GcWeightedFilename" _index="1">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/GRAVITYORB.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="Anytime" />
+			<Property name="MaxHazardsOfThisTypeActive" value="5" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="false" />
+			<Property name="WeatherEffectBehaviour" value="Static" />
+			<Property name="WeatherEffectSpawnType" value="Single" />
+			<Property name="RandomRotationAroundUp" value="true" />
+			<Property name="MinSpawnScale" value="2.000000" />
+			<Property name="MaxSpawnScale" value="4.000000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="0.500000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+			<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+			<Property name="MinSpawnDistance" value="25.000000" />
+			<Property name="MaxSpawnDistance" value="100.000000" />
+			<Property name="MinLifetime" value="25.000000" />
+			<Property name="MaxLifetime" value="25.000000" />
+			<Property name="FadeoutStart" value="1.000000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="ImpactGift" value="" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.500000" />
+			<Property name="ClusterMinLifetime" value="10.000000" />
+			<Property name="ClusterMaxLifetime" value="10.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="10.000000" />
+			<Property name="PatchMaxRadius" value="10.000000" />
+			<Property name="PatchMinSpawns" value="1" />
+			<Property name="PatchMaxSpawns" value="10" />
+			<Property name="PatchScaling" value="0.000000" />
+			<Property name="MoveSpeed" value="10.000000" />
+			<Property name="WanderMinRadius" value="10.000000" />
+			<Property name="WanderMaxRadius" value="30.000000" />
+			<Property name="WanderMinArcDeg" value="0.000000" />
+			<Property name="WanderMaxArcDeg" value="90.000000" />
+			<Property name="EffectData" value="GcWeatherEffect">
+				<Property name="GcWeatherEffect">
+					<Property name="Id" value="" />
+					<Property name="OSDMessage" value="" />
+					<Property name="Effects" />
+					<Property name="SpawnConditions" value="DuringStorm" />
+					<Property name="MaxHazardsOfThisTypeActive" value="5" />
+					<Property name="ForcedOnByHazard" value="" />
+					<Property name="BlockedByCluster" value="" />
+					<Property name="ExclusivePrimaryHazard" value="false" />
+					<Property name="WeatherEffectBehaviour" value="Static" />
+					<Property name="WeatherEffectSpawnType" value="Single" />
+					<Property name="RandomRotationAroundUp" value="true" />
+					<Property name="MinSpawnScale" value="1.000000" />
+					<Property name="MaxSpawnScale" value="1.000000" />
+					<Property name="SpawnAttemptsPerRegion" value="1" />
+					<Property name="SpawnChancePerSecondPerAttempt" value="0.100000" />
+					<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+						<Property name="Hazard" value="None" />
+					</Property>
+					<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+					<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+					<Property name="MinSpawnDistance" value="100.000000" />
+					<Property name="MaxSpawnDistance" value="1000.000000" />
+					<Property name="MinLifetime" value="10.000000" />
+					<Property name="MaxLifetime" value="10.000000" />
+					<Property name="FadeoutStart" value="1.000000" />
+					<Property name="FadeoutVisuals" value="true" />
+					<Property name="FadeoutAudio" value="true" />
+					<Property name="Audio" value="GcAudioWwiseEvents">
+						<Property name="AkEvent" value="INVALID_EVENT" />
+					</Property>
+					<Property name="ImpactGift" value="" />
+					<Property name="ImpactGiftChance" value="0.000000" />
+					<Property name="ClusterSpawnChance" value="0.500000" />
+					<Property name="ClusterMinLifetime" value="10.000000" />
+					<Property name="ClusterMaxLifetime" value="10.000000" />
+					<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+					<Property name="PatchMinRadius" value="10.000000" />
+					<Property name="PatchMaxRadius" value="10.000000" />
+					<Property name="PatchMinSpawns" value="1" />
+					<Property name="PatchMaxSpawns" value="10" />
+					<Property name="PatchScaling" value="0.000000" />
+					<Property name="MoveSpeed" value="10.000000" />
+					<Property name="WanderMinRadius" value="10.000000" />
+					<Property name="WanderMaxRadius" value="30.000000" />
+					<Property name="WanderMinArcDeg" value="0.000000" />
+					<Property name="WanderMaxArcDeg" value="90.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="FIRESTORM">
+			<Property name="Id" value="FIRESTORM" />
+			<Property name="OSDMessage" value="" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/FLAME01.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="Anytime" />
+			<Property name="MaxHazardsOfThisTypeActive" value="400" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="false" />
+			<Property name="WeatherEffectBehaviour" value="Static" />
+			<Property name="WeatherEffectSpawnType" value="Patch" />
+			<Property name="RandomRotationAroundUp" value="false" />
+			<Property name="MinSpawnScale" value="1.000000" />
+			<Property name="MaxSpawnScale" value="5.000000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="0.015000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+			<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+			<Property name="MinSpawnDistance" value="10.000000" />
+			<Property name="MaxSpawnDistance" value="200.000000" />
+			<Property name="MinLifetime" value="50.000000" />
+			<Property name="MaxLifetime" value="150.000000" />
+			<Property name="FadeoutStart" value="0.970000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="ImpactGift" value="" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.500000" />
+			<Property name="ClusterMinLifetime" value="10.000000" />
+			<Property name="ClusterMaxLifetime" value="10.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="3.000000" />
+			<Property name="PatchMaxRadius" value="8.000000" />
+			<Property name="PatchMinSpawns" value="1" />
+			<Property name="PatchMaxSpawns" value="15" />
+			<Property name="PatchScaling" value="0.500000" />
+			<Property name="MoveSpeed" value="10.000000" />
+			<Property name="WanderMinRadius" value="10.000000" />
+			<Property name="WanderMaxRadius" value="30.000000" />
+			<Property name="WanderMinArcDeg" value="0.000000" />
+			<Property name="WanderMaxArcDeg" value="90.000000" />
+			<Property name="EffectData" value="GcWeatherEffect">
+				<Property name="GcWeatherEffect">
+					<Property name="Id" value="" />
+					<Property name="OSDMessage" value="" />
+					<Property name="Effects" />
+					<Property name="SpawnConditions" value="DuringStorm" />
+					<Property name="MaxHazardsOfThisTypeActive" value="5" />
+					<Property name="ForcedOnByHazard" value="" />
+					<Property name="BlockedByCluster" value="" />
+					<Property name="ExclusivePrimaryHazard" value="false" />
+					<Property name="WeatherEffectBehaviour" value="Static" />
+					<Property name="WeatherEffectSpawnType" value="Single" />
+					<Property name="RandomRotationAroundUp" value="true" />
+					<Property name="MinSpawnScale" value="1.000000" />
+					<Property name="MaxSpawnScale" value="1.000000" />
+					<Property name="SpawnAttemptsPerRegion" value="1" />
+					<Property name="SpawnChancePerSecondPerAttempt" value="0.100000" />
+					<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+						<Property name="Hazard" value="None" />
+					</Property>
+					<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+					<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+					<Property name="MinSpawnDistance" value="100.000000" />
+					<Property name="MaxSpawnDistance" value="1000.000000" />
+					<Property name="MinLifetime" value="10.000000" />
+					<Property name="MaxLifetime" value="10.000000" />
+					<Property name="FadeoutStart" value="1.000000" />
+					<Property name="FadeoutVisuals" value="true" />
+					<Property name="FadeoutAudio" value="true" />
+					<Property name="Audio" value="GcAudioWwiseEvents">
+						<Property name="AkEvent" value="INVALID_EVENT" />
+					</Property>
+					<Property name="ImpactGift" value="" />
+					<Property name="ImpactGiftChance" value="0.000000" />
+					<Property name="ClusterSpawnChance" value="0.500000" />
+					<Property name="ClusterMinLifetime" value="10.000000" />
+					<Property name="ClusterMaxLifetime" value="10.000000" />
+					<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+					<Property name="PatchMinRadius" value="10.000000" />
+					<Property name="PatchMaxRadius" value="10.000000" />
+					<Property name="PatchMinSpawns" value="1" />
+					<Property name="PatchMaxSpawns" value="10" />
+					<Property name="PatchScaling" value="0.000000" />
+					<Property name="MoveSpeed" value="10.000000" />
+					<Property name="WanderMinRadius" value="10.000000" />
+					<Property name="WanderMaxRadius" value="30.000000" />
+					<Property name="WanderMinArcDeg" value="0.000000" />
+					<Property name="WanderMaxArcDeg" value="90.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="FIRESTORM_STORM">
+			<Property name="Id" value="FIRESTORM_STORM" />
+			<Property name="OSDMessage" value="" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/FLAME01.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="DuringStorm" />
+			<Property name="MaxHazardsOfThisTypeActive" value="400" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="false" />
+			<Property name="WeatherEffectBehaviour" value="Static" />
+			<Property name="WeatherEffectSpawnType" value="Patch" />
+			<Property name="RandomRotationAroundUp" value="false" />
+			<Property name="MinSpawnScale" value="1.000000" />
+			<Property name="MaxSpawnScale" value="4.000000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="0.500000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+			<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+			<Property name="MinSpawnDistance" value="10.000000" />
+			<Property name="MaxSpawnDistance" value="100.000000" />
+			<Property name="MinLifetime" value="50.000000" />
+			<Property name="MaxLifetime" value="150.000000" />
+			<Property name="FadeoutStart" value="0.970000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="ImpactGift" value="" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.500000" />
+			<Property name="ClusterMinLifetime" value="10.000000" />
+			<Property name="ClusterMaxLifetime" value="10.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="3.000000" />
+			<Property name="PatchMaxRadius" value="8.000000" />
+			<Property name="PatchMinSpawns" value="1" />
+			<Property name="PatchMaxSpawns" value="15" />
+			<Property name="PatchScaling" value="0.500000" />
+			<Property name="MoveSpeed" value="10.000000" />
+			<Property name="WanderMinRadius" value="10.000000" />
+			<Property name="WanderMaxRadius" value="30.000000" />
+			<Property name="WanderMinArcDeg" value="0.000000" />
+			<Property name="WanderMaxArcDeg" value="90.000000" />
+			<Property name="EffectData" value="GcWeatherEffect">
+				<Property name="GcWeatherEffect">
+					<Property name="Id" value="" />
+					<Property name="OSDMessage" value="" />
+					<Property name="Effects" />
+					<Property name="SpawnConditions" value="DuringStorm" />
+					<Property name="MaxHazardsOfThisTypeActive" value="5" />
+					<Property name="ForcedOnByHazard" value="" />
+					<Property name="BlockedByCluster" value="" />
+					<Property name="ExclusivePrimaryHazard" value="false" />
+					<Property name="WeatherEffectBehaviour" value="Static" />
+					<Property name="WeatherEffectSpawnType" value="Single" />
+					<Property name="RandomRotationAroundUp" value="true" />
+					<Property name="MinSpawnScale" value="1.000000" />
+					<Property name="MaxSpawnScale" value="1.000000" />
+					<Property name="SpawnAttemptsPerRegion" value="1" />
+					<Property name="SpawnChancePerSecondPerAttempt" value="0.100000" />
+					<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+						<Property name="Hazard" value="None" />
+					</Property>
+					<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+					<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+					<Property name="MinSpawnDistance" value="100.000000" />
+					<Property name="MaxSpawnDistance" value="1000.000000" />
+					<Property name="MinLifetime" value="10.000000" />
+					<Property name="MaxLifetime" value="10.000000" />
+					<Property name="FadeoutStart" value="1.000000" />
+					<Property name="FadeoutVisuals" value="true" />
+					<Property name="FadeoutAudio" value="true" />
+					<Property name="Audio" value="GcAudioWwiseEvents">
+						<Property name="AkEvent" value="INVALID_EVENT" />
+					</Property>
+					<Property name="ImpactGift" value="" />
+					<Property name="ImpactGiftChance" value="0.000000" />
+					<Property name="ClusterSpawnChance" value="0.500000" />
+					<Property name="ClusterMinLifetime" value="10.000000" />
+					<Property name="ClusterMaxLifetime" value="10.000000" />
+					<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+					<Property name="PatchMinRadius" value="10.000000" />
+					<Property name="PatchMaxRadius" value="10.000000" />
+					<Property name="PatchMinSpawns" value="1" />
+					<Property name="PatchMaxSpawns" value="10" />
+					<Property name="PatchScaling" value="0.000000" />
+					<Property name="MoveSpeed" value="10.000000" />
+					<Property name="WanderMinRadius" value="10.000000" />
+					<Property name="WanderMaxRadius" value="30.000000" />
+					<Property name="WanderMinArcDeg" value="0.000000" />
+					<Property name="WanderMaxArcDeg" value="90.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="SPOOKS">
+			<Property name="Id" value="SPOOKS" />
+			<Property name="OSDMessage" value="" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/CREATURES/SPECTRALGROUNDTENTACLEHAZARD.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="Anytime" />
+			<Property name="MaxHazardsOfThisTypeActive" value="400" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="false" />
+			<Property name="WeatherEffectBehaviour" value="Wander" />
+			<Property name="WeatherEffectSpawnType" value="Patch" />
+			<Property name="RandomRotationAroundUp" value="false" />
+			<Property name="MinSpawnScale" value="0.900000" />
+			<Property name="MaxSpawnScale" value="1.200000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="0.500000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="Spook" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+			<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+			<Property name="MinSpawnDistance" value="10.000000" />
+			<Property name="MaxSpawnDistance" value="20.000000" />
+			<Property name="MinLifetime" value="10.000000" />
+			<Property name="MaxLifetime" value="10.000000" />
+			<Property name="FadeoutStart" value="0.950000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="ImpactGift" value="" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.100000" />
+			<Property name="ClusterMinLifetime" value="10.000000" />
+			<Property name="ClusterMaxLifetime" value="10.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="3.000000" />
+			<Property name="PatchMaxRadius" value="8.000000" />
+			<Property name="PatchMinSpawns" value="1" />
+			<Property name="PatchMaxSpawns" value="2" />
+			<Property name="PatchScaling" value="0.500000" />
+			<Property name="MoveSpeed" value="3.000000" />
+			<Property name="WanderMinRadius" value="2.000000" />
+			<Property name="WanderMaxRadius" value="10.000000" />
+			<Property name="WanderMinArcDeg" value="50.000000" />
+			<Property name="WanderMaxArcDeg" value="360.000000" />
+			<Property name="EffectData" value="GcWeatherEffect">
+				<Property name="GcWeatherEffect">
+					<Property name="Id" value="" />
+					<Property name="OSDMessage" value="" />
+					<Property name="Effects" />
+					<Property name="SpawnConditions" value="DuringStorm" />
+					<Property name="MaxHazardsOfThisTypeActive" value="5" />
+					<Property name="ForcedOnByHazard" value="" />
+					<Property name="BlockedByCluster" value="" />
+					<Property name="ExclusivePrimaryHazard" value="false" />
+					<Property name="WeatherEffectBehaviour" value="Static" />
+					<Property name="WeatherEffectSpawnType" value="Single" />
+					<Property name="RandomRotationAroundUp" value="true" />
+					<Property name="MinSpawnScale" value="1.000000" />
+					<Property name="MaxSpawnScale" value="1.000000" />
+					<Property name="SpawnAttemptsPerRegion" value="1" />
+					<Property name="SpawnChancePerSecondPerAttempt" value="0.100000" />
+					<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+						<Property name="Hazard" value="None" />
+					</Property>
+					<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+					<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+					<Property name="MinSpawnDistance" value="100.000000" />
+					<Property name="MaxSpawnDistance" value="1000.000000" />
+					<Property name="MinLifetime" value="10.000000" />
+					<Property name="MaxLifetime" value="10.000000" />
+					<Property name="FadeoutStart" value="1.000000" />
+					<Property name="FadeoutVisuals" value="true" />
+					<Property name="FadeoutAudio" value="true" />
+					<Property name="Audio" value="GcAudioWwiseEvents">
+						<Property name="AkEvent" value="INVALID_EVENT" />
+					</Property>
+					<Property name="ImpactGift" value="" />
+					<Property name="ImpactGiftChance" value="0.000000" />
+					<Property name="ClusterSpawnChance" value="0.500000" />
+					<Property name="ClusterMinLifetime" value="10.000000" />
+					<Property name="ClusterMaxLifetime" value="10.000000" />
+					<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+					<Property name="PatchMinRadius" value="10.000000" />
+					<Property name="PatchMaxRadius" value="10.000000" />
+					<Property name="PatchMinSpawns" value="1" />
+					<Property name="PatchMaxSpawns" value="10" />
+					<Property name="PatchScaling" value="0.000000" />
+					<Property name="MoveSpeed" value="10.000000" />
+					<Property name="WanderMinRadius" value="10.000000" />
+					<Property name="WanderMaxRadius" value="30.000000" />
+					<Property name="WanderMinArcDeg" value="0.000000" />
+					<Property name="WanderMaxArcDeg" value="90.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="DUSTDEVIL">
+			<Property name="Id" value="DUSTDEVIL" />
+			<Property name="OSDMessage" value="" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/DUSTDEVILHAZARD.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="Anytime" />
+			<Property name="MaxHazardsOfThisTypeActive" value="30" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="false" />
+			<Property name="WeatherEffectBehaviour" value="Wander" />
+			<Property name="WeatherEffectSpawnType" value="Patch" />
+			<Property name="RandomRotationAroundUp" value="false" />
+			<Property name="MinSpawnScale" value="0.900000" />
+			<Property name="MaxSpawnScale" value="1.200000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="0.500000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+			<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+			<Property name="MinSpawnDistance" value="10.000000" />
+			<Property name="MaxSpawnDistance" value="20.000000" />
+			<Property name="MinLifetime" value="15.000000" />
+			<Property name="MaxLifetime" value="20.000000" />
+			<Property name="FadeoutStart" value="0.750000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="ImpactGift" value="" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.500000" />
+			<Property name="ClusterMinLifetime" value="10.000000" />
+			<Property name="ClusterMaxLifetime" value="10.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="3.000000" />
+			<Property name="PatchMaxRadius" value="8.000000" />
+			<Property name="PatchMinSpawns" value="1" />
+			<Property name="PatchMaxSpawns" value="2" />
+			<Property name="PatchScaling" value="0.500000" />
+			<Property name="MoveSpeed" value="3.000000" />
+			<Property name="WanderMinRadius" value="2.000000" />
+			<Property name="WanderMaxRadius" value="10.000000" />
+			<Property name="WanderMinArcDeg" value="50.000000" />
+			<Property name="WanderMaxArcDeg" value="360.000000" />
+			<Property name="EffectData" value="GcWeatherEffect">
+				<Property name="GcWeatherEffect">
+					<Property name="Id" value="" />
+					<Property name="OSDMessage" value="" />
+					<Property name="Effects" />
+					<Property name="SpawnConditions" value="DuringStorm" />
+					<Property name="MaxHazardsOfThisTypeActive" value="5" />
+					<Property name="ForcedOnByHazard" value="" />
+					<Property name="BlockedByCluster" value="" />
+					<Property name="ExclusivePrimaryHazard" value="false" />
+					<Property name="WeatherEffectBehaviour" value="Static" />
+					<Property name="WeatherEffectSpawnType" value="Single" />
+					<Property name="RandomRotationAroundUp" value="true" />
+					<Property name="MinSpawnScale" value="1.000000" />
+					<Property name="MaxSpawnScale" value="1.000000" />
+					<Property name="SpawnAttemptsPerRegion" value="1" />
+					<Property name="SpawnChancePerSecondPerAttempt" value="0.100000" />
+					<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+						<Property name="Hazard" value="None" />
+					</Property>
+					<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+					<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+					<Property name="MinSpawnDistance" value="100.000000" />
+					<Property name="MaxSpawnDistance" value="1000.000000" />
+					<Property name="MinLifetime" value="10.000000" />
+					<Property name="MaxLifetime" value="10.000000" />
+					<Property name="FadeoutStart" value="1.000000" />
+					<Property name="FadeoutVisuals" value="true" />
+					<Property name="FadeoutAudio" value="true" />
+					<Property name="Audio" value="GcAudioWwiseEvents">
+						<Property name="AkEvent" value="INVALID_EVENT" />
+					</Property>
+					<Property name="ImpactGift" value="" />
+					<Property name="ImpactGiftChance" value="0.000000" />
+					<Property name="ClusterSpawnChance" value="0.500000" />
+					<Property name="ClusterMinLifetime" value="10.000000" />
+					<Property name="ClusterMaxLifetime" value="10.000000" />
+					<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+					<Property name="PatchMinRadius" value="10.000000" />
+					<Property name="PatchMaxRadius" value="10.000000" />
+					<Property name="PatchMinSpawns" value="1" />
+					<Property name="PatchMaxSpawns" value="10" />
+					<Property name="PatchScaling" value="0.000000" />
+					<Property name="MoveSpeed" value="10.000000" />
+					<Property name="WanderMinRadius" value="10.000000" />
+					<Property name="WanderMaxRadius" value="30.000000" />
+					<Property name="WanderMinArcDeg" value="0.000000" />
+					<Property name="WanderMaxArcDeg" value="90.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="GRAVANOMALY">
+			<Property name="Id" value="GRAVANOMALY" />
+			<Property name="OSDMessage" value="NOTIFY_HAZ_LOCAL_GRAV" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/GRAVITATIONALANOMALYHAZARD.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="NotInStorm" />
+			<Property name="MaxHazardsOfThisTypeActive" value="1" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="true" />
+			<Property name="WeatherEffectBehaviour" value="Wander" />
+			<Property name="WeatherEffectSpawnType" value="ClusterPatch" />
+			<Property name="RandomRotationAroundUp" value="false" />
+			<Property name="MinSpawnScale" value="0.900000" />
+			<Property name="MaxSpawnScale" value="1.200000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="1.000000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.330000" />
+			<Property name="SpawnChancePerSecondExtreme" value="0.005000" />
+			<Property name="MinSpawnDistance" value="8.000000" />
+			<Property name="MaxSpawnDistance" value="20.000000" />
+			<Property name="MinLifetime" value="20.000000" />
+			<Property name="MaxLifetime" value="25.000000" />
+			<Property name="FadeoutStart" value="0.800000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="ImpactGift" value="" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.000500" />
+			<Property name="ClusterMinLifetime" value="90.000000" />
+			<Property name="ClusterMaxLifetime" value="120.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="20.000000" />
+			<Property name="PatchMaxRadius" value="40.000000" />
+			<Property name="PatchMinSpawns" value="6" />
+			<Property name="PatchMaxSpawns" value="12" />
+			<Property name="PatchScaling" value="0.500000" />
+			<Property name="MoveSpeed" value="1.500000" />
+			<Property name="WanderMinRadius" value="10.000000" />
+			<Property name="WanderMaxRadius" value="20.000000" />
+			<Property name="WanderMinArcDeg" value="50.000000" />
+			<Property name="WanderMaxArcDeg" value="360.000000" />
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="ELECANOMALY">
+			<Property name="Id" value="ELECANOMALY" />
+			<Property name="OSDMessage" value="UI_LIGHTNING_WARNING_OSD" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/ELECTRICALANOMALYHAZARD.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="NotInStorm" />
+			<Property name="MaxHazardsOfThisTypeActive" value="1" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="true" />
+			<Property name="WeatherEffectBehaviour" value="Wander" />
+			<Property name="WeatherEffectSpawnType" value="ClusterPatch" />
+			<Property name="RandomRotationAroundUp" value="false" />
+			<Property name="MinSpawnScale" value="0.900000" />
+			<Property name="MaxSpawnScale" value="1.200000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="1.000000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+			<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+			<Property name="MinSpawnDistance" value="30.000000" />
+			<Property name="MaxSpawnDistance" value="60.000000" />
+			<Property name="MinLifetime" value="15.000000" />
+			<Property name="MaxLifetime" value="20.000000" />
+			<Property name="FadeoutStart" value="0.950000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="ImpactGift" value="" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.000100" />
+			<Property name="ClusterMinLifetime" value="120.000000" />
+			<Property name="ClusterMaxLifetime" value="240.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="3.000000" />
+			<Property name="PatchMaxRadius" value="8.000000" />
+			<Property name="PatchMinSpawns" value="3" />
+			<Property name="PatchMaxSpawns" value="6" />
+			<Property name="PatchScaling" value="0.500000" />
+			<Property name="MoveSpeed" value="2.000000" />
+			<Property name="WanderMinRadius" value="10.000000" />
+			<Property name="WanderMaxRadius" value="20.000000" />
+			<Property name="WanderMinArcDeg" value="50.000000" />
+			<Property name="WanderMaxArcDeg" value="360.000000" />
+			<Property name="EffectData" value="GcWeatherEffect">
+				<Property name="GcWeatherEffect">
+					<Property name="Id" value="" />
+					<Property name="OSDMessage" value="" />
+					<Property name="Effects" />
+					<Property name="SpawnConditions" value="DuringStorm" />
+					<Property name="MaxHazardsOfThisTypeActive" value="5" />
+					<Property name="ForcedOnByHazard" value="" />
+					<Property name="BlockedByCluster" value="" />
+					<Property name="ExclusivePrimaryHazard" value="false" />
+					<Property name="WeatherEffectBehaviour" value="Static" />
+					<Property name="WeatherEffectSpawnType" value="Single" />
+					<Property name="RandomRotationAroundUp" value="true" />
+					<Property name="MinSpawnScale" value="1.000000" />
+					<Property name="MaxSpawnScale" value="1.000000" />
+					<Property name="SpawnAttemptsPerRegion" value="1" />
+					<Property name="SpawnChancePerSecondPerAttempt" value="0.100000" />
+					<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+						<Property name="Hazard" value="None" />
+					</Property>
+					<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+					<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+					<Property name="MinSpawnDistance" value="100.000000" />
+					<Property name="MaxSpawnDistance" value="1000.000000" />
+					<Property name="MinLifetime" value="10.000000" />
+					<Property name="MaxLifetime" value="10.000000" />
+					<Property name="FadeoutStart" value="1.000000" />
+					<Property name="FadeoutVisuals" value="true" />
+					<Property name="FadeoutAudio" value="true" />
+					<Property name="Audio" value="GcAudioWwiseEvents">
+						<Property name="AkEvent" value="INVALID_EVENT" />
+					</Property>
+					<Property name="ImpactGift" value="" />
+					<Property name="ImpactGiftChance" value="0.000000" />
+					<Property name="ClusterSpawnChance" value="0.500000" />
+					<Property name="ClusterMinLifetime" value="10.000000" />
+					<Property name="ClusterMaxLifetime" value="10.000000" />
+					<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+					<Property name="PatchMinRadius" value="10.000000" />
+					<Property name="PatchMaxRadius" value="10.000000" />
+					<Property name="PatchMinSpawns" value="1" />
+					<Property name="PatchMaxSpawns" value="10" />
+					<Property name="PatchScaling" value="0.000000" />
+					<Property name="MoveSpeed" value="10.000000" />
+					<Property name="WanderMinRadius" value="10.000000" />
+					<Property name="WanderMaxRadius" value="30.000000" />
+					<Property name="WanderMinArcDeg" value="0.000000" />
+					<Property name="WanderMaxArcDeg" value="90.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="RADIOANOMALY">
+			<Property name="Id" value="RADIOANOMALY" />
+			<Property name="OSDMessage" value="" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/RADIOACTIVEANOMALYHAZARD.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="NotInStorm" />
+			<Property name="MaxHazardsOfThisTypeActive" value="1" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="false" />
+			<Property name="WeatherEffectBehaviour" value="Wander" />
+			<Property name="WeatherEffectSpawnType" value="Patch" />
+			<Property name="RandomRotationAroundUp" value="false" />
+			<Property name="MinSpawnScale" value="0.900000" />
+			<Property name="MaxSpawnScale" value="1.200000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="0.005000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.500000" />
+			<Property name="SpawnChancePerSecondExtreme" value="0.050000" />
+			<Property name="MinSpawnDistance" value="10.000000" />
+			<Property name="MaxSpawnDistance" value="100.000000" />
+			<Property name="MinLifetime" value="20.000000" />
+			<Property name="MaxLifetime" value="20.000000" />
+			<Property name="FadeoutStart" value="0.800000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="ImpactGift" value="" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.500000" />
+			<Property name="ClusterMinLifetime" value="10.000000" />
+			<Property name="ClusterMaxLifetime" value="10.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="3.000000" />
+			<Property name="PatchMaxRadius" value="8.000000" />
+			<Property name="PatchMinSpawns" value="1" />
+			<Property name="PatchMaxSpawns" value="3" />
+			<Property name="PatchScaling" value="0.500000" />
+			<Property name="MoveSpeed" value="4.000000" />
+			<Property name="WanderMinRadius" value="10.000000" />
+			<Property name="WanderMaxRadius" value="20.000000" />
+			<Property name="WanderMinArcDeg" value="50.000000" />
+			<Property name="WanderMaxArcDeg" value="360.000000" />
+			<Property name="EffectData" value="GcWeatherEffect">
+				<Property name="GcWeatherEffect">
+					<Property name="Id" value="" />
+					<Property name="OSDMessage" value="" />
+					<Property name="Effects" />
+					<Property name="SpawnConditions" value="DuringStorm" />
+					<Property name="MaxHazardsOfThisTypeActive" value="5" />
+					<Property name="ForcedOnByHazard" value="" />
+					<Property name="BlockedByCluster" value="" />
+					<Property name="ExclusivePrimaryHazard" value="false" />
+					<Property name="WeatherEffectBehaviour" value="Static" />
+					<Property name="WeatherEffectSpawnType" value="Single" />
+					<Property name="RandomRotationAroundUp" value="true" />
+					<Property name="MinSpawnScale" value="1.000000" />
+					<Property name="MaxSpawnScale" value="1.000000" />
+					<Property name="SpawnAttemptsPerRegion" value="1" />
+					<Property name="SpawnChancePerSecondPerAttempt" value="0.100000" />
+					<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+						<Property name="Hazard" value="None" />
+					</Property>
+					<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+					<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+					<Property name="MinSpawnDistance" value="100.000000" />
+					<Property name="MaxSpawnDistance" value="1000.000000" />
+					<Property name="MinLifetime" value="10.000000" />
+					<Property name="MaxLifetime" value="10.000000" />
+					<Property name="FadeoutStart" value="1.000000" />
+					<Property name="FadeoutVisuals" value="true" />
+					<Property name="FadeoutAudio" value="true" />
+					<Property name="Audio" value="GcAudioWwiseEvents">
+						<Property name="AkEvent" value="INVALID_EVENT" />
+					</Property>
+					<Property name="ImpactGift" value="" />
+					<Property name="ImpactGiftChance" value="0.000000" />
+					<Property name="ClusterSpawnChance" value="0.500000" />
+					<Property name="ClusterMinLifetime" value="10.000000" />
+					<Property name="ClusterMaxLifetime" value="10.000000" />
+					<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+					<Property name="PatchMinRadius" value="10.000000" />
+					<Property name="PatchMaxRadius" value="10.000000" />
+					<Property name="PatchMinSpawns" value="1" />
+					<Property name="PatchMaxSpawns" value="10" />
+					<Property name="PatchScaling" value="0.000000" />
+					<Property name="MoveSpeed" value="10.000000" />
+					<Property name="WanderMinRadius" value="10.000000" />
+					<Property name="WanderMaxRadius" value="30.000000" />
+					<Property name="WanderMinArcDeg" value="0.000000" />
+					<Property name="WanderMaxArcDeg" value="90.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="TOXICCLOUD">
+			<Property name="Id" value="TOXICCLOUD" />
+			<Property name="OSDMessage" value="" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/TOXICCLOUDHAZARD.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="NotInStorm" />
+			<Property name="MaxHazardsOfThisTypeActive" value="1" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="false" />
+			<Property name="WeatherEffectBehaviour" value="Wander" />
+			<Property name="WeatherEffectSpawnType" value="Patch" />
+			<Property name="RandomRotationAroundUp" value="false" />
+			<Property name="MinSpawnScale" value="0.900000" />
+			<Property name="MaxSpawnScale" value="1.200000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="0.005000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.500000" />
+			<Property name="SpawnChancePerSecondExtreme" value="0.050000" />
+			<Property name="MinSpawnDistance" value="10.000000" />
+			<Property name="MaxSpawnDistance" value="50.000000" />
+			<Property name="MinLifetime" value="20.000000" />
+			<Property name="MaxLifetime" value="20.000000" />
+			<Property name="FadeoutStart" value="0.800000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="ImpactGift" value="" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.500000" />
+			<Property name="ClusterMinLifetime" value="10.000000" />
+			<Property name="ClusterMaxLifetime" value="10.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="3.000000" />
+			<Property name="PatchMaxRadius" value="8.000000" />
+			<Property name="PatchMinSpawns" value="1" />
+			<Property name="PatchMaxSpawns" value="3" />
+			<Property name="PatchScaling" value="0.500000" />
+			<Property name="MoveSpeed" value="2.000000" />
+			<Property name="WanderMinRadius" value="20.000000" />
+			<Property name="WanderMaxRadius" value="30.000000" />
+			<Property name="WanderMinArcDeg" value="50.000000" />
+			<Property name="WanderMaxArcDeg" value="360.000000" />
+			<Property name="EffectData" value="GcWeatherEffect">
+				<Property name="GcWeatherEffect">
+					<Property name="Id" value="" />
+					<Property name="OSDMessage" value="" />
+					<Property name="Effects" />
+					<Property name="SpawnConditions" value="DuringStorm" />
+					<Property name="MaxHazardsOfThisTypeActive" value="5" />
+					<Property name="ForcedOnByHazard" value="" />
+					<Property name="BlockedByCluster" value="" />
+					<Property name="ExclusivePrimaryHazard" value="false" />
+					<Property name="WeatherEffectBehaviour" value="Static" />
+					<Property name="WeatherEffectSpawnType" value="Single" />
+					<Property name="RandomRotationAroundUp" value="true" />
+					<Property name="MinSpawnScale" value="1.000000" />
+					<Property name="MaxSpawnScale" value="1.000000" />
+					<Property name="SpawnAttemptsPerRegion" value="1" />
+					<Property name="SpawnChancePerSecondPerAttempt" value="0.100000" />
+					<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+						<Property name="Hazard" value="None" />
+					</Property>
+					<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+					<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+					<Property name="MinSpawnDistance" value="100.000000" />
+					<Property name="MaxSpawnDistance" value="1000.000000" />
+					<Property name="MinLifetime" value="10.000000" />
+					<Property name="MaxLifetime" value="10.000000" />
+					<Property name="FadeoutStart" value="1.000000" />
+					<Property name="FadeoutVisuals" value="true" />
+					<Property name="FadeoutAudio" value="true" />
+					<Property name="Audio" value="GcAudioWwiseEvents">
+						<Property name="AkEvent" value="INVALID_EVENT" />
+					</Property>
+					<Property name="ImpactGift" value="" />
+					<Property name="ImpactGiftChance" value="0.000000" />
+					<Property name="ClusterSpawnChance" value="0.500000" />
+					<Property name="ClusterMinLifetime" value="10.000000" />
+					<Property name="ClusterMaxLifetime" value="10.000000" />
+					<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+					<Property name="PatchMinRadius" value="10.000000" />
+					<Property name="PatchMaxRadius" value="10.000000" />
+					<Property name="PatchMinSpawns" value="1" />
+					<Property name="PatchMaxSpawns" value="10" />
+					<Property name="PatchScaling" value="0.000000" />
+					<Property name="MoveSpeed" value="10.000000" />
+					<Property name="WanderMinRadius" value="10.000000" />
+					<Property name="WanderMaxRadius" value="30.000000" />
+					<Property name="WanderMinArcDeg" value="0.000000" />
+					<Property name="WanderMaxArcDeg" value="90.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="GEOTHERMANOMALY">
+			<Property name="Id" value="GEOTHERMANOMALY" />
+			<Property name="OSDMessage" value="NOTIFY_HAZ_LOCAL_GEYSER" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/GEOTHERMALHAZARD.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="NotInStorm" />
+			<Property name="MaxHazardsOfThisTypeActive" value="1" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="false" />
+			<Property name="WeatherEffectBehaviour" value="Static" />
+			<Property name="WeatherEffectSpawnType" value="ClusterPatch" />
+			<Property name="RandomRotationAroundUp" value="true" />
+			<Property name="MinSpawnScale" value="0.800000" />
+			<Property name="MaxSpawnScale" value="1.000000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="1.000000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.500000" />
+			<Property name="SpawnChancePerSecondExtreme" value="0.001000" />
+			<Property name="MinSpawnDistance" value="10.000000" />
+			<Property name="MaxSpawnDistance" value="20.000000" />
+			<Property name="MinLifetime" value="15.000000" />
+			<Property name="MaxLifetime" value="15.000000" />
+			<Property name="FadeoutStart" value="0.950000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="ImpactGift" value="" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.000100" />
+			<Property name="ClusterMinLifetime" value="60.000000" />
+			<Property name="ClusterMaxLifetime" value="120.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="8.000000" />
+			<Property name="PatchMaxRadius" value="15.000000" />
+			<Property name="PatchMinSpawns" value="3" />
+			<Property name="PatchMaxSpawns" value="8" />
+			<Property name="PatchScaling" value="0.500000" />
+			<Property name="MoveSpeed" value="5.000000" />
+			<Property name="WanderMinRadius" value="10.000000" />
+			<Property name="WanderMaxRadius" value="20.000000" />
+			<Property name="WanderMinArcDeg" value="50.000000" />
+			<Property name="WanderMaxArcDeg" value="360.000000" />
+			<Property name="EffectData" value="GcWeatherEffect">
+				<Property name="GcWeatherEffect">
+					<Property name="Id" value="" />
+					<Property name="OSDMessage" value="" />
+					<Property name="Effects" />
+					<Property name="SpawnConditions" value="DuringStorm" />
+					<Property name="MaxHazardsOfThisTypeActive" value="5" />
+					<Property name="ForcedOnByHazard" value="" />
+					<Property name="BlockedByCluster" value="" />
+					<Property name="ExclusivePrimaryHazard" value="false" />
+					<Property name="WeatherEffectBehaviour" value="Static" />
+					<Property name="WeatherEffectSpawnType" value="Single" />
+					<Property name="RandomRotationAroundUp" value="true" />
+					<Property name="MinSpawnScale" value="1.000000" />
+					<Property name="MaxSpawnScale" value="1.000000" />
+					<Property name="SpawnAttemptsPerRegion" value="1" />
+					<Property name="SpawnChancePerSecondPerAttempt" value="0.100000" />
+					<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+						<Property name="Hazard" value="None" />
+					</Property>
+					<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+					<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+					<Property name="MinSpawnDistance" value="100.000000" />
+					<Property name="MaxSpawnDistance" value="1000.000000" />
+					<Property name="MinLifetime" value="10.000000" />
+					<Property name="MaxLifetime" value="10.000000" />
+					<Property name="FadeoutStart" value="1.000000" />
+					<Property name="FadeoutVisuals" value="true" />
+					<Property name="FadeoutAudio" value="true" />
+					<Property name="Audio" value="GcAudioWwiseEvents">
+						<Property name="AkEvent" value="INVALID_EVENT" />
+					</Property>
+					<Property name="ImpactGift" value="" />
+					<Property name="ImpactGiftChance" value="0.000000" />
+					<Property name="ClusterSpawnChance" value="0.500000" />
+					<Property name="ClusterMinLifetime" value="10.000000" />
+					<Property name="ClusterMaxLifetime" value="10.000000" />
+					<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+					<Property name="PatchMinRadius" value="10.000000" />
+					<Property name="PatchMaxRadius" value="10.000000" />
+					<Property name="PatchMinSpawns" value="1" />
+					<Property name="PatchMaxSpawns" value="10" />
+					<Property name="PatchScaling" value="0.000000" />
+					<Property name="MoveSpeed" value="10.000000" />
+					<Property name="WanderMinRadius" value="10.000000" />
+					<Property name="WanderMaxRadius" value="30.000000" />
+					<Property name="WanderMinArcDeg" value="0.000000" />
+					<Property name="WanderMaxArcDeg" value="90.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Effects" value="GcWeatherEffect" _id="LAVAVENT">
+			<Property name="Id" value="LAVAVENT" />
+			<Property name="OSDMessage" value="NOTIFY_HAZ_LOCAL_LAVA" />
+			<Property name="Effects">
+				<Property name="Effects" value="GcWeightedFilename" _index="0">
+					<Property name="Filename" value="MODELS/EFFECTS/WEATHER/LAVAVENTHAZARD.SCENE.MBIN" />
+					<Property name="Weight" value="1.000000" />
+				</Property>
+			</Property>
+			<Property name="SpawnConditions" value="NotInStorm" />
+			<Property name="MaxHazardsOfThisTypeActive" value="1" />
+			<Property name="ForcedOnByHazard" value="" />
+			<Property name="BlockedByCluster" value="" />
+			<Property name="ExclusivePrimaryHazard" value="false" />
+			<Property name="WeatherEffectBehaviour" value="Static" />
+			<Property name="WeatherEffectSpawnType" value="ClusterPatch" />
+			<Property name="RandomRotationAroundUp" value="true" />
+			<Property name="MinSpawnScale" value="0.800000" />
+			<Property name="MaxSpawnScale" value="1.000000" />
+			<Property name="SpawnAttemptsPerRegion" value="1" />
+			<Property name="SpawnChancePerSecondPerAttempt" value="1.000000" />
+			<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+				<Property name="Hazard" value="None" />
+			</Property>
+			<Property name="ChanceOfPlanetBeingExtreme" value="0.500000" />
+			<Property name="SpawnChancePerSecondExtreme" value="0.001000" />
+			<Property name="MinSpawnDistance" value="10.000000" />
+			<Property name="MaxSpawnDistance" value="20.000000" />
+			<Property name="MinLifetime" value="15.000000" />
+			<Property name="MaxLifetime" value="15.000000" />
+			<Property name="FadeoutStart" value="0.950000" />
+			<Property name="FadeoutVisuals" value="true" />
+			<Property name="FadeoutAudio" value="true" />
+			<Property name="Audio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="ImpactGift" value="" />
+			<Property name="ImpactGiftChance" value="0.000000" />
+			<Property name="ClusterSpawnChance" value="0.000100" />
+			<Property name="ClusterMinLifetime" value="60.000000" />
+			<Property name="ClusterMaxLifetime" value="120.000000" />
+			<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+			<Property name="PatchMinRadius" value="8.000000" />
+			<Property name="PatchMaxRadius" value="15.000000" />
+			<Property name="PatchMinSpawns" value="5" />
+			<Property name="PatchMaxSpawns" value="10" />
+			<Property name="PatchScaling" value="0.500000" />
+			<Property name="MoveSpeed" value="5.000000" />
+			<Property name="WanderMinRadius" value="10.000000" />
+			<Property name="WanderMaxRadius" value="20.000000" />
+			<Property name="WanderMinArcDeg" value="50.000000" />
+			<Property name="WanderMaxArcDeg" value="360.000000" />
+			<Property name="EffectData" value="GcWeatherEffect">
+				<Property name="GcWeatherEffect">
+					<Property name="Id" value="" />
+					<Property name="OSDMessage" value="" />
+					<Property name="Effects" />
+					<Property name="SpawnConditions" value="DuringStorm" />
+					<Property name="MaxHazardsOfThisTypeActive" value="5" />
+					<Property name="ForcedOnByHazard" value="" />
+					<Property name="BlockedByCluster" value="" />
+					<Property name="ExclusivePrimaryHazard" value="false" />
+					<Property name="WeatherEffectBehaviour" value="Static" />
+					<Property name="WeatherEffectSpawnType" value="Single" />
+					<Property name="RandomRotationAroundUp" value="true" />
+					<Property name="MinSpawnScale" value="1.000000" />
+					<Property name="MaxSpawnScale" value="1.000000" />
+					<Property name="SpawnAttemptsPerRegion" value="1" />
+					<Property name="SpawnChancePerSecondPerAttempt" value="0.100000" />
+					<Property name="MultiplySpawnChanceByHazardLevel" value="GcPlayerHazardType">
+						<Property name="Hazard" value="None" />
+					</Property>
+					<Property name="ChanceOfPlanetBeingExtreme" value="0.200000" />
+					<Property name="SpawnChancePerSecondExtreme" value="-1.000000" />
+					<Property name="MinSpawnDistance" value="100.000000" />
+					<Property name="MaxSpawnDistance" value="1000.000000" />
+					<Property name="MinLifetime" value="10.000000" />
+					<Property name="MaxLifetime" value="10.000000" />
+					<Property name="FadeoutStart" value="1.000000" />
+					<Property name="FadeoutVisuals" value="true" />
+					<Property name="FadeoutAudio" value="true" />
+					<Property name="Audio" value="GcAudioWwiseEvents">
+						<Property name="AkEvent" value="INVALID_EVENT" />
+					</Property>
+					<Property name="ImpactGift" value="" />
+					<Property name="ImpactGiftChance" value="0.000000" />
+					<Property name="ClusterSpawnChance" value="0.500000" />
+					<Property name="ClusterMinLifetime" value="10.000000" />
+					<Property name="ClusterMaxLifetime" value="10.000000" />
+					<Property name="PatchMaxTimeSpawnOffset" value="0.000000" />
+					<Property name="PatchMinRadius" value="10.000000" />
+					<Property name="PatchMaxRadius" value="10.000000" />
+					<Property name="PatchMinSpawns" value="1" />
+					<Property name="PatchMaxSpawns" value="10" />
+					<Property name="PatchScaling" value="0.000000" />
+					<Property name="MoveSpeed" value="10.000000" />
+					<Property name="WanderMinRadius" value="10.000000" />
+					<Property name="WanderMaxRadius" value="30.000000" />
+					<Property name="WanderMinArcDeg" value="0.000000" />
+					<Property name="WanderMaxArcDeg" value="90.000000" />
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+</Data>

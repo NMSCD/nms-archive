@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.71.0.1)-->
+<Data template="cTkLSystemRulesData">
+	<Property name="GlobalRestriction">
+		<Property name="GlobalRestriction" value="TkLSystemGlobalRestriction" _index="0">
+			<Property name="Name" value="nShieldStation" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PROPS/INTERACTIVE/SHIELDSTATION.SCENE.MBIN" />
+			<Property name="Restrictions" />
+		</Property>
+		<Property name="GlobalRestriction" value="TkLSystemGlobalRestriction" _index="1">
+			<Property name="Name" value="nStandingStation" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PROPS/INTERACTIVE/STANDINGSTATION.SCENE.MBIN" />
+			<Property name="Restrictions" />
+		</Property>
+		<Property name="GlobalRestriction" value="TkLSystemGlobalRestriction" _index="2">
+			<Property name="Name" value="nMoneyStation" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PROPS/INTERACTIVE/MONEYSTATION.SCENE.MBIN" />
+			<Property name="Restrictions" />
+		</Property>
+		<Property name="GlobalRestriction" value="TkLSystemGlobalRestriction" _index="3">
+			<Property name="Name" value="nHealthStations" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PROPS/INTERACTIVE/HEALTHSTATION.SCENE.MBIN" />
+			<Property name="Restrictions" />
+		</Property>
+		<Property name="GlobalRestriction" value="TkLSystemGlobalRestriction" _index="4">
+			<Property name="Name" value="HarvesterRoof" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/ROOFMODULE_HARVESTER.SCENE.MBIN" />
+			<Property name="Restrictions">
+				<Property name="Restrictions" value="TkLSystemRestrictionData" _index="0">
+					<Property name="Amount" value="1" />
+					<Property name="Restriction" value="AtLeast" />
+				</Property>
+				<Property name="Restrictions" value="TkLSystemRestrictionData" _index="1">
+					<Property name="Amount" value="1" />
+					<Property name="Restriction" value="NoMoreThan" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GlobalRestriction" value="TkLSystemGlobalRestriction" _index="5">
+			<Property name="Name" value="nLandingPads" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/CAPMODULE_LANDINGPAD.SCENE.MBIN" />
+			<Property name="Restrictions">
+				<Property name="Restrictions" value="TkLSystemRestrictionData" _index="0">
+					<Property name="Amount" value="0" />
+					<Property name="Restriction" value="NoMoreThan" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GlobalRestriction" value="TkLSystemGlobalRestriction" _index="6">
+			<Property name="Name" value="nTerminals" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/TERMINAL/TERMINAL_SHOP.SCENE.MBIN" />
+			<Property name="Restrictions">
+				<Property name="Restrictions" value="TkLSystemRestrictionData" _index="0">
+					<Property name="Amount" value="0" />
+					<Property name="Restriction" value="NoMoreThan" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GlobalRestriction" value="TkLSystemGlobalRestriction" _index="7">
+			<Property name="Name" value="nSavePoints" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/COMMONPARTS/CRYOCHAMBER.SCENE.MBIN" />
+			<Property name="Restrictions">
+				<Property name="Restrictions" value="TkLSystemRestrictionData" _index="0">
+					<Property name="Amount" value="0" />
+					<Property name="Restriction" value="NoMoreThan" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GlobalRestriction" value="TkLSystemGlobalRestriction" _index="8">
+			<Property name="Name" value="nExteriorDoors" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/DOORMODULE_EXTERIOR.SCENE.MBIN" />
+			<Property name="Restrictions">
+				<Property name="Restrictions" value="TkLSystemRestrictionData" _index="0">
+					<Property name="Amount" value="1" />
+					<Property name="Restriction" value="AtLeast" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GlobalRestriction" value="TkLSystemGlobalRestriction" _index="9">
+			<Property name="Name" value="nRooms" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_DOORWAYINTERIOR.SCENE.MBIN" />
+			<Property name="Restrictions">
+				<Property name="Restrictions" value="TkLSystemRestrictionData" _index="0">
+					<Property name="Amount" value="2" />
+					<Property name="Restriction" value="NoMoreThan" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GlobalRestriction" value="TkLSystemGlobalRestriction" _index="10">
+			<Property name="Name" value="nWeaponTechStation" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PROPS/INTERACTIVE/WEAPONTECHSTATION.SCENE.MBIN" />
+			<Property name="Restrictions">
+				<Property name="Restrictions" value="TkLSystemRestrictionData" _index="0">
+					<Property name="Amount" value="1" />
+					<Property name="Restriction" value="NoMoreThan" />
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="GlobalVariation" />
+	<Property name="Rules">
+		<Property name="Rules" value="TkLSystemRule" _index="0">
+			<Property name="Name" value="Floor_Ground" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/GROUNDFLOORMODULE_BASE.SCENE.MBIN" />
+			<Property name="Rules">
+				<Property name="Rules" value="TkLSystemInnerRule" _index="0">
+					<Property name="LocatorType" value="ROOF_" />
+					<Property name="MergeProbabilityOptions" value="Balance" />
+					<Property name="Entries">
+						<Property name="Entries" value="TkLSystemLocatorEntry" _index="0">
+							<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/ROOFMODULE_HARVESTER.SCENE.MBIN" />
+							<Property name="Probability" value="100.000000" />
+							<Property name="Restrictions" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+			<Property name="RuleType" value="BaseRule" />
+		</Property>
+		<Property name="Rules" value="TkLSystemRule" _index="1">
+			<Property name="Name" value="Wall_Doorway" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/WALLMODULE_DOORWAY.SCENE.MBIN" />
+			<Property name="Rules">
+				<Property name="Rules" value="TkLSystemInnerRule" _index="0">
+					<Property name="LocatorType" value="DOOR_" />
+					<Property name="MergeProbabilityOptions" value="Prioritize" />
+					<Property name="Entries">
+						<Property name="Entries" value="TkLSystemLocatorEntry" _index="0">
+							<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/DOORMODULE_DESTRUCTIBLESTRONG.SCENE.MBIN" />
+							<Property name="Probability" value="100.000000" />
+							<Property name="Restrictions" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+			<Property name="RuleType" value="Default" />
+		</Property>
+		<Property name="Rules" value="TkLSystemRule" _index="2">
+			<Property name="Name" value="LandingPad" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/CAPMODULE_LANDINGPAD.SCENE.MBIN" />
+			<Property name="Rules">
+				<Property name="Rules" value="TkLSystemInnerRule" _index="0">
+					<Property name="LocatorType" value="DOOR_" />
+					<Property name="MergeProbabilityOptions" value="Prioritize" />
+					<Property name="Entries">
+						<Property name="Entries" value="TkLSystemLocatorEntry" _index="0">
+							<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/DOORMODULE_DESTRUCTIBLESTRONG.SCENE.MBIN" />
+							<Property name="Probability" value="100.000000" />
+							<Property name="Restrictions" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+			<Property name="RuleType" value="Default" />
+		</Property>
+		<Property name="Rules" value="TkLSystemRule" _index="3">
+			<Property name="Name" value="Roof_Harvester" />
+			<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/MODULES/ROOFMODULE_HARVESTER.SCENE.MBIN" />
+			<Property name="Rules">
+				<Property name="Rules" value="TkLSystemInnerRule" _index="0">
+					<Property name="LocatorType" value="LAYOUT_" />
+					<Property name="MergeProbabilityOptions" value="Balance" />
+					<Property name="Entries">
+						<Property name="Entries" value="TkLSystemLocatorEntry" _index="0">
+							<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_BASE2.SCENE.MBIN" />
+							<Property name="Probability" value="50.000000" />
+							<Property name="Restrictions" />
+						</Property>
+						<Property name="Entries" value="TkLSystemLocatorEntry" _index="1">
+							<Property name="Model" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LAYOUTS/LAYOUT_BASE3.SCENE.MBIN" />
+							<Property name="Probability" value="50.000000" />
+							<Property name="Restrictions" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+			<Property name="RuleType" value="Default" />
+		</Property>
+	</Property>
+	<Property name="Templates">
+		<Property name="Templates" value="TkLSystemRuleTemplate" _index="0">
+			<Property name="Name" value="Base" />
+			<Property name="LSystem" value="MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/PARTS/TRADERPARTS/LSYSTEM/BASETRADER.LSYSTEM.MBIN" />
+		</Property>
+	</Property>
+</Data>
