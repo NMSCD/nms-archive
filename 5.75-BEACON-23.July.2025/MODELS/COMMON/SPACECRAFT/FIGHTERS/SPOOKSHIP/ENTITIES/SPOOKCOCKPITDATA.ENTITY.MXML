@@ -1,0 +1,3375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (5.74.0.3)-->
+<Data template="cTkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="GcDistanceScaleComponentData" _index="0">
+			<Property name="GcDistanceScaleComponentData">
+				<Property name="UseGlobals" value="true" />
+				<Property name="Scale" value="2.000000" />
+				<Property name="MinDistance" value="300.000000" />
+				<Property name="MaxDistance" value="700.000000" />
+				<Property name="MinHeight" value="5000.000000" />
+				<Property name="MaxHeight" value="6000.000000" />
+				<Property name="DisabledWhenOnFreighter" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcNPCInteractiveObjectComponentData" linked="models/planets/biomes/common/buildings/parts/entities/poiship.data.mxml" _index="1">
+			<Property name="GcNPCInteractiveObjectComponentData">
+				<Property name="InteractiveObjectType" value="GcNPCInteractiveObjectType">
+					<Property name="NPCInteractiveObjectType" value="Idle" />
+				</Property>
+				<Property name="MaxCapacity" value="1" />
+				<Property name="DurationMin" value="30.000000" />
+				<Property name="DurationMax" value="60.000000" />
+				<Property name="States">
+					<Property name="States" value="GcNPCInteractiveObjectState" _index="0">
+						<Property name="Name" value="ENTER" />
+						<Property name="FaceSpawnDir" value="false" />
+						<Property name="FaceNodeDir" value="false" />
+						<Property name="FaceInvNodeDir" value="false" />
+						<Property name="LookAtModel" value="true" />
+						<Property name="LookAtNode" value="" />
+						<Property name="FaceLookAt" value="true" />
+						<Property name="MaintainLookAt" value="false" />
+						<Property name="PlayIdles" value="false" />
+						<Property name="CanConverse" value="false" />
+						<Property name="Prop" value="GcNPCPropType">
+							<Property name="NPCProp" value="DontCare" />
+						</Property>
+						<Property name="SeatedPosture" value="GcNPCSeatedPosture">
+							<Property name="NPCSeatedPosture" value="Sofa" />
+						</Property>
+						<Property name="BlendTime" value="0.300000" />
+						<Property name="EarlyOutTime" value="0.000000" />
+						<Property name="Animations" />
+						<Property name="SpineAdjustAmount" value="0.000000" />
+						<Property name="MinAnims" value="1" />
+						<Property name="MaxAnims" value="1" />
+						<Property name="MinTime" value="0.000000" />
+						<Property name="MaxTime" value="0.000000" />
+						<Property name="Transitions">
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="0">
+								<Property name="NewState" value="TAP" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcNPCInteractiveObjectState" _index="1">
+						<Property name="Name" value="IDLE" />
+						<Property name="FaceSpawnDir" value="false" />
+						<Property name="FaceNodeDir" value="false" />
+						<Property name="FaceInvNodeDir" value="true" />
+						<Property name="LookAtModel" value="false" />
+						<Property name="LookAtNode" value="" />
+						<Property name="FaceLookAt" value="false" />
+						<Property name="MaintainLookAt" value="false" />
+						<Property name="PlayIdles" value="false" />
+						<Property name="CanConverse" value="false" />
+						<Property name="Prop" value="GcNPCPropType">
+							<Property name="NPCProp" value="IPad" />
+						</Property>
+						<Property name="SeatedPosture" value="GcNPCSeatedPosture">
+							<Property name="NPCSeatedPosture" value="Sofa" />
+						</Property>
+						<Property name="BlendTime" value="0.300000" />
+						<Property name="EarlyOutTime" value="0.000000" />
+						<Property name="Animations" />
+						<Property name="SpineAdjustAmount" value="0.000000" />
+						<Property name="MinAnims" value="1" />
+						<Property name="MaxAnims" value="1" />
+						<Property name="MinTime" value="2.000000" />
+						<Property name="MaxTime" value="4.000000" />
+						<Property name="Transitions">
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="0">
+								<Property name="NewState" value="TAP" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="1">
+								<Property name="NewState" value="LOOK" />
+								<Property name="Probability" value="0.500000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcNPCInteractiveObjectState" _index="2">
+						<Property name="Name" value="TAP" />
+						<Property name="FaceSpawnDir" value="false" />
+						<Property name="FaceNodeDir" value="false" />
+						<Property name="FaceInvNodeDir" value="false" />
+						<Property name="LookAtModel" value="false" />
+						<Property name="LookAtNode" value="" />
+						<Property name="FaceLookAt" value="false" />
+						<Property name="MaintainLookAt" value="false" />
+						<Property name="PlayIdles" value="false" />
+						<Property name="CanConverse" value="false" />
+						<Property name="Prop" value="GcNPCPropType">
+							<Property name="NPCProp" value="IPad" />
+						</Property>
+						<Property name="SeatedPosture" value="GcNPCSeatedPosture">
+							<Property name="NPCSeatedPosture" value="Sofa" />
+						</Property>
+						<Property name="BlendTime" value="0.600000" />
+						<Property name="EarlyOutTime" value="1.000000" />
+						<Property name="Animations">
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="0">
+								<Property name="Name" value="1H_INT_IPD_01" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="1">
+								<Property name="Name" value="1H_INT_IPD_02" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+						</Property>
+						<Property name="SpineAdjustAmount" value="0.000000" />
+						<Property name="MinAnims" value="2" />
+						<Property name="MaxAnims" value="4" />
+						<Property name="MinTime" value="0.000000" />
+						<Property name="MaxTime" value="0.000000" />
+						<Property name="Transitions">
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="0">
+								<Property name="NewState" value="TAP" />
+								<Property name="Probability" value="0.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="1">
+								<Property name="NewState" value="LOOK" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="2">
+								<Property name="NewState" value="IDLE" />
+								<Property name="Probability" value="0.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcNPCInteractiveObjectState" _index="3">
+						<Property name="Name" value="LOOK" />
+						<Property name="FaceSpawnDir" value="false" />
+						<Property name="FaceNodeDir" value="false" />
+						<Property name="FaceInvNodeDir" value="false" />
+						<Property name="LookAtModel" value="true" />
+						<Property name="LookAtNode" value="" />
+						<Property name="FaceLookAt" value="false" />
+						<Property name="MaintainLookAt" value="false" />
+						<Property name="PlayIdles" value="false" />
+						<Property name="CanConverse" value="false" />
+						<Property name="Prop" value="GcNPCPropType">
+							<Property name="NPCProp" value="IPad" />
+						</Property>
+						<Property name="SeatedPosture" value="GcNPCSeatedPosture">
+							<Property name="NPCSeatedPosture" value="Sofa" />
+						</Property>
+						<Property name="BlendTime" value="0.600000" />
+						<Property name="EarlyOutTime" value="1.000000" />
+						<Property name="Animations">
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="0">
+								<Property name="Name" value="1H_INT_IPD_03" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="1">
+								<Property name="Name" value="1H_INT_IPD_04" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="2">
+								<Property name="Name" value="1H_INT_IPD_05" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+						</Property>
+						<Property name="SpineAdjustAmount" value="0.000000" />
+						<Property name="MinAnims" value="1" />
+						<Property name="MaxAnims" value="1" />
+						<Property name="MinTime" value="0.000000" />
+						<Property name="MaxTime" value="0.000000" />
+						<Property name="Transitions">
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="0">
+								<Property name="NewState" value="TAP" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="1">
+								<Property name="NewState" value="IDLE" />
+								<Property name="Probability" value="0.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Components" value="GcTriggerActionComponentData" _index="2">
+			<Property name="GcTriggerActionComponentData">
+				<Property name="HideModel" value="false" />
+				<Property name="StartInactive" value="false" />
+				<Property name="States">
+					<Property name="States" value="GcActionTriggerState" _index="0">
+						<Property name="StateID" value="BOOT" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcBeenShotEvent">
+									<Property name="GcBeenShotEvent">
+										<Property name="ShotBy" value="Anything" />
+										<Property name="DamageThreshold" value="1" />
+										<Property name="HealthThreshold" value="75.000000" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcParticleAction" _index="0">
+										<Property name="GcParticleAction">
+											<Property name="Effect" value="AISHIPDAMAGED" />
+											<Property name="Joint" value="ROOT" />
+											<Property name="Exact" value="true" />
+											<Property name="FindRange" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="Action" value="GcGoToStateAction" _index="1">
+										<Property name="GcGoToStateAction">
+											<Property name="State" value="DAMAGED" />
+											<Property name="Broadcast" value="false" />
+											<Property name="BroadcastLevel" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState" _index="1">
+						<Property name="StateID" value="DAMAGED" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcBeenShotEvent">
+									<Property name="GcBeenShotEvent">
+										<Property name="ShotBy" value="Anything" />
+										<Property name="DamageThreshold" value="1" />
+										<Property name="HealthThreshold" value="40.000000" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcParticleAction" _index="0">
+										<Property name="GcParticleAction">
+											<Property name="Effect" value="AISHIPSMOKE" />
+											<Property name="Joint" value="ROOT" />
+											<Property name="Exact" value="true" />
+											<Property name="FindRange" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState" _index="2">
+						<Property name="StateID" value="TAKEOFF" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="1.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcNodeActivationAction" _index="0">
+										<Property name="GcNodeActivationAction">
+											<Property name="NodeActiveState" value="Deactivate" />
+											<Property name="Name" value="LightsOFF" />
+											<Property name="SceneToAdd" value="" />
+											<Property name="IncludePhysics" value="false" />
+											<Property name="IncludeChildPhysics" value="false" />
+											<Property name="NotifyNPC" value="false" />
+											<Property name="UseMasterModel" value="true" />
+											<Property name="UseLocalNode" value="false" />
+											<Property name="RestartEmitters" value="false" />
+											<Property name="AffectModels" value="false" />
+										</Property>
+									</Property>
+									<Property name="Action" value="GcNodeActivationAction" _index="1">
+										<Property name="GcNodeActivationAction">
+											<Property name="NodeActiveState" value="Deactivate" />
+											<Property name="Name" value="RightPad" />
+											<Property name="SceneToAdd" value="" />
+											<Property name="IncludePhysics" value="false" />
+											<Property name="IncludeChildPhysics" value="false" />
+											<Property name="NotifyNPC" value="false" />
+											<Property name="UseMasterModel" value="true" />
+											<Property name="UseLocalNode" value="false" />
+											<Property name="RestartEmitters" value="false" />
+											<Property name="AffectModels" value="false" />
+										</Property>
+									</Property>
+									<Property name="Action" value="GcNodeActivationAction" _index="2">
+										<Property name="GcNodeActivationAction">
+											<Property name="NodeActiveState" value="Deactivate" />
+											<Property name="Name" value="LeftPad" />
+											<Property name="SceneToAdd" value="" />
+											<Property name="IncludePhysics" value="false" />
+											<Property name="IncludeChildPhysics" value="false" />
+											<Property name="NotifyNPC" value="false" />
+											<Property name="UseMasterModel" value="true" />
+											<Property name="UseLocalNode" value="false" />
+											<Property name="RestartEmitters" value="false" />
+											<Property name="AffectModels" value="false" />
+										</Property>
+									</Property>
+									<Property name="Action" value="GcNodeActivationAction" _index="3">
+										<Property name="GcNodeActivationAction">
+											<Property name="NodeActiveState" value="Deactivate" />
+											<Property name="Name" value="FrontPad" />
+											<Property name="SceneToAdd" value="" />
+											<Property name="IncludePhysics" value="false" />
+											<Property name="IncludeChildPhysics" value="false" />
+											<Property name="NotifyNPC" value="false" />
+											<Property name="UseMasterModel" value="true" />
+											<Property name="UseLocalNode" value="false" />
+											<Property name="RestartEmitters" value="false" />
+											<Property name="AffectModels" value="false" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState" _index="3">
+						<Property name="StateID" value="LANDING" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="0.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcNodeActivationAction" _index="0">
+										<Property name="GcNodeActivationAction">
+											<Property name="NodeActiveState" value="Activate" />
+											<Property name="Name" value="LightsOFF" />
+											<Property name="SceneToAdd" value="" />
+											<Property name="IncludePhysics" value="false" />
+											<Property name="IncludeChildPhysics" value="false" />
+											<Property name="NotifyNPC" value="false" />
+											<Property name="UseMasterModel" value="true" />
+											<Property name="UseLocalNode" value="false" />
+											<Property name="RestartEmitters" value="false" />
+											<Property name="AffectModels" value="false" />
+										</Property>
+									</Property>
+									<Property name="Action" value="GcNodeActivationAction" _index="1">
+										<Property name="GcNodeActivationAction">
+											<Property name="NodeActiveState" value="Activate" />
+											<Property name="Name" value="LeftPad" />
+											<Property name="SceneToAdd" value="" />
+											<Property name="IncludePhysics" value="false" />
+											<Property name="IncludeChildPhysics" value="false" />
+											<Property name="NotifyNPC" value="false" />
+											<Property name="UseMasterModel" value="true" />
+											<Property name="UseLocalNode" value="false" />
+											<Property name="RestartEmitters" value="false" />
+											<Property name="AffectModels" value="false" />
+										</Property>
+									</Property>
+									<Property name="Action" value="GcNodeActivationAction" _index="2">
+										<Property name="GcNodeActivationAction">
+											<Property name="NodeActiveState" value="Activate" />
+											<Property name="Name" value="RightPad" />
+											<Property name="SceneToAdd" value="" />
+											<Property name="IncludePhysics" value="false" />
+											<Property name="IncludeChildPhysics" value="false" />
+											<Property name="NotifyNPC" value="false" />
+											<Property name="UseMasterModel" value="true" />
+											<Property name="UseLocalNode" value="false" />
+											<Property name="RestartEmitters" value="false" />
+											<Property name="AffectModels" value="false" />
+										</Property>
+									</Property>
+									<Property name="Action" value="GcNodeActivationAction" _index="3">
+										<Property name="GcNodeActivationAction">
+											<Property name="NodeActiveState" value="Activate" />
+											<Property name="Name" value="FrontPad" />
+											<Property name="SceneToAdd" value="" />
+											<Property name="IncludePhysics" value="false" />
+											<Property name="IncludeChildPhysics" value="false" />
+											<Property name="NotifyNPC" value="false" />
+											<Property name="UseMasterModel" value="true" />
+											<Property name="UseLocalNode" value="false" />
+											<Property name="RestartEmitters" value="false" />
+											<Property name="AffectModels" value="false" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+				<Property name="Persistent" value="false" />
+				<Property name="PersistentState" value="" />
+				<Property name="ResetShotTimeOnStateChange" value="false" />
+				<Property name="LinkStateToBaseGrid" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcInteractionComponentData" _index="3">
+			<Property name="GcInteractionComponentData">
+				<Property name="InteractionAction" value="PressButton" />
+				<Property name="InteractionType" value="GcInteractionType">
+					<Property name="InteractionType" value="Ship" />
+				</Property>
+				<Property name="UseIntermediateUI" value="false" />
+				<Property name="Renderer" value="TkModelRendererData">
+					<Property name="Camera" value="TkModelRendererCameraData">
+						<Property name="Distance" value="18.000010" />
+						<Property name="Offset">
+							<Property name="X" value="-5.829999" />
+							<Property name="Y" value="1.650002" />
+							<Property name="Z" value="0.000000" />
+						</Property>
+						<Property name="Roll" value="0.000000" />
+						<Property name="Pitch" value="13.199990" />
+						<Property name="Rotate" value="-54.999980" />
+						<Property name="LightPitch" value="45.000000" />
+						<Property name="LightRotate" value="45.000000" />
+						<Property name="Wander" value="TkCameraWanderData">
+							<Property name="CamWander" value="false" />
+							<Property name="CamWanderPhase" value="0.003000" />
+							<Property name="CamWanderAmplitude" value="0.500000" />
+						</Property>
+					</Property>
+					<Property name="Fov" value="30.000000" />
+					<Property name="AspectRatio" value="1.777700" />
+					<Property name="LightIntensityMultiplier" value="1.000000" />
+					<Property name="ThumbnailMode" value="None" />
+					<Property name="FocusType" value="ResourceBounds" />
+					<Property name="FocusLocator" value="" />
+					<Property name="FocusOffset">
+						<Property name="X" value="0.000000" />
+						<Property name="Y" value="0.000000" />
+						<Property name="Z" value="0.000000" />
+					</Property>
+					<Property name="FocusInterpTime" value="0.000000" />
+					<Property name="BlendInTime" value="0.800000" />
+					<Property name="BlendInOffset" value="0.000000" />
+					<Property name="Anim" value="" />
+					<Property name="HeightOffset" value="0.005000" />
+					<Property name="UsePlayerCameraInHmd" value="true" />
+					<Property name="AlignUIToCameraInHmd" value="false" />
+					<Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="false" />
+					<Property name="LookForFocusInMasterModel" value="false" />
+					<Property name="FlipRotationIfNecessary" value="false" />
+				</Property>
+				<Property name="RendererAlt" value="TkModelRendererData">
+					<Property name="Camera" value="TkModelRendererCameraData">
+						<Property name="Distance" value="1.500000" />
+						<Property name="Offset">
+							<Property name="X" value="0.000000" />
+							<Property name="Y" value="0.000000" />
+							<Property name="Z" value="0.000000" />
+						</Property>
+						<Property name="Roll" value="0.000000" />
+						<Property name="Pitch" value="0.000000" />
+						<Property name="Rotate" value="0.000000" />
+						<Property name="LightPitch" value="45.000000" />
+						<Property name="LightRotate" value="45.000000" />
+						<Property name="Wander" value="TkCameraWanderData">
+							<Property name="CamWander" value="false" />
+							<Property name="CamWanderPhase" value="0.003000" />
+							<Property name="CamWanderAmplitude" value="0.500000" />
+						</Property>
+					</Property>
+					<Property name="Fov" value="30.000000" />
+					<Property name="AspectRatio" value="1.777700" />
+					<Property name="LightIntensityMultiplier" value="1.000000" />
+					<Property name="ThumbnailMode" value="None" />
+					<Property name="FocusType" value="ResourceBounds" />
+					<Property name="FocusLocator" value="" />
+					<Property name="FocusOffset">
+						<Property name="X" value="0.000000" />
+						<Property name="Y" value="0.000000" />
+						<Property name="Z" value="0.000000" />
+					</Property>
+					<Property name="FocusInterpTime" value="0.000000" />
+					<Property name="BlendInTime" value="0.800000" />
+					<Property name="BlendInOffset" value="0.000000" />
+					<Property name="Anim" value="" />
+					<Property name="HeightOffset" value="0.005000" />
+					<Property name="UsePlayerCameraInHmd" value="true" />
+					<Property name="AlignUIToCameraInHmd" value="false" />
+					<Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="false" />
+					<Property name="LookForFocusInMasterModel" value="false" />
+					<Property name="FlipRotationIfNecessary" value="false" />
+				</Property>
+				<Property name="Race" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="AttractDistanceSq" value="9.000000" />
+				<Property name="SecondaryMeshAlwaysVisible" value="false" />
+				<Property name="RepeatInteraction" value="false" />
+				<Property name="UseInteractCamera" value="true" />
+				<Property name="BlendToCameraTime" value="3.000000" />
+				<Property name="BlendFromCameraTime" value="1.500000" />
+				<Property name="ActivationCost" value="GcInteractionActivationCost">
+					<Property name="SubstanceId" value="" />
+					<Property name="AltIds" />
+					<Property name="Cost" value="0" />
+					<Property name="Repeat" value="false" />
+					<Property name="RequiredTech" value="" />
+					<Property name="UseCostID" value="" />
+					<Property name="StartMissionOnCantAfford" value="" />
+					<Property name="OnlyChargeDuringSeasons" />
+				</Property>
+				<Property name="TriggerAction" value="INACTIVE" />
+				<Property name="TriggerActionOnPrepare" value="" />
+				<Property name="BroadcastTriggerAction" value="false" />
+				<Property name="InteractAngle" value="360.000000" />
+				<Property name="InteractDistance" value="15.000000" />
+				<Property name="InteractInvertFace" value="false" />
+				<Property name="SecondaryInteractionType" value="GcInteractionType">
+					<Property name="InteractionType" value="None" />
+				</Property>
+				<Property name="SecondaryActivationCost" value="GcInteractionActivationCost">
+					<Property name="SubstanceId" value="" />
+					<Property name="AltIds" />
+					<Property name="Cost" value="0" />
+					<Property name="Repeat" value="false" />
+					<Property name="RequiredTech" value="" />
+					<Property name="UseCostID" value="" />
+					<Property name="StartMissionOnCantAfford" value="" />
+					<Property name="OnlyChargeDuringSeasons" />
+				</Property>
+				<Property name="EventRenderers">
+					<Property name="EventRenderers" value="TkModelRendererData" _index="0">
+						<Property name="Camera" value="TkModelRendererCameraData">
+							<Property name="Distance" value="0.500000" />
+							<Property name="Offset">
+								<Property name="X" value="0.080000" />
+								<Property name="Y" value="-0.290000" />
+								<Property name="Z" value="0.000000" />
+							</Property>
+							<Property name="Roll" value="0.000000" />
+							<Property name="Pitch" value="1.200000" />
+							<Property name="Rotate" value="-161.200000" />
+							<Property name="LightPitch" value="45.000000" />
+							<Property name="LightRotate" value="45.000000" />
+							<Property name="Wander" value="TkCameraWanderData">
+								<Property name="CamWander" value="false" />
+								<Property name="CamWanderPhase" value="0.003000" />
+								<Property name="CamWanderAmplitude" value="0.500000" />
+							</Property>
+						</Property>
+						<Property name="Fov" value="30.000000" />
+						<Property name="AspectRatio" value="1.777700" />
+						<Property name="LightIntensityMultiplier" value="1.000000" />
+						<Property name="ThumbnailMode" value="None" />
+						<Property name="FocusType" value="ResourceBounds" />
+						<Property name="FocusLocator" value="" />
+						<Property name="FocusOffset">
+							<Property name="X" value="0.000000" />
+							<Property name="Y" value="0.000000" />
+							<Property name="Z" value="0.000000" />
+						</Property>
+						<Property name="FocusInterpTime" value="0.000000" />
+						<Property name="BlendInTime" value="0.800000" />
+						<Property name="BlendInOffset" value="0.000000" />
+						<Property name="Anim" value="" />
+						<Property name="HeightOffset" value="0.005000" />
+						<Property name="UsePlayerCameraInHmd" value="true" />
+						<Property name="AlignUIToCameraInHmd" value="false" />
+						<Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="false" />
+						<Property name="LookForFocusInMasterModel" value="false" />
+						<Property name="FlipRotationIfNecessary" value="false" />
+					</Property>
+				</Property>
+				<Property name="EventRenderersAlt" />
+				<Property name="EventRenderersDoF" />
+				<Property name="SecondaryCameraTransitionTime" value="1.000000" />
+				<Property name="DepthOfField" value="GcInteractionDof">
+					<Property name="IsEnabled" value="true" />
+					<Property name="UseGlobals" value="true" />
+					<Property name="NearPlaneMin" value="2.000000" />
+					<Property name="NearPlaneAdjust" value="1.000000" />
+					<Property name="FarPlane" value="3.000000" />
+					<Property name="FarFadeDistance" value="2.000000" />
+				</Property>
+				<Property name="PuzzleMissionOverrideTable" />
+				<Property name="AdditionalOptionsOverrideTable" />
+				<Property name="StoryUtilityOverrideData" value="GcStoryUtilityOverride">
+					<Property name="Name" value="" />
+					<Property name="Reward" value="" />
+					<Property name="SpecificRewardOverrideTable" />
+				</Property>
+				<Property name="OverrideInteriorExteriorMarker" value="No" />
+				<Property name="ReseedAfterRewardSuccess" value="false" />
+				<Property name="UsePersonalPersistentBuffer" value="false" />
+				<Property name="InWorldUIScaler" value="0.000000" />
+				<Property name="InWorldUIMinDistOverride" value="0.000000" />
+				<Property name="InWorldUIMinDistOverrideV2" value="0.000000" />
+				<Property name="InWorldUIForcedOffset" value="0.000000" />
+				<Property name="InWorldUIForcedOffsetV2" value="0.000000" />
+				<Property name="InWorldUIUseCameraUp" value="false" />
+				<Property name="StartMissionOnUse" value="" />
+				<Property name="AllowMissionUnderwater" value="true" />
+				<Property name="OnlyAvailableInAbandonedMode" value="false" />
+				<Property name="UseUnlockedInteractionIfMaintDone" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkPhysicsComponentData" _index="4">
+			<Property name="TkPhysicsComponentData">
+				<Property name="Data" value="TkPhysicsData">
+					<Property name="Mass" value="10.000000" />
+					<Property name="Friction" value="0.500000" />
+					<Property name="RollingFriction" value="0.200000" />
+					<Property name="AngularDamping" value="0.200000" />
+					<Property name="LinearDamping" value="0.100000" />
+					<Property name="Gravity" value="20.000000" />
+				</Property>
+				<Property name="NavMeshInclusion" value="TkNavMeshInclusionParams">
+					<Property name="InclusionType" value="TkNavMeshInclusionType">
+						<Property name="NavMeshInclusionType" value="Auto" />
+					</Property>
+					<Property name="InclusionMinSize" value="0.000000" />
+					<Property name="AreaType" value="TkNavMeshAreaType">
+						<Property name="NavMeshAreaType" value="Auto" />
+					</Property>
+				</Property>
+				<Property name="TriggerVolume" value="false" />
+				<Property name="TriggerVolumeType" value="TkVolumeTriggerType">
+					<Property name="VolumeTriggerType" value="Open" />
+				</Property>
+				<Property name="SurfaceProperties" value="None" />
+				<Property name="ModelOwnership" value="Model" />
+				<Property name="Climbable" value="false" />
+				<Property name="Walkable" value="true" />
+				<Property name="Floor" value="false" />
+				<Property name="IgnoreModelOwner" value="false" />
+				<Property name="NoVehicleCollide" value="false" />
+				<Property name="NoPlayerCollide" value="false" />
+				<Property name="NoTerrainCollide" value="false" />
+				<Property name="NoFireCollide" value="false" />
+				<Property name="NoFallDamage" value="false" />
+				<Property name="IgnoreAllCollisions" value="false" />
+				<Property name="BlocksInteract" value="true" />
+				<Property name="CameraInvisible" value="false" />
+				<Property name="InvisibleForInteraction" value="false" />
+				<Property name="AllowTeleporter" value="false" />
+				<Property name="BlockTeleporter" value="false" />
+				<Property name="DisableGravity" value="false" />
+				<Property name="SpinOnCreate" value="0.000000" />
+				<Property name="ScaleAffectsMass" value="false" />
+				<Property name="AllowedDefaultCollision" value="true" />
+				<Property name="Animated" value="false" />
+				<Property name="UseBasePartOptimisation" value="false" />
+				<Property name="IsTransporter" value="false" />
+				<Property name="UseSimpleCharacterCollision" value="false" />
+				<Property name="RotateSimpleCharacterCollisionCapsule" value="false" />
+				<Property name="SimpleCharacterCollisionRadius" value="0.500000" />
+				<Property name="SimpleCharacterCollisionHeight" value="2.000000" />
+				<Property name="SimpleCharacterCollisionHeightOffset" value="0.000000" />
+				<Property name="SimpleCharacterCollisionFwdOffset" value="0.000000" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcShipOwnershipComponentData" _index="5">
+			<Property name="GcShipOwnershipComponentData">
+				<Property name="Data" value="GcSpaceshipComponentData">
+					<Property name="Class" value="GcSpaceshipClasses">
+						<Property name="ShipClass" value="Scientific" />
+					</Property>
+					<Property name="Cockpit" value="MODELS/COMMON/SPACECRAFT/FIGHTERS/COCKPIT/COCKPITSPOOK_INTERIOR.SCENE.MBIN" />
+					<Property name="MaxHeadTurn" value="55.000000" />
+					<Property name="MaxHeadPitchUp" value="35.000000" />
+					<Property name="MaxHeadPitchDown" value="25.000000" />
+					<Property name="DefaultHealth" value="500" />
+					<Property name="FoVFixedDistance" value="1.500000" />
+					<Property name="Renderer" value="TkModelRendererData">
+						<Property name="Camera" value="TkModelRendererCameraData">
+							<Property name="Distance" value="1.500000" />
+							<Property name="Offset">
+								<Property name="X" value="0.000000" />
+								<Property name="Y" value="0.000000" />
+								<Property name="Z" value="0.000000" />
+							</Property>
+							<Property name="Roll" value="0.000000" />
+							<Property name="Pitch" value="0.000000" />
+							<Property name="Rotate" value="0.000000" />
+							<Property name="LightPitch" value="45.000000" />
+							<Property name="LightRotate" value="45.000000" />
+							<Property name="Wander" value="TkCameraWanderData">
+								<Property name="CamWander" value="false" />
+								<Property name="CamWanderPhase" value="0.003000" />
+								<Property name="CamWanderAmplitude" value="0.500000" />
+							</Property>
+						</Property>
+						<Property name="Fov" value="30.000000" />
+						<Property name="AspectRatio" value="1.777700" />
+						<Property name="LightIntensityMultiplier" value="1.000000" />
+						<Property name="ThumbnailMode" value="None" />
+						<Property name="FocusType" value="ResourceBounds" />
+						<Property name="FocusLocator" value="" />
+						<Property name="FocusOffset">
+							<Property name="X" value="0.000000" />
+							<Property name="Y" value="0.000000" />
+							<Property name="Z" value="0.000000" />
+						</Property>
+						<Property name="FocusInterpTime" value="0.000000" />
+						<Property name="BlendInTime" value="0.800000" />
+						<Property name="BlendInOffset" value="0.000000" />
+						<Property name="Anim" value="" />
+						<Property name="HeightOffset" value="0.005000" />
+						<Property name="UsePlayerCameraInHmd" value="true" />
+						<Property name="AlignUIToCameraInHmd" value="false" />
+						<Property name="UseSensibleCameraFocusNodeIsNowOffsetNode" value="false" />
+						<Property name="LookForFocusInMasterModel" value="false" />
+						<Property name="FlipRotationIfNecessary" value="false" />
+					</Property>
+					<Property name="Buildable" value="false" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Components" value="TkAnimationComponentData" _index="6">
+			<Property name="TkAnimationComponentData">
+				<Property name="NetSyncAnimations" value="true" />
+				<Property name="Idle" value="TkAnimationData">
+					<Property name="Anim" value="" />
+					<Property name="Filename" value="MODELS/COMMON/SPACECRAFT/FIGHTERS/ANIMS/COCKPIT_A_HATCH_OPEN.ANIM.MBIN" />
+					<Property name="AnimType" value="OneShotBlendable" />
+					<Property name="AnimGroupOverride" value="false" />
+					<Property name="Priority" value="0" />
+					<Property name="FrameStart" value="0" />
+					<Property name="FrameEnd" value="60" />
+					<Property name="FrameEndGame" value="0" />
+					<Property name="StartNode" value="" />
+					<Property name="ExtraStartNodes" />
+					<Property name="AdditiveBaseAnim" value="" />
+					<Property name="AdditiveBaseFrame" value="0.000000" />
+					<Property name="Mask" value="" />
+					<Property name="OffsetMin" value="0.000000" />
+					<Property name="OffsetMax" value="0.000000" />
+					<Property name="Delay" value="0.000000" />
+					<Property name="Speed" value="1.000000" />
+					<Property name="ActionStartFrame" value="0.000000" />
+					<Property name="ActionFrame" value="-1.000000" />
+					<Property name="Actions" />
+					<Property name="CreatureSize" value="AllSizes" />
+					<Property name="Notifies" />
+					<Property name="Additive" value="false" />
+					<Property name="Mirrored" value="false" />
+					<Property name="Active" value="false" />
+					<Property name="Has30HzFrames" value="false" />
+					<Property name="GameData" value="TkAnimationGameData">
+						<Property name="RootMotion" value="None" />
+						<Property name="BlockPlayerMovement" value="false" />
+						<Property name="BlockPlayerWeapon" value="Unblocked" />
+					</Property>
+				</Property>
+				<Property name="RandomOneShots" />
+				<Property name="AnimGroup" value="" />
+				<Property name="Anims">
+					<Property name="Anims" value="TkAnimationData" _index="0">
+						<Property name="Anim" value="TAKEOFF" />
+						<Property name="Filename" value="MODELS/COMMON/SPACECRAFT/FIGHTERS/ANIMS/SPOOKSHIP_TAKEOFF.ANIM.MBIN" />
+						<Property name="AnimType" value="OneShotBlendable" />
+						<Property name="AnimGroupOverride" value="false" />
+						<Property name="Priority" value="0" />
+						<Property name="FrameStart" value="0" />
+						<Property name="FrameEnd" value="0" />
+						<Property name="FrameEndGame" value="0" />
+						<Property name="StartNode" value="" />
+						<Property name="ExtraStartNodes" />
+						<Property name="AdditiveBaseAnim" value="" />
+						<Property name="AdditiveBaseFrame" value="0.000000" />
+						<Property name="Mask" value="" />
+						<Property name="OffsetMin" value="0.000000" />
+						<Property name="OffsetMax" value="0.000000" />
+						<Property name="Delay" value="0.000000" />
+						<Property name="Speed" value="1.000000" />
+						<Property name="ActionStartFrame" value="0.000000" />
+						<Property name="ActionFrame" value="-1.000000" />
+						<Property name="Actions" />
+						<Property name="CreatureSize" value="AllSizes" />
+						<Property name="Notifies" />
+						<Property name="Additive" value="false" />
+						<Property name="Mirrored" value="false" />
+						<Property name="Active" value="false" />
+						<Property name="Has30HzFrames" value="false" />
+						<Property name="GameData" value="TkAnimationGameData">
+							<Property name="RootMotion" value="None" />
+							<Property name="BlockPlayerMovement" value="false" />
+							<Property name="BlockPlayerWeapon" value="Unblocked" />
+						</Property>
+					</Property>
+					<Property name="Anims" value="TkAnimationData" _index="1">
+						<Property name="Anim" value="LANDING" />
+						<Property name="Filename" value="MODELS/COMMON/SPACECRAFT/FIGHTERS/ANIMS/SPOOKSHIP_LANDING.ANIM.MBIN" />
+						<Property name="AnimType" value="OneShotBlendable" />
+						<Property name="AnimGroupOverride" value="false" />
+						<Property name="Priority" value="0" />
+						<Property name="FrameStart" value="0" />
+						<Property name="FrameEnd" value="0" />
+						<Property name="FrameEndGame" value="0" />
+						<Property name="StartNode" value="" />
+						<Property name="ExtraStartNodes" />
+						<Property name="AdditiveBaseAnim" value="" />
+						<Property name="AdditiveBaseFrame" value="0.000000" />
+						<Property name="Mask" value="" />
+						<Property name="OffsetMin" value="0.000000" />
+						<Property name="OffsetMax" value="0.000000" />
+						<Property name="Delay" value="0.000000" />
+						<Property name="Speed" value="1.000000" />
+						<Property name="ActionStartFrame" value="0.000000" />
+						<Property name="ActionFrame" value="-1.000000" />
+						<Property name="Actions" />
+						<Property name="CreatureSize" value="AllSizes" />
+						<Property name="Notifies" />
+						<Property name="Additive" value="false" />
+						<Property name="Mirrored" value="false" />
+						<Property name="Active" value="false" />
+						<Property name="Has30HzFrames" value="false" />
+						<Property name="GameData" value="TkAnimationGameData">
+							<Property name="RootMotion" value="None" />
+							<Property name="BlockPlayerMovement" value="false" />
+							<Property name="BlockPlayerWeapon" value="Unblocked" />
+						</Property>
+					</Property>
+				</Property>
+				<Property name="AnimLibraries" />
+				<Property name="Trees" />
+				<Property name="JointLODOverrides" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkNetReplicatedEntityComponentData" _index="7">
+			<Property name="TkNetReplicatedEntityComponentData">
+				<Property name="ReplicaComponentMask" />
+				<Property name="ReplicationRange" value="System" />
+				<Property name="SpawnType" value="Basic" />
+				<Property name="IgnoreComponents" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcNetworkInterpolationComponentData" _index="8">
+			<Property name="GcNetworkInterpolationComponentData">
+				<Property name="SynchroniseScale" value="Once" />
+				<Property name="SupportTeleportation" value="false" />
+				<Property name="UpdateWhileInactive" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkSketchComponentData" _index="9">
+			<Property name="TkSketchComponentData">
+				<Property name="GraphPosX" value="-396.752869" />
+				<Property name="GraphPosY" value="-600.535645" />
+				<Property name="GraphZoom" value="0.670320" />
+				<Property name="UpdateRateMultiplier" value="1.000000" />
+				<Property name="Nodes">
+					<Property name="Nodes" value="TkSketchNodeData" _index="0">
+						<Property name="TypeName" value="OnVariableChanged" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="-539" />
+						<Property name="PositionY" value="2793" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+							<Property name="Connections" value="TkSketchNodeConnections" _index="1">
+								<Property name="Connections">
+									<Property name="Connections" value="1" _index="0" />
+									<Property name="Connections" value="27" _index="1" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="82" _index="0" />
+							<Property name="CustomData" value="105" _index="1" />
+							<Property name="CustomData" value="103" _index="2" />
+							<Property name="CustomData" value="104" _index="3" />
+							<Property name="CustomData" value="116" _index="4" />
+							<Property name="CustomData" value="69" _index="5" />
+							<Property name="CustomData" value="110" _index="6" />
+							<Property name="CustomData" value="103" _index="7" />
+							<Property name="CustomData" value="105" _index="8" />
+							<Property name="CustomData" value="110" _index="9" />
+							<Property name="CustomData" value="101" _index="10" />
+							<Property name="CustomData" value="0" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="1">
+						<Property name="TypeName" value="SetParticlesStage" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="2" />
+						<Property name="PositionX" value="305" />
+						<Property name="PositionY" value="2763" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="79" _index="1" />
+							<Property name="CustomData" value="67" _index="2" />
+							<Property name="CustomData" value="82" _index="3" />
+							<Property name="CustomData" value="105" _index="4" />
+							<Property name="CustomData" value="103" _index="5" />
+							<Property name="CustomData" value="104" _index="6" />
+							<Property name="CustomData" value="116" _index="7" />
+							<Property name="CustomData" value="86" _index="8" />
+							<Property name="CustomData" value="101" _index="9" />
+							<Property name="CustomData" value="110" _index="10" />
+							<Property name="CustomData" value="116" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="128" _index="18" />
+							<Property name="CustomData" value="63" _index="19" />
+							<Property name="CustomData" value="240" _index="20" />
+							<Property name="CustomData" value="63" _index="21" />
+							<Property name="CustomData" value="18" _index="22" />
+							<Property name="CustomData" value="56" _index="23" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="2">
+						<Property name="TypeName" value="IfValueIs" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="145" />
+						<Property name="PositionY" value="382" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections">
+									<Property name="Connections" value="29" _index="0" />
+									<Property name="Connections" value="40" _index="1" />
+									<Property name="Connections" value="3" _index="2" />
+									<Property name="Connections" value="4" _index="3" />
+									<Property name="Connections" value="14" _index="4" />
+									<Property name="Connections" value="41" _index="5" />
+									<Property name="Connections" value="39" _index="6" />
+									<Property name="Connections" value="13" _index="7" />
+									<Property name="Connections" value="30" _index="8" />
+									<Property name="Connections" value="12" _index="9" />
+									<Property name="Connections" value="5" _index="10" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="0" _index="0" />
+							<Property name="CustomData" value="0" _index="1" />
+							<Property name="CustomData" value="0" _index="2" />
+							<Property name="CustomData" value="0" _index="3" />
+							<Property name="CustomData" value="255" _index="4" />
+							<Property name="CustomData" value="255" _index="5" />
+							<Property name="CustomData" value="255" _index="6" />
+							<Property name="CustomData" value="255" _index="7" />
+							<Property name="CustomData" value="83" _index="8" />
+							<Property name="CustomData" value="72" _index="9" />
+							<Property name="CustomData" value="73" _index="10" />
+							<Property name="CustomData" value="80" _index="11" />
+							<Property name="CustomData" value="95" _index="12" />
+							<Property name="CustomData" value="84" _index="13" />
+							<Property name="CustomData" value="65" _index="14" />
+							<Property name="CustomData" value="75" _index="15" />
+							<Property name="CustomData" value="69" _index="16" />
+							<Property name="CustomData" value="95" _index="17" />
+							<Property name="CustomData" value="79" _index="18" />
+							<Property name="CustomData" value="70" _index="19" />
+							<Property name="CustomData" value="70" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="0" _index="22" />
+							<Property name="CustomData" value="0" _index="23" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="3">
+						<Property name="TypeName" value="SpawnParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="994" />
+						<Property name="PositionY" value="214" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="83" _index="0" />
+							<Property name="CustomData" value="80" _index="1" />
+							<Property name="CustomData" value="79" _index="2" />
+							<Property name="CustomData" value="79" _index="3" />
+							<Property name="CustomData" value="75" _index="4" />
+							<Property name="CustomData" value="83" _index="5" />
+							<Property name="CustomData" value="72" _index="6" />
+							<Property name="CustomData" value="73" _index="7" />
+							<Property name="CustomData" value="80" _index="8" />
+							<Property name="CustomData" value="86" _index="9" />
+							<Property name="CustomData" value="69" _index="10" />
+							<Property name="CustomData" value="78" _index="11" />
+							<Property name="CustomData" value="84" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="76" _index="16" />
+							<Property name="CustomData" value="79" _index="17" />
+							<Property name="CustomData" value="67" _index="18" />
+							<Property name="CustomData" value="67" _index="19" />
+							<Property name="CustomData" value="101" _index="20" />
+							<Property name="CustomData" value="110" _index="21" />
+							<Property name="CustomData" value="116" _index="22" />
+							<Property name="CustomData" value="114" _index="23" />
+							<Property name="CustomData" value="101" _index="24" />
+							<Property name="CustomData" value="86" _index="25" />
+							<Property name="CustomData" value="101" _index="26" />
+							<Property name="CustomData" value="110" _index="27" />
+							<Property name="CustomData" value="116" _index="28" />
+							<Property name="CustomData" value="0" _index="29" />
+							<Property name="CustomData" value="0" _index="30" />
+							<Property name="CustomData" value="0" _index="31" />
+							<Property name="CustomData" value="0" _index="32" />
+							<Property name="CustomData" value="0" _index="33" />
+							<Property name="CustomData" value="128" _index="34" />
+							<Property name="CustomData" value="63" _index="35" />
+							<Property name="CustomData" value="1" _index="36" />
+							<Property name="CustomData" value="255" _index="37" />
+							<Property name="CustomData" value="255" _index="38" />
+							<Property name="CustomData" value="255" _index="39" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="4">
+						<Property name="TypeName" value="SpawnParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="985" />
+						<Property name="PositionY" value="365" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="83" _index="0" />
+							<Property name="CustomData" value="80" _index="1" />
+							<Property name="CustomData" value="79" _index="2" />
+							<Property name="CustomData" value="79" _index="3" />
+							<Property name="CustomData" value="75" _index="4" />
+							<Property name="CustomData" value="83" _index="5" />
+							<Property name="CustomData" value="72" _index="6" />
+							<Property name="CustomData" value="73" _index="7" />
+							<Property name="CustomData" value="80" _index="8" />
+							<Property name="CustomData" value="86" _index="9" />
+							<Property name="CustomData" value="69" _index="10" />
+							<Property name="CustomData" value="78" _index="11" />
+							<Property name="CustomData" value="84" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="76" _index="16" />
+							<Property name="CustomData" value="79" _index="17" />
+							<Property name="CustomData" value="67" _index="18" />
+							<Property name="CustomData" value="76" _index="19" />
+							<Property name="CustomData" value="101" _index="20" />
+							<Property name="CustomData" value="102" _index="21" />
+							<Property name="CustomData" value="116" _index="22" />
+							<Property name="CustomData" value="86" _index="23" />
+							<Property name="CustomData" value="101" _index="24" />
+							<Property name="CustomData" value="110" _index="25" />
+							<Property name="CustomData" value="116" _index="26" />
+							<Property name="CustomData" value="0" _index="27" />
+							<Property name="CustomData" value="0" _index="28" />
+							<Property name="CustomData" value="0" _index="29" />
+							<Property name="CustomData" value="0" _index="30" />
+							<Property name="CustomData" value="0" _index="31" />
+							<Property name="CustomData" value="0" _index="32" />
+							<Property name="CustomData" value="0" _index="33" />
+							<Property name="CustomData" value="128" _index="34" />
+							<Property name="CustomData" value="63" _index="35" />
+							<Property name="CustomData" value="1" _index="36" />
+							<Property name="CustomData" value="255" _index="37" />
+							<Property name="CustomData" value="255" _index="38" />
+							<Property name="CustomData" value="255" _index="39" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="5">
+						<Property name="TypeName" value="SpawnParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="969" />
+						<Property name="PositionY" value="540" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="83" _index="0" />
+							<Property name="CustomData" value="80" _index="1" />
+							<Property name="CustomData" value="79" _index="2" />
+							<Property name="CustomData" value="79" _index="3" />
+							<Property name="CustomData" value="75" _index="4" />
+							<Property name="CustomData" value="83" _index="5" />
+							<Property name="CustomData" value="72" _index="6" />
+							<Property name="CustomData" value="73" _index="7" />
+							<Property name="CustomData" value="80" _index="8" />
+							<Property name="CustomData" value="86" _index="9" />
+							<Property name="CustomData" value="69" _index="10" />
+							<Property name="CustomData" value="78" _index="11" />
+							<Property name="CustomData" value="84" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="76" _index="16" />
+							<Property name="CustomData" value="79" _index="17" />
+							<Property name="CustomData" value="67" _index="18" />
+							<Property name="CustomData" value="82" _index="19" />
+							<Property name="CustomData" value="105" _index="20" />
+							<Property name="CustomData" value="103" _index="21" />
+							<Property name="CustomData" value="104" _index="22" />
+							<Property name="CustomData" value="116" _index="23" />
+							<Property name="CustomData" value="86" _index="24" />
+							<Property name="CustomData" value="101" _index="25" />
+							<Property name="CustomData" value="110" _index="26" />
+							<Property name="CustomData" value="116" _index="27" />
+							<Property name="CustomData" value="0" _index="28" />
+							<Property name="CustomData" value="0" _index="29" />
+							<Property name="CustomData" value="0" _index="30" />
+							<Property name="CustomData" value="0" _index="31" />
+							<Property name="CustomData" value="0" _index="32" />
+							<Property name="CustomData" value="0" _index="33" />
+							<Property name="CustomData" value="128" _index="34" />
+							<Property name="CustomData" value="63" _index="35" />
+							<Property name="CustomData" value="1" _index="36" />
+							<Property name="CustomData" value="185" _index="37" />
+							<Property name="CustomData" value="156" _index="38" />
+							<Property name="CustomData" value="184" _index="39" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="6">
+						<Property name="TypeName" value="SpawnParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1719" />
+						<Property name="PositionY" value="2057" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="83" _index="0" />
+							<Property name="CustomData" value="80" _index="1" />
+							<Property name="CustomData" value="79" _index="2" />
+							<Property name="CustomData" value="79" _index="3" />
+							<Property name="CustomData" value="75" _index="4" />
+							<Property name="CustomData" value="83" _index="5" />
+							<Property name="CustomData" value="72" _index="6" />
+							<Property name="CustomData" value="73" _index="7" />
+							<Property name="CustomData" value="80" _index="8" />
+							<Property name="CustomData" value="76" _index="9" />
+							<Property name="CustomData" value="65" _index="10" />
+							<Property name="CustomData" value="78" _index="11" />
+							<Property name="CustomData" value="68" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="76" _index="16" />
+							<Property name="CustomData" value="79" _index="17" />
+							<Property name="CustomData" value="67" _index="18" />
+							<Property name="CustomData" value="76" _index="19" />
+							<Property name="CustomData" value="97" _index="20" />
+							<Property name="CustomData" value="110" _index="21" />
+							<Property name="CustomData" value="100" _index="22" />
+							<Property name="CustomData" value="105" _index="23" />
+							<Property name="CustomData" value="110" _index="24" />
+							<Property name="CustomData" value="103" _index="25" />
+							<Property name="CustomData" value="0" _index="26" />
+							<Property name="CustomData" value="0" _index="27" />
+							<Property name="CustomData" value="0" _index="28" />
+							<Property name="CustomData" value="0" _index="29" />
+							<Property name="CustomData" value="0" _index="30" />
+							<Property name="CustomData" value="0" _index="31" />
+							<Property name="CustomData" value="0" _index="32" />
+							<Property name="CustomData" value="0" _index="33" />
+							<Property name="CustomData" value="128" _index="34" />
+							<Property name="CustomData" value="63" _index="35" />
+							<Property name="CustomData" value="1" _index="36" />
+							<Property name="CustomData" value="207" _index="37" />
+							<Property name="CustomData" value="141" _index="38" />
+							<Property name="CustomData" value="189" _index="39" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="7">
+						<Property name="TypeName" value="IfValueIs" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="478" />
+						<Property name="PositionY" value="1073" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections">
+									<Property name="Connections" value="29" _index="0" />
+									<Property name="Connections" value="10" _index="1" />
+									<Property name="Connections" value="8" _index="2" />
+									<Property name="Connections" value="17" _index="3" />
+									<Property name="Connections" value="9" _index="4" />
+									<Property name="Connections" value="15" _index="5" />
+									<Property name="Connections" value="16" _index="6" />
+									<Property name="Connections" value="45" _index="7" />
+									<Property name="Connections" value="47" _index="8" />
+									<Property name="Connections" value="46" _index="9" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="0" _index="0" />
+							<Property name="CustomData" value="0" _index="1" />
+							<Property name="CustomData" value="0" _index="2" />
+							<Property name="CustomData" value="0" _index="3" />
+							<Property name="CustomData" value="218" _index="4" />
+							<Property name="CustomData" value="1" _index="5" />
+							<Property name="CustomData" value="4" _index="6" />
+							<Property name="CustomData" value="62" _index="7" />
+							<Property name="CustomData" value="83" _index="8" />
+							<Property name="CustomData" value="72" _index="9" />
+							<Property name="CustomData" value="73" _index="10" />
+							<Property name="CustomData" value="80" _index="11" />
+							<Property name="CustomData" value="95" _index="12" />
+							<Property name="CustomData" value="76" _index="13" />
+							<Property name="CustomData" value="65" _index="14" />
+							<Property name="CustomData" value="78" _index="15" />
+							<Property name="CustomData" value="68" _index="16" />
+							<Property name="CustomData" value="73" _index="17" />
+							<Property name="CustomData" value="78" _index="18" />
+							<Property name="CustomData" value="71" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="0" _index="22" />
+							<Property name="CustomData" value="0" _index="23" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="8">
+						<Property name="TypeName" value="StopParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="996" />
+						<Property name="PositionY" value="814" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="79" _index="1" />
+							<Property name="CustomData" value="67" _index="2" />
+							<Property name="CustomData" value="67" _index="3" />
+							<Property name="CustomData" value="101" _index="4" />
+							<Property name="CustomData" value="110" _index="5" />
+							<Property name="CustomData" value="116" _index="6" />
+							<Property name="CustomData" value="114" _index="7" />
+							<Property name="CustomData" value="101" _index="8" />
+							<Property name="CustomData" value="86" _index="9" />
+							<Property name="CustomData" value="101" _index="10" />
+							<Property name="CustomData" value="110" _index="11" />
+							<Property name="CustomData" value="116" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="9">
+						<Property name="TypeName" value="StopParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="993" />
+						<Property name="PositionY" value="888" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="79" _index="1" />
+							<Property name="CustomData" value="67" _index="2" />
+							<Property name="CustomData" value="76" _index="3" />
+							<Property name="CustomData" value="101" _index="4" />
+							<Property name="CustomData" value="102" _index="5" />
+							<Property name="CustomData" value="116" _index="6" />
+							<Property name="CustomData" value="86" _index="7" />
+							<Property name="CustomData" value="101" _index="8" />
+							<Property name="CustomData" value="110" _index="9" />
+							<Property name="CustomData" value="116" _index="10" />
+							<Property name="CustomData" value="0" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="10">
+						<Property name="TypeName" value="StopParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="991" />
+						<Property name="PositionY" value="996" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="79" _index="1" />
+							<Property name="CustomData" value="67" _index="2" />
+							<Property name="CustomData" value="82" _index="3" />
+							<Property name="CustomData" value="105" _index="4" />
+							<Property name="CustomData" value="103" _index="5" />
+							<Property name="CustomData" value="104" _index="6" />
+							<Property name="CustomData" value="116" _index="7" />
+							<Property name="CustomData" value="86" _index="8" />
+							<Property name="CustomData" value="101" _index="9" />
+							<Property name="CustomData" value="110" _index="10" />
+							<Property name="CustomData" value="116" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="11">
+						<Property name="TypeName" value="StopParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1719" />
+						<Property name="PositionY" value="2342" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="79" _index="1" />
+							<Property name="CustomData" value="67" _index="2" />
+							<Property name="CustomData" value="76" _index="3" />
+							<Property name="CustomData" value="97" _index="4" />
+							<Property name="CustomData" value="110" _index="5" />
+							<Property name="CustomData" value="100" _index="6" />
+							<Property name="CustomData" value="105" _index="7" />
+							<Property name="CustomData" value="110" _index="8" />
+							<Property name="CustomData" value="103" _index="9" />
+							<Property name="CustomData" value="0" _index="10" />
+							<Property name="CustomData" value="0" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="12">
+						<Property name="TypeName" value="SetLightIntensity" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1003" />
+						<Property name="PositionY" value="-279" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="67" _index="0" />
+							<Property name="CustomData" value="101" _index="1" />
+							<Property name="CustomData" value="110" _index="2" />
+							<Property name="CustomData" value="116" _index="3" />
+							<Property name="CustomData" value="114" _index="4" />
+							<Property name="CustomData" value="101" _index="5" />
+							<Property name="CustomData" value="86" _index="6" />
+							<Property name="CustomData" value="101" _index="7" />
+							<Property name="CustomData" value="110" _index="8" />
+							<Property name="CustomData" value="116" _index="9" />
+							<Property name="CustomData" value="76" _index="10" />
+							<Property name="CustomData" value="105" _index="11" />
+							<Property name="CustomData" value="103" _index="12" />
+							<Property name="CustomData" value="104" _index="13" />
+							<Property name="CustomData" value="116" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="0" _index="18" />
+							<Property name="CustomData" value="64" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="128" _index="22" />
+							<Property name="CustomData" value="63" _index="23" />
+							<Property name="CustomData" value="0" _index="24" />
+							<Property name="CustomData" value="124" _index="25" />
+							<Property name="CustomData" value="31" _index="26" />
+							<Property name="CustomData" value="126" _index="27" />
+							<Property name="CustomData" value="132" _index="28" />
+							<Property name="CustomData" value="124" _index="29" />
+							<Property name="CustomData" value="198" _index="30" />
+							<Property name="CustomData" value="124" _index="31" />
+							<Property name="CustomData" value="8" _index="32" />
+							<Property name="CustomData" value="125" _index="33" />
+							<Property name="CustomData" value="74" _index="34" />
+							<Property name="CustomData" value="125" _index="35" />
+							<Property name="CustomData" value="140" _index="36" />
+							<Property name="CustomData" value="125" _index="37" />
+							<Property name="CustomData" value="206" _index="38" />
+							<Property name="CustomData" value="125" _index="39" />
+							<Property name="CustomData" value="49" _index="40" />
+							<Property name="CustomData" value="126" _index="41" />
+							<Property name="CustomData" value="115" _index="42" />
+							<Property name="CustomData" value="126" _index="43" />
+							<Property name="CustomData" value="181" _index="44" />
+							<Property name="CustomData" value="126" _index="45" />
+							<Property name="CustomData" value="247" _index="46" />
+							<Property name="CustomData" value="126" _index="47" />
+							<Property name="CustomData" value="57" _index="48" />
+							<Property name="CustomData" value="127" _index="49" />
+							<Property name="CustomData" value="123" _index="50" />
+							<Property name="CustomData" value="127" _index="51" />
+							<Property name="CustomData" value="189" _index="52" />
+							<Property name="CustomData" value="127" _index="53" />
+							<Property name="CustomData" value="224" _index="54" />
+							<Property name="CustomData" value="127" _index="55" />
+							<Property name="CustomData" value="2" _index="56" />
+							<Property name="CustomData" value="127" _index="57" />
+							<Property name="CustomData" value="74" _index="58" />
+							<Property name="CustomData" value="63" _index="59" />
+							<Property name="CustomData" value="233" _index="60" />
+							<Property name="CustomData" value="1" _index="61" />
+							<Property name="CustomData" value="67" _index="62" />
+							<Property name="CustomData" value="61" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="13">
+						<Property name="TypeName" value="SetLightIntensity" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1003" />
+						<Property name="PositionY" value="-138" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="101" _index="1" />
+							<Property name="CustomData" value="102" _index="2" />
+							<Property name="CustomData" value="116" _index="3" />
+							<Property name="CustomData" value="86" _index="4" />
+							<Property name="CustomData" value="101" _index="5" />
+							<Property name="CustomData" value="110" _index="6" />
+							<Property name="CustomData" value="116" _index="7" />
+							<Property name="CustomData" value="76" _index="8" />
+							<Property name="CustomData" value="105" _index="9" />
+							<Property name="CustomData" value="103" _index="10" />
+							<Property name="CustomData" value="104" _index="11" />
+							<Property name="CustomData" value="116" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="0" _index="18" />
+							<Property name="CustomData" value="64" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="128" _index="22" />
+							<Property name="CustomData" value="63" _index="23" />
+							<Property name="CustomData" value="0" _index="24" />
+							<Property name="CustomData" value="124" _index="25" />
+							<Property name="CustomData" value="255" _index="26" />
+							<Property name="CustomData" value="125" _index="27" />
+							<Property name="CustomData" value="132" _index="28" />
+							<Property name="CustomData" value="124" _index="29" />
+							<Property name="CustomData" value="198" _index="30" />
+							<Property name="CustomData" value="124" _index="31" />
+							<Property name="CustomData" value="8" _index="32" />
+							<Property name="CustomData" value="125" _index="33" />
+							<Property name="CustomData" value="74" _index="34" />
+							<Property name="CustomData" value="125" _index="35" />
+							<Property name="CustomData" value="140" _index="36" />
+							<Property name="CustomData" value="125" _index="37" />
+							<Property name="CustomData" value="206" _index="38" />
+							<Property name="CustomData" value="125" _index="39" />
+							<Property name="CustomData" value="49" _index="40" />
+							<Property name="CustomData" value="126" _index="41" />
+							<Property name="CustomData" value="115" _index="42" />
+							<Property name="CustomData" value="126" _index="43" />
+							<Property name="CustomData" value="181" _index="44" />
+							<Property name="CustomData" value="126" _index="45" />
+							<Property name="CustomData" value="247" _index="46" />
+							<Property name="CustomData" value="126" _index="47" />
+							<Property name="CustomData" value="57" _index="48" />
+							<Property name="CustomData" value="127" _index="49" />
+							<Property name="CustomData" value="123" _index="50" />
+							<Property name="CustomData" value="127" _index="51" />
+							<Property name="CustomData" value="189" _index="52" />
+							<Property name="CustomData" value="127" _index="53" />
+							<Property name="CustomData" value="224" _index="54" />
+							<Property name="CustomData" value="127" _index="55" />
+							<Property name="CustomData" value="2" _index="56" />
+							<Property name="CustomData" value="127" _index="57" />
+							<Property name="CustomData" value="31" _index="58" />
+							<Property name="CustomData" value="189" _index="59" />
+							<Property name="CustomData" value="207" _index="60" />
+							<Property name="CustomData" value="152" _index="61" />
+							<Property name="CustomData" value="124" _index="62" />
+							<Property name="CustomData" value="63" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="14">
+						<Property name="TypeName" value="SetLightIntensity" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1003" />
+						<Property name="PositionY" value="3" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="82" _index="0" />
+							<Property name="CustomData" value="105" _index="1" />
+							<Property name="CustomData" value="103" _index="2" />
+							<Property name="CustomData" value="104" _index="3" />
+							<Property name="CustomData" value="116" _index="4" />
+							<Property name="CustomData" value="86" _index="5" />
+							<Property name="CustomData" value="101" _index="6" />
+							<Property name="CustomData" value="110" _index="7" />
+							<Property name="CustomData" value="116" _index="8" />
+							<Property name="CustomData" value="76" _index="9" />
+							<Property name="CustomData" value="105" _index="10" />
+							<Property name="CustomData" value="103" _index="11" />
+							<Property name="CustomData" value="104" _index="12" />
+							<Property name="CustomData" value="116" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="0" _index="18" />
+							<Property name="CustomData" value="64" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="128" _index="22" />
+							<Property name="CustomData" value="63" _index="23" />
+							<Property name="CustomData" value="0" _index="24" />
+							<Property name="CustomData" value="124" _index="25" />
+							<Property name="CustomData" value="31" _index="26" />
+							<Property name="CustomData" value="126" _index="27" />
+							<Property name="CustomData" value="132" _index="28" />
+							<Property name="CustomData" value="124" _index="29" />
+							<Property name="CustomData" value="198" _index="30" />
+							<Property name="CustomData" value="124" _index="31" />
+							<Property name="CustomData" value="8" _index="32" />
+							<Property name="CustomData" value="125" _index="33" />
+							<Property name="CustomData" value="74" _index="34" />
+							<Property name="CustomData" value="125" _index="35" />
+							<Property name="CustomData" value="140" _index="36" />
+							<Property name="CustomData" value="125" _index="37" />
+							<Property name="CustomData" value="206" _index="38" />
+							<Property name="CustomData" value="125" _index="39" />
+							<Property name="CustomData" value="49" _index="40" />
+							<Property name="CustomData" value="126" _index="41" />
+							<Property name="CustomData" value="115" _index="42" />
+							<Property name="CustomData" value="126" _index="43" />
+							<Property name="CustomData" value="181" _index="44" />
+							<Property name="CustomData" value="126" _index="45" />
+							<Property name="CustomData" value="247" _index="46" />
+							<Property name="CustomData" value="126" _index="47" />
+							<Property name="CustomData" value="57" _index="48" />
+							<Property name="CustomData" value="127" _index="49" />
+							<Property name="CustomData" value="123" _index="50" />
+							<Property name="CustomData" value="127" _index="51" />
+							<Property name="CustomData" value="189" _index="52" />
+							<Property name="CustomData" value="127" _index="53" />
+							<Property name="CustomData" value="224" _index="54" />
+							<Property name="CustomData" value="127" _index="55" />
+							<Property name="CustomData" value="2" _index="56" />
+							<Property name="CustomData" value="127" _index="57" />
+							<Property name="CustomData" value="248" _index="58" />
+							<Property name="CustomData" value="91" _index="59" />
+							<Property name="CustomData" value="133" _index="60" />
+							<Property name="CustomData" value="81" _index="61" />
+							<Property name="CustomData" value="11" _index="62" />
+							<Property name="CustomData" value="39" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="15">
+						<Property name="TypeName" value="SetLightIntensity" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="996" />
+						<Property name="PositionY" value="1451" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="101" _index="1" />
+							<Property name="CustomData" value="102" _index="2" />
+							<Property name="CustomData" value="116" _index="3" />
+							<Property name="CustomData" value="86" _index="4" />
+							<Property name="CustomData" value="101" _index="5" />
+							<Property name="CustomData" value="110" _index="6" />
+							<Property name="CustomData" value="116" _index="7" />
+							<Property name="CustomData" value="76" _index="8" />
+							<Property name="CustomData" value="105" _index="9" />
+							<Property name="CustomData" value="103" _index="10" />
+							<Property name="CustomData" value="104" _index="11" />
+							<Property name="CustomData" value="116" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="0" _index="18" />
+							<Property name="CustomData" value="64" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="128" _index="22" />
+							<Property name="CustomData" value="63" _index="23" />
+							<Property name="CustomData" value="31" _index="24" />
+							<Property name="CustomData" value="124" _index="25" />
+							<Property name="CustomData" value="255" _index="26" />
+							<Property name="CustomData" value="125" _index="27" />
+							<Property name="CustomData" value="132" _index="28" />
+							<Property name="CustomData" value="124" _index="29" />
+							<Property name="CustomData" value="198" _index="30" />
+							<Property name="CustomData" value="124" _index="31" />
+							<Property name="CustomData" value="8" _index="32" />
+							<Property name="CustomData" value="125" _index="33" />
+							<Property name="CustomData" value="74" _index="34" />
+							<Property name="CustomData" value="125" _index="35" />
+							<Property name="CustomData" value="140" _index="36" />
+							<Property name="CustomData" value="125" _index="37" />
+							<Property name="CustomData" value="206" _index="38" />
+							<Property name="CustomData" value="125" _index="39" />
+							<Property name="CustomData" value="49" _index="40" />
+							<Property name="CustomData" value="126" _index="41" />
+							<Property name="CustomData" value="115" _index="42" />
+							<Property name="CustomData" value="126" _index="43" />
+							<Property name="CustomData" value="181" _index="44" />
+							<Property name="CustomData" value="126" _index="45" />
+							<Property name="CustomData" value="247" _index="46" />
+							<Property name="CustomData" value="126" _index="47" />
+							<Property name="CustomData" value="57" _index="48" />
+							<Property name="CustomData" value="127" _index="49" />
+							<Property name="CustomData" value="123" _index="50" />
+							<Property name="CustomData" value="127" _index="51" />
+							<Property name="CustomData" value="189" _index="52" />
+							<Property name="CustomData" value="127" _index="53" />
+							<Property name="CustomData" value="224" _index="54" />
+							<Property name="CustomData" value="127" _index="55" />
+							<Property name="CustomData" value="1" _index="56" />
+							<Property name="CustomData" value="127" _index="57" />
+							<Property name="CustomData" value="31" _index="58" />
+							<Property name="CustomData" value="189" _index="59" />
+							<Property name="CustomData" value="207" _index="60" />
+							<Property name="CustomData" value="152" _index="61" />
+							<Property name="CustomData" value="124" _index="62" />
+							<Property name="CustomData" value="63" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="16">
+						<Property name="TypeName" value="SetLightIntensity" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="991" />
+						<Property name="PositionY" value="1597" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="82" _index="0" />
+							<Property name="CustomData" value="105" _index="1" />
+							<Property name="CustomData" value="103" _index="2" />
+							<Property name="CustomData" value="104" _index="3" />
+							<Property name="CustomData" value="116" _index="4" />
+							<Property name="CustomData" value="86" _index="5" />
+							<Property name="CustomData" value="101" _index="6" />
+							<Property name="CustomData" value="110" _index="7" />
+							<Property name="CustomData" value="116" _index="8" />
+							<Property name="CustomData" value="76" _index="9" />
+							<Property name="CustomData" value="105" _index="10" />
+							<Property name="CustomData" value="103" _index="11" />
+							<Property name="CustomData" value="104" _index="12" />
+							<Property name="CustomData" value="116" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="0" _index="18" />
+							<Property name="CustomData" value="64" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="128" _index="22" />
+							<Property name="CustomData" value="63" _index="23" />
+							<Property name="CustomData" value="31" _index="24" />
+							<Property name="CustomData" value="124" _index="25" />
+							<Property name="CustomData" value="223" _index="26" />
+							<Property name="CustomData" value="125" _index="27" />
+							<Property name="CustomData" value="132" _index="28" />
+							<Property name="CustomData" value="124" _index="29" />
+							<Property name="CustomData" value="198" _index="30" />
+							<Property name="CustomData" value="124" _index="31" />
+							<Property name="CustomData" value="8" _index="32" />
+							<Property name="CustomData" value="125" _index="33" />
+							<Property name="CustomData" value="74" _index="34" />
+							<Property name="CustomData" value="125" _index="35" />
+							<Property name="CustomData" value="140" _index="36" />
+							<Property name="CustomData" value="125" _index="37" />
+							<Property name="CustomData" value="206" _index="38" />
+							<Property name="CustomData" value="125" _index="39" />
+							<Property name="CustomData" value="49" _index="40" />
+							<Property name="CustomData" value="126" _index="41" />
+							<Property name="CustomData" value="115" _index="42" />
+							<Property name="CustomData" value="126" _index="43" />
+							<Property name="CustomData" value="181" _index="44" />
+							<Property name="CustomData" value="126" _index="45" />
+							<Property name="CustomData" value="247" _index="46" />
+							<Property name="CustomData" value="126" _index="47" />
+							<Property name="CustomData" value="57" _index="48" />
+							<Property name="CustomData" value="127" _index="49" />
+							<Property name="CustomData" value="123" _index="50" />
+							<Property name="CustomData" value="127" _index="51" />
+							<Property name="CustomData" value="189" _index="52" />
+							<Property name="CustomData" value="127" _index="53" />
+							<Property name="CustomData" value="224" _index="54" />
+							<Property name="CustomData" value="127" _index="55" />
+							<Property name="CustomData" value="1" _index="56" />
+							<Property name="CustomData" value="127" _index="57" />
+							<Property name="CustomData" value="248" _index="58" />
+							<Property name="CustomData" value="91" _index="59" />
+							<Property name="CustomData" value="133" _index="60" />
+							<Property name="CustomData" value="81" _index="61" />
+							<Property name="CustomData" value="11" _index="62" />
+							<Property name="CustomData" value="39" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="17">
+						<Property name="TypeName" value="SetLightIntensity" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="996" />
+						<Property name="PositionY" value="1738" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="67" _index="0" />
+							<Property name="CustomData" value="101" _index="1" />
+							<Property name="CustomData" value="110" _index="2" />
+							<Property name="CustomData" value="116" _index="3" />
+							<Property name="CustomData" value="114" _index="4" />
+							<Property name="CustomData" value="101" _index="5" />
+							<Property name="CustomData" value="86" _index="6" />
+							<Property name="CustomData" value="101" _index="7" />
+							<Property name="CustomData" value="110" _index="8" />
+							<Property name="CustomData" value="116" _index="9" />
+							<Property name="CustomData" value="76" _index="10" />
+							<Property name="CustomData" value="105" _index="11" />
+							<Property name="CustomData" value="103" _index="12" />
+							<Property name="CustomData" value="104" _index="13" />
+							<Property name="CustomData" value="116" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="0" _index="18" />
+							<Property name="CustomData" value="64" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="128" _index="22" />
+							<Property name="CustomData" value="63" _index="23" />
+							<Property name="CustomData" value="31" _index="24" />
+							<Property name="CustomData" value="124" _index="25" />
+							<Property name="CustomData" value="255" _index="26" />
+							<Property name="CustomData" value="125" _index="27" />
+							<Property name="CustomData" value="132" _index="28" />
+							<Property name="CustomData" value="124" _index="29" />
+							<Property name="CustomData" value="198" _index="30" />
+							<Property name="CustomData" value="124" _index="31" />
+							<Property name="CustomData" value="8" _index="32" />
+							<Property name="CustomData" value="125" _index="33" />
+							<Property name="CustomData" value="74" _index="34" />
+							<Property name="CustomData" value="125" _index="35" />
+							<Property name="CustomData" value="140" _index="36" />
+							<Property name="CustomData" value="125" _index="37" />
+							<Property name="CustomData" value="206" _index="38" />
+							<Property name="CustomData" value="125" _index="39" />
+							<Property name="CustomData" value="49" _index="40" />
+							<Property name="CustomData" value="126" _index="41" />
+							<Property name="CustomData" value="115" _index="42" />
+							<Property name="CustomData" value="126" _index="43" />
+							<Property name="CustomData" value="181" _index="44" />
+							<Property name="CustomData" value="126" _index="45" />
+							<Property name="CustomData" value="247" _index="46" />
+							<Property name="CustomData" value="126" _index="47" />
+							<Property name="CustomData" value="57" _index="48" />
+							<Property name="CustomData" value="127" _index="49" />
+							<Property name="CustomData" value="123" _index="50" />
+							<Property name="CustomData" value="127" _index="51" />
+							<Property name="CustomData" value="189" _index="52" />
+							<Property name="CustomData" value="127" _index="53" />
+							<Property name="CustomData" value="224" _index="54" />
+							<Property name="CustomData" value="127" _index="55" />
+							<Property name="CustomData" value="1" _index="56" />
+							<Property name="CustomData" value="127" _index="57" />
+							<Property name="CustomData" value="74" _index="58" />
+							<Property name="CustomData" value="63" _index="59" />
+							<Property name="CustomData" value="233" _index="60" />
+							<Property name="CustomData" value="1" _index="61" />
+							<Property name="CustomData" value="67" _index="62" />
+							<Property name="CustomData" value="61" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="18">
+						<Property name="TypeName" value="SetLightIntensity" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1702" />
+						<Property name="PositionY" value="1845" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="97" _index="1" />
+							<Property name="CustomData" value="110" _index="2" />
+							<Property name="CustomData" value="100" _index="3" />
+							<Property name="CustomData" value="105" _index="4" />
+							<Property name="CustomData" value="110" _index="5" />
+							<Property name="CustomData" value="103" _index="6" />
+							<Property name="CustomData" value="76" _index="7" />
+							<Property name="CustomData" value="105" _index="8" />
+							<Property name="CustomData" value="103" _index="9" />
+							<Property name="CustomData" value="104" _index="10" />
+							<Property name="CustomData" value="116" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="32" _index="18" />
+							<Property name="CustomData" value="66" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="128" _index="22" />
+							<Property name="CustomData" value="63" _index="23" />
+							<Property name="CustomData" value="0" _index="24" />
+							<Property name="CustomData" value="124" _index="25" />
+							<Property name="CustomData" value="223" _index="26" />
+							<Property name="CustomData" value="124" _index="27" />
+							<Property name="CustomData" value="95" _index="28" />
+							<Property name="CustomData" value="127" _index="29" />
+							<Property name="CustomData" value="198" _index="30" />
+							<Property name="CustomData" value="124" _index="31" />
+							<Property name="CustomData" value="8" _index="32" />
+							<Property name="CustomData" value="125" _index="33" />
+							<Property name="CustomData" value="74" _index="34" />
+							<Property name="CustomData" value="125" _index="35" />
+							<Property name="CustomData" value="140" _index="36" />
+							<Property name="CustomData" value="125" _index="37" />
+							<Property name="CustomData" value="206" _index="38" />
+							<Property name="CustomData" value="125" _index="39" />
+							<Property name="CustomData" value="49" _index="40" />
+							<Property name="CustomData" value="126" _index="41" />
+							<Property name="CustomData" value="115" _index="42" />
+							<Property name="CustomData" value="126" _index="43" />
+							<Property name="CustomData" value="181" _index="44" />
+							<Property name="CustomData" value="126" _index="45" />
+							<Property name="CustomData" value="247" _index="46" />
+							<Property name="CustomData" value="126" _index="47" />
+							<Property name="CustomData" value="57" _index="48" />
+							<Property name="CustomData" value="127" _index="49" />
+							<Property name="CustomData" value="123" _index="50" />
+							<Property name="CustomData" value="127" _index="51" />
+							<Property name="CustomData" value="189" _index="52" />
+							<Property name="CustomData" value="127" _index="53" />
+							<Property name="CustomData" value="255" _index="54" />
+							<Property name="CustomData" value="127" _index="55" />
+							<Property name="CustomData" value="1" _index="56" />
+							<Property name="CustomData" value="127" _index="57" />
+							<Property name="CustomData" value="0" _index="58" />
+							<Property name="CustomData" value="0" _index="59" />
+							<Property name="CustomData" value="0" _index="60" />
+							<Property name="CustomData" value="0" _index="61" />
+							<Property name="CustomData" value="0" _index="62" />
+							<Property name="CustomData" value="0" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="19">
+						<Property name="TypeName" value="OnVariableChanged" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="-594" />
+						<Property name="PositionY" value="2245" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+							<Property name="Connections" value="TkSketchNodeConnections" _index="1">
+								<Property name="Connections">
+									<Property name="Connections" value="20" _index="0" />
+									<Property name="Connections" value="24" _index="1" />
+									<Property name="Connections" value="42" _index="2" />
+									<Property name="Connections" value="43" _index="3" />
+									<Property name="Connections" value="44" _index="4" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="69" _index="0" />
+							<Property name="CustomData" value="110" _index="1" />
+							<Property name="CustomData" value="103" _index="2" />
+							<Property name="CustomData" value="105" _index="3" />
+							<Property name="CustomData" value="110" _index="4" />
+							<Property name="CustomData" value="101" _index="5" />
+							<Property name="CustomData" value="0" _index="6" />
+							<Property name="CustomData" value="0" _index="7" />
+							<Property name="CustomData" value="0" _index="8" />
+							<Property name="CustomData" value="0" _index="9" />
+							<Property name="CustomData" value="0" _index="10" />
+							<Property name="CustomData" value="0" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="20">
+						<Property name="TypeName" value="SetParticlesStage" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="2" />
+						<Property name="PositionX" value="276" />
+						<Property name="PositionY" value="2362" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="79" _index="1" />
+							<Property name="CustomData" value="67" _index="2" />
+							<Property name="CustomData" value="67" _index="3" />
+							<Property name="CustomData" value="101" _index="4" />
+							<Property name="CustomData" value="110" _index="5" />
+							<Property name="CustomData" value="116" _index="6" />
+							<Property name="CustomData" value="114" _index="7" />
+							<Property name="CustomData" value="101" _index="8" />
+							<Property name="CustomData" value="86" _index="9" />
+							<Property name="CustomData" value="101" _index="10" />
+							<Property name="CustomData" value="110" _index="11" />
+							<Property name="CustomData" value="116" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="128" _index="18" />
+							<Property name="CustomData" value="63" _index="19" />
+							<Property name="CustomData" value="240" _index="20" />
+							<Property name="CustomData" value="63" _index="21" />
+							<Property name="CustomData" value="18" _index="22" />
+							<Property name="CustomData" value="56" _index="23" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="21">
+						<Property name="TypeName" value="OnVariableChanged" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="-494" />
+						<Property name="PositionY" value="3413" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+							<Property name="Connections" value="TkSketchNodeConnections" _index="1">
+								<Property name="Connections">
+									<Property name="Connections" value="22" _index="0" />
+									<Property name="Connections" value="28" _index="1" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="101" _index="1" />
+							<Property name="CustomData" value="102" _index="2" />
+							<Property name="CustomData" value="116" _index="3" />
+							<Property name="CustomData" value="69" _index="4" />
+							<Property name="CustomData" value="110" _index="5" />
+							<Property name="CustomData" value="103" _index="6" />
+							<Property name="CustomData" value="105" _index="7" />
+							<Property name="CustomData" value="110" _index="8" />
+							<Property name="CustomData" value="101" _index="9" />
+							<Property name="CustomData" value="0" _index="10" />
+							<Property name="CustomData" value="0" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="22">
+						<Property name="TypeName" value="SetParticlesStage" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="2" />
+						<Property name="PositionX" value="273" />
+						<Property name="PositionY" value="3455" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="79" _index="1" />
+							<Property name="CustomData" value="67" _index="2" />
+							<Property name="CustomData" value="76" _index="3" />
+							<Property name="CustomData" value="101" _index="4" />
+							<Property name="CustomData" value="102" _index="5" />
+							<Property name="CustomData" value="116" _index="6" />
+							<Property name="CustomData" value="86" _index="7" />
+							<Property name="CustomData" value="101" _index="8" />
+							<Property name="CustomData" value="110" _index="9" />
+							<Property name="CustomData" value="116" _index="10" />
+							<Property name="CustomData" value="0" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="128" _index="18" />
+							<Property name="CustomData" value="63" _index="19" />
+							<Property name="CustomData" value="240" _index="20" />
+							<Property name="CustomData" value="63" _index="21" />
+							<Property name="CustomData" value="18" _index="22" />
+							<Property name="CustomData" value="56" _index="23" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="23">
+						<Property name="TypeName" value="SetLightIntensity" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="2" />
+						<Property name="PositionX" value="305" />
+						<Property name="PositionY" value="2509" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="67" _index="0" />
+							<Property name="CustomData" value="101" _index="1" />
+							<Property name="CustomData" value="110" _index="2" />
+							<Property name="CustomData" value="116" _index="3" />
+							<Property name="CustomData" value="114" _index="4" />
+							<Property name="CustomData" value="101" _index="5" />
+							<Property name="CustomData" value="86" _index="6" />
+							<Property name="CustomData" value="101" _index="7" />
+							<Property name="CustomData" value="110" _index="8" />
+							<Property name="CustomData" value="116" _index="9" />
+							<Property name="CustomData" value="76" _index="10" />
+							<Property name="CustomData" value="105" _index="11" />
+							<Property name="CustomData" value="103" _index="12" />
+							<Property name="CustomData" value="104" _index="13" />
+							<Property name="CustomData" value="116" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="32" _index="18" />
+							<Property name="CustomData" value="65" _index="19" />
+							<Property name="CustomData" value="205" _index="20" />
+							<Property name="CustomData" value="204" _index="21" />
+							<Property name="CustomData" value="76" _index="22" />
+							<Property name="CustomData" value="62" _index="23" />
+							<Property name="CustomData" value="31" _index="24" />
+							<Property name="CustomData" value="124" _index="25" />
+							<Property name="CustomData" value="66" _index="26" />
+							<Property name="CustomData" value="124" _index="27" />
+							<Property name="CustomData" value="132" _index="28" />
+							<Property name="CustomData" value="124" _index="29" />
+							<Property name="CustomData" value="198" _index="30" />
+							<Property name="CustomData" value="124" _index="31" />
+							<Property name="CustomData" value="8" _index="32" />
+							<Property name="CustomData" value="125" _index="33" />
+							<Property name="CustomData" value="74" _index="34" />
+							<Property name="CustomData" value="125" _index="35" />
+							<Property name="CustomData" value="140" _index="36" />
+							<Property name="CustomData" value="125" _index="37" />
+							<Property name="CustomData" value="206" _index="38" />
+							<Property name="CustomData" value="125" _index="39" />
+							<Property name="CustomData" value="49" _index="40" />
+							<Property name="CustomData" value="126" _index="41" />
+							<Property name="CustomData" value="115" _index="42" />
+							<Property name="CustomData" value="126" _index="43" />
+							<Property name="CustomData" value="181" _index="44" />
+							<Property name="CustomData" value="126" _index="45" />
+							<Property name="CustomData" value="247" _index="46" />
+							<Property name="CustomData" value="126" _index="47" />
+							<Property name="CustomData" value="57" _index="48" />
+							<Property name="CustomData" value="127" _index="49" />
+							<Property name="CustomData" value="123" _index="50" />
+							<Property name="CustomData" value="127" _index="51" />
+							<Property name="CustomData" value="189" _index="52" />
+							<Property name="CustomData" value="127" _index="53" />
+							<Property name="CustomData" value="255" _index="54" />
+							<Property name="CustomData" value="127" _index="55" />
+							<Property name="CustomData" value="1" _index="56" />
+							<Property name="CustomData" value="127" _index="57" />
+							<Property name="CustomData" value="74" _index="58" />
+							<Property name="CustomData" value="63" _index="59" />
+							<Property name="CustomData" value="233" _index="60" />
+							<Property name="CustomData" value="1" _index="61" />
+							<Property name="CustomData" value="67" _index="62" />
+							<Property name="CustomData" value="61" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="24">
+						<Property name="TypeName" value="MathsFunction" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="-14" />
+						<Property name="PositionY" value="2555" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections">
+									<Property name="Connections" value="23" _index="0" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="120" _index="0" />
+							<Property name="CustomData" value="42" _index="1" />
+							<Property name="CustomData" value="50" _index="2" />
+							<Property name="CustomData" value="0" _index="3" />
+							<Property name="CustomData" value="0" _index="4" />
+							<Property name="CustomData" value="0" _index="5" />
+							<Property name="CustomData" value="0" _index="6" />
+							<Property name="CustomData" value="0" _index="7" />
+							<Property name="CustomData" value="0" _index="8" />
+							<Property name="CustomData" value="0" _index="9" />
+							<Property name="CustomData" value="0" _index="10" />
+							<Property name="CustomData" value="0" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="0" _index="18" />
+							<Property name="CustomData" value="0" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="0" _index="22" />
+							<Property name="CustomData" value="0" _index="23" />
+							<Property name="CustomData" value="0" _index="24" />
+							<Property name="CustomData" value="0" _index="25" />
+							<Property name="CustomData" value="0" _index="26" />
+							<Property name="CustomData" value="0" _index="27" />
+							<Property name="CustomData" value="0" _index="28" />
+							<Property name="CustomData" value="0" _index="29" />
+							<Property name="CustomData" value="0" _index="30" />
+							<Property name="CustomData" value="0" _index="31" />
+							<Property name="CustomData" value="0" _index="32" />
+							<Property name="CustomData" value="0" _index="33" />
+							<Property name="CustomData" value="0" _index="34" />
+							<Property name="CustomData" value="0" _index="35" />
+							<Property name="CustomData" value="0" _index="36" />
+							<Property name="CustomData" value="0" _index="37" />
+							<Property name="CustomData" value="0" _index="38" />
+							<Property name="CustomData" value="0" _index="39" />
+							<Property name="CustomData" value="0" _index="40" />
+							<Property name="CustomData" value="0" _index="41" />
+							<Property name="CustomData" value="0" _index="42" />
+							<Property name="CustomData" value="0" _index="43" />
+							<Property name="CustomData" value="0" _index="44" />
+							<Property name="CustomData" value="0" _index="45" />
+							<Property name="CustomData" value="0" _index="46" />
+							<Property name="CustomData" value="0" _index="47" />
+							<Property name="CustomData" value="0" _index="48" />
+							<Property name="CustomData" value="0" _index="49" />
+							<Property name="CustomData" value="0" _index="50" />
+							<Property name="CustomData" value="0" _index="51" />
+							<Property name="CustomData" value="0" _index="52" />
+							<Property name="CustomData" value="0" _index="53" />
+							<Property name="CustomData" value="0" _index="54" />
+							<Property name="CustomData" value="0" _index="55" />
+							<Property name="CustomData" value="0" _index="56" />
+							<Property name="CustomData" value="0" _index="57" />
+							<Property name="CustomData" value="0" _index="58" />
+							<Property name="CustomData" value="0" _index="59" />
+							<Property name="CustomData" value="0" _index="60" />
+							<Property name="CustomData" value="0" _index="61" />
+							<Property name="CustomData" value="0" _index="62" />
+							<Property name="CustomData" value="0" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="25">
+						<Property name="TypeName" value="SetLightIntensity" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="2" />
+						<Property name="PositionX" value="310" />
+						<Property name="PositionY" value="2977" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="101" _index="1" />
+							<Property name="CustomData" value="102" _index="2" />
+							<Property name="CustomData" value="116" _index="3" />
+							<Property name="CustomData" value="86" _index="4" />
+							<Property name="CustomData" value="101" _index="5" />
+							<Property name="CustomData" value="110" _index="6" />
+							<Property name="CustomData" value="116" _index="7" />
+							<Property name="CustomData" value="76" _index="8" />
+							<Property name="CustomData" value="105" _index="9" />
+							<Property name="CustomData" value="103" _index="10" />
+							<Property name="CustomData" value="104" _index="11" />
+							<Property name="CustomData" value="116" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="32" _index="18" />
+							<Property name="CustomData" value="65" _index="19" />
+							<Property name="CustomData" value="205" _index="20" />
+							<Property name="CustomData" value="204" _index="21" />
+							<Property name="CustomData" value="76" _index="22" />
+							<Property name="CustomData" value="62" _index="23" />
+							<Property name="CustomData" value="31" _index="24" />
+							<Property name="CustomData" value="124" _index="25" />
+							<Property name="CustomData" value="66" _index="26" />
+							<Property name="CustomData" value="124" _index="27" />
+							<Property name="CustomData" value="132" _index="28" />
+							<Property name="CustomData" value="124" _index="29" />
+							<Property name="CustomData" value="198" _index="30" />
+							<Property name="CustomData" value="124" _index="31" />
+							<Property name="CustomData" value="8" _index="32" />
+							<Property name="CustomData" value="125" _index="33" />
+							<Property name="CustomData" value="74" _index="34" />
+							<Property name="CustomData" value="125" _index="35" />
+							<Property name="CustomData" value="140" _index="36" />
+							<Property name="CustomData" value="125" _index="37" />
+							<Property name="CustomData" value="206" _index="38" />
+							<Property name="CustomData" value="125" _index="39" />
+							<Property name="CustomData" value="49" _index="40" />
+							<Property name="CustomData" value="126" _index="41" />
+							<Property name="CustomData" value="115" _index="42" />
+							<Property name="CustomData" value="126" _index="43" />
+							<Property name="CustomData" value="181" _index="44" />
+							<Property name="CustomData" value="126" _index="45" />
+							<Property name="CustomData" value="247" _index="46" />
+							<Property name="CustomData" value="126" _index="47" />
+							<Property name="CustomData" value="57" _index="48" />
+							<Property name="CustomData" value="127" _index="49" />
+							<Property name="CustomData" value="123" _index="50" />
+							<Property name="CustomData" value="127" _index="51" />
+							<Property name="CustomData" value="189" _index="52" />
+							<Property name="CustomData" value="127" _index="53" />
+							<Property name="CustomData" value="255" _index="54" />
+							<Property name="CustomData" value="127" _index="55" />
+							<Property name="CustomData" value="1" _index="56" />
+							<Property name="CustomData" value="127" _index="57" />
+							<Property name="CustomData" value="31" _index="58" />
+							<Property name="CustomData" value="189" _index="59" />
+							<Property name="CustomData" value="207" _index="60" />
+							<Property name="CustomData" value="152" _index="61" />
+							<Property name="CustomData" value="124" _index="62" />
+							<Property name="CustomData" value="63" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="26">
+						<Property name="TypeName" value="SetLightIntensity" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="2" />
+						<Property name="PositionX" value="276" />
+						<Property name="PositionY" value="3715" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="82" _index="0" />
+							<Property name="CustomData" value="105" _index="1" />
+							<Property name="CustomData" value="103" _index="2" />
+							<Property name="CustomData" value="104" _index="3" />
+							<Property name="CustomData" value="116" _index="4" />
+							<Property name="CustomData" value="86" _index="5" />
+							<Property name="CustomData" value="101" _index="6" />
+							<Property name="CustomData" value="110" _index="7" />
+							<Property name="CustomData" value="116" _index="8" />
+							<Property name="CustomData" value="76" _index="9" />
+							<Property name="CustomData" value="105" _index="10" />
+							<Property name="CustomData" value="103" _index="11" />
+							<Property name="CustomData" value="104" _index="12" />
+							<Property name="CustomData" value="116" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="32" _index="18" />
+							<Property name="CustomData" value="65" _index="19" />
+							<Property name="CustomData" value="205" _index="20" />
+							<Property name="CustomData" value="204" _index="21" />
+							<Property name="CustomData" value="76" _index="22" />
+							<Property name="CustomData" value="62" _index="23" />
+							<Property name="CustomData" value="31" _index="24" />
+							<Property name="CustomData" value="124" _index="25" />
+							<Property name="CustomData" value="66" _index="26" />
+							<Property name="CustomData" value="124" _index="27" />
+							<Property name="CustomData" value="132" _index="28" />
+							<Property name="CustomData" value="124" _index="29" />
+							<Property name="CustomData" value="198" _index="30" />
+							<Property name="CustomData" value="124" _index="31" />
+							<Property name="CustomData" value="8" _index="32" />
+							<Property name="CustomData" value="125" _index="33" />
+							<Property name="CustomData" value="74" _index="34" />
+							<Property name="CustomData" value="125" _index="35" />
+							<Property name="CustomData" value="140" _index="36" />
+							<Property name="CustomData" value="125" _index="37" />
+							<Property name="CustomData" value="206" _index="38" />
+							<Property name="CustomData" value="125" _index="39" />
+							<Property name="CustomData" value="49" _index="40" />
+							<Property name="CustomData" value="126" _index="41" />
+							<Property name="CustomData" value="115" _index="42" />
+							<Property name="CustomData" value="126" _index="43" />
+							<Property name="CustomData" value="181" _index="44" />
+							<Property name="CustomData" value="126" _index="45" />
+							<Property name="CustomData" value="247" _index="46" />
+							<Property name="CustomData" value="126" _index="47" />
+							<Property name="CustomData" value="57" _index="48" />
+							<Property name="CustomData" value="127" _index="49" />
+							<Property name="CustomData" value="123" _index="50" />
+							<Property name="CustomData" value="127" _index="51" />
+							<Property name="CustomData" value="189" _index="52" />
+							<Property name="CustomData" value="127" _index="53" />
+							<Property name="CustomData" value="255" _index="54" />
+							<Property name="CustomData" value="127" _index="55" />
+							<Property name="CustomData" value="1" _index="56" />
+							<Property name="CustomData" value="127" _index="57" />
+							<Property name="CustomData" value="248" _index="58" />
+							<Property name="CustomData" value="91" _index="59" />
+							<Property name="CustomData" value="133" _index="60" />
+							<Property name="CustomData" value="81" _index="61" />
+							<Property name="CustomData" value="11" _index="62" />
+							<Property name="CustomData" value="39" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="27">
+						<Property name="TypeName" value="MathsFunction" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="-138" />
+						<Property name="PositionY" value="3044" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections">
+									<Property name="Connections" value="25" _index="0" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="120" _index="0" />
+							<Property name="CustomData" value="42" _index="1" />
+							<Property name="CustomData" value="50" _index="2" />
+							<Property name="CustomData" value="0" _index="3" />
+							<Property name="CustomData" value="0" _index="4" />
+							<Property name="CustomData" value="0" _index="5" />
+							<Property name="CustomData" value="0" _index="6" />
+							<Property name="CustomData" value="0" _index="7" />
+							<Property name="CustomData" value="0" _index="8" />
+							<Property name="CustomData" value="0" _index="9" />
+							<Property name="CustomData" value="0" _index="10" />
+							<Property name="CustomData" value="0" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="0" _index="18" />
+							<Property name="CustomData" value="0" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="0" _index="22" />
+							<Property name="CustomData" value="0" _index="23" />
+							<Property name="CustomData" value="0" _index="24" />
+							<Property name="CustomData" value="0" _index="25" />
+							<Property name="CustomData" value="0" _index="26" />
+							<Property name="CustomData" value="0" _index="27" />
+							<Property name="CustomData" value="0" _index="28" />
+							<Property name="CustomData" value="0" _index="29" />
+							<Property name="CustomData" value="0" _index="30" />
+							<Property name="CustomData" value="0" _index="31" />
+							<Property name="CustomData" value="0" _index="32" />
+							<Property name="CustomData" value="0" _index="33" />
+							<Property name="CustomData" value="0" _index="34" />
+							<Property name="CustomData" value="0" _index="35" />
+							<Property name="CustomData" value="0" _index="36" />
+							<Property name="CustomData" value="0" _index="37" />
+							<Property name="CustomData" value="0" _index="38" />
+							<Property name="CustomData" value="0" _index="39" />
+							<Property name="CustomData" value="0" _index="40" />
+							<Property name="CustomData" value="0" _index="41" />
+							<Property name="CustomData" value="0" _index="42" />
+							<Property name="CustomData" value="0" _index="43" />
+							<Property name="CustomData" value="0" _index="44" />
+							<Property name="CustomData" value="0" _index="45" />
+							<Property name="CustomData" value="0" _index="46" />
+							<Property name="CustomData" value="0" _index="47" />
+							<Property name="CustomData" value="0" _index="48" />
+							<Property name="CustomData" value="0" _index="49" />
+							<Property name="CustomData" value="0" _index="50" />
+							<Property name="CustomData" value="0" _index="51" />
+							<Property name="CustomData" value="0" _index="52" />
+							<Property name="CustomData" value="0" _index="53" />
+							<Property name="CustomData" value="0" _index="54" />
+							<Property name="CustomData" value="0" _index="55" />
+							<Property name="CustomData" value="0" _index="56" />
+							<Property name="CustomData" value="0" _index="57" />
+							<Property name="CustomData" value="0" _index="58" />
+							<Property name="CustomData" value="0" _index="59" />
+							<Property name="CustomData" value="0" _index="60" />
+							<Property name="CustomData" value="0" _index="61" />
+							<Property name="CustomData" value="0" _index="62" />
+							<Property name="CustomData" value="0" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="28">
+						<Property name="TypeName" value="MathsFunction" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="-91" />
+						<Property name="PositionY" value="3676" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections">
+									<Property name="Connections" value="26" _index="0" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="120" _index="0" />
+							<Property name="CustomData" value="42" _index="1" />
+							<Property name="CustomData" value="50" _index="2" />
+							<Property name="CustomData" value="0" _index="3" />
+							<Property name="CustomData" value="0" _index="4" />
+							<Property name="CustomData" value="0" _index="5" />
+							<Property name="CustomData" value="0" _index="6" />
+							<Property name="CustomData" value="0" _index="7" />
+							<Property name="CustomData" value="0" _index="8" />
+							<Property name="CustomData" value="0" _index="9" />
+							<Property name="CustomData" value="0" _index="10" />
+							<Property name="CustomData" value="0" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="0" _index="18" />
+							<Property name="CustomData" value="0" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="0" _index="22" />
+							<Property name="CustomData" value="0" _index="23" />
+							<Property name="CustomData" value="0" _index="24" />
+							<Property name="CustomData" value="0" _index="25" />
+							<Property name="CustomData" value="0" _index="26" />
+							<Property name="CustomData" value="0" _index="27" />
+							<Property name="CustomData" value="0" _index="28" />
+							<Property name="CustomData" value="0" _index="29" />
+							<Property name="CustomData" value="0" _index="30" />
+							<Property name="CustomData" value="0" _index="31" />
+							<Property name="CustomData" value="0" _index="32" />
+							<Property name="CustomData" value="0" _index="33" />
+							<Property name="CustomData" value="0" _index="34" />
+							<Property name="CustomData" value="0" _index="35" />
+							<Property name="CustomData" value="0" _index="36" />
+							<Property name="CustomData" value="0" _index="37" />
+							<Property name="CustomData" value="0" _index="38" />
+							<Property name="CustomData" value="0" _index="39" />
+							<Property name="CustomData" value="0" _index="40" />
+							<Property name="CustomData" value="0" _index="41" />
+							<Property name="CustomData" value="0" _index="42" />
+							<Property name="CustomData" value="0" _index="43" />
+							<Property name="CustomData" value="0" _index="44" />
+							<Property name="CustomData" value="0" _index="45" />
+							<Property name="CustomData" value="0" _index="46" />
+							<Property name="CustomData" value="0" _index="47" />
+							<Property name="CustomData" value="0" _index="48" />
+							<Property name="CustomData" value="0" _index="49" />
+							<Property name="CustomData" value="0" _index="50" />
+							<Property name="CustomData" value="0" _index="51" />
+							<Property name="CustomData" value="0" _index="52" />
+							<Property name="CustomData" value="0" _index="53" />
+							<Property name="CustomData" value="0" _index="54" />
+							<Property name="CustomData" value="0" _index="55" />
+							<Property name="CustomData" value="0" _index="56" />
+							<Property name="CustomData" value="0" _index="57" />
+							<Property name="CustomData" value="0" _index="58" />
+							<Property name="CustomData" value="0" _index="59" />
+							<Property name="CustomData" value="0" _index="60" />
+							<Property name="CustomData" value="0" _index="61" />
+							<Property name="CustomData" value="0" _index="62" />
+							<Property name="CustomData" value="0" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="29">
+						<Property name="TypeName" value="SetLightColour" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1017" />
+						<Property name="PositionY" value="-431" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="42" _index="0" />
+							<Property name="CustomData" value="86" _index="1" />
+							<Property name="CustomData" value="101" _index="2" />
+							<Property name="CustomData" value="110" _index="3" />
+							<Property name="CustomData" value="116" _index="4" />
+							<Property name="CustomData" value="76" _index="5" />
+							<Property name="CustomData" value="105" _index="6" />
+							<Property name="CustomData" value="103" _index="7" />
+							<Property name="CustomData" value="104" _index="8" />
+							<Property name="CustomData" value="116" _index="9" />
+							<Property name="CustomData" value="0" _index="10" />
+							<Property name="CustomData" value="0" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="255" _index="16" />
+							<Property name="CustomData" value="146" _index="17" />
+							<Property name="CustomData" value="47" _index="18" />
+							<Property name="CustomData" value="68" _index="19" />
+							<Property name="CustomData" value="68" _index="20" />
+							<Property name="CustomData" value="68" _index="21" />
+							<Property name="CustomData" value="68" _index="22" />
+							<Property name="CustomData" value="68" _index="23" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="30">
+						<Property name="TypeName" value="SetLightIntensity" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1013" />
+						<Property name="PositionY" value="-1087" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="42" _index="0" />
+							<Property name="CustomData" value="76" _index="1" />
+							<Property name="CustomData" value="105" _index="2" />
+							<Property name="CustomData" value="103" _index="3" />
+							<Property name="CustomData" value="104" _index="4" />
+							<Property name="CustomData" value="116" _index="5" />
+							<Property name="CustomData" value="0" _index="6" />
+							<Property name="CustomData" value="0" _index="7" />
+							<Property name="CustomData" value="0" _index="8" />
+							<Property name="CustomData" value="0" _index="9" />
+							<Property name="CustomData" value="0" _index="10" />
+							<Property name="CustomData" value="0" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="0" _index="18" />
+							<Property name="CustomData" value="0" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="0" _index="22" />
+							<Property name="CustomData" value="0" _index="23" />
+							<Property name="CustomData" value="0" _index="24" />
+							<Property name="CustomData" value="124" _index="25" />
+							<Property name="CustomData" value="66" _index="26" />
+							<Property name="CustomData" value="124" _index="27" />
+							<Property name="CustomData" value="132" _index="28" />
+							<Property name="CustomData" value="124" _index="29" />
+							<Property name="CustomData" value="198" _index="30" />
+							<Property name="CustomData" value="124" _index="31" />
+							<Property name="CustomData" value="8" _index="32" />
+							<Property name="CustomData" value="125" _index="33" />
+							<Property name="CustomData" value="74" _index="34" />
+							<Property name="CustomData" value="125" _index="35" />
+							<Property name="CustomData" value="140" _index="36" />
+							<Property name="CustomData" value="125" _index="37" />
+							<Property name="CustomData" value="206" _index="38" />
+							<Property name="CustomData" value="125" _index="39" />
+							<Property name="CustomData" value="49" _index="40" />
+							<Property name="CustomData" value="126" _index="41" />
+							<Property name="CustomData" value="115" _index="42" />
+							<Property name="CustomData" value="126" _index="43" />
+							<Property name="CustomData" value="181" _index="44" />
+							<Property name="CustomData" value="126" _index="45" />
+							<Property name="CustomData" value="247" _index="46" />
+							<Property name="CustomData" value="126" _index="47" />
+							<Property name="CustomData" value="57" _index="48" />
+							<Property name="CustomData" value="127" _index="49" />
+							<Property name="CustomData" value="123" _index="50" />
+							<Property name="CustomData" value="127" _index="51" />
+							<Property name="CustomData" value="189" _index="52" />
+							<Property name="CustomData" value="127" _index="53" />
+							<Property name="CustomData" value="255" _index="54" />
+							<Property name="CustomData" value="127" _index="55" />
+							<Property name="CustomData" value="1" _index="56" />
+							<Property name="CustomData" value="127" _index="57" />
+							<Property name="CustomData" value="68" _index="58" />
+							<Property name="CustomData" value="68" _index="59" />
+							<Property name="CustomData" value="68" _index="60" />
+							<Property name="CustomData" value="68" _index="61" />
+							<Property name="CustomData" value="68" _index="62" />
+							<Property name="CustomData" value="68" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="31">
+						<Property name="TypeName" value="OnSpawned" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="354" />
+						<Property name="PositionY" value="-999" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections">
+									<Property name="Connections" value="30" _index="0" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData" />
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="32">
+						<Property name="TypeName" value="OnBroadcastReceived" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="798" />
+						<Property name="PositionY" value="2226" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections">
+									<Property name="Connections" value="34" _index="0" />
+									<Property name="Connections" value="33" _index="1" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData" />
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="33">
+						<Property name="TypeName" value="IfValueIs" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1126" />
+						<Property name="PositionY" value="2105" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections">
+									<Property name="Connections" value="18" _index="0" />
+									<Property name="Connections" value="6" _index="1" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="0" _index="0" />
+							<Property name="CustomData" value="0" _index="1" />
+							<Property name="CustomData" value="0" _index="2" />
+							<Property name="CustomData" value="0" _index="3" />
+							<Property name="CustomData" value="68" _index="4" />
+							<Property name="CustomData" value="68" _index="5" />
+							<Property name="CustomData" value="68" _index="6" />
+							<Property name="CustomData" value="68" _index="7" />
+							<Property name="CustomData" value="83" _index="8" />
+							<Property name="CustomData" value="72" _index="9" />
+							<Property name="CustomData" value="73" _index="10" />
+							<Property name="CustomData" value="80" _index="11" />
+							<Property name="CustomData" value="95" _index="12" />
+							<Property name="CustomData" value="76" _index="13" />
+							<Property name="CustomData" value="65" _index="14" />
+							<Property name="CustomData" value="78" _index="15" />
+							<Property name="CustomData" value="68" _index="16" />
+							<Property name="CustomData" value="73" _index="17" />
+							<Property name="CustomData" value="78" _index="18" />
+							<Property name="CustomData" value="71" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="0" _index="22" />
+							<Property name="CustomData" value="0" _index="23" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="34">
+						<Property name="TypeName" value="IfValueIs" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1126" />
+						<Property name="PositionY" value="2314" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections">
+									<Property name="Connections" value="38" _index="0" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="0" _index="0" />
+							<Property name="CustomData" value="0" _index="1" />
+							<Property name="CustomData" value="0" _index="2" />
+							<Property name="CustomData" value="0" _index="3" />
+							<Property name="CustomData" value="68" _index="4" />
+							<Property name="CustomData" value="68" _index="5" />
+							<Property name="CustomData" value="68" _index="6" />
+							<Property name="CustomData" value="68" _index="7" />
+							<Property name="CustomData" value="83" _index="8" />
+							<Property name="CustomData" value="72" _index="9" />
+							<Property name="CustomData" value="73" _index="10" />
+							<Property name="CustomData" value="80" _index="11" />
+							<Property name="CustomData" value="95" _index="12" />
+							<Property name="CustomData" value="76" _index="13" />
+							<Property name="CustomData" value="65" _index="14" />
+							<Property name="CustomData" value="78" _index="15" />
+							<Property name="CustomData" value="68" _index="16" />
+							<Property name="CustomData" value="69" _index="17" />
+							<Property name="CustomData" value="68" _index="18" />
+							<Property name="CustomData" value="0" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="0" _index="22" />
+							<Property name="CustomData" value="0" _index="23" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="35">
+						<Property name="TypeName" value="OnBroadcastReceived" />
+						<Property name="TriggerType" value="QueueLatest" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="-356" />
+						<Property name="PositionY" value="540" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections">
+									<Property name="Connections" value="2" _index="0" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData" />
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="36">
+						<Property name="TypeName" value="SetLightIntensity" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1717" />
+						<Property name="PositionY" value="2508" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="97" _index="1" />
+							<Property name="CustomData" value="110" _index="2" />
+							<Property name="CustomData" value="100" _index="3" />
+							<Property name="CustomData" value="105" _index="4" />
+							<Property name="CustomData" value="110" _index="5" />
+							<Property name="CustomData" value="103" _index="6" />
+							<Property name="CustomData" value="76" _index="7" />
+							<Property name="CustomData" value="105" _index="8" />
+							<Property name="CustomData" value="103" _index="9" />
+							<Property name="CustomData" value="104" _index="10" />
+							<Property name="CustomData" value="116" _index="11" />
+							<Property name="CustomData" value="0" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="160" _index="18" />
+							<Property name="CustomData" value="65" _index="19" />
+							<Property name="CustomData" value="205" _index="20" />
+							<Property name="CustomData" value="204" _index="21" />
+							<Property name="CustomData" value="76" _index="22" />
+							<Property name="CustomData" value="62" _index="23" />
+							<Property name="CustomData" value="31" _index="24" />
+							<Property name="CustomData" value="124" _index="25" />
+							<Property name="CustomData" value="223" _index="26" />
+							<Property name="CustomData" value="124" _index="27" />
+							<Property name="CustomData" value="95" _index="28" />
+							<Property name="CustomData" value="127" _index="29" />
+							<Property name="CustomData" value="198" _index="30" />
+							<Property name="CustomData" value="124" _index="31" />
+							<Property name="CustomData" value="8" _index="32" />
+							<Property name="CustomData" value="125" _index="33" />
+							<Property name="CustomData" value="74" _index="34" />
+							<Property name="CustomData" value="125" _index="35" />
+							<Property name="CustomData" value="140" _index="36" />
+							<Property name="CustomData" value="125" _index="37" />
+							<Property name="CustomData" value="206" _index="38" />
+							<Property name="CustomData" value="125" _index="39" />
+							<Property name="CustomData" value="49" _index="40" />
+							<Property name="CustomData" value="126" _index="41" />
+							<Property name="CustomData" value="115" _index="42" />
+							<Property name="CustomData" value="126" _index="43" />
+							<Property name="CustomData" value="181" _index="44" />
+							<Property name="CustomData" value="126" _index="45" />
+							<Property name="CustomData" value="247" _index="46" />
+							<Property name="CustomData" value="126" _index="47" />
+							<Property name="CustomData" value="57" _index="48" />
+							<Property name="CustomData" value="127" _index="49" />
+							<Property name="CustomData" value="123" _index="50" />
+							<Property name="CustomData" value="127" _index="51" />
+							<Property name="CustomData" value="189" _index="52" />
+							<Property name="CustomData" value="127" _index="53" />
+							<Property name="CustomData" value="224" _index="54" />
+							<Property name="CustomData" value="127" _index="55" />
+							<Property name="CustomData" value="1" _index="56" />
+							<Property name="CustomData" value="127" _index="57" />
+							<Property name="CustomData" value="0" _index="58" />
+							<Property name="CustomData" value="0" _index="59" />
+							<Property name="CustomData" value="0" _index="60" />
+							<Property name="CustomData" value="0" _index="61" />
+							<Property name="CustomData" value="0" _index="62" />
+							<Property name="CustomData" value="0" _index="63" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="37">
+						<Property name="TypeName" value="IfValueIs" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="471" />
+						<Property name="PositionY" value="1360" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections">
+									<Property name="Connections" value="8" _index="0" />
+									<Property name="Connections" value="9" _index="1" />
+									<Property name="Connections" value="10" _index="2" />
+									<Property name="Connections" value="45" _index="3" />
+									<Property name="Connections" value="47" _index="4" />
+									<Property name="Connections" value="46" _index="5" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="0" _index="0" />
+							<Property name="CustomData" value="0" _index="1" />
+							<Property name="CustomData" value="0" _index="2" />
+							<Property name="CustomData" value="0" _index="3" />
+							<Property name="CustomData" value="68" _index="4" />
+							<Property name="CustomData" value="68" _index="5" />
+							<Property name="CustomData" value="68" _index="6" />
+							<Property name="CustomData" value="68" _index="7" />
+							<Property name="CustomData" value="83" _index="8" />
+							<Property name="CustomData" value="72" _index="9" />
+							<Property name="CustomData" value="73" _index="10" />
+							<Property name="CustomData" value="80" _index="11" />
+							<Property name="CustomData" value="95" _index="12" />
+							<Property name="CustomData" value="76" _index="13" />
+							<Property name="CustomData" value="65" _index="14" />
+							<Property name="CustomData" value="78" _index="15" />
+							<Property name="CustomData" value="68" _index="16" />
+							<Property name="CustomData" value="69" _index="17" />
+							<Property name="CustomData" value="68" _index="18" />
+							<Property name="CustomData" value="0" _index="19" />
+							<Property name="CustomData" value="0" _index="20" />
+							<Property name="CustomData" value="0" _index="21" />
+							<Property name="CustomData" value="0" _index="22" />
+							<Property name="CustomData" value="0" _index="23" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="38">
+						<Property name="TypeName" value="WaitSeconds" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1387" />
+						<Property name="PositionY" value="2521" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections">
+									<Property name="Connections" value="36" _index="0" />
+									<Property name="Connections" value="11" _index="1" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="205" _index="0" />
+							<Property name="CustomData" value="204" _index="1" />
+							<Property name="CustomData" value="204" _index="2" />
+							<Property name="CustomData" value="61" _index="3" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="39">
+						<Property name="TypeName" value="SpawnParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1017" />
+						<Property name="PositionY" value="-916" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="83" _index="0" />
+							<Property name="CustomData" value="80" _index="1" />
+							<Property name="CustomData" value="79" _index="2" />
+							<Property name="CustomData" value="79" _index="3" />
+							<Property name="CustomData" value="75" _index="4" />
+							<Property name="CustomData" value="83" _index="5" />
+							<Property name="CustomData" value="72" _index="6" />
+							<Property name="CustomData" value="73" _index="7" />
+							<Property name="CustomData" value="80" _index="8" />
+							<Property name="CustomData" value="69" _index="9" />
+							<Property name="CustomData" value="78" _index="10" />
+							<Property name="CustomData" value="71" _index="11" />
+							<Property name="CustomData" value="73" _index="12" />
+							<Property name="CustomData" value="78" _index="13" />
+							<Property name="CustomData" value="69" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="76" _index="16" />
+							<Property name="CustomData" value="79" _index="17" />
+							<Property name="CustomData" value="67" _index="18" />
+							<Property name="CustomData" value="77" _index="19" />
+							<Property name="CustomData" value="97" _index="20" />
+							<Property name="CustomData" value="105" _index="21" />
+							<Property name="CustomData" value="110" _index="22" />
+							<Property name="CustomData" value="69" _index="23" />
+							<Property name="CustomData" value="110" _index="24" />
+							<Property name="CustomData" value="103" _index="25" />
+							<Property name="CustomData" value="105" _index="26" />
+							<Property name="CustomData" value="110" _index="27" />
+							<Property name="CustomData" value="101" _index="28" />
+							<Property name="CustomData" value="0" _index="29" />
+							<Property name="CustomData" value="0" _index="30" />
+							<Property name="CustomData" value="0" _index="31" />
+							<Property name="CustomData" value="0" _index="32" />
+							<Property name="CustomData" value="0" _index="33" />
+							<Property name="CustomData" value="128" _index="34" />
+							<Property name="CustomData" value="63" _index="35" />
+							<Property name="CustomData" value="1" _index="36" />
+							<Property name="CustomData" value="68" _index="37" />
+							<Property name="CustomData" value="68" _index="38" />
+							<Property name="CustomData" value="68" _index="39" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="40">
+						<Property name="TypeName" value="SpawnParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1032" />
+						<Property name="PositionY" value="-746" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="83" _index="0" />
+							<Property name="CustomData" value="80" _index="1" />
+							<Property name="CustomData" value="79" _index="2" />
+							<Property name="CustomData" value="79" _index="3" />
+							<Property name="CustomData" value="75" _index="4" />
+							<Property name="CustomData" value="83" _index="5" />
+							<Property name="CustomData" value="72" _index="6" />
+							<Property name="CustomData" value="73" _index="7" />
+							<Property name="CustomData" value="80" _index="8" />
+							<Property name="CustomData" value="69" _index="9" />
+							<Property name="CustomData" value="78" _index="10" />
+							<Property name="CustomData" value="71" _index="11" />
+							<Property name="CustomData" value="73" _index="12" />
+							<Property name="CustomData" value="78" _index="13" />
+							<Property name="CustomData" value="69" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="76" _index="16" />
+							<Property name="CustomData" value="79" _index="17" />
+							<Property name="CustomData" value="67" _index="18" />
+							<Property name="CustomData" value="77" _index="19" />
+							<Property name="CustomData" value="97" _index="20" />
+							<Property name="CustomData" value="105" _index="21" />
+							<Property name="CustomData" value="110" _index="22" />
+							<Property name="CustomData" value="69" _index="23" />
+							<Property name="CustomData" value="110" _index="24" />
+							<Property name="CustomData" value="103" _index="25" />
+							<Property name="CustomData" value="105" _index="26" />
+							<Property name="CustomData" value="110" _index="27" />
+							<Property name="CustomData" value="101" _index="28" />
+							<Property name="CustomData" value="49" _index="29" />
+							<Property name="CustomData" value="0" _index="30" />
+							<Property name="CustomData" value="0" _index="31" />
+							<Property name="CustomData" value="0" _index="32" />
+							<Property name="CustomData" value="0" _index="33" />
+							<Property name="CustomData" value="128" _index="34" />
+							<Property name="CustomData" value="63" _index="35" />
+							<Property name="CustomData" value="1" _index="36" />
+							<Property name="CustomData" value="68" _index="37" />
+							<Property name="CustomData" value="68" _index="38" />
+							<Property name="CustomData" value="68" _index="39" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="41">
+						<Property name="TypeName" value="SpawnParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1032" />
+						<Property name="PositionY" value="-593" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="83" _index="0" />
+							<Property name="CustomData" value="80" _index="1" />
+							<Property name="CustomData" value="79" _index="2" />
+							<Property name="CustomData" value="79" _index="3" />
+							<Property name="CustomData" value="75" _index="4" />
+							<Property name="CustomData" value="83" _index="5" />
+							<Property name="CustomData" value="72" _index="6" />
+							<Property name="CustomData" value="73" _index="7" />
+							<Property name="CustomData" value="80" _index="8" />
+							<Property name="CustomData" value="69" _index="9" />
+							<Property name="CustomData" value="78" _index="10" />
+							<Property name="CustomData" value="71" _index="11" />
+							<Property name="CustomData" value="73" _index="12" />
+							<Property name="CustomData" value="78" _index="13" />
+							<Property name="CustomData" value="69" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="76" _index="16" />
+							<Property name="CustomData" value="79" _index="17" />
+							<Property name="CustomData" value="67" _index="18" />
+							<Property name="CustomData" value="77" _index="19" />
+							<Property name="CustomData" value="97" _index="20" />
+							<Property name="CustomData" value="105" _index="21" />
+							<Property name="CustomData" value="110" _index="22" />
+							<Property name="CustomData" value="69" _index="23" />
+							<Property name="CustomData" value="110" _index="24" />
+							<Property name="CustomData" value="103" _index="25" />
+							<Property name="CustomData" value="105" _index="26" />
+							<Property name="CustomData" value="110" _index="27" />
+							<Property name="CustomData" value="101" _index="28" />
+							<Property name="CustomData" value="50" _index="29" />
+							<Property name="CustomData" value="0" _index="30" />
+							<Property name="CustomData" value="0" _index="31" />
+							<Property name="CustomData" value="0" _index="32" />
+							<Property name="CustomData" value="0" _index="33" />
+							<Property name="CustomData" value="128" _index="34" />
+							<Property name="CustomData" value="63" _index="35" />
+							<Property name="CustomData" value="1" _index="36" />
+							<Property name="CustomData" value="68" _index="37" />
+							<Property name="CustomData" value="68" _index="38" />
+							<Property name="CustomData" value="68" _index="39" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="42">
+						<Property name="TypeName" value="SetParticlesStage" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="2" />
+						<Property name="PositionX" value="314" />
+						<Property name="PositionY" value="1891" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="79" _index="1" />
+							<Property name="CustomData" value="67" _index="2" />
+							<Property name="CustomData" value="77" _index="3" />
+							<Property name="CustomData" value="97" _index="4" />
+							<Property name="CustomData" value="105" _index="5" />
+							<Property name="CustomData" value="110" _index="6" />
+							<Property name="CustomData" value="69" _index="7" />
+							<Property name="CustomData" value="110" _index="8" />
+							<Property name="CustomData" value="103" _index="9" />
+							<Property name="CustomData" value="105" _index="10" />
+							<Property name="CustomData" value="110" _index="11" />
+							<Property name="CustomData" value="101" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="128" _index="18" />
+							<Property name="CustomData" value="63" _index="19" />
+							<Property name="CustomData" value="240" _index="20" />
+							<Property name="CustomData" value="63" _index="21" />
+							<Property name="CustomData" value="18" _index="22" />
+							<Property name="CustomData" value="56" _index="23" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="43">
+						<Property name="TypeName" value="SetParticlesStage" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="2" />
+						<Property name="PositionX" value="305" />
+						<Property name="PositionY" value="2040" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="79" _index="1" />
+							<Property name="CustomData" value="67" _index="2" />
+							<Property name="CustomData" value="77" _index="3" />
+							<Property name="CustomData" value="97" _index="4" />
+							<Property name="CustomData" value="105" _index="5" />
+							<Property name="CustomData" value="110" _index="6" />
+							<Property name="CustomData" value="69" _index="7" />
+							<Property name="CustomData" value="110" _index="8" />
+							<Property name="CustomData" value="103" _index="9" />
+							<Property name="CustomData" value="105" _index="10" />
+							<Property name="CustomData" value="110" _index="11" />
+							<Property name="CustomData" value="101" _index="12" />
+							<Property name="CustomData" value="49" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="128" _index="18" />
+							<Property name="CustomData" value="63" _index="19" />
+							<Property name="CustomData" value="240" _index="20" />
+							<Property name="CustomData" value="63" _index="21" />
+							<Property name="CustomData" value="18" _index="22" />
+							<Property name="CustomData" value="56" _index="23" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="44">
+						<Property name="TypeName" value="SetParticlesStage" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="2" />
+						<Property name="PositionX" value="311" />
+						<Property name="PositionY" value="2132" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="79" _index="1" />
+							<Property name="CustomData" value="67" _index="2" />
+							<Property name="CustomData" value="77" _index="3" />
+							<Property name="CustomData" value="97" _index="4" />
+							<Property name="CustomData" value="105" _index="5" />
+							<Property name="CustomData" value="110" _index="6" />
+							<Property name="CustomData" value="69" _index="7" />
+							<Property name="CustomData" value="110" _index="8" />
+							<Property name="CustomData" value="103" _index="9" />
+							<Property name="CustomData" value="105" _index="10" />
+							<Property name="CustomData" value="110" _index="11" />
+							<Property name="CustomData" value="101" _index="12" />
+							<Property name="CustomData" value="50" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+							<Property name="CustomData" value="0" _index="16" />
+							<Property name="CustomData" value="0" _index="17" />
+							<Property name="CustomData" value="128" _index="18" />
+							<Property name="CustomData" value="63" _index="19" />
+							<Property name="CustomData" value="240" _index="20" />
+							<Property name="CustomData" value="63" _index="21" />
+							<Property name="CustomData" value="18" _index="22" />
+							<Property name="CustomData" value="56" _index="23" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="45">
+						<Property name="TypeName" value="StopParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="985" />
+						<Property name="PositionY" value="1094" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="79" _index="1" />
+							<Property name="CustomData" value="67" _index="2" />
+							<Property name="CustomData" value="77" _index="3" />
+							<Property name="CustomData" value="97" _index="4" />
+							<Property name="CustomData" value="105" _index="5" />
+							<Property name="CustomData" value="110" _index="6" />
+							<Property name="CustomData" value="69" _index="7" />
+							<Property name="CustomData" value="110" _index="8" />
+							<Property name="CustomData" value="103" _index="9" />
+							<Property name="CustomData" value="105" _index="10" />
+							<Property name="CustomData" value="110" _index="11" />
+							<Property name="CustomData" value="101" _index="12" />
+							<Property name="CustomData" value="0" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="46">
+						<Property name="TypeName" value="StopParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="1005" />
+						<Property name="PositionY" value="1287" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="79" _index="1" />
+							<Property name="CustomData" value="67" _index="2" />
+							<Property name="CustomData" value="77" _index="3" />
+							<Property name="CustomData" value="97" _index="4" />
+							<Property name="CustomData" value="105" _index="5" />
+							<Property name="CustomData" value="110" _index="6" />
+							<Property name="CustomData" value="69" _index="7" />
+							<Property name="CustomData" value="110" _index="8" />
+							<Property name="CustomData" value="103" _index="9" />
+							<Property name="CustomData" value="105" _index="10" />
+							<Property name="CustomData" value="110" _index="11" />
+							<Property name="CustomData" value="101" _index="12" />
+							<Property name="CustomData" value="50" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="47">
+						<Property name="TypeName" value="StopParticles" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="996" />
+						<Property name="PositionY" value="1197" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections" />
+							</Property>
+						</Property>
+						<Property name="CustomData">
+							<Property name="CustomData" value="76" _index="0" />
+							<Property name="CustomData" value="79" _index="1" />
+							<Property name="CustomData" value="67" _index="2" />
+							<Property name="CustomData" value="77" _index="3" />
+							<Property name="CustomData" value="97" _index="4" />
+							<Property name="CustomData" value="105" _index="5" />
+							<Property name="CustomData" value="110" _index="6" />
+							<Property name="CustomData" value="69" _index="7" />
+							<Property name="CustomData" value="110" _index="8" />
+							<Property name="CustomData" value="103" _index="9" />
+							<Property name="CustomData" value="105" _index="10" />
+							<Property name="CustomData" value="110" _index="11" />
+							<Property name="CustomData" value="101" _index="12" />
+							<Property name="CustomData" value="49" _index="13" />
+							<Property name="CustomData" value="0" _index="14" />
+							<Property name="CustomData" value="0" _index="15" />
+						</Property>
+					</Property>
+					<Property name="Nodes" value="TkSketchNodeData" _index="48">
+						<Property name="TypeName" value="OnBroadcastReceived" />
+						<Property name="TriggerType" value="RunParallel" />
+						<Property name="SelectedVariant" value="0" />
+						<Property name="PositionX" value="-439" />
+						<Property name="PositionY" value="1183" />
+						<Property name="Connections">
+							<Property name="Connections" value="TkSketchNodeConnections" _index="0">
+								<Property name="Connections">
+									<Property name="Connections" value="7" _index="0" />
+									<Property name="Connections" value="37" _index="1" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="CustomData" />
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances">
+		<Property name="LodDistances" value="0.000000" _index="0" />
+		<Property name="LodDistances" value="50.000000" _index="1" />
+		<Property name="LodDistances" value="80.000000" _index="2" />
+		<Property name="LodDistances" value="150.000000" _index="3" />
+		<Property name="LodDistances" value="500.000000" _index="4" />
+	</Property>
+</Data>
