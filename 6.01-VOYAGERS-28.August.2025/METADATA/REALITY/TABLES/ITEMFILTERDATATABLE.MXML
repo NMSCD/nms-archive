@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.01.0.2)-->
+<Data template="cGcItemFilterDataTable">
+	<Property name="Filters">
+		<Property name="Filters" value="GcItemFilterDataTableEntry" _id="ALL">
+			<Property name="ID" value="ALL" />
+			<Property name="Filter" value="GcItemFilterData">
+				<Property name="Root" value="GcItemFilterStageDataAcceptAll">
+					<Property name="GcItemFilterStageDataAcceptAll" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Filters" value="GcItemFilterDataTableEntry" _id="TECH_PRODS">
+			<Property name="ID" value="TECH_PRODS" />
+			<Property name="Filter" value="GcItemFilterData">
+				<Property name="Root" value="GcItemFilterStageDataStageGroup">
+					<Property name="GcItemFilterStageDataStageGroup">
+						<Property name="FilterStageGroupOperator" value="AND" />
+						<Property name="Children">
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="0">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataIsType">
+										<Property name="GcItemFilterStageDataIsType">
+											<Property name="DisabledMessage" value="" />
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataTechPack" _index="1">
+								<Property name="GcItemFilterStageDataTechPack">
+									<Property name="DisabledMessage" value="" />
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Filters" value="GcItemFilterDataTableEntry" _id="NOT_TECH">
+			<Property name="ID" value="NOT_TECH" />
+			<Property name="Filter" value="GcItemFilterData">
+				<Property name="Root" value="GcItemFilterStageDataStageGroup">
+					<Property name="GcItemFilterStageDataStageGroup">
+						<Property name="FilterStageGroupOperator" value="AND" />
+						<Property name="Children">
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="0">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataTechPack">
+										<Property name="GcItemFilterStageDataTechPack">
+											<Property name="DisabledMessage" value="" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="1">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataIsType">
+										<Property name="GcItemFilterStageDataIsType">
+											<Property name="DisabledMessage" value="" />
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="2">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataProductCategory">
+										<Property name="GcItemFilterStageDataProductCategory">
+											<Property name="DisabledMessage" value="UI_BLOCK_ITEM_EGG" />
+											<Property name="Category" value="GcProductCategory">
+												<Property name="ProductCategory" value="CreatureEgg" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Filters" value="GcItemFilterDataTableEntry" _id="NOT_TECH_S12">
+			<Property name="ID" value="NOT_TECH_S12" />
+			<Property name="Filter" value="GcItemFilterData">
+				<Property name="Root" value="GcItemFilterStageDataStageGroup">
+					<Property name="GcItemFilterStageDataStageGroup">
+						<Property name="FilterStageGroupOperator" value="AND" />
+						<Property name="Children">
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="0">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataIsType">
+										<Property name="GcItemFilterStageDataIsType">
+											<Property name="DisabledMessage" value="" />
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="1">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataTechPack">
+										<Property name="GcItemFilterStageDataTechPack">
+											<Property name="DisabledMessage" value="" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="2">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataMatchID">
+										<Property name="GcItemFilterStageDataMatchID">
+											<Property name="DisabledMessage" value="UI_BLOCK_ITEM_S12" />
+											<Property name="MatchType" value="GcItemFilterMatchIDType">
+												<Property name="MatchItemIDType" value="Prefix" />
+											</Property>
+											<Property name="ValidIds">
+												<Property name="ValidIds" value="S12" _index="0" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="3">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataProductCategory">
+										<Property name="GcItemFilterStageDataProductCategory">
+											<Property name="DisabledMessage" value="UI_BLOCK_ITEM_EGG" />
+											<Property name="Category" value="GcProductCategory">
+												<Property name="ProductCategory" value="CreatureEgg" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Filters" value="GcItemFilterDataTableEntry" _id="NOT_TECH_S13">
+			<Property name="ID" value="NOT_TECH_S13" />
+			<Property name="Filter" value="GcItemFilterData">
+				<Property name="Root" value="GcItemFilterStageDataStageGroup">
+					<Property name="GcItemFilterStageDataStageGroup">
+						<Property name="FilterStageGroupOperator" value="AND" />
+						<Property name="Children">
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="0">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataIsType">
+										<Property name="GcItemFilterStageDataIsType">
+											<Property name="DisabledMessage" value="" />
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="1">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataTechPack">
+										<Property name="GcItemFilterStageDataTechPack">
+											<Property name="DisabledMessage" value="" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="2">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataMatchID">
+										<Property name="GcItemFilterStageDataMatchID">
+											<Property name="DisabledMessage" value="UI_BLOCK_ITEM_S12" />
+											<Property name="MatchType" value="GcItemFilterMatchIDType">
+												<Property name="MatchItemIDType" value="Prefix" />
+											</Property>
+											<Property name="ValidIds">
+												<Property name="ValidIds" value="MIND_ARC" _index="0" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="3">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataProductCategory">
+										<Property name="GcItemFilterStageDataProductCategory">
+											<Property name="DisabledMessage" value="UI_BLOCK_ITEM_EGG" />
+											<Property name="Category" value="GcProductCategory">
+												<Property name="ProductCategory" value="CreatureEgg" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Filters" value="GcItemFilterDataTableEntry" _id="NOT_TECH_S14">
+			<Property name="ID" value="NOT_TECH_S14" />
+			<Property name="Filter" value="GcItemFilterData">
+				<Property name="Root" value="GcItemFilterStageDataStageGroup">
+					<Property name="GcItemFilterStageDataStageGroup">
+						<Property name="FilterStageGroupOperator" value="AND" />
+						<Property name="Children">
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="0">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataIsType">
+										<Property name="GcItemFilterStageDataIsType">
+											<Property name="DisabledMessage" value="" />
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="1">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataTechPack">
+										<Property name="GcItemFilterStageDataTechPack">
+											<Property name="DisabledMessage" value="" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="2">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataMatchID">
+										<Property name="GcItemFilterStageDataMatchID">
+											<Property name="DisabledMessage" value="UI_BLOCK_ITEM_S12" />
+											<Property name="MatchType" value="GcItemFilterMatchIDType">
+												<Property name="MatchItemIDType" value="Prefix" />
+											</Property>
+											<Property name="ValidIds">
+												<Property name="ValidIds" value="MIND_ARC" _index="0" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="3">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataProductCategory">
+										<Property name="GcItemFilterStageDataProductCategory">
+											<Property name="DisabledMessage" value="UI_BLOCK_ITEM_EGG" />
+											<Property name="Category" value="GcProductCategory">
+												<Property name="ProductCategory" value="CreatureEgg" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Filters" value="GcItemFilterDataTableEntry" _id="NOT_TECH_S17">
+			<Property name="ID" value="NOT_TECH_S17" />
+			<Property name="Filter" value="GcItemFilterData">
+				<Property name="Root" value="GcItemFilterStageDataStageGroup">
+					<Property name="GcItemFilterStageDataStageGroup">
+						<Property name="FilterStageGroupOperator" value="AND" />
+						<Property name="Children">
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="0">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataIsType">
+										<Property name="GcItemFilterStageDataIsType">
+											<Property name="DisabledMessage" value="" />
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="1">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataTechPack">
+										<Property name="GcItemFilterStageDataTechPack">
+											<Property name="DisabledMessage" value="" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="2">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataMatchID">
+										<Property name="GcItemFilterStageDataMatchID">
+											<Property name="DisabledMessage" value="UI_BLOCK_ITEM_S12" />
+											<Property name="MatchType" value="GcItemFilterMatchIDType">
+												<Property name="MatchItemIDType" value="Prefix" />
+											</Property>
+											<Property name="ValidIds">
+												<Property name="ValidIds" value="PURPLE2" _index="0" />
+												<Property name="ValidIds" value="EX_PURPLE" _index="1" />
+												<Property name="ValidIds" value="GAS4" _index="2" />
+												<Property name="ValidIds" value="WATERWORLD1" _index="3" />
+												<Property name="ValidIds" value="GASGIANT1" _index="4" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="3">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataProductCategory">
+										<Property name="GcItemFilterStageDataProductCategory">
+											<Property name="DisabledMessage" value="UI_BLOCK_ITEM_EGG" />
+											<Property name="Category" value="GcProductCategory">
+												<Property name="ProductCategory" value="CreatureEgg" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Filters" value="GcItemFilterDataTableEntry" _id="NOT_TECH_S2">
+			<Property name="ID" value="NOT_TECH_S2" />
+			<Property name="Filter" value="GcItemFilterData">
+				<Property name="Root" value="GcItemFilterStageDataStageGroup">
+					<Property name="GcItemFilterStageDataStageGroup">
+						<Property name="FilterStageGroupOperator" value="AND" />
+						<Property name="Children">
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="0">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataIsType">
+										<Property name="GcItemFilterStageDataIsType">
+											<Property name="DisabledMessage" value="" />
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="1">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataTechPack">
+										<Property name="GcItemFilterStageDataTechPack">
+											<Property name="DisabledMessage" value="" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="2">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataMatchID">
+										<Property name="GcItemFilterStageDataMatchID">
+											<Property name="DisabledMessage" value="UI_BLOCK_ITEM_S12" />
+											<Property name="MatchType" value="GcItemFilterMatchIDType">
+												<Property name="MatchItemIDType" value="Prefix" />
+											</Property>
+											<Property name="ValidIds">
+												<Property name="ValidIds" value="MYSTERY_TRACKER" _index="0" />
+												<Property name="ValidIds" value="MYSTERY_BEACON" _index="1" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="3">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataProductCategory">
+										<Property name="GcItemFilterStageDataProductCategory">
+											<Property name="DisabledMessage" value="UI_BLOCK_ITEM_EGG" />
+											<Property name="Category" value="GcProductCategory">
+												<Property name="ProductCategory" value="CreatureEgg" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Filters" value="GcItemFilterDataTableEntry" _id="NOT_TECH_S19">
+			<Property name="ID" value="NOT_TECH_S19" />
+			<Property name="Filter" value="GcItemFilterData">
+				<Property name="Root" value="GcItemFilterStageDataStageGroup">
+					<Property name="GcItemFilterStageDataStageGroup">
+						<Property name="FilterStageGroupOperator" value="AND" />
+						<Property name="Children">
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="0">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataTechPack">
+										<Property name="GcItemFilterStageDataTechPack">
+											<Property name="DisabledMessage" value="" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="1">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataIsType">
+										<Property name="GcItemFilterStageDataIsType">
+											<Property name="DisabledMessage" value="" />
+											<Property name="Type" value="GcInventoryType">
+												<Property name="InventoryType" value="Technology" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="2">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataProductCategory">
+										<Property name="GcItemFilterStageDataProductCategory">
+											<Property name="DisabledMessage" value="UI_BLOCK_ITEM_EGG" />
+											<Property name="Category" value="GcProductCategory">
+												<Property name="ProductCategory" value="CreatureEgg" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Children" value="GcItemFilterStageDataNegation" _index="3">
+								<Property name="GcItemFilterStageDataNegation">
+									<Property name="Child" value="GcItemFilterStageDataMatchID">
+										<Property name="GcItemFilterStageDataMatchID">
+											<Property name="DisabledMessage" value="UI_BLOCK_ITEM_S12" />
+											<Property name="MatchType" value="GcItemFilterMatchIDType">
+												<Property name="MatchItemIDType" value="Prefix" />
+											</Property>
+											<Property name="ValidIds">
+												<Property name="ValidIds" value="S19_TP" _index="0" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+</Data>

@@ -1,0 +1,2624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.01.0.2)-->
+<Data template="cGcScanEventTable">
+	<Property name="Events">
+		<Property name="Events" value="GcScanEventData" _index="0">
+			<Property name="Name" value="ABANDONED" />
+			<Property name="ForceInteraction" value="" />
+			<Property name="UseSeasonDataAsInteraction" value="false" />
+			<Property name="ForceInteractionType" value="GcInteractionType">
+				<Property name="InteractionType" value="AbandonedBuildings" />
+			</Property>
+			<Property name="NPCReactsToPlayer" value="false" />
+			<Property name="RequireInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="OverrideInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="MustMatchStoryUtilityPuzzle" value="" />
+			<Property name="ForceBroken" value="false" />
+			<Property name="ForceFixed" value="false" />
+			<Property name="ReplacementMaintData" value="" />
+			<Property name="ForceReplaceStoryPortalSeed" value="false" />
+			<Property name="ForceOverridesAll" value="true" />
+			<Property name="ForceOverrideEncounter" value="" />
+			<Property name="IsCommunityPortalOverride" value="false" />
+			<Property name="ClearForcedInteractionOnCompletion" value="false" />
+			<Property name="BuildingPreventionRadius" value="0.000000" />
+			<Property name="UseMissionTradingDataOverride" value="false" />
+			<Property name="AlwaysShow" value="false" />
+			<Property name="NeverShow" value="false" />
+			<Property name="ShowOnlyIfSequenceTarget" value="false" />
+			<Property name="PlanetLabelText" value="" />
+			<Property name="SurveyDistance" value="0.000000" />
+			<Property name="SurveyDiscoveryOSDMessage" value="UI_MISSIONMARKER_DISC_OSD" />
+			<Property name="SurveyHUDName" value="UI_MISSIONSURVEY_HUD_SUB" />
+			<Property name="EventStartType" value="Timer" />
+			<Property name="EventEndType" value="Interact" />
+			<Property name="EventPriority" value="Regular" />
+			<Property name="CanEndFromOutsideMission" value="false" />
+			<Property name="DisableMultiplayerSync" value="true" />
+			<Property name="BlockStartedOnUseEvents" value="false" />
+			<Property name="ReplaceEventIfAlreadyActive" value="false" />
+			<Property name="BuildingLocation" value="RandomOnNearPlanet" />
+			<Property name="SearchType" value="FindBuildingClass" />
+			<Property name="SpecificBuildingClass" value="GcBuildingClassification">
+				<Property name="BuildingClass" value="Abandoned" />
+			</Property>
+			<Property name="AllowFriendsBases" value="false" />
+			<Property name="ForceWideRandom" value="false" />
+			<Property name="MustFindSystem" value="false" />
+			<Property name="AllowOverriddenBuildings" value="true" />
+			<Property name="TargetMustMatchMissionSeed" value="false" />
+			<Property name="UseBuildingFromRendezvousStage" value="false" />
+			<Property name="SolarSystemLocation" value="Local" />
+			<Property name="SolarSystemAttributes" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="SolarSystemAttributesFallback" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="ForceRestartInteraction" value="true" />
+			<Property name="ForceResetPortal" value="false" />
+			<Property name="HasReward" value="" />
+			<Property name="NextOption" value="" />
+			<Property name="TriggerActions" value="GcScanEventTriggers">
+				<Property name="Range" value="100.000000" />
+				<Property name="Triggers" />
+				<Property name="AllowRetrigger" value="false" />
+			</Property>
+			<Property name="UAsList" />
+			<Property name="TechShopType" value="GcTechnologyCategory">
+				<Property name="TechnologyCategory" value="All" />
+			</Property>
+			<Property name="OSDMessage" value="SIGNAL_ABANDONED" />
+			<Property name="InterstellarOSDMessage" value="SCANEVENT_ANOTHER_SYSTEM" />
+			<Property name="MarkerLabel" value="" />
+			<Property name="MarkerIcon" value="TkTextureResource">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+			</Property>
+			<Property name="MissionMarkerHighlightStyleOverride" value="GcScannerIconHighlightTypes">
+				<Property name="ScannerIconHighlightType" value="Diamond" />
+			</Property>
+			<Property name="StartTime" value="2.000000" />
+			<Property name="MessageTime" value="0.000000" />
+			<Property name="MessageDisplayTime" value="4.000000" />
+			<Property name="MessageAudio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="IconTime" value="4.000000" />
+			<Property name="TooltipTime" value="10.000000" />
+			<Property name="TooltipRepeats" value="false" />
+			<Property name="ShowEndTooltip" value="true" />
+			<Property name="TooltipMessage" value="TIP_ABANDONED" />
+			<Property name="MissionMessageOnInteract" value="" />
+			<Property name="ResourceOverride" value="GcResourceElement">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+				<Property name="Seed" value="NONE" />
+				<Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList">
+					<Property name="Samplers" />
+				</Property>
+				<Property name="AltId" value="" />
+			</Property>
+		</Property>
+		<Property name="Events" value="GcScanEventData" _index="1">
+			<Property name="Name" value="OUTPOST" />
+			<Property name="ForceInteraction" value="" />
+			<Property name="UseSeasonDataAsInteraction" value="false" />
+			<Property name="ForceInteractionType" value="GcInteractionType">
+				<Property name="InteractionType" value="None" />
+			</Property>
+			<Property name="NPCReactsToPlayer" value="false" />
+			<Property name="RequireInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="OverrideInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="MustMatchStoryUtilityPuzzle" value="" />
+			<Property name="ForceBroken" value="false" />
+			<Property name="ForceFixed" value="false" />
+			<Property name="ReplacementMaintData" value="" />
+			<Property name="ForceReplaceStoryPortalSeed" value="false" />
+			<Property name="ForceOverridesAll" value="true" />
+			<Property name="ForceOverrideEncounter" value="" />
+			<Property name="IsCommunityPortalOverride" value="false" />
+			<Property name="ClearForcedInteractionOnCompletion" value="false" />
+			<Property name="BuildingPreventionRadius" value="0.000000" />
+			<Property name="UseMissionTradingDataOverride" value="false" />
+			<Property name="AlwaysShow" value="false" />
+			<Property name="NeverShow" value="false" />
+			<Property name="ShowOnlyIfSequenceTarget" value="false" />
+			<Property name="PlanetLabelText" value="" />
+			<Property name="SurveyDistance" value="0.000000" />
+			<Property name="SurveyDiscoveryOSDMessage" value="UI_MISSIONMARKER_DISC_OSD" />
+			<Property name="SurveyHUDName" value="UI_MISSIONSURVEY_HUD_SUB" />
+			<Property name="EventStartType" value="Timer" />
+			<Property name="EventEndType" value="Proximity" />
+			<Property name="EventPriority" value="Regular" />
+			<Property name="CanEndFromOutsideMission" value="false" />
+			<Property name="DisableMultiplayerSync" value="true" />
+			<Property name="BlockStartedOnUseEvents" value="false" />
+			<Property name="ReplaceEventIfAlreadyActive" value="false" />
+			<Property name="BuildingLocation" value="RandomOnNearPlanet" />
+			<Property name="SearchType" value="FindBuildingClass" />
+			<Property name="SpecificBuildingClass" value="GcBuildingClassification">
+				<Property name="BuildingClass" value="Outpost" />
+			</Property>
+			<Property name="AllowFriendsBases" value="false" />
+			<Property name="ForceWideRandom" value="false" />
+			<Property name="MustFindSystem" value="false" />
+			<Property name="AllowOverriddenBuildings" value="true" />
+			<Property name="TargetMustMatchMissionSeed" value="false" />
+			<Property name="UseBuildingFromRendezvousStage" value="false" />
+			<Property name="SolarSystemLocation" value="Local" />
+			<Property name="SolarSystemAttributes" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="SolarSystemAttributesFallback" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="ForceRestartInteraction" value="true" />
+			<Property name="ForceResetPortal" value="false" />
+			<Property name="HasReward" value="" />
+			<Property name="NextOption" value="" />
+			<Property name="TriggerActions" value="GcScanEventTriggers">
+				<Property name="Range" value="100.000000" />
+				<Property name="Triggers" />
+				<Property name="AllowRetrigger" value="false" />
+			</Property>
+			<Property name="UAsList" />
+			<Property name="TechShopType" value="GcTechnologyCategory">
+				<Property name="TechnologyCategory" value="All" />
+			</Property>
+			<Property name="OSDMessage" value="SIGNAL_OUTPOST" />
+			<Property name="InterstellarOSDMessage" value="SCANEVENT_ANOTHER_SYSTEM" />
+			<Property name="MarkerLabel" value="" />
+			<Property name="MarkerIcon" value="TkTextureResource">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+			</Property>
+			<Property name="MissionMarkerHighlightStyleOverride" value="GcScannerIconHighlightTypes">
+				<Property name="ScannerIconHighlightType" value="Diamond" />
+			</Property>
+			<Property name="StartTime" value="2.000000" />
+			<Property name="MessageTime" value="0.000000" />
+			<Property name="MessageDisplayTime" value="4.000000" />
+			<Property name="MessageAudio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="IconTime" value="4.000000" />
+			<Property name="TooltipTime" value="10.000000" />
+			<Property name="TooltipRepeats" value="false" />
+			<Property name="ShowEndTooltip" value="true" />
+			<Property name="TooltipMessage" value="TIP_OUTPOST" />
+			<Property name="MissionMessageOnInteract" value="" />
+			<Property name="ResourceOverride" value="GcResourceElement">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+				<Property name="Seed" value="NONE" />
+				<Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList">
+					<Property name="Samplers" />
+				</Property>
+				<Property name="AltId" value="" />
+			</Property>
+		</Property>
+		<Property name="Events" value="GcScanEventData" _index="2">
+			<Property name="Name" value="RADIOTOWER" />
+			<Property name="ForceInteraction" value="" />
+			<Property name="UseSeasonDataAsInteraction" value="false" />
+			<Property name="ForceInteractionType" value="GcInteractionType">
+				<Property name="InteractionType" value="RadioTower" />
+			</Property>
+			<Property name="NPCReactsToPlayer" value="false" />
+			<Property name="RequireInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="OverrideInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="MustMatchStoryUtilityPuzzle" value="" />
+			<Property name="ForceBroken" value="false" />
+			<Property name="ForceFixed" value="false" />
+			<Property name="ReplacementMaintData" value="" />
+			<Property name="ForceReplaceStoryPortalSeed" value="false" />
+			<Property name="ForceOverridesAll" value="true" />
+			<Property name="ForceOverrideEncounter" value="" />
+			<Property name="IsCommunityPortalOverride" value="false" />
+			<Property name="ClearForcedInteractionOnCompletion" value="false" />
+			<Property name="BuildingPreventionRadius" value="0.000000" />
+			<Property name="UseMissionTradingDataOverride" value="false" />
+			<Property name="AlwaysShow" value="false" />
+			<Property name="NeverShow" value="false" />
+			<Property name="ShowOnlyIfSequenceTarget" value="false" />
+			<Property name="PlanetLabelText" value="" />
+			<Property name="SurveyDistance" value="0.000000" />
+			<Property name="SurveyDiscoveryOSDMessage" value="UI_MISSIONMARKER_DISC_OSD" />
+			<Property name="SurveyHUDName" value="UI_MISSIONSURVEY_HUD_SUB" />
+			<Property name="EventStartType" value="Timer" />
+			<Property name="EventEndType" value="Interact" />
+			<Property name="EventPriority" value="Regular" />
+			<Property name="CanEndFromOutsideMission" value="false" />
+			<Property name="DisableMultiplayerSync" value="true" />
+			<Property name="BlockStartedOnUseEvents" value="false" />
+			<Property name="ReplaceEventIfAlreadyActive" value="false" />
+			<Property name="BuildingLocation" value="RandomOnFarPlanet" />
+			<Property name="SearchType" value="FindBuildingClass" />
+			<Property name="SpecificBuildingClass" value="GcBuildingClassification">
+				<Property name="BuildingClass" value="RadioTower" />
+			</Property>
+			<Property name="AllowFriendsBases" value="false" />
+			<Property name="ForceWideRandom" value="false" />
+			<Property name="MustFindSystem" value="false" />
+			<Property name="AllowOverriddenBuildings" value="true" />
+			<Property name="TargetMustMatchMissionSeed" value="false" />
+			<Property name="UseBuildingFromRendezvousStage" value="false" />
+			<Property name="SolarSystemLocation" value="Local" />
+			<Property name="SolarSystemAttributes" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="SolarSystemAttributesFallback" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="ForceRestartInteraction" value="true" />
+			<Property name="ForceResetPortal" value="false" />
+			<Property name="HasReward" value="" />
+			<Property name="NextOption" value="" />
+			<Property name="TriggerActions" value="GcScanEventTriggers">
+				<Property name="Range" value="100.000000" />
+				<Property name="Triggers" />
+				<Property name="AllowRetrigger" value="false" />
+			</Property>
+			<Property name="UAsList" />
+			<Property name="TechShopType" value="GcTechnologyCategory">
+				<Property name="TechnologyCategory" value="All" />
+			</Property>
+			<Property name="OSDMessage" value="SIGNAL_RADIOTOWER" />
+			<Property name="InterstellarOSDMessage" value="SCANEVENT_ANOTHER_SYSTEM" />
+			<Property name="MarkerLabel" value="" />
+			<Property name="MarkerIcon" value="TkTextureResource">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+			</Property>
+			<Property name="MissionMarkerHighlightStyleOverride" value="GcScannerIconHighlightTypes">
+				<Property name="ScannerIconHighlightType" value="Diamond" />
+			</Property>
+			<Property name="StartTime" value="2.000000" />
+			<Property name="MessageTime" value="0.000000" />
+			<Property name="MessageDisplayTime" value="4.000000" />
+			<Property name="MessageAudio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="IconTime" value="4.000000" />
+			<Property name="TooltipTime" value="10.000000" />
+			<Property name="TooltipRepeats" value="false" />
+			<Property name="ShowEndTooltip" value="true" />
+			<Property name="TooltipMessage" value="TIP_RADIOTOWER" />
+			<Property name="MissionMessageOnInteract" value="" />
+			<Property name="ResourceOverride" value="GcResourceElement">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+				<Property name="Seed" value="NONE" />
+				<Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList">
+					<Property name="Samplers" />
+				</Property>
+				<Property name="AltId" value="" />
+			</Property>
+		</Property>
+		<Property name="Events" value="GcScanEventData" _index="3">
+			<Property name="Name" value="FACTORY" />
+			<Property name="ForceInteraction" value="" />
+			<Property name="UseSeasonDataAsInteraction" value="false" />
+			<Property name="ForceInteractionType" value="GcInteractionType">
+				<Property name="InteractionType" value="Factory" />
+			</Property>
+			<Property name="NPCReactsToPlayer" value="false" />
+			<Property name="RequireInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="OverrideInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="MustMatchStoryUtilityPuzzle" value="" />
+			<Property name="ForceBroken" value="false" />
+			<Property name="ForceFixed" value="false" />
+			<Property name="ReplacementMaintData" value="" />
+			<Property name="ForceReplaceStoryPortalSeed" value="false" />
+			<Property name="ForceOverridesAll" value="true" />
+			<Property name="ForceOverrideEncounter" value="" />
+			<Property name="IsCommunityPortalOverride" value="false" />
+			<Property name="ClearForcedInteractionOnCompletion" value="false" />
+			<Property name="BuildingPreventionRadius" value="0.000000" />
+			<Property name="UseMissionTradingDataOverride" value="false" />
+			<Property name="AlwaysShow" value="false" />
+			<Property name="NeverShow" value="false" />
+			<Property name="ShowOnlyIfSequenceTarget" value="false" />
+			<Property name="PlanetLabelText" value="" />
+			<Property name="SurveyDistance" value="0.000000" />
+			<Property name="SurveyDiscoveryOSDMessage" value="UI_MISSIONMARKER_DISC_OSD" />
+			<Property name="SurveyHUDName" value="UI_MISSIONSURVEY_HUD_SUB" />
+			<Property name="EventStartType" value="Timer" />
+			<Property name="EventEndType" value="Interact" />
+			<Property name="EventPriority" value="Regular" />
+			<Property name="CanEndFromOutsideMission" value="false" />
+			<Property name="DisableMultiplayerSync" value="true" />
+			<Property name="BlockStartedOnUseEvents" value="false" />
+			<Property name="ReplaceEventIfAlreadyActive" value="false" />
+			<Property name="BuildingLocation" value="RandomOnNearPlanet" />
+			<Property name="SearchType" value="FindBuildingClass" />
+			<Property name="SpecificBuildingClass" value="GcBuildingClassification">
+				<Property name="BuildingClass" value="Factory" />
+			</Property>
+			<Property name="AllowFriendsBases" value="false" />
+			<Property name="ForceWideRandom" value="false" />
+			<Property name="MustFindSystem" value="false" />
+			<Property name="AllowOverriddenBuildings" value="true" />
+			<Property name="TargetMustMatchMissionSeed" value="false" />
+			<Property name="UseBuildingFromRendezvousStage" value="false" />
+			<Property name="SolarSystemLocation" value="Local" />
+			<Property name="SolarSystemAttributes" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="SolarSystemAttributesFallback" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="ForceRestartInteraction" value="true" />
+			<Property name="ForceResetPortal" value="false" />
+			<Property name="HasReward" value="" />
+			<Property name="NextOption" value="" />
+			<Property name="TriggerActions" value="GcScanEventTriggers">
+				<Property name="Range" value="100.000000" />
+				<Property name="Triggers" />
+				<Property name="AllowRetrigger" value="false" />
+			</Property>
+			<Property name="UAsList" />
+			<Property name="TechShopType" value="GcTechnologyCategory">
+				<Property name="TechnologyCategory" value="All" />
+			</Property>
+			<Property name="OSDMessage" value="SIGNAL_FACTORY" />
+			<Property name="InterstellarOSDMessage" value="SCANEVENT_ANOTHER_SYSTEM" />
+			<Property name="MarkerLabel" value="" />
+			<Property name="MarkerIcon" value="TkTextureResource">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+			</Property>
+			<Property name="MissionMarkerHighlightStyleOverride" value="GcScannerIconHighlightTypes">
+				<Property name="ScannerIconHighlightType" value="Diamond" />
+			</Property>
+			<Property name="StartTime" value="2.000000" />
+			<Property name="MessageTime" value="0.000000" />
+			<Property name="MessageDisplayTime" value="4.000000" />
+			<Property name="MessageAudio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="IconTime" value="4.000000" />
+			<Property name="TooltipTime" value="10.000000" />
+			<Property name="TooltipRepeats" value="false" />
+			<Property name="ShowEndTooltip" value="true" />
+			<Property name="TooltipMessage" value="TIP_FACTORY" />
+			<Property name="MissionMessageOnInteract" value="" />
+			<Property name="ResourceOverride" value="GcResourceElement">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+				<Property name="Seed" value="NONE" />
+				<Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList">
+					<Property name="Samplers" />
+				</Property>
+				<Property name="AltId" value="" />
+			</Property>
+		</Property>
+		<Property name="Events" value="GcScanEventData" _index="4">
+			<Property name="Name" value="RESOURCES" />
+			<Property name="ForceInteraction" value="" />
+			<Property name="UseSeasonDataAsInteraction" value="false" />
+			<Property name="ForceInteractionType" value="GcInteractionType">
+				<Property name="InteractionType" value="None" />
+			</Property>
+			<Property name="NPCReactsToPlayer" value="false" />
+			<Property name="RequireInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="OverrideInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="MustMatchStoryUtilityPuzzle" value="" />
+			<Property name="ForceBroken" value="false" />
+			<Property name="ForceFixed" value="false" />
+			<Property name="ReplacementMaintData" value="" />
+			<Property name="ForceReplaceStoryPortalSeed" value="false" />
+			<Property name="ForceOverridesAll" value="true" />
+			<Property name="ForceOverrideEncounter" value="" />
+			<Property name="IsCommunityPortalOverride" value="false" />
+			<Property name="ClearForcedInteractionOnCompletion" value="false" />
+			<Property name="BuildingPreventionRadius" value="0.000000" />
+			<Property name="UseMissionTradingDataOverride" value="false" />
+			<Property name="AlwaysShow" value="false" />
+			<Property name="NeverShow" value="false" />
+			<Property name="ShowOnlyIfSequenceTarget" value="false" />
+			<Property name="PlanetLabelText" value="" />
+			<Property name="SurveyDistance" value="0.000000" />
+			<Property name="SurveyDiscoveryOSDMessage" value="UI_MISSIONMARKER_DISC_OSD" />
+			<Property name="SurveyHUDName" value="UI_MISSIONSURVEY_HUD_SUB" />
+			<Property name="EventStartType" value="Timer" />
+			<Property name="EventEndType" value="Proximity" />
+			<Property name="EventPriority" value="Regular" />
+			<Property name="CanEndFromOutsideMission" value="false" />
+			<Property name="DisableMultiplayerSync" value="true" />
+			<Property name="BlockStartedOnUseEvents" value="false" />
+			<Property name="ReplaceEventIfAlreadyActive" value="false" />
+			<Property name="BuildingLocation" value="RandomOnNearPlanet" />
+			<Property name="SearchType" value="FindBuildingClass" />
+			<Property name="SpecificBuildingClass" value="GcBuildingClassification">
+				<Property name="BuildingClass" value="TerrainResource" />
+			</Property>
+			<Property name="AllowFriendsBases" value="false" />
+			<Property name="ForceWideRandom" value="false" />
+			<Property name="MustFindSystem" value="false" />
+			<Property name="AllowOverriddenBuildings" value="true" />
+			<Property name="TargetMustMatchMissionSeed" value="false" />
+			<Property name="UseBuildingFromRendezvousStage" value="false" />
+			<Property name="SolarSystemLocation" value="Local" />
+			<Property name="SolarSystemAttributes" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="SolarSystemAttributesFallback" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="ForceRestartInteraction" value="true" />
+			<Property name="ForceResetPortal" value="false" />
+			<Property name="HasReward" value="" />
+			<Property name="NextOption" value="" />
+			<Property name="TriggerActions" value="GcScanEventTriggers">
+				<Property name="Range" value="100.000000" />
+				<Property name="Triggers" />
+				<Property name="AllowRetrigger" value="false" />
+			</Property>
+			<Property name="UAsList" />
+			<Property name="TechShopType" value="GcTechnologyCategory">
+				<Property name="TechnologyCategory" value="All" />
+			</Property>
+			<Property name="OSDMessage" value="SIGNAL_RESOURCE" />
+			<Property name="InterstellarOSDMessage" value="SCANEVENT_ANOTHER_SYSTEM" />
+			<Property name="MarkerLabel" value="" />
+			<Property name="MarkerIcon" value="TkTextureResource">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+			</Property>
+			<Property name="MissionMarkerHighlightStyleOverride" value="GcScannerIconHighlightTypes">
+				<Property name="ScannerIconHighlightType" value="Diamond" />
+			</Property>
+			<Property name="StartTime" value="2.000000" />
+			<Property name="MessageTime" value="0.000000" />
+			<Property name="MessageDisplayTime" value="4.000000" />
+			<Property name="MessageAudio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="IconTime" value="4.000000" />
+			<Property name="TooltipTime" value="10.000000" />
+			<Property name="TooltipRepeats" value="false" />
+			<Property name="ShowEndTooltip" value="true" />
+			<Property name="TooltipMessage" value="TIP_RESOURCE" />
+			<Property name="MissionMessageOnInteract" value="" />
+			<Property name="ResourceOverride" value="GcResourceElement">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+				<Property name="Seed" value="NONE" />
+				<Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList">
+					<Property name="Samplers" />
+				</Property>
+				<Property name="AltId" value="" />
+			</Property>
+		</Property>
+		<Property name="Events" value="GcScanEventData" _index="5">
+			<Property name="Name" value="ABANDONED" />
+			<Property name="ForceInteraction" value="" />
+			<Property name="UseSeasonDataAsInteraction" value="false" />
+			<Property name="ForceInteractionType" value="GcInteractionType">
+				<Property name="InteractionType" value="AbandonedBuildings" />
+			</Property>
+			<Property name="NPCReactsToPlayer" value="false" />
+			<Property name="RequireInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="OverrideInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="MustMatchStoryUtilityPuzzle" value="" />
+			<Property name="ForceBroken" value="false" />
+			<Property name="ForceFixed" value="false" />
+			<Property name="ReplacementMaintData" value="" />
+			<Property name="ForceReplaceStoryPortalSeed" value="false" />
+			<Property name="ForceOverridesAll" value="true" />
+			<Property name="ForceOverrideEncounter" value="" />
+			<Property name="IsCommunityPortalOverride" value="false" />
+			<Property name="ClearForcedInteractionOnCompletion" value="false" />
+			<Property name="BuildingPreventionRadius" value="0.000000" />
+			<Property name="UseMissionTradingDataOverride" value="false" />
+			<Property name="AlwaysShow" value="false" />
+			<Property name="NeverShow" value="false" />
+			<Property name="ShowOnlyIfSequenceTarget" value="false" />
+			<Property name="PlanetLabelText" value="" />
+			<Property name="SurveyDistance" value="0.000000" />
+			<Property name="SurveyDiscoveryOSDMessage" value="UI_MISSIONMARKER_DISC_OSD" />
+			<Property name="SurveyHUDName" value="UI_MISSIONSURVEY_HUD_SUB" />
+			<Property name="EventStartType" value="Timer" />
+			<Property name="EventEndType" value="Interact" />
+			<Property name="EventPriority" value="Regular" />
+			<Property name="CanEndFromOutsideMission" value="false" />
+			<Property name="DisableMultiplayerSync" value="true" />
+			<Property name="BlockStartedOnUseEvents" value="false" />
+			<Property name="ReplaceEventIfAlreadyActive" value="false" />
+			<Property name="BuildingLocation" value="RandomOnFarPlanet" />
+			<Property name="SearchType" value="FindBuildingClass" />
+			<Property name="SpecificBuildingClass" value="GcBuildingClassification">
+				<Property name="BuildingClass" value="Abandoned" />
+			</Property>
+			<Property name="AllowFriendsBases" value="false" />
+			<Property name="ForceWideRandom" value="false" />
+			<Property name="MustFindSystem" value="false" />
+			<Property name="AllowOverriddenBuildings" value="true" />
+			<Property name="TargetMustMatchMissionSeed" value="false" />
+			<Property name="UseBuildingFromRendezvousStage" value="false" />
+			<Property name="SolarSystemLocation" value="Local" />
+			<Property name="SolarSystemAttributes" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="SolarSystemAttributesFallback" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="ForceRestartInteraction" value="true" />
+			<Property name="ForceResetPortal" value="false" />
+			<Property name="HasReward" value="" />
+			<Property name="NextOption" value="" />
+			<Property name="TriggerActions" value="GcScanEventTriggers">
+				<Property name="Range" value="100.000000" />
+				<Property name="Triggers" />
+				<Property name="AllowRetrigger" value="false" />
+			</Property>
+			<Property name="UAsList" />
+			<Property name="TechShopType" value="GcTechnologyCategory">
+				<Property name="TechnologyCategory" value="All" />
+			</Property>
+			<Property name="OSDMessage" value="SIGNAL_ABANDONED" />
+			<Property name="InterstellarOSDMessage" value="SCANEVENT_ANOTHER_SYSTEM" />
+			<Property name="MarkerLabel" value="" />
+			<Property name="MarkerIcon" value="TkTextureResource">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+			</Property>
+			<Property name="MissionMarkerHighlightStyleOverride" value="GcScannerIconHighlightTypes">
+				<Property name="ScannerIconHighlightType" value="Diamond" />
+			</Property>
+			<Property name="StartTime" value="2.000000" />
+			<Property name="MessageTime" value="0.000000" />
+			<Property name="MessageDisplayTime" value="4.000000" />
+			<Property name="MessageAudio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="IconTime" value="4.000000" />
+			<Property name="TooltipTime" value="10.000000" />
+			<Property name="TooltipRepeats" value="false" />
+			<Property name="ShowEndTooltip" value="true" />
+			<Property name="TooltipMessage" value="TIP_ABANDONED" />
+			<Property name="MissionMessageOnInteract" value="" />
+			<Property name="ResourceOverride" value="GcResourceElement">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+				<Property name="Seed" value="NONE" />
+				<Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList">
+					<Property name="Samplers" />
+				</Property>
+				<Property name="AltId" value="" />
+			</Property>
+		</Property>
+		<Property name="Events" value="GcScanEventData" _index="6">
+			<Property name="Name" value="MONOLITH" />
+			<Property name="ForceInteraction" value="" />
+			<Property name="UseSeasonDataAsInteraction" value="false" />
+			<Property name="ForceInteractionType" value="GcInteractionType">
+				<Property name="InteractionType" value="Monolith" />
+			</Property>
+			<Property name="NPCReactsToPlayer" value="false" />
+			<Property name="RequireInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="OverrideInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="MustMatchStoryUtilityPuzzle" value="" />
+			<Property name="ForceBroken" value="false" />
+			<Property name="ForceFixed" value="false" />
+			<Property name="ReplacementMaintData" value="" />
+			<Property name="ForceReplaceStoryPortalSeed" value="false" />
+			<Property name="ForceOverridesAll" value="true" />
+			<Property name="ForceOverrideEncounter" value="" />
+			<Property name="IsCommunityPortalOverride" value="false" />
+			<Property name="ClearForcedInteractionOnCompletion" value="false" />
+			<Property name="BuildingPreventionRadius" value="0.000000" />
+			<Property name="UseMissionTradingDataOverride" value="false" />
+			<Property name="AlwaysShow" value="false" />
+			<Property name="NeverShow" value="false" />
+			<Property name="ShowOnlyIfSequenceTarget" value="false" />
+			<Property name="PlanetLabelText" value="" />
+			<Property name="SurveyDistance" value="0.000000" />
+			<Property name="SurveyDiscoveryOSDMessage" value="UI_MISSIONMARKER_DISC_OSD" />
+			<Property name="SurveyHUDName" value="UI_MISSIONSURVEY_HUD_SUB" />
+			<Property name="EventStartType" value="Timer" />
+			<Property name="EventEndType" value="Interact" />
+			<Property name="EventPriority" value="Regular" />
+			<Property name="CanEndFromOutsideMission" value="false" />
+			<Property name="DisableMultiplayerSync" value="true" />
+			<Property name="BlockStartedOnUseEvents" value="false" />
+			<Property name="ReplaceEventIfAlreadyActive" value="false" />
+			<Property name="BuildingLocation" value="RandomOnNearPlanet" />
+			<Property name="SearchType" value="FindBuildingClass" />
+			<Property name="SpecificBuildingClass" value="GcBuildingClassification">
+				<Property name="BuildingClass" value="Monolith" />
+			</Property>
+			<Property name="AllowFriendsBases" value="false" />
+			<Property name="ForceWideRandom" value="false" />
+			<Property name="MustFindSystem" value="false" />
+			<Property name="AllowOverriddenBuildings" value="true" />
+			<Property name="TargetMustMatchMissionSeed" value="false" />
+			<Property name="UseBuildingFromRendezvousStage" value="false" />
+			<Property name="SolarSystemLocation" value="Local" />
+			<Property name="SolarSystemAttributes" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="SolarSystemAttributesFallback" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="ForceRestartInteraction" value="true" />
+			<Property name="ForceResetPortal" value="false" />
+			<Property name="HasReward" value="" />
+			<Property name="NextOption" value="" />
+			<Property name="TriggerActions" value="GcScanEventTriggers">
+				<Property name="Range" value="100.000000" />
+				<Property name="Triggers" />
+				<Property name="AllowRetrigger" value="false" />
+			</Property>
+			<Property name="UAsList" />
+			<Property name="TechShopType" value="GcTechnologyCategory">
+				<Property name="TechnologyCategory" value="All" />
+			</Property>
+			<Property name="OSDMessage" value="SIGNAL_MONOLITH" />
+			<Property name="InterstellarOSDMessage" value="SCANEVENT_ANOTHER_SYSTEM" />
+			<Property name="MarkerLabel" value="" />
+			<Property name="MarkerIcon" value="TkTextureResource">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+			</Property>
+			<Property name="MissionMarkerHighlightStyleOverride" value="GcScannerIconHighlightTypes">
+				<Property name="ScannerIconHighlightType" value="Diamond" />
+			</Property>
+			<Property name="StartTime" value="2.000000" />
+			<Property name="MessageTime" value="0.000000" />
+			<Property name="MessageDisplayTime" value="4.000000" />
+			<Property name="MessageAudio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="IconTime" value="4.000000" />
+			<Property name="TooltipTime" value="10.000000" />
+			<Property name="TooltipRepeats" value="false" />
+			<Property name="ShowEndTooltip" value="true" />
+			<Property name="TooltipMessage" value="TIP_MONOLITH" />
+			<Property name="MissionMessageOnInteract" value="" />
+			<Property name="ResourceOverride" value="GcResourceElement">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+				<Property name="Seed" value="NONE" />
+				<Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList">
+					<Property name="Samplers" />
+				</Property>
+				<Property name="AltId" value="" />
+			</Property>
+		</Property>
+		<Property name="Events" value="GcScanEventData" _index="7">
+			<Property name="Name" value="HARVESTER" />
+			<Property name="ForceInteraction" value="" />
+			<Property name="UseSeasonDataAsInteraction" value="false" />
+			<Property name="ForceInteractionType" value="GcInteractionType">
+				<Property name="InteractionType" value="Harvester" />
+			</Property>
+			<Property name="NPCReactsToPlayer" value="false" />
+			<Property name="RequireInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="OverrideInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="MustMatchStoryUtilityPuzzle" value="" />
+			<Property name="ForceBroken" value="false" />
+			<Property name="ForceFixed" value="false" />
+			<Property name="ReplacementMaintData" value="" />
+			<Property name="ForceReplaceStoryPortalSeed" value="false" />
+			<Property name="ForceOverridesAll" value="true" />
+			<Property name="ForceOverrideEncounter" value="" />
+			<Property name="IsCommunityPortalOverride" value="false" />
+			<Property name="ClearForcedInteractionOnCompletion" value="false" />
+			<Property name="BuildingPreventionRadius" value="0.000000" />
+			<Property name="UseMissionTradingDataOverride" value="false" />
+			<Property name="AlwaysShow" value="false" />
+			<Property name="NeverShow" value="false" />
+			<Property name="ShowOnlyIfSequenceTarget" value="false" />
+			<Property name="PlanetLabelText" value="" />
+			<Property name="SurveyDistance" value="0.000000" />
+			<Property name="SurveyDiscoveryOSDMessage" value="UI_MISSIONMARKER_DISC_OSD" />
+			<Property name="SurveyHUDName" value="UI_MISSIONSURVEY_HUD_SUB" />
+			<Property name="EventStartType" value="Timer" />
+			<Property name="EventEndType" value="Interact" />
+			<Property name="EventPriority" value="Regular" />
+			<Property name="CanEndFromOutsideMission" value="false" />
+			<Property name="DisableMultiplayerSync" value="true" />
+			<Property name="BlockStartedOnUseEvents" value="false" />
+			<Property name="ReplaceEventIfAlreadyActive" value="false" />
+			<Property name="BuildingLocation" value="RandomOnFarPlanet" />
+			<Property name="SearchType" value="FindBuildingClass" />
+			<Property name="SpecificBuildingClass" value="GcBuildingClassification">
+				<Property name="BuildingClass" value="Harvester" />
+			</Property>
+			<Property name="AllowFriendsBases" value="false" />
+			<Property name="ForceWideRandom" value="false" />
+			<Property name="MustFindSystem" value="false" />
+			<Property name="AllowOverriddenBuildings" value="true" />
+			<Property name="TargetMustMatchMissionSeed" value="false" />
+			<Property name="UseBuildingFromRendezvousStage" value="false" />
+			<Property name="SolarSystemLocation" value="Local" />
+			<Property name="SolarSystemAttributes" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="SolarSystemAttributesFallback" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="ForceRestartInteraction" value="true" />
+			<Property name="ForceResetPortal" value="false" />
+			<Property name="HasReward" value="" />
+			<Property name="NextOption" value="" />
+			<Property name="TriggerActions" value="GcScanEventTriggers">
+				<Property name="Range" value="100.000000" />
+				<Property name="Triggers" />
+				<Property name="AllowRetrigger" value="false" />
+			</Property>
+			<Property name="UAsList" />
+			<Property name="TechShopType" value="GcTechnologyCategory">
+				<Property name="TechnologyCategory" value="All" />
+			</Property>
+			<Property name="OSDMessage" value="SIGNAL_HARVESTER" />
+			<Property name="InterstellarOSDMessage" value="SCANEVENT_ANOTHER_SYSTEM" />
+			<Property name="MarkerLabel" value="" />
+			<Property name="MarkerIcon" value="TkTextureResource">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+			</Property>
+			<Property name="MissionMarkerHighlightStyleOverride" value="GcScannerIconHighlightTypes">
+				<Property name="ScannerIconHighlightType" value="Diamond" />
+			</Property>
+			<Property name="StartTime" value="2.000000" />
+			<Property name="MessageTime" value="0.000000" />
+			<Property name="MessageDisplayTime" value="4.000000" />
+			<Property name="MessageAudio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="IconTime" value="4.000000" />
+			<Property name="TooltipTime" value="10.000000" />
+			<Property name="TooltipRepeats" value="false" />
+			<Property name="ShowEndTooltip" value="true" />
+			<Property name="TooltipMessage" value="TIP_HARVESTER" />
+			<Property name="MissionMessageOnInteract" value="" />
+			<Property name="ResourceOverride" value="GcResourceElement">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+				<Property name="Seed" value="NONE" />
+				<Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList">
+					<Property name="Samplers" />
+				</Property>
+				<Property name="AltId" value="" />
+			</Property>
+		</Property>
+		<Property name="Events" value="GcScanEventData" _index="8">
+			<Property name="Name" value="OBSERVATORY" />
+			<Property name="ForceInteraction" value="" />
+			<Property name="UseSeasonDataAsInteraction" value="false" />
+			<Property name="ForceInteractionType" value="GcInteractionType">
+				<Property name="InteractionType" value="Observatory" />
+			</Property>
+			<Property name="NPCReactsToPlayer" value="false" />
+			<Property name="RequireInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="OverrideInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="MustMatchStoryUtilityPuzzle" value="" />
+			<Property name="ForceBroken" value="false" />
+			<Property name="ForceFixed" value="false" />
+			<Property name="ReplacementMaintData" value="" />
+			<Property name="ForceReplaceStoryPortalSeed" value="false" />
+			<Property name="ForceOverridesAll" value="true" />
+			<Property name="ForceOverrideEncounter" value="" />
+			<Property name="IsCommunityPortalOverride" value="false" />
+			<Property name="ClearForcedInteractionOnCompletion" value="false" />
+			<Property name="BuildingPreventionRadius" value="0.000000" />
+			<Property name="UseMissionTradingDataOverride" value="false" />
+			<Property name="AlwaysShow" value="false" />
+			<Property name="NeverShow" value="false" />
+			<Property name="ShowOnlyIfSequenceTarget" value="false" />
+			<Property name="PlanetLabelText" value="" />
+			<Property name="SurveyDistance" value="0.000000" />
+			<Property name="SurveyDiscoveryOSDMessage" value="UI_MISSIONMARKER_DISC_OSD" />
+			<Property name="SurveyHUDName" value="UI_MISSIONSURVEY_HUD_SUB" />
+			<Property name="EventStartType" value="Timer" />
+			<Property name="EventEndType" value="Interact" />
+			<Property name="EventPriority" value="Regular" />
+			<Property name="CanEndFromOutsideMission" value="false" />
+			<Property name="DisableMultiplayerSync" value="true" />
+			<Property name="BlockStartedOnUseEvents" value="false" />
+			<Property name="ReplaceEventIfAlreadyActive" value="false" />
+			<Property name="BuildingLocation" value="RandomOnFarPlanet" />
+			<Property name="SearchType" value="FindBuildingClass" />
+			<Property name="SpecificBuildingClass" value="GcBuildingClassification">
+				<Property name="BuildingClass" value="Observatory" />
+			</Property>
+			<Property name="AllowFriendsBases" value="false" />
+			<Property name="ForceWideRandom" value="false" />
+			<Property name="MustFindSystem" value="false" />
+			<Property name="AllowOverriddenBuildings" value="true" />
+			<Property name="TargetMustMatchMissionSeed" value="false" />
+			<Property name="UseBuildingFromRendezvousStage" value="false" />
+			<Property name="SolarSystemLocation" value="Local" />
+			<Property name="SolarSystemAttributes" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="SolarSystemAttributesFallback" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="ForceRestartInteraction" value="true" />
+			<Property name="ForceResetPortal" value="false" />
+			<Property name="HasReward" value="" />
+			<Property name="NextOption" value="" />
+			<Property name="TriggerActions" value="GcScanEventTriggers">
+				<Property name="Range" value="100.000000" />
+				<Property name="Triggers" />
+				<Property name="AllowRetrigger" value="false" />
+			</Property>
+			<Property name="UAsList" />
+			<Property name="TechShopType" value="GcTechnologyCategory">
+				<Property name="TechnologyCategory" value="All" />
+			</Property>
+			<Property name="OSDMessage" value="SIGNAL_OBSERVATORY" />
+			<Property name="InterstellarOSDMessage" value="SCANEVENT_ANOTHER_SYSTEM" />
+			<Property name="MarkerLabel" value="" />
+			<Property name="MarkerIcon" value="TkTextureResource">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+			</Property>
+			<Property name="MissionMarkerHighlightStyleOverride" value="GcScannerIconHighlightTypes">
+				<Property name="ScannerIconHighlightType" value="Diamond" />
+			</Property>
+			<Property name="StartTime" value="2.000000" />
+			<Property name="MessageTime" value="0.000000" />
+			<Property name="MessageDisplayTime" value="4.000000" />
+			<Property name="MessageAudio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="IconTime" value="4.000000" />
+			<Property name="TooltipTime" value="10.000000" />
+			<Property name="TooltipRepeats" value="false" />
+			<Property name="ShowEndTooltip" value="true" />
+			<Property name="TooltipMessage" value="TIP_OBSERVATORY" />
+			<Property name="MissionMessageOnInteract" value="" />
+			<Property name="ResourceOverride" value="GcResourceElement">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+				<Property name="Seed" value="NONE" />
+				<Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList">
+					<Property name="Samplers" />
+				</Property>
+				<Property name="AltId" value="" />
+			</Property>
+		</Property>
+		<Property name="Events" value="GcScanEventData" _index="9">
+			<Property name="Name" value="BEACON" />
+			<Property name="ForceInteraction" value="" />
+			<Property name="UseSeasonDataAsInteraction" value="false" />
+			<Property name="ForceInteractionType" value="GcInteractionType">
+				<Property name="InteractionType" value="None" />
+			</Property>
+			<Property name="NPCReactsToPlayer" value="false" />
+			<Property name="RequireInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="OverrideInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="MustMatchStoryUtilityPuzzle" value="" />
+			<Property name="ForceBroken" value="false" />
+			<Property name="ForceFixed" value="false" />
+			<Property name="ReplacementMaintData" value="" />
+			<Property name="ForceReplaceStoryPortalSeed" value="false" />
+			<Property name="ForceOverridesAll" value="true" />
+			<Property name="ForceOverrideEncounter" value="" />
+			<Property name="IsCommunityPortalOverride" value="false" />
+			<Property name="ClearForcedInteractionOnCompletion" value="false" />
+			<Property name="BuildingPreventionRadius" value="0.000000" />
+			<Property name="UseMissionTradingDataOverride" value="false" />
+			<Property name="AlwaysShow" value="false" />
+			<Property name="NeverShow" value="false" />
+			<Property name="ShowOnlyIfSequenceTarget" value="false" />
+			<Property name="PlanetLabelText" value="" />
+			<Property name="SurveyDistance" value="0.000000" />
+			<Property name="SurveyDiscoveryOSDMessage" value="UI_MISSIONMARKER_DISC_OSD" />
+			<Property name="SurveyHUDName" value="UI_MISSIONSURVEY_HUD_SUB" />
+			<Property name="EventStartType" value="Timer" />
+			<Property name="EventEndType" value="Proximity" />
+			<Property name="EventPriority" value="Regular" />
+			<Property name="CanEndFromOutsideMission" value="false" />
+			<Property name="DisableMultiplayerSync" value="true" />
+			<Property name="BlockStartedOnUseEvents" value="false" />
+			<Property name="ReplaceEventIfAlreadyActive" value="false" />
+			<Property name="BuildingLocation" value="RandomOnNearPlanet" />
+			<Property name="SearchType" value="FindBuildingClass" />
+			<Property name="SpecificBuildingClass" value="GcBuildingClassification">
+				<Property name="BuildingClass" value="Beacon" />
+			</Property>
+			<Property name="AllowFriendsBases" value="false" />
+			<Property name="ForceWideRandom" value="false" />
+			<Property name="MustFindSystem" value="false" />
+			<Property name="AllowOverriddenBuildings" value="true" />
+			<Property name="TargetMustMatchMissionSeed" value="false" />
+			<Property name="UseBuildingFromRendezvousStage" value="false" />
+			<Property name="SolarSystemLocation" value="Local" />
+			<Property name="SolarSystemAttributes" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="SolarSystemAttributesFallback" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="ForceRestartInteraction" value="true" />
+			<Property name="ForceResetPortal" value="false" />
+			<Property name="HasReward" value="" />
+			<Property name="NextOption" value="" />
+			<Property name="TriggerActions" value="GcScanEventTriggers">
+				<Property name="Range" value="100.000000" />
+				<Property name="Triggers" />
+				<Property name="AllowRetrigger" value="false" />
+			</Property>
+			<Property name="UAsList" />
+			<Property name="TechShopType" value="GcTechnologyCategory">
+				<Property name="TechnologyCategory" value="All" />
+			</Property>
+			<Property name="OSDMessage" value="SIGNAL_BEACON" />
+			<Property name="InterstellarOSDMessage" value="SCANEVENT_ANOTHER_SYSTEM" />
+			<Property name="MarkerLabel" value="" />
+			<Property name="MarkerIcon" value="TkTextureResource">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+			</Property>
+			<Property name="MissionMarkerHighlightStyleOverride" value="GcScannerIconHighlightTypes">
+				<Property name="ScannerIconHighlightType" value="Diamond" />
+			</Property>
+			<Property name="StartTime" value="2.000000" />
+			<Property name="MessageTime" value="0.000000" />
+			<Property name="MessageDisplayTime" value="4.000000" />
+			<Property name="MessageAudio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="IconTime" value="4.000000" />
+			<Property name="TooltipTime" value="10.000000" />
+			<Property name="TooltipRepeats" value="false" />
+			<Property name="ShowEndTooltip" value="true" />
+			<Property name="TooltipMessage" value="TIP_BEACON" />
+			<Property name="MissionMessageOnInteract" value="" />
+			<Property name="ResourceOverride" value="GcResourceElement">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+				<Property name="Seed" value="NONE" />
+				<Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList">
+					<Property name="Samplers" />
+				</Property>
+				<Property name="AltId" value="" />
+			</Property>
+		</Property>
+		<Property name="Events" value="GcScanEventData" _index="10">
+			<Property name="Name" value="PLAQUE" />
+			<Property name="ForceInteraction" value="" />
+			<Property name="UseSeasonDataAsInteraction" value="false" />
+			<Property name="ForceInteractionType" value="GcInteractionType">
+				<Property name="InteractionType" value="Plaque" />
+			</Property>
+			<Property name="NPCReactsToPlayer" value="false" />
+			<Property name="RequireInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="OverrideInteractionRace" value="GcAlienRace">
+				<Property name="AlienRace" value="None" />
+			</Property>
+			<Property name="MustMatchStoryUtilityPuzzle" value="" />
+			<Property name="ForceBroken" value="false" />
+			<Property name="ForceFixed" value="false" />
+			<Property name="ReplacementMaintData" value="" />
+			<Property name="ForceReplaceStoryPortalSeed" value="false" />
+			<Property name="ForceOverridesAll" value="true" />
+			<Property name="ForceOverrideEncounter" value="" />
+			<Property name="IsCommunityPortalOverride" value="false" />
+			<Property name="ClearForcedInteractionOnCompletion" value="false" />
+			<Property name="BuildingPreventionRadius" value="0.000000" />
+			<Property name="UseMissionTradingDataOverride" value="false" />
+			<Property name="AlwaysShow" value="false" />
+			<Property name="NeverShow" value="false" />
+			<Property name="ShowOnlyIfSequenceTarget" value="false" />
+			<Property name="PlanetLabelText" value="" />
+			<Property name="SurveyDistance" value="0.000000" />
+			<Property name="SurveyDiscoveryOSDMessage" value="UI_MISSIONMARKER_DISC_OSD" />
+			<Property name="SurveyHUDName" value="UI_MISSIONSURVEY_HUD_SUB" />
+			<Property name="EventStartType" value="Timer" />
+			<Property name="EventEndType" value="Interact" />
+			<Property name="EventPriority" value="Regular" />
+			<Property name="CanEndFromOutsideMission" value="false" />
+			<Property name="DisableMultiplayerSync" value="true" />
+			<Property name="BlockStartedOnUseEvents" value="false" />
+			<Property name="ReplaceEventIfAlreadyActive" value="false" />
+			<Property name="BuildingLocation" value="RandomOnFarPlanet" />
+			<Property name="SearchType" value="FindBuildingClass" />
+			<Property name="SpecificBuildingClass" value="GcBuildingClassification">
+				<Property name="BuildingClass" value="Plaque" />
+			</Property>
+			<Property name="AllowFriendsBases" value="false" />
+			<Property name="ForceWideRandom" value="false" />
+			<Property name="MustFindSystem" value="false" />
+			<Property name="AllowOverriddenBuildings" value="true" />
+			<Property name="TargetMustMatchMissionSeed" value="false" />
+			<Property name="UseBuildingFromRendezvousStage" value="false" />
+			<Property name="SolarSystemLocation" value="Local" />
+			<Property name="SolarSystemAttributes" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="SolarSystemAttributesFallback" value="GcScanEventSolarSystemLookup">
+				<Property name="UseStarType" value="false" />
+				<Property name="UseWealth" value="false" />
+				<Property name="UseTrading" value="false" />
+				<Property name="UseRace" value="GcAlienRace">
+					<Property name="AlienRace" value="None" />
+				</Property>
+				<Property name="UseAnomaly" value="GcGalaxyStarAnomaly">
+					<Property name="GalaxyStarAnomaly" value="None" />
+				</Property>
+				<Property name="UseConflict" value="GcPlayerConflictData">
+					<Property name="ConflictLevel" value="Default" />
+				</Property>
+				<Property name="StarType" value="GcGalaxyStarTypes">
+					<Property name="GalaxyStarType" value="Yellow" />
+				</Property>
+				<Property name="TradingData" value="GcPlanetTradingData">
+					<Property name="WealthClass" value="GcWealthClass">
+						<Property name="WealthClass" value="Average" />
+					</Property>
+					<Property name="TradingClass" value="GcTradingClass">
+						<Property name="TradingClass" value="Mining" />
+					</Property>
+				</Property>
+				<Property name="AllowUnsafeMatches" value="false" />
+				<Property name="NeverAllowEmpty" value="false" />
+				<Property name="NeverAllowAbandoned" value="false" />
+				<Property name="AllowedToBePurpleWithoutAccess" value="false" />
+				<Property name="RequireUndiscovered" value="false" />
+				<Property name="NeedsWaterPlanet" value="false" />
+				<Property name="NeedsDeepWaterPlanet" value="false" />
+				<Property name="NeedsPrimePlanet" value="false" />
+				<Property name="NeedsSentinels" value="false" />
+				<Property name="NeedsCorruptSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeSentinelPlanet" value="false" />
+				<Property name="NeverAllowExtremeSentinelPlanet" value="false" />
+				<Property name="NeedsExtremeWeatherPlanet" value="false" />
+				<Property name="NeedsExtremeHazardPlanet" value="false" />
+				<Property name="NeverAllowExtremeWeatherPlanet" value="false" />
+				<Property name="AnyBiomeNotWeirdOrDead" value="false" />
+				<Property name="AnyRGBBiome" value="false" />
+				<Property name="AnyInfestedBiome" value="false" />
+				<Property name="NeedsBiome" value="false" />
+				<Property name="NeedsBiomeType" value="GcBiomeType">
+					<Property name="Biome" value="Lush" />
+				</Property>
+				<Property name="UseBiomeSubType" value="GcBiomeSubType">
+					<Property name="BiomeSubType" value="None" />
+				</Property>
+				<Property name="NeedsEmptySystem" value="false" />
+				<Property name="NeedsAbandonedSystem" value="false" />
+				<Property name="NeedsResourceHint" value="" />
+				<Property name="SuitableForCreatureDiscovery" value="false" />
+				<Property name="SuitableForWeirdCreatureDiscovery" value="false" />
+				<Property name="SuitableForRobotCreatureDiscovery" value="false" />
+				<Property name="SuitableForCreatureTaming" value="false" />
+				<Property name="SamePlanetAsEvent" value="" />
+				<Property name="SamePlanetAsSeasonParty" value="0" />
+				<Property name="ExcludePlanetsWithEvents" />
+				<Property name="SystemNeedsResourceHint" value="" />
+				<Property name="SystemNeedsWater" value="false" />
+				<Property name="SystemNeedsWeirdPlanet" value="false" />
+				<Property name="SystemNeedsInfestedPlanet" value="false" />
+				<Property name="SystemNeedsCorruptSentinelPlanet" value="false" />
+				<Property name="SystemNeedsExtremeStormPlanet" value="false" />
+				<Property name="SystemNeedsGasGiant" value="false" />
+				<Property name="NeverAllowGasGiantSystem" value="false" />
+				<Property name="MinPlanets" value="-1" />
+			</Property>
+			<Property name="ForceRestartInteraction" value="true" />
+			<Property name="ForceResetPortal" value="false" />
+			<Property name="HasReward" value="" />
+			<Property name="NextOption" value="" />
+			<Property name="TriggerActions" value="GcScanEventTriggers">
+				<Property name="Range" value="100.000000" />
+				<Property name="Triggers" />
+				<Property name="AllowRetrigger" value="false" />
+			</Property>
+			<Property name="UAsList" />
+			<Property name="TechShopType" value="GcTechnologyCategory">
+				<Property name="TechnologyCategory" value="All" />
+			</Property>
+			<Property name="OSDMessage" value="SIGNAL_PLAQUE" />
+			<Property name="InterstellarOSDMessage" value="SCANEVENT_ANOTHER_SYSTEM" />
+			<Property name="MarkerLabel" value="" />
+			<Property name="MarkerIcon" value="TkTextureResource">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+			</Property>
+			<Property name="MissionMarkerHighlightStyleOverride" value="GcScannerIconHighlightTypes">
+				<Property name="ScannerIconHighlightType" value="Diamond" />
+			</Property>
+			<Property name="StartTime" value="2.000000" />
+			<Property name="MessageTime" value="0.000000" />
+			<Property name="MessageDisplayTime" value="4.000000" />
+			<Property name="MessageAudio" value="GcAudioWwiseEvents">
+				<Property name="AkEvent" value="INVALID_EVENT" />
+			</Property>
+			<Property name="IconTime" value="4.000000" />
+			<Property name="TooltipTime" value="10.000000" />
+			<Property name="TooltipRepeats" value="false" />
+			<Property name="ShowEndTooltip" value="true" />
+			<Property name="TooltipMessage" value="TIP_PLAQUE" />
+			<Property name="MissionMessageOnInteract" value="" />
+			<Property name="ResourceOverride" value="GcResourceElement">
+				<Property name="Filename" value="" />
+				<Property name="ResHandle" value="GcResource">
+					<Property name="ResourceID" value="0" />
+				</Property>
+				<Property name="Seed" value="NONE" />
+				<Property name="ProceduralTexture" value="TkProceduralTextureChosenOptionList">
+					<Property name="Samplers" />
+				</Property>
+				<Property name="AltId" value="" />
+			</Property>
+		</Property>
+	</Property>
+</Data>
