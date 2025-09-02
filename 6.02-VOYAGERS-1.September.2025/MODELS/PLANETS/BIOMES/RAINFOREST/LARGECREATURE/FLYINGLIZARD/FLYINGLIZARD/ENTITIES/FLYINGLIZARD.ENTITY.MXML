@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.02.0.1)-->
+<Data template="cTkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="TkAudioComponentData" _index="0">
+			<Property name="TkAudioComponentData">
+				<Property name="Ambient" value="" />
+				<Property name="AmbientState" value="" />
+				<Property name="Shutdown" value="" />
+				<Property name="MaxDistance" value="90" />
+				<Property name="OcclusionRadius" value="0.000000" />
+				<Property name="OcclusionRange" value="0.000000" />
+				<Property name="LocalOnly" value="false" />
+				<Property name="AnimTriggers">
+					<Property name="AnimTriggers" value="TkAudioAnimTrigger" _index="0">
+						<Property name="Sound" value="WINGFLAP" />
+						<Property name="Anim" value="" />
+						<Property name="FrameStart" value="55" />
+						<Property name="OnlyValidWithParts" />
+						<Property name="AudioType" value="Standard" />
+					</Property>
+				</Property>
+				<Property name="Emitters" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkPhysicsComponentData" _index="1">
+			<Property name="TkPhysicsComponentData">
+				<Property name="Data" value="TkPhysicsData">
+					<Property name="Mass" value="1.000000" />
+					<Property name="Friction" value="0.500000" />
+					<Property name="RollingFriction" value="0.200000" />
+					<Property name="AngularDamping" value="0.200000" />
+					<Property name="LinearDamping" value="0.100000" />
+					<Property name="Gravity" value="20.000000" />
+				</Property>
+				<Property name="TriggerVolume" value="false" />
+				<Property name="TriggerVolumeType" value="TkVolumeTriggerType">
+					<Property name="VolumeTriggerType" value="Open" />
+				</Property>
+				<Property name="SurfaceProperties" value="None" />
+				<Property name="ModelOwnership" value="Model" />
+				<Property name="Climbable" value="false" />
+				<Property name="Walkable" value="true" />
+				<Property name="Floor" value="false" />
+				<Property name="IgnoreModelOwner" value="false" />
+				<Property name="NoVehicleCollide" value="false" />
+				<Property name="NoPlayerCollide" value="false" />
+				<Property name="NoTerrainCollide" value="false" />
+				<Property name="NoFireCollide" value="false" />
+				<Property name="NoFallDamage" value="false" />
+				<Property name="IgnoreAllCollisions" value="false" />
+				<Property name="BlocksInteract" value="true" />
+				<Property name="CameraInvisible" value="false" />
+				<Property name="InvisibleForInteraction" value="false" />
+				<Property name="AllowTeleporter" value="false" />
+				<Property name="BlockTeleporter" value="false" />
+				<Property name="CanBeTooSteepForTeleporter" value="true" />
+				<Property name="DisableGravity" value="false" />
+				<Property name="SpinOnCreate" value="0.000000" />
+				<Property name="ScaleAffectsMass" value="false" />
+				<Property name="AllowedDefaultCollision" value="true" />
+				<Property name="Animated" value="false" />
+				<Property name="UseBasePartOptimisation" value="false" />
+				<Property name="IsTransporter" value="false" />
+				<Property name="UseSimpleCharacterCollision" value="false" />
+				<Property name="RotateSimpleCharacterCollisionCapsule" value="false" />
+				<Property name="SimpleCharacterCollisionRadius" value="0.500000" />
+				<Property name="SimpleCharacterCollisionHeight" value="2.000000" />
+				<Property name="SimpleCharacterCollisionHeightOffset" value="0.000000" />
+				<Property name="SimpleCharacterCollisionFwdOffset" value="0.000000" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkAnimationComponentData" _index="2">
+			<Property name="TkAnimationComponentData">
+				<Property name="NetSyncAnimations" value="false" />
+				<Property name="Idle" value="TkAnimationData">
+					<Property name="Anim" value="" />
+					<Property name="Filename" value="" />
+					<Property name="AnimType" value="Loop" />
+					<Property name="AnimGroupOverride" value="false" />
+					<Property name="Priority" value="0" />
+					<Property name="FrameStart" value="0" />
+					<Property name="FrameEnd" value="80" />
+					<Property name="FrameEndGame" value="0" />
+					<Property name="StartNode" value="" />
+					<Property name="ExtraStartNodes" />
+					<Property name="AdditiveBaseAnim" value="" />
+					<Property name="AdditiveBaseFrame" value="0.000000" />
+					<Property name="Mask" value="" />
+					<Property name="AdditionalMasks" />
+					<Property name="OffsetMin" value="0.000000" />
+					<Property name="OffsetMax" value="0.000000" />
+					<Property name="Delay" value="0.000000" />
+					<Property name="Speed" value="1.000000" />
+					<Property name="ActionStartFrame" value="0.000000" />
+					<Property name="ActionFrame" value="-1.000000" />
+					<Property name="Actions" />
+					<Property name="CreatureSize" value="AllSizes" />
+					<Property name="Notifies" />
+					<Property name="Additive" value="false" />
+					<Property name="Mirrored" value="false" />
+					<Property name="Active" value="true" />
+					<Property name="Has30HzFrames" value="false" />
+					<Property name="GameData" value="TkAnimationGameData">
+						<Property name="RootMotion" value="None" />
+						<Property name="BlockPlayerMovement" value="false" />
+						<Property name="BlockPlayerWeapon" value="Unblocked" />
+					</Property>
+				</Property>
+				<Property name="RandomOneShots" />
+				<Property name="AnimGroup" value="" />
+				<Property name="Anims" />
+				<Property name="AnimLibraries" />
+				<Property name="Trees" />
+				<Property name="JointLODOverrides" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcCreatureComponentData" _index="3">
+			<Property name="GcCreatureComponentData">
+				<Property name="Id" value="FLYINGLIZARD" />
+				<Property name="Axis" value="GcPrimaryAxis">
+					<Property name="PrimaryAxis" value="ZNeg" />
+				</Property>
+				<Property name="Scaler" value="0.213000" />
+				<Property name="PetIndoorScaler" value="1.000000" />
+				<Property name="DeathEffect" value="" />
+				<Property name="DeathEffectTrail" value="" />
+				<Property name="DeathEffectScale" value="1.000000" />
+				<Property name="DeathFadeTime" value="0.200000" />
+				<Property name="ReplacementImpacts" />
+				<Property name="AccessoryPitchOffset" value="0.000000" />
+				<Property name="DiscoveryFurScaler" value="0.300000" />
+				<Property name="DiscoveryUIScaler" value="1.000000" />
+				<Property name="DiscoveryUIOffset">
+					<Property name="X" value="0.000000" />
+					<Property name="Y" value="0.000000" />
+					<Property name="Z" value="0.000000" />
+				</Property>
+				<Property name="ThumbnailOverrides" />
+				<Property name="UsePetLargeUIOverride" value="false" />
+				<Property name="PetLargeUIOverrideScaler" value="1.000000" />
+				<Property name="PetLargeUIOverrideOffset">
+					<Property name="X" value="0.000000" />
+					<Property name="Y" value="0.000000" />
+					<Property name="Z" value="0.000000" />
+				</Property>
+				<Property name="UseStandardWaterPusher" value="false" />
+				<Property name="UnderwaterRagdollGravityScale" value="0.100000" />
+				<Property name="UnderwaterRagdollDamping" value="1.000000" />
+				<Property name="UnderwaterRagdollDampingTime" value="1.500000" />
+				<Property name="UnderwaterRagdollSpinStrength" value="3.000000" />
+				<Property name="UnderwaterRagdollSpinTime" value="1.000000" />
+				<Property name="UnderwaterRagdollAnimStrength" value="0.100000" />
+				<Property name="UnderwaterRagdollAnimTime" value="1.000000" />
+				<Property name="NavRadiusModifier" value="1.000000" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances">
+		<Property name="LodDistances" value="0.000000" _index="0" />
+		<Property name="LodDistances" value="50.000000" _index="1" />
+		<Property name="LodDistances" value="80.000000" _index="2" />
+		<Property name="LodDistances" value="150.000000" _index="3" />
+		<Property name="LodDistances" value="500.000000" _index="4" />
+	</Property>
+</Data>
