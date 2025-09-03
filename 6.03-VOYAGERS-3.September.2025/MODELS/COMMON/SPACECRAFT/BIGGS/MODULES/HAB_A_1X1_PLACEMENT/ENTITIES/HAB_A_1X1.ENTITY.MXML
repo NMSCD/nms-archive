@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.03.0.2)-->
+<Data template="cTkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="TkPhysicsComponentData" _index="0">
+			<Property name="TkPhysicsComponentData">
+				<Property name="Data" value="TkPhysicsData">
+					<Property name="Mass" value="0.000000" />
+					<Property name="Friction" value="0.500000" />
+					<Property name="RollingFriction" value="0.200000" />
+					<Property name="AngularDamping" value="0.200000" />
+					<Property name="LinearDamping" value="0.100000" />
+					<Property name="Gravity" value="20.000000" />
+				</Property>
+				<Property name="TriggerVolume" value="false" />
+				<Property name="TriggerVolumeType" value="TkVolumeTriggerType">
+					<Property name="VolumeTriggerType" value="Open" />
+				</Property>
+				<Property name="SurfaceProperties" value="None" />
+				<Property name="ModelOwnership" value="Model" />
+				<Property name="Climbable" value="false" />
+				<Property name="Walkable" value="true" />
+				<Property name="Floor" value="false" />
+				<Property name="IgnoreModelOwner" value="false" />
+				<Property name="NoVehicleCollide" value="false" />
+				<Property name="NoPlayerCollide" value="false" />
+				<Property name="NoTerrainCollide" value="false" />
+				<Property name="NoFireCollide" value="false" />
+				<Property name="NoFallDamage" value="false" />
+				<Property name="IgnoreAllCollisions" value="false" />
+				<Property name="BlocksInteract" value="true" />
+				<Property name="CameraInvisible" value="false" />
+				<Property name="InvisibleForInteraction" value="false" />
+				<Property name="AllowTeleporter" value="false" />
+				<Property name="BlockTeleporter" value="false" />
+				<Property name="CanBeTooSteepForTeleporter" value="true" />
+				<Property name="DisableGravity" value="false" />
+				<Property name="SpinOnCreate" value="0.000000" />
+				<Property name="ScaleAffectsMass" value="false" />
+				<Property name="AllowedDefaultCollision" value="true" />
+				<Property name="Animated" value="false" />
+				<Property name="UseBasePartOptimisation" value="false" />
+				<Property name="IsTransporter" value="false" />
+				<Property name="UseSimpleCharacterCollision" value="false" />
+				<Property name="RotateSimpleCharacterCollisionCapsule" value="false" />
+				<Property name="SimpleCharacterCollisionRadius" value="0.500000" />
+				<Property name="SimpleCharacterCollisionHeight" value="2.000000" />
+				<Property name="SimpleCharacterCollisionHeightOffset" value="0.000000" />
+				<Property name="SimpleCharacterCollisionFwdOffset" value="0.000000" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcBasePlacementComponentData" _index="1">
+			<Property name="GcBasePlacementComponentData">
+				<Property name="Rules">
+					<Property name="Rules" value="GcBasePlacementRule" _index="0">
+						<Property name="Conditions" />
+						<Property name="PositionLocator" value="" />
+						<Property name="PartID" value="_BIGGS_HAB_A_1X1_CORE" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule" _index="1">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition" _index="0">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition" _index="0">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_B1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="NotSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="false" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FLOOR1_" />
+						<Property name="PartID" value="_BIGGS_FLOOR_A" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule" _index="2">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition" _index="0">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcOutSnapSocketCondition" _index="0">
+											<Property name="GcOutSnapSocketCondition">
+												<Property name="SnapPoint" value="SnapPoint_B1" />
+												<Property name="OutSocket" value="RoomT_Out_" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+												<Property name="OutSocketIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="false" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="FLOOR1_" />
+						<Property name="PartID" value="_BIGGS_FLOOR_LADDERHATCH_A" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule" _index="3">
+						<Property name="Conditions" />
+						<Property name="PositionLocator" value="CEILING1_" />
+						<Property name="PartID" value="_BIGGS_CEILING_A0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule" _index="4">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition" _index="0">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition" _index="0">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_N1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="NotSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="false" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="WALLN1_" />
+						<Property name="PartID" value="_BIGGS_WALL_A0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule" _index="5">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition" _index="0">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition" _index="0">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_E1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="NotSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="false" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="WALLE1_" />
+						<Property name="PartID" value="_BIGGS_WALL_A0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule" _index="6">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition" _index="0">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition" _index="0">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_S1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="NotSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="false" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="WALLS1_" />
+						<Property name="PartID" value="_BIGGS_WALL_A0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule" _index="7">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition" _index="0">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcSnapPointCondition" _index="0">
+											<Property name="GcSnapPointCondition">
+												<Property name="SnapPoint" value="SnapPoint_W1" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="NotSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="false" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="WALLW1_" />
+						<Property name="PartID" value="_BIGGS_WALL_A0" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule" _index="8">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition" _index="0">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcOutSnapSocketCondition" _index="0">
+											<Property name="GcOutSnapSocketCondition">
+												<Property name="SnapPoint" value="SnapPoint_N1" />
+												<Property name="OutSocket" value="RoomS_Out_" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+												<Property name="OutSocketIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="false" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="WALLN1_" />
+						<Property name="PartID" value="_BIGGS_DOORWAY_NS_A" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule" _index="9">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition" _index="0">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcOutSnapSocketCondition" _index="0">
+											<Property name="GcOutSnapSocketCondition">
+												<Property name="SnapPoint" value="SnapPoint_E1" />
+												<Property name="OutSocket" value="RoomW_Out_" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+												<Property name="OutSocketIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="false" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="WALLE1_" />
+						<Property name="PartID" value="_BIGGS_DOORWAY_EW_A" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule" _index="10">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition" _index="0">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcOutSnapSocketCondition" _index="0">
+											<Property name="GcOutSnapSocketCondition">
+												<Property name="SnapPoint" value="SnapPoint_S1" />
+												<Property name="OutSocket" value="RoomN_Out_" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+												<Property name="OutSocketIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="false" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="WALLS1_" />
+						<Property name="PartID" value="_BIGGS_DOORWAY_NS_A" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+					<Property name="Rules" value="GcBasePlacementRule" _index="11">
+						<Property name="Conditions">
+							<Property name="Conditions" value="GcGroupCondition" _index="0">
+								<Property name="GcGroupCondition">
+									<Property name="Conditions">
+										<Property name="Conditions" value="GcOutSnapSocketCondition" _index="0">
+											<Property name="GcOutSnapSocketCondition">
+												<Property name="SnapPoint" value="SnapPoint_W1" />
+												<Property name="OutSocket" value="RoomE_Out_" />
+												<Property name="SnapState" value="GcBaseSnapState">
+													<Property name="SnapState" value="IsSnapped" />
+												</Property>
+												<Property name="ObjectId" value="" />
+												<Property name="SnapPointIndex" value="0" />
+												<Property name="OutSocketIndex" value="0" />
+											</Property>
+										</Property>
+									</Property>
+									<Property name="ORConditions" value="false" />
+								</Property>
+							</Property>
+						</Property>
+						<Property name="PositionLocator" value="WALLW1_" />
+						<Property name="PartID" value="_BIGGS_DOORWAY_EW_A" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances">
+		<Property name="LodDistances" value="0.000000" _index="0" />
+		<Property name="LodDistances" value="50.000000" _index="1" />
+		<Property name="LodDistances" value="80.000000" _index="2" />
+		<Property name="LodDistances" value="150.000000" _index="3" />
+		<Property name="LodDistances" value="500.000000" _index="4" />
+	</Property>
+</Data>
