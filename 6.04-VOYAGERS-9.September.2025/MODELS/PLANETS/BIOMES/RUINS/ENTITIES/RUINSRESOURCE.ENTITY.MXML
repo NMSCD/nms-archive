@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.04.0.2)-->
+<Data template="cTkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="TkAudioComponentData" _index="0">
+			<Property name="TkAudioComponentData">
+				<Property name="Ambient" value="Obj_Ruins_Resource_Lp" />
+				<Property name="AmbientState" value="" />
+				<Property name="Shutdown" value="" />
+				<Property name="MaxDistance" value="90" />
+				<Property name="OcclusionRadius" value="0.000000" />
+				<Property name="OcclusionRange" value="0.000000" />
+				<Property name="LocalOnly" value="false" />
+				<Property name="AnimTriggers" />
+				<Property name="Emitters" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkStaticPhysicsComponentData" _index="1">
+			<Property name="TkStaticPhysicsComponentData">
+				<Property name="Data" value="TkPhysicsData">
+					<Property name="Mass" value="0.000000" />
+					<Property name="Friction" value="0.500000" />
+					<Property name="RollingFriction" value="0.200000" />
+					<Property name="AngularDamping" value="0.200000" />
+					<Property name="LinearDamping" value="0.100000" />
+					<Property name="Gravity" value="20.000000" />
+				</Property>
+				<Property name="NavMeshInclusion" value="TkNavMeshInclusionParams">
+					<Property name="InclusionType" value="TkNavMeshInclusionType">
+						<Property name="NavMeshInclusionType" value="Auto" />
+					</Property>
+					<Property name="InclusionMinSize" value="0.000000" />
+					<Property name="AreaType" value="TkNavMeshAreaType">
+						<Property name="NavMeshAreaType" value="Auto" />
+					</Property>
+				</Property>
+				<Property name="StaticPhysicsTargetNode" value="MasterModel" />
+				<Property name="AddToWorldOnPrepare" value="true" />
+				<Property name="AddToWorldImmediately" value="true" />
+				<Property name="TriggerVolumeType" value="TkVolumeTriggerType">
+					<Property name="VolumeTriggerType" value="Open" />
+				</Property>
+				<Property name="TriggerVolume" value="false" />
+				<Property name="Climbable" value="false" />
+				<Property name="NoVehicleCollide" value="false" />
+				<Property name="NoPlayerCollide" value="false" />
+				<Property name="NoTerrainCollide" value="false" />
+				<Property name="CameraInvisible" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkAnimationComponentData" _index="2">
+			<Property name="TkAnimationComponentData">
+				<Property name="NetSyncAnimations" value="false" />
+				<Property name="Idle" value="TkAnimationData">
+					<Property name="Anim" value="IDLE" />
+					<Property name="Filename" value="MODELS/PLANETS/BIOMES/RUINS/RUINRESOURCE.ANIM.MBIN" />
+					<Property name="AnimType" value="Loop" />
+					<Property name="AnimGroupOverride" value="false" />
+					<Property name="Priority" value="0" />
+					<Property name="FrameStart" value="0" />
+					<Property name="FrameEnd" value="0" />
+					<Property name="FrameEndGame" value="0" />
+					<Property name="StartNode" value="" />
+					<Property name="ExtraStartNodes" />
+					<Property name="AdditiveBaseAnim" value="" />
+					<Property name="AdditiveBaseFrame" value="0.000000" />
+					<Property name="Mask" value="" />
+					<Property name="AdditionalMasks" />
+					<Property name="OffsetMin" value="0.000000" />
+					<Property name="OffsetMax" value="0.000000" />
+					<Property name="Delay" value="0.000000" />
+					<Property name="Speed" value="0.300000" />
+					<Property name="ActionStartFrame" value="0.000000" />
+					<Property name="ActionFrame" value="-1.000000" />
+					<Property name="Actions" />
+					<Property name="CreatureSize" value="AllSizes" />
+					<Property name="Notifies" />
+					<Property name="Additive" value="false" />
+					<Property name="Mirrored" value="false" />
+					<Property name="Active" value="true" />
+					<Property name="Has30HzFrames" value="false" />
+					<Property name="GameData" value="TkAnimationGameData">
+						<Property name="RootMotion" value="None" />
+						<Property name="BlockPlayerMovement" value="false" />
+						<Property name="BlockPlayerWeapon" value="Unblocked" />
+					</Property>
+				</Property>
+				<Property name="RandomOneShots" />
+				<Property name="AnimGroup" value="" />
+				<Property name="Anims" />
+				<Property name="AnimLibraries" />
+				<Property name="Trees" />
+				<Property name="JointLODOverrides" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcSimpleInteractionComponentData" _index="3">
+			<Property name="GcSimpleInteractionComponentData">
+				<Property name="SimpleInteractionType" value="GenericReward" />
+				<Property name="InteractDistance" value="0.000000" />
+				<Property name="Use2dInteractDistance" value="false" />
+				<Property name="Id" value="DE_RUINPLANS" />
+				<Property name="Rarity" value="GcRarity">
+					<Property name="Rarity" value="Common" />
+				</Property>
+				<Property name="Size" value="GcSizeIndicator">
+					<Property name="SizeIndicator" value="Medium" />
+				</Property>
+				<Property name="TriggerAction" value="INACTIVE" />
+				<Property name="TriggerActionOnPrepare" value="" />
+				<Property name="TriggerActionToggle" value="" />
+				<Property name="DeactivateSimilarInteractionsNearbyRadius" value="0.000000" />
+				<Property name="BroadcastTriggerAction" value="false" />
+				<Property name="Delay" value="0.000000" />
+				<Property name="HideContents" value="true" />
+				<Property name="InteractIsCrime" value="false" />
+				<Property name="InteractFiendCrimeType" value="GcFiendCrime">
+					<Property name="FiendCrime" value="None" />
+				</Property>
+				<Property name="InteractFiendCrimeChance" value="1.000000" />
+				<Property name="InteractCrimeLevel" value="0" />
+				<Property name="IncreaseCorruptSentinelWanted" value="0" />
+				<Property name="NotifyEncounter" value="false" />
+				<Property name="ActivationCost" value="GcInteractionActivationCost">
+					<Property name="SubstanceId" value="" />
+					<Property name="AltIds" />
+					<Property name="Cost" value="0" />
+					<Property name="Repeat" value="false" />
+					<Property name="RequiredTech" value="" />
+					<Property name="UseCostID" value="" />
+					<Property name="StartMissionOnCantAfford" value="" />
+					<Property name="OnlyChargeDuringSeasons" />
+				</Property>
+				<Property name="StatToTrack" value="GcStatsEnum">
+					<Property name="StatEnum" value="RUINS_LOOTED" />
+				</Property>
+				<Property name="StartsBuried" value="false" />
+				<Property name="MustBeVisibleToInteract" value="false" />
+				<Property name="NeedsStorm" value="false" />
+				<Property name="Name" value="UI_RUIN_CHEST_NAME" />
+				<Property name="ForceSubtitle" value="UI_RUIN_CHEST_SUB" />
+				<Property name="VRInteractMessage" value="" />
+				<Property name="TerminalHeading" value="" />
+				<Property name="TerminalMessage" value="" />
+				<Property name="ScanType" value="BINOC_INTERACTABLE" />
+				<Property name="ScanData" value="" />
+				<Property name="ScanIcon" value="GcDiscoveryType">
+					<Property name="DiscoveryType" value="Unknown" />
+				</Property>
+				<Property name="ActivateLocatorsFromRarity" value="false" />
+				<Property name="RarityLocators">
+					<Property name="Common" value="" />
+					<Property name="Uncommon" value="" />
+					<Property name="Rare" value="" />
+				</Property>
+				<Property name="BaseBuildingTriggerActions" />
+				<Property name="RewardOverrideTable" />
+				<Property name="PersistencyBufferOverride" />
+				<Property name="UsePersonalPersistentBuffer" value="true" />
+				<Property name="ReseedOnRewardSuccess" value="false" />
+				<Property name="CanCollectInMech" value="false" />
+				<Property name="DisableAnimationUntilInteract" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkSketchComponentData" _index="4">
+			<Property name="TkSketchComponentData">
+				<Property name="GraphPosX" value="0.000000" />
+				<Property name="GraphPosY" value="0.000000" />
+				<Property name="GraphZoom" value="1.000000" />
+				<Property name="UpdateRateMultiplier" value="1.000000" />
+				<Property name="Nodes" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcScannableComponentData" _index="5">
+			<Property name="GcScannableComponentData">
+				<Property name="ScanRange" value="500.000000" />
+				<Property name="ScanName" value="UI_RUIN_CHEST_NAME" />
+				<Property name="ScanTime" value="5.000000" />
+				<Property name="CompassRangeMultiplier" value="0.200000" />
+				<Property name="AlwaysShowRange" value="0.000000" />
+				<Property name="CanTagIcon" value="true" />
+				<Property name="ClearTagOnArrival" value="true" />
+				<Property name="DisableIfBuildingPart" value="false" />
+				<Property name="DisableIfInBase" value="false" />
+				<Property name="UseModelNode" value="true" />
+				<Property name="Icon" value="GcScannerIconTypes">
+					<Property name="ScanIconType" value="RuinBeacon" />
+				</Property>
+				<Property name="BinocsDiscoIconOverride" value="GcDiscoveryType">
+					<Property name="DiscoveryType" value="Unknown" />
+				</Property>
+				<Property name="ScannableType" value="Binoculars" />
+				<Property name="IsPlacedMarker" value="false" />
+				<Property name="ShowInFreighterBranchRoom" value="false" />
+				<Property name="TellPlayerIfFreighterObjectUsed" value="false" />
+				<Property name="FreighterObjectAlreadyUsedLocID" value="UI_ABAND_LOG_READ" />
+				<Property name="GetIconAndNameFromSettlementBuilding" value="false" />
+				<Property name="AllowedToMerge" value="true" />
+				<Property name="MarkerActiveWithNodeInactive" value="false" />
+				<Property name="ValidMissionSurveyIds">
+					<Property name="ValidMissionSurveyIds" value="RUINS_LOOTED" _index="0" />
+				</Property>
+				<Property name="MinDisplayDistanceOverride" value="-1.000000" />
+				<Property name="MarkerOffsetOverride" value="0.000000" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances">
+		<Property name="LodDistances" value="0.000000" _index="0" />
+		<Property name="LodDistances" value="50.000000" _index="1" />
+		<Property name="LodDistances" value="80.000000" _index="2" />
+		<Property name="LodDistances" value="150.000000" _index="3" />
+		<Property name="LodDistances" value="500.000000" _index="4" />
+	</Property>
+</Data>
