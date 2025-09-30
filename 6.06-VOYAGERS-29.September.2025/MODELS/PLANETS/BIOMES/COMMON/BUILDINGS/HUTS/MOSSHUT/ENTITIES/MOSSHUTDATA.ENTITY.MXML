@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.06.0.1)-->
+<Data template="cTkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="TkPhysicsComponentData" _index="0">
+			<Property name="TkPhysicsComponentData">
+				<Property name="Data" value="TkPhysicsData">
+					<Property name="Mass" value="0.000000" />
+					<Property name="Friction" value="0.500000" />
+					<Property name="RollingFriction" value="0.200000" />
+					<Property name="AngularDamping" value="0.200000" />
+					<Property name="LinearDamping" value="0.100000" />
+					<Property name="Gravity" value="20.000000" />
+				</Property>
+				<Property name="TriggerVolume" value="false" />
+				<Property name="TriggerVolumeType" value="TkVolumeTriggerType">
+					<Property name="VolumeTriggerType" value="Open" />
+				</Property>
+				<Property name="SurfaceProperties" value="None" />
+				<Property name="ModelOwnership" value="Model" />
+				<Property name="Climbable" value="false" />
+				<Property name="Walkable" value="true" />
+				<Property name="Floor" value="false" />
+				<Property name="IgnoreModelOwner" value="false" />
+				<Property name="NoVehicleCollide" value="false" />
+				<Property name="NoPlayerCollide" value="false" />
+				<Property name="NoTerrainCollide" value="false" />
+				<Property name="NoFireCollide" value="false" />
+				<Property name="NoFallDamage" value="false" />
+				<Property name="IgnoreAllCollisions" value="false" />
+				<Property name="BlocksInteract" value="true" />
+				<Property name="CameraInvisible" value="false" />
+				<Property name="InvisibleForInteraction" value="false" />
+				<Property name="AllowTeleporter" value="false" />
+				<Property name="BlockTeleporter" value="false" />
+				<Property name="CanBeTooSteepForTeleporter" value="true" />
+				<Property name="DisableGravity" value="false" />
+				<Property name="SpinOnCreate" value="0.000000" />
+				<Property name="ScaleAffectsMass" value="false" />
+				<Property name="AllowedDefaultCollision" value="true" />
+				<Property name="Animated" value="false" />
+				<Property name="UseBasePartOptimisation" value="false" />
+				<Property name="IsTransporter" value="false" />
+				<Property name="UseSimpleCharacterCollision" value="false" />
+				<Property name="RotateSimpleCharacterCollisionCapsule" value="false" />
+				<Property name="SimpleCharacterCollisionRadius" value="0.500000" />
+				<Property name="SimpleCharacterCollisionHeight" value="2.000000" />
+				<Property name="SimpleCharacterCollisionHeightOffset" value="0.000000" />
+				<Property name="SimpleCharacterCollisionFwdOffset" value="0.000000" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcTriggerActionComponentData" _index="1">
+			<Property name="GcTriggerActionComponentData">
+				<Property name="HideModel" value="false" />
+				<Property name="StartInactive" value="false" />
+				<Property name="States">
+					<Property name="States" value="GcActionTriggerState" _index="0">
+						<Property name="StateID" value="BOOT" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="0.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcNodeActivationAction" _index="0">
+										<Property name="GcNodeActivationAction">
+											<Property name="NodeActiveState" value="Deactivate" />
+											<Property name="Name" value="REFFireFlyFX01" />
+											<Property name="SceneToAdd" value="" />
+											<Property name="IncludePhysics" value="false" />
+											<Property name="IncludeChildPhysics" value="false" />
+											<Property name="NotifyNPC" value="false" />
+											<Property name="UseMasterModel" value="true" />
+											<Property name="UseLocalNode" value="false" />
+											<Property name="RestartEmitters" value="false" />
+											<Property name="AffectModels" value="false" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Triggers" value="GcActionTrigger" _index="1">
+								<Property name="Event" value="GcPlayerNearbyEvent">
+									<Property name="GcPlayerNearbyEvent">
+										<Property name="RequirePlayerAction" value="None" />
+										<Property name="Distance" value="20.000000" />
+										<Property name="Angle" value="360.000000" />
+										<Property name="AnglePlayerRelative" value="false" />
+										<Property name="AngleOffset" value="0.000000" />
+										<Property name="AngleReflected" value="false" />
+										<Property name="AngleMinDistance" value="1.000000" />
+										<Property name="MustAffordCostID" value="" />
+										<Property name="DistanceCheckType" value="Radius" />
+										<Property name="Inverse" value="false" />
+										<Property name="OnlyForLocalPlayer" value="false" />
+										<Property name="IncludeAllPhysics" value="false" />
+										<Property name="IncludeMobileNPCs" value="false" />
+										<Property name="TeleporterCountsAsPlayer" value="true" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcGoToStateAction" _index="0">
+										<Property name="GcGoToStateAction">
+											<Property name="State" value="ACTIVATE" />
+											<Property name="Broadcast" value="false" />
+											<Property name="BroadcastLevel" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState" _index="1">
+						<Property name="StateID" value="ACTIVATE" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="0.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcNodeActivationAction" _index="0">
+										<Property name="GcNodeActivationAction">
+											<Property name="NodeActiveState" value="Activate" />
+											<Property name="Name" value="REFFireFlyFX01" />
+											<Property name="SceneToAdd" value="" />
+											<Property name="IncludePhysics" value="false" />
+											<Property name="IncludeChildPhysics" value="false" />
+											<Property name="NotifyNPC" value="false" />
+											<Property name="UseMasterModel" value="true" />
+											<Property name="UseLocalNode" value="false" />
+											<Property name="RestartEmitters" value="false" />
+											<Property name="AffectModels" value="false" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Triggers" value="GcActionTrigger" _index="1">
+								<Property name="Event" value="GcPlayerNearbyEvent">
+									<Property name="GcPlayerNearbyEvent">
+										<Property name="RequirePlayerAction" value="None" />
+										<Property name="Distance" value="20.000000" />
+										<Property name="Angle" value="360.000000" />
+										<Property name="AnglePlayerRelative" value="false" />
+										<Property name="AngleOffset" value="0.000000" />
+										<Property name="AngleReflected" value="false" />
+										<Property name="AngleMinDistance" value="1.000000" />
+										<Property name="MustAffordCostID" value="" />
+										<Property name="DistanceCheckType" value="Radius" />
+										<Property name="Inverse" value="true" />
+										<Property name="OnlyForLocalPlayer" value="true" />
+										<Property name="IncludeAllPhysics" value="false" />
+										<Property name="IncludeMobileNPCs" value="false" />
+										<Property name="TeleporterCountsAsPlayer" value="true" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcGoToStateAction" _index="0">
+										<Property name="GcGoToStateAction">
+											<Property name="State" value="DEACTIVATE" />
+											<Property name="Broadcast" value="false" />
+											<Property name="BroadcastLevel" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState" _index="2">
+						<Property name="StateID" value="DEACTIVATE" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="0.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcNodeActivationAction" _index="0">
+										<Property name="GcNodeActivationAction">
+											<Property name="NodeActiveState" value="Deactivate" />
+											<Property name="Name" value="REFFireFlyFX01" />
+											<Property name="SceneToAdd" value="" />
+											<Property name="IncludePhysics" value="false" />
+											<Property name="IncludeChildPhysics" value="false" />
+											<Property name="NotifyNPC" value="false" />
+											<Property name="UseMasterModel" value="true" />
+											<Property name="UseLocalNode" value="false" />
+											<Property name="RestartEmitters" value="false" />
+											<Property name="AffectModels" value="false" />
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Triggers" value="GcActionTrigger" _index="1">
+								<Property name="Event" value="GcPlayerNearbyEvent">
+									<Property name="GcPlayerNearbyEvent">
+										<Property name="RequirePlayerAction" value="None" />
+										<Property name="Distance" value="20.000000" />
+										<Property name="Angle" value="360.000000" />
+										<Property name="AnglePlayerRelative" value="false" />
+										<Property name="AngleOffset" value="0.000000" />
+										<Property name="AngleReflected" value="false" />
+										<Property name="AngleMinDistance" value="1.000000" />
+										<Property name="MustAffordCostID" value="" />
+										<Property name="DistanceCheckType" value="Radius" />
+										<Property name="Inverse" value="false" />
+										<Property name="OnlyForLocalPlayer" value="false" />
+										<Property name="IncludeAllPhysics" value="false" />
+										<Property name="IncludeMobileNPCs" value="false" />
+										<Property name="TeleporterCountsAsPlayer" value="true" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcGoToStateAction" _index="0">
+										<Property name="GcGoToStateAction">
+											<Property name="State" value="ACTIVATE" />
+											<Property name="Broadcast" value="false" />
+											<Property name="BroadcastLevel" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+				<Property name="Persistent" value="false" />
+				<Property name="PersistentState" value="" />
+				<Property name="ResetShotTimeOnStateChange" value="false" />
+				<Property name="LinkStateToBaseGrid" value="false" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances">
+		<Property name="LodDistances" value="0.000000" _index="0" />
+		<Property name="LodDistances" value="50.000000" _index="1" />
+		<Property name="LodDistances" value="80.000000" _index="2" />
+		<Property name="LodDistances" value="150.000000" _index="3" />
+		<Property name="LodDistances" value="500.000000" _index="4" />
+	</Property>
+</Data>
