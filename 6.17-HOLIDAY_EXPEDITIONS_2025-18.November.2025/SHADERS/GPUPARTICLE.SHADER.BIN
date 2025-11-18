@@ -1,0 +1,101 @@
+[[FX]]
+
+sampler gDiffuseMap = sampler_state
+{
+	TexUnit = 0;
+};
+
+sampler gaPerParticleData = sampler_state
+{
+	TexUnit = 1;
+};
+
+sampler gaPerEmitterData = sampler_state
+{
+	TexUnit = 2;
+};
+
+sampler gaiDeadIndexList = sampler_state
+{
+    TexUnit = 3;
+};
+
+sampler gaiAliveIndexList = sampler_state
+{
+    TexUnit = 4;
+};
+
+// giAliveKilledIndexAmountCounter: sampler that holds atomic values
+// element 0. number alive particles 
+// 1. number killed particles 
+// 2. Number of particles that can be in used (based on maximum particle per emitter ing game)
+// 3. Counter for particle simulation
+sampler giAliveKilledIndexAmountCounter = sampler_state
+{
+	TexUnit = 5;
+};
+
+
+// Uniforms
+
+float4 gMultiTextureVec4    = {1.0, 0.0, 0.0, 0.0};
+
+// Contexts
+
+context GPU_INIT
+{
+    ComputeShader = compile GLSL CS_GPU_INIT;
+}
+
+context GPU_SYNC
+{
+    ComputeShader = compile GLSL CS_GPU_SYNC;
+}
+
+context GPU_EMIT
+{
+    ComputeShader = compile GLSL CS_GPU_EMIT;
+}
+
+context GPU_SIMULATION
+{
+    ComputeShader = compile GLSL CS_GPU_SIMULATION;
+}
+
+context GPU_RENDER
+{
+    VertexShader = compile GLSL VS_GPU_RENDER;
+    PixelShader  = compile GLSL PS_GPU_RENDER;
+}
+
+[[CS_GPU_INIT]]
+// =================================================================================================
+#define D_GPU_PARTICLES
+#include "GPUParticleInitCompute.shader.h"
+
+[[CS_GPU_SYNC]]
+// =================================================================================================
+#define D_GPU_PARTICLES
+#include "GPUParticleSyncCompute.shader.h"
+
+[[CS_GPU_EMIT]]
+// =================================================================================================
+#define D_GPU_PARTICLES
+#include "GPUParticleEmitCompute.shader.h"
+
+[[CS_GPU_SIMULATION]]
+// =================================================================================================
+#define D_GPU_PARTICLES
+#include "GPUParticleSimulateCompute.shader.h"
+
+[[VS_GPU_RENDER]]
+// =================================================================================================
+#define D_GPU_PARTICLES
+#include "ParticleVertex.shader.h"
+
+[[PS_GPU_RENDER]]
+// =================================================================================================
+#define D_GPU_PARTICLES
+#define D_SOFT_PARTICLES
+#define D_ADDITIVE_PARTICLES
+#include "ParticleFragment.shader.h"
