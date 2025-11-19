@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.17.0.2)-->
+<Data template="cTkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="TkStaticPhysicsComponentData" _index="0">
+			<Property name="TkStaticPhysicsComponentData">
+				<Property name="Data" value="TkPhysicsData">
+					<Property name="Mass" value="0.000000" />
+					<Property name="Friction" value="0.500000" />
+					<Property name="RollingFriction" value="0.200000" />
+					<Property name="AngularDamping" value="0.200000" />
+					<Property name="LinearDamping" value="0.100000" />
+					<Property name="Gravity" value="20.000000" />
+				</Property>
+				<Property name="NavMeshInclusion" value="TkNavMeshInclusionParams">
+					<Property name="InclusionType" value="TkNavMeshInclusionType">
+						<Property name="NavMeshInclusionType" value="Auto" />
+					</Property>
+					<Property name="InclusionMinSize" value="0.000000" />
+					<Property name="AreaType" value="TkNavMeshAreaType">
+						<Property name="NavMeshAreaType" value="Auto" />
+					</Property>
+				</Property>
+				<Property name="StaticPhysicsTargetNode" value="Attachment" />
+				<Property name="AddToWorldOnPrepare" value="true" />
+				<Property name="AddToWorldImmediately" value="true" />
+				<Property name="TriggerVolumeType" value="TkVolumeTriggerType">
+					<Property name="VolumeTriggerType" value="Open" />
+				</Property>
+				<Property name="TriggerVolume" value="false" />
+				<Property name="Climbable" value="false" />
+				<Property name="NoVehicleCollide" value="false" />
+				<Property name="NoPlayerCollide" value="false" />
+				<Property name="NoTerrainCollide" value="false" />
+				<Property name="CameraInvisible" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcSimpleInteractionComponentData" _index="1">
+			<Property name="GcSimpleInteractionComponentData">
+				<Property name="SimpleInteractionType" value="CallShip" />
+				<Property name="InteractDistance" value="0.000000" />
+				<Property name="Use2dInteractDistance" value="false" />
+				<Property name="Id" value="" />
+				<Property name="Rarity" value="GcRarity">
+					<Property name="Rarity" value="Common" />
+				</Property>
+				<Property name="Size" value="GcSizeIndicator">
+					<Property name="SizeIndicator" value="Medium" />
+				</Property>
+				<Property name="TriggerAction" value="BUTTONDOWN" />
+				<Property name="TriggerActionOnPrepare" value="" />
+				<Property name="TriggerActionToggle" value="" />
+				<Property name="DeactivateSimilarInteractionsNearbyRadius" value="0.000000" />
+				<Property name="BroadcastTriggerAction" value="false" />
+				<Property name="Delay" value="0.000000" />
+				<Property name="HideContents" value="true" />
+				<Property name="InteractIsCrime" value="false" />
+				<Property name="InteractFiendCrimeType" value="GcFiendCrime">
+					<Property name="FiendCrime" value="None" />
+				</Property>
+				<Property name="InteractFiendCrimeChance" value="1.000000" />
+				<Property name="InteractCrimeLevel" value="0" />
+				<Property name="IncreaseCorruptSentinelWanted" value="0" />
+				<Property name="NotifyEncounter" value="false" />
+				<Property name="ActivationCost" value="GcInteractionActivationCost">
+					<Property name="SubstanceId" value="NAV_DATA" />
+					<Property name="AltIds" />
+					<Property name="Cost" value="1" />
+					<Property name="Repeat" value="false" />
+					<Property name="RequiredTech" value="" />
+					<Property name="UseCostID" value="" />
+					<Property name="StartMissionOnCantAfford" value="" />
+					<Property name="OnlyChargeDuringSeasons" />
+				</Property>
+				<Property name="StatToTrack" value="GcStatsEnum">
+					<Property name="StatEnum" value="None" />
+				</Property>
+				<Property name="StartsBuried" value="false" />
+				<Property name="MustBeVisibleToInteract" value="false" />
+				<Property name="NeedsStorm" value="false" />
+				<Property name="Name" value="" />
+				<Property name="ForceSubtitle" value="" />
+				<Property name="VRInteractMessage" value="" />
+				<Property name="TerminalHeading" value="" />
+				<Property name="TerminalMessage" value="" />
+				<Property name="ScanType" value="BINOC_CONTROL" />
+				<Property name="ScanData" value="" />
+				<Property name="ScanIcon" value="GcDiscoveryType">
+					<Property name="DiscoveryType" value="Control" />
+				</Property>
+				<Property name="ActivateLocatorsFromRarity" value="false" />
+				<Property name="RarityLocators" array_size="3">
+					<Property name="Common" value="" />
+					<Property name="Uncommon" value="" />
+					<Property name="Rare" value="" />
+				</Property>
+				<Property name="BaseBuildingTriggerActions" />
+				<Property name="RewardOverrideTable" />
+				<Property name="PersistencyBufferOverride" />
+				<Property name="UsePersonalPersistentBuffer" value="false" />
+				<Property name="ReseedOnRewardSuccess" value="false" />
+				<Property name="CanCollectInMech" value="false" />
+				<Property name="DisableAnimationUntilInteract" value="false" />
+				<Property name="OnlyActiveDuringSeasons" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcTriggerActionComponentData" _index="2">
+			<Property name="GcTriggerActionComponentData">
+				<Property name="HideModel" value="false" />
+				<Property name="StartInactive" value="false" />
+				<Property name="States">
+					<Property name="States" value="GcActionTriggerState" _index="0">
+						<Property name="StateID" value="BUTTONUP" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="0.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcGoToStateAction" _index="0">
+										<Property name="GcGoToStateAction">
+											<Property name="State" value="PADSCREENA" />
+											<Property name="Broadcast" value="true" />
+											<Property name="BroadcastLevel" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState" _index="1">
+						<Property name="StateID" value="BUTTONDOWN" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="0.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcGoToStateAction" _index="0">
+										<Property name="GcGoToStateAction">
+											<Property name="State" value="PADSCREENB" />
+											<Property name="Broadcast" value="true" />
+											<Property name="BroadcastLevel" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+							<Property name="Triggers" value="GcActionTrigger" _index="1">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="5.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcGoToStateAction" _index="0">
+										<Property name="GcGoToStateAction">
+											<Property name="State" value="BUTTONUP" />
+											<Property name="Broadcast" value="false" />
+											<Property name="BroadcastLevel" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+				<Property name="Persistent" value="false" />
+				<Property name="PersistentState" value="" />
+				<Property name="ResetShotTimeOnStateChange" value="false" />
+				<Property name="LinkStateToBaseGrid" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcNPCInteractiveObjectComponentData" linked="models/planets/biomes/common/buildings/parts/entities/poicomputer.data.mxml" _index="3">
+			<Property name="GcNPCInteractiveObjectComponentData">
+				<Property name="InteractiveObjectType" value="GcNPCInteractiveObjectType">
+					<Property name="NPCInteractiveObjectType" value="Generic" />
+				</Property>
+				<Property name="MaxCapacity" value="1" />
+				<Property name="DurationMin" value="30.000000" />
+				<Property name="DurationMax" value="60.000000" />
+				<Property name="States">
+					<Property name="States" value="GcNPCInteractiveObjectState" _index="0">
+						<Property name="Name" value="TYPE" />
+						<Property name="FaceSpawnDir" value="false" />
+						<Property name="FaceNodeDir" value="false" />
+						<Property name="FaceInvNodeDir" value="true" />
+						<Property name="LookAtModel" value="false" />
+						<Property name="LookAtNode" value="LOOK_AT" />
+						<Property name="FaceLookAt" value="false" />
+						<Property name="MaintainLookAt" value="true" />
+						<Property name="PlayIdles" value="false" />
+						<Property name="CanConverse" value="false" />
+						<Property name="Prop" value="GcNPCPropType">
+							<Property name="NPCProp" value="DontCare" />
+						</Property>
+						<Property name="SeatedPosture" value="GcNPCSeatedPosture">
+							<Property name="NPCSeatedPosture" value="Sofa" />
+						</Property>
+						<Property name="BlendTime" value="0.300000" />
+						<Property name="EarlyOutTime" value="0.000000" />
+						<Property name="Animations">
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="0">
+								<Property name="Name" value="0H_INT_CNSL_LP" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+						</Property>
+						<Property name="SpineAdjustAmount" value="0.000000" />
+						<Property name="MinAnims" value="1" />
+						<Property name="MaxAnims" value="3" />
+						<Property name="MinTime" value="0.000000" />
+						<Property name="MaxTime" value="0.000000" />
+						<Property name="Transitions">
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="0">
+								<Property name="NewState" value="MOOD" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcNPCInteractiveObjectState" _index="1">
+						<Property name="Name" value="MOOD" />
+						<Property name="FaceSpawnDir" value="false" />
+						<Property name="FaceNodeDir" value="false" />
+						<Property name="FaceInvNodeDir" value="false" />
+						<Property name="LookAtModel" value="false" />
+						<Property name="LookAtNode" value="LOOK_AT" />
+						<Property name="FaceLookAt" value="false" />
+						<Property name="MaintainLookAt" value="true" />
+						<Property name="PlayIdles" value="false" />
+						<Property name="CanConverse" value="false" />
+						<Property name="Prop" value="GcNPCPropType">
+							<Property name="NPCProp" value="DontCare" />
+						</Property>
+						<Property name="SeatedPosture" value="GcNPCSeatedPosture">
+							<Property name="NPCSeatedPosture" value="Sofa" />
+						</Property>
+						<Property name="BlendTime" value="0.300000" />
+						<Property name="EarlyOutTime" value="0.000000" />
+						<Property name="Animations">
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="0">
+								<Property name="Name" value="NEUTRAL" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="1">
+								<Property name="Name" value="ANGRY" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+							<Property name="Animations" value="GcNPCProbabilityAnimationData" _index="2">
+								<Property name="Name" value="HAPPY" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="AnimationIntensity" value="None" />
+								<Property name="ExcludeRace" />
+								<Property name="Tags" />
+							</Property>
+						</Property>
+						<Property name="SpineAdjustAmount" value="0.000000" />
+						<Property name="MinAnims" value="1" />
+						<Property name="MaxAnims" value="1" />
+						<Property name="MinTime" value="2.000000" />
+						<Property name="MaxTime" value="4.000000" />
+						<Property name="Transitions">
+							<Property name="Transitions" value="GcNPCInteractiveObjectStateTransition" _index="0">
+								<Property name="NewState" value="TYPE" />
+								<Property name="Probability" value="1.000000" />
+								<Property name="RequireEvent" value="" />
+								<Property name="RequireLocator" value="" />
+								<Property name="RequireMode" value="None" />
+								<Property name="ExcludeTags" />
+								<Property name="ForceIfMood" />
+							</Property>
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances" array_size="5">
+		<Property name="LodDistances" value="0.000000" _index="0" />
+		<Property name="LodDistances" value="50.000000" _index="1" />
+		<Property name="LodDistances" value="80.000000" _index="2" />
+		<Property name="LodDistances" value="150.000000" _index="3" />
+		<Property name="LodDistances" value="500.000000" _index="4" />
+	</Property>
+</Data>
