@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.17.0.3)-->
+<Data template="cGcNavigationGlobals">
+	<Property name="MaxAsyncTileBuildsInFlight" value="4" />
+	<Property name="PlanetaryNavMeshLod" value="1" />
+	<Property name="PlanetaryNavMeshBuildParams" value="GcPlanetaryNavMeshBuildParams">
+		<Property name="CellsPerVoxelWidth" value="2" />
+		<Property name="CellsPerVoxelHeight" value="16" />
+		<Property name="BaseParams" value="TkNavMeshBuildParams">
+			<Property name="BuildAsync" value="false" />
+			<Property name="KeepIntermediateRecastData" value="false" />
+			<Property name="AgentHeight" value="2.000000" />
+			<Property name="AgentRadius" value="0.300000" />
+			<Property name="AgentSteepSlopeDegrees" value="40.000000" />
+			<Property name="AgentMaxSlopeDegrees" value="50.000000" />
+			<Property name="AgentMaxStepHeight" value="0.300000" />
+			<Property name="FilterLowHangingObstacles" value="true" />
+			<Property name="FilterLedgeSpans" value="false" />
+			<Property name="FilterWalkableLowHeightSpans" value="true" />
+			<Property name="ErodeWalkableAreas" value="false" />
+			<Property name="MedianFilterWalkableAreas" value="true" />
+			<Property name="RegionMinCellCount" value="4" />
+			<Property name="ContourMaxLength" value="16.000000" />
+			<Property name="ContourMaxError" value="0.700000" />
+			<Property name="BuildDetailMesh" value="false" />
+			<Property name="DetailMeshSampleDistance" value="2.000000" />
+			<Property name="DetailMeshMaxError" value="2.000000" />
+			<Property name="BuildPolyBVH" value="false" />
+		</Property>
+	</Property>
+	<Property name="FreighterBaseNavMeshBuildParams" value="TkVolumeNavMeshBuildParams">
+		<Property name="BoundsMin">
+			<Property name="X" value="-87.000000" />
+			<Property name="Y" value="-64.000000" />
+			<Property name="Z" value="93.000000" />
+		</Property>
+		<Property name="BoundsMax">
+			<Property name="X" value="87.000000" />
+			<Property name="Y" value="64.000000" />
+			<Property name="Z" value="93.000000" />
+		</Property>
+		<Property name="TileSize" value="16.000000" />
+		<Property name="CellsPerUnitWidth" value="2.000000" />
+		<Property name="CellsPerUnitHeight" value="16.000000" />
+		<Property name="NumBorderCells" value="2" />
+		<Property name="BaseParams" value="TkNavMeshBuildParams">
+			<Property name="BuildAsync" value="false" />
+			<Property name="KeepIntermediateRecastData" value="false" />
+			<Property name="AgentHeight" value="2.000000" />
+			<Property name="AgentRadius" value="0.300000" />
+			<Property name="AgentSteepSlopeDegrees" value="40.000000" />
+			<Property name="AgentMaxSlopeDegrees" value="50.000000" />
+			<Property name="AgentMaxStepHeight" value="0.300000" />
+			<Property name="FilterLowHangingObstacles" value="true" />
+			<Property name="FilterLedgeSpans" value="false" />
+			<Property name="FilterWalkableLowHeightSpans" value="true" />
+			<Property name="ErodeWalkableAreas" value="false" />
+			<Property name="MedianFilterWalkableAreas" value="true" />
+			<Property name="RegionMinCellCount" value="4" />
+			<Property name="ContourMaxLength" value="16.000000" />
+			<Property name="ContourMaxError" value="0.800000" />
+			<Property name="BuildDetailMesh" value="false" />
+			<Property name="DetailMeshSampleDistance" value="2.000000" />
+			<Property name="DetailMeshMaxError" value="2.000000" />
+			<Property name="BuildPolyBVH" value="false" />
+		</Property>
+	</Property>
+	<Property name="SpaceStationNavMeshBuildParams" value="TkVolumeNavMeshBuildParams">
+		<Property name="BoundsMin">
+			<Property name="X" value="-50.000000" />
+			<Property name="Y" value="-2.000000" />
+			<Property name="Z" value="-990.000000" />
+		</Property>
+		<Property name="BoundsMax">
+			<Property name="X" value="50.000000" />
+			<Property name="Y" value="12.000000" />
+			<Property name="Z" value="-830.000000" />
+		</Property>
+		<Property name="TileSize" value="20.000000" />
+		<Property name="CellsPerUnitWidth" value="2.000000" />
+		<Property name="CellsPerUnitHeight" value="12.000000" />
+		<Property name="NumBorderCells" value="2" />
+		<Property name="BaseParams" value="TkNavMeshBuildParams">
+			<Property name="BuildAsync" value="false" />
+			<Property name="KeepIntermediateRecastData" value="false" />
+			<Property name="AgentHeight" value="2.000000" />
+			<Property name="AgentRadius" value="0.300000" />
+			<Property name="AgentSteepSlopeDegrees" value="40.000000" />
+			<Property name="AgentMaxSlopeDegrees" value="35.000000" />
+			<Property name="AgentMaxStepHeight" value="0.300000" />
+			<Property name="FilterLowHangingObstacles" value="true" />
+			<Property name="FilterLedgeSpans" value="false" />
+			<Property name="FilterWalkableLowHeightSpans" value="true" />
+			<Property name="ErodeWalkableAreas" value="false" />
+			<Property name="MedianFilterWalkableAreas" value="true" />
+			<Property name="RegionMinCellCount" value="4" />
+			<Property name="ContourMaxLength" value="16.000000" />
+			<Property name="ContourMaxError" value="1.000000" />
+			<Property name="BuildDetailMesh" value="false" />
+			<Property name="DetailMeshSampleDistance" value="2.000000" />
+			<Property name="DetailMeshMaxError" value="2.000000" />
+			<Property name="BuildPolyBVH" value="false" />
+		</Property>
+	</Property>
+	<Property name="NexusNavMeshBuildParams" value="TkVolumeNavMeshBuildParams">
+		<Property name="BoundsMin">
+			<Property name="X" value="-100.000000" />
+			<Property name="Y" value="60.000000" />
+			<Property name="Z" value="-80.000000" />
+		</Property>
+		<Property name="BoundsMax">
+			<Property name="X" value="100.000000" />
+			<Property name="Y" value="120.000000" />
+			<Property name="Z" value="160.000000" />
+		</Property>
+		<Property name="TileSize" value="20.000000" />
+		<Property name="CellsPerUnitWidth" value="2.000000" />
+		<Property name="CellsPerUnitHeight" value="8.000000" />
+		<Property name="NumBorderCells" value="2" />
+		<Property name="BaseParams" value="TkNavMeshBuildParams">
+			<Property name="BuildAsync" value="false" />
+			<Property name="KeepIntermediateRecastData" value="false" />
+			<Property name="AgentHeight" value="2.000000" />
+			<Property name="AgentRadius" value="0.300000" />
+			<Property name="AgentSteepSlopeDegrees" value="40.000000" />
+			<Property name="AgentMaxSlopeDegrees" value="40.000000" />
+			<Property name="AgentMaxStepHeight" value="0.300000" />
+			<Property name="FilterLowHangingObstacles" value="true" />
+			<Property name="FilterLedgeSpans" value="false" />
+			<Property name="FilterWalkableLowHeightSpans" value="true" />
+			<Property name="ErodeWalkableAreas" value="false" />
+			<Property name="MedianFilterWalkableAreas" value="true" />
+			<Property name="RegionMinCellCount" value="4" />
+			<Property name="ContourMaxLength" value="16.000000" />
+			<Property name="ContourMaxError" value="0.800000" />
+			<Property name="BuildDetailMesh" value="false" />
+			<Property name="DetailMeshSampleDistance" value="2.000000" />
+			<Property name="DetailMeshMaxError" value="2.000000" />
+			<Property name="BuildPolyBVH" value="false" />
+		</Property>
+	</Property>
+</Data>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.17.0.3)-->
+<Data template="cTkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="TkStaticPhysicsComponentData" _index="0">
+			<Property name="TkStaticPhysicsComponentData">
+				<Property name="Data" value="TkPhysicsData">
+					<Property name="Mass" value="0.000000" />
+					<Property name="Friction" value="0.500000" />
+					<Property name="RollingFriction" value="0.200000" />
+					<Property name="AngularDamping" value="0.200000" />
+					<Property name="LinearDamping" value="0.100000" />
+					<Property name="Gravity" value="20.000000" />
+				</Property>
+				<Property name="NavMeshInclusion" value="TkNavMeshInclusionParams">
+					<Property name="InclusionType" value="TkNavMeshInclusionType">
+						<Property name="NavMeshInclusionType" value="Auto" />
+					</Property>
+					<Property name="InclusionMinSize" value="0.000000" />
+					<Property name="AreaType" value="TkNavMeshAreaType">
+						<Property name="NavMeshAreaType" value="Auto" />
+					</Property>
+				</Property>
+				<Property name="StaticPhysicsTargetNode" value="Attachment" />
+				<Property name="AddToWorldOnPrepare" value="true" />
+				<Property name="AddToWorldImmediately" value="true" />
+				<Property name="TriggerVolumeType" value="TkVolumeTriggerType">
+					<Property name="VolumeTriggerType" value="Open" />
+				</Property>
+				<Property name="TriggerVolume" value="false" />
+				<Property name="Climbable" value="false" />
+				<Property name="NoVehicleCollide" value="false" />
+				<Property name="NoPlayerCollide" value="false" />
+				<Property name="NoTerrainCollide" value="false" />
+				<Property name="CameraInvisible" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcBasePlacementComponentData" _index="1">
+			<Property name="GcBasePlacementComponentData">
+				<Property name="Rules">
+					<Property name="Rules" value="GcBasePlacementRule" _index="0">
+						<Property name="Conditions" />
+						<Property name="PositionLocator" value="" />
+						<Property name="PartID" value="_BUILDPAVING_BIG" />
+						<Property name="ORConditions" value="false" />
+						<Property name="TwinCriteria" value="None" />
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances" array_size="5">
+		<Property name="LodDistances" value="0.000000" _index="0" />
+		<Property name="LodDistances" value="50.000000" _index="1" />
+		<Property name="LodDistances" value="80.000000" _index="2" />
+		<Property name="LodDistances" value="150.000000" _index="3" />
+		<Property name="LodDistances" value="500.000000" _index="4" />
+	</Property>
+</Data>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.17.0.3)-->
+<Data template="cTkMaterialData">
+	<Property name="Name" value="Terminal" />
+	<Property name="Metamaterial" value="Models/Planets/Biomes/Common/Buildings/Terminal/Terminal_Shop/Materials/Terminal.metamaterial.mXml" />
+	<Property name="Class" value="Opaque" />
+	<Property name="TransparencyLayerID" value="0" />
+	<Property name="CastShadow" value="true" />
+	<Property name="DisableZTest" value="false" />
+	<Property name="CreateFur" value="false" />
+	<Property name="EnableLodFade" value="true" />
+	<Property name="UseShaderMill" value="false" />
+	<Property name="Link" value="" />
+	<Property name="Shader" value="SHADERS/UBERSHADER.SHADER.BIN" />
+	<Property name="Flags">
+		<Property name="Flags" value="TkMaterialFlags" _index="0">
+			<Property name="MaterialFlag" value="_F01_DIFFUSEMAP" />
+		</Property>
+		<Property name="Flags" value="TkMaterialFlags" _index="1">
+			<Property name="MaterialFlag" value="_F03_NORMALMAP" />
+		</Property>
+		<Property name="Flags" value="TkMaterialFlags" _index="2">
+			<Property name="MaterialFlag" value="_F25_MASKS_MAP" />
+		</Property>
+	</Property>
+	<Property name="FxFlags" />
+	<Property name="Uniforms_Float">
+		<Property name="Uniforms_Float" value="TkMaterialUniform_Float" _index="0">
+			<Property name="Name" value="gMaterialColourVec4" />
+			<Property name="Values">
+				<Property name="X" value="1.000000" />
+				<Property name="Y" value="1.000000" />
+				<Property name="Z" value="1.000000" />
+				<Property name="W" value="1.000000" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+		<Property name="Uniforms_Float" value="TkMaterialUniform_Float" _index="1">
+			<Property name="Name" value="gMaterialParamsVec4" />
+			<Property name="Values">
+				<Property name="X" value="1.000000" />
+				<Property name="Y" value="0.500000" />
+				<Property name="Z" value="1.000000" />
+				<Property name="W" value="1.000000" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+		<Property name="Uniforms_Float" value="TkMaterialUniform_Float" _index="2">
+			<Property name="Name" value="gMaterialParams2Vec4" />
+			<Property name="Values">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="1.000000" />
+				<Property name="Z" value="0.000000" />
+				<Property name="W" value="0.000000" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+		<Property name="Uniforms_Float" value="TkMaterialUniform_Float" _index="3">
+			<Property name="Name" value="gMaterialSFXVec4" />
+			<Property name="Values">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="0.000000" />
+				<Property name="Z" value="0.000000" />
+				<Property name="W" value="0.000000" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+		<Property name="Uniforms_Float" value="TkMaterialUniform_Float" _index="4">
+			<Property name="Name" value="gMaterialSFXColVec4" />
+			<Property name="Values">
+				<Property name="X" value="0.000000" />
+				<Property name="Y" value="0.000000" />
+				<Property name="Z" value="0.000000" />
+				<Property name="W" value="0.000000" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+	</Property>
+	<Property name="Uniforms_UInt">
+		<Property name="Uniforms_UInt" value="TkMaterialUniform_UInt" _index="0">
+			<Property name="Name" value="gDynamicFlags" />
+			<Property name="Values">
+				<Property name="X" value="3" />
+				<Property name="Y" value="0" />
+				<Property name="Z" value="0" />
+				<Property name="W" value="0" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+		<Property name="Uniforms_UInt" value="TkMaterialUniform_UInt" _index="1">
+			<Property name="Name" value="gLightLayers" />
+			<Property name="Values">
+				<Property name="X" value="3" />
+				<Property name="Y" value="0" />
+				<Property name="Z" value="0" />
+				<Property name="W" value="0" />
+			</Property>
+			<Property name="ExtendedValues" />
+		</Property>
+	</Property>
+	<Property name="Samplers">
+		<Property name="Samplers" value="TkMaterialSampler" _index="0">
+			<Property name="Name" value="gDiffuseMap" />
+			<Property name="Map" value="TEXTURES/PLANETS/BIOMES/COMMON/BUILDINGS/TERMINAL/TERMINAL_SHOP.DDS" />
+			<Property name="IsCube" value="false" />
+			<Property name="UseCompression" value="true" />
+			<Property name="UseMipMaps" value="true" />
+			<Property name="IsSRGB" value="true" />
+			<Property name="MaterialAlternativeId" value="" />
+			<Property name="TextureAddressMode" value="Wrap" />
+			<Property name="TextureFilterMode" value="Trilinear" />
+			<Property name="Anisotropy" value="0" />
+		</Property>
+		<Property name="Samplers" value="TkMaterialSampler" _index="1">
+			<Property name="Name" value="gMasksMap" />
+			<Property name="Map" value="TEXTURES/PLANETS/BIOMES/COMMON/BUILDINGS/TERMINAL/TERMINAL_SHOP.MASKS.DDS" />
+			<Property name="IsCube" value="false" />
+			<Property name="UseCompression" value="true" />
+			<Property name="UseMipMaps" value="true" />
+			<Property name="IsSRGB" value="false" />
+			<Property name="MaterialAlternativeId" value="" />
+			<Property name="TextureAddressMode" value="Wrap" />
+			<Property name="TextureFilterMode" value="Trilinear" />
+			<Property name="Anisotropy" value="0" />
+		</Property>
+		<Property name="Samplers" value="TkMaterialSampler" _index="2">
+			<Property name="Name" value="gNormalMap" />
+			<Property name="Map" value="TEXTURES/PLANETS/BIOMES/COMMON/BUILDINGS/TERMINAL/TERMINAL_SHOP.NORMAL.DDS" />
+			<Property name="IsCube" value="false" />
+			<Property name="UseCompression" value="true" />
+			<Property name="UseMipMaps" value="true" />
+			<Property name="IsSRGB" value="false" />
+			<Property name="MaterialAlternativeId" value="" />
+			<Property name="TextureAddressMode" value="Wrap" />
+			<Property name="TextureFilterMode" value="Trilinear" />
+			<Property name="Anisotropy" value="0" />
+		</Property>
+	</Property>
+	<Property name="ShaderMillDataHash" value="0" />
+</Data>
