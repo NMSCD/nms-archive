@@ -1,0 +1,32 @@
+<Pipeline>
+  <Setup>
+    <PipelineVariable id="Clear" defaultValue="0" />
+    <PipelineVariable id="RenderLod2" defaultValue="0" />
+  </Setup>
+
+  <!-- Scene rendering -->
+  <CommandQueue>
+
+    <Stage id="Terrain_TopDown" enabled="true">
+      <StartDepthRender />
+      <BeginTarget target="" />
+      <If conditionType="variable" id="Clear" />
+        <ClearTarget depthBuf="true" colBuf0="false" stencilBuf="true" />
+        <RenderPass ColorAction0="DontCare/DontCare" DepthAction="Clear/Store" StencilAction="Clear/Store" ClearDepthStencil="0/0" />
+      <Else/>
+        <RenderPass ColorAction0="DontCare/DontCare" DepthAction="Load/Store" StencilAction="Load/Store" />
+      <EndIf/>
+      <ColourMask channels="RGBA" colBuf0="false" />
+      <If conditionType="variable" id="RenderLod2" />
+        <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="less" alphaToCoverage="false" stencilMode="maskWrite" stencilMask="1" stencilRef="1" />
+        <DrawGeometry type="Terrain"      class="LOD2"           context="DEPTHONLY_TOP"             order="" />
+      <EndIf />
+      <SetContext zwrite="true" colourWrite="false" cullMode="back" blendMode="replace" depthTest="less" alphaToCoverage="false" stencilMode="maskRead" stencilMask="1" stencilRef="0" />
+      <DrawGeometry type="Terrain"      class="LOD3"           context="DEPTHONLY_TOP"             order="" />
+      <EndTarget flushCB="false" flushDB="true" />
+      <UnbindBuffers />
+    </Stage>
+
+  </CommandQueue>
+
+</Pipeline>
