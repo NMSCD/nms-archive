@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.34.0.3)-->
+<Data template="cGcGameTablesDataTable">
+	<Property name="GameTableConfigs">
+		<Property name="GameTableConfigs" value="GcGameTableConfig" _id="PVP_STANDARD">
+			<Property name="Id" value="PVP_STANDARD" />
+			<Property name="SpawnDataId" value="PB_SPAWN_PVP_STANDARD" />
+			<Property name="GameConfigId" value="PB_GAME_PVP_STANDARD" />
+		</Property>
+		<Property name="GameTableConfigs" value="GcGameTableConfig" _id="PETBATTLE_NEXUS_PVE">
+			<Property name="Id" value="PETBATTLE_NEXUS_PVE" />
+			<Property name="SpawnDataId" value="PB_SPAWN_PVE_NEXUS" />
+			<Property name="GameConfigId" value="PB_GAME_DAILY_NEXUS" />
+		</Property>
+		<Property name="GameTableConfigs" value="GcGameTableConfig" _id="PETBATTLE_PLANET_STANDARD">
+			<Property name="Id" value="PETBATTLE_PLANET_STANDARD" />
+			<Property name="SpawnDataId" value="PB_SPAWN_PVE_CHALLENGER" />
+			<Property name="GameConfigId" value="PB_GAME_PLANET_STANDARD" />
+		</Property>
+		<Property name="GameTableConfigs" value="GcGameTableConfig" _id="PETBATTLE_SYSTEM_STANDARD">
+			<Property name="Id" value="PETBATTLE_SYSTEM_STANDARD" />
+			<Property name="SpawnDataId" value="PB_SPAWN_PVE_STANDARD" />
+			<Property name="GameConfigId" value="PB_GAME_SYSTEM_STANDARD" />
+		</Property>
+		<Property name="GameTableConfigs" value="GcGameTableConfig" _id="PETBATTLE_SYSTEM_CHAMPION">
+			<Property name="Id" value="PETBATTLE_SYSTEM_CHAMPION" />
+			<Property name="SpawnDataId" value="PB_SPAWN_PVE_CHAMP" />
+			<Property name="GameConfigId" value="PB_GAME_SYSTEM_CHAMPION" />
+		</Property>
+		<Property name="GameTableConfigs" value="GcGameTableConfig" _id="PETBATTLE_SETTLEMENT">
+			<Property name="Id" value="PETBATTLE_SETTLEMENT" />
+			<Property name="SpawnDataId" value="PB_SPAWN_PVE_STANDARD" />
+			<Property name="GameConfigId" value="PB_GAME_SETTLEMENT" />
+		</Property>
+		<Property name="GameTableConfigs" value="GcGameTableConfig" _id="PETBATTLE_LARGEBUILDING">
+			<Property name="Id" value="PETBATTLE_LARGEBUILDING" />
+			<Property name="SpawnDataId" value="PB_SPAWN_PVE_CHALLENGER" />
+			<Property name="GameConfigId" value="PB_GAME_LARGEBUILDING" />
+		</Property>
+		<Property name="GameTableConfigs" value="GcGameTableConfig" _id="PETBATTLE_PIRATES">
+			<Property name="Id" value="PETBATTLE_PIRATES" />
+			<Property name="SpawnDataId" value="PB_SPAWN_PVE_PIRATE" />
+			<Property name="GameConfigId" value="PB_GAME_PIRATESTATION" />
+		</Property>
+		<Property name="GameTableConfigs" value="GcGameTableConfig" _id="DICEGAME_PVE_STANDARD">
+			<Property name="Id" value="DICEGAME_PVE_STANDARD" />
+			<Property name="SpawnDataId" value="DICE_SPAWN_PVE_STANDARD" />
+			<Property name="GameConfigId" value="DICE_GAME_PVE_STANDARD" />
+		</Property>
+	</Property>
+	<Property name="GameTableSpawnData">
+		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="PB_SPAWN_PVP_STANDARD">
+			<Property name="Id" value="PB_SPAWN_PVP_STANDARD" />
+			<Property name="AllowedInAbandonedSystems" value="true" />
+			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
+			<Property name="NPCSpawns" />
+		</Property>
+		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="PB_SPAWN_PVE_STANDARD">
+			<Property name="Id" value="PB_SPAWN_PVE_STANDARD" />
+			<Property name="AllowedInAbandonedSystems" value="false" />
+			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
+			<Property name="NPCSpawns">
+				<Property name="NPCSpawns" value="GcGameTableNPCSpawnData" _index="0">
+					<Property name="NPCPlacementId" value="GAMETABLE_AI" />
+					<Property name="NameOverride" value="" />
+					<Property name="AvailableTitles" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="PB_SPAWN_PVE_CHALLENGER">
+			<Property name="Id" value="PB_SPAWN_PVE_CHALLENGER" />
+			<Property name="AllowedInAbandonedSystems" value="false" />
+			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
+			<Property name="NPCSpawns">
+				<Property name="NPCSpawns" value="GcGameTableNPCSpawnData" _index="0">
+					<Property name="NPCPlacementId" value="GAMETABLE_AI" />
+					<Property name="NameOverride" value="" />
+					<Property name="AvailableTitles">
+						<Property name="AvailableTitles" value="UI_PB_BOSS_WINS_NORMAL" _index="0" />
+						<Property name="AvailableTitles" value="UI_PB_BOSS_WINS_IMPROVED" _index="1" />
+						<Property name="AvailableTitles" value="UI_PB_BOSS_WINS_MEDIUM" _index="2" />
+						<Property name="AvailableTitles" value="UI_PB_PETS_MAXED_TITLE_1" _index="3" />
+						<Property name="AvailableTitles" value="UI_PB_D_NEXUS_TITLE_2" _index="4" />
+						<Property name="AvailableTitles" value="UI_PB_D_NEXUS_TITLE_3" _index="5" />
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="PB_SPAWN_PVE_PIRATE">
+			<Property name="Id" value="PB_SPAWN_PVE_PIRATE" />
+			<Property name="AllowedInAbandonedSystems" value="false" />
+			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
+			<Property name="NPCSpawns">
+				<Property name="NPCSpawns" value="GcGameTableNPCSpawnData" _index="0">
+					<Property name="NPCPlacementId" value="GAMETABLE_AI" />
+					<Property name="NameOverride" value="" />
+					<Property name="AvailableTitles" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="PB_SPAWN_PVE_CHAMP">
+			<Property name="Id" value="PB_SPAWN_PVE_CHAMP" />
+			<Property name="AllowedInAbandonedSystems" value="false" />
+			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
+			<Property name="NPCSpawns">
+				<Property name="NPCSpawns" value="GcGameTableNPCSpawnData" _index="0">
+					<Property name="NPCPlacementId" value="GAMETABLE_AI" />
+					<Property name="NameOverride" value="" />
+					<Property name="AvailableTitles">
+						<Property name="AvailableTitles" value="UI_PB_BOSS_WINS_GOOD" _index="0" />
+						<Property name="AvailableTitles" value="UI_PB_BOSS_WINS_HIGH" _index="1" />
+						<Property name="AvailableTitles" value="UI_PB_BOSS_WINS_HIGHEST" _index="2" />
+						<Property name="AvailableTitles" value="UI_PB_BOSS_WINS_HIGHEST1" _index="3" />
+						<Property name="AvailableTitles" value="UI_PB_BOSS_WINS_HIGHEST2" _index="4" />
+						<Property name="AvailableTitles" value="UI_PB_D_NEXUS_TITLE_10" _index="5" />
+						<Property name="AvailableTitles" value="UI_PB_D_NEXUS_TITLE_8" _index="6" />
+						<Property name="AvailableTitles" value="UI_PB_D_NEXUS_TITLE_6" _index="7" />
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="PB_SPAWN_PVE_NEXUS">
+			<Property name="Id" value="PB_SPAWN_PVE_NEXUS" />
+			<Property name="AllowedInAbandonedSystems" value="true" />
+			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
+			<Property name="NPCSpawns">
+				<Property name="NPCSpawns" value="GcGameTableNPCSpawnData" _index="0">
+					<Property name="NPCPlacementId" value="NEXUSGAMETABLE" />
+					<Property name="NameOverride" value="FTH_NEXUSGAMETABLE_NAME_TITLE" />
+					<Property name="AvailableTitles" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GameTableSpawnData" value="GcGameTableSpawnData" _id="DICE_SPAWN_PVE_STANDARD">
+			<Property name="Id" value="DICE_SPAWN_PVE_STANDARD" />
+			<Property name="AllowedInAbandonedSystems" value="false" />
+			<Property name="SceneFilename" value="MODELS/SPACE/PROPS/GAMESTABLE.SCENE.MBIN" />
+			<Property name="NPCSpawns" />
+		</Property>
+	</Property>
+	<Property name="GameTableGameConfig">
+		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="PB_GAME_PVP_STANDARD">
+			<Property name="Id" value="PB_GAME_PVP_STANDARD" />
+			<Property name="ForcedGameMode" value="GcGameTableMode">
+				<Property name="GameTableMode" value="PetBattler" />
+			</Property>
+			<Property name="PresetAIPlayers" />
+			<Property name="RewardIdWin" value="R_PB_PVP_STD_W" />
+			<Property name="RewardIdLoss" value="R_PB_PVP_STD_L" />
+			<Property name="ExperienceRewardMultiplier" value="1.000000" />
+			<Property name="DefaultPuzzle" value="" />
+			<Property name="PuzzleMissionOverrideTable" />
+		</Property>
+		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="PB_GAME_DAILY_NEXUS">
+			<Property name="Id" value="PB_GAME_DAILY_NEXUS" />
+			<Property name="ForcedGameMode" value="GcGameTableMode">
+				<Property name="GameTableMode" value="PetBattler" />
+			</Property>
+			<Property name="PresetAIPlayers">
+				<Property name="PresetAIPlayers" value="PB_AI_DAILY_NEXUS_1" _index="0" />
+			</Property>
+			<Property name="RewardIdWin" value="R_PB_D_NEXUS_W" />
+			<Property name="RewardIdLoss" value="R_PB_D_NEXUS_L" />
+			<Property name="ExperienceRewardMultiplier" value="1.000000" />
+			<Property name="DefaultPuzzle" value="NEXUS_TABLE" />
+			<Property name="PuzzleMissionOverrideTable">
+				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="0">
+					<Property name="Mission" value="D_NEXUS_PB_1" />
+					<Property name="OptionalMissionSeed" value="NONE" />
+					<Property name="Puzzle" value="?D_PB_D_NEXUS_1" />
+					<Property name="ForceMissionSeed" value="false" />
+					<Property name="AltPriorityMissionForSelection" value="" />
+					<Property name="RequireMainMissionSelected" value="false" />
+					<Property name="RequireMainMissionActiveWhenUsingAlt" value="false" />
+					<Property name="RequireScanEventActive" value="" />
+				</Property>
+				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="1">
+					<Property name="Mission" value="NEXUS1" />
+					<Property name="OptionalMissionSeed" value="NONE" />
+					<Property name="Puzzle" value="NEXUS_TABLE_PRE_TUT" />
+					<Property name="ForceMissionSeed" value="false" />
+					<Property name="AltPriorityMissionForSelection" value="" />
+					<Property name="RequireMainMissionSelected" value="false" />
+					<Property name="RequireMainMissionActiveWhenUsingAlt" value="false" />
+					<Property name="RequireScanEventActive" value="" />
+				</Property>
+				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="2">
+					<Property name="Mission" value="NEXUS1A" />
+					<Property name="OptionalMissionSeed" value="NONE" />
+					<Property name="Puzzle" value="NEXUS_TABLE_PRE_TUT" />
+					<Property name="ForceMissionSeed" value="false" />
+					<Property name="AltPriorityMissionForSelection" value="" />
+					<Property name="RequireMainMissionSelected" value="false" />
+					<Property name="RequireMainMissionActiveWhenUsingAlt" value="false" />
+					<Property name="RequireScanEventActive" value="" />
+				</Property>
+				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="3">
+					<Property name="Mission" value="NEXUS1A_SEASON" />
+					<Property name="OptionalMissionSeed" value="NONE" />
+					<Property name="Puzzle" value="NEXUS_TABLE_PRE_TUT" />
+					<Property name="ForceMissionSeed" value="false" />
+					<Property name="AltPriorityMissionForSelection" value="" />
+					<Property name="RequireMainMissionSelected" value="false" />
+					<Property name="RequireMainMissionActiveWhenUsingAlt" value="false" />
+					<Property name="RequireScanEventActive" value="" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="PB_GAME_PVE_NEXUS">
+			<Property name="Id" value="PB_GAME_PVE_NEXUS" />
+			<Property name="ForcedGameMode" value="GcGameTableMode">
+				<Property name="GameTableMode" value="PetBattler" />
+			</Property>
+			<Property name="PresetAIPlayers">
+				<Property name="PresetAIPlayers" value="PB_AI_PVE_NEXUS" _index="0" />
+			</Property>
+			<Property name="RewardIdWin" value="R_PB_PVE_EASY_W" />
+			<Property name="RewardIdLoss" value="R_PB_PVE_EASY_L" />
+			<Property name="ExperienceRewardMultiplier" value="1.000000" />
+			<Property name="DefaultPuzzle" value="" />
+			<Property name="PuzzleMissionOverrideTable" />
+		</Property>
+		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="PB_GAME_TUTORIAL">
+			<Property name="Id" value="PB_GAME_TUTORIAL" />
+			<Property name="ForcedGameMode" value="GcGameTableMode">
+				<Property name="GameTableMode" value="PetBattler" />
+			</Property>
+			<Property name="PresetAIPlayers">
+				<Property name="PresetAIPlayers" value="PB_AI_TUTORIAL_NEXUS" _index="0" />
+			</Property>
+			<Property name="RewardIdWin" value="R_PB_TUT_W" />
+			<Property name="RewardIdLoss" value="R_PB_TUT_L" />
+			<Property name="ExperienceRewardMultiplier" value="0.200000" />
+			<Property name="DefaultPuzzle" value="NEXUS_TABLE" />
+			<Property name="PuzzleMissionOverrideTable">
+				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="0">
+					<Property name="Mission" value="PB_TUT_NEXGT" />
+					<Property name="OptionalMissionSeed" value="NONE" />
+					<Property name="Puzzle" value="?D_PB_NEXUSGT_TUT" />
+					<Property name="ForceMissionSeed" value="false" />
+					<Property name="AltPriorityMissionForSelection" value="PB_TUT" />
+					<Property name="RequireMainMissionSelected" value="false" />
+					<Property name="RequireMainMissionActiveWhenUsingAlt" value="false" />
+					<Property name="RequireScanEventActive" value="" />
+				</Property>
+				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="1">
+					<Property name="Mission" value="PB_TUT_NEXGT_A" />
+					<Property name="OptionalMissionSeed" value="NONE" />
+					<Property name="Puzzle" value="?D_PB_NEXUSGT_TUT_A" />
+					<Property name="ForceMissionSeed" value="false" />
+					<Property name="AltPriorityMissionForSelection" value="PB_TUT" />
+					<Property name="RequireMainMissionSelected" value="false" />
+					<Property name="RequireMainMissionActiveWhenUsingAlt" value="false" />
+					<Property name="RequireScanEventActive" value="" />
+				</Property>
+				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="2">
+					<Property name="Mission" value="PB_TUT_NEXGT_B" />
+					<Property name="OptionalMissionSeed" value="NONE" />
+					<Property name="Puzzle" value="?D_PB_NEXUSGT_TUT_B" />
+					<Property name="ForceMissionSeed" value="false" />
+					<Property name="AltPriorityMissionForSelection" value="PB_TUT" />
+					<Property name="RequireMainMissionSelected" value="false" />
+					<Property name="RequireMainMissionActiveWhenUsingAlt" value="false" />
+					<Property name="RequireScanEventActive" value="" />
+				</Property>
+				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="3">
+					<Property name="Mission" value="PB_TUT_NEXGT_C" />
+					<Property name="OptionalMissionSeed" value="NONE" />
+					<Property name="Puzzle" value="?D_PB_NEXUSGT_TUT_C" />
+					<Property name="ForceMissionSeed" value="false" />
+					<Property name="AltPriorityMissionForSelection" value="PB_TUT" />
+					<Property name="RequireMainMissionSelected" value="false" />
+					<Property name="RequireMainMissionActiveWhenUsingAlt" value="false" />
+					<Property name="RequireScanEventActive" value="" />
+				</Property>
+				<Property name="PuzzleMissionOverrideTable" value="GcAlienPuzzleMissionOverride" _index="4">
+					<Property name="Mission" value="PB_TUT_NEXGT_D" />
+					<Property name="OptionalMissionSeed" value="NONE" />
+					<Property name="Puzzle" value="?D_PB_NEXUSGT_TUT_D" />
+					<Property name="ForceMissionSeed" value="false" />
+					<Property name="AltPriorityMissionForSelection" value="PB_TUT_BRIDGE" />
+					<Property name="RequireMainMissionSelected" value="false" />
+					<Property name="RequireMainMissionActiveWhenUsingAlt" value="false" />
+					<Property name="RequireScanEventActive" value="" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="PB_GAME_PLANET_STANDARD">
+			<Property name="Id" value="PB_GAME_PLANET_STANDARD" />
+			<Property name="ForcedGameMode" value="GcGameTableMode">
+				<Property name="GameTableMode" value="PetBattler" />
+			</Property>
+			<Property name="PresetAIPlayers">
+				<Property name="PresetAIPlayers" value="PB_AI_PLANET_STANDARD" _index="0" />
+			</Property>
+			<Property name="RewardIdWin" value="R_PB_PVE_PLAC_W" />
+			<Property name="RewardIdLoss" value="R_PB_PVE_PLAC_L" />
+			<Property name="ExperienceRewardMultiplier" value="1.000000" />
+			<Property name="DefaultPuzzle" value="" />
+			<Property name="PuzzleMissionOverrideTable" />
+		</Property>
+		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="PB_GAME_SYSTEM_STANDARD">
+			<Property name="Id" value="PB_GAME_SYSTEM_STANDARD" />
+			<Property name="ForcedGameMode" value="GcGameTableMode">
+				<Property name="GameTableMode" value="PetBattler" />
+			</Property>
+			<Property name="PresetAIPlayers">
+				<Property name="PresetAIPlayers" value="PB_AI_SYSTEM_STANDARD" _index="0" />
+			</Property>
+			<Property name="RewardIdWin" value="R_PB_PVE_SYSS_W" />
+			<Property name="RewardIdLoss" value="R_PB_PVE_SYSS_L" />
+			<Property name="ExperienceRewardMultiplier" value="1.000000" />
+			<Property name="DefaultPuzzle" value="" />
+			<Property name="PuzzleMissionOverrideTable" />
+		</Property>
+		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="PB_GAME_SYSTEM_CHAMPION">
+			<Property name="Id" value="PB_GAME_SYSTEM_CHAMPION" />
+			<Property name="ForcedGameMode" value="GcGameTableMode">
+				<Property name="GameTableMode" value="PetBattler" />
+			</Property>
+			<Property name="PresetAIPlayers">
+				<Property name="PresetAIPlayers" value="PB_AI_SYSTEM_CHAMPION" _index="0" />
+			</Property>
+			<Property name="RewardIdWin" value="R_PB_PVE_SYSC_W" />
+			<Property name="RewardIdLoss" value="R_PB_PVE_SYSC_L" />
+			<Property name="ExperienceRewardMultiplier" value="1.000000" />
+			<Property name="DefaultPuzzle" value="" />
+			<Property name="PuzzleMissionOverrideTable" />
+		</Property>
+		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="PB_GAME_SETTLEMENT">
+			<Property name="Id" value="PB_GAME_SETTLEMENT" />
+			<Property name="ForcedGameMode" value="GcGameTableMode">
+				<Property name="GameTableMode" value="PetBattler" />
+			</Property>
+			<Property name="PresetAIPlayers">
+				<Property name="PresetAIPlayers" value="PB_AI_SETTLEMENT" _index="0" />
+			</Property>
+			<Property name="RewardIdWin" value="R_PB_PVE_EZ_NI" />
+			<Property name="RewardIdLoss" value="R_PB_PVE_EASY_L" />
+			<Property name="ExperienceRewardMultiplier" value="1.000000" />
+			<Property name="DefaultPuzzle" value="" />
+			<Property name="PuzzleMissionOverrideTable" />
+		</Property>
+		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="PB_GAME_LARGEBUILDING">
+			<Property name="Id" value="PB_GAME_LARGEBUILDING" />
+			<Property name="ForcedGameMode" value="GcGameTableMode">
+				<Property name="GameTableMode" value="PetBattler" />
+			</Property>
+			<Property name="PresetAIPlayers">
+				<Property name="PresetAIPlayers" value="PB_AI_PLANET_STANDARD" _index="0" />
+			</Property>
+			<Property name="RewardIdWin" value="R_PB_PVE_HARD_W" />
+			<Property name="RewardIdLoss" value="R_PB_PVE_HARD_L" />
+			<Property name="ExperienceRewardMultiplier" value="1.000000" />
+			<Property name="DefaultPuzzle" value="" />
+			<Property name="PuzzleMissionOverrideTable" />
+		</Property>
+		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="PB_GAME_PIRATESTATION">
+			<Property name="Id" value="PB_GAME_PIRATESTATION" />
+			<Property name="ForcedGameMode" value="GcGameTableMode">
+				<Property name="GameTableMode" value="PetBattler" />
+			</Property>
+			<Property name="PresetAIPlayers">
+				<Property name="PresetAIPlayers" value="PB_AI_PIRATESTATION" _index="0" />
+			</Property>
+			<Property name="RewardIdWin" value="R_PB_PVE_HARD_W" />
+			<Property name="RewardIdLoss" value="R_PB_PVE_HARD_L" />
+			<Property name="ExperienceRewardMultiplier" value="1.000000" />
+			<Property name="DefaultPuzzle" value="" />
+			<Property name="PuzzleMissionOverrideTable" />
+		</Property>
+		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="PB_GAME_CHAMP_POSTBATTLE">
+			<Property name="Id" value="PB_GAME_CHAMP_POSTBATTLE" />
+			<Property name="ForcedGameMode" value="GcGameTableMode">
+				<Property name="GameTableMode" value="PetBattler" />
+			</Property>
+			<Property name="PresetAIPlayers" />
+			<Property name="RewardIdWin" value="" />
+			<Property name="RewardIdLoss" value="" />
+			<Property name="ExperienceRewardMultiplier" value="1.000000" />
+			<Property name="DefaultPuzzle" value="?PB_CHAMP_BEATEN" />
+			<Property name="PuzzleMissionOverrideTable" />
+		</Property>
+		<Property name="GameTableGameConfig" value="GcGameTableGameConfig" _id="DICE_GAME_PVE_STANDARD">
+			<Property name="Id" value="DICE_GAME_PVE_STANDARD" />
+			<Property name="ForcedGameMode" value="GcGameTableMode">
+				<Property name="GameTableMode" value="DiceGame" />
+			</Property>
+			<Property name="PresetAIPlayers" />
+			<Property name="RewardIdWin" value="" />
+			<Property name="RewardIdLoss" value="" />
+			<Property name="ExperienceRewardMultiplier" value="1.000000" />
+			<Property name="DefaultPuzzle" value="" />
+			<Property name="PuzzleMissionOverrideTable" />
+		</Property>
+	</Property>
+	<Property name="AIPlayerConfigs">
+		<Property name="AIPlayerConfigs" value="GcGameTableAIPlayerConfig" _id="PB_AI_PVE_NEXUS">
+			<Property name="Id" value="PB_AI_PVE_NEXUS" />
+			<Property name="Difficulty" value="GcGameTableAIDifficulty">
+				<Property name="GameTableAIDifficulty" value="Easy" />
+			</Property>
+			<Property name="GameConfig" value="GcGameTableAIPlayerConfigPetBattler">
+				<Property name="GcGameTableAIPlayerConfigPetBattler">
+					<Property name="PetBattleAITeamSeedSource" value="NPCAndWins" />
+					<Property name="CustomTeamSeed" value="NONE" />
+					<Property name="SeedMissionId" value="" />
+					<Property name="Pets" array_size="3">
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="0">
+							<Property name="PetBattlerAIPetPool" value="All" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="1">
+							<Property name="PetBattlerAIPetPool" value="All" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="2">
+							<Property name="PetBattlerAIPetPool" value="All" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="AIPlayerConfigs" value="GcGameTableAIPlayerConfig" _id="PB_AI_TUTORIAL_NEXUS">
+			<Property name="Id" value="PB_AI_TUTORIAL_NEXUS" />
+			<Property name="Difficulty" value="GcGameTableAIDifficulty">
+				<Property name="GameTableAIDifficulty" value="Easy" />
+			</Property>
+			<Property name="GameConfig" value="GcGameTableAIPlayerConfigPetBattler">
+				<Property name="GcGameTableAIPlayerConfigPetBattler">
+					<Property name="PetBattleAITeamSeedSource" value="NPCAndWins" />
+					<Property name="CustomTeamSeed" value="NONE" />
+					<Property name="SeedMissionId" value="" />
+					<Property name="Pets" array_size="3">
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="0">
+							<Property name="PetBattlerAIPetPool" value="All" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="1">
+							<Property name="PetBattlerAIPetPool" value="All" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="2">
+							<Property name="PetBattlerAIPetPool" value="All" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="AIPlayerConfigs" value="GcGameTableAIPlayerConfig" _id="PB_AI_DAILY_NEXUS_1">
+			<Property name="Id" value="PB_AI_DAILY_NEXUS_1" />
+			<Property name="Difficulty" value="GcGameTableAIDifficulty">
+				<Property name="GameTableAIDifficulty" value="Hard" />
+			</Property>
+			<Property name="GameConfig" value="GcGameTableAIPlayerConfigPetBattler">
+				<Property name="GcGameTableAIPlayerConfigPetBattler">
+					<Property name="PetBattleAITeamSeedSource" value="Mission" />
+					<Property name="CustomTeamSeed" value="NONE" />
+					<Property name="SeedMissionId" value="D_NEXUS_PB_1" />
+					<Property name="Pets" array_size="3">
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="0">
+							<Property name="PetBattlerAIPetPool" value="All" />
+							<Property name="MinLevel" value="30" />
+							<Property name="MaxLevel" value="30" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="1">
+							<Property name="PetBattlerAIPetPool" value="All" />
+							<Property name="MinLevel" value="30" />
+							<Property name="MaxLevel" value="30" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="2">
+							<Property name="PetBattlerAIPetPool" value="All" />
+							<Property name="MinLevel" value="30" />
+							<Property name="MaxLevel" value="30" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="AIPlayerConfigs" value="GcGameTableAIPlayerConfig" _id="PB_AI_PLANET_STANDARD">
+			<Property name="Id" value="PB_AI_PLANET_STANDARD" />
+			<Property name="Difficulty" value="GcGameTableAIDifficulty">
+				<Property name="GameTableAIDifficulty" value="Medium" />
+			</Property>
+			<Property name="GameConfig" value="GcGameTableAIPlayerConfigPetBattler">
+				<Property name="GcGameTableAIPlayerConfigPetBattler">
+					<Property name="PetBattleAITeamSeedSource" value="NPCAndWins" />
+					<Property name="CustomTeamSeed" value="NONE" />
+					<Property name="SeedMissionId" value="" />
+					<Property name="Pets" array_size="3">
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="0">
+							<Property name="PetBattlerAIPetPool" value="FromPlanet" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="1">
+							<Property name="PetBattlerAIPetPool" value="FromSystem" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="2">
+							<Property name="PetBattlerAIPetPool" value="FromPlanet" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="AIPlayerConfigs" value="GcGameTableAIPlayerConfig" _id="PB_AI_SYSTEM_STANDARD">
+			<Property name="Id" value="PB_AI_SYSTEM_STANDARD" />
+			<Property name="Difficulty" value="GcGameTableAIDifficulty">
+				<Property name="GameTableAIDifficulty" value="Easy" />
+			</Property>
+			<Property name="GameConfig" value="GcGameTableAIPlayerConfigPetBattler">
+				<Property name="GcGameTableAIPlayerConfigPetBattler">
+					<Property name="PetBattleAITeamSeedSource" value="NPCAndWins" />
+					<Property name="CustomTeamSeed" value="NONE" />
+					<Property name="SeedMissionId" value="" />
+					<Property name="Pets" array_size="3">
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="0">
+							<Property name="PetBattlerAIPetPool" value="FromSystem" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="1">
+							<Property name="PetBattlerAIPetPool" value="FromSystem" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="2">
+							<Property name="PetBattlerAIPetPool" value="FromSystem" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="AIPlayerConfigs" value="GcGameTableAIPlayerConfig" _id="PB_AI_SYSTEM_CHAMPION">
+			<Property name="Id" value="PB_AI_SYSTEM_CHAMPION" />
+			<Property name="Difficulty" value="GcGameTableAIDifficulty">
+				<Property name="GameTableAIDifficulty" value="Hard" />
+			</Property>
+			<Property name="GameConfig" value="GcGameTableAIPlayerConfigPetBattler">
+				<Property name="GcGameTableAIPlayerConfigPetBattler">
+					<Property name="PetBattleAITeamSeedSource" value="NPCAndWins" />
+					<Property name="CustomTeamSeed" value="NONE" />
+					<Property name="SeedMissionId" value="" />
+					<Property name="Pets" array_size="3">
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="0">
+							<Property name="PetBattlerAIPetPool" value="FromSystem" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="1">
+							<Property name="PetBattlerAIPetPool" value="FromSystem" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="2">
+							<Property name="PetBattlerAIPetPool" value="FromSystem" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="AIPlayerConfigs" value="GcGameTableAIPlayerConfig" _id="PB_AI_PIRATESTATION">
+			<Property name="Id" value="PB_AI_PIRATESTATION" />
+			<Property name="Difficulty" value="GcGameTableAIDifficulty">
+				<Property name="GameTableAIDifficulty" value="Medium" />
+			</Property>
+			<Property name="GameConfig" value="GcGameTableAIPlayerConfigPetBattler">
+				<Property name="GcGameTableAIPlayerConfigPetBattler">
+					<Property name="PetBattleAITeamSeedSource" value="NPCAndWins" />
+					<Property name="CustomTeamSeed" value="NONE" />
+					<Property name="SeedMissionId" value="" />
+					<Property name="Pets" array_size="3">
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="0">
+							<Property name="PetBattlerAIPetPool" value="FromSystem" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="1">
+							<Property name="PetBattlerAIPetPool" value="FromSystem" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="2">
+							<Property name="PetBattlerAIPetPool" value="FromSystem" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="AIPlayerConfigs" value="GcGameTableAIPlayerConfig" _id="PB_AI_SETTLEMENT">
+			<Property name="Id" value="PB_AI_SETTLEMENT" />
+			<Property name="Difficulty" value="GcGameTableAIDifficulty">
+				<Property name="GameTableAIDifficulty" value="Medium" />
+			</Property>
+			<Property name="GameConfig" value="GcGameTableAIPlayerConfigPetBattler">
+				<Property name="GcGameTableAIPlayerConfigPetBattler">
+					<Property name="PetBattleAITeamSeedSource" value="NPCAndWins" />
+					<Property name="CustomTeamSeed" value="NONE" />
+					<Property name="SeedMissionId" value="" />
+					<Property name="Pets" array_size="3">
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="0">
+							<Property name="PetBattlerAIPetPool" value="FromPlanet" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="1">
+							<Property name="PetBattlerAIPetPool" value="FromPlanet" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+						<Property name="Pets" value="GcGameTableAIPlayerPetConfig" _index="2">
+							<Property name="PetBattlerAIPetPool" value="FromSystem" />
+							<Property name="MinLevel" value="-1" />
+							<Property name="MaxLevel" value="-1" />
+							<Property name="AllowedAffinities" array_size="9">
+								<Property name="Normal" value="false" />
+								<Property name="Lush" value="true" />
+								<Property name="Cold" value="true" />
+								<Property name="Fire" value="true" />
+								<Property name="Toxic" value="true" />
+								<Property name="Barren" value="true" />
+								<Property name="Radioactive" value="true" />
+								<Property name="Weird" value="true" />
+								<Property name="Mech" value="true" />
+							</Property>
+							<Property name="CustomPetPool" />
+						</Property>
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+		<Property name="AIPlayerConfigs" value="GcGameTableAIPlayerConfig" _id="DICE_AI_STANDARD">
+			<Property name="Id" value="DICE_AI_STANDARD" />
+			<Property name="Difficulty" value="GcGameTableAIDifficulty">
+				<Property name="GameTableAIDifficulty" value="Medium" />
+			</Property>
+			<Property name="GameConfig" value="GcGameTableAIPlayerConfigDiceGame">
+				<Property name="GcGameTableAIPlayerConfigDiceGame" />
+			</Property>
+		</Property>
+	</Property>
+</Data>
