@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.45.0.1)-->
+<Data template="cGcGravityGunGlobals">
+	<Property name="WeaponChargePush" value="2" />
+	<Property name="WeaponChargeGrab" value="1" />
+	<Property name="AttachedMoveablePrimaryEnergy" value="0.250000" />
+	<Property name="AttachedMoveableAltEnergyRate" value="1.000000" />
+	<Property name="AttachedMoveableEnergyDecayGraceTime" value="1.000000" />
+	<Property name="AttachedMoveableEnergyDecayRate" value="0.500000" />
+	<Property name="AttachedMoveableAltAimLossTimeout" value="0.500000" />
+	<Property name="AttachedMoveableShake" value="SHOOTABLESHAKE" />
+	<Property name="AttachedMoveableShakeStrength" value="3.000000" />
+	<Property name="PushForceUpComponent" value="0.166670" />
+	<Property name="PushPower" value="20.000000" />
+	<Property name="PushPowerInScrapyardDistance" value="55.000000" />
+	<Property name="PushPowerToxicInScrapyard" value="25.000000" />
+	<Property name="PushPowerInScrapyard" value="30.000000" />
+	<Property name="PushPowerSentinelEject" value="20.000000" />
+	<Property name="PushPowerSentinel" value="5.000000" />
+	<Property name="ThresholdForAngularEjectionVelocity" value="0.150000" />
+	<Property name="AngularEjectionPowerFractionOfPower" value="0.002500" />
+	<Property name="EjectPowerupMaxTimeSeconds" value="0.500000" />
+	<Property name="EjectMaxPowerup" value="3.000000" />
+	<Property name="EjectPowerCurve" value="TkCurveType">
+		<Property name="Curve" value="EaseInQuad" />
+	</Property>
+	<Property name="GrabPosOffset" value="4.000000" />
+	<Property name="GrabRequestTimeoutSeconds" value="2.000000" />
+	<Property name="InitialGrabSpeed" value="160.000000" />
+	<Property name="InitialGrabCurve" value="TkCurveType">
+		<Property name="Curve" value="EaseOutExpo" />
+	</Property>
+	<Property name="InitialGrabTimeMinSeconds" value="0.660000" />
+	<Property name="GrabUseDynamicPhysics" value="true" />
+	<Property name="GrabMaxLinearSpeed" value="50.000000" />
+	<Property name="GrabMaxAngularSpeed" value="12.000000" />
+	<Property name="GrabPositionSpringConst" value="166.000000" />
+	<Property name="GrabPositionDampingRatio" value="0.700000" />
+	<Property name="GrabFixedRotationSpringConst" value="50.000000" />
+	<Property name="GrabFixedRotationDampingRatio" value="0.700000" />
+	<Property name="GrabFreeRotationDampingFactor" value="1.500000" />
+	<Property name="GrabDragRotationStrength" value="1.500000" />
+	<Property name="GrabPositionBobEnabled" value="true" />
+	<Property name="GrabPositionBobSpeed" value="0.100000" />
+	<Property name="GrabPositionBobMagnitude" value="0.100000" />
+	<Property name="GrabRotationBobEnabled" value="true" />
+	<Property name="GrabRotationBobTorqueVariationSpeed" value="0.050000" />
+	<Property name="GrabRotationBobTorqueStrength" value="0.500000" />
+	<Property name="GrabCombatEffectToTarget" value="GcImpactCombatEffectData">
+		<Property name="CombatEffectType" value="GcCombatEffectType">
+			<Property name="CombatEffectType" value="Stun" />
+		</Property>
+		<Property name="TotalDuration" value="1.500000" />
+		<Property name="DamagePerSeccond" value="0.000000" />
+		<Property name="CurrentDuration" value="0.000000" />
+	</Property>
+	<Property name="ImpactDamageType" value="MELEE" />
+	<Property name="ImpactDamageSpeedThreshold" value="10.000000" />
+	<Property name="ImpactDamageMinImpulse" value="200.000000" />
+	<Property name="ImpactDamageMaxImpulse" value="1500.000000" />
+	<Property name="ImpactDamageMaxDamage" value="100.000000" />
+	<Property name="ImpactAggressiveDamageMinImpulse" value="50.000000" />
+	<Property name="ImpactAggressiveDamageMaxImpulse" value="250.000000" />
+	<Property name="ImpactAggressiveDamageMaxDamage" value="200.000000" />
+	<Property name="ImpactDamageModifierOnTruck" value="0.100000" />
+</Data>

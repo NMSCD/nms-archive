@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.45.0.1)-->
+<Data template="cTkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="TkAudioComponentData">
+			<Property name="TkAudioComponentData">
+				<Property name="Ambient" value="POI_Asteroid_Beacon" />
+				<Property name="AmbientState" value="" />
+				<Property name="Shutdown" value="" />
+				<Property name="MaxDistance" value="10000" />
+				<Property name="OcclusionRadius" value="0.000000" />
+				<Property name="OcclusionRange" value="0.000000" />
+				<Property name="LocalOnly" value="false" />
+				<Property name="AnimTriggers" />
+				<Property name="Emitters" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkNetReplicatedEntityComponentData">
+			<Property name="TkNetReplicatedEntityComponentData">
+				<Property name="ReplicaComponentMask" />
+				<Property name="ReplicationRange" value="Space" />
+				<Property name="SpawnType" value="Basic" />
+				<Property name="IgnoreComponents" value="false" />
+				<Property name="ReplicateToShipmates" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcTriggerActionComponentData">
+			<Property name="GcTriggerActionComponentData">
+				<Property name="HideModel" value="false" />
+				<Property name="StartInactive" value="false" />
+				<Property name="States">
+					<Property name="States" value="GcActionTriggerState" _id="BOOT">
+						<Property name="StateID" value="BOOT" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcPlayerNearbyEvent">
+									<Property name="GcPlayerNearbyEvent">
+										<Property name="RequirePlayerAction" value="InShip" />
+										<Property name="Distance" value="1600.000000" />
+										<Property name="Angle" value="360.000000" />
+										<Property name="AnglePlayerRelative" value="false" />
+										<Property name="AngleOffset" value="0.000000" />
+										<Property name="AngleReflected" value="false" />
+										<Property name="AngleMinDistance" value="1.000000" />
+										<Property name="MustAffordCostID" value="" />
+										<Property name="DistanceCheckType" value="Radius" />
+										<Property name="Inverse" value="false" />
+										<Property name="OnlyForLocalPlayer" value="false" />
+										<Property name="IncludeAllPhysics" value="false" />
+										<Property name="IncludeMobileNPCs" value="false" />
+										<Property name="TeleporterCountsAsPlayer" value="true" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcGoToStateAction">
+										<Property name="GcGoToStateAction">
+											<Property name="State" value="TEXT" />
+											<Property name="Broadcast" value="false" />
+											<Property name="BroadcastLevel" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState" _id="TEXT">
+						<Property name="StateID" value="TEXT" />
+						<Property name="Triggers">
+							<Property name="Triggers" value="GcActionTrigger" _index="0">
+								<Property name="Event" value="GcStateTimeEvent">
+									<Property name="GcStateTimeEvent">
+										<Property name="Seconds" value="0.000000" />
+										<Property name="RandomSeconds" value="0.000000" />
+										<Property name="UseMissionClock" value="false" />
+									</Property>
+								</Property>
+								<Property name="Action">
+									<Property name="Action" value="GcRewardAction">
+										<Property name="GcRewardAction">
+											<Property name="Reward" value="DE_POI_LISTEN" />
+										</Property>
+									</Property>
+									<Property name="Action" value="GcGoToStateAction">
+										<Property name="GcGoToStateAction">
+											<Property name="State" value="WAIT" />
+											<Property name="Broadcast" value="false" />
+											<Property name="BroadcastLevel" value="GcBroadcastLevel">
+												<Property name="BroadcastLevel" value="Scene" />
+											</Property>
+										</Property>
+									</Property>
+								</Property>
+							</Property>
+						</Property>
+					</Property>
+					<Property name="States" value="GcActionTriggerState" _id="WAIT">
+						<Property name="StateID" value="WAIT" />
+						<Property name="Triggers" />
+					</Property>
+				</Property>
+				<Property name="Persistent" value="false" />
+				<Property name="PersistentState" value="" />
+				<Property name="ResetShotTimeOnStateChange" value="false" />
+				<Property name="LinkStateToBaseGrid" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkStaticPhysicsComponentData">
+			<Property name="TkStaticPhysicsComponentData">
+				<Property name="Data" value="TkPhysicsData">
+					<Property name="Mass" value="0.000000" />
+					<Property name="Friction" value="0.500000" />
+					<Property name="RollingFriction" value="0.200000" />
+					<Property name="AngularDamping" value="0.200000" />
+					<Property name="LinearDamping" value="0.100000" />
+					<Property name="Restitution" value="0.000000" />
+					<Property name="Gravity" value="20.000000" />
+					<Property name="CanBeTooSteepForTeleporter" value="true" />
+				</Property>
+				<Property name="NavMeshInclusion" value="TkNavMeshInclusionParams">
+					<Property name="NavMeshInclusionHint" value="Auto" />
+					<Property name="InclusionType" value="TkNavMeshInclusionType">
+						<Property name="NavMeshInclusionType" value="Auto" />
+					</Property>
+					<Property name="AreaType" value="TkNavMeshAreaType">
+						<Property name="NavMeshAreaType" value="Auto" />
+					</Property>
+				</Property>
+				<Property name="StaticPhysicsTargetNode" value="Attachment" />
+				<Property name="AddToWorldOnPrepare" value="true" />
+				<Property name="AddToWorldImmediately" value="true" />
+				<Property name="TriggerVolumeType" value="TkVolumeTriggerType">
+					<Property name="VolumeTriggerType" value="Open" />
+				</Property>
+				<Property name="TriggerVolume" value="false" />
+				<Property name="Climbable" value="false" />
+				<Property name="NoVehicleCollide" value="false" />
+				<Property name="NoPlayerCollide" value="false" />
+				<Property name="NoTerrainCollide" value="false" />
+				<Property name="CameraInvisible" value="false" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances" array_size="5">
+		<Property name="LodDistances" value="0.000000" _index="0" />
+		<Property name="LodDistances" value="50.000000" _index="1" />
+		<Property name="LodDistances" value="80.000000" _index="2" />
+		<Property name="LodDistances" value="150.000000" _index="3" />
+		<Property name="LodDistances" value="500.000000" _index="4" />
+	</Property>
+</Data>

@@ -1,0 +1,2267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (6.45.0.1)-->
+<Data template="cGcGameTableGlobals">
+	<Property name="OutroTimer" value="1.800000" />
+	<Property name="DefaultAIPlayerConfigs" array_size="3">
+		<Property name="Undecided" value="" />
+		<Property name="DiceGame" value="DICE_AI_STANDARD" />
+		<Property name="PetBattler" value="PB_AI_PVE_NEXUS" />
+	</Property>
+	<Property name="DefaultGameTableNPC" value="GcGameTableNPCSpawnData">
+		<Property name="NPCPlacementId" value="GAMETABLE_AI" />
+		<Property name="NameOverride" value="" />
+		<Property name="AvailableTitles" />
+	</Property>
+	<Property name="ShowDebugStatus" value="false" />
+	<Property name="AIPlayerHologramEffect" value="HOLO" />
+	<Property name="TriggerTeleportEffectForRemotePlayersOnTableInteractDistance" value="0.500000" />
+	<Property name="DiceGameWinningScore" value="50" />
+	<Property name="DiceShakerScale" value="2.500000" />
+	<Property name="DiceAutoRollParams" value="GcGameTableDiceAutoRollParams">
+		<Property name="ShakeStartDirectionPitchAngle" value="75.000000" />
+		<Property name="LaunchDirectionPitchAngle" value="20.000000" />
+		<Property name="ShakeOriginUpOffset" value="0.400000" />
+		<Property name="ShakeOriginRadialOffset" value="0.800000" />
+		<Property name="ShakeStartWaitTime" value="1.000000" />
+		<Property name="ShakeDurationMin" value="2.000000" />
+		<Property name="LaunchTransitionAnticipationTime" value="0.400000" />
+		<Property name="LaunchTransitionDuration" value="0.800000" />
+		<Property name="BaseShakeMagnitude" value="0.100000" />
+		<Property name="LaunchMaxShakeMagnitude" value="0.150000" />
+		<Property name="ShakeFrequency" value="4.000000" />
+		<Property name="RandomPosVariationFactor" value="0.300000" />
+		<Property name="FixedPitchAdjust" value="0.000000" />
+		<Property name="SyncedPitchAdjust" value="5.000000" />
+		<Property name="MinReleasePhase" value="0.000000" />
+		<Property name="MinReleaseDerivativePhase" value="0.500000" />
+	</Property>
+	<Property name="DiceMinSpeedForRandomForce" value="1.500000" />
+	<Property name="DiceRandomForceStrength" value="0.025000" />
+	<Property name="DiceRandomForceOffset" value="0.200000" />
+	<Property name="DiceRandomForceDirectionVariationRate" value="10.000000" />
+	<Property name="TurnTimerStartingValue" value="60" />
+	<Property name="TurnTimerSuccessIncrement" value="10" />
+	<Property name="TurnTimerFailureDecrement" value="-10" />
+	<Property name="TurnTimerMinValue" value="10" />
+	<Property name="TurnTimerMaxValue" value="60" />
+	<Property name="TurnTimerShowThreshold" value="20" />
+	<Property name="FlyerBobSpeed" value="2.200000" />
+	<Property name="FlyerBobStrength" value="0.020000" />
+	<Property name="ImpactShrink" value="0.750000" />
+	<Property name="NonAnimPetAttackSwell" value="1.400000" />
+	<Property name="NonAnimPetAttackSwellSpring" value="0.200000" />
+	<Property name="AIWaitTimeMin" value="2.000000" />
+	<Property name="AIWaitTimeMax" value="3.500000" />
+	<Property name="MoveIntroTime" value="0.400000" />
+	<Property name="MoveIntroTimeVR" value="0.000000" />
+	<Property name="MultiMovePause" value="2.400000" />
+	<Property name="MoveOutroTime" value="2.500000" />
+	<Property name="MoveOutroTimeVR" value="0.000000" />
+	<Property name="PostMovePauseTime" value="0.900000" />
+	<Property name="PetKOSwapDelayTime" value="1.000000" />
+	<Property name="CameraLocationOffsetBase">
+		<Property name="X" value="2.500000" />
+		<Property name="Y" value="2.200000" />
+		<Property name="Z" value="0.300000" />
+	</Property>
+	<Property name="CameraTargetOffsetBase">
+		<Property name="X" value="0.000000" />
+		<Property name="Y" value="0.700000" />
+		<Property name="Z" value="0.200000" />
+	</Property>
+	<Property name="PetBattleDefaultCameraPose" value="GcPetBattleCameraPose">
+		<Property name="Distance" value="4.500000" />
+		<Property name="Yaw" value="-59.000000" />
+		<Property name="Pitch" value="18.000000" />
+		<Property name="CamOrientYaw" value="64.000000" />
+		<Property name="CamOrientPitch" value="-10.000000" />
+		<Property name="CamOrientRoll" value="-0.000002" />
+	</Property>
+	<Property name="PetBattleDefaultCameraPoseVR" value="GcPetBattleCameraPose">
+		<Property name="Distance" value="2.100000" />
+		<Property name="Yaw" value="-90.000000" />
+		<Property name="Pitch" value="0.000000" />
+		<Property name="CamOrientYaw" value="90.000000" />
+		<Property name="CamOrientPitch" value="0.000000" />
+		<Property name="CamOrientRoll" value="0.000000" />
+	</Property>
+	<Property name="CameraFOV" value="75.000000" />
+	<Property name="CameraFOVActionExtra" value="-6.000000" />
+	<Property name="CameraActionInSpring" value="0.350000" />
+	<Property name="CameraActionOutSpring" value="2.200000" />
+	<Property name="AIPetTeamLevelDifficultyScaling" array_size="3">
+		<Property name="Easy">
+			<Property name="X" value="0.800000" />
+			<Property name="Y" value="0.900000" />
+		</Property>
+		<Property name="Medium">
+			<Property name="X" value="0.900000" />
+			<Property name="Y" value="1.100000" />
+		</Property>
+		<Property name="Hard">
+			<Property name="X" value="1.100000" />
+			<Property name="Y" value="1.300000" />
+		</Property>
+	</Property>
+	<Property name="PerPetXPAnimDelay" value="1.500000" />
+	<Property name="ClassXPMultipliers" array_size="4">
+		<Property name="C" value="0.750000" />
+		<Property name="B" value="1.000000" />
+		<Property name="A" value="1.250000" />
+		<Property name="S" value="1.500000" />
+	</Property>
+	<Property name="XPValueBaseMul" value="1.200000" />
+	<Property name="XPBasicAward" value="250.000000" />
+	<Property name="XPGapPerLevel">
+		<Property name="XPGapPerLevel" value="350.000000" _index="0" />
+		<Property name="XPGapPerLevel" value="350.000000" _index="1" />
+		<Property name="XPGapPerLevel" value="400.000000" _index="2" />
+		<Property name="XPGapPerLevel" value="450.000000" _index="3" />
+		<Property name="XPGapPerLevel" value="500.000000" _index="4" />
+		<Property name="XPGapPerLevel" value="500.000000" _index="5" />
+		<Property name="XPGapPerLevel" value="500.000000" _index="6" />
+		<Property name="XPGapPerLevel" value="500.000000" _index="7" />
+		<Property name="XPGapPerLevel" value="500.000000" _index="8" />
+		<Property name="XPGapPerLevel" value="500.000000" _index="9" />
+		<Property name="XPGapPerLevel" value="500.000000" _index="10" />
+		<Property name="XPGapPerLevel" value="650.000000" _index="11" />
+		<Property name="XPGapPerLevel" value="650.000000" _index="12" />
+		<Property name="XPGapPerLevel" value="650.000000" _index="13" />
+		<Property name="XPGapPerLevel" value="650.000000" _index="14" />
+		<Property name="XPGapPerLevel" value="650.000000" _index="15" />
+		<Property name="XPGapPerLevel" value="650.000000" _index="16" />
+		<Property name="XPGapPerLevel" value="650.000000" _index="17" />
+		<Property name="XPGapPerLevel" value="800.000000" _index="18" />
+		<Property name="XPGapPerLevel" value="800.000000" _index="19" />
+		<Property name="XPGapPerLevel" value="800.000000" _index="20" />
+		<Property name="XPGapPerLevel" value="800.000000" _index="21" />
+		<Property name="XPGapPerLevel" value="800.000000" _index="22" />
+		<Property name="XPGapPerLevel" value="800.000000" _index="23" />
+		<Property name="XPGapPerLevel" value="800.000000" _index="24" />
+		<Property name="XPGapPerLevel" value="950.000000" _index="25" />
+		<Property name="XPGapPerLevel" value="950.000000" _index="26" />
+		<Property name="XPGapPerLevel" value="950.000000" _index="27" />
+		<Property name="XPGapPerLevel" value="1250.000000" _index="28" />
+		<Property name="XPGapPerLevel" value="1250.000000" _index="29" />
+	</Property>
+	<Property name="AffinityStrengthBonus" value="1.500000" />
+	<Property name="AffinityWeakReducer" value="0.500000" />
+	<Property name="PetBaseCritChance" value="0.150000" />
+	<Property name="PetBaseCritDamageMul" value="1.330000" />
+	<Property name="PetBaseMissChance" value="0.050000" />
+	<Property name="PetBaseDodgeChance" value="0.010000" />
+	<Property name="PetMissAgiltyBasedExtra" value="0.200000" />
+	<Property name="PetMissAgilityRange">
+		<Property name="X" value="-50.000000" />
+		<Property name="Y" value="50.000000" />
+	</Property>
+	<Property name="PetAgilityScaleRange">
+		<Property name="X" value="0.400000" />
+		<Property name="Y" value="4.000000" />
+	</Property>
+	<Property name="BinocsUnknownPetStatsVariationRange" value="0.300000" />
+	<Property name="BinocsUnknownPetStatsVariationTime" value="3.500000" />
+	<Property name="BinocsUnknownPetStatsVariationOffsets" array_size="3">
+		<Property name="MaxHealth" value="0.000000" />
+		<Property name="Speed" value="0.330000" />
+		<Property name="CombatPotential" value="0.660000" />
+	</Property>
+	<Property name="PetPopupBarColour">
+		<Property name="R" value="0.126000" />
+		<Property name="G" value="0.243000" />
+		<Property name="B" value="0.698000" />
+		<Property name="A" value="1.000000" />
+	</Property>
+	<Property name="DamageNumberMinTimeSeparation" value="0.660000" />
+	<Property name="DamageNumberFontSizeNormal" value="18.000000" />
+	<Property name="DamageNumberFontSizeLarge" value="22.000000" />
+	<Property name="DamageNumberOutlineSize" value="3.000000" />
+	<Property name="DamageNumberShadowSize" value="20.000000" />
+	<Property name="DamageNumberDuration" value="2.000000" />
+	<Property name="DamageNumberOffset" value="0.280000" />
+	<Property name="DamageNumberOffsetHeal" value="0.380000" />
+	<Property name="DamageNumberOffsetMiss" value="0.420000" />
+	<Property name="DamageNumberHealColour">
+		<Property name="R" value="0.374000" />
+		<Property name="G" value="0.955000" />
+		<Property name="B" value="0.423000" />
+		<Property name="A" value="1.000000" />
+	</Property>
+	<Property name="DamageNumberHealColourOutline">
+		<Property name="R" value="0.028000" />
+		<Property name="G" value="0.292000" />
+		<Property name="B" value="0.138000" />
+		<Property name="A" value="1.000000" />
+	</Property>
+	<Property name="DamageNumberAffinityBoostColour">
+		<Property name="R" value="1.000000" />
+		<Property name="G" value="0.737000" />
+		<Property name="B" value="0.145000" />
+		<Property name="A" value="1.000000" />
+	</Property>
+	<Property name="DamageNumberAffinityBoostColourOutline">
+		<Property name="R" value="0.877323" />
+		<Property name="G" value="0.623440" />
+		<Property name="B" value="0.051961" />
+		<Property name="A" value="1.000000" />
+	</Property>
+	<Property name="DamageNumberIneffectiveColour">
+		<Property name="R" value="0.879182" />
+		<Property name="G" value="0.794865" />
+		<Property name="B" value="0.794865" />
+		<Property name="A" value="1.000000" />
+	</Property>
+	<Property name="DamageNumberIneffectiveColourOutline">
+		<Property name="R" value="0.782528" />
+		<Property name="G" value="0.743217" />
+		<Property name="B" value="0.743217" />
+		<Property name="A" value="1.000000" />
+	</Property>
+	<Property name="PetSizeRange">
+		<Property name="X" value="0.100000" />
+		<Property name="Y" value="5.000000" />
+	</Property>
+	<Property name="PetBattlerSizeRange">
+		<Property name="X" value="0.200000" />
+		<Property name="Y" value="0.550000" />
+	</Property>
+	<Property name="FlyingPetOffset" value="0.170000" />
+	<Property name="CoreStatClassRollTable" array_size="3">
+		<Property name="MaxHealth" value="GcPetBattlerCoreStatRollData">
+			<Property name="Roll" array_size="4">
+				<Property name="C" value="30" />
+				<Property name="B" value="30" />
+				<Property name="A" value="25" />
+				<Property name="S" value="15" />
+			</Property>
+		</Property>
+		<Property name="Speed" value="GcPetBattlerCoreStatRollData">
+			<Property name="Roll" array_size="4">
+				<Property name="C" value="30" />
+				<Property name="B" value="30" />
+				<Property name="A" value="25" />
+				<Property name="S" value="15" />
+			</Property>
+		</Property>
+		<Property name="CombatPotential" value="GcPetBattlerCoreStatRollData">
+			<Property name="Roll" array_size="4">
+				<Property name="C" value="30" />
+				<Property name="B" value="30" />
+				<Property name="A" value="25" />
+				<Property name="S" value="15" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="TeamStrengthShiftTowardsHighestLevelMemberFactor" value="0.400000" />
+	<Property name="TeamStrengthMaxLevelsBelowHighestLevelMember" value="5.000000" />
+	<Property name="PetMaxLevel" value="10" />
+	<Property name="CoreStatScaleVarianceMul" value="0.200000" />
+	<Property name="CoreStatClassRangeTable" array_size="3">
+		<Property name="MaxHealth" value="GcPetBattlerCoreStatRangeData">
+			<Property name="Range" array_size="4">
+				<Property name="C">
+					<Property name="X" value="425.000000" />
+					<Property name="Y" value="525.000000" />
+				</Property>
+				<Property name="B">
+					<Property name="X" value="475.000000" />
+					<Property name="Y" value="625.000000" />
+				</Property>
+				<Property name="A">
+					<Property name="X" value="550.000000" />
+					<Property name="Y" value="650.000000" />
+				</Property>
+				<Property name="S">
+					<Property name="X" value="575.000000" />
+					<Property name="Y" value="725.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Speed" value="GcPetBattlerCoreStatRangeData">
+			<Property name="Range" array_size="4">
+				<Property name="C">
+					<Property name="X" value="20.000000" />
+					<Property name="Y" value="50.000000" />
+				</Property>
+				<Property name="B">
+					<Property name="X" value="40.000000" />
+					<Property name="Y" value="60.000000" />
+				</Property>
+				<Property name="A">
+					<Property name="X" value="50.000000" />
+					<Property name="Y" value="80.000000" />
+				</Property>
+				<Property name="S">
+					<Property name="X" value="60.000000" />
+					<Property name="Y" value="100.000000" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="CombatPotential" value="GcPetBattlerCoreStatRangeData">
+			<Property name="Range" array_size="4">
+				<Property name="C">
+					<Property name="X" value="100.000000" />
+					<Property name="Y" value="120.000000" />
+				</Property>
+				<Property name="B">
+					<Property name="X" value="120.000000" />
+					<Property name="Y" value="140.000000" />
+				</Property>
+				<Property name="A">
+					<Property name="X" value="160.000000" />
+					<Property name="Y" value="180.000000" />
+				</Property>
+				<Property name="S">
+					<Property name="X" value="180.000000" />
+					<Property name="Y" value="200.000000" />
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="CoreStatClassPerLevelBoosts" array_size="3">
+		<Property name="MaxHealth" value="GcPetBattlerCoreStatRollData">
+			<Property name="Roll" array_size="4">
+				<Property name="C" value="175" />
+				<Property name="B" value="225" />
+				<Property name="A" value="275" />
+				<Property name="S" value="325" />
+			</Property>
+		</Property>
+		<Property name="Speed" value="GcPetBattlerCoreStatRollData">
+			<Property name="Roll" array_size="4">
+				<Property name="C" value="13" />
+				<Property name="B" value="22" />
+				<Property name="A" value="25" />
+				<Property name="S" value="30" />
+			</Property>
+		</Property>
+		<Property name="CombatPotential" value="GcPetBattlerCoreStatRollData">
+			<Property name="Roll" array_size="4">
+				<Property name="C" value="41" />
+				<Property name="B" value="48" />
+				<Property name="A" value="63" />
+				<Property name="S" value="70" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="IsOffensiveStat" array_size="15">
+		<Property name="Health" value="false" />
+		<Property name="MaxHealth" value="false" />
+		<Property name="Speed" value="true" />
+		<Property name="Dodge" value="false" />
+		<Property name="CritChance" value="true" />
+		<Property name="HitChance" value="true" />
+		<Property name="DamageApplied" value="true" />
+		<Property name="DamageReduction" value="false" />
+		<Property name="DamageReflection" value="false" />
+		<Property name="DamageAbsorption" value="false" />
+		<Property name="CompleteDamageReduction" value="false" />
+		<Property name="CompleteDamageReflection" value="false" />
+		<Property name="CompleteDamageAbsorption" value="false" />
+		<Property name="BonusMoveChance" value="false" />
+		<Property name="RampDamageCharges" value="false" />
+	</Property>
+	<Property name="MaxCooldownBoost" value="6" />
+	<Property name="CooldownScoreBoostMin" value="0.330000" />
+	<Property name="CooldownScoreBoostMax" value="0.660000" />
+	<Property name="CombatBudgetModerator" value="0.140000" />
+	<Property name="PercentageMovesBooster" value="0.420000" />
+	<Property name="MultiPhaseMoveBoost" value="1.300000" />
+	<Property name="MissChanceBoost" value="0.800000" />
+	<Property name="NegativeEffectBoost" value="1.330000" />
+	<Property name="AbsorbPercent" value="0.500000" />
+	<Property name="HealModerator" value="0.660000" />
+	<Property name="MaxMoveVariance" value="0.100000" />
+	<Property name="PetStatPayloadBoosts" array_size="15">
+		<Property name="Health" value="1.000000" />
+		<Property name="MaxHealth" value="1.000000" />
+		<Property name="Speed" value="2.000000" />
+		<Property name="Dodge" value="1.200000" />
+		<Property name="CritChance" value="1.500000" />
+		<Property name="HitChance" value="1.800000" />
+		<Property name="DamageApplied" value="1.000000" />
+		<Property name="DamageReduction" value="1.400000" />
+		<Property name="DamageReflection" value="1.000000" />
+		<Property name="DamageAbsorption" value="1.000000" />
+		<Property name="CompleteDamageReduction" value="0.700000" />
+		<Property name="CompleteDamageReflection" value="0.600000" />
+		<Property name="CompleteDamageAbsorption" value="0.600000" />
+		<Property name="BonusMoveChance" value="1.000000" />
+		<Property name="RampDamageCharges" value="1.000000" />
+	</Property>
+	<Property name="DefaultMove" value="ATTACK_AFF" />
+	<Property name="DefaultMoveSet" value="BASIC" />
+	<Property name="BonusMovesPositive" array_size="3">
+		<Property name="Helpfulness" value="BUFF_DAMAGE" />
+		<Property name="Aggression" value="BM_DOT_AFF" />
+		<Property name="Independence" value="BM_DEBUFF_ACC" />
+	</Property>
+	<Property name="BonusMovesNegative" array_size="3">
+		<Property name="Helpfulness" value="BUFF_DODGE" />
+		<Property name="Aggression" value="BM_DEBUFF_DAM" />
+		<Property name="Independence" value="SELF_HEAL" />
+	</Property>
+	<Property name="BonusMoveChance" value="0.066000" />
+	<Property name="PetBattlerStrengthWeighting" array_size="5">
+		<Property name="VeryLight" value="10" />
+		<Property name="Light" value="20" />
+		<Property name="Medium" value="30" />
+		<Property name="Heavy" value="40" />
+		<Property name="VeryHeavy" value="50" />
+	</Property>
+	<Property name="PetDamageShakeAmplitude" value="0.080000" />
+	<Property name="PetDamageShakeDampingStrength" value="1.000000" />
+	<Property name="PetDamageShakePhaseHz" value="1.000000" />
+	<Property name="PetEffectCooldownTime" value="2.000000" />
+	<Property name="InstantEffectData" array_size="9">
+		<Property name="Normal" value="GcPetBattlerEffectData">
+			<Property name="LaunchEffect" value="" />
+			<Property name="LaunchBuildupTime" value="0.050000" />
+			<Property name="ProjectileEffect" value="NORMALINSTANT" />
+			<Property name="ProjectileFlightTime" value="0.100000" />
+			<Property name="ImpactEffect" value="NORMALIMPACT" />
+		</Property>
+		<Property name="Lush" value="GcPetBattlerEffectData">
+			<Property name="LaunchEffect" value="LAUNCHLUSH" />
+			<Property name="LaunchBuildupTime" value="0.600000" />
+			<Property name="ProjectileEffect" value="LUSHINSTANT" />
+			<Property name="ProjectileFlightTime" value="0.200000" />
+			<Property name="ImpactEffect" value="LUSHIMPACT" />
+		</Property>
+		<Property name="Cold" value="GcPetBattlerEffectData">
+			<Property name="LaunchEffect" value="LAUNCHFROZEN" />
+			<Property name="LaunchBuildupTime" value="0.400000" />
+			<Property name="ProjectileEffect" value="FROZENINSTANT" />
+			<Property name="ProjectileFlightTime" value="0.250000" />
+			<Property name="ImpactEffect" value="FROZENIMPACT" />
+		</Property>
+		<Property name="Fire" value="GcPetBattlerEffectData">
+			<Property name="LaunchEffect" value="LAUNCHFIRE" />
+			<Property name="LaunchBuildupTime" value="0.150000" />
+			<Property name="ProjectileEffect" value="FIREINSTANT" />
+			<Property name="ProjectileFlightTime" value="0.250000" />
+			<Property name="ImpactEffect" value="FIREIMPACT" />
+		</Property>
+		<Property name="Toxic" value="GcPetBattlerEffectData">
+			<Property name="LaunchEffect" value="LAUNCHTOXIC" />
+			<Property name="LaunchBuildupTime" value="0.150000" />
+			<Property name="ProjectileEffect" value="TOXICINSTANT" />
+			<Property name="ProjectileFlightTime" value="0.150000" />
+			<Property name="ImpactEffect" value="TOXICIMPACT" />
+		</Property>
+		<Property name="Barren" value="GcPetBattlerEffectData">
+			<Property name="LaunchEffect" value="LAUNCHBARREN" />
+			<Property name="LaunchBuildupTime" value="0.250000" />
+			<Property name="ProjectileEffect" value="BARRENINSTANT" />
+			<Property name="ProjectileFlightTime" value="0.100000" />
+			<Property name="ImpactEffect" value="BARRENIMPACT" />
+		</Property>
+		<Property name="Radioactive" value="GcPetBattlerEffectData">
+			<Property name="LaunchEffect" value="LAUNCHRADIO" />
+			<Property name="LaunchBuildupTime" value="0.100000" />
+			<Property name="ProjectileEffect" value="RADIOINSTANT" />
+			<Property name="ProjectileFlightTime" value="0.150000" />
+			<Property name="ImpactEffect" value="RADIOIMPACT" />
+		</Property>
+		<Property name="Weird" value="GcPetBattlerEffectData">
+			<Property name="LaunchEffect" value="LAUNCHWEIRD" />
+			<Property name="LaunchBuildupTime" value="0.300000" />
+			<Property name="ProjectileEffect" value="WEIRDINSTANT" />
+			<Property name="ProjectileFlightTime" value="0.200000" />
+			<Property name="ImpactEffect" value="WEIRDIMPACT" />
+		</Property>
+		<Property name="Mech" value="GcPetBattlerEffectData">
+			<Property name="LaunchEffect" value="LAUNCHTECH" />
+			<Property name="LaunchBuildupTime" value="0.250000" />
+			<Property name="ProjectileEffect" value="TECHLASER" />
+			<Property name="ProjectileFlightTime" value="0.100000" />
+			<Property name="ImpactEffect" value="TECHIMPACT" />
+		</Property>
+	</Property>
+	<Property name="EffectMissScale" value="0.500000" />
+	<Property name="EffectProjectileOverride">
+		<Property name="EffectProjectileOverride" value="GcPetBattlerEffectPathOverride" _index="0">
+			<Property name="Particle Id" value="FROZENPROJLINE" />
+			<Property name="Path" value="GcPetBattlerProjectilePath">
+				<Property name="PetBattlerProjectilePath" value="Line" />
+			</Property>
+		</Property>
+		<Property name="EffectProjectileOverride" value="GcPetBattlerEffectPathOverride" _index="1">
+			<Property name="Particle Id" value="WEIRDPROJLINE" />
+			<Property name="Path" value="GcPetBattlerProjectilePath">
+				<Property name="PetBattlerProjectilePath" value="Line" />
+			</Property>
+		</Property>
+		<Property name="EffectProjectileOverride" value="GcPetBattlerEffectPathOverride" _index="2">
+			<Property name="Particle Id" value="TOXICPROJLINE" />
+			<Property name="Path" value="GcPetBattlerProjectilePath">
+				<Property name="PetBattlerProjectilePath" value="Line" />
+			</Property>
+		</Property>
+		<Property name="EffectProjectileOverride" value="GcPetBattlerEffectPathOverride" _index="3">
+			<Property name="Particle Id" value="RADIOPROJLINE" />
+			<Property name="Path" value="GcPetBattlerProjectilePath">
+				<Property name="PetBattlerProjectilePath" value="Line" />
+			</Property>
+		</Property>
+		<Property name="EffectProjectileOverride" value="GcPetBattlerEffectPathOverride" _index="4">
+			<Property name="Particle Id" value="LUSHPROJLINE" />
+			<Property name="Path" value="GcPetBattlerProjectilePath">
+				<Property name="PetBattlerProjectilePath" value="Line" />
+			</Property>
+		</Property>
+		<Property name="EffectProjectileOverride" value="GcPetBattlerEffectPathOverride" _index="5">
+			<Property name="Particle Id" value="FIREPROJLINE" />
+			<Property name="Path" value="GcPetBattlerProjectilePath">
+				<Property name="PetBattlerProjectilePath" value="Line" />
+			</Property>
+		</Property>
+		<Property name="EffectProjectileOverride" value="GcPetBattlerEffectPathOverride" _index="6">
+			<Property name="Particle Id" value="BARRENPROJLINE" />
+			<Property name="Path" value="GcPetBattlerProjectilePath">
+				<Property name="PetBattlerProjectilePath" value="Line" />
+			</Property>
+		</Property>
+		<Property name="EffectProjectileOverride" value="GcPetBattlerEffectPathOverride" _index="7">
+			<Property name="Particle Id" value="TECHPROJLINE" />
+			<Property name="Path" value="GcPetBattlerProjectilePath">
+				<Property name="PetBattlerProjectilePath" value="Line" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="EffectTables" array_size="10">
+		<Property name="None" value="GcPetBattlerEffectTable">
+			<Property name="EffectData" array_size="9">
+				<Property name="Normal" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Lush" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Cold" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Fire" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Toxic" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Barren" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Radioactive" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Weird" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Mech" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="DamageNoProjectile" value="GcPetBattlerEffectTable">
+			<Property name="EffectData" array_size="9">
+				<Property name="Normal" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHNORMAL" />
+					<Property name="LaunchBuildupTime" value="0.250000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="BASICNORMAL" />
+				</Property>
+				<Property name="Lush" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHLUSH" />
+					<Property name="LaunchBuildupTime" value="0.500000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="BASICLUSH" />
+				</Property>
+				<Property name="Cold" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHFROZEN" />
+					<Property name="LaunchBuildupTime" value="0.500000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="BASICFROZEN" />
+				</Property>
+				<Property name="Fire" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHFIRE" />
+					<Property name="LaunchBuildupTime" value="0.500000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="BASICFIRE" />
+				</Property>
+				<Property name="Toxic" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHTOXIC" />
+					<Property name="LaunchBuildupTime" value="0.250000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="BASICTOXIC" />
+				</Property>
+				<Property name="Barren" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHBARREN" />
+					<Property name="LaunchBuildupTime" value="0.500000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="BASICBARREN" />
+				</Property>
+				<Property name="Radioactive" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHRADIO" />
+					<Property name="LaunchBuildupTime" value="0.250000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="BASICRADIO" />
+				</Property>
+				<Property name="Weird" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHWEIRD" />
+					<Property name="LaunchBuildupTime" value="0.500000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="BASICWEIRD" />
+				</Property>
+				<Property name="Mech" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHTECH" />
+					<Property name="LaunchBuildupTime" value="0.250000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="BASICTECH" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Projectile" value="GcPetBattlerEffectTable">
+			<Property name="EffectData" array_size="9">
+				<Property name="Normal" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="NORMALPROJ" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="NORMALIMPACT" />
+				</Property>
+				<Property name="Lush" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHLUSH" />
+					<Property name="LaunchBuildupTime" value="0.250000" />
+					<Property name="ProjectileEffect" value="LUSHPROJ" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="LUSHIMPACT" />
+				</Property>
+				<Property name="Cold" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHFROZEN" />
+					<Property name="LaunchBuildupTime" value="0.250000" />
+					<Property name="ProjectileEffect" value="FROZENPROJ" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="FROZENIMPACT" />
+				</Property>
+				<Property name="Fire" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHFIRE" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="FIREPROJ" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="FIREIMPACT" />
+				</Property>
+				<Property name="Toxic" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHTOXIC" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="TOXICPROJ" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="TOXICIMPACT" />
+				</Property>
+				<Property name="Barren" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHBARREN" />
+					<Property name="LaunchBuildupTime" value="0.100000" />
+					<Property name="ProjectileEffect" value="BARRENPROJ" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="BARRENIMPACT" />
+				</Property>
+				<Property name="Radioactive" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHRADIO" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="RADIOPROJ" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="RADIOIMPACT" />
+				</Property>
+				<Property name="Weird" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHWEIRD" />
+					<Property name="LaunchBuildupTime" value="0.250000" />
+					<Property name="ProjectileEffect" value="WEIRDPROJ" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="WEIRDIMPACT" />
+				</Property>
+				<Property name="Mech" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="LAUNCHTECH" />
+					<Property name="LaunchBuildupTime" value="0.250000" />
+					<Property name="ProjectileEffect" value="TECHPROJ" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="TECHIMPACT" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Buff" value="GcPetBattlerEffectTable">
+			<Property name="EffectData" array_size="9">
+				<Property name="Normal" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Lush" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="BUFFLUSH" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Cold" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="BUFFFROZEN" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Fire" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="BUFFFIRE" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Toxic" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="BUFFTOXIC" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Barren" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="BUFFBARREN" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Radioactive" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="BUFFRADIO" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Weird" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="BUFFWEIRD" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Mech" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="BUFFTECH" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Debuff" value="GcPetBattlerEffectTable">
+			<Property name="EffectData" array_size="9">
+				<Property name="Normal" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="" />
+				</Property>
+				<Property name="Lush" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEBUFFLUSH" />
+				</Property>
+				<Property name="Cold" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEBUFFFROZEN" />
+				</Property>
+				<Property name="Fire" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEBUFFFIRE" />
+				</Property>
+				<Property name="Toxic" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEBUFFTOXIC" />
+				</Property>
+				<Property name="Barren" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEBUFFBARREN" />
+				</Property>
+				<Property name="Radioactive" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEBUFFRADIO" />
+				</Property>
+				<Property name="Weird" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEBUFFWEIRD" />
+				</Property>
+				<Property name="Mech" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEBUFFTECH" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="DoTDamage" value="GcPetBattlerEffectTable">
+			<Property name="EffectData" array_size="9">
+				<Property name="Normal" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DOTNORMAL" />
+				</Property>
+				<Property name="Lush" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DOTLUSH" />
+				</Property>
+				<Property name="Cold" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DOTFROZEN" />
+				</Property>
+				<Property name="Fire" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DOTFIRE" />
+				</Property>
+				<Property name="Toxic" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DOTTOXIC" />
+				</Property>
+				<Property name="Barren" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DOTBARREN" />
+				</Property>
+				<Property name="Radioactive" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DOTRADIO" />
+				</Property>
+				<Property name="Weird" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DOTWEIRD" />
+				</Property>
+				<Property name="Mech" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DOTTECH" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Heal" value="GcPetBattlerEffectTable">
+			<Property name="EffectData" array_size="9">
+				<Property name="Normal" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="HEAL" />
+				</Property>
+				<Property name="Lush" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="HEAL" />
+				</Property>
+				<Property name="Cold" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="HEAL" />
+				</Property>
+				<Property name="Fire" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="HEAL" />
+				</Property>
+				<Property name="Toxic" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="HEAL" />
+				</Property>
+				<Property name="Barren" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="HEAL" />
+				</Property>
+				<Property name="Radioactive" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="HEAL" />
+				</Property>
+				<Property name="Weird" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="HEAL" />
+				</Property>
+				<Property name="Mech" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="HEAL" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Shield" value="GcPetBattlerEffectTable">
+			<Property name="EffectData" array_size="9">
+				<Property name="Normal" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEFEND" />
+				</Property>
+				<Property name="Lush" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEFEND" />
+				</Property>
+				<Property name="Cold" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEFEND" />
+				</Property>
+				<Property name="Fire" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEFEND" />
+				</Property>
+				<Property name="Toxic" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEFEND" />
+				</Property>
+				<Property name="Barren" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEFEND" />
+				</Property>
+				<Property name="Radioactive" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEFEND" />
+				</Property>
+				<Property name="Weird" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEFEND" />
+				</Property>
+				<Property name="Mech" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="DEFEND" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="SwapPet" value="GcPetBattlerEffectTable">
+			<Property name="EffectData" array_size="9">
+				<Property name="Normal" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSWAP" />
+				</Property>
+				<Property name="Lush" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSWAP" />
+				</Property>
+				<Property name="Cold" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSWAP" />
+				</Property>
+				<Property name="Fire" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSWAP" />
+				</Property>
+				<Property name="Toxic" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSWAP" />
+				</Property>
+				<Property name="Barren" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSWAP" />
+				</Property>
+				<Property name="Radioactive" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSWAP" />
+				</Property>
+				<Property name="Weird" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSWAP" />
+				</Property>
+				<Property name="Mech" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSWAP" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Stun" value="GcPetBattlerEffectTable">
+			<Property name="EffectData" array_size="9">
+				<Property name="Normal" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSTUN" />
+				</Property>
+				<Property name="Lush" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSTUN" />
+				</Property>
+				<Property name="Cold" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSTUN" />
+				</Property>
+				<Property name="Fire" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSTUN" />
+				</Property>
+				<Property name="Toxic" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSTUN" />
+				</Property>
+				<Property name="Barren" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSTUN" />
+				</Property>
+				<Property name="Radioactive" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSTUN" />
+				</Property>
+				<Property name="Weird" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSTUN" />
+				</Property>
+				<Property name="Mech" value="GcPetBattlerEffectData">
+					<Property name="LaunchEffect" value="" />
+					<Property name="LaunchBuildupTime" value="0.000000" />
+					<Property name="ProjectileEffect" value="" />
+					<Property name="ProjectileFlightTime" value="0.700000" />
+					<Property name="ImpactEffect" value="PETSTUN" />
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="PetBiomeAffinities" array_size="17">
+		<Property name="Lush" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Lush" />
+		</Property>
+		<Property name="Toxic" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Toxic" />
+		</Property>
+		<Property name="Scorched" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Fire" />
+		</Property>
+		<Property name="Radioactive" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Radioactive" />
+		</Property>
+		<Property name="Frozen" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Cold" />
+		</Property>
+		<Property name="Barren" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Barren" />
+		</Property>
+		<Property name="Dead" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Barren" />
+		</Property>
+		<Property name="Weird" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Weird" />
+		</Property>
+		<Property name="Red" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Weird" />
+		</Property>
+		<Property name="Green" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Weird" />
+		</Property>
+		<Property name="Blue" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Weird" />
+		</Property>
+		<Property name="Test" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Lush" />
+		</Property>
+		<Property name="Swamp" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Toxic" />
+		</Property>
+		<Property name="Lava" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Fire" />
+		</Property>
+		<Property name="Waterworld" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Weird" />
+		</Property>
+		<Property name="GasGiant" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Weird" />
+		</Property>
+		<Property name="All" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Lush" />
+		</Property>
+	</Property>
+	<Property name="PetAffinityLoc" array_size="9">
+		<Property name="Normal" value="UI_PB_AFFINITY_NONE" />
+		<Property name="Lush" value="UI_PB_AFFINITY_LUSH" />
+		<Property name="Cold" value="UI_PB_AFFINITY_COLD" />
+		<Property name="Fire" value="UI_PB_AFFINITY_HOT" />
+		<Property name="Toxic" value="UI_PB_AFFINITY_TOXIC" />
+		<Property name="Barren" value="UI_PB_AFFINITY_DUST" />
+		<Property name="Radioactive" value="UI_PB_AFFINITY_RADIO" />
+		<Property name="Weird" value="UI_PB_AFFINITY_WEIRD" />
+		<Property name="Mech" value="UI_PB_AFFINITY_MECH" />
+	</Property>
+	<Property name="PetAffinityLocLower" array_size="9">
+		<Property name="Normal" value="UI_PB_AFFINITY_NONE_L" />
+		<Property name="Lush" value="UI_PB_AFFINITY_LUSH_L" />
+		<Property name="Cold" value="UI_PB_AFFINITY_COLD_L" />
+		<Property name="Fire" value="UI_PB_AFFINITY_HOT_L" />
+		<Property name="Toxic" value="UI_PB_AFFINITY_TOXIC_L" />
+		<Property name="Barren" value="UI_PB_AFFINITY_DUST_L" />
+		<Property name="Radioactive" value="UI_PB_AFFINITY_RADIO_L" />
+		<Property name="Weird" value="UI_PB_AFFINITY_WEIRD_L" />
+		<Property name="Mech" value="UI_PB_AFFINITY_MECH_L" />
+	</Property>
+	<Property name="PetAffinityLocInSentence" array_size="9">
+		<Property name="Normal" value="UI_PB_AFFINITY_NONE_SENT" />
+		<Property name="Lush" value="UI_PB_AFFINITY_LUSH_SENT" />
+		<Property name="Cold" value="UI_PB_AFFINITY_COLD_SENT" />
+		<Property name="Fire" value="UI_PB_AFFINITY_HOT_SWNT" />
+		<Property name="Toxic" value="UI_PB_AFFINITY_TOXIC_SENT" />
+		<Property name="Barren" value="UI_PB_AFFINITY_DUST_SENT" />
+		<Property name="Radioactive" value="UI_PB_AFFINITY_RADIO_SENT" />
+		<Property name="Weird" value="UI_PB_AFFINITY_WEIRD_SENT" />
+		<Property name="Mech" value="UI_PB_AFFINITY_MECH_SENT" />
+	</Property>
+	<Property name="PetAffinityLocStub" array_size="9">
+		<Property name="Normal" value="NONE" />
+		<Property name="Lush" value="LUSH" />
+		<Property name="Cold" value="COLD" />
+		<Property name="Fire" value="HOT" />
+		<Property name="Toxic" value="TOX" />
+		<Property name="Barren" value="DUST" />
+		<Property name="Radioactive" value="RAD" />
+		<Property name="Weird" value="ODD" />
+		<Property name="Mech" value="MECH" />
+	</Property>
+	<Property name="PetTargetLoc" array_size="9">
+		<Property name="Self" value="UI_PB_MOVE_TARGET_SELF" />
+		<Property name="TeamBenchMember" value="" />
+		<Property name="RandomTeamBenchMember" value="" />
+		<Property name="SplitAcrossTeamBench" value="UI_PB_MOVE_TARGET_TEAM" />
+		<Property name="SplitAcrossAllTeam" value="UI_PB_MOVE_TARGET_TEAM" />
+		<Property name="ActiveEnemy" value="UI_PB_MOVE_TARGET_ENEMY" />
+		<Property name="RandomEnemyBenchMember" value="" />
+		<Property name="SplitAcrossEnemyBench" value="UI_PB_MOVE_TARGET_ENEMY_TEAM" />
+		<Property name="SplitAcrossAllEnemies" value="UI_PB_MOVE_TARGET_ENEMY_TEAM" />
+	</Property>
+	<Property name="PetAffinityInTextIconName" array_size="9">
+		<Property name="Normal" value="AFF_NONE" />
+		<Property name="Lush" value="AFF_LUSH" />
+		<Property name="Cold" value="AFF_COLD" />
+		<Property name="Fire" value="AFF_HOT" />
+		<Property name="Toxic" value="AFF_TOX" />
+		<Property name="Barren" value="AFF_DUST" />
+		<Property name="Radioactive" value="AFF_RAD" />
+		<Property name="Weird" value="AFF_WEIRD" />
+		<Property name="Mech" value="AFF_MECH" />
+	</Property>
+	<Property name="PetAffinityStrongVersus" array_size="9">
+		<Property name="Normal" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Normal" />
+		</Property>
+		<Property name="Lush" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Weird" />
+		</Property>
+		<Property name="Cold" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Mech" />
+		</Property>
+		<Property name="Fire" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Cold" />
+		</Property>
+		<Property name="Toxic" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Lush" />
+		</Property>
+		<Property name="Barren" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Toxic" />
+		</Property>
+		<Property name="Radioactive" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Fire" />
+		</Property>
+		<Property name="Weird" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Radioactive" />
+		</Property>
+		<Property name="Mech" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Barren" />
+		</Property>
+	</Property>
+	<Property name="PetAffinityWeakVersus" array_size="9">
+		<Property name="Normal" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Normal" />
+		</Property>
+		<Property name="Lush" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Mech" />
+		</Property>
+		<Property name="Cold" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Radioactive" />
+		</Property>
+		<Property name="Fire" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Barren" />
+		</Property>
+		<Property name="Toxic" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Cold" />
+		</Property>
+		<Property name="Barren" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Lush" />
+		</Property>
+		<Property name="Radioactive" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Toxic" />
+		</Property>
+		<Property name="Weird" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Fire" />
+		</Property>
+		<Property name="Mech" value="GcPetBattlerAffinity">
+			<Property name="PetBattlerAffinity" value="Weird" />
+		</Property>
+	</Property>
+	<Property name="AffinityDamageEffectiveness" array_size="3">
+		<Property name="Ineffective" value="0.660000" />
+		<Property name="Normal" value="1.000000" />
+		<Property name="Effective" value="1.660000" />
+	</Property>
+	<Property name="PetBattleCameraLibrary">
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="IDLE_REMOTE">
+			<Property name="Id" value="IDLE_REMOTE" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="4.500000" />
+				<Property name="Yaw" value="-59.000000" />
+				<Property name="Pitch" value="18.000000" />
+				<Property name="CamOrientYaw" value="64.000000" />
+				<Property name="CamOrientPitch" value="-9.000000" />
+				<Property name="CamOrientRoll" value="-0.000002" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="4.300000" />
+				<Property name="Yaw" value="-58.000000" />
+				<Property name="Pitch" value="17.500000" />
+				<Property name="CamOrientYaw" value="58.000000" />
+				<Property name="CamOrientPitch" value="-9.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="20.000000" />
+			<Property name="FOV" value="75.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="None" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseInOutSine" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="IDLE">
+			<Property name="Id" value="IDLE" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="4.500000" />
+				<Property name="Yaw" value="-59.000000" />
+				<Property name="Pitch" value="18.000000" />
+				<Property name="CamOrientYaw" value="64.000000" />
+				<Property name="CamOrientPitch" value="-10.000000" />
+				<Property name="CamOrientRoll" value="-0.000002" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="4.300000" />
+				<Property name="Yaw" value="-55.000000" />
+				<Property name="Pitch" value="18.500000" />
+				<Property name="CamOrientYaw" value="55.000000" />
+				<Property name="CamOrientPitch" value="-10.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="25.000000" />
+			<Property name="FOV" value="75.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="None" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseInOutSine" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="ATTACK_LOCAL1">
+			<Property name="Id" value="ATTACK_LOCAL1" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.500000" />
+				<Property name="Yaw" value="-35.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="35.000000" />
+				<Property name="CamOrientPitch" value="-2.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.350000" />
+				<Property name="Yaw" value="-40.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="40.000000" />
+				<Property name="CamOrientPitch" value="-2.000000" />
+				<Property name="CamOrientRoll" value="-0.000005" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="75.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="PerformingMoveOutro" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="ATTACK_LOCAL2">
+			<Property name="Id" value="ATTACK_LOCAL2" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.400000" />
+				<Property name="Yaw" value="-20.000000" />
+				<Property name="Pitch" value="12.000000" />
+				<Property name="CamOrientYaw" value="25.000000" />
+				<Property name="CamOrientPitch" value="0.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.000000" />
+				<Property name="Yaw" value="-22.000000" />
+				<Property name="Pitch" value="12.000000" />
+				<Property name="CamOrientYaw" value="25.000000" />
+				<Property name="CamOrientPitch" value="0.000000" />
+				<Property name="CamOrientRoll" value="-0.000005" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="54.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="PerformingMoveOutro" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="ATTACK_LOCAL3">
+			<Property name="Id" value="ATTACK_LOCAL3" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.600000" />
+				<Property name="Yaw" value="-30.000000" />
+				<Property name="Pitch" value="13.000000" />
+				<Property name="CamOrientYaw" value="30.000000" />
+				<Property name="CamOrientPitch" value="0.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.200000" />
+				<Property name="Yaw" value="-30.000000" />
+				<Property name="Pitch" value="13.000000" />
+				<Property name="CamOrientYaw" value="30.000000" />
+				<Property name="CamOrientPitch" value="0.000000" />
+				<Property name="CamOrientRoll" value="-0.000005" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="60.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="PerformingMoveOutro" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="ATTACK_LOCAL4">
+			<Property name="Id" value="ATTACK_LOCAL4" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.800000" />
+				<Property name="Yaw" value="-30.000000" />
+				<Property name="Pitch" value="13.000000" />
+				<Property name="CamOrientYaw" value="35.000000" />
+				<Property name="CamOrientPitch" value="0.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.300000" />
+				<Property name="Yaw" value="-30.000000" />
+				<Property name="Pitch" value="13.000000" />
+				<Property name="CamOrientYaw" value="33.000000" />
+				<Property name="CamOrientPitch" value="0.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="60.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="PerformingMoveOutro" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="LAUNCH_LOCAL1">
+			<Property name="Id" value="LAUNCH_LOCAL1" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="3.200000" />
+				<Property name="Yaw" value="-48.000000" />
+				<Property name="Pitch" value="12.000000" />
+				<Property name="CamOrientYaw" value="45.000000" />
+				<Property name="CamOrientPitch" value="0.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.600000" />
+				<Property name="Yaw" value="-52.000000" />
+				<Property name="Pitch" value="12.000000" />
+				<Property name="CamOrientYaw" value="48.000000" />
+				<Property name="CamOrientPitch" value="0.000000" />
+				<Property name="CamOrientRoll" value="-0.000005" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="60.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="PerformingMoveOutro" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="LAUNCH_LOCAL2">
+			<Property name="Id" value="LAUNCH_LOCAL2" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.800000" />
+				<Property name="Yaw" value="-25.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="25.000000" />
+				<Property name="CamOrientPitch" value="-3.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.100000" />
+				<Property name="Yaw" value="-25.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="22.000000" />
+				<Property name="CamOrientPitch" value="-2.000000" />
+				<Property name="CamOrientRoll" value="-0.000005" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="60.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="PerformingMoveOutro" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="LAUNCH_LOCAL3">
+			<Property name="Id" value="LAUNCH_LOCAL3" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.200000" />
+				<Property name="Yaw" value="-25.000000" />
+				<Property name="Pitch" value="16.000000" />
+				<Property name="CamOrientYaw" value="25.000000" />
+				<Property name="CamOrientPitch" value="-2.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.000000" />
+				<Property name="Yaw" value="-30.000000" />
+				<Property name="Pitch" value="18.000000" />
+				<Property name="CamOrientYaw" value="30.000000" />
+				<Property name="CamOrientPitch" value="-4.000000" />
+				<Property name="CamOrientRoll" value="-0.000005" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="75.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="PerformingMoveOutro" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="LAUNCH_LOCAL4">
+			<Property name="Id" value="LAUNCH_LOCAL4" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.500000" />
+				<Property name="Yaw" value="-20.000000" />
+				<Property name="Pitch" value="12.000000" />
+				<Property name="CamOrientYaw" value="20.000000" />
+				<Property name="CamOrientPitch" value="0.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.000000" />
+				<Property name="Yaw" value="-20.000000" />
+				<Property name="Pitch" value="12.000000" />
+				<Property name="CamOrientYaw" value="18.000000" />
+				<Property name="CamOrientPitch" value="2.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="65.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="PerformingMoveOutro" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="BUFF_LOCAL1">
+			<Property name="Id" value="BUFF_LOCAL1" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.200000" />
+				<Property name="Yaw" value="-15.000000" />
+				<Property name="Pitch" value="12.000000" />
+				<Property name="CamOrientYaw" value="15.000000" />
+				<Property name="CamOrientPitch" value="0.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.200000" />
+				<Property name="Yaw" value="-15.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="15.000000" />
+				<Property name="CamOrientPitch" value="-2.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="5.000000" />
+			<Property name="FOV" value="75.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="None" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseInOutSine" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="BUFF_LOCAL2">
+			<Property name="Id" value="BUFF_LOCAL2" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.500000" />
+				<Property name="Yaw" value="-15.000000" />
+				<Property name="Pitch" value="12.000000" />
+				<Property name="CamOrientYaw" value="15.000000" />
+				<Property name="CamOrientPitch" value="2.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.100000" />
+				<Property name="Yaw" value="-15.000000" />
+				<Property name="Pitch" value="12.000000" />
+				<Property name="CamOrientYaw" value="15.000000" />
+				<Property name="CamOrientPitch" value="2.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="8.000000" />
+			<Property name="FOV" value="62.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="None" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseInOutSine" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="BUFF_LOCAL3">
+			<Property name="Id" value="BUFF_LOCAL3" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.400000" />
+				<Property name="Yaw" value="-40.000000" />
+				<Property name="Pitch" value="12.000000" />
+				<Property name="CamOrientYaw" value="50.000000" />
+				<Property name="CamOrientPitch" value="2.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.000000" />
+				<Property name="Yaw" value="-35.000000" />
+				<Property name="Pitch" value="12.000000" />
+				<Property name="CamOrientYaw" value="55.000000" />
+				<Property name="CamOrientPitch" value="4.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="5.000000" />
+			<Property name="FOV" value="60.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="None" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseInOutSine" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="ATTACK_REMOTE1">
+			<Property name="Id" value="ATTACK_REMOTE1" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.000000" />
+				<Property name="Yaw" value="-25.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="25.000000" />
+				<Property name="CamOrientPitch" value="-3.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.400000" />
+				<Property name="Yaw" value="-28.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="28.000000" />
+				<Property name="CamOrientPitch" value="-3.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="75.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="PerformingMoveOutro" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="ATTACK_REMOTE2">
+			<Property name="Id" value="ATTACK_REMOTE2" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.200000" />
+				<Property name="Yaw" value="-35.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="38.000000" />
+				<Property name="CamOrientPitch" value="-3.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.200000" />
+				<Property name="Yaw" value="-25.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="32.000000" />
+				<Property name="CamOrientPitch" value="-3.000000" />
+				<Property name="CamOrientRoll" value="-0.000005" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="65.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="None" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="ATTACK_REMOTE3">
+			<Property name="Id" value="ATTACK_REMOTE3" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.100000" />
+				<Property name="Yaw" value="-32.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="36.000000" />
+				<Property name="CamOrientPitch" value="0.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.400000" />
+				<Property name="Yaw" value="-35.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="40.000000" />
+				<Property name="CamOrientPitch" value="-2.000000" />
+				<Property name="CamOrientRoll" value="-0.000005" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="70.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="None" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="LAUNCH_REMOTE1">
+			<Property name="Id" value="LAUNCH_REMOTE1" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.100000" />
+				<Property name="Yaw" value="-50.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="55.000000" />
+				<Property name="CamOrientPitch" value="-3.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.500000" />
+				<Property name="Yaw" value="-50.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="56.000000" />
+				<Property name="CamOrientPitch" value="-2.000000" />
+				<Property name="CamOrientRoll" value="-0.000005" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="75.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="PerformingMoveOutro" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="LAUNCH_REMOTE2">
+			<Property name="Id" value="LAUNCH_REMOTE2" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.000000" />
+				<Property name="Yaw" value="-20.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="20.000000" />
+				<Property name="CamOrientPitch" value="-2.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.300000" />
+				<Property name="Yaw" value="-20.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="25.000000" />
+				<Property name="CamOrientPitch" value="-2.000000" />
+				<Property name="CamOrientRoll" value="-0.000005" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="75.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="PerformingMoveOutro" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="LAUNCH_REMOTE3">
+			<Property name="Id" value="LAUNCH_REMOTE3" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.200000" />
+				<Property name="Yaw" value="-20.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="20.000000" />
+				<Property name="CamOrientPitch" value="-3.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.800000" />
+				<Property name="Yaw" value="-20.000000" />
+				<Property name="Pitch" value="15.000000" />
+				<Property name="CamOrientYaw" value="22.000000" />
+				<Property name="CamOrientPitch" value="-3.000000" />
+				<Property name="CamOrientRoll" value="-0.000005" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="65.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="PerformingMoveOutro" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="LAUNCH_REMOTE4">
+			<Property name="Id" value="LAUNCH_REMOTE4" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.300000" />
+				<Property name="Yaw" value="-40.000000" />
+				<Property name="Pitch" value="12.000000" />
+				<Property name="CamOrientYaw" value="45.000000" />
+				<Property name="CamOrientPitch" value="-1.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="2.800000" />
+				<Property name="Yaw" value="-45.000000" />
+				<Property name="Pitch" value="12.000000" />
+				<Property name="CamOrientYaw" value="48.000000" />
+				<Property name="CamOrientPitch" value="0.000000" />
+				<Property name="CamOrientRoll" value="-0.000005" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="4.000000" />
+			<Property name="FOV" value="60.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="PerformingMoveOutro" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseOutQuart" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="BUFF_REMOTE1">
+			<Property name="Id" value="BUFF_REMOTE1" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="1.300000" />
+				<Property name="Yaw" value="-45.000000" />
+				<Property name="Pitch" value="20.000000" />
+				<Property name="CamOrientYaw" value="30.000000" />
+				<Property name="CamOrientPitch" value="2.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="1.300000" />
+				<Property name="Yaw" value="-45.000000" />
+				<Property name="Pitch" value="22.000000" />
+				<Property name="CamOrientYaw" value="30.000000" />
+				<Property name="CamOrientPitch" value="2.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="5.000000" />
+			<Property name="FOV" value="60.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="None" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseInOutSine" />
+			</Property>
+		</Property>
+		<Property name="PetBattleCameraLibrary" value="GcPetBattleCamera" _id="BUFF_REMOTE2">
+			<Property name="Id" value="BUFF_REMOTE2" />
+			<Property name="Start" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="1.000000" />
+				<Property name="Yaw" value="-25.000000" />
+				<Property name="Pitch" value="20.000000" />
+				<Property name="CamOrientYaw" value="25.000000" />
+				<Property name="CamOrientPitch" value="5.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="End" value="GcPetBattleCameraPose">
+				<Property name="Distance" value="1.000000" />
+				<Property name="Yaw" value="-35.000000" />
+				<Property name="Pitch" value="20.000000" />
+				<Property name="CamOrientYaw" value="25.000000" />
+				<Property name="CamOrientPitch" value="5.000000" />
+				<Property name="CamOrientRoll" value="0.000000" />
+			</Property>
+			<Property name="InterpMode" value="Orbit" />
+			<Property name="Duration" value="8.000000" />
+			<Property name="FOV" value="65.000000" />
+			<Property name="SlowBeforePetPhase" value="GcPetBattlerMoveState">
+				<Property name="PetState" value="None" />
+			</Property>
+			<Property name="PetPhaseSlowValue" value="0.300000" />
+			<Property name="EaseType" value="TkCurveType">
+				<Property name="Curve" value="EaseInOutSine" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="PetBattleCameraSetsLocal" array_size="10">
+		<Property name="None" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="IDLE" _index="0" />
+			</Property>
+		</Property>
+		<Property name="DamageNoProjectile" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="LAUNCH_LOCAL1" _index="0" />
+				<Property name="Options" value="LAUNCH_LOCAL2" _index="1" />
+				<Property name="Options" value="LAUNCH_LOCAL3" _index="2" />
+				<Property name="Options" value="LAUNCH_LOCAL4" _index="3" />
+			</Property>
+		</Property>
+		<Property name="Projectile" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="LAUNCH_LOCAL1" _index="0" />
+				<Property name="Options" value="LAUNCH_LOCAL2" _index="1" />
+				<Property name="Options" value="LAUNCH_LOCAL3" _index="2" />
+				<Property name="Options" value="LAUNCH_LOCAL4" _index="3" />
+			</Property>
+		</Property>
+		<Property name="Buff" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="BUFF_LOCAL1" _index="0" />
+				<Property name="Options" value="BUFF_LOCAL2" _index="1" />
+				<Property name="Options" value="BUFF_LOCAL3" _index="2" />
+			</Property>
+		</Property>
+		<Property name="Debuff" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="ATTACK_LOCAL1" _index="0" />
+				<Property name="Options" value="ATTACK_LOCAL2" _index="1" />
+				<Property name="Options" value="ATTACK_LOCAL3" _index="2" />
+				<Property name="Options" value="ATTACK_LOCAL4" _index="3" />
+			</Property>
+		</Property>
+		<Property name="DoTDamage" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="ATTACK_LOCAL1" _index="0" />
+				<Property name="Options" value="ATTACK_LOCAL2" _index="1" />
+				<Property name="Options" value="ATTACK_LOCAL3" _index="2" />
+				<Property name="Options" value="ATTACK_LOCAL4" _index="3" />
+			</Property>
+		</Property>
+		<Property name="Heal" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="BUFF_LOCAL1" _index="0" />
+				<Property name="Options" value="BUFF_LOCAL2" _index="1" />
+				<Property name="Options" value="BUFF_LOCAL3" _index="2" />
+			</Property>
+		</Property>
+		<Property name="Shield" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="BUFF_LOCAL1" _index="0" />
+				<Property name="Options" value="BUFF_LOCAL2" _index="1" />
+				<Property name="Options" value="BUFF_LOCAL3" _index="2" />
+			</Property>
+		</Property>
+		<Property name="SwapPet" value="GcPetBattleCameraSet">
+			<Property name="Options" />
+		</Property>
+		<Property name="Stun" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="ATTACK_LOCAL1" _index="0" />
+				<Property name="Options" value="ATTACK_LOCAL2" _index="1" />
+				<Property name="Options" value="ATTACK_LOCAL3" _index="2" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="PetBattleCameraSetsRemote" array_size="10">
+		<Property name="None" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="IDLE_REMOTE" _index="0" />
+			</Property>
+		</Property>
+		<Property name="DamageNoProjectile" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="ATTACK_REMOTE1" _index="0" />
+				<Property name="Options" value="ATTACK_REMOTE2" _index="1" />
+				<Property name="Options" value="ATTACK_REMOTE3" _index="2" />
+			</Property>
+		</Property>
+		<Property name="Projectile" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="LAUNCH_REMOTE1" _index="0" />
+				<Property name="Options" value="LAUNCH_REMOTE2" _index="1" />
+				<Property name="Options" value="LAUNCH_REMOTE3" _index="2" />
+				<Property name="Options" value="LAUNCH_REMOTE4" _index="3" />
+			</Property>
+		</Property>
+		<Property name="Buff" value="GcPetBattleCameraSet">
+			<Property name="Options" />
+		</Property>
+		<Property name="Debuff" value="GcPetBattleCameraSet">
+			<Property name="Options" />
+		</Property>
+		<Property name="DoTDamage" value="GcPetBattleCameraSet">
+			<Property name="Options" />
+		</Property>
+		<Property name="Heal" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="BUFF_REMOTE1" _index="0" />
+				<Property name="Options" value="BUFF_REMOTE2" _index="1" />
+			</Property>
+		</Property>
+		<Property name="Shield" value="GcPetBattleCameraSet">
+			<Property name="Options">
+				<Property name="Options" value="BUFF_REMOTE1" _index="0" />
+				<Property name="Options" value="BUFF_REMOTE2" _index="1" />
+			</Property>
+		</Property>
+		<Property name="SwapPet" value="GcPetBattleCameraSet">
+			<Property name="Options" />
+		</Property>
+		<Property name="Stun" value="GcPetBattleCameraSet">
+			<Property name="Options" />
+		</Property>
+	</Property>
+	<Property name="PetBattleCamerWanderPos" value="TkCameraWanderData">
+		<Property name="CamWander" value="true" />
+		<Property name="CamWanderPhase" value="0.050000" />
+		<Property name="CamWanderAmplitude" value="0.050000" />
+	</Property>
+	<Property name="PetBattleCamerWanderOrientation" value="TkCameraWanderData">
+		<Property name="CamWander" value="true" />
+		<Property name="CamWanderPhase" value="0.020000" />
+		<Property name="CamWanderAmplitude" value="0.700000" />
+	</Property>
+	<Property name="PetHealthBarAnimSpeed" value="65.000000" />
+	<Property name="PetAffinityGlowColours" array_size="9">
+		<Property name="Normal">
+			<Property name="R" value="1.000000" />
+			<Property name="G" value="1.000000" />
+			<Property name="B" value="1.000000" />
+			<Property name="A" value="1.000000" />
+		</Property>
+		<Property name="Lush">
+			<Property name="R" value="0.492670" />
+			<Property name="G" value="0.820155" />
+			<Property name="B" value="0.678946" />
+			<Property name="A" value="1.000000" />
+		</Property>
+		<Property name="Cold">
+			<Property name="R" value="0.531348" />
+			<Property name="G" value="0.821803" />
+			<Property name="B" value="0.937984" />
+			<Property name="A" value="1.000000" />
+		</Property>
+		<Property name="Fire">
+			<Property name="R" value="0.831008" />
+			<Property name="G" value="0.293917" />
+			<Property name="B" value="0.170531" />
+			<Property name="A" value="1.000000" />
+		</Property>
+		<Property name="Toxic">
+			<Property name="R" value="0.678797" />
+			<Property name="G" value="0.880620" />
+			<Property name="B" value="0.312991" />
+			<Property name="A" value="1.000000" />
+		</Property>
+		<Property name="Barren">
+			<Property name="R" value="0.779845" />
+			<Property name="G" value="0.682883" />
+			<Property name="B" value="0.366142" />
+			<Property name="A" value="1.000000" />
+		</Property>
+		<Property name="Radioactive">
+			<Property name="R" value="0.962791" />
+			<Property name="G" value="0.905520" />
+			<Property name="B" value="0.300091" />
+			<Property name="A" value="1.000000" />
+		</Property>
+		<Property name="Weird">
+			<Property name="R" value="0.589791" />
+			<Property name="G" value="0.326427" />
+			<Property name="B" value="0.885271" />
+			<Property name="A" value="1.000000" />
+		</Property>
+		<Property name="Mech">
+			<Property name="R" value="0.353267" />
+			<Property name="G" value="0.455429" />
+			<Property name="B" value="0.937984" />
+			<Property name="A" value="1.000000" />
+		</Property>
+	</Property>
+	<Property name="NearestTableAudioFadeTime" value="0.500000" />
+	<Property name="PetBattlerImpactScreenScale" value="0.100000" />
+	<Property name="PetBattlerImpactScreenWidth" value="384" />
+	<Property name="PetBattlerImpactScreenHeight" value="128" />
+	<Property name="PetBattlerVRPanelScale" array_size="7">
+		<Property name="CombatLog" value="0.250000" />
+		<Property name="LocalPlayer" value="0.100000" />
+		<Property name="Opponent" value="0.100000" />
+		<Property name="Actions" value="0.300000" />
+		<Property name="OpponentActions" value="0.300000" />
+		<Property name="MatchInfo" value="0.200000" />
+		<Property name="Popup" value="0.190000" />
+	</Property>
+	<Property name="PetBattleVRMainPanelOffset">
+		<Property name="X" value="0.000000" />
+		<Property name="Y" value="1.400000" />
+		<Property name="Z" value="0.000000" />
+	</Property>
+	<Property name="PetBattleVRPanelOffset" array_size="7">
+		<Property name="CombatLog">
+			<Property name="X" value="-1.100000" />
+			<Property name="Y" value="1.760000" />
+			<Property name="Z" value="-0.840000" />
+		</Property>
+		<Property name="LocalPlayer">
+			<Property name="X" value="0.600000" />
+			<Property name="Y" value="1.250000" />
+			<Property name="Z" value="0.700000" />
+		</Property>
+		<Property name="Opponent">
+			<Property name="X" value="0.600000" />
+			<Property name="Y" value="1.250000" />
+			<Property name="Z" value="-0.700000" />
+		</Property>
+		<Property name="Actions">
+			<Property name="X" value="-1.200000" />
+			<Property name="Y" value="1.850000" />
+			<Property name="Z" value="0.400000" />
+		</Property>
+		<Property name="OpponentActions">
+			<Property name="X" value="-1.200000" />
+			<Property name="Y" value="1.850000" />
+			<Property name="Z" value="0.400000" />
+		</Property>
+		<Property name="MatchInfo">
+			<Property name="X" value="0.000000" />
+			<Property name="Y" value="2.450000" />
+			<Property name="Z" value="0.000000" />
+		</Property>
+		<Property name="Popup">
+			<Property name="X" value="0.800000" />
+			<Property name="Y" value="1.400000" />
+			<Property name="Z" value="0.000000" />
+		</Property>
+	</Property>
+</Data>
