@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (7.04.1.3)-->
+<Data template="cTkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="TkNodeDistributionComponentData">
+			<Property name="TkNodeDistributionComponentData">
+				<Property name="Entries">
+					<Property name="Entries" value="TkNodeDistributionEntry" _index="0">
+						<Property name="Name" value="DIST_COMMON" />
+						<Property name="MinCount" value="20" />
+						<Property name="MaxCount" value="30" />
+					</Property>
+					<Property name="Entries" value="TkNodeDistributionEntry" _index="1">
+						<Property name="Name" value="DIST_SMUGGLE" />
+						<Property name="MinCount" value="1" />
+						<Property name="MaxCount" value="1" />
+					</Property>
+					<Property name="Entries" value="TkNodeDistributionEntry" _index="2">
+						<Property name="Name" value="DIST_BLACKBOX" />
+						<Property name="MinCount" value="1" />
+						<Property name="MaxCount" value="1" />
+					</Property>
+					<Property name="Entries" value="TkNodeDistributionEntry" _index="3">
+						<Property name="Name" value="DIST_LOCKBOX" />
+						<Property name="MinCount" value="3" />
+						<Property name="MaxCount" value="3" />
+					</Property>
+					<Property name="Entries" value="TkNodeDistributionEntry" _index="4">
+						<Property name="Name" value="DIST_REACTOR" />
+						<Property name="MinCount" value="1" />
+						<Property name="MaxCount" value="1" />
+					</Property>
+					<Property name="Entries" value="TkNodeDistributionEntry" _index="5">
+						<Property name="Name" value="DIST_CORE" />
+						<Property name="MinCount" value="1" />
+						<Property name="MaxCount" value="1" />
+					</Property>
+					<Property name="Entries" value="TkNodeDistributionEntry" _index="6">
+						<Property name="Name" value="DIST_AUX" />
+						<Property name="MinCount" value="3" />
+						<Property name="MaxCount" value="3" />
+					</Property>
+					<Property name="Entries" value="TkNodeDistributionEntry" _index="7">
+						<Property name="Name" value="DIST_DATACORE" />
+						<Property name="MinCount" value="3" />
+						<Property name="MaxCount" value="3" />
+					</Property>
+					<Property name="Entries" value="TkNodeDistributionEntry" _index="8">
+						<Property name="Name" value="DIST_CANISTER" />
+						<Property name="MinCount" value="3" />
+						<Property name="MaxCount" value="5" />
+					</Property>
+				</Property>
+				<Property name="HideNotDestroy" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkAudioComponentData">
+			<Property name="TkAudioComponentData">
+				<Property name="Ambient" value="POI_Hulk_Creaks" />
+				<Property name="AmbientState" value="" />
+				<Property name="Shutdown" value="" />
+				<Property name="MaxDistance" value="2000" />
+				<Property name="OcclusionRadius" value="0.000000" />
+				<Property name="OcclusionRange" value="0.000000" />
+				<Property name="LocalOnly" value="false" />
+				<Property name="AnimTriggers" />
+				<Property name="Emitters" />
+			</Property>
+		</Property>
+		<Property name="Components" value="TkPhysicsComponentData">
+			<Property name="TkPhysicsComponentData">
+				<Property name="Data" value="TkPhysicsData">
+					<Property name="Mass" value="0.000000" />
+					<Property name="Friction" value="0.500000" />
+					<Property name="RollingFriction" value="0.200000" />
+					<Property name="AngularDamping" value="0.200000" />
+					<Property name="LinearDamping" value="0.100000" />
+					<Property name="Restitution" value="0.000000" />
+					<Property name="Gravity" value="20.000000" />
+					<Property name="CanBeTooSteepForTeleporter" value="true" />
+				</Property>
+				<Property name="CollisionGroup" value="GcPhysicsCollisionGroups">
+					<Property name="CollisionGroup" value="Normal" />
+				</Property>
+				<Property name="TriggerVolume" value="false" />
+				<Property name="TriggerVolumeType" value="TkVolumeTriggerType">
+					<Property name="VolumeTriggerType" value="Open" />
+				</Property>
+				<Property name="SurfaceProperties" value="None" />
+				<Property name="ModelOwnership" value="Model" />
+				<Property name="Climbable" value="false" />
+				<Property name="Walkable" value="true" />
+				<Property name="Floor" value="false" />
+				<Property name="IgnoreModelOwner" value="false" />
+				<Property name="NoVehicleCollide" value="false" />
+				<Property name="NoPlayerCollide" value="false" />
+				<Property name="NoTerrainCollide" value="false" />
+				<Property name="NoFireCollide" value="false" />
+				<Property name="NoFallDamage" value="false" />
+				<Property name="IgnoreAllCollisions" value="false" />
+				<Property name="BlocksInteract" value="true" />
+				<Property name="CameraInvisible" value="false" />
+				<Property name="InvisibleForInteraction" value="false" />
+				<Property name="AllowTeleporter" value="false" />
+				<Property name="BlockTeleporter" value="false" />
+				<Property name="DisableGravity" value="false" />
+				<Property name="SpinOnCreate" value="0.000000" />
+				<Property name="ScaleAffectsMass" value="false" />
+				<Property name="AllowedDefaultCollision" value="true" />
+				<Property name="Animated" value="false" />
+				<Property name="DisablePhysicsUntilGravGunned" value="false" />
+				<Property name="EnableSingleSidedMeshCollision" value="false" />
+				<Property name="UseBasePartOptimisation" value="false" />
+				<Property name="IsTransporter" value="false" />
+				<Property name="UseSimpleCharacterCollision" value="false" />
+				<Property name="RotateSimpleCharacterCollisionCapsule" value="false" />
+				<Property name="SimpleCharacterCollisionRadius" value="0.500000" />
+				<Property name="SimpleCharacterCollisionHeight" value="2.000000" />
+				<Property name="SimpleCharacterCollisionHeightOffset" value="0.000000" />
+				<Property name="SimpleCharacterCollisionFwdOffset" value="0.000000" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcMeltdownComponentData">
+			<Property name="GcMeltdownComponentData">
+				<Property name="Duration" value="180.000000" />
+				<Property name="DurationRandomAddition" value="60.000000" />
+				<Property name="MinArcingDelay" value="0.500000" />
+				<Property name="MaxArcingDelay" value="8.000000" />
+				<Property name="MinExplosionDelay" value="0.850000" />
+				<Property name="MaxExplosionDelay" value="20.000000" />
+				<Property name="PressureDecayRate" value="0.000300" />
+				<Property name="MeltdownMinRoll" value="0.050000" />
+				<Property name="MeltdownMaxRoll" value="0.300000" />
+				<Property name="WarningRadius" value="500.000000" />
+				<Property name="BlockingMissionIds">
+					<Property name="BlockingMissionIds" value="HULK_CHRT_TUT" _index="0" />
+				</Property>
+				<Property name="AreaDamage" value="HULKMELTDOWN" />
+				<Property name="WarningMessage" value="UI_HULK_MELTDOWN_WARNING_OSD" />
+				<Property name="MeltdownStartAudio" value="GcAudioWwiseEvents">
+					<Property name="AkEvent" value="FREIGHTER_ALARM_START" />
+				</Property>
+				<Property name="MeltdownAlarmAudio" value="GcAudioWwiseEvents">
+					<Property name="AkEvent" value="POI_HULK_ALARM" />
+				</Property>
+				<Property name="FlashLightNodeName" value="LightControls" />
+				<Property name="SpinLightNodeName" value="EmergencyLightData" />
+				<Property name="ArcNodeName" value="HulkPressureElectricalArcData" />
+				<Property name="ExplosionNodeName" value="HulkPressureExplosionsData" />
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances" array_size="5">
+		<Property name="LodDistances" value="0.000000" _index="0" />
+		<Property name="LodDistances" value="250.000000" _index="1" />
+		<Property name="LodDistances" value="580.000000" _index="2" />
+		<Property name="LodDistances" value="1150.000000" _index="3" />
+		<Property name="LodDistances" value="5000.000000" _index="4" />
+	</Property>
+</Data>

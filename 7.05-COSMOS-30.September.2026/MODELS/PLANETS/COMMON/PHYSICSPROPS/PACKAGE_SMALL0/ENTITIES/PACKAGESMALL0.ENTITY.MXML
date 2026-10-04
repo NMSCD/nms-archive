@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--File created using MBINCompiler version (7.04.1.3)-->
+<Data template="cTkAttachmentData">
+	<Property name="AdditionalData" />
+	<Property name="Components">
+		<Property name="Components" value="GcMoveableObjectComponentData">
+			<Property name="GcMoveableObjectComponentData">
+				<Property name="MinImpactStrength" value="30.000000" />
+				<Property name="MaxImpactStrength" value="80.000000" />
+				<Property name="MinRelativeVelocity" value="3.000000" />
+				<Property name="MinImpactScale" value="0.500000" />
+				<Property name="MaxImpactScale" value="2.000000" />
+				<Property name="DefaultCollisionEffect" value="PHYSIMPACT" />
+				<Property name="TerrainCollisionEffect" value="PHYSIMPACTTERR" />
+				<Property name="Cooldown" value="0.300000" />
+				<Property name="GlobalCooldown" value="0.100000" />
+				<Property name="UseGravGunGrabRotationTarget" value="true" />
+				<Property name="GravGunGrabRotationTarget">
+					<Property name="X" value="0.000000" />
+					<Property name="Y" value="0.000000" />
+					<Property name="Z" value="0.000000" />
+				</Property>
+				<Property name="EnergyRequiredToGrab" value="0.000000" />
+				<Property name="SecondsToDisableCollisionAfterGrabbing" value="0.000000" />
+				<Property name="GravGunGrabRotationBobTorqueMultiplier" value="1.000000" />
+				<Property name="GravGunGrabDragRotationMultiplier" value="1.000000" />
+				<Property name="GravGunGrabMaxAngularSpeedMultiplier" value="1.000000" />
+				<Property name="GravGunGrabFreeRotationDampingMultiplier" value="1.000000" />
+				<Property name="GravGunGrabPositionSpringMultiplier" value="1.000000" />
+				<Property name="GravGunHoldOffset" value="1.000000" />
+				<Property name="GravGunHoldOffsetUp" value="0.200000" />
+				<Property name="GravGunHoldOffsetSide" value="-0.600000" />
+				<Property name="OnTruckMinRelativeVelocityModifier" value="1.500000" />
+				<Property name="OnTruckImpactStrengthModifier" value="0.500000" />
+				<Property name="OnTruckCooldownModifier" value="2.000000" />
+				<Property name="DroneImpactStrengthModifier" value="20.000000" />
+				<Property name="DroneImpactDamageModifier" value="20.000000" />
+				<Property name="ReplicationScene" value="MODELS/COMMON/UTILS/PHYSICPROPREPLICATION.DAE" />
+				<Property name="LocalOnlyDetach" value="false" />
+				<Property name="MakeMasterModel" value="false" />
+				<Property name="NotifyParentEncounterWhenGrabbed" value="false" />
+				<Property name="MeltdownChance" value="0.000000" />
+				<Property name="ImmediateMeltdownChance" value="0.000000" />
+				<Property name="SpaceFloaterChanceOnDetatch" value="0.000000" />
+				<Property name="MarkPoiAsCompleteOnDetach" value="false" />
+				<Property name="CanGoInBiggs" value="true" />
+				<Property name="UseHighlightEffect" value="false" />
+				<Property name="TipLocIdGrab" value="UI_COST_GRAB_COLLECT" />
+				<Property name="TipLocIdGrabUnequipped" value="UI_COST_GRAB_UNEQUIPPED" />
+				<Property name="TipLocIdGrabNoTech" value="UI_COST_GRAB_NO_GUN" />
+				<Property name="TipLocIdGrabShoot" value="UI_COST_GRAB_SHOOT" />
+				<Property name="TipLocIdGrabShootCycle" value="UI_COST_GRAB_SHOOT_CYCLE" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcTagComponentData" linked="MODELS/PLANETS/COMMON/PHYSICSPROPS/ENTITIES/PHYSICSOBJECTS.SPECIAL.TAGCOMPONENT.MXML">
+			<Property name="GcTagComponentData">
+				<Property name="StaticTags" value="GcStaticTag">
+					<Property name="StaticTag" value="7" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Components" value="TkPhysicsComponentData" linked="MODELS/PLANETS/COMMON/PHYSICSPROPS/ENTITIES/PHYSICSOBJECTS.SMALL.PHYSICSCOMPONENT.MXML">
+			<Property name="TkPhysicsComponentData">
+				<Property name="Data" value="TkPhysicsData">
+					<Property name="Mass" value="50.000000" />
+					<Property name="Friction" value="0.500000" />
+					<Property name="RollingFriction" value="0.200000" />
+					<Property name="AngularDamping" value="0.200000" />
+					<Property name="LinearDamping" value="0.100000" />
+					<Property name="Restitution" value="0.000000" />
+					<Property name="Gravity" value="20.000000" />
+					<Property name="CanBeTooSteepForTeleporter" value="true" />
+				</Property>
+				<Property name="CollisionGroup" value="GcPhysicsCollisionGroups">
+					<Property name="CollisionGroup" value="PlayerMovableObject" />
+				</Property>
+				<Property name="TriggerVolume" value="false" />
+				<Property name="TriggerVolumeType" value="TkVolumeTriggerType">
+					<Property name="VolumeTriggerType" value="Open" />
+				</Property>
+				<Property name="SurfaceProperties" value="None" />
+				<Property name="ModelOwnership" value="Model" />
+				<Property name="Climbable" value="false" />
+				<Property name="Walkable" value="true" />
+				<Property name="Floor" value="false" />
+				<Property name="IgnoreModelOwner" value="false" />
+				<Property name="NoVehicleCollide" value="false" />
+				<Property name="NoPlayerCollide" value="false" />
+				<Property name="NoTerrainCollide" value="false" />
+				<Property name="NoFireCollide" value="false" />
+				<Property name="NoFallDamage" value="false" />
+				<Property name="IgnoreAllCollisions" value="false" />
+				<Property name="BlocksInteract" value="true" />
+				<Property name="CameraInvisible" value="false" />
+				<Property name="InvisibleForInteraction" value="false" />
+				<Property name="AllowTeleporter" value="false" />
+				<Property name="BlockTeleporter" value="false" />
+				<Property name="DisableGravity" value="false" />
+				<Property name="SpinOnCreate" value="0.000000" />
+				<Property name="ScaleAffectsMass" value="false" />
+				<Property name="AllowedDefaultCollision" value="true" />
+				<Property name="Animated" value="false" />
+				<Property name="DisablePhysicsUntilGravGunned" value="true" />
+				<Property name="EnableSingleSidedMeshCollision" value="false" />
+				<Property name="UseBasePartOptimisation" value="false" />
+				<Property name="IsTransporter" value="false" />
+				<Property name="UseSimpleCharacterCollision" value="false" />
+				<Property name="RotateSimpleCharacterCollisionCapsule" value="false" />
+				<Property name="SimpleCharacterCollisionRadius" value="0.500000" />
+				<Property name="SimpleCharacterCollisionHeight" value="2.000000" />
+				<Property name="SimpleCharacterCollisionHeightOffset" value="0.000000" />
+				<Property name="SimpleCharacterCollisionFwdOffset" value="0.000000" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcScannableComponentData" linked="MODELS/PLANETS/COMMON/PHYSICSPROPS/ENTITIES/PHYSICSOBJECTS.SPECIAL.SCANNABLECOMPONENT.MXML">
+			<Property name="GcScannableComponentData">
+				<Property name="ScanRange" value="350.000000" />
+				<Property name="ScanName" value="UI_SCAN_PHYSICS_CARGO_SPEC" />
+				<Property name="ScanTime" value="30.000000" />
+				<Property name="CompassRangeMultiplier" value="0.600000" />
+				<Property name="AlwaysShowRange" value="16.000000" />
+				<Property name="HideCompassInAlwaysShowRange" value="true" />
+				<Property name="CanTagIcon" value="true" />
+				<Property name="ClearTagOnArrival" value="true" />
+				<Property name="DisableIfBuildingPart" value="false" />
+				<Property name="DisableIfInBase" value="false" />
+				<Property name="UseModelNode" value="true" />
+				<Property name="Icon" value="GcScannerIconTypes">
+					<Property name="ScanIconType" value="GravityGunCargo" />
+				</Property>
+				<Property name="BinocsDiscoIconOverride" value="GcDiscoveryType">
+					<Property name="DiscoveryType" value="Unknown" />
+				</Property>
+				<Property name="ScannableType" value="Binoculars" />
+				<Property name="IsPlacedMarker" value="false" />
+				<Property name="ShowInFreighterBranchRoom" value="false" />
+				<Property name="TellPlayerIfFreighterObjectUsed" value="false" />
+				<Property name="FreighterObjectAlreadyUsedLocID" value="UI_ABAND_LOG_READ" />
+				<Property name="GetIconAndNameFromSettlementBuilding" value="false" />
+				<Property name="AllowedToMerge" value="true" />
+				<Property name="MarkerActiveWithNodeInactive" value="true" />
+				<Property name="ValidMissionSurveyIds" />
+				<Property name="MinDisplayDistanceOverride" value="-1.000000" />
+				<Property name="MarkerOffsetOverride" value="0.000000" />
+				<Property name="ForceCompassMarkerOnForScannerIcon" value="false" />
+			</Property>
+		</Property>
+		<Property name="Components" value="GcDeliverableComponentData">
+			<Property name="GcDeliverableComponentData">
+				<Property name="DeliveryType" value="GcDeliverableType">
+					<Property name="DeliverableType" value="Item1" />
+				</Property>
+			</Property>
+		</Property>
+		<Property name="Components" value="GcRecyclableComponentData">
+			<Property name="GcRecyclableComponentData">
+				<Property name="RecyclerReward" array_size="7">
+					<Property name="Scrap" value="GcRecyclableReward">
+						<Property name="RewardID" value="R_POSTMAN_S" />
+					</Property>
+					<Property name="Toxic" value="GcRecyclableReward">
+						<Property name="RewardID" value="" />
+					</Property>
+					<Property name="Radioactive" value="GcRecyclableReward">
+						<Property name="RewardID" value="" />
+					</Property>
+					<Property name="Explosive" value="GcRecyclableReward">
+						<Property name="RewardID" value="" />
+					</Property>
+					<Property name="TruckFurnace" value="GcRecyclableReward">
+						<Property name="RewardID" value="" />
+					</Property>
+					<Property name="Dematerializer" value="GcRecyclableReward">
+						<Property name="RewardID" value="" />
+					</Property>
+					<Property name="TractorBeam" value="GcRecyclableReward">
+						<Property name="RewardID" value="" />
+					</Property>
+				</Property>
+			</Property>
+		</Property>
+	</Property>
+	<Property name="LodDistances" array_size="5">
+		<Property name="LodDistances" value="0.000000" _index="0" />
+		<Property name="LodDistances" value="50.000000" _index="1" />
+		<Property name="LodDistances" value="80.000000" _index="2" />
+		<Property name="LodDistances" value="150.000000" _index="3" />
+		<Property name="LodDistances" value="500.000000" _index="4" />
+	</Property>
+</Data>

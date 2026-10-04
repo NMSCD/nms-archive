@@ -1,0 +1,127 @@
+[[FX]]
+
+// Samplers
+sampler gBufferMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 0;
+};
+
+// Uniforms
+float4 gCompressCoordsOffsetVec4 = { 0.0, 0.0, 0.0, 0.0 };
+
+// Contexts
+
+context COMPRESSBC1
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_COMPRESSBC1;
+    ComputeShader = compile GLSL CS_COMPRESSBC1;
+}
+
+context COMPRESSBC3
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_COMPRESSBC3;
+    ComputeShader = compile GLSL CS_COMPRESSBC3;
+}
+
+context COMPRESSBC4
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_COMPRESSBC4;
+    ComputeShader = compile GLSL CS_COMPRESSBC4;
+}
+
+context COMPRESSBC5
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_COMPRESSBC5;
+    ComputeShader = compile GLSL CS_COMPRESSBC5;
+}
+
+context COMPRESSBC7
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_COMPRESSBC7;
+    ComputeShader = compile GLSL CS_COMPRESSBC7;
+}
+
+context COMPRESSBC7_TER
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_COMPRESSBC7_TERR;
+    ComputeShader = compile GLSL CS_COMPRESSBC7_TERR;
+}
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#include "Compress/CompressVertex.shader.h"
+
+[[FS_COMPRESSBC1]]
+// =================================================================================================
+#define D_BC1
+#include "Compress/CompressFragment.shader.h"
+
+[[FS_COMPRESSBC3]]
+// =================================================================================================
+#define D_BC3
+#include "Compress/CompressFragment.shader.h"
+
+[[FS_COMPRESSBC4]]
+// =================================================================================================
+#define D_BC4
+#include "Compress/CompressFragment.shader.h"
+
+[[FS_COMPRESSBC5]]
+// =================================================================================================
+#define D_BC5
+#include "Compress/CompressFragment.shader.h"
+
+[[FS_COMPRESSBC7]]
+// =================================================================================================
+#define D_BC7
+#include "Compress/CompressFragment.shader.h"
+
+[[FS_COMPRESSBC7_TERR]]
+// =================================================================================================
+#define D_BC7
+#define D_HEIGHTFIELD_MODE
+#include "Compress/CompressLegacyFragment.shader.h"
+
+[[CS_COMPRESSBC1]]
+// =================================================================================================
+#define D_BC1
+#define D_COMPUTECOMPRESS
+#include "Compress/CompressFragment.shader.h"
+
+[[CS_COMPRESSBC3]]
+// =================================================================================================
+#define D_BC3
+#define D_COMPUTECOMPRESS
+#include "Compress/CompressFragment.shader.h"
+
+[[CS_COMPRESSBC4]]
+// =================================================================================================
+#define D_BC4
+#define D_COMPUTECOMPRESS
+#include "Compress/CompressFragment.shader.h"
+
+[[CS_COMPRESSBC5]]
+// =================================================================================================
+#define D_BC5
+#define D_COMPUTECOMPRESS
+#include "Compress/CompressFragment.shader.h"
+
+[[CS_COMPRESSBC7]]
+// =================================================================================================
+#define D_BC7
+#define D_COMPUTECOMPRESS
+#include "Compress/CompressFragment.shader.h"
+
+[[CS_COMPRESSBC7_TERR]]
+// =================================================================================================
+#define D_BC7
+#define D_COMPUTECOMPRESS
+#define D_HEIGHTFIELD_MODE
+#include "Compress/CompressLegacyFragment.shader.h"

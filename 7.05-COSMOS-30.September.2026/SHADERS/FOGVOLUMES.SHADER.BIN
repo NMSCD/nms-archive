@@ -1,0 +1,82 @@
+[[FX]]
+
+// Samplers
+sampler gBufferMap = sampler_state
+{
+    TexUnit = 0;
+};
+
+sampler gBuffer1Map = sampler_state
+{
+    TexUnit = 1;
+};
+
+sampler gBuffer2Map = sampler_state
+{
+    TexUnit = 2;
+};
+
+sampler gBuffer3Map = sampler_state
+{
+    TexUnit = 3;
+};
+
+sampler gBuffer4Map = sampler_state
+{
+    TexUnit = 4;
+};
+
+sampler gBuffer5Map = sampler_state
+{
+    TexUnit = 5;
+};
+
+
+
+sampler gInOutFroxel = sampler_state
+{
+    ImgUnit = 0;
+};
+
+
+// Uniforms
+float4 gFogVolumeColourAndDensity = { 1.0, 1.0, 1.0, 0.25 };
+float4 gFogVolumeParams1 = { 0.0, 0.25, 0.01, 1.0 }; // type (0=box, 1=sphere) | fade percent | noise scale | wind toggle
+float4 gFroxelSize = { 160.0, 90.0, 128.0, 0.0 };
+
+float4 gLocalBoundsMinVec4;
+float4 gLocalBoundsMaxVec4;
+
+
+// Contexts
+context FOG_RASTER_VOLUMES
+{
+    VertexShader = compile GLSL VS_VOL_FOG_RASTER;
+    PixelShader  = compile GLSL FS_VOL_FOG_RASTER;
+}
+
+context FOG_RASTER_VOLUMES_PREPASS
+{
+    VertexShader = compile GLSL VS_VOL_FOG_RASTER;
+    PixelShader  = compile GLSL FS_VOL_FOG_RASTER_PREPASS;
+}
+
+
+[[VS_VOL_FOG_RASTER]]
+// =================================================================================================
+#define D_VOL_FOG_RASTER_VS
+#define D_SWITCH_NO_BINDLESS_SAMPLERS
+#include "Custom/Volumetrics/VolumetricFog.shader.h"
+
+[[FS_VOL_FOG_RASTER]]
+// =================================================================================================
+#define D_VOL_FOG_RASTER_FS
+#define D_SWITCH_NO_BINDLESS_SAMPLERS
+#include "Custom/Volumetrics/VolumetricFog.shader.h"
+
+[[FS_VOL_FOG_RASTER_PREPASS]]
+// =================================================================================================
+#define D_VOL_FOG_RASTER_PREPASS_FS
+#define D_SWITCH_NO_BINDLESS_SAMPLERS
+#include "Custom/Volumetrics/VolumetricFog.shader.h"
+

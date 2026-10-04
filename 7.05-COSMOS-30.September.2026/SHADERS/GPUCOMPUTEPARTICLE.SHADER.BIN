@@ -1,0 +1,104 @@
+[[FX]]
+
+// Contexts
+
+context [ !MACOS !IOS ] GPU_PARTICLES_INIT
+{
+    ComputeShader = compile GLSL CS_GPU_PARTICLES_INIT;
+}
+
+context [ !MACOS !IOS ] GPU_PARTICLES_SYNC
+{
+    ComputeShader = compile GLSL CS_GPU_PARTICLES_SYNC;
+}
+
+context [ !MACOS !IOS ] GPU_PARTICLES_INDEXLIST_CLEANUP
+{
+    ComputeShader = compile GLSL CS_GPU_PARTICLES_INDEXLIST_CLEANUP;
+}
+
+context [ !MACOS !IOS ] GPU_PARTICLES_EMIT
+{
+    ComputeShader = compile GLSL CS_GPU_PARTICLES_EMIT;
+}
+
+context [ !MACOS !IOS ] GPU_PARTICLES_SIMULATION
+{
+    ComputeShader = compile GLSL CS_GPU_PARTICLES_SIMULATION;
+}
+
+context [ !MACOS !IOS ] GPU_PARTICLES_SIMULATION_CULL
+{
+    ComputeShader = compile GLSL CS_GPU_PARTICLES_SIMULATION_CULL;
+}
+
+context [ !MACOS !IOS ] GPU_PARTICLES_PREFIXSUM
+{
+    ComputeShader = compile GLSL CS_GPU_PARTICLES_PREFIXSUM;
+}
+
+context [ !MACOS !IOS ] GPU_PARTICLES_WRITEOUT
+{
+    ComputeShader = compile GLSL CS_GPU_PARTICLES_WRITEOUT;
+}
+
+context [ !MACOS !IOS ] GPU_PARTICLES_CLEARALL
+{
+    ComputeShader = compile GLSL CS_GPU_PARTICLES_CLEARALL;
+}
+
+[[CS_GPU_PARTICLES_INIT]]
+// =================================================================================================
+#define D_GPU_PARTICLES_COMPUTE
+#define D_GPU_PARTICLES_INIT
+#include "GPUParticleManagerCompute.shader.h"
+
+[[CS_GPU_PARTICLES_SYNC]]
+// =================================================================================================
+#define D_GPU_PARTICLES_COMPUTE
+#define D_GPU_PARTICLES_SYNC
+#include "GPUParticleManagerCompute.shader.h"
+
+[[CS_GPU_PARTICLES_INDEXLIST_CLEANUP]]
+// =================================================================================================
+#define D_GPU_PARTICLES_COMPUTE
+#define D_GPU_PARTICLES_INDEXLIST_CLEANUP
+#include "GPUParticleManagerCompute.shader.h"
+
+[[CS_GPU_PARTICLES_EMIT]]
+// =================================================================================================
+#define D_GPU_PARTICLES_COMPUTE
+#define D_GPU_PARTICLES_COMPUTE_EMIT
+#include "GPUParticleEmitCompute.shader.h"
+
+[[CS_GPU_PARTICLES_SIMULATION]]
+// =================================================================================================
+#define D_GPU_PARTICLES_COMPUTE
+#define D_GPU_PARTICLES_COMPUTE_SIM
+#include "GPUParticleSimulateCompute.shader.h"
+
+[[CS_GPU_PARTICLES_SIMULATION_CULL]]
+// =================================================================================================
+#define D_GPU_PARTICLES_COMPUTE
+#define D_GPU_PARTICLES_COMPUTE_SIM
+#define D_GPU_PARTICLES_CULLING
+#include "GPUParticleSimulateCompute.shader.h"
+
+[[CS_GPU_PARTICLES_PREFIXSUM]]
+// =================================================================================================
+#define D_GPU_PARTICLES_COMPUTE
+#define D_GPU_PARTICLES_PREFIXSUM
+#include "GPUParticleManagerCompute.shader.h"
+
+[[CS_GPU_PARTICLES_WRITEOUT]]
+// =================================================================================================
+#define D_GPU_PARTICLES_COMPUTE
+#define D_GPU_PARTICLES_WRITEOUT
+#include "GPUParticleManagerCompute.shader.h"
+
+[[CS_GPU_PARTICLES_CLEARALL]]
+// =================================================================================================
+#define D_GPU_PARTICLES_COMPUTE
+#define D_GPU_PARTICLES_CLEARALL
+#include "GPUParticleManagerCompute.shader.h"
+

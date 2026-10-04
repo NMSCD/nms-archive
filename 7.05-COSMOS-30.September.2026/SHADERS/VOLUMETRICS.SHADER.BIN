@@ -1,0 +1,151 @@
+[[FX]]
+
+// Samplers
+sampler gBufferMap = sampler_state
+{
+    TexUnit = 0;
+};
+
+sampler gBuffer1Map = sampler_state
+{
+    TexUnit = 1;
+};
+
+sampler gBuffer2Map = sampler_state
+{
+    TexUnit = 2;
+};
+
+sampler gBuffer3Map = sampler_state
+{
+    TexUnit = 3;
+};
+
+sampler gBuffer4Map = sampler_state
+{
+    TexUnit = 4;
+};
+
+sampler gBuffer5Map = sampler_state
+{
+    TexUnit = 5;
+};
+
+sampler gDepthMap = sampler_state
+{
+    TexUnit = 7;
+};
+
+sampler gShadowMap = sampler_state
+{
+    TexUnit = 8;
+};
+
+sampler gReadOnlyFroxel = sampler_state
+{
+    TexUnit = 9;
+    Address = Clamp;
+    Filter = Trilinear;
+};
+
+sampler gMiePhaseLUT = sampler_state
+{
+    DefaultTexture = LUT/MIE_LUT_CUSTOM.DDS;
+    TexUnit = 10;
+    Address = Wrap;
+};
+
+// IBL
+sampler gDiffEnvMap = sampler_state
+{
+    TexUnit = 11;
+};
+
+sampler gPerlinNoise3D = sampler_state
+{
+    DefaultTexture = SHADER/PERLIN_WORLEY_3D_SINGLE_CHANNEL.DDS;
+    TexUnit = 12;
+    Address = Wrap;
+};
+
+sampler gLightBins = sampler_state
+{
+    TexUnit = 14;
+    Address = Clamp;
+};
+
+
+sampler gInOutFroxel = sampler_state
+{
+    ImgUnit = 0;
+};
+
+
+// Uniforms
+float4 gDirectionFromTheSun;
+float4 gVolumetricsSunColour;
+float4 gDitheringParamsAndTime;
+float4 gWindOffset;
+float4 gPlanetParams;
+float4 gFogVolumeParams1 = { 0.0, 0.25, 0.01, 1.0 }; // type (0=box, 1=sphere) | fade percent | noise scale | wind toggle
+float4 gFroxelSize = { 160.0, 90.0, 128.0, 0.0 };
+
+float4 gPlanetPositionVec4;
+float4 gLightDirectionVec4;
+
+
+// Contexts
+context FOG_PREPARE_MID
+{
+    ComputeShader = compile GLSL CS_VOL_FOG_PREPARE_MID;
+}
+
+context FOG_PREPARE_HIGH
+{
+    ComputeShader = compile GLSL CS_VOL_FOG_PREPARE_HIGH;
+}
+
+context FOG_INTEGRATE
+{
+    ComputeShader = compile GLSL CS_VOL_FOG_INTEGRATE;
+}
+
+context FOG_APPLY
+{
+    VertexShader  = compile GLSL VS_FSQUAD;
+    PixelShader   = compile GLSL FS_VOL_FOG_APPLY;
+    ComputeShader = compile GLSL FS_VOL_FOG_APPLY;
+}
+
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#define D_SWITCH_NO_BINDLESS_SAMPLERS
+#define D_VOLUMETRICS_COMMON
+#include "ImmediateModeVertex.shader.h"
+
+[[CS_VOL_FOG_PREPARE_MID]]
+// =================================================================================================
+#define D_VOL_FOG_PREPARE
+#define D_SWITCH_NO_BINDLESS_SAMPLERS
+#define D_QUALITY 1
+#include "Custom/Volumetrics/VolumetricFog.shader.h"
+
+[[CS_VOL_FOG_PREPARE_HIGH]]
+// =================================================================================================
+#define D_VOL_FOG_PREPARE
+#define D_SWITCH_NO_BINDLESS_SAMPLERS
+#define D_QUALITY 2
+#include "Custom/Volumetrics/VolumetricFog.shader.h"
+
+[[CS_VOL_FOG_INTEGRATE]]
+// =================================================================================================
+#define D_VOL_FOG_INTEGRATE
+#define D_SWITCH_NO_BINDLESS_SAMPLERS
+#include "Custom/Volumetrics/VolumetricFog.shader.h"
+
+[[FS_VOL_FOG_APPLY]]
+// =================================================================================================
+#define D_VOL_FOG_APPLY
+#define D_SWITCH_NO_BINDLESS_SAMPLERS
+#include "Custom/Volumetrics/VolumetricFog.shader.h"

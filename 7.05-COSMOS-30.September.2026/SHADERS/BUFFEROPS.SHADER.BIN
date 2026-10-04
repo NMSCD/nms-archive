@@ -1,0 +1,19 @@
+[[FX]]
+
+// Samplers
+
+
+// Uniforms
+
+
+// Contexts
+
+context FILL
+{
+    ComputeShader = compile GLSL CS_BUFFER_FILL;
+}
+
+[[CS_BUFFER_FILL]]
+// =================================================================================================
+#define D_BUFFER_OP_FILL
+#include "BufferOps.shader.h"

@@ -1,0 +1,250 @@
+[[FX]]
+// -----------------------------------------------------------------------------------
+// Samplers
+// -----------------------------------------------------------------------------------
+
+sampler gColourHdrMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 0;
+};
+
+sampler gExposureMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 1;
+};
+
+sampler gExpHistoryMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 2;
+};
+
+sampler gEvNormMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 4;
+};
+
+sampler gEvBlurMap = sampler_state
+{
+    Address = Clamp;
+    TexUnit = 5;
+};
+
+sampler gEvHistogramMap = sampler_state
+{
+    TexUnit = 6;
+};
+
+sampler gEvBilateralGridMap = sampler_state
+{
+    TexUnit = 7;
+};
+
+sampler gEvHistogramRwMap = sampler_state
+{
+    ImgUnit = 0;
+};
+
+sampler gEvBilateralGridRwMap = sampler_state
+{
+    ImgUnit = 1;
+};
+
+sampler gEvBlurRwMap = sampler_state
+{
+    ImgUnit = 2;
+};
+
+// -----------------------------------------------------------------------------------
+// Uniforms
+// -----------------------------------------------------------------------------------
+
+// custom
+float4 gCustomParamsVec4    = { 0, 0, 0, 0 };
+
+// -----------------------------------------------------------------------------------
+// Contexts
+// -----------------------------------------------------------------------------------
+context [ PC ] EXP_MANUAL
+{
+    VertexShader    = compile GLSL VS_FSQUAD;
+    PixelShader     = compile GLSL FS_EXPOSURE_MANUAL;
+}
+
+context [ PC ] EXP_AUTO
+{
+    VertexShader    = compile GLSL VS_FSQUAD;
+    PixelShader     = compile GLSL FS_EXPOSURE_AUTO;
+}
+
+context [ PC ] EXP_APPLY_GLOBAL
+{
+    VertexShader    = compile GLSL VS_FSQUAD;
+    PixelShader     = compile GLSL FS_EXPOSURE_APPLY_GLOBAL;
+}
+
+context [ PC ] EXP_APPLY_LOCAL
+{
+    VertexShader    = compile GLSL VS_FSQUAD;
+    PixelShader     = compile GLSL FS_EXPOSURE_APPLY_LOCAL;
+}
+
+context [ PC ] EV_NORM_CAST
+{
+    VertexShader    = compile GLSL VS_FSQUAD;
+    PixelShader     = compile GLSL FS_EV_NORM_CAST;
+}
+
+context [ PC ] EV_BIN_REF
+{
+    ComputeShader   = compile GLSL CS_EV_BIN_REF;
+}
+
+context [ PC ] EV_BIN_FAST
+{
+    ComputeShader   = compile GLSL CS_EV_BIN_FAST;
+}
+
+context [ PC ] EV_GRID_REDUCE
+{
+    ComputeShader   = compile GLSL CS_EV_GRID_REDUCE;
+}
+
+context [ PC ] EV_GRID_FLATTEN
+{
+    ComputeShader   = compile GLSL CS_EV_GRID_FLATTEN;
+}
+
+context [ PC ] EV_DOWN_32
+{
+    ComputeShader   = compile GLSL CS_EV_DOWN_32;
+}
+
+context [ PC ] EV_BLUR_2D_H
+{
+    ComputeShader   = compile GLSL CS_EV_BLUR_2D_H;
+}
+
+context [ PC ] EV_BLUR_2D_V
+{
+    ComputeShader   = compile GLSL CS_EV_BLUR_2D_V;
+}
+
+context [ PC ] EV_BLUR_3D_H
+{
+    ComputeShader   = compile GLSL CS_EV_BLUR_3D_H;
+}
+
+context [ PC ] EV_BLUR_3D_V
+{
+    ComputeShader   = compile GLSL CS_EV_BLUR_3D_V;
+}
+
+context [ PC ] EV_UPS_BSPLINE
+{
+    ComputeShader   = compile GLSL CS_EV_UPSAMPLE_BSPLINE;
+}
+
+context [ PC ] EV_TEST
+{
+    ComputeShader   = compile GLSL CS_EV_TEST;
+}
+
+[[VS_FSQUAD]]
+// =================================================================================================
+#define D_TEX_QUAD
+#include "ImmediateModeVertex.shader.h"
+
+[[FS_EXPOSURE_MANUAL]]
+// =================================================================================================
+#define D_EXPOSURE_MANUAL
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[FS_EXPOSURE_AUTO]]
+// =================================================================================================
+#define D_EXPOSURE_AUTO
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[FS_EXPOSURE_APPLY_GLOBAL]]
+// =================================================================================================
+#define D_EXPOSURE_APPLY_GLOBAL
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[FS_EXPOSURE_APPLY_LOCAL]]
+// =================================================================================================
+#define D_EXPOSURE_APPLY_LOCAL
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[FS_EV_NORM_CAST]]
+// =================================================================================================
+#define D_EV_NORM_CAST
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[CS_EV_BIN_REF]]
+// =================================================================================================
+#define D_EV_BIN_REF
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[CS_EV_BIN_FAST]]
+// =================================================================================================
+#define D_EV_BIN_FAST
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[CS_EV_GRID_REDUCE]]
+// =================================================================================================
+#define D_EV_GRID_REDUCE
+#define D_USE_CROSS_LANE
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[CS_EV_GRID_FLATTEN]]
+// =================================================================================================
+#define D_EV_GRID_FLATTEN
+#define D_USE_CROSS_LANE
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[CS_EV_DOWN_32]]
+// =================================================================================================
+#define D_EV_DOWN_32
+#define D_USE_CROSS_LANE
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[CS_EV_BLUR_2D_H]]
+// =================================================================================================
+#define D_EV_BLUR
+#define D_EV_BLUR_2D
+#define D_EV_BLUR_H
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[CS_EV_BLUR_2D_V]]
+// =================================================================================================
+#define D_EV_BLUR
+#define D_EV_BLUR_2D
+#define D_EV_BLUR_V
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[CS_EV_BLUR_3D_H]]
+// =================================================================================================
+#define D_EV_BLUR
+#define D_EV_BLUR_3D
+#define D_EV_BLUR_H
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[CS_EV_BLUR_3D_V]]
+// =================================================================================================
+#define D_EV_BLUR
+#define D_EV_BLUR_3D
+#define D_EV_BLUR_V
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[CS_EV_UPSAMPLE_BSPLINE]]
+// =================================================================================================
+#define D_EV_UPSAMPLE_BSPLINE
+#include "Fullscreen/ExposureFragment.shader.h"
+
+[[CS_EV_TEST]]
+// =================================================================================================
+#define D_EV_TEST
+#include "Fullscreen/ExposureFragment.shader.h"
